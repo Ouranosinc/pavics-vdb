@@ -28,11 +28,18 @@ d0 = xr.open_dataset(datasets[0])
 d0a  = xr.open_mfdataset(sorted(glob.glob('./test_data/ncdata_test_changing_time/TimeConstant/*.nc')), combine='nested', concat_dim='time')
 #
 d1 = xr.open_dataset(datasets[1])
-ds1= xr.open_mfdataset(sorted(glob.glob('./test_data/ncdata_test_changing_time/TimeChanging/*.nc')), combine='nested', concat_dim='time')
+d1a= xr.open_mfdataset(sorted(glob.glob('./test_data/ncdata_test_changing_time/TimeChanging/*.nc')), combine='nested', concat_dim='time')
 
+# Time Constant NcML vs Time Constant MF - Dataset
 np.testing.assert_array_equal(d0.tasmin,d0a.tasmin)
 np.testing.assert_array_equal(d0.time,d0a.time)
 
+# Time Constant NcML vs Time Changing MF - Dataset
+np.testing.assert_array_equal(d0.tasmin,d1a.tasmin)
+np.testing.assert_array_equal(d0.time,d1a.time)
+
+
 np.testing.assert_array_equal(d0.tasmin,d1.tasmin)
+print(np.unique(d1.time.values - d0.time.values))
 np.testing.assert_array_equal(d0.time, d1.time)
 
