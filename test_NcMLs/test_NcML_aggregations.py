@@ -8,13 +8,24 @@ import xarray as xr
 import shutil
 import pytest
 
-test_folder = ['TimeChanging', 'TimeConstant']
-outpath = './test_data/ncdata_test_changing_time'
-thredds_path = '/home/travis/boreas/testdata/NcML_tests/TestTimeChanging'
-thredds_path_server = 'https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/birdhouse/testdata/NcML_tests/catalog.html'
-if not os.path.exists(thredds_path):
-    os.makedirs(thredds_path)
+# local path root to test data
+local_root = './test_data/'
+# thredds path root for data transfer
+thredds_root = '/home/travis/boreas/testdata/NcML_tests/'
+# correponding url to `thredds_root`
+thredds_cat_root = 'https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/birdhouse/testdata/NcML_tests/'
+
 class TestTimechanging:
+    test_folder = ['TimeChanging', 'TimeConstant']
+    # local path
+    outpath = os.path.join(local_root,'ncdata_test_changing_time')
+    # path to disk on thredds server
+    thredds_path = os.path.join(thredds_root,'TestTimeChanging')
+    # url to `thredds_path` catalog
+    thredds_path_server = f'{thredds_cat_root}/TestTimeChanging/catalog.html'
+
+    if not os.path.exists(thredds_path):
+        os.makedirs(thredds_path)
     shutil.rmtree(thredds_path)
     for t in test_folder:
         nc = xncml.Dataset('./test_data/NcML_templates/NcML_template.ncml')
