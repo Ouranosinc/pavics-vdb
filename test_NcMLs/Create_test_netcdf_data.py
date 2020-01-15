@@ -17,7 +17,7 @@ def create_netcdf_testfiles():
                                 drop_variables=['ts', 'time_vectors']).sel(lon=-75, lat=45, method='nearest')
 
             outfile = glob.os.path.join(
-                '/home/travis/github/github_pavics-vdb/test_NcMLs/test_data/ncdata_test_changing_time',
+                '/test_NcMLs/test_data/ncdata_testNCML',
                 'TimeConstant', f'TimeConstant_{nc.split("_")[-1]}')
             if not glob.os.path.exists(path.dirname(outfile)):
                 glob.os.makedirs(path.dirname(outfile))
