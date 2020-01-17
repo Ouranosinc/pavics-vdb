@@ -1,6 +1,7 @@
 from os import path
 import glob
 import xarray as xr
+import numpy as np
 
 def create_netcdf_testfiles():
 
@@ -17,7 +18,7 @@ def create_netcdf_testfiles():
                                 drop_variables=['ts', 'time_vectors']).sel(lon=-75, lat=45, method='nearest')
 
             outfile = glob.os.path.join(
-                '/test_NcMLs/test_data/ncdata_testNCML',
+                '/home/travis/github/github_pavics-vdb/test_NcMLs/test_data/ncdata_testNCML',
                 'TimeConstant', f'TimeConstant_{nc.split("_")[-1]}')
             if not glob.os.path.exists(path.dirname(outfile)):
                 glob.os.makedirs(path.dirname(outfile))
@@ -36,7 +37,7 @@ def create_netcdf_testfiles():
 
             if nc != ncfiles[0]:
                 ds1.time.attrs['units'] = f"days since {outfile1.split('_')[-1].split('.')[0]}-01-01 00:00:00"
-                ds1.time.values = time_vals
+                ds1.time.values = np.arange(0,len(ds1.time))
             else:
                 time_vals = ds1.time.values
 
