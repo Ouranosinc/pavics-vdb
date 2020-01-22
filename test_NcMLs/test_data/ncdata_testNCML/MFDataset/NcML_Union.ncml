@@ -2,7 +2,11 @@
 <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 
 	<aggregation type="union">
-
+		<netcdf location="pr/1950.nc"/>
+		<netcdf location="pr/1951.nc"/>
+		<netcdf location="pr/1952.nc"/>
+		<netcdf location="pr/1953.nc"/>
+		<netcdf location="pr/1954.nc"/>
 	    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 		    <aggregation dimName="time" type="joinExisting">
 			<scan location="tasmax" suffix=".nc" subdirs="false"/>
