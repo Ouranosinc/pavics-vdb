@@ -2,6 +2,7 @@ from os import path
 import glob
 import xarray as xr
 import numpy as np
+import os
 
 def create_netcdf_testfiles():
 
@@ -9,7 +10,7 @@ def create_netcdf_testfiles():
 
     for m in mods:
         # client = Client(dashboard_address=8989)
-        inrep = '/home/travis/boreas/ouranos/cb-oura-1.0'
+        inrep = os.path.join(os.environ['HOME'], 'boreas/ouranos/cb-oura-1.0')
         ncfiles = sorted(glob.glob(path.join(inrep, m, 'rcp45', '*', 'tasmin', '*.nc')))
 
         for nc in ncfiles[0:5]:
@@ -18,7 +19,7 @@ def create_netcdf_testfiles():
                                 drop_variables=['ts', 'time_vectors']).sel(lon=-75, lat=45, method='nearest')
 
             outfile = glob.os.path.join(
-                '/home/travis/github/github_pavics-vdb/test_NcMLs/test_data/ncdata_testNCML',
+                './test_data/ncdata_testNCML',
                 'TimeConstant', f'TimeConstant_{nc.split("_")[-1]}')
             if not glob.os.path.exists(path.dirname(outfile)):
                 glob.os.makedirs(path.dirname(outfile))
@@ -46,5 +47,42 @@ def create_netcdf_testfiles():
                 outfile1,
             )
 
+        # create varying attribute between files
+        # third file does not have the attribute
+        clef = './test_data/ncdata_testNCML/TimeConstant/*.nc'
+        l_f = sorted(glob.glob(clef))
+
+        out_dir = './test_data/ncdata_testNCML/VaryingAttributes'
+        if not path.exists(out_dir):
+            os.makedirs(out_dir)
+
+        for i_f, ff in enumerate(l_f):
+            ds = xr.open_dataset(ff)
+            if i_f != 2:
+                ds.attrs['variable_attribute'] = str(i_f)
+            # save output file
+            outpath = os.path.join(out_dir, os.path.basename(ff))
+            ds.to_netcdf(outpath, format='NETCDF4_CLASSIC')
+
+        # create nc files to test recursive ncml aggregation
+        #
+        inrep = os.path.join(os.environ['HOME'], 'boreas/ouranos/cb-oura-1.0')
+
+        for varname in 'tasmin tasmax'.split():
+            ncfiles1 = sorted(glob.glob(path.join(inrep, m, 'rcp45', '*', varname, '*.nc')))
+            for ncf in ncfiles[0:2]:
+
+                ds = xr.open_dataset(ncf, chunks=dict(time=365, lat=50, lon=56), decode_times=False,
+                                    drop_variables=['ts', 'time_vectors']).sel(lon=-75, lat=45, method='nearest')
+
+                outfile = glob.os.path.join(
+                    './test_data/ncdata_testNCML', 'recursive_aggregation',
+                    varname, varname + '_' + os.path.basename(ncf).split('_')[-1])
+                if not glob.os.path.exists(path.dirname(outfile)):
+                    glob.os.makedirs(path.dirname(outfile))
+
+                ds.to_netcdf(
+                    outfile,
+                )
 
 create_netcdf_testfiles()
