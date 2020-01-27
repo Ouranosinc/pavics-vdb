@@ -8,13 +8,20 @@ import xarray as xr
 import shutil
 from itertools import combinations
 
-pavics_root = '/home/travis/boreas'  # mapped drive to top level `Birdhouse` folder on thredds
+home = os.environ['HOME']
+pavics_root = os.path.join(home, 'boreas')  # mapped drive to top level `Birdhouse` folder on thredds
+
 # local path root to test data
 local_root = './test_data/'
-# thredds path root for data transfer
-thredds_root = os.path.join(pavics_root,'testdata/NcML_tests/')
-# correponding url to `thredds_root`
-thredds_cat_root = 'https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/birdhouse/testdata/NcML_tests/'
+# thredds path root for data transfer and thredds catalog url
+if home == '/home/biner':
+    # patch to deal with permission problems ...
+    thredds_root = os.path.join(pavics_root, 'testdata/biner/NcML_tests/')
+    thredds_cat_root = 'https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/birdhouse/testdata/biner/NcML_tests/'
+else:
+    thredds_root = os.path.join(pavics_root, 'testdata/NcML_tests/')
+    # correponding url to `thredds_root`
+    thredds_cat_root = 'https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/birdhouse/testdata/NcML_tests/'
 
 class TestTimechanging:
     test_folder = ['TimeChanging', 'TimeConstant']
@@ -98,8 +105,6 @@ class TestAbsolutepaths:
     assert len(datasets) == 1
     assert len(datasets1) == 1
 
-
-
     ds_all = dict(ncml1=xr.open_dataset(datasets[0]))
     ds_all['ncml2'] = xr.open_dataset(datasets1[0])
     ds_all['mf_ds'] = xr.open_mfdataset(sorted(glob.glob(os.path.join(outpath, f'TimeConstant/*.nc'))),
@@ -110,3 +115,43 @@ class TestAbsolutepaths:
         for c in list(combs):
             for v in ['tasmin','time']:
                 np.testing.assert_array_equal(self.ds_all[c[0]][v], self.ds_all[c[1]][v])
+
+class TestVaryingAttributes:
+    """testing what happens with ncml aggregation with files having different attributes values"""
+
+    # set local paths
+    test_name = 'VaryingAttributes'
+    test_dir = 'Test'+test_name
+    local_test_dir = os.path.join(local_root, 'ncdata_testNCML', test_dir)
+    # hypothese : directory with data are in local_test_dir/test_name
+
+    # set thredds paths
+    thredds_test_dir = os.path.join(thredds_root, test_dir)
+    if os.path.exists(thredds_test_dir):
+        shutil.rmtree(thredds_test_dir)
+
+    # generate local ncml file
+    nc = xncml.Dataset('./test_data/NcML_templates/NcML_template.ncml')
+    ncmlfile = 'VaryingAttributes-agg-NCML.ncml'
+    nc.to_ncml(os.path.join(local_test_dir, ncmlfile))
+    thredds_location = os.path.join(thredds_test_dir.replace(pavics_root, '/pavics-data'), test_name)
+    nc.ncroot['netcdf']['aggregation']['scan']['@location'] = thredds_location
+    nc.to_ncml(os.path.join(local_test_dir, ncmlfile))
+
+    # copy local_test_dir to thredds server
+    copy_tree(local_test_dir, thredds_test_dir)
+
+    # url to `thredds_path` catalog
+    thredds_path_server = f'{thredds_cat_root}/Test{test_name}/catalog.html'
+
+    # open ncml dataset with xarray
+    dataset = [d.opendap_url() for d in threddsclient.crawl(thredds_path_server, depth=0) if '.ncml' in d.name]
+    assert(len(dataset)==1)
+    ds_ncml = xr.open_dataset(dataset[0])
+
+
+    def test_aggregated_attributes_equal_before_last_file_attributes(self):
+        clef = os.path.join(self.thredds_test_dir, self.test_name, '*.nc')
+        l_f = sorted(glob.glob(clef))
+        ds_before_last = xr.open_dataset(l_f[-2])
+        assert(self.ds_ncml.attrs == ds_before_last.attrs)
