@@ -48,18 +48,25 @@ def create_netcdf_testfiles():
             )
 
         # create varying attribute between files
+        # attr1 is set differently for every files except the before last one for which it is not set
+        # attr2 is set differently for every files except the 1st file for which it is not set
+
         # third file does not have the attribute
         clef = './test_data/ncdata_testNCML/TimeConstant/*.nc'
         l_f = sorted(glob.glob(clef))
 
-        out_dir = './test_data/ncdata_testNCML/VaryingAttributes'
+        out_dir = './test_data/ncdata_testNCML/TestVaryingAttributes/VaryingAttributes'
         if not path.exists(out_dir):
             os.makedirs(out_dir)
 
         for i_f, ff in enumerate(l_f):
             ds = xr.open_dataset(ff)
-            if i_f != 2:
-                ds.attrs['variable_attribute'] = str(i_f)
+
+            # create attribute or not depending on file
+            if i_f != 0:
+                ds.attrs['attr2'] = str(i_f)
+            if i_f != len(l_f)-2:
+                ds.attrs['attr1'] = str(i_f)
             # save output file
             outpath = os.path.join(out_dir, os.path.basename(ff))
             ds.to_netcdf(outpath, format='NETCDF4_CLASSIC')
