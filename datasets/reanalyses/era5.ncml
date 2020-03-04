@@ -1,10 +1,16 @@
- <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
     <aggregation type="union">
-        <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-            <scan location="/birdhouse/ecmwf/era5" regExp="^tas_era5_reanalysis_hourly_[0-0]{4}\.nc$" dateFormatMark="tas_era5_reanalysis_hourly_#yyyy" subdirs="false"/>
-        </aggregation>
-        <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-            <scan location="/birdhouse/ecmwf/era5" regExp="^pr_era5_reanalysis_hourly_[0-0]{4}\.nc$" dateFormatMark="pr_era5_reanalysis_hourly_#yyyy"  subdirs="false"/>
-        </aggregation>
-     </aggregation>
- </netcdf>
+        <netcdf>
+            <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+                <scan location="/birdhouse/ecmwf/era5" regExp="^tas_era5_reanalysis_hourly_[0-0]{4}\.nc$"
+                      dateFormatMark="tas_era5_reanalysis_hourly_#yyyy" subdirs="false"/>
+            </aggregation>
+        </netcdf>
+        <netcdf>
+            <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+                <scan location="/birdhouse/ecmwf/era5" regExp="^pr_era5_reanalysis_hourly_[0-0]{4}\.nc$"
+                      dateFormatMark="pr_era5_reanalysis_hourly_#yyyy" subdirs="false"/>
+            </aggregation>
+        </netcdf>
+    </aggregation>
+</netcdf>
