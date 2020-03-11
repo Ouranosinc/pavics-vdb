@@ -1,0 +1,42 @@
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+  <remove name="redistribution" type="attribute" />
+  <remove name="source" type="attribute" />
+  <remove name="institution" type="attribute" />
+  <attribute name="title" type="String" value="NRCAN ANUSPLIN daily gridded dataset : version 1" />
+  <attribute name="type" type="String" value="gridded_obs" />
+  <attribute name="institute" type="String" value="Natural Resources Canada : Canadian Forest Service" />
+  <attribute name="institute_id" type="String" value="NRCAN" />
+  <attribute name="dataset_id" type="String" value="NRCAN_anusplin_daily_v1" />
+  <attribute name="version" type="String" value="1.0" />
+  <attribute name="frequency" type="String" value="day" />
+  <attribute name="licence_type" type="String" value="permissive" />
+  <attribute name="licence" type="String" value="https://open.canada.ca/en/open-government-licence-canada" />
+  <attribute name="attribution" type="String" value="The authors provide this data under the Environment and Climate Change Canada Data Server End Use License and demand that any references to or derivative works based on this dataset be cited using the provided citation information"/>
+  <attribute name="citation" type="String" value="Natural Resources Canada ANUSPLIN interpolated historical climate model from McKenney, D.W., M.F. Hutchinson, P. Papadol, K. Lawrence, J. Pedlar, K. Campbell, E. Milewska, R.F. Hopkinson, D. Price, and T. Owen, 2011. Customized Spatial Climate Models for North America. Bull. Amer. Meteor. Soc., 92, 1611-1622, https://doi.org/10.1175/2011BAMS3132.1" />
+
+  <aggregation type="union">
+	    <netcdf>
+		    <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+			    <scan location="/pavics-data/nrcan/nrcan_canada_daily/tasmin" suffix=".nc" subdirs="false"/>
+          <remove name="ts" type="variable" />
+          <remove name="time_vectors" type="variable" />
+		    </aggregation>
+	    </netcdf>
+	    <netcdf>
+		    <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+			    <scan location="/pavics-data/nrcan/nrcan_canada_daily/tasmax" suffix=".nc" subdirs="false"/>
+          <remove name="ts" type="variable" />
+          <remove name="time_vectors" type="variable" />
+		    </aggregation>
+	    </netcdf>
+	    <netcdf>
+		    <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+			    <scan location="/pavics-data/nrcan/nrcan_canada_daily/pr" suffix=".nc" subdirs="false"/>
+          <remove name="ts" type="variable" />
+          <remove name="time_vectors" type="variable" />
+		    </aggregation>
+	    </netcdf>
+  </aggregation>
+
+</netcdf>
+

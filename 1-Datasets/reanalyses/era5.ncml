@@ -1,0 +1,25 @@
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <attribute name="title" type="String" value="ERA5 reanalysis" />
+    <attribute name="type" type="String" value="reanalysis" />
+    <attribute name="institute" type="String" value="European Centre for Medium-Range Weather Forecasts" />
+    <attribute name="institute_id" type="String" value="ECMWF" />
+    <attribute name="dataset_id" type="String" value="ERA5" />
+    <attribute name="licence_type" type="String" value="permissive" />
+    <attribute name="licence" type="String" value="Please acknowledge the use of ERA5 as stated in the Copernicus C3S/CAMS License agreement http://apps.ecmwf.int/datasets/licences/copernicus/" />
+    <attribute name="attribution" type="String" value="Contains modified Copernicus Climate Change Service Information 2020. Neither the European Commission nor ECMWF is responsible for any use that may be made of the Copernicus Information or Data it contains."/>
+    <attribute name="citation" type="String" value="Copernicus Climate Change Service (C3S) (2017): ERA5: Fifth generation of ECMWF atmospheric reanalyses of the global climate . Copernicus Climate Change Service Climate Data Store (CDS), date of access. https://cds.climate.copernicus.eu/cdsapp#!/home" />
+    <aggregation type="union">
+        <netcdf>
+            <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+                <scan location="/pavics-data/ecmwf/era5" regExp="tas.*\.nc$" subdirs="false"/>
+                <variable name="tas" orgName="t2m" />
+            </aggregation>
+        </netcdf>
+        <netcdf>
+            <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+                <scan location="/pavics-data/ecmwf/era5" regExp="pr.*\.nc$" subdirs="false"/>
+                <variable name="pr" orgName="tp" />
+            </aggregation>
+        </netcdf>
+    </aggregation>
+</netcdf>
