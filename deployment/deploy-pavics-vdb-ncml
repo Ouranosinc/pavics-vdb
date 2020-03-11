@@ -3,6 +3,12 @@
 #
 # Copy this file under /etc/cron.hourly to deploy every hour.
 #
+# Follow
+# https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys
+# because this repo is private and we use SSH to clone.
+#
+# Had this repo been public, no deploy key setup required with HTTP.
+#
 # Logs to /var/log/PAVICS/deploy-ncml.log, re-use existing logrotate.
 
 
@@ -16,6 +22,10 @@ fi
 
 if [ -z "$PAVICS_VDB_DEPLOY_DEST" ]; then
     PAVICS_VDB_DEPLOY_DEST="/data/datasets"
+fi
+
+if [ -z "$PAVICS_VDB_SSH_DEPLOY_KEY" ]; then
+    PAVICS_VDB_SSH_DEPLOY_KEY="/home/mourad/.ssh/id_rsa_pavics-vdb-ro"
 fi
 ### CONFIG END
 
@@ -49,7 +59,7 @@ cd $TMPDIR
 TMP_SCRIPT="$TMPDIR/sshwrap"
 cat << __EOF__ > $TMP_SCRIPT
 #!/bin/sh
-ssh -i /home/mourad/.ssh/id_rsa_pavics-vdb-ro \
+ssh -i $PAVICS_VDB_SSH_DEPLOY_KEY \
   -o 'UserKnownHostsFile /dev/null' \
   -o 'StrictHostKeyChecking no' \
  \$@
@@ -61,4 +71,6 @@ GIT_SSH="$TMP_SCRIPT" git clone git@github.com:Ouranosinc/pavics-vdb.git
 cd pavics-vdb
 git checkout $PAVICS_VDB_BRANCH
 
-rsync --recursive --links --checksum --delete --itemize-changes --human-readable --verbose 1-Datasets $PAVICS_VDB_DEPLOY_DEST
+rsync --recursive --links --checksum --delete \
+    --itemize-changes --human-readable --verbose \
+    1-Datasets $PAVICS_VDB_DEPLOY_DEST
