@@ -1,0 +1,64 @@
+#!/bin/sh
+# Deploy NCML files under 1-Datasets to /data/datasets.
+#
+# Copy this file under /etc/cron.hourly to deploy every hour.
+#
+# Logs to /var/log/PAVICS/deploy-ncml.log, re-use existing logrotate.
+
+
+### CONFIG
+DESCRIPTION="deploy-pavics-vdb-ncml"
+LOG_DIR="/var/log/PAVICS"
+
+if [ -z "$PAVICS_VDB_BRANCH" ]; then
+    PAVICS_VDB_BRANCH="master"
+fi
+
+if [ -z "$PAVICS_VDB_DEPLOY_DEST" ]; then
+    PAVICS_VDB_DEPLOY_DEST="/data/datasets"
+fi
+### CONFIG END
+
+
+LOG_FILE="$LOG_DIR/$DESCRIPTION.log"
+exec >>$LOG_FILE 2>&1
+
+cleanup_on_exit() {
+    rm -rf "$TMPDIR"
+    echo "
+$DESCRIPTION finished START_TIME=$START_TIME
+$DESCRIPTION finished   END_TIME=`date -Isecond`"
+}
+
+trap cleanup_on_exit EXIT
+
+START_TIME="`date -Isecond`"
+echo "==========
+$DESCRIPTION START_TIME=$START_TIME"
+
+set -x
+
+TMPDIR="`mktemp -d -t ${DESCRIPTION}.XXXXXXXXXXXX`"
+
+
+
+### SCRIPT START
+
+cd $TMPDIR
+
+TMP_SCRIPT="$TMPDIR/sshwrap"
+cat << __EOF__ > $TMP_SCRIPT
+#!/bin/sh
+ssh -i /home/mourad/.ssh/id_rsa_pavics-vdb-ro \
+  -o 'UserKnownHostsFile /dev/null' \
+  -o 'StrictHostKeyChecking no' \
+ \$@
+__EOF__
+chmod a+x $TMP_SCRIPT
+
+GIT_SSH="$TMP_SCRIPT" git clone git@github.com:Ouranosinc/pavics-vdb.git
+
+cd pavics-vdb
+git checkout $PAVICS_VDB_BRANCH
+
+cp -rv 1-Datasets $PAVICS_VDB_DEPLOY_DEST
