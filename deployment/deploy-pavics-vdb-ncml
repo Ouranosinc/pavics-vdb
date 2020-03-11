@@ -61,4 +61,4 @@ GIT_SSH="$TMP_SCRIPT" git clone git@github.com:Ouranosinc/pavics-vdb.git
 cd pavics-vdb
 git checkout $PAVICS_VDB_BRANCH
 
-cp -rv 1-Datasets $PAVICS_VDB_DEPLOY_DEST
+rsync --recursive --links --checksum --delete --itemize-changes --human-readable --verbose 1-Datasets $PAVICS_VDB_DEPLOY_DEST
