@@ -35,6 +35,7 @@ exec >>$LOG_FILE 2>&1
 
 cleanup_on_exit() {
     rm -rf "$TMPDIR"
+    set +x
     echo "
 $DESCRIPTION finished START_TIME=$START_TIME
 $DESCRIPTION finished   END_TIME=`date -Isecond`"
