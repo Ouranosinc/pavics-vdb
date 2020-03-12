@@ -1,5 +1,5 @@
 #!/bin/sh
-# Deploy NCML files under 1-Datasets to /data/datasets.
+# Deploy NCML files under 1-Datasets/* to /data/ncml.
 #
 # Copy this file under /etc/cron.hourly to deploy every hour.
 #
@@ -21,7 +21,7 @@ if [ -z "$PAVICS_VDB_BRANCH" ]; then
 fi
 
 if [ -z "$PAVICS_VDB_DEPLOY_DEST" ]; then
-    PAVICS_VDB_DEPLOY_DEST="/data/datasets"
+    PAVICS_VDB_DEPLOY_DEST="/data/ncml"
 fi
 
 if [ -z "$PAVICS_VDB_SSH_DEPLOY_KEY" ]; then
@@ -73,4 +73,4 @@ git checkout $PAVICS_VDB_BRANCH
 
 rsync --recursive --links --checksum --delete \
     --itemize-changes --human-readable --verbose \
-    1-Datasets $PAVICS_VDB_DEPLOY_DEST
+    1-Datasets/* $PAVICS_VDB_DEPLOY_DEST/
