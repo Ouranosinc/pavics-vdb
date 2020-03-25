@@ -6,8 +6,7 @@
 	<aggregation  dimName="realization" type="joinNew">
 		<variableAgg name="tas"/>
 		<variableAgg name="pr"/>
-
-        <netcdf>
+		<netcdf>
 		    <aggregation type="union">
 		        <netcdf>
 		            <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
