@@ -7,15 +7,10 @@
 	<attribute name="terms_of_use" type="String" value="https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html" />
 	<attribute name="attribution" type="String" value="https://pcmdi.llnl.gov/mips/cmip5/citation.html" />
 
-	<variable name="realization" type="int">
-		<values> 0 1 2 </values>
-		<attribute name="realization_ids" type="String" value="r1i1p1;r2i1p1;r3i1p1" />
-	</variable>
-
 	<aggregation  dimName="realization" type="joinNew">
 		<variableAgg name="tas"/>
 		<variableAgg name="pr"/>
-		<netcdf>
+		<netcdf coordValue="r1i1p1">
 		    <aggregation type="union">
 		        <netcdf>
 		            <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
@@ -30,7 +25,7 @@
 		    </aggregation>
 		</netcdf>
 
-		<netcdf>
+		<netcdf coordValue="r2i1p1">
 		    <aggregation type="union">
 		        <netcdf>
 		            <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
@@ -45,7 +40,7 @@
 		    </aggregation>
 		</netcdf>
 
-		<netcdf>
+		<netcdf coordValue="r3i1p1">
 		    <aggregation type="union">
 		        <netcdf>
 		            <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
