@@ -1,11 +1,15 @@
 <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 	<remove name="parent_experiment_rip" type="attribute" />
 	<remove name="realization" type="attribute" />
+	<attribute name="type" type="String" value="GCM" />
+	<attribute name="processing" type="String" value="raw_data" />
 	<attribute name="licence_type" type="String" value="permissive" />
-    <attribute name="terms_of_use" type="String" value="https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html" />
+	<attribute name="terms_of_use" type="String" value="https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html" />
 	<attribute name="attribution" type="String" value="https://pcmdi.llnl.gov/mips/cmip5/citation.html" />
+
 	<variable name="realization" type="int">
 		<values> 0 1 2 </values>
+		<attribute name="realization_ids" type="String" value="r1i1p1;r2i1p1;r3i1p1" />
 	</variable>
 
 	<aggregation  dimName="realization" type="joinNew">
