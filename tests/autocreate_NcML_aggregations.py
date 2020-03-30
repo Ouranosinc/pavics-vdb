@@ -18,7 +18,7 @@ def main():
         with open(dataset, 'r') as f:
             ncml_modify = json.load(f)
         ncml_modify
-        ncml_template = f'{home}/github/github_pavics-vdb/test_NcMLs/test_data/NcML_templates/NcML_template_emptyNetcdf.ncml'
+        ncml_template = f'{home}/github/github_pavics-vdb/tests/test_data/NcML_templates/NcML_template_emptyNetcdf.ncml'
         ncml = xncml.Dataset(ncml_template)
         # ncml.ncroot['netcdf']
         ncml.ncroot['netcdf']['remove'] = ncml_remove_items(ncml_modify['remove'])
