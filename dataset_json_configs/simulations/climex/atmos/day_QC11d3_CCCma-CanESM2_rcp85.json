@@ -1,0 +1,14 @@
+{
+	"attribute": {"type": {"value": "RCM", "type": "String"},
+		"processing": {"value": "raw_data", "type": "String"},
+		"licence_type": {"value": "XXX", "type": "String"},
+		"terms_of_use": {"value": "XXX", "type": "String"},
+		"attribution": {"value": "XXX", "type": "String"}
+	},
+	"location": "/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/",
+	"ncml_type": "climex-multirun",
+	"experiments": ["rcp85"],
+	"variables": ["tasmin","tasmax"],
+	"frequency": "day",
+	"realm": "atmos"
+}
