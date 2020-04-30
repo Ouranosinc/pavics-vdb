@@ -51,18 +51,6 @@ def set_paths(test_name):
 
     return local_test_dir, thredds_test_dir
 
-class TestDatasets:
-    datasets = path.Path('../1-Datasets').rglob('*.ncml')
-    test_name = 'Datasets'
-    local_test_dir, thredds_test_dir = set_paths(test_name)
-    for d in datasets:
-        # copy to thredds:
-        thredds_root
-        ncml = xncml.Dataset(d)
-
-
-
-
 
 class TestTimechanging:
     """tests what happens when time units varies between nc files"""
