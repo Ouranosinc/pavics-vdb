@@ -17,25 +17,25 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
 						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/historical/day/atmos/r1i1p1/tasmin" subdirs="false" suffix=".nc"></scan>
-						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/rcp85/day/atmos/r1i1p1/tasmin" subdirs="false" suffix=".nc"></scan>
+						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/rcp45/day/atmos/r1i1p1/tasmin" subdirs="false" suffix=".nc"></scan>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
 						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/historical/day/atmos/r1i1p1/tasmax" subdirs="false" suffix=".nc"></scan>
-						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/rcp85/day/atmos/r1i1p1/tasmax" subdirs="false" suffix=".nc"></scan>
+						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/rcp45/day/atmos/r1i1p1/tasmax" subdirs="false" suffix=".nc"></scan>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
 						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/historical/day/atmos/r1i1p1/tas" subdirs="false" suffix=".nc"></scan>
-						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/rcp85/day/atmos/r1i1p1/tas" subdirs="false" suffix=".nc"></scan>
+						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/rcp45/day/atmos/r1i1p1/tas" subdirs="false" suffix=".nc"></scan>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
 						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/historical/day/atmos/r1i1p1/pr" subdirs="false" suffix=".nc"></scan>
-						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/rcp85/day/atmos/r1i1p1/pr" subdirs="false" suffix=".nc"></scan>
+						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/rcp45/day/atmos/r1i1p1/pr" subdirs="false" suffix=".nc"></scan>
 					</aggregation>
 				</netcdf>
 			</aggregation>
@@ -45,25 +45,25 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
 						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/historical/day/atmos/r2i1p1/tasmin" subdirs="false" suffix=".nc"></scan>
-						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/rcp85/day/atmos/r2i1p1/tasmin" subdirs="false" suffix=".nc"></scan>
+						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/rcp45/day/atmos/r2i1p1/tasmin" subdirs="false" suffix=".nc"></scan>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
 						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/historical/day/atmos/r2i1p1/tasmax" subdirs="false" suffix=".nc"></scan>
-						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/rcp85/day/atmos/r2i1p1/tasmax" subdirs="false" suffix=".nc"></scan>
+						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/rcp45/day/atmos/r2i1p1/tasmax" subdirs="false" suffix=".nc"></scan>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
 						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/historical/day/atmos/r2i1p1/tas" subdirs="false" suffix=".nc"></scan>
-						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/rcp85/day/atmos/r2i1p1/tas" subdirs="false" suffix=".nc"></scan>
+						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/rcp45/day/atmos/r2i1p1/tas" subdirs="false" suffix=".nc"></scan>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
 						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/historical/day/atmos/r2i1p1/pr" subdirs="false" suffix=".nc"></scan>
-						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/rcp85/day/atmos/r2i1p1/pr" subdirs="false" suffix=".nc"></scan>
+						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/rcp45/day/atmos/r2i1p1/pr" subdirs="false" suffix=".nc"></scan>
 					</aggregation>
 				</netcdf>
 			</aggregation>
@@ -73,25 +73,25 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
 						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/historical/day/atmos/r3i1p1/tasmin" subdirs="false" suffix=".nc"></scan>
-						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/rcp85/day/atmos/r3i1p1/tasmin" subdirs="false" suffix=".nc"></scan>
+						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/rcp45/day/atmos/r3i1p1/tasmin" subdirs="false" suffix=".nc"></scan>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
 						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/historical/day/atmos/r3i1p1/tasmax" subdirs="false" suffix=".nc"></scan>
-						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/rcp85/day/atmos/r3i1p1/tasmax" subdirs="false" suffix=".nc"></scan>
+						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/rcp45/day/atmos/r3i1p1/tasmax" subdirs="false" suffix=".nc"></scan>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
 						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/historical/day/atmos/r3i1p1/tas" subdirs="false" suffix=".nc"></scan>
-						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/rcp85/day/atmos/r3i1p1/tas" subdirs="false" suffix=".nc"></scan>
+						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/rcp45/day/atmos/r3i1p1/tas" subdirs="false" suffix=".nc"></scan>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
 						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/historical/day/atmos/r3i1p1/pr" subdirs="false" suffix=".nc"></scan>
-						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/rcp85/day/atmos/r3i1p1/pr" subdirs="false" suffix=".nc"></scan>
+						<scan location="/pavics-data/cmip5/MPI-M/MPI-ESM-LR/rcp45/day/atmos/r3i1p1/pr" subdirs="false" suffix=".nc"></scan>
 					</aggregation>
 				</netcdf>
 			</aggregation>
