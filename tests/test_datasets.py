@@ -11,6 +11,11 @@ import xncml
 from xclim import subset, ensembles
 import netCDF4
 
+from lxml import etree
+
+
+
+
 home = os.environ['HOME']
 pavics_root = os.path.join(home, 'boreas')  # mapped drive to top level `Birdhouse` folder on thredds
 
@@ -22,10 +27,23 @@ if home == '/home/biner':
     thredds_root = os.path.join(pavics_root, 'testdata/biner/NcML_tests/')
     thredds_cat_root = 'https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/birdhouse/testdata/biner/NcML_tests/'
 else:
-    thredds_root = os.path.join(pavics_root, 'testdata/NcML_tests/')
+    pavics_root = os.path.join(home, 'boreas/boreas')
+    thredds_root = os.path.join(home, 'boreas', 'testdatasets/')
     # correponding url to `thredds_root`
-    thredds_cat_root = 'https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/birdhouse/testdata/NcML_tests/'
+    thredds_cat_root = 'https://pavics.ouranos.ca/testthredds/testdatasets'
+    #thredds_cat_root = 'https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/birdhouse/testdata/NcML_tests/'
 
+class Validator:
+
+    def __init__(self, xsd_path: str):
+        xmlschema_doc = etree.parse(xsd_path)
+        self.xmlschema = etree.XMLSchema(xmlschema_doc)
+
+    def validate(self, xml_path: str) -> bool:
+        xml_doc = etree.parse(xml_path)
+        result = self.xmlschema.validate(xml_doc)
+
+        return result
 
 def recursive_items(dictionary, pattern):
     for key, value in dictionary.items():
@@ -63,47 +81,72 @@ def set_paths(test_name):
 
     return local_test_dir, thredds_test_dir
 
+class TestSchema:
+    def test_valid_schema(self):
+        validator = Validator("../schema/ncml-2.2.xsd")
+        ncmls = list(path.Path("../1-Datasets").rglob('*.ncml'))
+        assert len(ncmls) > 0
+        for f in ncmls:
+            print(f)
+            assert validator.validate(str(f))
+
+
+
 
 class TestDataset:
 
     def test_CMIP5(self):
         test_reg = dict(lon=[-80, -70], lat=[45, 50])
-        datasets = list(path.Path('../1-Datasets/simulations/cmip5/atmos').rglob('*.ncml'))
-        test_name = 'CMIP5Datasets'
-        local_test_dir, thredds_test_dir = set_paths(test_name)
-        thredds_path_server = f'{thredds_cat_root}/Test{test_name}/catalog.html'
+        datasets = sorted(list(path.Path('../1-Datasets/simulations/cmip5/atmos').rglob('*.ncml')))
+
+        thredds_test_dir = f'{thredds_root}/simulations/cmip5/atmos'
+        thredds_path_server = f'{thredds_cat_root}/simulations/cmip5/atmos/catalog.html'
         thredds_test_dir = path.Path(thredds_test_dir)
 
         for ii, dataset in enumerate(datasets):
+            if thredds_test_dir.exists():
+                shutil.rmtree(thredds_test_dir)
             thredds_test_dir.mkdir(parents=True, exist_ok=True)
-            print(dataset.name)
+            print('trying', dataset.name)
             # copy to thredds:
             shutil.copy(dataset, thredds_test_dir)
 
-            ncmls = [ncml for ncml in threddsclient.crawl(thredds_path_server, depth=0)]
+            ncmls_all = [ncml for ncml in threddsclient.crawl(thredds_path_server, depth=0)]
             rem1 = []
-            for n in ncmls:
-                if dataset.name not in n.name:
-                    ncmls.remove(n)
+            ncmls = []
+            for n in ncmls_all:
+                if dataset.name  in n.name:
+                    ncmls.append(n)
 
             if len(ncmls) != 1:
                 raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
-            print('loading NcML via opendap')
+            #print('loading NcML via opendap')
             dsNcML = subset.subset_bbox(
                 xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=256, lon=32, lat=32)),
                 lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
             )
 
             ncml = xncml.Dataset(dataset)
+
+            for l in list(recursive_items(ncml.ncroot, '@location')):
+                mod = dataset.name.split('day_')[-1].split('_historical+')[0]
+                rcp = dataset.name.split('_historical+')[-1].split('.ncml')[0]
+                assert mod in l[1]
+                assert ('historical' in l[1] or rcp in l[1])
+
+                local_path = str(l[1].replace('pavics-data', pavics_root))
+                #print(local_path)
+
+
             files = {}
             for l in list(recursive_items(ncml.ncroot, '@location')):
                 local_path = str(l[1].replace('pavics-data', pavics_root))
-                print(local_path)
+                #print(local_path)
                 if path.Path(local_path).is_dir():
                     test_files = list(sorted(path.Path(local_path).rglob('*.nc')))
                     remove =[]
                     for t in test_files:
-                        print(t)
+                        #print(t)
                         y = netCDF4.Dataset(t)
                         time_y = y.variables['time']
                         dtime = netCDF4.num2date(time_y[:], units=time_y.units, calendar=time_y.calendar)
@@ -115,7 +158,9 @@ class TestDataset:
                     run = path.Path(local_path).parent.name
 
                     ds = subset.subset_bbox(xr.open_mfdataset(test_files,
-                                           combine='by_coords', data_vars='minimal',chunks=dict(time=10, lon=50, lat=50)),
+                                           combine='by_coords',
+                                           data_vars='minimal',
+                                           chunks=dict(time=10, lon=50, lat=50)),
                                            lon_bnds=test_reg['lon'],
                                            lat_bnds=test_reg['lat'],
                                            start_date=str(dsNcML.time.dt.year.min().values),
@@ -134,5 +179,8 @@ class TestDataset:
                             else:
                                 np.testing.assert_array_equal(ds[v].values, test[v].values)
 
-            shutil.rmtree(thredds_test_dir)
+            print(dataset,'ok')
+            shutil.move(dataset,dataset.parent.joinpath('good', dataset.name))
+
+
 
