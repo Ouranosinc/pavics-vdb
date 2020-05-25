@@ -1,0 +1,82 @@
+{
+  "remove": {
+    "redistribution": "attribute"
+  },
+  "attribute": {
+     "institution": {
+      "value": "Ouranos Consortium on Regional Climatology and Adaptation to Climate Change",
+      "type": "String"
+    },
+    "institute_id": {
+      "value": "Ouranos",
+      "type": "String"
+    },
+    "title": {"value": "Ouranos standard ensemble of bias-adjusted climate scenarios version 1.0 (cb-oura-1.0)","type": "String"},
+    "type": {
+      "value": "GCM",
+      "type": "String"
+    },
+    "processing": {
+      "value": "bias_adjusted",
+      "type": "String"
+    },
+    "dataset_description": {
+      "value":"https://www.ouranos.ca/publication-scientifique/FicheLoganGauvin2016_EN.pdf",
+      "type": "String"
+    },
+    "bias_adjustment_method": {
+      "value":"1D-Quantile Mapping",
+      "type": "String"
+    },
+    "bias_adjustment_reference": {
+      "value": "http://doi.org/10.1002/2015JD023890",
+      "type": "String"
+    },
+    "project_id": {
+      "value": "CMIP5",
+      "type": "String"
+    },
+    "licence_type": {
+      "value": "permissive",
+      "type": "String"
+    },
+    "terms_of_use": {
+      "value": "Terms of use at https://www.ouranos.ca/climate-portraits/#/. In addition, the data used for the realization of climate scenarios are subject to the conditions of use of each organization that is the source of this data, and that you must respect. For more details, please refer to:https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html",
+      "type": "String"
+    },
+    "attribution": {
+      "value": "Use of this dataset should be acknowledged as 'Data produced and provided by the Ouranos Consortium on Regional Climatology and Adaptation to Climate Change'. Furthermore, the modeling groups from which the bias-adjusted climate scenarios were consrtucted must also be acknowledged, please refer to: The Coupled Model Intercomparison Project https://pcmdi.llnl.gov/mips/cmip5/citation.html",
+      "type": "String"
+    },
+    "frequency": {
+      "value": "day",
+      "type": "String"
+    },
+    "modeling_realm": {
+      "value": "atmos",
+      "type": "String"
+    },
+    "target_dataset": {
+      "value": "CANADA : ANUSPLIN interpolated Canada daily 300 arc second climate grids; USA : Livneh_et_al_2013",
+      "type": "String"
+    },
+    "target_dataset_references": {
+      "value": "CANADA : https://doi.org/10.1175/2011BAMS3132.1; USA : https://doi.org/10.1175/JCLI-D-12-00508.1",
+      "type": "String"
+    }
+  },
+  "location": "/pavics-data/ouranos/cb-oura-1.0",
+  "ncml_type": "ouranos-cb-oura-1.0",
+  "experiments": [
+    "historical+rcp45",
+    "historical+rcp85"
+  ],
+  "variables": [
+    "tasmin",
+    "tasmax",
+    "pr"
+  ],
+  "frequency": "day",
+  "realm": "atmos",
+  "filename_template": "{freq}_{model}_r1i1p1_na10kgrid_qm-moving-50bins-detrend_1950-2100"
+}
