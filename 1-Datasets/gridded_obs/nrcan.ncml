@@ -17,23 +17,23 @@
   <aggregation type="union">
 	    <netcdf>
 		    <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-                <remove name="ts" type="variable" />
-                <remove name="time_vectors" type="variable" />
 			    <scan location="/pavics-data/nrcan/nrcan_canada_daily/tasmin" suffix=".nc" subdirs="false"/>
+          <remove name="ts" type="variable" />
+          <remove name="time_vectors" type="variable" />
 		    </aggregation>
 	    </netcdf>
 	    <netcdf>
 		    <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-                <remove name="ts" type="variable" />
-                <remove name="time_vectors" type="variable" />
 			    <scan location="/pavics-data/nrcan/nrcan_canada_daily/tasmax" suffix=".nc" subdirs="false"/>
+          <remove name="ts" type="variable" />
+          <remove name="time_vectors" type="variable" />
 		    </aggregation>
 	    </netcdf>
 	    <netcdf>
 		    <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-                <remove name="ts" type="variable" />
-                <remove name="time_vectors" type="variable" />
 			    <scan location="/pavics-data/nrcan/nrcan_canada_daily/pr" suffix=".nc" subdirs="false"/>
+          <remove name="ts" type="variable" />
+          <remove name="time_vectors" type="variable" />
 		    </aggregation>
 	    </netcdf>
   </aggregation>
