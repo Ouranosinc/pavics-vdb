@@ -11,14 +11,16 @@
     <aggregation type="union">
         <netcdf>
             <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-                <scan location="/pavics-data/ecmwf/era5" regExp="tas.*\.nc$" subdirs="false"/>
                 <variable name="tas" orgName="t2m" />
+                <scan location="/pavics-data/ecmwf/era5" regExp="tas.*\.nc$" subdirs="false"/>
+
             </aggregation>
         </netcdf>
         <netcdf>
             <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-                <scan location="/pavics-data/ecmwf/era5" regExp="pr.*\.nc$" subdirs="false"/>
                 <variable name="pr" orgName="tp" />
+                <scan location="/pavics-data/ecmwf/era5" regExp="pr.*\.nc$" subdirs="false"/>
+
             </aggregation>
         </netcdf>
     </aggregation>
