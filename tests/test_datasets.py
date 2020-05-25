@@ -18,7 +18,7 @@ from lxml import etree
 
 home = os.environ['HOME']
 pavics_root = os.path.join(home, 'boreas')  # mapped drive to top level `Birdhouse` folder on thredds
-
+test_reg = dict(lon=[-80, -70], lat=[45, 50])
 # local path root to test data
 local_root = './test_data/'
 # thredds path root for data transfer and thredds catalog url
@@ -95,12 +95,47 @@ class TestSchema:
 
 class TestDataset:
 
-    def test_CMIP5(self):
-        test_reg = dict(lon=[-80, -70], lat=[45, 50])
-        datasets = sorted(list(path.Path('../1-Datasets/simulations/cmip5/atmos').rglob('*.ncml')))
+    # def test_CMIP5(self):
+    #     test_reg = dict(lon=[-80, -70], lat=[45, 50])
+    #     datasets = sorted(list(path.Path('../1-Datasets/simulations/cmip5/atmos').rglob('*.ncml')))
+    #
+    #     thredds_test_dir = f'{thredds_root}/simulations/cmip5/atmos'
+    #     thredds_path_server = f'{thredds_cat_root}/simulations/cmip5/atmos/catalog.html'
+    #     thredds_test_dir = path.Path(thredds_test_dir)
+    #
+    #     for ii, dataset in enumerate(datasets):
+    #         if thredds_test_dir.exists():
+    #             shutil.rmtree(thredds_test_dir)
+    #         thredds_test_dir.mkdir(parents=True, exist_ok=True)
+    #         print('trying', dataset.name)
+    #         # copy to thredds:
+    #         shutil.copy(dataset, thredds_test_dir)
+    #
+    #         ncmls_all = [ncml for ncml in threddsclient.crawl(thredds_path_server, depth=0)]
+    #         rem1 = []
+    #         ncmls = []
+    #         for n in ncmls_all:
+    #             if dataset.name  in n.name:
+    #                 ncmls.append(n)
+    #
+    #         if len(ncmls) != 1:
+    #             raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
+    #         #print('loading NcML via opendap')
+    #         dsNcML = subset.subset_bbox(
+    #             xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=256, lon=32, lat=32)),
+    #             lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
+    #         )
+    #
+    #         ncml = xncml.Dataset(dataset)
+    #
 
-        thredds_test_dir = f'{thredds_root}/simulations/cmip5/atmos'
-        thredds_path_server = f'{thredds_cat_root}/simulations/cmip5/atmos/catalog.html'
+
+    def test_OuraScenGen(self):
+
+        datasets = sorted(list(path.Path('../tmp/simulations/bias_adjusted/cmip5/ouranos/cb-oura-1.0').rglob('*.ncml')))
+
+        thredds_test_dir = f'{thredds_root}/simulations/bias_adjusted/cmip5/ouranos/cb-oura-1.0'
+        thredds_path_server = f'{thredds_cat_root}/simulations/bias_adjusted/cmip5/ouranos/cb-oura-1.0/catalog.html'
         thredds_test_dir = path.Path(thredds_test_dir)
 
         for ii, dataset in enumerate(datasets):
@@ -110,9 +145,7 @@ class TestDataset:
             print('trying', dataset.name)
             # copy to thredds:
             shutil.copy(dataset, thredds_test_dir)
-
             ncmls_all = [ncml for ncml in threddsclient.crawl(thredds_path_server, depth=0)]
-            rem1 = []
             ncmls = []
             for n in ncmls_all:
                 if dataset.name  in n.name:
@@ -120,67 +153,78 @@ class TestDataset:
 
             if len(ncmls) != 1:
                 raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
-            #print('loading NcML via opendap')
+
             dsNcML = subset.subset_bbox(
-                xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=256, lon=32, lat=32)),
+                xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=365, lon=50, lat=56)),
                 lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
             )
 
-            ncml = xncml.Dataset(dataset)
+            compare_ncml_rawdata(dataset,dsNcML)
 
-            for l in list(recursive_items(ncml.ncroot, '@location')):
-                mod = dataset.name.split('day_')[-1].split('_historical+')[0]
-                rcp = dataset.name.split('_historical+')[-1].split('.ncml')[0]
-                assert mod in l[1]
-                assert ('historical' in l[1] or rcp in l[1])
-
-                local_path = str(l[1].replace('pavics-data', pavics_root))
-                #print(local_path)
-
-
-            files = {}
-            for l in list(recursive_items(ncml.ncroot, '@location')):
-                local_path = str(l[1].replace('pavics-data', pavics_root))
-                #print(local_path)
-                if path.Path(local_path).is_dir():
-                    test_files = list(sorted(path.Path(local_path).rglob('*.nc')))
-                    remove =[]
-                    for t in test_files:
-                        #print(t)
-                        y = netCDF4.Dataset(t)
-                        time_y = y.variables['time']
-                        dtime = netCDF4.num2date(time_y[:], units=time_y.units, calendar=time_y.calendar)
-                        if dtime.min().year > 2100:
-                            print('removing ' , t)
-                            remove.append(t)
-                    for t in remove:
-                        test_files.remove(t)
-                    run = path.Path(local_path).parent.name
-
-                    ds = subset.subset_bbox(xr.open_mfdataset(test_files,
-                                           combine='by_coords',
-                                           data_vars='minimal',
-                                           chunks=dict(time=10, lon=50, lat=50)),
-                                           lon_bnds=test_reg['lon'],
-                                           lat_bnds=test_reg['lat'],
-                                           start_date=str(dsNcML.time.dt.year.min().values),
-                                           end_date=str(dsNcML.time.dt.year.max().values))
-
-                    ds
-                    test = dsNcML.sel(time=ds.time, realization=(dsNcML.realization.values.astype('str') == run)).squeeze()
-                    np.testing.assert_array_equal(ds.time.values, test.time.values)
-                    time1 = np.random.choice(ds.time, 10)
-                    with ProgressBar():
-                        for v in ds.data_vars:
-                            print(v)
-                            if 'time' in ds[v].dims:
-                                test2 = test[v].sel(time=time1).load()
-                                np.testing.assert_array_equal(ds[v].sel(time=time1).values, test2)
-                            else:
-                                np.testing.assert_array_equal(ds[v].values, test[v].values)
-
-            print(dataset,'ok')
-            shutil.move(dataset,dataset.parent.joinpath('good', dataset.name))
+def compare_ncml_rawdata(dataset, dsNcML):
+    ncml = xncml.Dataset(dataset)
+    for l in list(recursive_items(ncml.ncroot, '@location')):
+        mod = dataset.name.split('day_')[-1].split('_historical+')[0]
+        rcp = dataset.name.split('_historical+')[-1][0:5]
+        assert mod in l[1]
+        assert ('historical' in l[1] or rcp in l[1])
 
 
+    files = {}
+    for l in list(recursive_items(ncml.ncroot, '@location')):
+        local_path = str(l[1].replace('pavics-data', pavics_root))
+        #print(local_path)
+        if path.Path(local_path).is_dir():
+            test_files = list(sorted(path.Path(local_path).rglob('*.nc')))
+            remove =[]
+            for t in test_files:
+                #print(t)
+                y = netCDF4.Dataset(t)
+                time_y = y.variables['time']
+                dtime = netCDF4.num2date(time_y[:], units=time_y.units, calendar=time_y.calendar)
+                if dtime.min().year > 2100:
+                    print('removing ' , t)
+                    remove.append(t)
+            for t in remove:
+                test_files.remove(t)
+            run = path.Path(local_path).parent.name
 
+            ds = subset.subset_bbox(xr.open_mfdataset(test_files,
+                                   combine='by_coords',
+                                   data_vars='minimal',
+                                   chunks=dict(time=10, lon=50, lat=50)),
+                                   lon_bnds=test_reg['lon'],
+                                   lat_bnds=test_reg['lat'],
+                                   start_date=str(dsNcML.time.dt.year.min().values),
+                                   end_date=str(dsNcML.time.dt.year.max().values))
+
+            if 'time_vectors' in ds.data_vars:
+                ds = ds.drop_vars(['time_vectors','ts'])
+
+
+            test = dsNcML.sel(time=ds.time).squeeze()
+            for coord in ds.coords:
+                np.testing.assert_array_equal(ds[coord].values, test[coord].values)
+            time1 = np.random.choice(ds.time, 10)
+            with ProgressBar():
+                for v in ds.data_vars:
+                    print(v)
+                    if 'time' in ds[v].dims:
+                        test2 = test[v].sel(time=time1).load()
+                        np.testing.assert_array_almost_equal(ds[v].sel(time=time1).values, test2)
+                    else:
+                        np.testing.assert_array_almost_equal(ds[v].values, test[v].values)
+
+    print(dataset,'ok')
+    movfile = path.Path(str(dataset).replace('tmp','1-Datasets'))
+    if not movfile.parent.exists():
+        movfile.parent.mkdir(parents=True)
+    shutil.move(dataset,movfile)
+
+
+def main():
+    test = TestDataset.test_OuraScenGen
+    test(test)
+
+if 'main' in __name__:
+    main()
