@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+	<remove name="redistribution" type="attribute"></remove>
+	<attribute name="institution" type="String" value="Ouranos Consortium on Regional Climatology and Adaptation to Climate Change"></attribute>
+	<attribute name="institute_id" type="String" value="Ouranos"></attribute>
+	<attribute name="title" type="String" value="Ouranos standard ensemble of bias-adjusted climate scenarios version 1.0 (cb-oura-1.0)"></attribute>
+	<attribute name="type" type="String" value="GCM"></attribute>
+	<attribute name="processing" type="String" value="bias_adjusted"></attribute>
+	<attribute name="dataset_description" type="String" value="https://www.ouranos.ca/publication-scientifique/FicheLoganGauvin2016_EN.pdf"></attribute>
+	<attribute name="bias_adjustment_method" type="String" value="1D-Quantile Mapping"></attribute>
+	<attribute name="bias_adjustment_reference" type="String" value="http://doi.org/10.1002/2015JD023890"></attribute>
+	<attribute name="project_id" type="String" value="CMIP5"></attribute>
+	<attribute name="licence_type" type="String" value="permissive"></attribute>
+	<attribute name="terms_of_use" type="String" value="Terms of use at https://www.ouranos.ca/climate-portraits/#/. In addition, the data used for the realization of climate scenarios are subject to the conditions of use of each organization that is the source of this data, and that you must respect. For more details, please refer to:https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html"></attribute>
+	<attribute name="attribution" type="String" value="Use of this dataset should be acknowledged as 'Data produced and provided by the Ouranos Consortium on Regional Climatology and Adaptation to Climate Change'. Furthermore, the modeling groups from which the bias-adjusted climate scenarios were consrtucted must also be acknowledged, please refer to: The Coupled Model Intercomparison Project https://pcmdi.llnl.gov/mips/cmip5/citation.html"></attribute>
+	<attribute name="frequency" type="String" value="day"></attribute>
+	<attribute name="modeling_realm" type="String" value="atmos"></attribute>
+	<attribute name="target_dataset" type="String" value="CANADA : ANUSPLIN interpolated Canada daily 300 arc second climate grids; USA : Livneh_et_al_2013"></attribute>
+	<attribute name="target_dataset_references" type="String" value="CANADA : https://doi.org/10.1175/2011BAMS3132.1; USA : https://doi.org/10.1175/JCLI-D-12-00508.1"></attribute>
+	<attribute name="driving_institution" type="String" value="Canadian Centre for Climate Modelling and Analysis"></attribute>
+	<attribute name="driving_institute_id" type="String" value="CCCMA"></attribute>
+	<attribute name="driving_model" type="String" value="CanESM2"></attribute>
+	<aggregation type="Union">
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/ouranos/cb-oura-1.0/CanESM2/rcp85/day/tasmin" subdirs="false" suffix=".nc"></scan>
+				<remove name="ts" type="variable"></remove>
+				<remove name="time_vectors" type="variable"></remove>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/ouranos/cb-oura-1.0/CanESM2/rcp85/day/tasmax" subdirs="false" suffix=".nc"></scan>
+				<remove name="ts" type="variable"></remove>
+				<remove name="time_vectors" type="variable"></remove>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/ouranos/cb-oura-1.0/CanESM2/rcp85/day/pr" subdirs="false" suffix=".nc"></scan>
+				<remove name="ts" type="variable"></remove>
+				<remove name="time_vectors" type="variable"></remove>
+			</aggregation>
+		</netcdf>
+	</aggregation>
+</netcdf>
