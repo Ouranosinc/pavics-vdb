@@ -1,0 +1,69 @@
+{
+  "remove": {
+    "product": "attribute",
+    "downscaling_method": "attribute",
+    "downscaling_method_id": "attribute",
+    "downscaling_package_id": "attribute",
+    "references": "attribute"
+
+  },
+  "attribute": {
+
+    "title": {"value": "PCIC/ECCC statistically downscaled daily Canada-wide climate scenarios version 2 (BCCAQv2)","type": "String"},
+    "type": {
+      "value": "GCM",
+      "type": "String"
+    },
+    "processing": {
+      "value": "bias_adjusted",
+      "type": "String"
+    },
+    "dataset_description": {
+      "value":"https://www.pacificclimate.org/data/statistically-downscaled-climate-scenarios",
+      "type": "String"
+    },
+    "bias_adjustment_method": {
+      "value":"Quantile Delta Mapping",
+      "type": "String"
+    },
+    "bias_adjustment_method_id": {
+      "value":"BCCAQv2",
+      "type": "String"
+    },
+    "bias_adjustment_reference": {
+      "value": "Alex J. Cannon, Stephen R. Sobie, and Trevor Q. Murdock, 2015: Bias Correction of GCM Precipitation by Quantile Mapping: How Well Do Methods Preserve Changes in Quantiles and Extremes?. J. Climate, 28, 6938-6959.",
+      "type": "String"
+    },
+    "licence_type": {
+      "value": "permissive",
+      "type": "String"
+    },
+    "licence": {
+      "value": "https://open.canada.ca/en/open-government-licence-canada",
+      "type": "String"
+    },
+    "terms_of_use": {
+      "value": "Further terms of use at https://pacificclimate.org/data/statistically-downscaled-climate-scenarios.",
+      "type": "String"
+    },
+    "attribution": {
+      "value": "Citation information for this dataset can be found at https://pacificclimate.org/data/statistically-downscaled-climate-scenarios. ",
+      "type": "String"
+    }
+  },
+  "location": "/pavics-data/pcic/BCCAQv2",
+  "ncml_type": "pcic-bccaqv2",
+  "experiments": [
+    "historical+rcp26",
+    "historical+rcp45",
+    "historical+rcp85"
+  ],
+  "variables": [
+    "tasmin",
+    "tasmax",
+    "pr"
+  ],
+  "frequency": "day",
+  "realm": "atmos",
+  "filename_template": "{freq}_{model}_1950-2100"
+}
