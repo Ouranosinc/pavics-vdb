@@ -128,14 +128,12 @@ class TestDataset:
     #
     #         ncml = xncml.Dataset(dataset)
     #
+    def test_BCCAQv2(self):
 
+        datasets = sorted(list(path.Path('../tmp/simulations/bias_adjusted/cmip5/pcic/bccaqv2').rglob('*.ncml')))
 
-    def test_OuraScenGen(self):
-
-        datasets = sorted(list(path.Path('../tmp/simulations/bias_adjusted/cmip5/ouranos/cb-oura-1.0').rglob('*.ncml')))
-
-        thredds_test_dir = f'{thredds_root}/simulations/bias_adjusted/cmip5/ouranos/cb-oura-1.0'
-        thredds_path_server = f'{thredds_cat_root}/simulations/bias_adjusted/cmip5/ouranos/cb-oura-1.0/catalog.html'
+        thredds_test_dir = f'{thredds_root}/simulations/bias_adjusted/cmip5/pcic/bccaqv2'
+        thredds_path_server = f'{thredds_cat_root}/simulations/bias_adjusted/cmip5/pcic/bccaqv2/catalog.html'
         thredds_test_dir = path.Path(thredds_test_dir)
 
         for ii, dataset in enumerate(datasets):
@@ -148,7 +146,7 @@ class TestDataset:
             ncmls_all = [ncml for ncml in threddsclient.crawl(thredds_path_server, depth=0)]
             ncmls = []
             for n in ncmls_all:
-                if dataset.name  in n.name:
+                if dataset.name in n.name:
                     ncmls.append(n)
 
             if len(ncmls) != 1:
@@ -159,7 +157,38 @@ class TestDataset:
                 lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
             )
 
-            compare_ncml_rawdata(dataset,dsNcML)
+            compare_ncml_rawdata(dataset, dsNcML)
+
+    # def test_OuraScenGen(self):
+    #
+    #     datasets = sorted(list(path.Path('../tmp/simulations/bias_adjusted/cmip5/ouranos/cb-oura-1.0').rglob('*.ncml')))
+    #
+    #     thredds_test_dir = f'{thredds_root}/simulations/bias_adjusted/cmip5/ouranos/cb-oura-1.0'
+    #     thredds_path_server = f'{thredds_cat_root}/simulations/bias_adjusted/cmip5/ouranos/cb-oura-1.0/catalog.html'
+    #     thredds_test_dir = path.Path(thredds_test_dir)
+    #
+    #     for ii, dataset in enumerate(datasets):
+    #         if thredds_test_dir.exists():
+    #             shutil.rmtree(thredds_test_dir)
+    #         thredds_test_dir.mkdir(parents=True, exist_ok=True)
+    #         print('trying', dataset.name)
+    #         # copy to thredds:
+    #         shutil.copy(dataset, thredds_test_dir)
+    #         ncmls_all = [ncml for ncml in threddsclient.crawl(thredds_path_server, depth=0)]
+    #         ncmls = []
+    #         for n in ncmls_all:
+    #             if dataset.name  in n.name:
+    #                 ncmls.append(n)
+    #
+    #         if len(ncmls) != 1:
+    #             raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
+    #
+    #         dsNcML = subset.subset_bbox(
+    #             xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=365, lon=50, lat=56)),
+    #             lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
+    #         )
+    #
+    #         compare_ncml_rawdata(dataset,dsNcML)
 
 def compare_ncml_rawdata(dataset, dsNcML):
     ncml = xncml.Dataset(dataset)
@@ -174,29 +203,37 @@ def compare_ncml_rawdata(dataset, dsNcML):
     for l in list(recursive_items(ncml.ncroot, '@location')):
         local_path = str(l[1].replace('pavics-data', pavics_root))
         #print(local_path)
-        if path.Path(local_path).is_dir():
-            test_files = list(sorted(path.Path(local_path).rglob('*.nc')))
-            remove =[]
-            for t in test_files:
-                #print(t)
-                y = netCDF4.Dataset(t)
-                time_y = y.variables['time']
-                dtime = netCDF4.num2date(time_y[:], units=time_y.units, calendar=time_y.calendar)
-                if dtime.min().year > 2100:
-                    print('removing ' , t)
-                    remove.append(t)
-            for t in remove:
-                test_files.remove(t)
-            run = path.Path(local_path).parent.name
+        if path.Path(local_path).is_dir() or path.Path(local_path).is_file() :
+            if path.Path(local_path).is_file():
+                ds = subset.subset_bbox(xr.open_dataset(path.Path(local_path),
+                                        chunks=dict(time=10, lon=50, lat=50)),
+                                        lon_bnds=test_reg['lon'],
+                                        lat_bnds=test_reg['lat'],
+                                        start_date=str(dsNcML.time.dt.year.min().values),
+                                        end_date=str(dsNcML.time.dt.year.max().values))
+            else:
+                test_files = list(sorted(path.Path(local_path).rglob('*.nc')))
+                remove =[]
+                for t in test_files:
+                    #print(t)
+                    y = netCDF4.Dataset(t)
+                    time_y = y.variables['time']
+                    dtime = netCDF4.num2date(time_y[:], units=time_y.units, calendar=time_y.calendar)
+                    if dtime.min().year > 2100:
+                        print('removing ' , t)
+                        remove.append(t)
+                for t in remove:
+                    test_files.remove(t)
+                run = path.Path(local_path).parent.name
 
-            ds = subset.subset_bbox(xr.open_mfdataset(test_files,
-                                   combine='by_coords',
-                                   data_vars='minimal',
-                                   chunks=dict(time=10, lon=50, lat=50)),
-                                   lon_bnds=test_reg['lon'],
-                                   lat_bnds=test_reg['lat'],
-                                   start_date=str(dsNcML.time.dt.year.min().values),
-                                   end_date=str(dsNcML.time.dt.year.max().values))
+                ds = subset.subset_bbox(xr.open_mfdataset(test_files,
+                                       combine='by_coords',
+                                       data_vars='minimal',
+                                       chunks=dict(time=10, lon=50, lat=50)),
+                                       lon_bnds=test_reg['lon'],
+                                       lat_bnds=test_reg['lat'],
+                                       start_date=str(dsNcML.time.dt.year.min().values),
+                                       end_date=str(dsNcML.time.dt.year.max().values))
 
             if 'time_vectors' in ds.data_vars:
                 ds = ds.drop_vars(['time_vectors','ts'])
@@ -223,7 +260,7 @@ def compare_ncml_rawdata(dataset, dsNcML):
 
 
 def main():
-    test = TestDataset.test_OuraScenGen
+    test = TestDataset.test_BCCAQv2
     test(test)
 
 if 'main' in __name__:

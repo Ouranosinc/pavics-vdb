@@ -11,7 +11,7 @@ pavics_root = f"{home}/boreas/boreas"
 
 
 def main():
-    dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('*BCCAQv2*.json')
+    dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('*bccaqv2*.json')
     for dataset in dataset_configs:
         with open(dataset, 'r') as f:
             ncml_modify = json.load(f)
@@ -21,9 +21,9 @@ def main():
         datasets = ncml_create_datasets(ncml_template=ncml_template, config=ncml_modify)
         for d in datasets.keys():
             if ncml_modify['ncml_type'] == 'pcic-bccaqv2':
-                keylist = get_key_values(datasets[d].ncroot, searchkeys=['@regExp'])
+                keylist = get_key_values(datasets[d].ncroot, searchkeys=['@location'])
                 exp = f"historical{d.split('_historical')[-1]}"
-                run = keylist['@regExp'][0].split(exp)[-1].split('.*')[0].replace('_','')
+                run = keylist['@location'][0].split(exp)[-1].split('_195')[0].replace('_','')
             outpath = p.Path(str(dataset.parent).replace('dataset_json_configs', 'tmp')).joinpath(
                 f"{ncml_modify['filename_template'].format(freq=ncml_modify['frequency'], model=d, run=run)}.ncml")
             if not outpath.parent.exists():
@@ -256,12 +256,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
                     runs = runs[0]
                     r1 = runs.name.split(exp)[-1].split('_')[1]
                     netcdf2 = ncml_netcdf_container()
-                    netcdf2['scan'] = []
-                    regExp = f"{v}.*_{mod}_.*{exp}_{r1}.*\.nc"
-                    scan = {'@location': str(location).replace(pavics_root, 'pavics-data'), '@subdirs': 'false','@regExp':regExp,
-                            '@suffix': '.nc'}
-                    netcdf2['scan'].append(ncml_add_scan(scan))
-
+                    netcdf2['@location'] = str(runs).replace(pavics_root,'pavics-data')
                     agg['netcdf'].append(netcdf2)
                     del netcdf2
 
