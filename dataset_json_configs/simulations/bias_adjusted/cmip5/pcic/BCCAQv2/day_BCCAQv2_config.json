@@ -65,5 +65,5 @@
   ],
   "frequency": "day",
   "realm": "atmos",
-  "filename_template": "{freq}_{model}_1950-2100"
+  "filename_template": "{freq}_{model}_{run}_19500101-21001231"
 }

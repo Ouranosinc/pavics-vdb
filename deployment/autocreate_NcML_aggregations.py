@@ -3,7 +3,7 @@ import json
 import os
 import pathlib as p
 from collections import OrderedDict
-
+import collections
 import xncml
 
 home = os.environ['HOME']
@@ -20,10 +20,16 @@ def main():
 
         datasets = ncml_create_datasets(ncml_template=ncml_template, config=ncml_modify)
         for d in datasets.keys():
+            if ncml_modify['ncml_type'] == 'pcic-bccaqv2':
+                keylist = get_key_values(datasets[d].ncroot, searchkeys=['@regExp'])
+                exp = f"historical{d.split('_historical')[-1]}"
+                run = keylist['@regExp'][0].split(exp)[-1].split('.*')[0].replace('_','')
             outpath = p.Path(str(dataset.parent).replace('dataset_json_configs', 'tmp')).joinpath(
-                f"{ncml_modify['filename_template'].format(freq=ncml_modify['frequency'], model=d)}.ncml")
+                f"{ncml_modify['filename_template'].format(freq=ncml_modify['frequency'], model=d, run=run)}.ncml")
             if not outpath.parent.exists():
                 outpath.parent.mkdir(parents=True)
+
+
             datasets[d].to_ncml(outpath)
 
 
@@ -321,6 +327,36 @@ def ncml_remove_items(dict=None):
         remove.append(d1)
         del d1
     return remove
+
+
+def recursive_items(dictionary, pattern):
+    for key, value in dictionary.items():
+        if key == pattern or value==pattern:
+            yield (key, value)
+            if type(value) is collections.OrderedDict:
+                yield from recursive_items(value, pattern=pattern)
+            elif type(value) is list:
+                for l in value:
+                    yield from recursive_items(l, pattern=pattern)
+        else:
+            if type(value) is collections.OrderedDict:
+                yield from recursive_items(value, pattern=pattern)
+            elif type(value) is list:
+                for l in value:
+                    yield from recursive_items(l, pattern=pattern)
+    #yield (key, value)
+
+def get_key_values(ncml, searchkeys=None):
+    key_vals = {}
+    for s in searchkeys:
+        key_vals[s] = []
+
+        for key, value in recursive_items(ncml, s):
+            print(key, value)
+            if key in searchkeys or value in searchkeys:
+                key_vals[key].append(value)
+
+    return key_vals
 
 
 if __name__ == "__main__":
