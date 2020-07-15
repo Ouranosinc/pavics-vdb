@@ -3,7 +3,7 @@ import json
 import os
 import pathlib as p
 from collections import OrderedDict
-
+import collections
 import xncml
 
 home = os.environ['HOME']
@@ -11,7 +11,7 @@ pavics_root = f"{home}/boreas/boreas"
 
 
 def main():
-    dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('*cb-oura*.json')
+    dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('*bccaqv2*.json')
     for dataset in dataset_configs:
         with open(dataset, 'r') as f:
             ncml_modify = json.load(f)
@@ -20,10 +20,16 @@ def main():
 
         datasets = ncml_create_datasets(ncml_template=ncml_template, config=ncml_modify)
         for d in datasets.keys():
+            if ncml_modify['ncml_type'] == 'pcic-bccaqv2':
+                keylist = get_key_values(datasets[d].ncroot, searchkeys=['@location'])
+                exp = f"historical{d.split('_historical')[-1]}"
+                run = keylist['@location'][0].split(exp)[-1].split('_195')[0].replace('_','')
             outpath = p.Path(str(dataset.parent).replace('dataset_json_configs', 'tmp')).joinpath(
-                f"{ncml_modify['filename_template'].format(freq=ncml_modify['frequency'], model=d)}.ncml")
+                f"{ncml_modify['filename_template'].format(freq=ncml_modify['frequency'], model=d, run=run)}.ncml")
             if not outpath.parent.exists():
                 outpath.parent.mkdir(parents=True)
+
+
             datasets[d].to_ncml(outpath)
 
 
@@ -224,6 +230,45 @@ def ncml_create_datasets(ncml_template=None, config=None):
                 del ncml1
         return ncmls
 
+    elif config['ncml_type'] == "pcic-bccaqv2":
+        mods = sorted(
+            list(set(['BNU-ESM', 'CCSM4', 'CESM1-CAM5', 'CNRM-CM5', 'CSIRO-Mk3-6-0', 'CanESM2', 'FGOALS-g2', 'GFDL-CM3',
+                      'GFDL-ESM2G', 'GFDL-ESM2M', 'HadGEM2-AO',
+                      'HadGEM2-ES', 'IPSL-CM5A-LR', 'IPSL-CM5A-MR', 'MIROC-ESM-CHEM', 'MIROC-ESM', 'MIROC5',
+                      'MPI-ESM-LR',
+                      'MPI-ESM-MR', 'MRI-CGCM3', 'NorESM1-M', 'NorESM1-ME', 'bcc-csm1-1-m', 'bcc-csm1-1'])))
+        assert len(mods) == 24
+        ncmls = {}
+        location = p.Path(config['location'].replace('pavics-data', pavics_root))
+        for mod in mods:
+            for exp in config['experiments']:
+                agg_dict = {"@type": "Union"}
+                agg = ncml_add_aggregation(agg_dict)
+                # add runs
+                agg['netcdf'] = []
+                freq = config['frequency']
+                realm = config['realm']
+                rcp = exp.split('+')[-1]
+                #runs = sorted(glob.glob(path.join(inrep1, "*" + m + "_hist*r*i1p1*195*2*" + f + "*.nc")))
+
+                for v in config['variables']:
+                    runs = sorted(list(location.glob(f"{v}*_{mod}_*{exp}*.nc")))
+                    runs = runs[0]
+                    r1 = runs.name.split(exp)[-1].split('_')[1]
+                    netcdf2 = ncml_netcdf_container()
+                    netcdf2['@location'] = str(runs).replace(pavics_root,'pavics-data')
+                    agg['netcdf'].append(netcdf2)
+                    del netcdf2
+
+                ncml1 = xncml.Dataset(ncml_template)
+                ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
+                attrs = config['attribute']
+                ncml1.ncroot['netcdf']['attribute'] = ncml_add_attributes(attrs)
+                ncml1.ncroot['netcdf']['aggregation'] = agg
+                ncmls[f'{mod}_{exp}'] = ncml1
+                del ncml1
+        return ncmls
+
 def ncml_add_scan(dict=None):
     d1 = OrderedDict()
     for d in dict:
@@ -277,6 +322,36 @@ def ncml_remove_items(dict=None):
         remove.append(d1)
         del d1
     return remove
+
+
+def recursive_items(dictionary, pattern):
+    for key, value in dictionary.items():
+        if key == pattern or value==pattern:
+            yield (key, value)
+            if type(value) is collections.OrderedDict:
+                yield from recursive_items(value, pattern=pattern)
+            elif type(value) is list:
+                for l in value:
+                    yield from recursive_items(l, pattern=pattern)
+        else:
+            if type(value) is collections.OrderedDict:
+                yield from recursive_items(value, pattern=pattern)
+            elif type(value) is list:
+                for l in value:
+                    yield from recursive_items(l, pattern=pattern)
+    #yield (key, value)
+
+def get_key_values(ncml, searchkeys=None):
+    key_vals = {}
+    for s in searchkeys:
+        key_vals[s] = []
+
+        for key, value in recursive_items(ncml, s):
+            print(key, value)
+            if key in searchkeys or value in searchkeys:
+                key_vals[key].append(value)
+
+    return key_vals
 
 
 if __name__ == "__main__":
