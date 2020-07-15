@@ -248,7 +248,7 @@ def compare_ncml_rawdata(dataset, dsNcML):
                     print(v)
                     if 'time' in ds[v].dims:
                         test2 = test[v].sel(time=time1).load()
-                        np.testing.assert_array_almost_equal(ds[v].sel(time=time1).values, test2)
+                        np.testing.assert_array_almost_equal(ds[v].sel(time=time1).values, test2, decimal=5)
                     else:
                         np.testing.assert_array_almost_equal(ds[v].values, test[v].values)
 
