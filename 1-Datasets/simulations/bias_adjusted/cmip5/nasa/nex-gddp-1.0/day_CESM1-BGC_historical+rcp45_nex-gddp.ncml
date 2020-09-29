@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+	<remove name="model_id" type="attribute"></remove>
+	<remove name="experiment" type="attribute"></remove>
+	<remove name="downscalingModel" type="attribute"></remove>
+	<remove name="references" type="attribute"></remove>
+	<attribute name="title" type="String" value="The NASA Earth Exchange Global Daily Downscaled Projections (NEX-GDDP) "></attribute>
+	<attribute name="type" type="String" value="GCM"></attribute>
+	<attribute name="project_id" type="String" value="CMIP5"></attribute>
+	<attribute name="processing" type="String" value="bias_adjusted"></attribute>
+	<attribute name="dataset_description" type="String" value="https://www.nccs.nasa.gov/services/data-collections/land-based-products/nex-gddp"></attribute>
+	<attribute name="bias_adjustment_method" type="String" value="BCSD"></attribute>
+	<attribute name="bias_adjustment_reference" type="String" value="Thrasher et al., 2012, Hydrol. Earth Syst. Sci.,16, 3309-3314. &#10;Ref period obs: latest version of the Princeton Global Meteorological Forcings (http://hydrology.princeton.edu/data.php), &#10;based on Sheffield et al., 2006, J. Climate, 19 (13), 3088-3111."></attribute>
+	<attribute name="licence_type" type="String" value="permissive"></attribute>
+	<attribute name="licence" type="String" value="http://www.usa.gov/publicdomain/label/1.0/. "></attribute>
+	<attribute name="attribution" type="String" value="Please add the following acknowledgement to any publications that result from use of this dataset: Climate scenarios used were from the NEX-GDDP dataset, prepared by the Climate Analytics Group and NASA Ames Research Center using the NASA Earth Exchange, and distributed by the NASA Center for Climate Simulation (NCCS)"></attribute>
+	<attribute name="frequency" type="String" value="day"></attribute>
+	<attribute name="modeling_realm" type="String" value="atmos"></attribute>
+	<attribute name="target_dataset_references" type="String" value="Sheffield J, Goteti G, Wood EF (2006) Development of a 50-yr high-resolution global dataset of meteorological forcings for land surface modeling. J. Climate 19 (13): 3088-3111."></attribute>
+	<attribute name="target_dataset" type="String" value="Sheffield 2006. Global historical gridded daily observations"></attribute>
+	<aggregation type="Union">
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/nasa/nex_gddp/BCSD" regExp="tasmin_day_BCSD_historical_r1i1p1_CESM1-BGC_.*\.nc$" subdirs="True" suffix=".nc"></scan>
+				<scan location="/pavics-data/nasa/nex_gddp/BCSD" regExp="tasmin_day_BCSD_rcp45_r1i1p1_CESM1-BGC_.*\.nc$" subdirs="True" suffix=".nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/nasa/nex_gddp/BCSD" regExp="tasmax_day_BCSD_historical_r1i1p1_CESM1-BGC_.*\.nc$" subdirs="True" suffix=".nc"></scan>
+				<scan location="/pavics-data/nasa/nex_gddp/BCSD" regExp="tasmax_day_BCSD_rcp45_r1i1p1_CESM1-BGC_.*\.nc$" subdirs="True" suffix=".nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/nasa/nex_gddp/BCSD" regExp="pr_day_BCSD_historical_r1i1p1_CESM1-BGC_.*\.nc$" subdirs="True" suffix=".nc"></scan>
+				<scan location="/pavics-data/nasa/nex_gddp/BCSD" regExp="pr_day_BCSD_rcp45_r1i1p1_CESM1-BGC_.*\.nc$" subdirs="True" suffix=".nc"></scan>
+			</aggregation>
+		</netcdf>
+	</aggregation>
+</netcdf>
