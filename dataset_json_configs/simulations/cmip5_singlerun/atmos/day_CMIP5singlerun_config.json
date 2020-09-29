@@ -1,0 +1,15 @@
+{"remove": {},
+	"attribute": {"type": {"value": "GCM", "type": "String"},
+		"processing": {"value": "raw_data", "type": "String"},
+		"licence_type": {"value": "permissive", "type": "String"},
+		"terms_of_use": {"value": "https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html", "type": "String"},
+		"attribution": {"value": "https://pcmdi.llnl.gov/mips/cmip5/citation.html", "type": "String"}
+	},
+	"location": "/pavics-data/cmip5/",
+	"ncml_type": "cmip5-1run-batch-model",
+	"experiments": ["historical+rcp45","historical+rcp85"],
+	"variables": ["tasmin","tasmax","tas","pr"],
+	"frequency": "day",
+	"realm": "atmos",
+	"separate_model_directory": "True"
+}

@@ -1,0 +1,77 @@
+{
+  "remove": {
+    "model_id": "attribute",
+    "experiment": "attribute",
+    "downscalingModel": "attribute",
+    "references": "attribute"
+  },
+  "attribute": {
+    "title": {"value": "The NASA Earth Exchange Global Daily Downscaled Projections (NEX-GDDP) ","type": "String"},
+    "type": {
+      "value": "GCM",
+      "type": "String"
+    },
+    "project_id": {
+      "value": "CMIP5",
+      "type": "String"
+    },
+    "processing": {
+      "value": "bias_adjusted",
+      "type": "String"
+    },
+    "dataset_description": {
+      "value":"https://www.nccs.nasa.gov/services/data-collections/land-based-products/nex-gddp",
+      "type": "String"
+    },
+    "bias_adjustment_method": {
+      "value":"BCSD",
+      "type": "String"
+    },
+    "bias_adjustment_reference": {
+      "value": "Thrasher et al., 2012, Hydrol. Earth Syst. Sci.,16, 3309-3314. \nRef period obs: latest version of the Princeton Global Meteorological Forcings (http://hydrology.princeton.edu/data.php), \nbased on Sheffield et al., 2006, J. Climate, 19 (13), 3088-3111.",
+      "type": "String"
+    },
+    "licence_type": {
+      "value": "permissive",
+      "type": "String"
+    },
+    "licence": {
+      "value": "http://www.usa.gov/publicdomain/label/1.0/. ",
+      "type": "String"
+    },
+    "attribution": {
+      "value": "Please add the following acknowledgement to any publications that result from use of this dataset: Climate scenarios used were from the NEX-GDDP dataset, prepared by the Climate Analytics Group and NASA Ames Research Center using the NASA Earth Exchange, and distributed by the NASA Center for Climate Simulation (NCCS)",
+      "type": "String"
+    },
+    "frequency": {
+      "value": "day",
+      "type": "String"
+    },
+    "modeling_realm": {
+      "value": "atmos",
+      "type": "String"
+    },
+    "target_dataset_references": {
+      "value": "Sheffield J, Goteti G, Wood EF (2006) Development of a 50-yr high-resolution global dataset of meteorological forcings for land surface modeling. J. Climate 19 (13): 3088-3111.",
+      "type": "String"
+    },
+    "target_dataset": {
+      "value": "Sheffield 2006. Global historical gridded daily observations",
+      "type": "String"
+    }
+  },
+  "location": "/pavics-data/nasa/nex_gddp/BCSD",
+  "ncml_type": "nasa-nex_gddp-1.0",
+  "experiments": [
+    "historical+rcp45",
+    "historical+rcp85"
+  ],
+  "variables": [
+    "tasmin",
+    "tasmax",
+    "pr"
+  ],
+  "frequency": "day",
+  "realm": "atmos",
+  "filename_template": "{freq}_{model}_r1i1p1_na10kgrid_qm-moving-50bins-detrend_1950-2100"
+}
