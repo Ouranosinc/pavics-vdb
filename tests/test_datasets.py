@@ -95,45 +95,78 @@ class TestSchema:
 
 class TestDataset:
 
-    # def test_CMIP5(self):
-    #     test_reg = dict(lon=[-80, -70], lat=[45, 50])
-    #     datasets = sorted(list(path.Path('../1-Datasets/simulations/cmip5/atmos').rglob('*.ncml')))
-    #
-    #     thredds_test_dir = f'{thredds_root}/simulations/cmip5/atmos'
-    #     thredds_path_server = f'{thredds_cat_root}/simulations/cmip5/atmos/catalog.html'
-    #     thredds_test_dir = path.Path(thredds_test_dir)
-    #
-    #     for ii, dataset in enumerate(datasets):
-    #         if thredds_test_dir.exists():
-    #             shutil.rmtree(thredds_test_dir)
-    #         thredds_test_dir.mkdir(parents=True, exist_ok=True)
-    #         print('trying', dataset.name)
-    #         # copy to thredds:
-    #         shutil.copy(dataset, thredds_test_dir)
-    #
-    #         ncmls_all = [ncml for ncml in threddsclient.crawl(thredds_path_server, depth=0)]
-    #         rem1 = []
-    #         ncmls = []
-    #         for n in ncmls_all:
-    #             if dataset.name  in n.name:
-    #                 ncmls.append(n)
-    #
-    #         if len(ncmls) != 1:
-    #             raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
-    #         #print('loading NcML via opendap')
-    #         dsNcML = subset.subset_bbox(
-    #             xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=256, lon=32, lat=32)),
-    #             lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
-    #         )
-    #
-    #         ncml = xncml.Dataset(dataset)
-    #
+    def test_CMIP5(self):
+        test_reg = dict(lon=[-80, -70], lat=[45, 50])
+        datasets = sorted(list(path.Path('../1-Datasets/simulations/cmip5/atmos').rglob('*.ncml')))
+
+        thredds_test_dir = f'{thredds_root}/simulations/cmip5/atmos'
+        thredds_path_server = f'{thredds_cat_root}/simulations/cmip5/atmos/catalog.html'
+        thredds_test_dir = path.Path(thredds_test_dir)
+
+        for ii, dataset in enumerate(datasets):
+            if thredds_test_dir.exists():
+                shutil.rmtree(thredds_test_dir)
+            thredds_test_dir.mkdir(parents=True, exist_ok=True)
+            print('trying', dataset.name)
+            # copy to thredds:
+            shutil.copy(dataset, thredds_test_dir)
+
+            ncmls_all = [ncml for ncml in threddsclient.crawl(thredds_path_server, depth=0)]
+            rem1 = []
+            ncmls = []
+            for n in ncmls_all:
+                if dataset.name  in n.name:
+                    ncmls.append(n)
+
+            if len(ncmls) != 1:
+                raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
+            #print('loading NcML via opendap')
+            dsNcML = subset.subset_bbox(
+                xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=256, lon=32, lat=32)),
+                lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
+            )
+
+            ncml = xncml.Dataset(dataset)
+
+
+
     def test_BCCAQv2(self):
 
-        datasets = sorted(list(path.Path('../tmp/simulations/bias_adjusted/cmip5/pcic/bccaqv2').rglob('*.ncml')))
+            datasets = sorted(list(path.Path('../tmp/simulations/bias_adjusted/cmip5/pcic/bccaqv2').rglob('*.ncml')))
 
-        thredds_test_dir = f'{thredds_root}/simulations/bias_adjusted/cmip5/pcic/bccaqv2'
-        thredds_path_server = f'{thredds_cat_root}/simulations/bias_adjusted/cmip5/pcic/bccaqv2/catalog.html'
+            thredds_test_dir = f'{thredds_root}/simulations/bias_adjusted/cmip5/pcic/bccaqv2'
+            thredds_path_server = f'{thredds_cat_root}/simulations/bias_adjusted/cmip5/pcic/bccaqv2/catalog.html'
+            thredds_test_dir = path.Path(thredds_test_dir)
+
+            for ii, dataset in enumerate(datasets):
+                if thredds_test_dir.exists():
+                    shutil.rmtree(thredds_test_dir)
+                thredds_test_dir.mkdir(parents=True, exist_ok=True)
+                print('trying', dataset.name)
+                # copy to thredds:
+                shutil.copy(dataset, thredds_test_dir)
+                ncmls_all = [ncml for ncml in threddsclient.crawl(thredds_path_server, depth=0)]
+                ncmls = []
+                for n in ncmls_all:
+                    if dataset.name in n.name:
+                        ncmls.append(n)
+
+                if len(ncmls) != 1:
+                    raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
+
+                dsNcML = subset.subset_bbox(
+                    xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=365, lon=50, lat=56)),
+                    lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
+                )
+
+                compare_ncml_rawdata(dataset, dsNcML)
+
+    def test_OuraScenGen(self):
+
+        datasets = sorted(list(path.Path('../tmp/simulations/bias_adjusted/cmip5/ouranos/cb-oura-1.0').rglob('*.ncml')))
+
+        thredds_test_dir = f'{thredds_root}/simulations/bias_adjusted/cmip5/ouranos/cb-oura-1.0'
+        thredds_path_server = f'{thredds_cat_root}/simulations/bias_adjusted/cmip5/ouranos/cb-oura-1.0/catalog.html'
         thredds_test_dir = path.Path(thredds_test_dir)
 
         for ii, dataset in enumerate(datasets):
@@ -146,7 +179,7 @@ class TestDataset:
             ncmls_all = [ncml for ncml in threddsclient.crawl(thredds_path_server, depth=0)]
             ncmls = []
             for n in ncmls_all:
-                if dataset.name in n.name:
+                if dataset.name  in n.name:
                     ncmls.append(n)
 
             if len(ncmls) != 1:
@@ -157,53 +190,63 @@ class TestDataset:
                 lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
             )
 
-            compare_ncml_rawdata(dataset, dsNcML)
+            compare_ncml_rawdata(dataset,dsNcML)
 
-    # def test_OuraScenGen(self):
-    #
-    #     datasets = sorted(list(path.Path('../tmp/simulations/bias_adjusted/cmip5/ouranos/cb-oura-1.0').rglob('*.ncml')))
-    #
-    #     thredds_test_dir = f'{thredds_root}/simulations/bias_adjusted/cmip5/ouranos/cb-oura-1.0'
-    #     thredds_path_server = f'{thredds_cat_root}/simulations/bias_adjusted/cmip5/ouranos/cb-oura-1.0/catalog.html'
-    #     thredds_test_dir = path.Path(thredds_test_dir)
-    #
-    #     for ii, dataset in enumerate(datasets):
-    #         if thredds_test_dir.exists():
-    #             shutil.rmtree(thredds_test_dir)
-    #         thredds_test_dir.mkdir(parents=True, exist_ok=True)
-    #         print('trying', dataset.name)
-    #         # copy to thredds:
-    #         shutil.copy(dataset, thredds_test_dir)
-    #         ncmls_all = [ncml for ncml in threddsclient.crawl(thredds_path_server, depth=0)]
-    #         ncmls = []
-    #         for n in ncmls_all:
-    #             if dataset.name  in n.name:
-    #                 ncmls.append(n)
-    #
-    #         if len(ncmls) != 1:
-    #             raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
-    #
-    #         dsNcML = subset.subset_bbox(
-    #             xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=365, lon=50, lat=56)),
-    #             lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
-    #         )
-    #
-    #         compare_ncml_rawdata(dataset,dsNcML)
+
+
+    def test_NEXGDDP(self):
+
+        datasets = sorted(list(path.Path('../tmp/simulations/bias_adjusted/cmip5/nasa/nex-gddp-1.0').rglob('*.ncml')))
+
+        thredds_test_dir = f'{thredds_root}/simulations/bias_adjusted/cmip5/nasa/nex-gddp-1.0'
+        thredds_path_server = f'{thredds_cat_root}/simulations/bias_adjusted/cmip5/nasa/nex-gddp-1.0/catalog.html'
+        thredds_test_dir = path.Path(thredds_test_dir)
+
+        for ii, dataset in enumerate(datasets):
+            if thredds_test_dir.exists():
+                shutil.rmtree(thredds_test_dir)
+            thredds_test_dir.mkdir(parents=True, exist_ok=True)
+            print('trying', dataset.name)
+            # copy to thredds:
+            shutil.copy(dataset, thredds_test_dir)
+            ncmls_all = [ncml for ncml in threddsclient.crawl(thredds_path_server, depth=0)]
+            ncmls = []
+            for n in ncmls_all:
+                if dataset.name  in n.name:
+                    ncmls.append(n)
+
+            if len(ncmls) != 1:
+                raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
+
+            dsNcML = subset.subset_bbox(
+                xr.open_dataset(ncmls[0].opendap_url(), chunks='auto'),
+                lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
+            )
+
+            compare_ncml_rawdata(dataset,dsNcML)
 
 def compare_ncml_rawdata(dataset, dsNcML):
     ncml = xncml.Dataset(dataset)
-    for l in list(recursive_items(ncml.ncroot, '@location')):
+    l1 = list(recursive_items(ncml.ncroot, '@location'))[0]
+
+    if 'nasa/nex_gddp' not in l1[1]:
+        key1 = '@location'
+    else:
+        key1 = '@regExp'
+    for l in list(recursive_items(ncml.ncroot, key1)):
+
         mod = dataset.name.split('day_')[-1].split('_historical+')[0]
         rcp = dataset.name.split('_historical+')[-1][0:5]
         assert mod in l[1]
         assert ('historical' in l[1] or rcp in l[1])
 
 
+
     files = {}
-    for l in list(recursive_items(ncml.ncroot, '@location')):
+    for l in list(recursive_items(ncml.ncroot, key1)):
         local_path = str(l[1].replace('pavics-data', pavics_root))
         #print(local_path)
-        if path.Path(local_path).is_dir() or path.Path(local_path).is_file() :
+        if path.Path(local_path).is_dir() or path.Path(local_path).is_file() or key1 == '@regExp' :
             if path.Path(local_path).is_file():
                 ds = subset.subset_bbox(xr.open_dataset(path.Path(local_path),
                                         chunks=dict(time=10, lon=50, lat=50)),
@@ -212,14 +255,18 @@ def compare_ncml_rawdata(dataset, dsNcML):
                                         start_date=str(dsNcML.time.dt.year.min().values),
                                         end_date=str(dsNcML.time.dt.year.max().values))
             else:
-                test_files = list(sorted(path.Path(local_path).rglob('*.nc')))
+                if key1 == '@location':
+                    test_files = list(sorted(path.Path(local_path).rglob('*.nc')))
+                else:
+                    local_path = str(l1[1].replace('pavics-data', pavics_root))
+                    test_files = list(sorted(path.Path(local_path).rglob(l[1].replace(r'.*\.nc$','*.nc'))))
                 remove =[]
                 for t in test_files:
                     #print(t)
                     y = netCDF4.Dataset(t)
                     time_y = y.variables['time']
                     dtime = netCDF4.num2date(time_y[:], units=time_y.units, calendar=time_y.calendar)
-                    if dtime.min().year > 2100:
+                    if dtime.max().year > 2100:
                         print('removing ' , t)
                         remove.append(t)
                 for t in remove:
@@ -237,7 +284,8 @@ def compare_ncml_rawdata(dataset, dsNcML):
 
             if 'time_vectors' in ds.data_vars:
                 ds = ds.drop_vars(['time_vectors','ts'])
-
+            if 'time_bnds' in ds.data_vars:
+                ds = ds.drop_vars(['time_bnds'])
 
             test = dsNcML.sel(time=ds.time).squeeze()
             for coord in ds.coords:
@@ -248,7 +296,10 @@ def compare_ncml_rawdata(dataset, dsNcML):
                     print(v)
                     if 'time' in ds[v].dims:
                         test2 = test[v].sel(time=time1).load()
-                        np.testing.assert_array_almost_equal(ds[v].sel(time=time1).values, test2, decimal=5)
+                        if v == 'pr' and dsNcML[v].units == 'kg m-2 s-1':
+                            np.testing.assert_array_almost_equal(ds[v].sel(time=time1).values*3600*24, test2*3600*24, decimal=2)
+                        else:
+                            np.testing.assert_array_almost_equal(ds[v].sel(time=time1).values, test2, decimal=3)
                     else:
                         np.testing.assert_array_almost_equal(ds[v].values, test[v].values)
 
@@ -260,7 +311,7 @@ def compare_ncml_rawdata(dataset, dsNcML):
 
 
 def main():
-    test = TestDataset.test_BCCAQv2
+    test = TestDataset.test_NEXGDDP
     test(test)
 
 if 'main' in __name__:
