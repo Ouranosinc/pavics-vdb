@@ -11,7 +11,7 @@ pavics_root = f"{home}/boreas/boreas"
 
 
 def main():
-    dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('*nex-gddp*.json')
+    dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('*.json')
     for dataset in dataset_configs:
         with open(dataset, 'r') as f:
             ncml_modify = json.load(f)
@@ -35,14 +35,16 @@ def main():
                 else:
                     outpath = p.Path(str(dataset.parent).replace('dataset_json_configs', 'tmp')).joinpath(
                     f"{d}.ncml")
-            if not outpath.parent.exists():
-                outpath.parent.mkdir(parents=True)
 
 
-            datasets[d].to_ncml(outpath)
+            if not p.Path(outpath.parent.as_posix().replace('tmp','1-Datasets')).joinpath(outpath.name).exists():
+                if not outpath.parent.exists():
+                    outpath.parent.mkdir(parents=True)
+                datasets[d].to_ncml(outpath)
 
 
 def ncml_create_datasets(ncml_template=None, config=None):
+
     if config['ncml_type'] == 'cmip5-multirun-single-model':
         ncmls = {}
         for exp in config['experiments']:
@@ -77,7 +79,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
                         del netcdf2
                 agg['netcdf'].append(netcdf)
             agg
-            ncml1 = copy.copy(ncml)
+            ncml1 = xncml.Dataset(ncml_template)
             ncml1.ncroot['netcdf']['aggregation'] = agg
             ncmls[exp] = ncml1
 
@@ -300,7 +302,8 @@ def ncml_create_datasets(ncml_template=None, config=None):
                 attrs['driving_model'] = dict(value=center.name, type="String")
                 ncml1.ncroot['netcdf']['attribute'] = ncml_add_attributes(attrs)
                 ncml1.ncroot['netcdf']['aggregation'] = agg
-                ncmls[f'{center.name}_{exp}'] = ncml1
+
+                ncmls[f'day_{center.name}_{exp}_r1i1p1_na10kgrid_qm-moving-50bins-detrend_1950-2100'] = ncml1
                 del ncml1
         return ncmls
 

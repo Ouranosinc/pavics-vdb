@@ -95,193 +95,104 @@ class TestSchema:
 
 class TestDataset:
 
-    # def test_CMIP5(self):
-    #     test_reg = dict(lon=[-80, -70], lat=[45, 50])
-    #     datasets = sorted(list(path.Path('../1-Datasets/simulations/cmip5/atmos').rglob('*.ncml')))
-    #
-    #     thredds_test_dir = f'{thredds_root}/simulations/cmip5/atmos'
-    #     thredds_path_server = f'{thredds_cat_root}/simulations/cmip5/atmos/catalog.html'
-    #     thredds_test_dir = path.Path(thredds_test_dir)
-    #
-    #     for ii, dataset in enumerate(datasets):
-    #         if thredds_test_dir.exists():
-    #             shutil.rmtree(thredds_test_dir)
-    #         thredds_test_dir.mkdir(parents=True, exist_ok=True)
-    #         print('trying', dataset.name)
-    #         # copy to thredds:
-    #         shutil.copy(dataset, thredds_test_dir)
-    #
-    #         ncmls_all = [ncml for ncml in threddsclient.crawl(thredds_path_server, depth=0)]
-    #         rem1 = []
-    #         ncmls = []
-    #         for n in ncmls_all:
-    #             if dataset.name  in n.name:
-    #                 ncmls.append(n)
-    #
-    #         if len(ncmls) != 1:
-    #             raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
-    #         #print('loading NcML via opendap')
-    #         dsNcML = subset.subset_bbox(
-    #             xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=256, lon=32, lat=32)),
-    #             lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
-    #         )
-    #
-    #         ncml = xncml.Dataset(dataset)
-    #
-    # def test_CMIP5_single(self):
-    #     test_reg = dict(lon=[-80, -70], lat=[45, 50])
-    #     datasets = sorted(list(path.Path('../tmp/simulations/cmip5_singlerun').rglob('*.ncml')))
-    #
-    #     thredds_test_dir = f'{thredds_root}/simulations/cmip5_singlerun'
-    #     thredds_path_server = f'{thredds_cat_root}/simulations/cmip5_singlerun/catalog.html'
-    #     thredds_test_dir = path.Path(thredds_test_dir)
-    #
-    #     for ii, dataset in enumerate(datasets):
-    #         if thredds_test_dir.exists():
-    #             shutil.rmtree(thredds_test_dir)
-    #         thredds_test_dir.mkdir(parents=True, exist_ok=True)
-    #         print('trying', dataset.name)
-    #         # copy to thredds:
-    #         shutil.copy(dataset, thredds_test_dir)
-    #         ncmls_all = [ncml for ncml in threddsclient.crawl(thredds_path_server, depth=0)]
-    #         ncmls = []
-    #         for n in ncmls_all:
-    #             if dataset.name in n.name:
-    #                 ncmls.append(n)
-    #
-    #         if len(ncmls) != 1:
-    #             raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
-    #
-    #         dsNcML = subset.subset_bbox(
-    #             xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=256, lon=32, lat=32) , drop_variables='time_bnds'),
-    #             lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
-    #         )
-    #
-    #         compare_ncml_rawdata(dataset, dsNcML)
-    #
-    # # def test_BCCAQv2(self):
-    #
-    #     datasets = sorted(list(path.Path('../tmp/simulations/bias_adjusted/cmip5/pcic/bccaqv2').rglob('*.ncml')))
-    #
-    #     thredds_test_dir = f'{thredds_root}/simulations/bias_adjusted/cmip5/pcic/bccaqv2'
-    #     thredds_path_server = f'{thredds_cat_root}/simulations/bias_adjusted/cmip5/pcic/bccaqv2/catalog.html'
-    #     thredds_test_dir = path.Path(thredds_test_dir)
-    #
-    #     for ii, dataset in enumerate(datasets):
-    #         if thredds_test_dir.exists():
-    #             shutil.rmtree(thredds_test_dir)
-    #         thredds_test_dir.mkdir(parents=True, exist_ok=True)
-    #         print('trying', dataset.name)
-    #         # copy to thredds:
-    #         shutil.copy(dataset, thredds_test_dir)
-    #         ncmls_all = [ncml for ncml in threddsclient.crawl(thredds_path_server, depth=0)]
-    #         ncmls = []
-    #         for n in ncmls_all:
-    #             if dataset.name in n.name:
-    #                 ncmls.append(n)
-    #
-    #         if len(ncmls) != 1:
-    #             raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
-    #
-    #         dsNcML = subset.subset_bbox(
-    #             xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=365, lon=50, lat=56)),
-    #             lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
-    #         )
-    #
-    #         compare_ncml_rawdata(dataset, dsNcML)
+    def test_CMIP5(self):
+        test_reg = dict(lon=[-80, -70], lat=[45, 50])
+        datasets = sorted(list(path.Path('../1-Datasets/simulations/cmip5/atmos').rglob('*.ncml')))
 
-    # def test_OuraScenGen(self):
-    #
-    #     datasets = sorted(list(path.Path('../tmp/simulations/bias_adjusted/cmip5/ouranos/cb-oura-1.0').rglob('*.ncml')))
-    #
-    #     thredds_test_dir = f'{thredds_root}/simulations/bias_adjusted/cmip5/ouranos/cb-oura-1.0'
-    #     thredds_path_server = f'{thredds_cat_root}/simulations/bias_adjusted/cmip5/ouranos/cb-oura-1.0/catalog.html'
-    #     thredds_test_dir = path.Path(thredds_test_dir)
-    #
-    #     for ii, dataset in enumerate(datasets):
-    #         if thredds_test_dir.exists():
-    #             shutil.rmtree(thredds_test_dir)
-    #         thredds_test_dir.mkdir(parents=True, exist_ok=True)
-    #         print('trying', dataset.name)
-    #         # copy to thredds:
-    #         shutil.copy(dataset, thredds_test_dir)
-    #         ncmls_all = [ncml for ncml in threddsclient.crawl(thredds_path_server, depth=0)]
-    #         ncmls = []
-    #         for n in ncmls_all:
-    #             if dataset.name  in n.name:
-    #                 ncmls.append(n)
-    #
-    #         if len(ncmls) != 1:
-    #             raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
-    #
-    #         dsNcML = subset.subset_bbox(
-    #             xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=365, lon=50, lat=56)),
-    #             lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
-    #         )
-    #
-    #         compare_ncml_rawdata(dataset,dsNcML)
+        thredds_test_dir = f'{thredds_root}/simulations/cmip5/atmos'
+        thredds_path_server = f'{thredds_cat_root}/simulations/cmip5/atmos/catalog.html'
+        thredds_test_dir = path.Path(thredds_test_dir)
 
-# def test_BCCAQv2(self):
-    #
-    #     datasets = sorted(list(path.Path('../tmp/simulations/bias_adjusted/cmip5/pcic/bccaqv2').rglob('*.ncml')))
-    #
-    #     thredds_test_dir = f'{thredds_root}/simulations/bias_adjusted/cmip5/pcic/bccaqv2'
-    #     thredds_path_server = f'{thredds_cat_root}/simulations/bias_adjusted/cmip5/pcic/bccaqv2/catalog.html'
-    #     thredds_test_dir = path.Path(thredds_test_dir)
-    #
-    #     for ii, dataset in enumerate(datasets):
-    #         if thredds_test_dir.exists():
-    #             shutil.rmtree(thredds_test_dir)
-    #         thredds_test_dir.mkdir(parents=True, exist_ok=True)
-    #         print('trying', dataset.name)
-    #         # copy to thredds:
-    #         shutil.copy(dataset, thredds_test_dir)
-    #         ncmls_all = [ncml for ncml in threddsclient.crawl(thredds_path_server, depth=0)]
-    #         ncmls = []
-    #         for n in ncmls_all:
-    #             if dataset.name in n.name:
-    #                 ncmls.append(n)
-    #
-    #         if len(ncmls) != 1:
-    #             raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
-    #
-    #         dsNcML = subset.subset_bbox(
-    #             xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=365, lon=50, lat=56)),
-    #             lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
-    #         )
-    #
-    #         compare_ncml_rawdata(dataset, dsNcML)
+        for ii, dataset in enumerate(datasets):
+            if thredds_test_dir.exists():
+                shutil.rmtree(thredds_test_dir)
+            thredds_test_dir.mkdir(parents=True, exist_ok=True)
+            print('trying', dataset.name)
+            # copy to thredds:
+            shutil.copy(dataset, thredds_test_dir)
 
-    # def test_OuraScenGen(self):
-    #
-    #     datasets = sorted(list(path.Path('../tmp/simulations/bias_adjusted/cmip5/ouranos/cb-oura-1.0').rglob('*.ncml')))
-    #
-    #     thredds_test_dir = f'{thredds_root}/simulations/bias_adjusted/cmip5/ouranos/cb-oura-1.0'
-    #     thredds_path_server = f'{thredds_cat_root}/simulations/bias_adjusted/cmip5/ouranos/cb-oura-1.0/catalog.html'
-    #     thredds_test_dir = path.Path(thredds_test_dir)
-    #
-    #     for ii, dataset in enumerate(datasets):
-    #         if thredds_test_dir.exists():
-    #             shutil.rmtree(thredds_test_dir)
-    #         thredds_test_dir.mkdir(parents=True, exist_ok=True)
-    #         print('trying', dataset.name)
-    #         # copy to thredds:
-    #         shutil.copy(dataset, thredds_test_dir)
-    #         ncmls_all = [ncml for ncml in threddsclient.crawl(thredds_path_server, depth=0)]
-    #         ncmls = []
-    #         for n in ncmls_all:
-    #             if dataset.name  in n.name:
-    #                 ncmls.append(n)
-    #
-    #         if len(ncmls) != 1:
-    #             raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
-    #
-    #         dsNcML = subset.subset_bbox(
-    #             xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=365, lon=50, lat=56)),
-    #             lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
-    #         )
-    #
-    #         compare_ncml_rawdata(dataset,dsNcML)
+            ncmls_all = [ncml for ncml in threddsclient.crawl(thredds_path_server, depth=0)]
+            rem1 = []
+            ncmls = []
+            for n in ncmls_all:
+                if dataset.name  in n.name:
+                    ncmls.append(n)
+
+            if len(ncmls) != 1:
+                raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
+            #print('loading NcML via opendap')
+            dsNcML = subset.subset_bbox(
+                xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=256, lon=32, lat=32)),
+                lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
+            )
+
+            ncml = xncml.Dataset(dataset)
+
+
+
+    def test_BCCAQv2(self):
+
+            datasets = sorted(list(path.Path('../tmp/simulations/bias_adjusted/cmip5/pcic/bccaqv2').rglob('*.ncml')))
+
+            thredds_test_dir = f'{thredds_root}/simulations/bias_adjusted/cmip5/pcic/bccaqv2'
+            thredds_path_server = f'{thredds_cat_root}/simulations/bias_adjusted/cmip5/pcic/bccaqv2/catalog.html'
+            thredds_test_dir = path.Path(thredds_test_dir)
+
+            for ii, dataset in enumerate(datasets):
+                if thredds_test_dir.exists():
+                    shutil.rmtree(thredds_test_dir)
+                thredds_test_dir.mkdir(parents=True, exist_ok=True)
+                print('trying', dataset.name)
+                # copy to thredds:
+                shutil.copy(dataset, thredds_test_dir)
+                ncmls_all = [ncml for ncml in threddsclient.crawl(thredds_path_server, depth=0)]
+                ncmls = []
+                for n in ncmls_all:
+                    if dataset.name in n.name:
+                        ncmls.append(n)
+
+                if len(ncmls) != 1:
+                    raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
+
+                dsNcML = subset.subset_bbox(
+                    xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=365, lon=50, lat=56)),
+                    lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
+                )
+
+                compare_ncml_rawdata(dataset, dsNcML)
+
+    def test_OuraScenGen(self):
+
+        datasets = sorted(list(path.Path('../tmp/simulations/bias_adjusted/cmip5/ouranos/cb-oura-1.0').rglob('*.ncml')))
+
+        thredds_test_dir = f'{thredds_root}/simulations/bias_adjusted/cmip5/ouranos/cb-oura-1.0'
+        thredds_path_server = f'{thredds_cat_root}/simulations/bias_adjusted/cmip5/ouranos/cb-oura-1.0/catalog.html'
+        thredds_test_dir = path.Path(thredds_test_dir)
+
+        for ii, dataset in enumerate(datasets):
+            if thredds_test_dir.exists():
+                shutil.rmtree(thredds_test_dir)
+            thredds_test_dir.mkdir(parents=True, exist_ok=True)
+            print('trying', dataset.name)
+            # copy to thredds:
+            shutil.copy(dataset, thredds_test_dir)
+            ncmls_all = [ncml for ncml in threddsclient.crawl(thredds_path_server, depth=0)]
+            ncmls = []
+            for n in ncmls_all:
+                if dataset.name  in n.name:
+                    ncmls.append(n)
+
+            if len(ncmls) != 1:
+                raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
+
+            dsNcML = subset.subset_bbox(
+                xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=365, lon=50, lat=56)),
+                lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
+            )
+
+            compare_ncml_rawdata(dataset,dsNcML)
+
+
 
     def test_NEXGDDP(self):
 
