@@ -2,21 +2,26 @@ import datetime
 import itertools as it
 import multiprocessing as mp
 import os
-import pandas as pd
 import shutil
 import tempfile
 import time
 import urllib
 from pathlib import Path
-import xncml
+
+import pandas as pd
 import xarray as xr
+import xncml
 from dask.diagnostics import ProgressBar
 
 jobs = dict(GEPS=dict(inpath=Path('/home/logan/shared/Projects/Raven/tmp/geps/grib2'),  # download dir for grib2 files
-                      outpath=Path('/home/logan/shared/Projects/Raven/tmp/geps/netcdf'),  # conversion output grib2 to nc
-                      threddspath=Path('/home/logan/boreas/boreas/testdata/geps_forecast'),# "Birdhouse" datapath for combined .nc files
-                      testncml=Path('/home/logan/boreas/testdatasets/geps_forecast'), # testthredds directory for ncml test
-                      finalncml=Path('/home/logan/boreas/boreas/testdata/geps_forecast'),# "Datasets" path for final ncml
+                      outpath=Path('/home/logan/shared/Projects/Raven/tmp/geps/netcdf'),
+                      # conversion output grib2 to nc
+                      threddspath=Path('/home/logan/boreas/boreas/testdata/geps_forecast'),
+                      # "Birdhouse" datapath for combined .nc files
+                      testncml=Path('/home/logan/boreas/testdatasets/geps_forecast'),
+                      # testthredds directory for ncml test
+                      finalncml=Path('/home/logan/boreas/boreas/testdata/geps_forecast'),
+                      # "Datasets" path for final ncml
                       pavics_root=Path('/home/logan/boreas/boreas'),  # TODO adjust to /pvcs1/DATA/
                       variables=dict(TMP_TGL_2m=dict(t2m='tas'), APCP_SFC_0=dict(paramId_0='pr')),
                       filename_pattern='CMC_geps-raw_{vv}_latlon0p5x0p5_{date}{HH}_P{hhh}_allmbrs.grib2',
