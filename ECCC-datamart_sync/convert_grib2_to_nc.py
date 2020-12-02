@@ -134,11 +134,13 @@ def validate_ncml(url, start_date):
     except:
         raise Exception("can't read ncml opendap ")
 
+
 def update_ncml(latest,pavics_root):
     latest
     ncml = xncml.Dataset('/home/logan/github/raven/raven/tmp/NcML_template_emptyNetcdf.ncml')
     ncml.ncroot['netcdf']['@location'] = latest.as_posix().replace(pavics_root.as_posix(), '/pavics-data')
     return ncml
+
 
 def download_ddmart(job, urlroot, file_pattern, variables, outpath):
     today = datetime.datetime.now()
