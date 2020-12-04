@@ -13,15 +13,24 @@ import xarray as xr
 import xncml
 from dask.diagnostics import ProgressBar
 
+
 jobs = dict(GEPS=dict(inpath=Path('/home/logan/shared/Projects/Raven/tmp/geps/grib2'),  # download dir for grib2 files
-                      outpath=Path('/home/logan/shared/Projects/Raven/tmp/geps/netcdf'),
                       # conversion output grib2 to nc
-                      threddspath=Path('/home/logan/boreas/boreas/testdata/geps_forecast'),
-                      # "Birdhouse" datapath for combined .nc files
+                      outpath=Path('/home/logan/shared/Projects/Raven/tmp/geps/netcdf'),
+
+                      # "Birdhouse" datapath for combined .nc files TODO adjust to /pvcs1/DATA/eccc/forecasts/geps
+                      threddspath=Path('/home/logan/boreas/boreas/eccc/forecasts/geps'),
+
+                      # testthredds directory for ncml
+                      # test make sure ncml is valid before publishing
+                      # TODO adjust to /data/testdatasets/geps_forecast
                       testncml=Path('/home/logan/boreas/testdatasets/geps_forecast'),
-                      # testthredds directory for ncml test
-                      finalncml=Path('/home/logan/boreas/boreas/testdata/geps_forecast'),
+
                       # "Datasets" path for final ncml
+                      # TODO adjust to /data/ncml/forecasts/eccc_geps
+                      finalncml=Path('/home/logan/boreas/boreas/testdata/geps_forecast'),  #
+
+
                       pavics_root=Path('/home/logan/boreas/boreas'),  # TODO adjust to /pvcs1/DATA/
                       variables=dict(TMP_TGL_2m=dict(t2m='tas'), APCP_SFC_0=dict(paramId_0='pr')),
                       filename_pattern='CMC_geps-raw_{vv}_latlon0p5x0p5_{date}{HH}_P{hhh}_allmbrs.grib2',
@@ -37,6 +46,8 @@ def main():
         # subscription missing files? patch with this
         time1 = time.time()
         print('Converting grib2 files to netcdf')
+
+        ## This calls will download raw grib2 files from the eccc datamart
         if j == 'GEPS':
             update_dates = download_ddmart(j,
                             jobs[j]['urlroot'],
@@ -45,39 +56,53 @@ def main():
                             jobs[j]['inpath']
                             )
 
-        infiles = sorted(list(jobs[j]['inpath'].rglob('*.grib2')))
 
-        today = datetime.datetime.now()
+        ## We convert individual grib2 files to netcdf using an mp.pool()
+        ## This makes subsequent xarray mutlifile dataset construnction much faster
 
-        # only convert files that do not exist already
-        allfiles = [i for i in infiles if not jobs[j]['outpath'].joinpath(i.name.replace('.grib2', '.nc')).exists()]
-        # TODO adjust length of forecast to keep ... ~2-3 weeks??
-        keep_days = datetime.timedelta(days=21)  # use 3 days to test
-        infiles = []
+        infiles = sorted(list(jobs[j]['inpath'].rglob('*.grib2')))  # list of all files
+
+        # use todays date in order to decide which files to retain - delete the rest
+        today = datetime.datetime.now()  #
+        keep_days = datetime.timedelta(days=21)  # TODO adjust length of forecast to keep ... ~2-3 weeks??
+        keepfiles = []
         deletefiles = []
-        for i in allfiles:
+        for i in infiles:
             forecast_date = i.name.split(jobs[j]['pattern'][0])[-1].split(jobs[j]['pattern'][1])[0][:-2]
             if (today - datetime.datetime.strptime(forecast_date, '%Y%m%d')) < keep_days:
-                infiles.append(i)
+                keepfiles.append(i)
             else:
                 deletefiles.append(i)
+
+        for d in deletefiles:
+            # delete the .nc if on disk as well
+            if jobs[j]['outpath'].joinpath(d.name.replace('.grib2', '.nc')).exists():
+                os.remove(jobs[j]['outpath'].joinpath(d.name.replace('.grib2', '.nc')).as_posix())
+            # delete grib2 file
+            print(d)
+            os.remove(d)
+
+        # only convert grib2 files that have not already been converted
+        allfiles = [i for i in keepfiles if not jobs[j]['outpath'].joinpath(i.name.replace('.grib2', '.nc')).exists()]
+
         outdir = jobs[j]['outpath']
         outdir.mkdir(parents=True, exist_ok=True)
 
-        combs = list(it.product(*[infiles, [outdir]]))
-        pool = mp.Pool(15)
+        # create job list and execute with worker pool
+        combs = list(it.product(*[allfiles, [outdir]]))
+        pool = mp.Pool(1)
         pool.map(convert, combs)
         pool.close()
         pool.join()
         pool.terminate()
 
-        for d in deletefiles:
-            if jobs[j]['outpath'].joinpath(d.name.replace('.grib2', '.nc')).exists():
-                os.remove(jobs[j]['outpath'].joinpath(d.name.replace('.grib2', '.nc')).as_posix())
-            print(d)
-            os.remove(d)
+
 
         print('done coverting ', j, '. It took : ', time.time() - time1, 'seconds')
+
+
+
+        ## For each forcast date - Combine individual netcdfs files (all time-steps and variables) into an single .nc
 
         v = list(jobs[j]['variables'].keys())[0]
         # get list of unique forecast dates
@@ -101,43 +126,55 @@ def main():
                 print(f"{f} : combining variables and timesteps ...")
                 if (not outfile.exists()) | (f in update_dates):
                     reformat_nc((ncfiles, outfile, jobs[j]['variables']))
+
+
+
+        ## Create a NcML view of the most recent forecast
+
         latest = sorted(list(jobs[j]['threddspath'].glob('*.nc')))[-1]
         latest_date = latest.name.split(jobs[j]['pattern'][0])[-1].split('_allP')[0]
         ncml = update_ncml(latest, jobs[j]['pavics_root'])
         current_ncml = jobs[j]['finalncml'].joinpath(f"{j}_latest.ncml")
 
-        # Only update ncml if the location has changed
+        # Only update ncml if the @location path has changed
         ncml_flag = True
         if current_ncml.exists():
             ncml_curr = xncml.Dataset(current_ncml)
             if ncml_curr.ncroot['netcdf']['@location'] == ncml.ncroot['netcdf']['@location']:
                 ncml_flag = False
 
+        # Create NcML and copy to test to testthredds
         if ncml_flag:
             outncml = jobs[j]['testncml'].joinpath(j,f"{j}_latest.ncml")
             if outncml.exists():
                 os.remove(outncml)
             outncml.parent.mkdir(parents=True, exist_ok=True)
             ncml.to_ncml(outncml)
+
+            # Validate we can read the opendap link and that @location matches the most recent forecast
             if validate_ncml('https://pavics.ouranos.ca/testthredds/dodsC/testdatasets/geps_forecast/GEPS/GEPS_latest.ncml',latest_date):
 
+
+                # delete previous current_ncml - NB deleting then copying forces a thredds refresh
                 current_ncml.unlink(missing_ok=True)
+                # rewrite new current
                 shutil.copyfile(outncml, current_ncml)
 
 def validate_ncml(url, start_date):
+    # Validate that ncml opendap link is functional and @location matches the most recent forecast .nc
     try:
-    # Validate ncml opendap link works
-     ds = xr.open_dataset(url)
-     assert ds.reftime.values == pd.to_datetime(start_date, format='%Y%m%d%H')
-     assert ds.time.isel(time=0).values == pd.to_datetime(start_date, format='%Y%m%d%H')#TODO implement validation
-     return True
+        # Validate ncml opendap link works
+        ds = xr.open_dataset(url)
+        assert ds.reftime.values == pd.to_datetime(start_date, format='%Y%m%d%H')
+        assert ds.time.isel(time=0).values == pd.to_datetime(start_date, format='%Y%m%d%H')#TODO implement validation
+        return True
     except:
-        raise Exception("can't read ncml opendap ")
+        raise Exception("can't read ncml opendap link")
 
 
 def update_ncml(latest,pavics_root):
-    latest
-    ncml = xncml.Dataset('/home/logan/github/raven/raven/tmp/NcML_template_emptyNetcdf.ncml')
+    # Create a ncml dictionary with provided .nc location on disk
+    ncml = xncml.Dataset('NcML_template_emptyNetcdf.ncml')
     ncml.ncroot['netcdf']['@location'] = latest.as_posix().replace(pavics_root.as_posix(), '/pavics-data')
     return ncml
 
@@ -257,17 +294,21 @@ def convert(fn):
 
     TODO: Add parameter to change output directory.
     """
-    infile, outpath = fn
-    ds = xr.open_dataset(infile, engine="cfgrib", backend_kwargs={'filter_by_keys': {'dataType': 'pf'}}, chunks='auto')
-    if 'number' in ds.dims:  # occasional files without number dimension?  Breaks concatenation : skip if not present
-        encoding = {var: dict(zlib=True) for var in ds.data_vars}
-        encoding["time"] = {"dtype": "single"}
-        tmpfile = tempfile.NamedTemporaryFile(suffix='.nc', delete=False)
-        with ProgressBar():
-            print('converting ', infile.name)
-            ds.to_netcdf(tmpfile.name, format='NETCDF4', engine="netcdf4", encoding=encoding)
-        shutil.move(tmpfile.name, outpath.joinpath(infile.name.replace(".grib2", ".nc")).as_posix())
+    try:
+        infile, outpath = fn
+        ds = xr.open_dataset(infile, engine="cfgrib", backend_kwargs={'filter_by_keys': {'dataType': 'pf'}}, chunks='auto')
+        if 'number' in ds.dims:  # occasional files without number dimension?  Breaks concatenation : skip if not present
+            encoding = {var: dict(zlib=True) for var in ds.data_vars}
+            encoding["time"] = {"dtype": "single"}
+            tmpfile = tempfile.NamedTemporaryFile(suffix='.nc', delete=False)
+            with ProgressBar():
+                print('converting ', infile.name)
+                ds.to_netcdf(tmpfile.name, format='NETCDF4', engine="netcdf4", encoding=encoding)
+            shutil.move(tmpfile.name, outpath.joinpath(infile.name.replace(".grib2", ".nc")).as_posix())
+    except:
 
+        print(f'error converting {infile.name} : File may be corrupted and will be deleted.')
+        infile.unlink(missing_ok=True)
 
 if __name__ == '__main__':
     main()
