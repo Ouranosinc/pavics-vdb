@@ -12,7 +12,7 @@ import pandas as pd
 import xarray as xr
 import xncml
 from dask.diagnostics import ProgressBar
-
+import numpy as np
 
 jobs = dict(GEPS=dict(inpath=Path('/home/logan/shared/Projects/Raven/tmp/geps/grib2'),  # download dir for grib2 files
                       # conversion output grib2 to nc
@@ -145,16 +145,19 @@ def main():
 
         # Create NcML and copy to test to testthredds
         if ncml_flag:
-            outncml = jobs[j]['testncml'].joinpath(j,f"{j}_latest.ncml")
-            if outncml.exists():
-                os.remove(outncml)
+            rr = np.random.randint(1,1000,1)
+            outncml = jobs[j]['testncml'].joinpath(j, f"{str(rr[0]).zfill(4)}_{j}_latest.ncml")
+            if outncml.parent.exists():
+                shutil.rmtree(outncml.parent)
+
             outncml.parent.mkdir(parents=True, exist_ok=True)
+
             ncml.to_ncml(outncml)
 
             # Validate we can read the opendap link and that @location matches the most recent forecast
-            if validate_ncml('https://pavics.ouranos.ca/testthredds/dodsC/testdatasets/geps_forecast/GEPS/GEPS_latest.ncml',latest_date):
-
-
+            if validate_ncml(
+                    f'https://pavics.ouranos.ca/testthredds/dodsC/testdatasets/geps_forecast/GEPS/{outncml.name}',
+                    latest_date):
                 # delete previous current_ncml - NB deleting then copying forces a thredds refresh
                 current_ncml.unlink(missing_ok=True)
                 # rewrite new current
