@@ -39,12 +39,11 @@ def main():
         ## This calls will download raw grib2 files from the eccc datamart
         if j == 'GEPS':
             update_dates = download_ddmart(j,
-                            jobs[j]['urlroot'],
-                            jobs[j]['filename_pattern'],
-                            list(jobs[j]['variables'].keys()),
-                            jobs[j]['inpath']
-                            )
-
+                                           jobs[j]['urlroot'],
+                                           jobs[j]['filename_pattern'],
+                                           list(jobs[j]['variables'].keys()),
+                                           jobs[j]['inpath']
+                                           )
 
         ## We convert individual grib2 files to netcdf using an mp.pool()
         ## This makes subsequent xarray mutlifile dataset construnction much faster
@@ -119,7 +118,8 @@ def main():
 
         # create symlink #TODO doesn't work via sshfs
         symlink.unlink(missing_ok=True)  # Delete first
-        os.symlink(latest,symlink)
+        os.chdir(symlink.parent)
+        os.symlink(latest.name, symlink.name)
 
         opendap_latest = "https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/dodsC/datasets/forecasts/eccc_geps/GEPS_latest.ncml"
         if validate_ncml(opendap_latest, latest_date):
@@ -135,10 +135,11 @@ def validate_ncml(url, start_date):
         # Validate ncml opendap link works
         ds = xr.open_dataset(url)
         assert ds.reftime.values == pd.to_datetime(start_date, format='%Y%m%d%H')
-        assert ds.time.isel(time=0).values == pd.to_datetime(start_date, format='%Y%m%d%H')#TODO implement validation
+        assert ds.time.isel(time=0).values == pd.to_datetime(start_date, format='%Y%m%d%H')  # TODO implement validation
         return True
     except:
         raise Exception("can't read ncml opendap link")
+
 
 def download_ddmart(job, urlroot, file_pattern, variables, outpath):
     today = datetime.datetime.now()
@@ -257,9 +258,10 @@ def convert(fn):
     """
     try:
         infile, outpath = fn
-        for f in Path(infile.parent).glob(infile.name.replace('.grib2','*.idx')):
+        for f in Path(infile.parent).glob(infile.name.replace('.grib2', '*.idx')):
             f.unlink(missing_ok=True)
-        ds = xr.open_dataset(infile, engine="cfgrib", backend_kwargs={'filter_by_keys': {'dataType': 'pf'}}, chunks='auto')
+        ds = xr.open_dataset(infile, engine="cfgrib", backend_kwargs={'filter_by_keys': {'dataType': 'pf'}},
+                             chunks='auto')
         if 'number' in ds.dims:  # occasional files without number dimension?  Breaks concatenation : skip if not present
             encoding = {var: dict(zlib=True) for var in ds.data_vars}
             encoding["time"] = {"dtype": "single"}
@@ -272,7 +274,7 @@ def convert(fn):
     except:
 
         print(f'error converting {infile.name} : File may be corrupted')
-        #infile.unlink(missing_ok=True)
+        # infile.unlink(missing_ok=True)
         pass
 
 
