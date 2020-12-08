@@ -31,6 +31,11 @@ def main():
         time1 = time.time()
         print('Converting grib2 files to netcdf')
 
+        if not jobs[j]['inpath'].exists():
+            jobs[j]['inpath'].mkdir()
+        if not jobs[j]['outpath'].exists():
+            jobs[j]['outpath'].mkdir()
+
         ## This calls will download raw grib2 files from the eccc datamart
         if j == 'GEPS':
             update_dates = download_ddmart(j,
