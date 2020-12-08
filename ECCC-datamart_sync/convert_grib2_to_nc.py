@@ -11,24 +11,11 @@ import pandas as pd
 import xarray as xr
 from dask.diagnostics import ProgressBar
 
-jobs = dict(GEPS=dict(inpath=Path('/home/logan/shared/Projects/Raven/tmp/geps/grib2'),  # download dir for grib2 files
+jobs = dict(GEPS=dict(inpath=Path('/tmp/geps_forecast/grib2'),  # download dir for grib2 files
                       # conversion output grib2 to nc
-                      outpath=Path('/home/logan/shared/Projects/Raven/tmp/geps/netcdf'),
-
+                      outpath=Path('/tmp/geps_forecast/netcdf'),
                       # "Birdhouse" datapath for combined .nc files TODO adjust to /pvcs1/DATA/eccc/forecasts/geps
-                      threddspath=Path('/home/logan/boreas/boreas/eccc/forecasts/geps'),
-
-                      # testthredds directory for ncml
-                      # test make sure ncml is valid before publishing
-                      # TODO adjust to /data/testdatasets/geps_forecast
-                      testncml=Path('/home/logan/boreas/testdatasets/geps_forecast'),
-
-                      # "Datasets" path for final ncml
-                      # TODO adjust to /data/ncml/forecasts/eccc_geps
-                      finalncml=Path('/home/logan/boreas/boreas/testdata/geps_forecast'),  #
-
-
-                      pavics_root=Path('/home/logan/boreas/boreas'),  # TODO adjust to /pvcs1/DATA/
+                      threddspath=Path('/pvcs1/DATA/eccc/forecasts/geps'),
                       variables=dict(TMP_TGL_2m=dict(t2m='tas'), APCP_SFC_0=dict(paramId_0='pr')),
                       filename_pattern='CMC_geps-raw_{vv}_latlon0p5x0p5_{date}{HH}_P{hhh}_allmbrs.grib2',
                       urlroot='http://dd.weather.gc.ca/ensemble/geps/grib2/raw/',
@@ -126,8 +113,8 @@ def main():
         latest_date = latest.name.split(jobs[j]['pattern'][0])[-1].split('_allP')[0]
 
         # create symlink #TODO doesn't work via sshfs
-        # symlink.unlink(missing_ok=True)  # Delete first
-        # os.symlink(latest,symlink)
+        symlink.unlink(missing_ok=True)  # Delete first
+        os.symlink(latest,symlink)
 
         opendap_latest = "https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/dodsC/datasets/forecasts/eccc_geps/GEPS_latest.ncml"
         if validate_ncml(opendap_latest, latest_date):
