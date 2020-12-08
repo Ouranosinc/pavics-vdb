@@ -90,7 +90,7 @@ def main():
 
         # create job list and execute with worker pool
         combs = list(it.product(*[allfiles, [outdir]]))
-        pool = mp.Pool(1)
+        pool = mp.Pool(10)
         pool.map(convert, combs)
         pool.close()
         pool.join()
@@ -129,39 +129,49 @@ def main():
 
 
 
-        ## Create a NcML view of the most recent forecast
-
-        latest = sorted(list(jobs[j]['threddspath'].glob('*.nc')))[-1]
+        ## update symlink recent forecast
+        symlink = jobs[j]['threddspath'].joinpath('GEPS_latest.nc')
+        latest = sorted([ll for ll in jobs[j]['threddspath'].glob('*.nc') if symlink.name not in ll.name])[-1]
         latest_date = latest.name.split(jobs[j]['pattern'][0])[-1].split('_allP')[0]
-        ncml = update_ncml(latest, jobs[j]['pavics_root'])
+
+        # create symlink #TODO doesn't work via sshfs
+        # symlink.unlink(missing_ok=True)  # Delete first
+        # os.symlink(latest,symlink)
+
         current_ncml = jobs[j]['finalncml'].joinpath(f"{j}_latest.ncml")
+        if validate_ncml(f'https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/dodsC/birdhouse/testdata/geps_forecast/{current_ncml.name}',latest_date):
+            print('success')
+        else:
+            #TODO handle unsuccessful update?
+            print('update no good')
 
-        # Only update ncml if the @location path has changed
-        ncml_flag = True
-        if current_ncml.exists():
-            ncml_curr = xncml.Dataset(current_ncml)
-            if ncml_curr.ncroot['netcdf']['@location'] == ncml.ncroot['netcdf']['@location']:
-                ncml_flag = False
 
-        # Create NcML and copy to test to testthredds
-        if ncml_flag:
-            rr = np.random.randint(1,1000,1)
-            outncml = jobs[j]['testncml'].joinpath(j, f"{str(rr[0]).zfill(4)}_{j}_latest.ncml")
-            if outncml.parent.exists():
-                shutil.rmtree(outncml.parent)
-
-            outncml.parent.mkdir(parents=True, exist_ok=True)
-
-            ncml.to_ncml(outncml)
-
-            # Validate we can read the opendap link and that @location matches the most recent forecast
-            if validate_ncml(
-                    f'https://pavics.ouranos.ca/testthredds/dodsC/testdatasets/geps_forecast/GEPS/{outncml.name}',
-                    latest_date):
-                # delete previous current_ncml - NB deleting then copying forces a thredds refresh
-                current_ncml.unlink(missing_ok=True)
-                # rewrite new current
-                shutil.copyfile(outncml, current_ncml)
+        # # Only update ncml if the @location path has changed
+        # ncml_flag = True
+        # if current_ncml.exists():
+        #     ncml_curr = xncml.Dataset(current_ncml)
+        #     if ncml_curr.ncroot['netcdf']['@location'] == ncml.ncroot['netcdf']['@location']:
+        #         ncml_flag = False
+        #
+        # # Create NcML and copy to test to testthredds
+        # if ncml_flag:
+        #     rr = np.random.randint(1,1000,1)
+        #     outncml = jobs[j]['testncml'].joinpath(j, f"{str(rr[0]).zfill(4)}_{j}_latest.ncml")
+        #     if outncml.parent.exists():
+        #         shutil.rmtree(outncml.parent)
+        #
+        #     outncml.parent.mkdir(parents=True, exist_ok=True)
+        #
+        #     ncml.to_ncml(outncml)
+        #
+        #     # Validate we can read the opendap link and that @location matches the most recent forecast
+        #     if validate_ncml(
+        #             f'https://pavics.ouranos.ca/testthredds/dodsC/testdatasets/geps_forecast/GEPS/{outncml.name}',
+        #             latest_date):
+        #         # delete previous current_ncml - NB deleting then copying forces a thredds refresh
+        #         current_ncml.unlink(missing_ok=True)
+        #         # rewrite new current
+        #         shutil.copyfile(outncml, current_ncml)
 
 def validate_ncml(url, start_date):
     # Validate that ncml opendap link is functional and @location matches the most recent forecast .nc
@@ -299,6 +309,8 @@ def convert(fn):
     """
     try:
         infile, outpath = fn
+        for f in Path(infile.parent).glob(infile.name.replace('.grib2','*.idx')):
+            f.unlink(missing_ok=True)
         ds = xr.open_dataset(infile, engine="cfgrib", backend_kwargs={'filter_by_keys': {'dataType': 'pf'}}, chunks='auto')
         if 'number' in ds.dims:  # occasional files without number dimension?  Breaks concatenation : skip if not present
             encoding = {var: dict(zlib=True) for var in ds.data_vars}
@@ -308,10 +320,13 @@ def convert(fn):
                 print('converting ', infile.name)
                 ds.to_netcdf(tmpfile.name, format='NETCDF4', engine="netcdf4", encoding=encoding)
             shutil.move(tmpfile.name, outpath.joinpath(infile.name.replace(".grib2", ".nc")).as_posix())
+
     except:
 
-        print(f'error converting {infile.name} : File may be corrupted and will be deleted.')
-        infile.unlink(missing_ok=True)
+        print(f'error converting {infile.name} : File may be corrupted')
+        #infile.unlink(missing_ok=True)
+        pass
+
 
 if __name__ == '__main__':
     main()
