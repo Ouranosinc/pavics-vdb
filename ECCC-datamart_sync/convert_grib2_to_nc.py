@@ -14,7 +14,7 @@ from dask.diagnostics import ProgressBar
 jobs = dict(GEPS=dict(inpath=Path('/data/tmp/geps_forecast/grib2'),  # download dir for grib2 files
                       # conversion output grib2 to nc
                       outpath=Path('/data/tmp/geps_forecast/netcdf'),
-                      # "Birdhouse" datapath for combined .nc files TODO adjust to /pvcs1/DATA/eccc/forecasts/geps
+                      # "Birdhouse" datapath for combined .nc files
                       threddspath=Path('/pvcs1/DATA/eccc/forecasts/geps'),
                       variables=dict(TMP_TGL_2m=dict(t2m='tas'), APCP_SFC_0=dict(paramId_0='pr')),
                       filename_pattern='CMC_geps-raw_{vv}_latlon0p5x0p5_{date}{HH}_P{hhh}_allmbrs.grib2',
@@ -116,7 +116,7 @@ def main():
         latest = sorted([ll for ll in jobs[j]['threddspath'].glob('*.nc') if symlink.name not in ll.name])[-1]
         latest_date = latest.name.split(jobs[j]['pattern'][0])[-1].split('_allP')[0]
 
-        # create symlink #TODO doesn't work via sshfs
+        # create symlink
         symlink.unlink(missing_ok=True)  # Delete first
         os.chdir(symlink.parent)
         os.symlink(latest.name, symlink.name)
@@ -135,7 +135,7 @@ def validate_ncml(url, start_date):
         # Validate ncml opendap link works
         ds = xr.open_dataset(url)
         assert ds.reftime.values == pd.to_datetime(start_date, format='%Y%m%d%H')
-        assert ds.time.isel(time=0).values == pd.to_datetime(start_date, format='%Y%m%d%H')  # TODO implement validation
+        assert ds.time.isel(time=0).values == pd.to_datetime(start_date, format='%Y%m%d%H')
         return True
     except:
         raise Exception("can't read ncml opendap link")
@@ -253,8 +253,6 @@ def write_nc(inputs):
 
 def convert(fn):
     """Convert grib2 file to netCDF format.
-
-    TODO: Add parameter to change output directory.
     """
     try:
         infile, outpath = fn
