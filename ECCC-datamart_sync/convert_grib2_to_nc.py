@@ -38,14 +38,19 @@ def main():
 
         ## This calls will download raw grib2 files from the eccc datamart
         if j == 'GEPS':
-            update_dates = download_ddmart(j,
-                                           jobs[j]['urlroot'],
-                                           jobs[j]['filename_pattern'],
-                                           list(jobs[j]['variables'].keys()),
-                                           jobs[j]['inpath']
-                                           )
+            update_dates = []
+            # run ~3 times to pick any possible missed downloads
+            for i in range(0, 3):
+                update_dates.extend(download_ddmart(j, jobs[j]['urlroot'],
+                                                    jobs[j]['filename_pattern'],
+                                                    list(jobs[j]['variables'].keys()),
+                                                    jobs[j]['inpath']
+                                                    )
+                                    )
+            # get unique after loop
+            update_dates = list(set(update_dates))
 
-        ## We convert individual grib2 files to netcdf using an mp.pool()
+            ## We convert individual grib2 files to netcdf using an mp.pool()
         ## This makes subsequent xarray mutlifile dataset construnction much faster
 
         infiles = sorted(list(jobs[j]['inpath'].rglob('*.grib2')))  # list of all files
@@ -164,12 +169,20 @@ def download_ddmart(job, urlroot, file_pattern, variables, outpath):
                         if not filename.exists():
 
                             try:
-                                urllib.request.urlretrieve(f"{url}{filename.name}", filename.as_posix())
+                                # urllib.request.urlretrieve(f"{url}{filename.name}", filename.as_posix())
+                                request = urllib.request.urlopen(f"{url}{filename.name}", timeout=5)
+                                with open(filename.as_posix(), 'wb') as f:
+                                    try:
+                                        f.write(request.read())
+                                    except:
+                                        print("error")
+
                                 newfiles += 1
+
 
                             except:
                                 print(filename.name, " not found ... continuing")
-                                time.sleep(0.25)
+                                time.sleep(0.1)
                                 continue
                 print(f"Done. Found {newfiles} new files")
                 if newfiles > 0:
