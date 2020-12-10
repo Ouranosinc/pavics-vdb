@@ -32,9 +32,9 @@ def main():
         print('Converting grib2 files to netcdf')
 
         if not jobs[j]['inpath'].exists():
-            jobs[j]['inpath'].mkdir()
+            jobs[j]['inpath'].mkdir(parents=True)
         if not jobs[j]['outpath'].exists():
-            jobs[j]['outpath'].mkdir()
+            jobs[j]['outpath'].mkdir(parents=True)
 
         ## This calls will download raw grib2 files from the eccc datamart
         if j == 'GEPS':
@@ -147,29 +147,33 @@ def download_ddmart(job, urlroot, file_pattern, variables, outpath):
     update_dates = []
     for date in [d.strftime('%Y%m%d') for d in dates]:
         for HH in ['00', '12']:
-            if job == 'GEPS':
-                tt = list(range(0, 192, 3))
-                tt.extend(list(range(192, 384 + 6, 6)))
-            else:
-                raise ValueError(f'Unknown forecast type "{job}"')
-            print("Checking for updated GEPS files : Forecast", date, HH)
-            newfiles = 0
-            for vv in variables:
+            # skip today's "12" forecast if script runs earlier than 12:00
+            if datetime.datetime.strptime(f"{date}{HH}", '%Y%m%d%H') < today:
+                if job == 'GEPS':
+                    tt = list(range(0, 192, 3))
+                    tt.extend(list(range(192, 384 + 6, 6)))
+                else:
+                    raise ValueError(f'Unknown forecast type "{job}"')
+                print("Checking for updated GEPS files : Forecast", date, HH)
+                newfiles = 0
+                for vv in variables:
 
-                for hhh in tt:
-                    filename = outpath.joinpath(file_pattern.format(vv=vv, date=date, HH=HH, hhh=str(hhh).zfill(3)))
-                    url = f'{urlroot}{HH}/{str(hhh).zfill(3)}/'
-                    if not filename.exists():
+                    for hhh in tt:
+                        filename = outpath.joinpath(file_pattern.format(vv=vv, date=date, HH=HH, hhh=str(hhh).zfill(3)))
+                        url = f'{urlroot}{HH}/{str(hhh).zfill(3)}/'
+                        if not filename.exists():
 
-                        try:
-                            urllib.request.urlretrieve(f"{url}{filename.name}", filename.as_posix())
-                            newfiles += 1
-                        except:
+                            try:
+                                urllib.request.urlretrieve(f"{url}{filename.name}", filename.as_posix())
+                                newfiles += 1
 
-                            continue
-            print(f"Done. Found {newfiles} new files")
-            if newfiles > 0:
-                update_dates.append(f"{date}{HH}")
+                            except:
+                                print(filename.name, " not found ... continuing")
+                                time.sleep(0.25)
+                                continue
+                print(f"Done. Found {newfiles} new files")
+                if newfiles > 0:
+                    update_dates.append(f"{date}{HH}")
     return update_dates
 
 
