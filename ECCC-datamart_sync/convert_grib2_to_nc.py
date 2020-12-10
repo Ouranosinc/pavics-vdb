@@ -244,7 +244,7 @@ def reformat_nc(job):
 
 def write_nc(inputs):
     ds, outfile = inputs
-    encoding = {}
+    encoding = {var: dict(zlib=True) for var in ds.data_vars}
     for c in ds.coords:
         if ds[c].dtype == 'int64':
             encoding[c] = {"dtype": "single"}
