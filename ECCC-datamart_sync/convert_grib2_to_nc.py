@@ -217,7 +217,7 @@ def reformat_nc(job):
             ds['tas'].attrs['cell_methods'] = "time: mean"
         if 'pr' in ds.data_vars:
             ds['pr'].attrs['units'] = 'mm'
-            ds['pr'].attrs['long_name'] = "depth of water-equivalent precipitation";
+            ds['pr'].attrs['long_name'] = "depth of water-equivalent precipitation"
             ds['pr'].attrs['cell_methods'] = "time: sum"
 
         if not outfile.parent.exists():
