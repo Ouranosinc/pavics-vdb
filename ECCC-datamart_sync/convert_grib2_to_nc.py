@@ -215,7 +215,7 @@ def reformat_nc(job):
             ds['tas'] -= 273.15
             ds['tas'].attrs['units'] = 'degC'
         if 'pr' in ds.data_vars:
-            ds['pr'].attrs['units'] = 'm'
+            ds['pr'].attrs['units'] = 'mm'
 
         if not outfile.parent.exists():
             outfile.parent.mkdir(parents=True)
