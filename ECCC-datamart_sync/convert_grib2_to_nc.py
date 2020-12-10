@@ -29,7 +29,6 @@ def main():
     for j in jobs:
         # subscription missing files? patch with this
         time1 = time.time()
-        print('Converting grib2 files to netcdf')
 
         if not jobs[j]['inpath'].exists():
             jobs[j]['inpath'].mkdir(parents=True)
@@ -41,6 +40,7 @@ def main():
             update_dates = []
             # run ~3 times to pick any possible missed downloads
             for i in range(0, 3):
+                print(f'Downloading grib2 files : attempt {i + 1} of 3')
                 update_dates.extend(download_ddmart(j, jobs[j]['urlroot'],
                                                     jobs[j]['filename_pattern'],
                                                     list(jobs[j]['variables'].keys()),
@@ -80,6 +80,8 @@ def main():
 
         outdir = jobs[j]['outpath']
         outdir.mkdir(parents=True, exist_ok=True)
+
+        print('coverting to netcdf ....')
 
         # create job list and execute with worker pool
         combs = list(it.product(*[allfiles, [outdir]]))
@@ -172,16 +174,12 @@ def download_ddmart(job, urlroot, file_pattern, variables, outpath):
                                 # urllib.request.urlretrieve(f"{url}{filename.name}", filename.as_posix())
                                 request = urllib.request.urlopen(f"{url}{filename.name}", timeout=5)
                                 with open(filename.as_posix(), 'wb') as f:
-                                    try:
-                                        f.write(request.read())
-                                    except:
-                                        print("error")
 
+                                    f.write(request.read())
                                 newfiles += 1
 
 
                             except:
-                                print(filename.name, " not found ... continuing")
                                 time.sleep(0.1)
                                 continue
                 print(f"Done. Found {newfiles} new files")
