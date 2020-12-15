@@ -11,6 +11,7 @@ import pandas as pd
 import xarray as xr
 from dask.diagnostics import ProgressBar
 
+# inpath, outpath and threddspath dupes with run_convert_grib2_to_nc script.
 jobs = dict(GEPS=dict(inpath=Path('/data/tmp/geps_forecast/grib2'),  # download dir for grib2 files
                       # conversion output grib2 to nc
                       outpath=Path('/data/tmp/geps_forecast/netcdf'),
