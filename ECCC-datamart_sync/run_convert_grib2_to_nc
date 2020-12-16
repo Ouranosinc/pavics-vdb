@@ -19,21 +19,33 @@ if [ -z "$RUN_CONVERT_GRIB2_TO_NC_IMAGE" ]; then
 fi
 
 # Need to repeat the following dupes with convert_grib2_to_nc.py for proper
-# volume mount.
+# docker volume mount.  Also allows to have alternate default values if needed.
 
-# Dupes with convert_grib2_to_nc.py script.
 if [ -z "$RUN_CONVERT_GRIB2_TO_NC_INPATH" ]; then
-    RUN_CONVERT_GRIB2_TO_NC_INPATH="/data/tmp/geps_forecast/grib2"
+    if [ -n "$CONVERT_GRIB2_TO_NC_INPATH" ]; then
+        RUN_CONVERT_GRIB2_TO_NC_INPATH="$CONVERT_GRIB2_TO_NC_INPATH"
+    else
+        # Dupes with convert_grib2_to_nc.py script.
+        RUN_CONVERT_GRIB2_TO_NC_INPATH="/data/tmp/geps_forecast/grib2"
+    fi
 fi
 
-# Dupes with convert_grib2_to_nc.py script.
 if [ -z "$RUN_CONVERT_GRIB2_TO_NC_OUTPATH" ]; then
-    RUN_CONVERT_GRIB2_TO_NC_OUTPATH="/data/tmp/geps_forecast/netcdf"
+    if [ -n "$CONVERT_GRIB2_TO_NC_OUTPATH" ]; then
+        RUN_CONVERT_GRIB2_TO_NC_OUTPATH="$CONVERT_GRIB2_TO_NC_OUTPATH"
+    else
+        # Dupes with convert_grib2_to_nc.py script.
+        RUN_CONVERT_GRIB2_TO_NC_OUTPATH="/data/tmp/geps_forecast/netcdf"
+    fi
 fi
 
-# Dupes with convert_grib2_to_nc.py script.
 if [ -z "$RUN_CONVERT_GRIB2_TO_NC_THREDDSPATH" ]; then
-    RUN_CONVERT_GRIB2_TO_NC_THREDDSPATH="/pvcs1/DATA/eccc/forecasts/geps"
+    if [ -n "$CONVERT_GRIB2_TO_NC_THREDDSPATH" ]; then
+        RUN_CONVERT_GRIB2_TO_NC_THREDDSPATH="$CONVERT_GRIB2_TO_NC_THREDDSPATH"
+    else
+        # Dupes with convert_grib2_to_nc.py script.
+        RUN_CONVERT_GRIB2_TO_NC_THREDDSPATH="/pvcs1/DATA/eccc/forecasts/geps"
+    fi
 fi
 
 
