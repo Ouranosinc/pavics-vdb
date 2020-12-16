@@ -18,6 +18,9 @@ if [ -z "$RUN_CONVERT_GRIB2_TO_NC_IMAGE" ]; then
     RUN_CONVERT_GRIB2_TO_NC_IMAGE="pavics/workflow-tests:201214"
 fi
 
+# Need to repeat the following dupes with convert_grib2_to_nc.py for proper
+# volume mount.
+
 # Dupes with convert_grib2_to_nc.py script.
 if [ -z "$RUN_CONVERT_GRIB2_TO_NC_INPATH" ]; then
     RUN_CONVERT_GRIB2_TO_NC_INPATH="/data/tmp/geps_forecast/grib2"
@@ -74,6 +77,9 @@ docker run --rm --name run_convert_grib2_to_nc \
     --volume $RUN_CONVERT_GRIB2_TO_NC_OUTPATH:$RUN_CONVERT_GRIB2_TO_NC_OUTPATH:rw \
     --volume $RUN_CONVERT_GRIB2_TO_NC_THREDDSPATH:$RUN_CONVERT_GRIB2_TO_NC_THREDDSPATH:rw \
     --volume $SCRIPT_TO_RUN:$SCRIPT_TO_RUN:ro \
+    --env CONVERT_GRIB2_TO_NC_INPATH="$RUN_CONVERT_GRIB2_TO_NC_INPATH" \
+    --env CONVERT_GRIB2_TO_NC_OUTPATH="$RUN_CONVERT_GRIB2_TO_NC_OUTPATH" \
+    --env CONVERT_GRIB2_TO_NC_THREDDSPATH="$RUN_CONVERT_GRIB2_TO_NC_THREDDSPATH" \
     --user $USER_ID:$GROUP_ID \
     $RUN_CONVERT_GRIB2_TO_NC_IMAGE \
     python $SCRIPT_TO_RUN "$@"

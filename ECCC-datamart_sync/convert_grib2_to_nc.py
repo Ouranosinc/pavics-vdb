@@ -12,11 +12,17 @@ import xarray as xr
 from dask.diagnostics import ProgressBar
 
 # inpath, outpath and threddspath dupes with run_convert_grib2_to_nc script.
-jobs = dict(GEPS=dict(inpath=Path('/data/tmp/geps_forecast/grib2'),  # download dir for grib2 files
+jobs = dict(GEPS=dict(inpath=Path(os.environ.get(
+                                  'CONVERT_GRIB2_TO_NC_INPATH',
+                                  default='/data/tmp/geps_forecast/grib2')),  # download dir for grib2 files
                       # conversion output grib2 to nc
-                      outpath=Path('/data/tmp/geps_forecast/netcdf'),
+                      outpath=Path(os.environ.get(
+                                   'CONVERT_GRIB2_TO_NC_OUTPATH',
+                                   default='/data/tmp/geps_forecast/netcdf')),
                       # "Birdhouse" datapath for combined .nc files
-                      threddspath=Path('/pvcs1/DATA/eccc/forecasts/geps'),
+                      threddspath=Path(os.environ.get(
+                                       'CONVERT_GRIB2_TO_NC_THREDDSPATH',
+                                       default='/pvcs1/DATA/eccc/forecasts/geps')),
                       variables=dict(TMP_TGL_2m=dict(t2m='tas'), APCP_SFC_0=dict(paramId_0='pr')),
                       filename_pattern='CMC_geps-raw_{vv}_latlon0p5x0p5_{date}{HH}_P{hhh}_allmbrs.grib2',
                       urlroot='http://dd.weather.gc.ca/ensemble/geps/grib2/raw/',
