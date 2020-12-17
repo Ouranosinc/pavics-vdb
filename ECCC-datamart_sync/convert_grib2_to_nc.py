@@ -121,9 +121,11 @@ def main():
             expected_time = jobs[j]['time_expected'] - round(
                 0.1 * jobs[j]['time_expected'])  # allow ~10% missing time steps
             if all([len(ncfiles[v]) > expected_time for v in ncfiles]):
-                print(f"{f} : combining variables and timesteps ...")
                 if (not outfile.exists()) | (f in update_dates):
+                    print(f"{f} : combining variables and timesteps ...")
                     reformat_nc((ncfiles, outfile, jobs[j]['variables']))
+                else:
+                    print(f"{f} : no action needed for combining variables and timesteps")
 
         ## update symlink recent forecast
         symlink = jobs[j]['threddspath'].joinpath('GEPS_latest.nc')
