@@ -11,11 +11,18 @@ import pandas as pd
 import xarray as xr
 from dask.diagnostics import ProgressBar
 
-jobs = dict(GEPS=dict(inpath=Path('/data/tmp/geps_forecast/grib2'),  # download dir for grib2 files
+# inpath, outpath and threddspath dupes with run_convert_grib2_to_nc script.
+jobs = dict(GEPS=dict(inpath=Path(os.environ.get(
+                                  'CONVERT_GRIB2_TO_NC_INPATH',
+                                  default='/data/tmp/geps_forecast/grib2')),  # download dir for grib2 files
                       # conversion output grib2 to nc
-                      outpath=Path('/data/tmp/geps_forecast/netcdf'),
+                      outpath=Path(os.environ.get(
+                                   'CONVERT_GRIB2_TO_NC_OUTPATH',
+                                   default='/data/tmp/geps_forecast/netcdf')),
                       # "Birdhouse" datapath for combined .nc files
-                      threddspath=Path('/pvcs1/DATA/eccc/forecasts/geps'),
+                      threddspath=Path(os.environ.get(
+                                       'CONVERT_GRIB2_TO_NC_THREDDSPATH',
+                                       default='/pvcs1/DATA/eccc/forecasts/geps')),
                       variables=dict(TMP_TGL_2m=dict(t2m='tas'), APCP_SFC_0=dict(paramId_0='pr')),
                       filename_pattern='CMC_geps-raw_{vv}_latlon0p5x0p5_{date}{HH}_P{hhh}_allmbrs.grib2',
                       urlroot='http://dd.weather.gc.ca/ensemble/geps/grib2/raw/',
@@ -114,9 +121,11 @@ def main():
             expected_time = jobs[j]['time_expected'] - round(
                 0.1 * jobs[j]['time_expected'])  # allow ~10% missing time steps
             if all([len(ncfiles[v]) > expected_time for v in ncfiles]):
-                print(f"{f} : combining variables and timesteps ...")
                 if (not outfile.exists()) | (f in update_dates):
+                    print(f"{f} : combining variables and timesteps ...")
                     reformat_nc((ncfiles, outfile, jobs[j]['variables']))
+                else:
+                    print(f"{f} : no action needed for combining variables and timesteps")
 
         ## update symlink recent forecast
         symlink = jobs[j]['threddspath'].joinpath('GEPS_latest.nc')
@@ -192,7 +201,9 @@ def reformat_nc(job):
     ncfiles, outfile, var_dict = job
 
     print(outfile.name)
-    with ProgressBar():
+
+    @progressbar_toogle
+    def do_reformat_nc():
         ds_all = []
         for v in ncfiles:
 
@@ -241,6 +252,8 @@ def reformat_nc(job):
         proc.join()
         proc.close()
 
+    do_reformat_nc()
+
 
 def write_nc(inputs):
     ds, outfile = inputs
@@ -282,9 +295,14 @@ def convert(fn):
             encoding = {var: dict(zlib=True) for var in ds.data_vars}
             encoding["time"] = {"dtype": "single"}
             tmpfile = tempfile.NamedTemporaryFile(suffix='.nc', delete=False)
-            with ProgressBar():
+
+            @progressbar_toogle
+            def to_netcdf():
                 print('converting ', infile.name)
                 ds.to_netcdf(tmpfile.name, format='NETCDF4', engine="netcdf4", encoding=encoding)
+
+            to_netcdf()
+
             shutil.move(tmpfile.name, outpath.joinpath(infile.name.replace(".grib2", ".nc")).as_posix())
 
     except:
@@ -292,6 +310,26 @@ def convert(fn):
         print(f'error converting {infile.name} : File may be corrupted')
         # infile.unlink(missing_ok=True)
         pass
+
+
+def progressbar_toogle(func):
+    """Decorator to toogle usage of ProgressBar context manager.
+
+    ProgressBar is not used if environment variable
+    'CONVERT_GRIB2_TO_NC_PROGRESSBAR' exists and is set to 'false'.
+
+    Useful in automation because ProgressBar generate lots of noises in logs.
+    """
+
+    def wrapper():
+        if os.environ.get('CONVERT_GRIB2_TO_NC_PROGRESSBAR', default="") == 'false':
+            # Not using ProgressBar.
+            func()
+        else:
+            # Else use ProgressBar.
+            with ProgressBar():
+                func()
+    return wrapper
 
 
 if __name__ == '__main__':
