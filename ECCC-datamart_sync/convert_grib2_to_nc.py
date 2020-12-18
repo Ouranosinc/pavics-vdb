@@ -201,7 +201,9 @@ def reformat_nc(job):
     ncfiles, outfile, var_dict = job
 
     print(outfile.name)
-    with ProgressBar():
+
+    @progressbar_toogle
+    def do_reformat_nc():
         ds_all = []
         for v in ncfiles:
 
@@ -250,6 +252,8 @@ def reformat_nc(job):
         proc.join()
         proc.close()
 
+    do_reformat_nc()
+
 
 def write_nc(inputs):
     ds, outfile = inputs
@@ -291,9 +295,14 @@ def convert(fn):
             encoding = {var: dict(zlib=True) for var in ds.data_vars}
             encoding["time"] = {"dtype": "single"}
             tmpfile = tempfile.NamedTemporaryFile(suffix='.nc', delete=False)
-            with ProgressBar():
+
+            @progressbar_toogle
+            def to_netcdf():
                 print('converting ', infile.name)
                 ds.to_netcdf(tmpfile.name, format='NETCDF4', engine="netcdf4", encoding=encoding)
+
+            to_netcdf()
+
             shutil.move(tmpfile.name, outpath.joinpath(infile.name.replace(".grib2", ".nc")).as_posix())
 
     except:
@@ -301,6 +310,26 @@ def convert(fn):
         print(f'error converting {infile.name} : File may be corrupted')
         # infile.unlink(missing_ok=True)
         pass
+
+
+def progressbar_toogle(func):
+    """Decorator to toogle usage of ProgressBar context manager.
+
+    ProgressBar is not used if environment variable
+    'CONVERT_GRIB2_TO_NC_PROGRESSBAR' exists and is set to 'false'.
+
+    Useful in automation because ProgressBar generate lots of noises in logs.
+    """
+
+    def wrapper():
+        if os.environ.get('CONVERT_GRIB2_TO_NC_PROGRESSBAR', default="") == 'false':
+            # Not using ProgressBar.
+            func()
+        else:
+            # Else use ProgressBar.
+            with ProgressBar():
+                func()
+    return wrapper
 
 
 if __name__ == '__main__':
