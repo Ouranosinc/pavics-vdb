@@ -63,7 +63,7 @@ docker run --rm --name run_convert_grib2_to_nc \
     --volume $SCRIPT_TO_RUN:$SCRIPT_TO_RUN:ro \
     --volume $SCRIPT_CONFIG:$SCRIPT_CONFIG:ro \
     $ENV_OPTS \
-    --env CONVERT_GRIB2_TO_NC_PROGRESSBAR \
+    --env CONVERT_GRIB2_TO_NC_PROGRESSBAR=$CONVERT_GRIB2_TO_NC_PROGRESSBAR \
     --user $USER_ID:$GROUP_ID \
     $RUN_CONVERT_GRIB2_TO_NC_IMAGE \
     python $SCRIPT_TO_RUN "$@"
