@@ -9,6 +9,7 @@ import urllib
 from pathlib import Path
 import pandas as pd
 import xarray as xr
+from contextlib import contextmanager
 from dask.diagnostics import ProgressBar
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -211,8 +212,7 @@ def reformat_nc(job):
 
     print(outfile.name)
 
-    @progressbar_toogle
-    def do_reformat_nc():
+    with progressbar_toogle():
         ds_all = []
         for v in ncfiles:
 
@@ -261,8 +261,6 @@ def reformat_nc(job):
         proc.join()
         proc.close()
 
-    do_reformat_nc()
-
 
 def write_nc(inputs):
     ds, outfile = inputs
@@ -305,12 +303,9 @@ def convert(fn):
             encoding["time"] = {"dtype": "single"}
             tmpfile = tempfile.NamedTemporaryFile(suffix='.nc', delete=False)
 
-            @progressbar_toogle
-            def to_netcdf():
+            with progressbar_toogle():
                 print('converting ', infile.name)
                 ds.to_netcdf(tmpfile.name, format='NETCDF4', engine="netcdf4", encoding=encoding)
-
-            to_netcdf()
 
             shutil.move(tmpfile.name, outpath.joinpath(infile.name.replace(".grib2", ".nc")).as_posix())
 
@@ -321,8 +316,9 @@ def convert(fn):
         pass
 
 
-def progressbar_toogle(func):
-    """Decorator to toogle usage of ProgressBar context manager.
+@contextmanager
+def progressbar_toogle():
+    """Drop-in replacement for the ProgressBar context manager.
 
     ProgressBar is not used if environment variable
     'CONVERT_GRIB2_TO_NC_PROGRESSBAR' exists and is set to 'false'.
@@ -330,15 +326,16 @@ def progressbar_toogle(func):
     Useful in automation because ProgressBar generate lots of noises in logs.
     """
 
-    def wrapper():
+    try:
         if os.environ.get('CONVERT_GRIB2_TO_NC_PROGRESSBAR', default="") == 'false':
             # Not using ProgressBar.
-            func()
+            yield
         else:
             # Else use ProgressBar.
             with ProgressBar():
-                func()
-    return wrapper
+                yield
+    finally:
+        pass
 
 
 if __name__ == '__main__':
