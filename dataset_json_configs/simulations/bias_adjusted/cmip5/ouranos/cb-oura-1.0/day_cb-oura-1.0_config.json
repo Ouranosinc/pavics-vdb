@@ -11,7 +11,8 @@
       "value": "Ouranos",
       "type": "String"
     },
-    "title": {"value": "Ouranos standard ensemble of bias-adjusted climate scenarios version 1.0 (cb-oura-1.0)","type": "String"},
+    "title": {"value": "Ouranos standard ensemble of bias-adjusted climate scenarios version 1.0 (cb-oura-1.0)",
+      "type": "String"},
     "type": {
       "value": "GCM",
       "type": "String"
@@ -21,11 +22,15 @@
       "type": "String"
     },
     "dataset_description": {
-      "value":"https://www.ouranos.ca/publication-scientifique/FicheLoganGauvin2016_EN.pdf",
+      "value": "https://www.ouranos.ca/publication-scientifique/FicheLoganGauvin2016_EN.pdf",
+      "type": "String"
+    },
+    "abstract": {
+      "value": "In order to satisfy growing demand and ensure the availability of climate scenarios that meet the needs of vulnerability, impact and adaptation (VIA) studies, a standard ensemble of bias-adjusted climate scenarios has been produced. Resulting climate scenarios are constructed using outputs of 11 individual global climate models and two future greenhouse gas emissions scenarios (RCP 4.5 and RCP 8.5) to cover the range of plausible of future changes and post-processed to refine the spatial scales and correct biases. The selection of a subset of simulations from the entire CMIP5 ensemble was carried out using a cluster analysis. The selection criteria include projected monthly changes in maximum and minimum temperatures as well as in total precipitations for two future horizons (2041 to 2070 and 2071 to 2100)",
       "type": "String"
     },
     "bias_adjustment_method": {
-      "value":"1D-Quantile Mapping",
+      "value": "1D-Quantile Mapping",
       "type": "String"
     },
     "bias_adjustment_reference": {
@@ -37,11 +42,15 @@
       "type": "String"
     },
     "licence_type": {
-      "value": "permissive",
+      "value": "permissive non-commercial",
+      "type": "String"
+    },
+    "licence":{
+      "value":"Creative Commons Attribution-NonCommercial 4.0 International Public License: https://creativecommons.org/licenses/by-nc/4.0/legalcode",
       "type": "String"
     },
     "terms_of_use": {
-      "value": "Terms of use at https://www.ouranos.ca/climate-portraits/#/. In addition, the data used for the realization of climate scenarios are subject to the conditions of use of each organization that is the source of this data, and that you must respect. For more details, please refer to:https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html",
+      "value": "In addition to the provided licence, the data used for the realization of climate scenarios are subject to the conditions of use of each organization that is the source of this data, and that you must respect. For more details, please refer to:https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html",
       "type": "String"
     },
     "attribution": {
