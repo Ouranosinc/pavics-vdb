@@ -14,38 +14,10 @@ if [ ! -z "$RUN_CONVERT_GRIB2_TO_NC_LOGFILE" ]; then
     exec >>$RUN_CONVERT_GRIB2_TO_NC_LOGFILE 2>&1
 fi
 
+. $THIS_DIR/convert_grib2_to_nc.conf
+
 if [ -z "$RUN_CONVERT_GRIB2_TO_NC_IMAGE" ]; then
     RUN_CONVERT_GRIB2_TO_NC_IMAGE="pavics/workflow-tests:201214"
-fi
-
-# Need to repeat the following dupes with convert_grib2_to_nc.py for proper
-# docker volume mount.  Also allows to have alternate default values if needed.
-
-if [ -z "$RUN_CONVERT_GRIB2_TO_NC_INPATH" ]; then
-    if [ -n "$CONVERT_GRIB2_TO_NC_INPATH" ]; then
-        RUN_CONVERT_GRIB2_TO_NC_INPATH="$CONVERT_GRIB2_TO_NC_INPATH"
-    else
-        # Dupes with convert_grib2_to_nc.py script.
-        RUN_CONVERT_GRIB2_TO_NC_INPATH="/data/tmp/geps_forecast/grib2"
-    fi
-fi
-
-if [ -z "$RUN_CONVERT_GRIB2_TO_NC_OUTPATH" ]; then
-    if [ -n "$CONVERT_GRIB2_TO_NC_OUTPATH" ]; then
-        RUN_CONVERT_GRIB2_TO_NC_OUTPATH="$CONVERT_GRIB2_TO_NC_OUTPATH"
-    else
-        # Dupes with convert_grib2_to_nc.py script.
-        RUN_CONVERT_GRIB2_TO_NC_OUTPATH="/data/tmp/geps_forecast/netcdf"
-    fi
-fi
-
-if [ -z "$RUN_CONVERT_GRIB2_TO_NC_THREDDSPATH" ]; then
-    if [ -n "$CONVERT_GRIB2_TO_NC_THREDDSPATH" ]; then
-        RUN_CONVERT_GRIB2_TO_NC_THREDDSPATH="$CONVERT_GRIB2_TO_NC_THREDDSPATH"
-    else
-        # Dupes with convert_grib2_to_nc.py script.
-        RUN_CONVERT_GRIB2_TO_NC_THREDDSPATH="/pvcs1/DATA/eccc/forecasts/geps"
-    fi
 fi
 
 
@@ -59,15 +31,8 @@ run_convert_grib2_to_nc finished   END_TIME=`date -Isecond`"
 trap cleanup_on_exit EXIT
 
 
-SCRIPT_TO_RUN="$1"
-if [ -z "$CONFIG_YML" ]; then
-    SCRIPT_TO_RUN="$THIS_DIR/convert_grib2_to_nc.py"
-else
-    shift
-fi
-
-# Docker volume mount requires absolute path.
-SCRIPT_TO_RUN="`realpath "$SCRIPT_TO_RUN"`"
+SCRIPT_TO_RUN="$THIS_DIR/convert_grib2_to_nc.py"
+SCRIPT_CONFIG="$THIS_DIR/convert_grib2_to_nc.conf"
 
 
 START_TIME="`date -Isecond`"
@@ -79,20 +44,26 @@ set -x
 USER_ID="`id -u`"
 GROUP_ID="`id -g`"
 
-# Ensure dirs are created using current USER_ID/GROUP_ID for
-# next run to have proper write access.
-mkdir -p "$RUN_CONVERT_GRIB2_TO_NC_INPATH"
-mkdir -p "$RUN_CONVERT_GRIB2_TO_NC_OUTPATH"
+for var in $CONFIG_ENV_VAR_PATH_LIST; do
+    if [ -z "`eval echo \\$${var}`" ]; then
+        eval "$var=\$${var}_DEFAULT"
+    fi
+
+    # Ensure dirs are created using current USER_ID/GROUP_ID for
+    # next run to have proper write access.
+    eval mkdir -p "\$$var"
+
+    VOLUME_MOUNT_OPTS="$VOLUME_MOUNT_OPTS `eval echo "--volume \\$$var:\\$$var:rw"`"
+
+    ENV_OPTS="$ENV_OPTS `eval echo "--env $var=\\$$var"`"
+done
 
 docker run --rm --name run_convert_grib2_to_nc \
-    --volume $RUN_CONVERT_GRIB2_TO_NC_INPATH:$RUN_CONVERT_GRIB2_TO_NC_INPATH:rw \
-    --volume $RUN_CONVERT_GRIB2_TO_NC_OUTPATH:$RUN_CONVERT_GRIB2_TO_NC_OUTPATH:rw \
-    --volume $RUN_CONVERT_GRIB2_TO_NC_THREDDSPATH:$RUN_CONVERT_GRIB2_TO_NC_THREDDSPATH:rw \
+    $VOLUME_MOUNT_OPTS \
     --volume $SCRIPT_TO_RUN:$SCRIPT_TO_RUN:ro \
-    --env CONVERT_GRIB2_TO_NC_INPATH="$RUN_CONVERT_GRIB2_TO_NC_INPATH" \
-    --env CONVERT_GRIB2_TO_NC_OUTPATH="$RUN_CONVERT_GRIB2_TO_NC_OUTPATH" \
-    --env CONVERT_GRIB2_TO_NC_THREDDSPATH="$RUN_CONVERT_GRIB2_TO_NC_THREDDSPATH" \
-    --env CONVERT_GRIB2_TO_NC_PROGRESSBAR \
+    --volume $SCRIPT_CONFIG:$SCRIPT_CONFIG:ro \
+    $ENV_OPTS \
+    --env CONVERT_GRIB2_TO_NC_PROGRESSBAR=$CONVERT_GRIB2_TO_NC_PROGRESSBAR \
     --user $USER_ID:$GROUP_ID \
     $RUN_CONVERT_GRIB2_TO_NC_IMAGE \
     python $SCRIPT_TO_RUN "$@"
