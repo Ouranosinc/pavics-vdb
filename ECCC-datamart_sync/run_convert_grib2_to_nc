@@ -1,55 +1,57 @@
 #!/bin/sh
-# Wrapper to capture run-time for convert_grib2_to_nc.py script.
+# Generic wrapper to capture run-time env for script using Docker.
 #
-# Setting environment variable RUN_CONVERT_GRIB2_TO_NC_LOGFILE='/path/to/logfile.log'
+# Setting environment variable LAUNCH_CONTAINER_LOGFILE='/path/to/logfile.log'
 # will redirect all STDOUT and STDERR to that logfile so this script will be
 # completely silent.
 #
+# All LAUNCH_CONTAINER_* vars are env var or can be set in the config file
+# LAUNCH_CONTAINER_CONFIG_FILE.
 
-THIS_FILE="`realpath "$0"`"
-THIS_DIR="`dirname "$THIS_FILE"`"
-
-
-if [ ! -z "$RUN_CONVERT_GRIB2_TO_NC_LOGFILE" ]; then
-    exec >>$RUN_CONVERT_GRIB2_TO_NC_LOGFILE 2>&1
+if [ ! -z "$LAUNCH_CONTAINER_LOGFILE" ]; then
+    exec >>$LAUNCH_CONTAINER_LOGFILE 2>&1
 fi
 
-. $THIS_DIR/convert_grib2_to_nc.conf
-
-if [ -z "$RUN_CONVERT_GRIB2_TO_NC_IMAGE" ]; then
-    RUN_CONVERT_GRIB2_TO_NC_IMAGE="pavics/workflow-tests:201214"
+CONFIG_FILE="$1"
+if [ -z "$CONFIG_FILE" ]; then
+    CONFIG_FILE="$LAUNCH_CONTAINER_CONFIG_FILE"
+else
+    # So the rest can be given as opts to script.
+    shift
 fi
+
+. $CONFIG_FILE
 
 
 cleanup_on_exit() {
     set +x
     echo "
-run_convert_grib2_to_nc finished START_TIME=$START_TIME
-run_convert_grib2_to_nc finished   END_TIME=`date -Isecond`"
+launch_container '$LAUNCH_CONTAINER_RUN_NAME' finished START_TIME=$START_TIME
+launch_container '$LAUNCH_CONTAINER_RUN_NAME' finished   END_TIME=`date -Isecond`"
 }
 
 trap cleanup_on_exit EXIT
 
 
-SCRIPT_TO_RUN="$THIS_DIR/convert_grib2_to_nc.py"
-SCRIPT_CONFIG="$THIS_DIR/convert_grib2_to_nc.conf"
-
-
 START_TIME="`date -Isecond`"
 echo "==========
-run_convert_grib2_to_nc START_TIME=$START_TIME"
+launch_container '$LAUNCH_CONTAINER_RUN_NAME' START_TIME=$START_TIME"
 
 set -x
+
+CONFIG_FILE_PATH="`realpath "$CONFIG_FILE"`"
+CONFIG_FILE_DIR="`dirname "$CONFIG_FILE_PATH"`"
+WORK_DIR="`realpath "$CONFIG_FILE_DIR/$LAUNCH_CONTAINER_RO_DIR_VOLUME_MOUNT"`"
 
 USER_ID="`id -u`"
 GROUP_ID="`id -g`"
 
-for var in $CONFIG_ENV_VAR_PATH_LIST; do
+for var in $LAUNCH_CONTAINER_ENV_VAR_PATH_LIST; do
     if [ -z "`eval echo \\$${var}`" ]; then
         eval "$var=\$${var}_DEFAULT"
     fi
 
-    # Ensure dirs are created using current USER_ID/GROUP_ID for
+    # Ensure dirs are pre-created using current USER_ID/GROUP_ID for
     # next run to have proper write access.
     eval mkdir -p "\$$var"
 
@@ -58,15 +60,16 @@ for var in $CONFIG_ENV_VAR_PATH_LIST; do
     ENV_OPTS="$ENV_OPTS `eval echo "--env $var=\\$$var"`"
 done
 
-docker run --rm --name run_convert_grib2_to_nc \
+docker run --rm --name $LAUNCH_CONTAINER_RUN_NAME \
     $VOLUME_MOUNT_OPTS \
-    --volume $SCRIPT_TO_RUN:$SCRIPT_TO_RUN:ro \
-    --volume $SCRIPT_CONFIG:$SCRIPT_CONFIG:ro \
+    --volume $CONFIG_FILE_PATH:$CONFIG_FILE_PATH:ro \
+    --volume $WORK_DIR:$WORK_DIR:ro \
+    --workdir $WORK_DIR \
     $ENV_OPTS \
-    --env CONVERT_GRIB2_TO_NC_PROGRESSBAR=$CONVERT_GRIB2_TO_NC_PROGRESSBAR \
     --user $USER_ID:$GROUP_ID \
-    $RUN_CONVERT_GRIB2_TO_NC_IMAGE \
-    python $SCRIPT_TO_RUN "$@"
+    $LAUNCH_CONTAINER_DOCKER_RUN_EXTRA_OPTS \
+    $LAUNCH_CONTAINER_IMAGE \
+    $LAUNCH_CONTAINER_COMMAND "$@"
 
 
 # vi: tabstop=8 expandtab shiftwidth=4 softtabstop=4
