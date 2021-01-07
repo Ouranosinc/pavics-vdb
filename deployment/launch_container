@@ -10,6 +10,22 @@
 #
 # All LAUNCH_CONTAINER_* vars are env var or can be set in the config file
 # LAUNCH_CONTAINER_CONFIG_FILE.
+#
+# See file launch_container.conf.sample for documentation for all the
+# configuration env vars.
+#
+# Possible usage of this script:
+#
+# ./launch_container ./launch_container.conf.sample
+#
+# LAUNCH_CONTAINER_CONFIG_FILE="./launch_container.conf.sample" ./launch_container
+#
+# ./launch_container ./launch_container.conf.sample arg1 arg2 arg3
+#
+# ENV_VAR_1=/tmp/launch_container_test_custom ENV_VAR_4=now_exist ./launch_container ./launch_container.conf.sample
+#
+# LAUNCH_CONTAINER_DOCKER_RUN_EXTRA_OPTS="--env ENV_VAR_5=value5 --env ENV_VAR_3=overriden" ./launch_container ./launch_container.conf.sample
+#
 
 if [ ! -z "$LAUNCH_CONTAINER_LOGFILE" ]; then
     exec >>$LAUNCH_CONTAINER_LOGFILE 2>&1

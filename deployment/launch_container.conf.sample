@@ -50,5 +50,6 @@ LAUNCH_CONTAINER_RUN_NAME="test_launch_container"
 # Ex: add more read-only volume mount, add more env var, override existing
 # docker run opts in launch_container script.
 LAUNCH_CONTAINER_DOCKER_RUN_EXTRA_OPTS=" \
-  --env ENV_VAR_4=value4 \
+  --env ENV_VAR_3=value3 \
+  --env ENV_VAR_4=$ENV_VAR_4 \
   $LAUNCH_CONTAINER_DOCKER_RUN_EXTRA_OPTS"
