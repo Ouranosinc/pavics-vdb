@@ -39,6 +39,11 @@ else
     shift
 fi
 
+if [ -z "$CONFIG_FILE" ]; then
+    echo "ERROR: please provide a config file or set LAUNCH_CONTAINER_CONFIG_FILE='path/to/config.file'" 1>&2
+    exit 2
+fi
+
 . $CONFIG_FILE
 
 
