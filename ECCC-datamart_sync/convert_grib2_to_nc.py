@@ -89,7 +89,7 @@ def main():
             if jobs[j]['outpath'].joinpath(d.name.replace('.grib2', '.nc')).exists():
                 os.remove(jobs[j]['outpath'].joinpath(d.name.replace('.grib2', '.nc')).as_posix())
             # delete grib2 file
-            #print(d)
+            print(f"delete {d} and corresponding .nc since older than {keep_days} days")
             os.remove(d)
 
         # only convert grib2 files that have not already been converted
@@ -166,6 +166,7 @@ def main():
             else:
                 deletefiles.append(i)
         for d in deletefiles:
+            print(f"delete {d} since older than {keep_days} days")
             os.remove(d)
 
 def validate_ncml(url, start_date):
