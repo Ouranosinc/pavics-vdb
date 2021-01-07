@@ -1,0 +1,54 @@
+# Config shared between both launch_container and other script in other language.
+#
+# Paths on the filesystem need to be treated differently than other configs.
+# They can not simply be pass-through.  They need explicit volume mount
+# directives with real value known at the launch_container level.  Other configs can
+# be pass-through launch_container because launch_container script do not need to know
+# their default or real values.
+#
+# The runtime environment of the launch_container script do not have python or other
+# languages so any config sharing need to be compatible with both shell and other languages.
+#
+# This file should be both readable by `sh` and `python` or other languages.
+#
+# Test:
+#   sh -c '. ./launch_container.conf.sample; echo $LAUNCH_CONTAINER_ENV_VAR_PATH_LIST'
+#   python3 -c 'exec(open("./launch_container.conf.sample").read()); print(LAUNCH_CONTAINER_ENV_VAR_PATH_LIST)'
+
+
+# List of env var names containing writable paths required by the command.
+LAUNCH_CONTAINER_ENV_VAR_PATH_LIST=" \
+  ENV_VAR_1 \
+  ENV_VAR_2 \
+"
+
+# Default values for the paths.
+# Same name as in LAUNCH_CONTAINER_ENV_VAR_PATH_LIST with "_DEFAULT" appended.
+ENV_VAR_1_DEFAULT="/tmp/launch_container_test1"
+ENV_VAR_2_DEFAULT="/tmp/launch_container_test2"
+
+
+#
+# Below are vars not needed for command to launch, just for the launch_container script.
+#
+
+# Docker image needed to run the command.
+LAUNCH_CONTAINER_IMAGE="bash"
+
+# Read-only dir containing command to run below.  This allows the command to
+# refer to other files in the dir.
+# The dir path is relative to this config file.
+LAUNCH_CONTAINER_RO_DIR_VOLUME_MOUNT=".."
+
+# Path relative to LAUNCH_CONTAINER_RO_DIR_VOLUME_MOUNT.
+LAUNCH_CONTAINER_COMMAND="bash deployment/echoargs"
+
+# Container name and also used in logging.
+LAUNCH_CONTAINER_RUN_NAME="test_launch_container"
+
+# Extra docker run options.
+# Ex: add more read-only volume mount, add more env var, override existing
+# docker run opts in launch_container script.
+LAUNCH_CONTAINER_DOCKER_RUN_EXTRA_OPTS=" \
+  --env ENV_VAR_4=value4 \
+  $LAUNCH_CONTAINER_DOCKER_RUN_EXTRA_OPTS"

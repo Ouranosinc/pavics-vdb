@@ -1,9 +1,12 @@
 #!/bin/sh
-# Generic wrapper to capture run-time env for script using Docker.
+# Generic wrapper to capture run-time env for any script using Docker.
 #
 # Setting environment variable LAUNCH_CONTAINER_LOGFILE='/path/to/logfile.log'
 # will redirect all STDOUT and STDERR to that logfile so this script will be
 # completely silent.
+#
+# This script should be able to run from a minimal Docker image like
+# 'docker:VERSION-git'.
 #
 # All LAUNCH_CONTAINER_* vars are env var or can be set in the config file
 # LAUNCH_CONTAINER_CONFIG_FILE.
