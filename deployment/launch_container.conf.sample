@@ -35,12 +35,12 @@ ENV_VAR_2_DEFAULT="/tmp/launch_container_test2"
 # Docker image needed to run the command.
 LAUNCH_CONTAINER_IMAGE="bash"
 
-# Read-only dir containing command to run below.  This allows the command to
-# refer to other files in the dir.
+# Read-only dir containing command to run below.  We volume-mount this dir to allow the
+# command to refer to other files in the dir.
 # The dir path is relative to this config file.
-LAUNCH_CONTAINER_RO_DIR_VOLUME_MOUNT=".."
+LAUNCH_CONTAINER_RO_WORKDIR=".."
 
-# Path relative to LAUNCH_CONTAINER_RO_DIR_VOLUME_MOUNT.
+# Path relative to LAUNCH_CONTAINER_RO_WORKDIR.
 LAUNCH_CONTAINER_COMMAND="bash deployment/echoargs"
 
 # Container name and also used in logging.
