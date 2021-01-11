@@ -89,7 +89,7 @@ def main():
             if jobs[j]['outpath'].joinpath(d.name.replace('.grib2', '.nc')).exists():
                 os.remove(jobs[j]['outpath'].joinpath(d.name.replace('.grib2', '.nc')).as_posix())
             # delete grib2 file
-            print(d)
+            print(f"delete '{d}' and corresponding .nc since older than '{keep_days}'")
             os.remove(d)
 
         # only convert grib2 files that have not already been converted
@@ -138,7 +138,7 @@ def main():
                     print(f"{f} : no action needed for combining variables and timesteps")
 
         ## update symlink recent forecast
-        symlink = jobs[j]['threddspath'].joinpath('GEPS_latest.nc')
+        symlink = jobs[j]['threddspath'].joinpath(f'{j}_latest.nc')
         latest = sorted([ll for ll in jobs[j]['threddspath'].glob('*.nc') if symlink.name not in ll.name])[-1]
         latest_date = latest.name.split(jobs[j]['pattern'][0])[-1].split('_allP')[0]
 
@@ -154,6 +154,20 @@ def main():
             # TODO how to handle unsuccessful update?
             print('update no good')
 
+        # clean up files on thredds server
+        sorted_files = sorted([ll for ll in jobs[j]['threddspath'].glob('*.nc') if symlink.name not in ll.name])[:-1]
+        keepfiles = []
+        deletefiles = []
+        for i in sorted_files:
+            forecast_date = i.name.split(jobs[j]['pattern'][0])[-1].split('_')[0][:-2]
+
+            if (today - datetime.datetime.strptime(forecast_date, '%Y%m%d')) < keep_days:
+                keepfiles.append(i)
+            else:
+                deletefiles.append(i)
+        for d in deletefiles:
+            print(f"delete '{d}' since older than '{keep_days}'")
+            os.remove(d)
 
 def validate_ncml(url, start_date):
     # Validate that ncml opendap link is functional and @location matches the most recent forecast .nc
