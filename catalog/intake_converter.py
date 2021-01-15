@@ -1,4 +1,15 @@
-"""Create intake catalog from NcML attributes."""
+"""Create intake catalog from NcML attributes.
+
+# Overview
+
+- Given a THREDDS location, walk datasets and subdirectories (todo : easy using siphon.catalog.TDSCatalog)
+- For each dataset, request NcML service output -> xml (todo : easy using ds.access_urls["NCML"])
+- Convert xml into dictionary of attributes (extract_attrs_from_ncml)
+- Configure attributes that should go into catalog (todo : ask Travis)
+- Convert list of dicts to csv table using config (todo)
+- Create intake json entry linking to csv table and holding column metadata (todo, unclear how to configure)
+
+"""
 
 # Catalog content
 facets = ()
