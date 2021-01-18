@@ -2,7 +2,7 @@
 
 # Overview
 
-- Given a THREDDS location, walk datasets and subdirectories (todo : easy using siphon.catalog.TDSCatalog)
+- Given a THREDDS location, walk datasets and subdirectories
 - For each dataset, request NcML service output -> xml (todo : easy using ds.access_urls["NCML"])
 - Convert xml into dictionary of attributes (extract_attrs_from_ncml)
 - Configure attributes that should go into catalog (todo : ask Travis)
@@ -11,11 +11,31 @@
 
 """
 
+from siphon.catalog import TDSCatalog
+
 # Catalog content
 facets = ()
 
 # Dictionary of facet names, keyed by the standard name that will appear in catalog
 alternative_facet_names = {}
+
+
+def walk(cat, depth=1):
+    """Return a generator walking a THREDDS data catalog for datasets.
+
+    Parameters
+    ----------
+    cat : TDSCatalog
+      THREDDS catalog.
+    depth : int
+      Maximum recursive depth. Setting 0 will return only datasets within the top-level catalog.
+    """
+    yield from cat.datasets.items()
+
+    if depth > 0:
+        for name, ref in cat.catalog_refs.items():
+            child = ref.follow()
+            yield from walk(child, depth=depth-1)
 
 
 def extract_attrs_from_ncml(url):
