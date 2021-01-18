@@ -1,13 +1,26 @@
 """Create intake catalog from NcML attributes.
 
+# Example
+
+root = https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/datasets/simulations/bias_adjusted/cmip5/ouranos
+/catalog.html
+tds = TDSCatalog(root)
+table = build_catalog(tds)
+write_catalog(table)
+
+import intake
+cat = intake.open_esm_datastore("pavics.json")
+cat.df
+
+
 # Overview
 
 - Given a THREDDS location, walk datasets and subdirectories
 - For each dataset, request NcML service output -> xml
 - Convert xml into dictionary of attributes (extract_attrs_from_ncml)
 - Configure attributes that should go into catalog (todo : ask Travis)
-- Convert list of dicts to csv table using config (todo)
-- Create intake json entry linking to csv table and holding column metadata (todo, unclear how to configure)
+- Convert list of dicts to csv table using config
+- Create intake json entry linking to csv table and holding column metadata
 
 """
 
