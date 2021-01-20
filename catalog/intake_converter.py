@@ -2,8 +2,7 @@
 
 # Example
 
-root = https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/datasets/simulations/bias_adjusted/cmip5/ouranos
-/catalog.html
+root = "https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/datasets/simulations/bias_adjusted/cmip5/ouranos/catalog.html"
 tds = TDSCatalog(root)
 table = build_catalog(tds)
 write_catalog(table)
@@ -22,6 +21,22 @@ cat.df
 - Convert list of dicts to csv table using config
 - Create intake json entry linking to csv table and holding column metadata
 
+# Notes
+
+https://intake-esm.readthedocs.io/en/latest/user-guide/multi-variable-assets.html
+
+Gab:
+- grid resolution (degree)
+- standard Not Applicable value
+- institude_id (gcm/rcm)
+- how-to ( for first member, highest-resolution)
+
+# Open questions
+
+- One catalog for everything, or a catalog for reanalyses, simulations, etc ?
+- Variable coded with CMIP output variable name ? (only standard_name is in CF convention)
+   * Can use synonym table from cf-index-meta
+
 """
 
 from siphon.catalog import TDSCatalog
@@ -34,15 +49,17 @@ spec = {
     "catalog_file": "pavics_datasets.csv",
     "attributes": [
         {"column_name": "project_id"},
+        {"column_name": "type"},  # could be more specific
         {"column_name": "institute_id"},
-        {"column_name": "type"},
         {"column_name": "driving_experiment"},
         {"column_name": "driving_model"},
+        {"column_name": "realizations"},
         {"column_name": "processing"},
-        {"column_name": "license_type"}
+        {"column_name": "license_type"},
+        {"column_name": "variable"}
     ],
     "assets":{
-        "column_name": "netcdf",
+        "column_name": "path",
         "format": "netcdf"
     }
 }
@@ -53,12 +70,20 @@ alternative_facet_names = {}
 
 def build_catalog(cat):
     keys = [att["column_name"] for att in spec["attributes"]]
+    keys.remove("variable")
 
     header = keys + [spec["assets"]["column_name"]]
     table = [header]
-    for name, gl, gr, va in walk_extract(cat):
-        row = [gl.get(k, "NA") for k in keys]
-        row.append(gr["services"]["OPENDAP"])
+    for name, ds in walk(cat):
+        attrs = attrs_from_ds(ds)
+        row = [attrs.get(k, "NA") for k in keys]
+
+        # Variables
+        row.append(str([vk for vk, vd in attrs["__variable__"].items()]))
+
+        # Path or URL
+        row.append(attrs["__services__"]["OPENDAP"])
+
         table.append(row)
     return table
 
@@ -96,30 +121,27 @@ def walk(cat, depth=1):
             yield from walk(child, depth=depth-1)
 
 
-def walk_extract(cat, depth=1):
-    out = {}
-    for name, ds in walk(cat):
-        url = ds.access_urls["NCML"]
-        gl, gr, va = extract_attrs_from_ncml(url)
-        gr["services"] = ds.access_urls
-        yield name, gl, gr, va
+def attrs_from_ds(ds):
+    """Extract attributes from Dataset."""
+    url = ds.access_urls["NCML"]
+    attrs = attrs_from_ncml(url)
+    attrs["__services__"] = ds.access_urls
+    return attrs
 
 
-def extract_attrs_from_ncml(url):
+def attrs_from_ncml(url):
     """Extract attributes from NcML file.
 
     Parameters
     ----------
     url : str
       Link to NcML service of THREDDS server for a dataset.
-    which : {'global', 'variable',
-    facets : tuple
-      Attribute names.
 
     Returns
     -------
     dict
-      Attribute values keyed by facet names.
+      Global attribute values keyed by facet names, with variable attributes in `__variable__` nested dict, and
+      additional specialized attributes in `__group__` nested dict.
     """
     import lxml.etree
     import requests
@@ -133,24 +155,27 @@ def extract_attrs_from_ncml(url):
     nc = doc.xpath("/ncml:netcdf", namespaces=ns)[0]
 
     # Extract global attributes
-    gl = attrib_to_dict(nc.xpath("ncml:attribute", namespaces=ns))
+    out = _attrib_to_dict(nc.xpath("ncml:attribute", namespaces=ns))
 
     # Extract group attributes
     gr = {}
     for group in nc.xpath("ncml:group", namespaces=ns):
-        gr[group.attrib["name"]] = attrib_to_dict(group.xpath("ncml:attribute", namespaces=ns))
+        gr[group.attrib["name"]] = _attrib_to_dict(group.xpath("ncml:attribute", namespaces=ns))
 
     # Extract variable attributes
     va = {}
     for variable in nc.xpath("ncml:variable", namespaces=ns):
         if '_CoordinateAxisType' in variable.xpath("ncml:attribute/@name", namespaces=ns):
             continue
-        va[variable.attrib["name"]] = attrib_to_dict(variable.xpath("ncml:attribute", namespaces=ns))
+        va[variable.attrib["name"]] = _attrib_to_dict(variable.xpath("ncml:attribute", namespaces=ns))
 
-    return gl, gr, va
+    out["__group__"] = gr
+    out["__variable__"] = va
+
+    return out
 
 
-def attrib_to_dict(elems):
+def _attrib_to_dict(elems):
     """Convert element attributes to dictionary.
 
     Ignore attributes with names starting with _
