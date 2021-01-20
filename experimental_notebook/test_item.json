@@ -1,0 +1,97 @@
+{
+    "stac_version": "1.0.0-beta.2",
+    "stac_extensions": [
+      "https://stac-dev.crim.ca/cmip5-extension/0.1/schema.json"
+    ],
+    "id": "BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_tx_mean_YS",
+    "type": "Feature",
+    "bbox": [
+      49.16354,
+      72.27502,
+      51.36812,
+      75.67662
+    ],
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            51.33855,
+            72.27502
+          ],
+          [
+            51.36812,
+            75.70821
+          ],
+          [
+            49.19092,
+            75.67662
+          ],
+          [
+            49.16354,
+            72.3964
+          ],
+          [
+            51.33855,
+            72.27502
+          ]
+        ]
+      ]
+    },
+    "collection": "cmip5",
+    "properties": {
+        "datetime": "2020-10-15T13:51:21Z",
+      "start_datetime": "2020-10-15T13:51:21Z",
+      "end_datetime": "2020-10-15T13:51:21Z",
+      "created": "2020-11-04T06:15:26Z",
+      "updated": "2020-11-04T06:15:26Z",
+        "meta:provider" : "thredds",
+      "cmip5:activity_id" : "",
+      "cmip5:institution_id" : "CCCS",
+      "cmip5:source_id" : "",
+      "cmip5:experiment_id" : "historical,rcp26,rcp45,rcp85",
+      "cmip5:member_id" : "",
+      "cmip5:table_id" : "Table day (10 Jun 2010)",
+      "cmip5:variable_id" : "tx_mean",
+      "cmip5:grid_label" : "",
+      "cmip5:conventions" : "CF-1.4",
+      "cmip5:frequency" : "day",
+      "cmip5:modeling_realm" : "atmos"
+    },
+    "links": [
+        {
+        "rel": "self",
+        "href": "https://stac-dev.crim.ca/collections/cmip5/items/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_tx_mean_YS"
+      },
+      {
+        "rel": "next",
+        "href": "https://stac-dev.crim.ca/collections/cmip5/items?page=2"
+      },
+      {
+        "rel": "collection",
+        "href": "https://stac-dev.crim.ca/collections/cmip5"
+      },
+      {
+        "rel": "parent",
+        "href": "https://stac-dev.crim.ca/collections/cmip5"
+      },
+      {
+        "rel": "root",
+        "href": "https://stac-dev.crim.ca"
+      },
+      {
+        "rel": "file",
+        "href": "https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/fileServer/birdhouse/cccs_portal/indices/Final/BCCAQv2/tx_mean/allrcps_ensemble_stats/YS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_tx_mean_YS.nc"
+      }
+    ],
+    "assets": {
+      "metadata_iso": {
+          "title": "Complete ISO XML metadata",
+          "href": "https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/iso/birdhouse/cccs_portal/indices/Final/BCCAQv2/tx_mean/allrcps_ensemble_stats/YS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_tx_mean_YS.nc"
+      },
+      "metadata_ncml": {
+          "title": "Complete NCML XML metadata",
+          "href": "https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/ncml/birdhouse/cccs_portal/indices/Final/BCCAQv2/tx_mean/allrcps_ensemble_stats/YS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_tx_mean_YS.nc"
+      }
+    }
+  }
