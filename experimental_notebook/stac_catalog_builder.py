@@ -39,18 +39,18 @@ class StacCatalogBuilder(object):
                                       properties={},
                                       stac_extensions=[pystac.Extensions.DATACUBE])
 
-        collection_item.properties["meta:provider"] = "thredds"
-        collection_item.properties["cmip5:activity_id"] = ""
-        collection_item.properties["cmip5:institution_id"] = "CCCS"
-        collection_item.properties["cmip5:source_id"] = ""
-        collection_item.properties["cmip5:experiment_id"] = "historical,rcp26,rcp45,rcp85"
-        collection_item.properties["cmip5:member_id"] = ""
-        collection_item.properties["cmip5:table_id"] = "Table day (10 Jun 2010)"
-        collection_item.properties["cmip5:variable_id"] = "tx_mean"
-        collection_item.properties["cmip5:grid_label"] = ""
-        collection_item.properties["cmip5:conventions"] = "CF-1.4"
-        collection_item.properties["cmip5:frequency"] = "day"
-        collection_item.properties["cmip5:modeling_realm"] = "atmos"
+        collection_item.properties["meta:provider"] = item["provider"]
+        collection_item.properties["cmip5:activity_id"] = item["activity_id"]
+        collection_item.properties["cmip5:institution_id"] = item["institution_id"]
+        collection_item.properties["cmip5:source_id"] = item["source_id"]
+        collection_item.properties["cmip5:experiment_id"] = item["experiment_id"]
+        collection_item.properties["cmip5:member_id"] = item["member_id"]
+        collection_item.properties["cmip5:table_id"] = item["table_id"]
+        collection_item.properties["cmip5:variable_id"] = item["variable_id"]
+        collection_item.properties["cmip5:grid_label"] = item["grid_label"]
+        collection_item.properties["cmip5:conventions"] = item["conventions"]
+        collection_item.properties["cmip5:frequency"] = item["frequency"]
+        collection_item.properties["cmip5:modeling_realm"] = item["modeling_realm"]
 
         link = pystac.Link("file", item["http_url"], "application/netcdf")
         collection_item.add_link(link)
@@ -70,10 +70,10 @@ class StacCatalogBuilder(object):
         tmp_extent = pystac.TemporalExtent([(capture_date, None)])
         extent = pystac.Extent(sp_extent, tmp_extent)
 
-        collection = pystac.Collection(id='tx-mean',
-                                       description='tx mean',
+        collection = pystac.Collection(id='cmip5',
+                                       description='CMIP5 collection',
                                        extent=extent,
-                                       license='CC-BY-SA-4.0')
+                                       license='na')
 
         collection.add_items(collection_items)
 

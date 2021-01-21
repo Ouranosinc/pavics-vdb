@@ -60,18 +60,25 @@ class TDSCrawler(object):
         """
         Add extra metadata to item.
         """
-        # TODO : replace with regexes
+        # TODO : hardcoded, especially for url_attrs. Replace with regexes
         # TODO : Extract metadata from ncml_url and iso_url
+        # eg: 'BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_tx_mean_YS.nc'
+        url_attrs = ds["http_url"].split("/")
+        ds_attrs = ds["dataset_name"].split("_")
+
         extra_meta = {
-            "model" : "BCCAQv2+ANUSPLIN300",
-            "experiment" : "ensemble-percentiles",
-            "frequency" : "YS",
-            "modeling_realm" : "historical+allrcps",
-            "mip_table" : "",
-            "ensemble_member" : "",
-            "version_number" : "",
-            "variable_name" : "tx_mean",
-            "temporal_subset" : "1950-2100"
+            "provider": "thredds",
+            "activity_id": "na",
+            "institution_id": "na",
+            "source_id": "na",
+            "experiment_id": url_attrs[14],
+            "member_id": "na",
+            "table_id": "na",
+            "variable_id": url_attrs[13],
+            "grid_label": "na",
+            "conventions": "na",
+            "frequency": url_attrs[15],
+            "modeling_realm": ds_attrs[0]
         }
 
         return dict(ds, **extra_meta)
