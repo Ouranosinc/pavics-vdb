@@ -1,2 +1,5 @@
 stac-validator
 siphon
+xarray
+pystac
+netCDF4
