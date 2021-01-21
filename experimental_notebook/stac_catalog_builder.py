@@ -1,14 +1,21 @@
+from datetime import datetime
+
 import os
 import pystac
-from datetime import datetime
+import pystac.extensions.eo
 
 # TODO : run stac-validator
 
 
 class StacCatalogBuilder(object):
-    def build(self):
-        # create STAC catalog
-        collection_items = [self.get_collection_item()]
+    def build(self, metadata):
+        collection_items = []
+
+        for i, item in enumerate(metadata):
+            stac_collection_item = self.get_collection_item(item)
+
+            collection_items.append(stac_collection_item)
+
         collection = self.get_collection(collection_items)
         catalog = self.get_catalog(collection)
 
@@ -24,21 +31,35 @@ class StacCatalogBuilder(object):
         catalog.save(catalog_type=pystac.CatalogType.SELF_CONTAINED)
 
 
-    def get_collection_item(self):
-        collection_item = pystac.Item(id='local-image-col-1',
+    def get_collection_item(self, item):
+        collection_item = pystac.Item(id=item["dataset_name"],
                                       geometry={},
                                       bbox={},
                                       datetime=datetime.utcnow(),
                                       properties={},
-                                      stac_extensions=[pystac.Extensions.COLLECTION_ASSETS])
+                                      stac_extensions=[pystac.Extensions.DATACUBE])
 
-        collection_item.common_metadata.gsd = 0.3
-        collection_item.common_metadata.platform = 'Maxar'
-        collection_item.common_metadata.instruments = ['WorldView3']
+        collection_item.properties["meta:provider"] = "thredds"
+        collection_item.properties["cmip5:activity_id"] = ""
+        collection_item.properties["cmip5:institution_id"] = "CCCS"
+        collection_item.properties["cmip5:source_id"] = ""
+        collection_item.properties["cmip5:experiment_id"] = "historical,rcp26,rcp45,rcp85"
+        collection_item.properties["cmip5:member_id"] = ""
+        collection_item.properties["cmip5:table_id"] = "Table day (10 Jun 2010)"
+        collection_item.properties["cmip5:variable_id"] = "tx_mean"
+        collection_item.properties["cmip5:grid_label"] = ""
+        collection_item.properties["cmip5:conventions"] = "CF-1.4"
+        collection_item.properties["cmip5:frequency"] = "day"
+        collection_item.properties["cmip5:modeling_realm"] = "atmos"
 
-        # asset = pystac.Asset(href=img_path,
-        #                       media_type=pystac.MediaType.GEOTIFF)
-        # collection_item.add_asset('image', asset)
+        link = pystac.Link("file", item["http_url"], "application/netcdf")
+        collection_item.add_link(link)
+
+        asset = pystac.Asset(href=item["iso_url"], media_type="application/xml", title="Metadata ISO")
+        collection_item.add_asset('metadata_iso', asset)
+
+        asset = pystac.Asset(href=item["ncml_url"], media_type="application/xml", title="Metadata NcML")
+        collection_item.add_asset('metadata_ncml', asset)
 
         return collection_item
 
