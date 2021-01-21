@@ -1,6 +1,5 @@
 from datetime import datetime
 
-import os
 import pystac
 import pystac.extensions.eo
 
@@ -8,26 +7,23 @@ import pystac.extensions.eo
 
 
 class StacCatalogBuilder(object):
-    def build(self, metadata):
+    def build(self, metadata, catalog_output_path):
         collection_items = []
 
         for i, item in enumerate(metadata):
             stac_collection_item = self.get_collection_item(item)
-
             collection_items.append(stac_collection_item)
 
         collection = self.get_collection(collection_items)
         catalog = self.get_catalog(collection)
+        self.persist(catalog, catalog_output_path)
 
-        self.persist(catalog)
 
-
-    def persist(self, catalog):
+    def persist(self, catalog, catalog_output_path):
         # normalize and save
-        CATALOG_SAVE_PATH = os.getcwd() + "/output"
-        print("[INFO] Save path : " + CATALOG_SAVE_PATH)
+        print("[INFO] Save path : " + catalog_output_path)
         catalog.describe()
-        catalog.normalize_hrefs(CATALOG_SAVE_PATH)
+        catalog.normalize_hrefs(catalog_output_path)
         catalog.save(catalog_type=pystac.CatalogType.SELF_CONTAINED)
 
 

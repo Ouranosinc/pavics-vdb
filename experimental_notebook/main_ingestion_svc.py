@@ -10,6 +10,8 @@ def main():
     tds_ds = ""
     CACHE_FILEPATH = "tds_cache.json"
     TEST_DATA = False
+    tds_catalog_url = "https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/birdhouse/cccs_portal/indices/Final/BCCAQv2/tx_mean/catalog.xml"
+    catalog_output_path = os.getcwd() + "/output"
 
     if os.path.exists(CACHE_FILEPATH):
         print("[INFO] Use cache")
@@ -18,7 +20,7 @@ def main():
     elif not TEST_DATA:
         print("[INFO] Build and use cache")
         tds_crawler = TDSCrawler()
-        tds_ds = tds_crawler.run()
+        tds_ds = tds_crawler.run(tds_catalog_url)
         with open(CACHE_FILEPATH, "w") as data_file:
             json.dump(tds_ds, data_file, indent=4)
     else:
@@ -35,7 +37,7 @@ def main():
 
     # PHASE II - STAC Catalog Builder
     stacCatalogBuilder = StacCatalogBuilder()
-    stacCatalogBuilder.build(tds_ds)
+    stacCatalogBuilder.build(tds_ds, catalog_output_path)
 
 
 if __name__ == "__main__":

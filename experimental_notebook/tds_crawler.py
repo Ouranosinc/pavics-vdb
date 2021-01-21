@@ -2,12 +2,11 @@ from siphon.catalog import TDSCatalog
 
 
 class TDSCrawler(object):
-    def run(self):
+    def run(self, tds_catalog_url):
         """
         Crawl TDS.
         """
-        top_cat = TDSCatalog(
-            "https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/birdhouse/cccs_portal/indices/Final/BCCAQv2/tx_mean/catalog.xml")
+        top_cat = TDSCatalog(tds_catalog_url)
         tds_ds = self.parse_datasets(top_cat)
 
         print("[INFO] Finished crawling TDS")
