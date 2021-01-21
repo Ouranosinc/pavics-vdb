@@ -1,7 +1,7 @@
 {
     "stac_version": "1.0.0-beta.2",
     "stac_extensions": [
-      "https://stac-dev.crim.ca/cmip5-extension/0.1/schema.json"
+      "https://stac-dev.crim.ca/schemas/cmip5-extension/0.1/item.json"
     ],
     "id": "BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_tx_mean_YS",
     "type": "Feature",
@@ -40,12 +40,12 @@
     },
     "collection": "cmip5",
     "properties": {
-        "datetime": "2020-10-15T13:51:21Z",
+      "datetime": "2020-10-15T13:51:21Z",
       "start_datetime": "2020-10-15T13:51:21Z",
       "end_datetime": "2020-10-15T13:51:21Z",
       "created": "2020-11-04T06:15:26Z",
       "updated": "2020-11-04T06:15:26Z",
-        "meta:provider" : "thredds",
+      "meta:provider" : "thredds",
       "cmip5:activity_id" : "",
       "cmip5:institution_id" : "CCCS",
       "cmip5:source_id" : "",
@@ -62,10 +62,6 @@
         {
         "rel": "self",
         "href": "https://stac-dev.crim.ca/collections/cmip5/items/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_tx_mean_YS"
-      },
-      {
-        "rel": "next",
-        "href": "https://stac-dev.crim.ca/collections/cmip5/items?page=2"
       },
       {
         "rel": "collection",

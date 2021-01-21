@@ -27,6 +27,7 @@ def post_collection(file_path, stac_host):
         if r.status_code == 200:
             print(f"{bcolors.OKGREEN}[INFO] Created collection [{collection_id}] ({r.status_code}){bcolors.ENDC}")
         elif r.status_code == 409:
+            # TODO : put instead, since collection exists
             print(f"{bcolors.WARNING}[INFO] Collection already exists [{collection_id}] ({r.status_code}){bcolors.ENDC}")
         else:
             r.raise_for_status()
@@ -47,6 +48,7 @@ def post_collection_item(file_path, stac_host, collection_id):
         if r.status_code == 200:
             print(f"{bcolors.OKGREEN}[INFO] Created item [{item_id}] ({r.status_code}){bcolors.ENDC}")
         elif r.status_code == 409:
+            # TODO : put instead, since collection exists
             print(f"{bcolors.WARNING}[INFO] Item already exists [{item_id}] ({r.status_code}){bcolors.ENDC}")
         else:
             r.raise_for_status()
