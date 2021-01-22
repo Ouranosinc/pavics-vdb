@@ -1,8 +1,15 @@
 
-## Populate STAC API with data
+## Populate STAC API with TDS data
 
 ```
-python3 ./stac-ingest.py
+python3 ./main_ingestion_svc.py
+```
+
+
+## Remove all data from STAC API
+
+```
+python3 ./stac_api_data_eraser.py
 ```
 
 
