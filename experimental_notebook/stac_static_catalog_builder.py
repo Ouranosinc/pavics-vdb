@@ -2,19 +2,21 @@ from datetime import datetime
 
 import pystac
 import pystac.extensions.eo
+from shapely.geometry import Polygon, mapping
+import experimental_notebook.utils as utils
 
 # TODO : run stac-validator
 
 
-class StacCatalogBuilder(object):
-    def build(self, metadata, catalog_output_path):
+class StacStaticCatalogBuilder(object):
+    def build(self, metadata, catalog_output_path, collection_name):
         collection_items = []
 
         for i, item in enumerate(metadata):
             stac_collection_item = self.get_collection_item(item)
             collection_items.append(stac_collection_item)
 
-        collection = self.get_collection(collection_items)
+        collection = self.get_collection(collection_items, collection_name)
         catalog = self.get_catalog(collection)
         self.persist(catalog, catalog_output_path)
 
@@ -28,13 +30,33 @@ class StacCatalogBuilder(object):
 
 
     def get_collection_item(self, item):
-        collection_item = pystac.Item(id=item["dataset_name"],
-                                      geometry={},
-                                      bbox={},
+        # get bbox and footprint
+        bounds = {
+            "left" : 180,
+            "bottom" : 180,
+            "right" : 180,
+            "top" : 1080
+        }
+        bbox = [bounds["left"], bounds["bottom"], bounds["right"], bounds["top"]]
+        footprint = Polygon([
+            [bounds["left"], bounds["bottom"]],
+            [bounds["left"], bounds["top"]],
+            [bounds["right"], bounds["top"]],
+            [bounds["right"], bounds["bottom"]]
+        ])
+
+        collection_item = pystac.Item(id=item["dataset_name"].split(".")[0],
+                                      geometry=mapping(footprint),
+                                      bbox=bbox,
                                       datetime=datetime.utcnow(),
                                       properties={},
                                       stac_extensions=[pystac.Extensions.DATACUBE])
 
+        collection_item.datetime = utils.MockDate() # "2020-10-15T13:51:21Z"
+        collection_item.properties["start_datetime"] = "2020-10-15T13:51:21Z"
+        collection_item.properties["end_datetime"] = "2020-10-15T13:51:21Z"
+        collection_item.properties["created"] = "2020-11-04T06:15:26Z"
+        collection_item.properties["updated"] = "2020-11-04T06:15:26Z"
         collection_item.properties["meta:provider"] = item["provider"]
         collection_item.properties["cmip5:activity_id"] = item["activity_id"]
         collection_item.properties["cmip5:institution_id"] = item["institution_id"]
@@ -59,14 +81,14 @@ class StacCatalogBuilder(object):
 
         return collection_item
 
-    def get_collection(self, collection_items):
+    def get_collection(self, collection_items, collection_name):
         # extents
-        sp_extent = pystac.SpatialExtent([None, None, None, None])
+        sp_extent = pystac.SpatialExtent([180, 180, 180, 180])
         capture_date = datetime.strptime('2015-10-22', '%Y-%m-%d')
-        tmp_extent = pystac.TemporalExtent([(capture_date, None)])
+        tmp_extent = pystac.TemporalExtent([(capture_date, capture_date)])
         extent = pystac.Extent(sp_extent, tmp_extent)
 
-        collection = pystac.Collection(id='cmip5',
+        collection = pystac.Collection(id=collection_name,
                                        description='CMIP5 collection',
                                        extent=extent,
                                        license='na')
