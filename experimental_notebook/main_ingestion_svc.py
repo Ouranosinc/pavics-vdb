@@ -46,7 +46,7 @@ def main():
     stacDynamicCatalogBuilder.build(catalog_output_path, stac_host)
 
     # PHASE IV - STAC API Consumer Demo
-    # test_consume_stac_api(stac_host, collection_id)
+    test_consume_stac_api(stac_host, collection_id)
 
 
 def test_consume_stac_api(stac_host, collection):
@@ -64,9 +64,15 @@ def test_consume_stac_api(stac_host, collection):
 
     # TODO : not currently working, see https://github.com/radiantearth/stac-spec/issues/592
     if results.found() > 0:
-        items = results.items()
+        items = results.items(limit=5)
         catalog = intake.open_stac_item_collection(items)
-        list(catalog)
+
+        print("[INFO] Printing first STAC item")
+        item = catalog[list(catalog)[0]]
+        print(item)
+
+        print("[INFO] Printing assets of item")
+        print(list(item))
     else:
         print("[INFO] No results")
 

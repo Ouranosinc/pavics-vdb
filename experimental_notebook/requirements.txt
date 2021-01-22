@@ -5,3 +5,4 @@ pystac
 netCDF4
 intake
 sat-search
+intake-stac
