@@ -52,7 +52,9 @@ class StacStaticCatalogBuilder(object):
                                       properties={},
                                       stac_extensions=[pystac.Extensions.DATACUBE])
 
-        collection_item.datetime = utils.MockDate() # "2020-10-15T13:51:21Z"
+        # TODO : utils.MockDateTime() has been used since STAC API requires date in %Y-%m-%dT%H:%M:%SZ format while
+        #  pystac.Item.datetime include the ms
+        collection_item.datetime = utils.MockDateTime()
         collection_item.properties["start_datetime"] = "2020-10-15T13:51:21Z"
         collection_item.properties["end_datetime"] = "2020-10-15T13:51:21Z"
         collection_item.properties["created"] = "2020-11-04T06:15:26Z"
