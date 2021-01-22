@@ -3,3 +3,5 @@ siphon
 xarray
 pystac
 netCDF4
+intake
+sat-search

@@ -13,7 +13,7 @@ def main():
     tds_catalog_url = "https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/birdhouse/cccs_portal/indices/Final/BCCAQv2/tx_mean/catalog.xml"
     catalog_output_path = os.getcwd() + "/output"   # no trailing "/"
     stac_host = "http://132.217.140.135:8081/"
-    collection_name = "cmip5_test_2"
+    collection_id = "cmip5_test"
 
     if os.path.exists(CACHE_FILEPATH):
         print("[INFO] Use cache")
@@ -39,11 +39,36 @@ def main():
 
     # PHASE II - STAC Static Catalog Builder
     stacStaticCatalogBuilder = StacStaticCatalogBuilder()
-    stacStaticCatalogBuilder.build(tds_ds, catalog_output_path, collection_name)
+    stacStaticCatalogBuilder.build(tds_ds, catalog_output_path, collection_id)
 
     # PHASE III - STAC API Dynamic Catalog Builder
     stacDynamicCatalogBuilder = StacDynamicCatalogBuilder()
     stacDynamicCatalogBuilder.build(catalog_output_path, stac_host)
+
+    # PHASE IV - STAC API Consumer Demo
+    # test_consume_stac_api(stac_host, collection_id)
+
+
+def test_consume_stac_api(stac_host, collection):
+    import intake
+    import satsearch
+
+    bbox = [-180, -180, 180, 180]
+    dates = '1949-02-12T00:00:00Z/2122-03-18T12:31:12Z'
+
+    results = satsearch.Search.search(url=stac_host,
+                                      collections=[collection],
+                                      datetime=dates,
+                                      bbox=bbox,
+                                      sort=['<datetime'])
+
+    # TODO : not currently working, see https://github.com/radiantearth/stac-spec/issues/592
+    if results.found() > 0:
+        items = results.items()
+        catalog = intake.open_stac_item_collection(items)
+        list(catalog)
+    else:
+        print("[INFO] No results")
 
 
 if __name__ == "__main__":
