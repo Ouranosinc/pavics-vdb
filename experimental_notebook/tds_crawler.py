@@ -1,4 +1,5 @@
 from siphon.catalog import TDSCatalog
+from experimental_notebook.utils import bcolors
 
 
 class TDSCrawler(object):
@@ -29,7 +30,7 @@ class TDSCrawler(object):
             wms_url = dataset_obj.access_urls.get("wms", "")
 
             item = {
-                "dataset_name" : dataset_name,
+                "dataset_name" : dataset_name.split(".")[0],
                 "http_url" : http_url,
                 "odap_url" : odap_url,
                 "ncml_url" : ncml_url,
@@ -39,18 +40,20 @@ class TDSCrawler(object):
                 "wms_url" : wms_url
             }
 
+            print(
+                f"{bcolors.OKGREEN}[INFO] Found TDS dataset [{dataset_name}]{bcolors.ENDC}")
             item = self.add_tds_ds_metadata(item)
             datasets.append(item)
 
-            # TODO remove
-            break
+            # Uncomment to create smaller dataset
+            # break
 
         for catalog_name, catalog_obj in catalog.catalog_refs.items():
             d = self.parse_datasets(catalog_obj.follow())
             datasets.extend(d)
 
-            # TODO : remove, only to have a small dataset
-            break
+            # Uncomment to create smaller dataset
+            # break
 
         return datasets
 
@@ -61,7 +64,6 @@ class TDSCrawler(object):
         """
         # TODO : hardcoded, especially for url_attrs. Replace with regexes
         # TODO : Extract metadata from ncml_url and iso_url
-        # eg: 'BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_tx_mean_YS.nc'
         url_attrs = ds["http_url"].split("/")
         ds_attrs = ds["dataset_name"].split("_")
 

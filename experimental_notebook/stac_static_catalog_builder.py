@@ -1,11 +1,9 @@
 from datetime import datetime
+from shapely.geometry import Polygon, mapping
 
 import pystac
 import pystac.extensions.eo
-from shapely.geometry import Polygon, mapping
 import experimental_notebook.utils as utils
-
-# TODO : run stac-validator
 
 
 class StacStaticCatalogBuilder(object):
@@ -45,7 +43,7 @@ class StacStaticCatalogBuilder(object):
             [bounds["right"], bounds["bottom"]]
         ])
 
-        collection_item = pystac.Item(id=item["dataset_name"].split(".")[0],
+        collection_item = pystac.Item(id=item["dataset_name"],
                                       geometry=mapping(footprint),
                                       bbox=bbox,
                                       datetime=datetime.utcnow(),
