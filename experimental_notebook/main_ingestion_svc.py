@@ -62,13 +62,15 @@ def test_consume_stac_api(stac_host, collection):
                                       bbox=bbox,
                                       sort=['<datetime'])
 
-    # TODO : not currently working, see https://github.com/radiantearth/stac-spec/issues/592
     if results.found() > 0:
         items = results.items(limit=5)
         catalog = intake.open_stac_item_collection(items)
 
+        print("[INFO] Printing STAC catalog")
+        print(catalog)
+
         print("[INFO] Printing first STAC item")
-        item = catalog[list(catalog)[0]]
+        item = catalog[list(catalog)]
         print(item)
 
         print("[INFO] Printing assets of item")
