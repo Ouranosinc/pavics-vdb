@@ -7,7 +7,6 @@ import os
 
 
 def main():
-    # PHASE I - TDS Crawler
     CACHE_FILEPATH = "tds_cache.json"
     TEST_DATA = False
     tds_catalog_url = "https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/birdhouse/cccs_portal/indices/Final/BCCAQv2/tx_mean/catalog.xml"
@@ -15,6 +14,7 @@ def main():
     stac_host = "http://132.217.140.135:8081/"
     collection_id = "cmip5_test"
 
+    # PHASE I - TDS Crawler
     if os.path.exists(CACHE_FILEPATH):
         print("[INFO] Use cache")
         with open(CACHE_FILEPATH, 'r') as file:
@@ -70,11 +70,9 @@ def test_consume_stac_api(stac_host, collection):
         print(catalog)
 
         print("[INFO] Printing first STAC item")
-        item = catalog[list(catalog)]
+        item = catalog[list(catalog)[0]]
         print(item)
-
-        print("[INFO] Printing assets of item")
-        print(list(item))
+        print(item.metadata)
     else:
         print("[INFO] No results")
 
