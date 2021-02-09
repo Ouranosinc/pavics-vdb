@@ -7,14 +7,14 @@ import os
 
 
 def main():
-    # PHASE I - TDS Crawler
     CACHE_FILEPATH = "tds_cache.json"
     TEST_DATA = False
     tds_catalog_url = "https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/birdhouse/cccs_portal/indices/Final/BCCAQv2/tx_mean/catalog.xml"
     catalog_output_path = os.getcwd() + "/output"   # no trailing "/"
     stac_host = "http://132.217.140.135:8081/"
-    collection_name = "cmip5_test_2"
+    collection_id = "cmip5_test"
 
+    # PHASE I - TDS Crawler
     if os.path.exists(CACHE_FILEPATH):
         print("[INFO] Use cache")
         with open(CACHE_FILEPATH, 'r') as file:
@@ -39,11 +39,42 @@ def main():
 
     # PHASE II - STAC Static Catalog Builder
     stacStaticCatalogBuilder = StacStaticCatalogBuilder()
-    stacStaticCatalogBuilder.build(tds_ds, catalog_output_path, collection_name)
+    stacStaticCatalogBuilder.build(tds_ds, catalog_output_path, collection_id)
 
     # PHASE III - STAC API Dynamic Catalog Builder
     stacDynamicCatalogBuilder = StacDynamicCatalogBuilder()
     stacDynamicCatalogBuilder.build(catalog_output_path, stac_host)
+
+    # PHASE IV - STAC API Consumer Demo
+    test_consume_stac_api(stac_host, collection_id)
+
+
+def test_consume_stac_api(stac_host, collection):
+    import intake
+    import satsearch
+
+    bbox = [-180, -180, 180, 180]
+    dates = '1949-02-12T00:00:00Z/2122-03-18T12:31:12Z'
+
+    results = satsearch.Search.search(url=stac_host,
+                                      collections=[collection],
+                                      datetime=dates,
+                                      bbox=bbox,
+                                      sort=['<datetime'])
+
+    if results.found() > 0:
+        items = results.items(limit=5)
+        catalog = intake.open_stac_item_collection(items)
+
+        print("[INFO] Printing STAC catalog")
+        print(catalog)
+
+        print("[INFO] Printing first STAC item")
+        item = catalog[list(catalog)[0]]
+        print(item)
+        print(item.metadata)
+    else:
+        print("[INFO] No results")
 
 
 if __name__ == "__main__":

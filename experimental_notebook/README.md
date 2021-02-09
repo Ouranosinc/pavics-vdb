@@ -1,5 +1,5 @@
 
-## Populate STAC API with data
+## Populate STAC API with TDS data
 
 ```
 PYTHONPATH="${PYTHONPATH}:$PWD" python3 ./experimental_notebook/main_ingestion_svc.py
