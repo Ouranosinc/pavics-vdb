@@ -2,7 +2,7 @@
 ## Populate STAC API with data
 
 ```
-python3 ./stac-ingest.py
+PYTHONPATH="${PYTHONPATH}:$PWD" python3 ./experimental_notebook/main_ingestion_svc.py
 ```
 
 
