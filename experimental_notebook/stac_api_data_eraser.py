@@ -1,9 +1,13 @@
 import requests
 from urllib.parse import urljoin
+import os
 
 from experimental_notebook.utils import bcolors
 
-stac_host = "http://132.217.140.135:8081/"
+from dotenv import load_dotenv
+load_dotenv()
+
+stac_host = os.getenv("STAC_HOST")
 
 
 def destroy_stac_data():

@@ -5,13 +5,16 @@ from experimental_notebook.stac_dynamic_catalog_builder import StacDynamicCatalo
 import json
 import os
 
+from dotenv import load_dotenv
+load_dotenv()
+
 
 def main():
     CACHE_FILEPATH = "tds_cache.json"
     TEST_DATA = False
     tds_catalog_url = "https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/birdhouse/cccs_portal/indices/Final/BCCAQv2/tx_mean/catalog.xml"
     catalog_output_path = os.getcwd() + "/output"   # no trailing "/"
-    stac_host = "http://132.217.140.135:8081/"
+    stac_host = os.getenv("STAC_HOST")
     collection_id = "cmip5_test"
 
     # PHASE I - TDS Crawler

@@ -6,3 +6,9 @@ netCDF4
 intake
 sat-search
 intake-stac
+requests
+urllib3
+shapely
+tzlocal
+pytz
+python-dotenv

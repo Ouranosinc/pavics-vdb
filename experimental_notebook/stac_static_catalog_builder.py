@@ -30,10 +30,10 @@ class StacStaticCatalogBuilder(object):
     def get_collection_item(self, item):
         # get bbox and footprint
         bounds = {
-            "left" : 180,
-            "bottom" : 180,
+            "left" : -180,
+            "bottom" : -180,
             "right" : 180,
-            "top" : 1080
+            "top" : 180
         }
         bbox = [bounds["left"], bounds["bottom"], bounds["right"], bounds["top"]]
         footprint = Polygon([
