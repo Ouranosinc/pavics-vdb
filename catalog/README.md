@@ -15,6 +15,7 @@ Maybe a strategy would be to select attribute values for different types of data
 
 ### Simulations
 CMIP, CORDEX vocabulary for file name
+CMIP5 DRS: https://www.medcordex.eu/cmip5_data_reference_syntax.pdf
 Should we split into project ? CMIP5 / CMIP6 / CORDEX
 Should we split into regional vs global ?
 https://github.com/WCRP-CMIP/CMIP6_CVs

@@ -1,14 +1,15 @@
 """Create intake catalog from NcML attributes.
 
+See https://github.com/DACCS-Climate/roadmap/wiki/Catalog-design-and-architecture
+
+
 # Example
 
-root = "https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/datasets/simulations/bias_adjusted/cmip5/ouranos/catalog.html"
-tds = TDSCatalog(root)
-table = build_catalog(tds)
-write_catalog(table)
+table = build_catalog(Reanalysis)
+write_catalog(Reanalysis, table)
 
 import intake
-cat = intake.open_esm_datastore("pavics.json")
+cat = intake.open_esm_datastore("reanalysis.json")
 cat.df
 
 
@@ -38,65 +39,73 @@ Gab:
    * Can use synonym table from cf-index-meta
 
 """
-
+from dataclasses import fields
+from collections import defaultdict
 from siphon.catalog import TDSCatalog
+from xml.etree.ElementTree import ParseError
+from specs import CMIP5, BiasAdjusted, Reanalysis, GridObs, Forecast
 
-# Catalog content
-spec = {
-    "esmcat_version": "0.1.0",
-    "id": "test",
-    "description": "test catalog",
-    "catalog_file": "pavics_datasets.csv",
-    "attributes": [
-        {"column_name": "project_id"},
-        {"column_name": "type"},  # could be more specific
-        {"column_name": "institute_id"},
-        {"column_name": "driving_experiment"},
-        {"column_name": "driving_model"},
-        {"column_name": "realizations"},
-        {"column_name": "processing"},
-        {"column_name": "license_type"},
-        {"column_name": "variable"}
-    ],
-    "assets":{
-        "column_name": "path",
-        "format": "netcdf"
-    }
-}
+TDS_ROOT = "https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/datasets/"
+
+# Mapping of DRS classes to TDS paths
+CATALOG_PATH = {CMIP5: "simulations/cmip5_multirun",
+                BiasAdjusted: "simulations/bias_adjusted",
+                Reanalysis: "reanalyses",
+                GridObs: "gridded_obs",
+                Forecast: "forecasts"}
 
 # Dictionary of facet names, keyed by the standard name that will appear in catalog
 alternative_facet_names = {}
 
 
-def build_catalog(cat):
-    keys = [att["column_name"] for att in spec["attributes"]]
-    keys.remove("variable")
+def build_table(spec):
+    """Return a table including a header and rows of attribute values based on Data Reference Syntax.
+    """
+    url = TDS_ROOT + CATALOG_PATH[spec] + "/catalog.xml"
+    try:
+        cat = TDSCatalog(url)
+    except ParseError as err:
+        raise ConnectionError(f"Could not open {url}\n") from err
 
-    header = keys + [spec["assets"]["column_name"]]
-    table = [header]
+    table = [spec.header()]
     for name, ds in walk(cat):
         attrs = attrs_from_ds(ds)
-        row = [attrs.get(k, "NA") for k in keys]
 
-        # Variables
-        row.append(str([vk for vk, vd in attrs["__variable__"].items()]))
+        # Global attributes
+        g_vals = {k: attrs.get(k, "NA") for k in spec.global_attributes()}
 
-        # Path or URL
-        row.append(attrs["__services__"]["OPENDAP"])
+        # Asset path
+        g_vals[spec.asset_attribute()] = attrs["__services__"]["OPENDAP"]
 
-        table.append(row)
+        # Variable attributes (lists)
+        v_vals = defaultdict(list)
+        for key in spec.variable_attributes():
+            k = key.split("variable_")[1]
+            for vk, vd in attrs["__variable__"].items():
+                if k in vd:
+                    v_vals[key].append(vd[k])
+                elif k == "name":
+                    v_vals[key].append(vk)
+                else:
+                    v_vals[key].append("NA")
+
+        # Spec validation
+        entry = spec(**g_vals, **v_vals)
+
+        table.append(entry.aslist())
+
     return table
 
 
-def write_catalog(table):
+def write_catalog(spec, table):
     import csv
     import json
 
     # Write spec
-    with open("pavics.json", "w") as f:
-        json.dump(spec, f)
+    with open(f"{spec.cid()}.json", "w") as f:
+        json.dump(spec.to_intake_spec(), f)
 
-    fn = spec["catalog_file"]
+    fn = spec.catalog_fn()
     with open(fn, "w") as f:
         w = csv.writer(f)
         for row in table:
@@ -122,7 +131,7 @@ def walk(cat, depth=1):
 
 
 def attrs_from_ds(ds):
-    """Extract attributes from Dataset."""
+    """Extract attributes from TDS Dataset."""
     url = ds.access_urls["NCML"]
     attrs = attrs_from_ncml(url)
     attrs["__services__"] = ds.access_urls
