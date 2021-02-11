@@ -18,7 +18,7 @@ def destroy_stac_data():
     collections = r.json()
 
     for c in collections:
-        r = requests.get(urljoin(stac_host, f"/collections/{c['id']}/items"))
+        r = requests.get(urljoin(stac_host, f"/collections/{c['id']}/items?limit=99999999"))
         items = r.json()
 
         for i in items['features']:
