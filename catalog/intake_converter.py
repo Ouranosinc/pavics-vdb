@@ -2,6 +2,8 @@
 
 See https://github.com/DACCS-Climate/roadmap/wiki/Catalog-design-and-architecture
 
+requirements = siphon intake intake-esm lxml
+
 
 # Example
 
@@ -39,161 +41,125 @@ Gab:
    * Can use synonym table from cf-index-meta
 
 """
-from dataclasses import fields
 from collections import defaultdict
 from siphon.catalog import TDSCatalog
 from xml.etree.ElementTree import ParseError
-from specs import CMIP5, BiasAdjusted, Reanalysis, GridObs, Forecast
+from dataclasses import dataclass, fields, asdict, astuple
+import tds
 
-TDS_ROOT = "https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/datasets/"
-
-# Mapping of DRS classes to TDS paths
-CATALOG_PATH = {CMIP5: "simulations/cmip5_multirun",
-                BiasAdjusted: "simulations/bias_adjusted",
-                Reanalysis: "reanalyses",
-                GridObs: "gridded_obs",
-                Forecast: "forecasts"}
-
-# Dictionary of facet names, keyed by the standard name that will appear in catalog
-alternative_facet_names = {}
+ESMCAT_VERSION = "0.1.0"
 
 
-def build_table(spec):
-    """Return a table including a header and rows of attribute values based on Data Reference Syntax.
-    """
-    url = TDS_ROOT + CATALOG_PATH[spec] + "/catalog.xml"
-    try:
-        cat = TDSCatalog(url)
-    except ParseError as err:
-        raise ConnectionError(f"Could not open {url}\n") from err
+class Intake:
+    """Class that, combined with a DRS class, facilitates the creation of Intake catalogs."""
+    asset_attribute = "path"
+    asset_format = "netcdf"
 
-    table = [spec.header()]
-    for name, ds in walk(cat):
-        attrs = attrs_from_ds(ds)
+    # Attributes that should be standard but may not be available everywhere.
+    # version: str
+    # variable_long_name: str
+    # variable_standard_name: str
+    # variable_units: str
+    # time_coverage_start: dt.datetime
+    # time_coverage_end: dt.datetime
 
-        # Global attributes
-        g_vals = {k: attrs.get(k, "NA") for k in spec.global_attributes()}
+    # Not implemented yet, but would include relationships to other datasets.
+    # provenance: str = ""
 
-        # Asset path
-        g_vals[spec.asset_attribute()] = attrs["__services__"]["OPENDAP"]
+    def __init__(self, drs):
+        self.drs = drs
 
-        # Variable attributes (lists)
-        v_vals = defaultdict(list)
-        for key in spec.variable_attributes():
-            k = key.split("variable_")[1]
-            for vk, vd in attrs["__variable__"].items():
-                if k in vd:
-                    v_vals[key].append(vd[k])
-                elif k == "name":
-                    v_vals[key].append(vk)
-                else:
-                    v_vals[key].append("NA")
+    def to_intake_spec(self):
+        """Create Intake specification file."""
 
-        # Spec validation
-        entry = spec(**g_vals, **v_vals)
+        attributes = [{"column_name": key} for key in self.drs.global_attributes() + self.drs.variable_attributes()]
+        spec = {"esmcat_version": ESMCAT_VERSION,
+                "id": self.drs.__name__.lower(),
+                "description": self.drs.__doc__.splitlines()[0],
+                "catalog_file": self.catalog_fn,
+                "attributes": attributes,
+                "assets": {
+                    "column_name": self.asset_attribute,
+                    "format": self.asset_format
+                }
+                }
+        return spec
 
-        table.append(entry.aslist())
+    @property
+    def cid(self):
+        """Return class ID."""
+        return self.drs.__name__.lower()
 
-    return table
+    @property
+    def catalog_fn(self):
+        """Return catalog file name."""
+        return f"{self.cid}.csv.gz"
 
+    def header(self):
+        """Return attribute table header names."""
+        return self.drs.global_attributes() + self.drs.variable_attributes() + [self.asset_attribute]
 
-def write_catalog(spec, table):
-    import csv
-    import json
+    def validate(self, **kwargs):
+        return self.drs(**kwargs)
 
-    # Write spec
-    with open(f"{spec.cid()}.json", "w") as f:
-        json.dump(spec.to_intake_spec(), f)
+    def aslist(self, entry, asset):
+        """Return tuple of values."""
+        d = asdict(entry)
+        d[self.asset_attribute] = asset
+        return [d[k] for k in self.header()]
 
-    fn = spec.catalog_fn()
-    with open(fn, "w") as f:
-        w = csv.writer(f)
-        for row in table:
-            w.writerow(row)
+    def parse(self, url):
+        """Return a table including a header and rows of attribute values based on Data Reference Syntax.
+        """
+        try:
+            cat = TDSCatalog(url)
+        except ParseError as err:
+            raise ConnectionError(f"Could not open {url}\n") from err
 
+        table = [self.header()]
+        for name, ds in tds.walk(cat):
+            attrs = tds.attrs_from_ds(ds)
 
-def walk(cat, depth=1):
-    """Return a generator walking a THREDDS data catalog for datasets.
+            # Global attributes
+            g_val = {k: attrs.get(k, "NA") for k in self.drs.global_attributes()}
 
-    Parameters
-    ----------
-    cat : TDSCatalog
-      THREDDS catalog.
-    depth : int
-      Maximum recursive depth. Setting 0 will return only datasets within the top-level catalog.
-    """
-    yield from cat.datasets.items()
+            # Variable attributes (lists)
+            v_val = defaultdict(list)
+            for key in self.drs.variable_attributes():
+                k = key.split("variable_")[1]
+                for vk, vd in attrs["__variable__"].items():
+                    if k in vd:
+                        v_val[key].append(vd[k])
+                    elif k == "name":
+                        v_val[key].append(vk)
+                    else:
+                        v_val[key].append("NA")
 
-    if depth > 0:
-        for name, ref in cat.catalog_refs.items():
-            child = ref.follow()
-            yield from walk(child, depth=depth-1)
+            # Spec validation
+            entry = self.validate(**g_val, **v_val)
 
+            # Asset path
+            asset = attrs["__services__"]["OPENDAP"]
 
-def attrs_from_ds(ds):
-    """Extract attributes from TDS Dataset."""
-    url = ds.access_urls["NCML"]
-    attrs = attrs_from_ncml(url)
-    attrs["__services__"] = ds.access_urls
-    return attrs
+            row = self.aslist(entry, asset=asset)
+            table.append(row)
 
+        return table
 
-def attrs_from_ncml(url):
-    """Extract attributes from NcML file.
+    def to_catalog(self, table, path='.'):
+        """Write catalog table to disk."""
+        import csv
+        import json
+        import gzip
+        from pathlib import Path
 
-    Parameters
-    ----------
-    url : str
-      Link to NcML service of THREDDS server for a dataset.
+        path = Path(path)
 
-    Returns
-    -------
-    dict
-      Global attribute values keyed by facet names, with variable attributes in `__variable__` nested dict, and
-      additional specialized attributes in `__group__` nested dict.
-    """
-    import lxml.etree
-    import requests
-    parser = lxml.etree.XMLParser(encoding='UTF-8')
+        # Write spec
+        with open(path / f"{self.cid}.json", "w") as f:
+            json.dump(self.to_intake_spec(), f)
 
-    ns = {"ncml": "http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"}
-
-    # Parse XML content - UTF-8 encoded documents need to be read as bytes
-    xml = requests.get(url).content
-    doc = lxml.etree.fromstring(xml, parser=parser)
-    nc = doc.xpath("/ncml:netcdf", namespaces=ns)[0]
-
-    # Extract global attributes
-    out = _attrib_to_dict(nc.xpath("ncml:attribute", namespaces=ns))
-
-    # Extract group attributes
-    gr = {}
-    for group in nc.xpath("ncml:group", namespaces=ns):
-        gr[group.attrib["name"]] = _attrib_to_dict(group.xpath("ncml:attribute", namespaces=ns))
-
-    # Extract variable attributes
-    va = {}
-    for variable in nc.xpath("ncml:variable", namespaces=ns):
-        if '_CoordinateAxisType' in variable.xpath("ncml:attribute/@name", namespaces=ns):
-            continue
-        va[variable.attrib["name"]] = _attrib_to_dict(variable.xpath("ncml:attribute", namespaces=ns))
-
-    out["__group__"] = gr
-    out["__variable__"] = va
-
-    return out
-
-
-def _attrib_to_dict(elems):
-    """Convert element attributes to dictionary.
-
-    Ignore attributes with names starting with _
-    """
-    hidden_prefix = "_"
-    out = {}
-    for e in elems:
-        a = e.attrib
-        if a["name"].startswith(hidden_prefix):
-            continue
-        out[a["name"]] = a["value"]
-    return out
+        with gzip.open(filename=path / self.catalog_fn, mode="wt") as f:
+            w = csv.writer(f)
+            for row in table:
+                w.writerow(row)

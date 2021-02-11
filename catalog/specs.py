@@ -6,15 +6,30 @@ attributes of each NcML file, except for attributes starting with `variable_`.
 
 TODO: Clarify institute/institution for bias-adjusted
 TODO: `type` is used for different purposes (GCM, reanalysis)
+
 """
+import warnings
 from dataclasses import dataclass, fields, asdict, astuple
-import datetime as dt
 
 
-__all__ = ["CMIP5", "BiasAdjusted", "Reanalysis", "GridObs", "Forecast"]
+__all__ = ["CMIP5", "BiasAdjusted", "Reanalysis", "GridObs", "Forecast", "REGISTRY"]
 
 
-esmcat_version = "0.1.0"
+# TODO: Include CV validation mechanism. Using `attrs` or `pydantic` ? The CV can probably be programmatically
+#  converted to a DRS subclass.
+
+REGISTRY = {}
+
+
+def register(name: str):
+    """Register DRS."""
+
+    def _register(cls):
+        REGISTRY[name] = cls
+        return cls
+
+    return _register
+
 
 @dataclass
 class DRS:
@@ -22,80 +37,25 @@ class DRS:
 
     Common controlled vocabulary applying to all datasets.
     """
-    _asset_column_name = "path"
-    _asset_format = "netcdf"
-
-    path: str
     license_type: str
     variable_name: list
     variable_long_name: list
-
-    # Attributes that should be standard but may not be available everywhere.
-    # version: str
-    # variable_long_name: str
-    # variable_standard_name: str
-    # variable_units: str
-    # time_coverage_start: dt.datetime
-    # time_coverage_end: dt.datetime
-
-    # Not implemented yet, but would include relationships to other datasets.
-    # provenance: str = ""
-
-
-    @classmethod
-    def to_intake_spec(cls):
-        """Create Intake specification file."""
-
-        attributes = [{"column_name": key} for key in cls.global_attributes() + cls.variable_attributes()]
-        spec = {"esmcat_version": esmcat_version,
-                "id": cls.__name__.lower(),
-                "description": cls.__doc__.splitlines()[0],
-                "catalog_file": cls.catalog_fn(),
-                "attributes": attributes,
-                "assets": {
-                    "column_name": cls._asset_column_name,
-                    "format": cls._asset_format
-                }
-                }
-        return spec
-
-    @classmethod
-    def cid(cls):
-        return cls.__name__.lower()
-
-    @classmethod
-    def catalog_fn(cls):
-        return f"{cls.cid()}.csv"
 
     @classmethod
     def attributes(cls):
         return [f.name for f in fields(cls)]
 
     @classmethod
-    def header(cls):
-        """Return attribute table header names."""
-        return cls.global_attributes() + cls.variable_attributes() + [cls._asset_column_name]
-
-    @classmethod
     def global_attributes(cls):
         keys = [k for k in cls.attributes() if not k.startswith("variable_")]
-        keys.remove(cls._asset_column_name)
         return keys
-
-    @classmethod
-    def asset_attribute(cls):
-        return cls._asset_column_name
 
     @classmethod
     def variable_attributes(cls):
         return [k for k in cls.attributes() if k.startswith("variable_")]
 
-    def aslist(self):
-        """Return tuple of values."""
-        d = asdict(self)
-        return [d[k] for k in self.header()]
 
-
+@register("cmip5")
 @dataclass
 class CMIP5(DRS):
     """CMIP5 simulations
@@ -116,6 +76,7 @@ class CMIP5(DRS):
     version_number: str
 
 
+@register("biasadjusted")
 @dataclass
 class BiasAdjusted(DRS):
     """Bias adjusted projections."""
@@ -136,6 +97,7 @@ class BiasAdjusted(DRS):
     driving_institute_id: str
 
 
+@register("reanalysis")
 @dataclass
 class Reanalysis(DRS):
     """Reanalyses
@@ -154,6 +116,7 @@ class Reanalysis(DRS):
     # frequency (time averaging)
 
 
+@register("gridobs")
 @dataclass
 class GridObs(DRS):
     title: str
@@ -165,6 +128,7 @@ class GridObs(DRS):
 
 
 # I think we're missing some info here (e.g. name of forecast model).
+@register("forecast")
 @dataclass
 class Forecast(DRS):
     institution: str
