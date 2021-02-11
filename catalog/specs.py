@@ -1,22 +1,21 @@
 """Catalogs specifications
 
 :class:`DRS` defines attributes common to all types of data.
+
 Subclasses of DRS define attributes for sub-categories. The attribute names should be defined in the global
 attributes of each NcML file, except for attributes starting with `variable_`.
 
 TODO: Clarify institute/institution for bias-adjusted
 TODO: `type` is used for different purposes (GCM, reanalysis)
+TODO: Include CV validation mechanism. Using `attrs` or `pydantic` ? The CV can probably be programmatically
+      converted to a DRS subclass.
 
 """
-import warnings
 from dataclasses import dataclass, fields, asdict, astuple
 
 
 __all__ = ["CMIP5", "BiasAdjusted", "Reanalysis", "GridObs", "Forecast", "REGISTRY"]
 
-
-# TODO: Include CV validation mechanism. Using `attrs` or `pydantic` ? The CV can probably be programmatically
-#  converted to a DRS subclass.
 
 REGISTRY = {}
 
@@ -119,6 +118,7 @@ class Reanalysis(DRS):
 @register("gridobs")
 @dataclass
 class GridObs(DRS):
+    """Gridded observations"""
     title: str
     institute_id: str
     institute: str
@@ -131,6 +131,7 @@ class GridObs(DRS):
 @register("forecast")
 @dataclass
 class Forecast(DRS):
+    """Weather forecasts"""
     institution: str
     member: int
 
