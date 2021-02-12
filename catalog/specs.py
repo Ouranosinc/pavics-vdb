@@ -1,14 +1,14 @@
 """Catalogs specifications
 
-:class:`DRS` defines attributes common to all types of data.
+:class:`CV` defines attributes common to all types of data.
 
-Subclasses of DRS define attributes for sub-categories. The attribute names should be defined in the global
+Subclasses of CV define attributes for sub-categories. The attribute names should be defined in the global
 attributes of each NcML file, except for attributes starting with `variable_`.
 
 TODO: Clarify institute/institution for bias-adjusted
 TODO: `type` is used for different purposes (GCM, reanalysis)
 TODO: Include CV validation mechanism. Using `attrs` or `pydantic` ? The CV can probably be programmatically
-      converted to a DRS subclass.
+      converted to a CV subclass.
 
 """
 from dataclasses import dataclass, fields, asdict, astuple
@@ -21,7 +21,7 @@ REGISTRY = {}
 
 
 def register(name: str):
-    """Register DRS."""
+    """Register CV."""
 
     def _register(cls):
         REGISTRY[name] = cls
@@ -31,14 +31,25 @@ def register(name: str):
 
 
 @dataclass
-class DRS:
-    """Data Reference Syntax
+class CV:
+    """Controlled vocabulary
 
     Common controlled vocabulary applying to all datasets.
     """
     license_type: str
     variable_name: list
     variable_long_name: list
+
+    # Attributes that should be standard but may not be available everywhere.
+    # version: str
+    # variable_long_name: str
+    # variable_standard_name: str
+    # variable_units: str
+    # time_coverage_start: dt.datetime
+    # time_coverage_end: dt.datetime
+
+    # Not implemented yet, but would include relationships to other datasets.
+    # provenance: str = ""
 
     @classmethod
     def attributes(cls):
@@ -56,12 +67,12 @@ class DRS:
 
 @register("cmip5")
 @dataclass
-class CMIP5(DRS):
+class CMIP5(CV):
     """CMIP5 simulations
 
     References
     ----------
-    CMIP5 DRS: https://www.medcordex.eu/cmip5_data_reference_syntax.pdf
+    CMIP5 CV: https://www.medcordex.eu/cmip5_data_reference_syntax.pdf
     """
     activity: str
     product: str
@@ -77,7 +88,7 @@ class CMIP5(DRS):
 
 @register("biasadjusted")
 @dataclass
-class BiasAdjusted(DRS):
+class BiasAdjusted(CV):
     """Bias adjusted projections."""
     title: str
     institution: str
@@ -98,7 +109,7 @@ class BiasAdjusted(DRS):
 
 @register("reanalysis")
 @dataclass
-class Reanalysis(DRS):
+class Reanalysis(CV):
     """Reanalyses
 
     References
@@ -117,7 +128,7 @@ class Reanalysis(DRS):
 
 @register("gridobs")
 @dataclass
-class GridObs(DRS):
+class GridObs(CV):
     """Gridded observations"""
     title: str
     institute_id: str
@@ -130,8 +141,9 @@ class GridObs(DRS):
 # I think we're missing some info here (e.g. name of forecast model).
 @register("forecast")
 @dataclass
-class Forecast(DRS):
+class Forecast(CV):
     """Weather forecasts"""
     institution: str
     member: int
+    #model: str
 
