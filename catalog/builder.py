@@ -1,21 +1,10 @@
-from specs import CMIP5, BiasAdjusted, Reanalysis, GridObs, Forecast, REGISTRY
-
-TDS_ROOT = "https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/datasets/"
-
-# Mapping of DRS registered specs to TDS paths.
-CATALOG_TDS_PATH = {"cmip5": "simulations/cmip5_multirun",
-                    "biasadjusted": "simulations/bias_adjusted",
-                    "reanalysis": "reanalyses",
-                    "gridobs": "gridded_obs",
-                    "forecast": "forecasts"}
-
-# Catalog output path
-CATALOG_OUTPATH = "/tmp"
+from specs import REGISTRY
+from config import TDS_ROOT, CATALOG_TDS_PATH, CATALOG_OUTPATH
 
 
 def create_intake_catalog(name, path):
     """Parse metadata from TDS catalog and write intake spec and csv to disk."""
-    from intake_converter import Intake
+    from intake_ingestion.intake_converter import Intake
 
     cls = REGISTRY[name]
     url = TDS_ROOT + CATALOG_TDS_PATH[name] + "/catalog.xml"
@@ -25,6 +14,7 @@ def create_intake_catalog(name, path):
     spec.to_catalog(table, path)
 
 
+# Long, would you prefer a cli.py file with a click command ? There will also be a catalog generator using STAC.
 def main():
     """Write all registered catalogs."""
     for name in REGISTRY.keys():
