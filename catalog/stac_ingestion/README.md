@@ -10,14 +10,14 @@ This current project shows a PoC of the different parts of the ingestion process
 ## Populate STAC API with TDS data
 
 ```
-PYTHONPATH="${PYTHONPATH}:$PWD/.." python3 ./main_ingestion_svc.py
+python3 -m main_ingestion_svc
 ```
 
 
 ## Remove all data from STAC API
 
 ```
-PYTHONPATH="${PYTHONPATH}:$PWD/.." python3 ./stac_api_data_eraser.py
+python3 -m stac_api_data_eraser
 ```
 
 
