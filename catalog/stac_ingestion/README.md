@@ -19,8 +19,9 @@ This current project shows a PoC of the different parts of the ingestion process
 [setup .env file]
 
 python3 -m main_ingestion_svc                       # Populate STAC API with TDS data
-python3 -m stac_api_data_eraser                     # Remove all data from STAC API
 curl -s 0.0.0.0:8000/collections | jq -r '.[].id'   # Print all STAC collections that our local STAC API contains
+curl -s 0.0.0.0:8000/collections/{collection_id}/items | jq -r '.features[].id'   # Print all STAC items that one local STAC API collection contains
+python3 -m stac_api_data_eraser                     # Remove all data from STAC API
 ```
 
 
