@@ -35,7 +35,7 @@ curl -s 0.0.0.0:8000/collections/{collection_id}/items | jq -r '.features[].id' 
 
 # Visualize static STAC catalog
 cd [stac-browser repo]
-CATALOG_URL=http://localhost:8099/catalog.json npm start -- --open
+CATALOG_URL=http://localhost:8099/catalog.json npm start -- --open      # Restart on catalog update
 
 # Clean
 python3 -m stac_api_data_eraser                     # Remove all data from STAC API

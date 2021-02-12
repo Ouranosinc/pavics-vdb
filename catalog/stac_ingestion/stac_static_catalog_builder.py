@@ -121,7 +121,8 @@ class StacStaticCatalogBuilder(object):
 
 
     def get_catalog(self, collections):
-        catalog = pystac.Catalog(id='test-stac-catalog', description='Test STAC catalog')
+        catalog = pystac.Catalog(id='STAC API TDS Climate Data Catalog Test',
+                                 description='List of TDS catalog data represented in a STAC catalog.')
 
         catalog.clear_items()
         catalog.clear_children()
