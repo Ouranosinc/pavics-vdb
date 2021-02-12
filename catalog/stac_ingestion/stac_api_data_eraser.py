@@ -2,7 +2,7 @@ import requests
 from urllib.parse import urljoin
 import os
 
-from experimental_notebook.utils import bcolors
+from stac_ingestion.utils import bcolors
 
 from dotenv import load_dotenv
 load_dotenv()

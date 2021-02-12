@@ -1,5 +1,5 @@
 from siphon.catalog import TDSCatalog
-from experimental_notebook.utils import bcolors
+from stac_ingestion.utils import bcolors
 
 
 class TDSCrawler(object):

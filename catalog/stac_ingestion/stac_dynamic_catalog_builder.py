@@ -1,5 +1,5 @@
 from urllib.parse import urljoin
-from experimental_notebook.utils import bcolors
+from stac_ingestion.utils import bcolors
 
 import requests
 import json

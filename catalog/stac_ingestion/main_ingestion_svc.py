@@ -1,6 +1,6 @@
-from experimental_notebook.stac_static_catalog_builder import StacStaticCatalogBuilder
-from experimental_notebook.tds_crawler import TDSCrawler
-from experimental_notebook.stac_dynamic_catalog_builder import StacDynamicCatalogBuilder
+from stac_ingestion.stac_static_catalog_builder import StacStaticCatalogBuilder
+from stac_ingestion.tds_crawler import TDSCrawler
+from stac_ingestion.stac_dynamic_catalog_builder import StacDynamicCatalogBuilder
 
 import json
 import os
