@@ -16,7 +16,7 @@ Required
 Optional
 - `stac-browser` git project cloned, to visualize static STAC catalog
     - In another terminal, to allow CORS, for development purpose:
-        `cd output/; http-server -p 8099 --cors`
+        `mkdir output; cd output; http-server -p 8099 --cors`
  
 
 ## Demo
