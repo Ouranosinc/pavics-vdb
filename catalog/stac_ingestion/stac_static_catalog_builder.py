@@ -8,6 +8,14 @@ import utils as utils
 
 class StacStaticCatalogBuilder(object):
     def build(self, metadata, catalog_output_path):
+        """
+        Build static STAC catalog.
+        Save to `output/` folder.
+
+        :param metadata:
+        :param catalog_output_path:
+        :return:
+        """
         # Map Collection_name => Collection_items
         all_collection_items = {}
 
@@ -27,10 +35,6 @@ class StacStaticCatalogBuilder(object):
             collection_items = all_collection_items[collection_name]
             collection = self.get_collection(collection_items, collection_name)
             collections.append(collection)
-
-            # print("[INFO] Save path : " + catalog_output_path)
-            # collection.normalize_hrefs(catalog_output_path)
-            # collection.save(catalog_type=pystac.CatalogType.SELF_CONTAINED)
 
         catalog = self.get_catalog(collections)
         self.persist(catalog, catalog_output_path)
@@ -107,7 +111,7 @@ class StacStaticCatalogBuilder(object):
         extent = pystac.Extent(sp_extent, tmp_extent)
 
         collection = pystac.Collection(id=collection_name,
-                                       description='CMIP5 collection',
+                                       description=collection_name,
                                        extent=extent,
                                        license='na')
 
@@ -117,7 +121,7 @@ class StacStaticCatalogBuilder(object):
 
 
     def get_catalog(self, collections):
-        catalog = pystac.Catalog(id='bccaqv2', description='BCCAQv2 STAC')
+        catalog = pystac.Catalog(id='test-stac-catalog', description='Test STAC catalog')
 
         catalog.clear_items()
         catalog.clear_children()

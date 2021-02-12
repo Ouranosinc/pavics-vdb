@@ -6,6 +6,9 @@ class TDSCrawler(object):
     def run(self, tds_catalog_url):
         """
         Crawl TDS.
+
+        :param tds_catalog_url:
+        :return:
         """
         top_cat = TDSCatalog(tds_catalog_url)
         tds_ds = self.parse_datasets(top_cat)

@@ -8,6 +8,14 @@ import os
 
 class StacDynamicCatalogBuilder(object):
     def build(self, catalog_output_path, stac_host):
+        """
+        Build dynamic STAC catalog.
+        Post items to STAC_HOST.
+
+        :param catalog_output_path:
+        :param stac_host:
+        :return:
+        """
         # each collection
         for root, dirs, _ in os.walk(catalog_output_path):
             col_path = root
@@ -33,8 +41,6 @@ class StacDynamicCatalogBuilder(object):
 
         Returns the collection id.
         """
-        collection_id = "none"
-
         with open(file_path, 'r') as file:
             json_data = json.load(file)
             collection_id = json_data['id']
@@ -43,8 +49,9 @@ class StacDynamicCatalogBuilder(object):
             if r.status_code == 200:
                 print(f"{bcolors.OKGREEN}[INFO] Created collection [{collection_id}] ({r.status_code}){bcolors.ENDC}")
             elif r.status_code == 409:
-                # TODO : put instead, since collection exists
-                print(f"{bcolors.WARNING}[INFO] Collection already exists [{collection_id}] ({r.status_code}){bcolors.ENDC}")
+                print(f"{bcolors.WARNING}[INFO] Collection already exists [{collection_id}] ({r.status_code}), updating..{bcolors.ENDC}")
+                r = requests.put(urljoin(stac_host, "/collections"), json=json_data)
+                r.raise_for_status()
             else:
                 r.raise_for_status()
 
@@ -55,7 +62,6 @@ class StacDynamicCatalogBuilder(object):
         """
         Post an item to a collection.
         """
-        # TODO : handle multiple Features from single file
         with open(file_path, 'r') as file:
             json_data = json.load(file)
             item_id = json_data['id']
@@ -64,7 +70,8 @@ class StacDynamicCatalogBuilder(object):
             if r.status_code == 200:
                 print(f"{bcolors.OKGREEN}[INFO] Created item [{item_id}] ({r.status_code}){bcolors.ENDC}")
             elif r.status_code == 409:
-                # TODO : put instead, since collection exists
-                print(f"{bcolors.WARNING}[INFO] Item already exists [{item_id}] ({r.status_code}){bcolors.ENDC}")
+                print(f"{bcolors.WARNING}[INFO] Item already exists [{item_id}] ({r.status_code}), updating..{bcolors.ENDC}")
+                r = requests.put(urljoin(stac_host, f"/collections/{collection_id}/items"), json=json_data)
+                r.raise_for_status()
             else:
                 r.raise_for_status()
