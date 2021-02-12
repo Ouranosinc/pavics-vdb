@@ -3,7 +3,7 @@ from shapely.geometry import Polygon, mapping
 
 import pystac
 import pystac.extensions.eo
-import stac_ingestion.utils as utils
+import utils as utils
 
 
 class StacStaticCatalogBuilder(object):
