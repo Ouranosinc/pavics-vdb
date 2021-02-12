@@ -1,4 +1,4 @@
-# STAC API TDS Climate Data Ingestion PoC
+# STAC API TDS Climate Data Ingestion Pipeline PoC
 
 ## High level pipeline view
 
