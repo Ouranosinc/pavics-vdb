@@ -1,3 +1,11 @@
+# STAC API TDS Climate Data Ingestion PoC
+
+## High level pipeline view
+
+![pipeline view](assets/hl_arch.png "Pipeline")
+
+This current project shows a PoC of the different parts of the ingestion process.
+
 
 ## Populate STAC API with TDS data
 
@@ -9,7 +17,7 @@ PYTHONPATH="${PYTHONPATH}:$PWD/.." python3 ./main_ingestion_svc.py
 ## Remove all data from STAC API
 
 ```
-python3 ./stac_api_data_eraser.py
+PYTHONPATH="${PYTHONPATH}:$PWD/.." python3 ./stac_api_data_eraser.py
 ```
 
 
