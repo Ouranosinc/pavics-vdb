@@ -1,19 +1,18 @@
-import requests
 from urllib.parse import urljoin
-import os
-
 from utils import bcolors
-
 from dotenv import load_dotenv
-load_dotenv()
 
-stac_host = os.getenv("STAC_HOST")
+import os
+import requests
+
+load_dotenv()
 
 
 def destroy_stac_data():
     """
     Will delete all STAC API data, for tests.
     """
+    stac_host = os.getenv("STAC_HOST")
     r = requests.get(urljoin(stac_host, "/collections"))
     collections = r.json()
 

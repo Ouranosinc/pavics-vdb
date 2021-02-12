@@ -7,7 +7,7 @@ import utils as utils
 
 
 class StacStaticCatalogBuilder(object):
-    def build(self, metadata, catalog_output_path, collection_name):
+    def build(self, metadata, catalog_output_path):
         # Map Collection_name => Collection_items
         all_collection_items = {}
 
