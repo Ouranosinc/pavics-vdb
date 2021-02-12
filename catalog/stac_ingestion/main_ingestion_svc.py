@@ -17,7 +17,7 @@ def main():
     """
     CACHE_FILEPATH = "tds_cache.json"
     TEST_DATA = False
-    tds_catalog_url = "https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/birdhouse/cccs_portal/indices/Final/BCCAQv2/tx_mean/catalog.xml"
+    tds_catalog_url = os.getenv("THREDDS_CATALOG")
     catalog_output_path = os.getcwd() + "/output"   # no trailing "/"
     stac_host = os.getenv("STAC_HOST")
 

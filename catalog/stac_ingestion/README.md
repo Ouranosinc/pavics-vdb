@@ -7,6 +7,12 @@
 This current project shows a PoC of the different parts of the ingestion process.
 
 
+## Requirements
+
+- STAC API running at `STAC_HOST` (see `.env.example`)
+- THREDDS catalog at `THREDDS_CATALOG` (see `.env.example`)
+
+
 ## Populate STAC API with TDS data
 
 ```
