@@ -2,20 +2,26 @@ from specs import REGISTRY
 from config import TDS_ROOT, CATALOG_TDS_PATH, CATALOG_OUTPATH
 import click
 
-collections = list(CATALOG_TDS_PATH.keys())
+collections = list(REGISTRY.keys())
+
+# Mathieu, je pense qu'on pourrait créer un click.group() pour ajouter une commande stac_cli.
+# Voir https://click.palletsprojects.com/en/7.x/commands/
 
 
 @click.command()
-@click.option('--collection', default=None,
+@click.option('-c', '--collection',
+              default=collections,
+              multiple=True,
               help=f"Name of dataset collection to catalog. One of {collections}, or all of them if None.")
-@click.option('--output', default=CATALOG_OUTPATH, help="Output path for catalog files.")
+@click.option('-o', '--output', default=CATALOG_OUTPATH, help="Output path for catalog files.")
+def intake_cli(collection, output):
+    for coll in collection:
+        create_intake_catalog(coll, output)
+
+
 def create_intake_catalog(collection, output):
     """Parse metadata from TDS catalog and write intake spec and csv to disk."""
     from intake_ingestion.intake_converter import Intake
-
-    if collection is None:
-        for collection in REGISTRY.keys():
-            create_intake_catalog(collection, output)
 
     cls = REGISTRY[collection]
     url = TDS_ROOT + CATALOG_TDS_PATH[collection] + "/catalog.xml"
@@ -26,7 +32,7 @@ def create_intake_catalog(collection, output):
 
 
 if __name__ == '__main__':
-    create_intake_catalog()
+    intake_cli()
 
 
 
