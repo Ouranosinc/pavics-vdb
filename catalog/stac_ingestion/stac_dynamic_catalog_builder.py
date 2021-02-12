@@ -9,26 +9,22 @@ import os
 class StacDynamicCatalogBuilder(object):
     def build(self, catalog_output_path, stac_host):
         # each collection
-        for i in os.listdir(catalog_output_path):
-            col_path = catalog_output_path + "/" + i
+        for root, dirs, _ in os.walk(catalog_output_path):
+            col_path = root
+            col_file = col_path + "/collection.json"
 
-            if os.path.isdir(col_path):
-                print(f"[INFO] Processing collection {i}")
+            if os.path.exists(col_file):
+                print(f"[INFO] Processing collection [{col_file}]")
 
-                collection_id = self.post_collection(col_path + "/collection.json", stac_host)
+                collection_id = self.post_collection(col_file, stac_host)
 
                 # each item
                 for root, dirs, _ in os.walk(col_path):
                     for d in dirs:
                         item_path = col_path + "/" + d
-                        item_file = os.listdir(item_path)[0]
+                        item_file = os.listdir(item_path)[0]    # assume only one STAC item per pystac item folder
                         print(f"[INFO] Processing item {d}")
                         self.post_collection_item(item_path + "/" + item_file, stac_host, collection_id)
-
-
-
-        # collection_id = self.post_collection("./test_collection.json", stac_host)
-        # self.post_collection_item("./test_item.json", stac_host, collection_id)
 
 
     def post_collection(self, file_path, stac_host):

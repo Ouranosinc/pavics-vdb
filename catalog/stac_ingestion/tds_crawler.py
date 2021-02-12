@@ -30,7 +30,7 @@ class TDSCrawler(object):
             wms_url = dataset_obj.access_urls.get("wms", "")
 
             # TODO : harcoded!
-            collection_name = catalog.catalog_url[97:-12]
+            collection_name = catalog.catalog_url[97:-12].replace("/", "_") # replace to avoid having slash in collection name url
 
             item = {
                 "dataset_name" : dataset_name.split(".")[0],
@@ -48,15 +48,9 @@ class TDSCrawler(object):
             item = self.add_tds_ds_metadata(item)
             datasets.append(item)
 
-            # Uncomment to create smaller dataset
-            # break
-
         for catalog_name, catalog_obj in catalog.catalog_refs.items():
             d = self.parse_datasets(catalog_obj.follow())
             datasets.extend(d)
-
-            # Uncomment to create smaller dataset
-            # break
 
         return datasets
 

@@ -7,7 +7,7 @@ import utils as utils
 
 
 class StacStaticCatalogBuilder(object):
-    def build(self, metadata, catalog_output_path, collection_name):
+    def build(self, metadata, catalog_output_path):
         # Map Collection_name => Collection_items
         all_collection_items = {}
 
@@ -27,6 +27,10 @@ class StacStaticCatalogBuilder(object):
             collection_items = all_collection_items[collection_name]
             collection = self.get_collection(collection_items, collection_name)
             collections.append(collection)
+
+            # print("[INFO] Save path : " + catalog_output_path)
+            # collection.normalize_hrefs(catalog_output_path)
+            # collection.save(catalog_type=pystac.CatalogType.SELF_CONTAINED)
 
         catalog = self.get_catalog(collections)
         self.persist(catalog, catalog_output_path)
@@ -117,8 +121,6 @@ class StacStaticCatalogBuilder(object):
 
         catalog.clear_items()
         catalog.clear_children()
-
-        for collection in collections:
-            catalog.add_child(collection)
+        catalog.add_children(collections)
 
         return catalog
