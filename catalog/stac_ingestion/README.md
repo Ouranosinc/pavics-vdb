@@ -15,7 +15,7 @@ Required
 
 Optional
 - `stac-browser` git project cloned, to visualize static STAC catalog
-    - In another terminal, to allow CORS, for development purpose:
+    - In another terminal, current directory, to allow CORS, for development purpose:
         `mkdir output; cd output; http-server -p 8099 --cors`
  
 
@@ -29,13 +29,13 @@ pip install -r requirements.txt
 # Crawl
 python3 -m main_ingestion_svc                       # Populate STAC API with TDS data
 
-# Query
+# Query dynamic STAC API catalog
 curl -s 0.0.0.0:8000/collections | jq -r '.[].id'                                 # Print all STAC collections that our local STAC API contains
 curl -s 0.0.0.0:8000/collections/{collection_id}/items | jq -r '.features[].id'   # Print all STAC items that one local STAC API collection contains
 
-# Visualize
+# Visualize static STAC catalog
 cd [stac-browser repo]
-CATALOG_URL=http://localhost:8099/catalog.json npm start -- --open      # navigate the static STAC catalog 
+CATALOG_URL=http://localhost:8099/catalog.json npm start -- --open
 
 # Clean
 python3 -m stac_api_data_eraser                     # Remove all data from STAC API
