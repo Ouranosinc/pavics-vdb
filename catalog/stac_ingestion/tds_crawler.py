@@ -48,15 +48,12 @@ class TDSCrawler(object):
             item = self.add_tds_ds_metadata(item)
             datasets.append(item)
 
-            # Uncomment to create smaller dataset
-            # break
-
         for catalog_name, catalog_obj in catalog.catalog_refs.items():
             d = self.parse_datasets(catalog_obj.follow())
             datasets.extend(d)
 
-            # Uncomment to create smaller dataset
-            # break
+            # TODO : remove !!!
+            break
 
         return datasets
 

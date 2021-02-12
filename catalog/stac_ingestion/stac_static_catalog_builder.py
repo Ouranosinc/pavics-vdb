@@ -28,6 +28,10 @@ class StacStaticCatalogBuilder(object):
             collection = self.get_collection(collection_items, collection_name)
             collections.append(collection)
 
+            # print("[INFO] Save path : " + catalog_output_path)
+            # collection.normalize_hrefs(catalog_output_path)
+            # collection.save(catalog_type=pystac.CatalogType.SELF_CONTAINED)
+
         catalog = self.get_catalog(collections)
         self.persist(catalog, catalog_output_path)
 
@@ -117,8 +121,6 @@ class StacStaticCatalogBuilder(object):
 
         catalog.clear_items()
         catalog.clear_children()
-
-        for collection in collections:
-            catalog.add_child(collection)
+        catalog.add_children(collections)
 
         return catalog
