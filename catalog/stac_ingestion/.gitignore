@@ -1,4 +1,7 @@
 tds_cache.json
-output/
+output/*
 __pycache__/
 .env
+
+# except
+!output/.gitkeep

@@ -37,7 +37,7 @@ curl -s 0.0.0.0:8000/collections/{collection_id}/items | jq -r '.features[].id' 
 cd [stac-browser repo]
 CATALOG_URL=http://localhost:8099/catalog.json npm start -- --open      # navigate the static STAC catalog 
 
-# Erase
+# Clean
 python3 -m stac_api_data_eraser                     # Remove all data from STAC API
 ```
 
@@ -45,7 +45,7 @@ python3 -m stac_api_data_eraser                     # Remove all data from STAC 
 ## Other useful stuff
 
 
-### Validate schema
+### Schema validation
 
 ```
 pip install stac-validator
