@@ -8,14 +8,27 @@ import utils as utils
 
 class StacStaticCatalogBuilder(object):
     def build(self, metadata, catalog_output_path, collection_name):
-        collection_items = []
+        # Map Collection_name => Collection_items
+        all_collection_items = {}
 
         for i, item in enumerate(metadata):
             stac_collection_item = self.get_collection_item(item)
-            collection_items.append(stac_collection_item)
+            stac_collection_name = item["collection_name"]
 
-        collection = self.get_collection(collection_items, collection_name)
-        catalog = self.get_catalog(collection)
+            if stac_collection_name not in all_collection_items:
+                all_collection_items[stac_collection_name] = []
+
+            all_collection_items[stac_collection_name].append(stac_collection_item)
+
+        # Get actual collections
+        collections = []
+
+        for i, collection_name in enumerate(all_collection_items):
+            collection_items = all_collection_items[collection_name]
+            collection = self.get_collection(collection_items, collection_name)
+            collections.append(collection)
+
+        catalog = self.get_catalog(collections)
         self.persist(catalog, catalog_output_path)
 
 
@@ -81,6 +94,7 @@ class StacStaticCatalogBuilder(object):
 
         return collection_item
 
+
     def get_collection(self, collection_items, collection_name):
         # extents
         sp_extent = pystac.SpatialExtent([180, 180, 180, 180])
@@ -97,11 +111,14 @@ class StacStaticCatalogBuilder(object):
 
         return collection
 
-    def get_catalog(self, collection):
+
+    def get_catalog(self, collections):
         catalog = pystac.Catalog(id='bccaqv2', description='BCCAQv2 STAC')
 
         catalog.clear_items()
         catalog.clear_children()
-        catalog.add_child(collection)
+
+        for collection in collections:
+            catalog.add_child(collection)
 
         return catalog

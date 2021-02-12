@@ -29,8 +29,12 @@ class TDSCrawler(object):
             wcs_url = dataset_obj.access_urls.get("wcs", "")
             wms_url = dataset_obj.access_urls.get("wms", "")
 
+            # TODO : harcoded!
+            collection_name = catalog.catalog_url[97:-12]
+
             item = {
                 "dataset_name" : dataset_name.split(".")[0],
+                "collection_name" : collection_name,
                 "http_url" : http_url,
                 "odap_url" : odap_url,
                 "ncml_url" : ncml_url,
@@ -40,8 +44,7 @@ class TDSCrawler(object):
                 "wms_url" : wms_url
             }
 
-            print(
-                f"{bcolors.OKGREEN}[INFO] Found TDS dataset [{dataset_name}]{bcolors.ENDC}")
+            print(f"{bcolors.OKGREEN}[INFO] Found TDS dataset [{dataset_name}]{bcolors.ENDC}")
             item = self.add_tds_ds_metadata(item)
             datasets.append(item)
 
