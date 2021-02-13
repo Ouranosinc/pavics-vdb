@@ -33,6 +33,10 @@ python3 -m main_ingestion_svc                       # Populate STAC API with TDS
 curl -s 0.0.0.0:8000/collections | jq -r '.[].id'                                 # Print all STAC collections that our local STAC API contains
 curl -s 0.0.0.0:8000/collections/{collection_id}/items | jq -r '.features[].id'   # Print all STAC items that one local STAC API collection contains
 
+# Visualize dynamic STAC catalog
+cd [stac-browser repo]
+CATALOG_URL=http://localhost:8000 npm start -- --open      # Restart on catalog update
+
 # Visualize static STAC catalog
 cd [stac-browser repo]
 CATALOG_URL=http://localhost:8099/catalog.json npm start -- --open      # Restart on catalog update
