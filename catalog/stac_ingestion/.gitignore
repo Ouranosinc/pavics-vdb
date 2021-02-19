@@ -2,3 +2,4 @@ tds_cache.json
 output/
 __pycache__/
 .env
+../__pycache__/
