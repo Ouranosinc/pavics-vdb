@@ -59,12 +59,10 @@ class TDSCrawler(object):
             item = self.add_tds_ds_metadata(item)
             item_metadata_schema_uri = REGISTERED_SCHEMAS["cmip5"][OBJECT_TYPE.ITEM]
             metadata_validator = MetadataValidator()
-            valid_item = metadata_validator.validate(item, item_metadata_schema_uri)
+            is_valid = metadata_validator.is_valid(item, item_metadata_schema_uri)
 
-            if valid_item:
+            if is_valid:
                 datasets.append(item)
-            else:
-                print(f"[WARNING] Schema exception")
 
         for catalog_name, catalog_obj in catalog.catalog_refs.items():
             d = self.parse_datasets(catalog_obj.follow())

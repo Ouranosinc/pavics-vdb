@@ -12,3 +12,4 @@ shapely
 tzlocal
 pytz
 python-dotenv
+jsonschema

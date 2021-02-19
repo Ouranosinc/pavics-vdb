@@ -3,10 +3,20 @@ from pathlib import Path
 import json
 import jsonschema
 import os
+import logging
+import sys
+
+
+# setup logger
+LOGGER = logging.getLogger(__name__)
+LOGGER.addHandler(logging.StreamHandler(sys.stdout))
+LOGGER.setLevel(logging.INFO)
+LOGGER.propagate = False
 
 
 class OBJECT_TYPE:
     ITEM = "ITEM"
+
 
 # TODO : handle version range, http ref
 REGISTERED_SCHEMAS = {
@@ -16,8 +26,12 @@ REGISTERED_SCHEMAS = {
 }
 
 
+def single_line(s):
+    return str.join(" ", str(s).splitlines())
+
+
 class MetadataValidator(object):
-    def validate(self, item, schema_uri):
+    def is_valid(self, item, schema_uri):
         # TODO : local path test
         HERE = Path(__file__).resolve().parent
         SCHEMA_DIR = HERE / "cv" / "cmip5"
@@ -32,18 +46,18 @@ class MetadataValidator(object):
 
             valid = True
         except jsonschema.exceptions.ValidationError as err:
-            print("[WARNING] validation error")
+            LOGGER.warning("[WARNING] validation error: %s", single_line(err))
         except jsonschema.exceptions.SchemaError as err:
-            print("[WARNING] schema error")
+            LOGGER.warning("[WARNING] schema error: %s", single_line(err))
         except jsonschema.exceptions.RefResolutionError as err:
-            print("[WARNING] ref resolution error")
+            LOGGER.warning("[WARNING] ref resolution error: %s", single_line(err))
         except jsonschema.exceptions.UndefinedTypeCheck as err:
-            print("[WARNING] undefined type error")
+            LOGGER.warning("[WARNING] undefined type error: %s", single_line(err))
         except jsonschema.exceptions.UnknownType as err:
-            print("[WARNING] unknown type error")
+            LOGGER.warning("[WARNING] unknown type error=: %s", single_line(err))
         except jsonschema.exceptions.FormatError as err:
-            print("[WARNING] format error")
+            LOGGER.warning("[WARNING] format error: %s", single_line(err))
         except jsonschema.ValidationError as err:
-            print("[WARNING] validation error")
+            LOGGER.warning("[WARNING] validation error: %s", single_line(err))
 
         return valid
