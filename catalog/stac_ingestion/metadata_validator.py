@@ -1,5 +1,6 @@
 import json
 import jsonschema
+import os
 
 class OBJECT_TYPE:
     ITEM = "ITEM"
@@ -13,6 +14,8 @@ REGISTERED_SCHEMAS = {
 
 class MetadataValidator(object):
     def validate(self, item, schema_uri):
+        # TODO : use cache for json files
+
         valid = False
 
         with open(schema_uri) as f:
@@ -20,6 +23,22 @@ class MetadataValidator(object):
 
         try:
             jsonschema.validate(instance=item, schema=schema)
+
+            for field in schema["required"]:
+                filepath = f"cv/cmip5/{field}.json".format(field)
+
+                if not os.path.exists(filepath):
+                    print("[CRITICAL] one or more schema does not exist")
+                    return False
+
+                with open(filepath) as f:
+                    try:
+                        schema = json.load(f)
+                    except Exception:
+                        print("[CRITICAL] one or more schema not in json format")
+
+                jsonschema.validate(instance=item[field], schema=schema)
+
             valid = True
         except jsonschema.exceptions.ValidationError as err:
             print("[WARNING] validation error")
