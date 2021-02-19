@@ -21,12 +21,14 @@ def main():
     catalog_output_path = os.getcwd() + "/output"   # no trailing "/"
     stac_host = os.getenv("STAC_HOST")
 
-    # PHASE I - TDS Crawler
-    if os.path.exists(CACHE_FILEPATH):
-        print("[INFO] Use cache")
-        with open(CACHE_FILEPATH, 'r') as file:
-            tds_ds = json.load(file)
-    elif not TEST_DATA:
+    # # PHASE I - TDS Crawler
+    # if os.path.exists(CACHE_FILEPATH):
+    #     print("[INFO] Use cache")
+    #     with open(CACHE_FILEPATH, 'r') as file:
+    #         tds_ds = json.load(file)
+    # elif not\
+    #
+    if not TEST_DATA:
         print("[INFO] Build and use cache")
         tds_crawler = TDSCrawler()
         tds_ds = tds_crawler.run(tds_catalog_url)

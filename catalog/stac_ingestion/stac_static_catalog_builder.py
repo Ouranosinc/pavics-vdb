@@ -79,17 +79,17 @@ class StacStaticCatalogBuilder(object):
         collection_item.properties["created"] = "2020-11-04T06:15:26Z"
         collection_item.properties["updated"] = "2020-11-04T06:15:26Z"
         collection_item.properties["meta:provider"] = item["provider"]
-        collection_item.properties["cmip5:activity_id"] = item["activity_id"]
-        collection_item.properties["cmip5:institution_id"] = item["institution_id"]
-        collection_item.properties["cmip5:source_id"] = item["source_id"]
-        collection_item.properties["cmip5:experiment_id"] = item["experiment_id"]
-        collection_item.properties["cmip5:member_id"] = item["member_id"]
-        collection_item.properties["cmip5:table_id"] = item["table_id"]
-        collection_item.properties["cmip5:variable_id"] = item["variable_id"]
-        collection_item.properties["cmip5:grid_label"] = item["grid_label"]
-        collection_item.properties["cmip5:conventions"] = item["conventions"]
-        collection_item.properties["cmip5:frequency"] = item["frequency"]
-        collection_item.properties["cmip5:modeling_realm"] = item["modeling_realm"]
+        collection_item.properties["cv:activity_id"] = item["activity_id"]
+        collection_item.properties["cv:institution_id"] = item["institution_id"]
+        collection_item.properties["cv:source_id"] = item["source_id"]
+        collection_item.properties["cv:experiment_id"] = item["experiment_id"]
+        collection_item.properties["cv:member_id"] = item["member_id"]
+        collection_item.properties["cv:table_id"] = item["table_id"]
+        collection_item.properties["cv:variable_id"] = item["variable_id"]
+        collection_item.properties["cv:grid_label"] = item["grid_label"]
+        collection_item.properties["cv:conventions"] = item["conventions"]
+        collection_item.properties["cv:frequency"] = item["frequency"]
+        collection_item.properties["cv:modeling_realm"] = item["modeling_realm"]
 
         link = pystac.Link("file", item["http_url"], "application/netcdf")
         collection_item.add_link(link)

@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "dataset_name": {
+      "type": "string"
+    },
+    "collection_name": {
+      "type": "string"
+    },
+    "http_url": {
+      "type": "string"
+    },
+    "odap_url": {
+      "type": "string"
+    },
+    "ncml_url": {
+      "type": "string"
+    },
+    "uddc_url": {
+      "type": "string"
+    },
+    "iso_url": {
+      "type": "string"
+    },
+    "wcs_url": {
+      "type": "string"
+    },
+    "wms_url": {
+      "type": "string"
+    },
+    "provider": {
+      "type": "string"
+    },
+    "activity_id": {
+      "type": "string"
+    },
+    "institution_id": {
+      "type": "string"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "experiment_id": {
+      "type": "string"
+    },
+    "member_id": {
+      "type": "string"
+    },
+    "table_id": {
+      "type": "string"
+    },
+    "variable_id": {
+      "type": "string"
+    },
+    "grid_label": {
+      "type": "string"
+    },
+    "conventions": {
+      "type": "string"
+    },
+    "frequency": {
+      "type": "string"
+    },
+    "modeling_realm": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "dataset_name",
+    "collection_name",
+    "http_url",
+    "odap_url",
+    "ncml_url",
+    "uddc_url",
+    "iso_url",
+    "wcs_url",
+    "wms_url",
+    "provider",
+    "activity_id",
+    "institution_id",
+    "source_id",
+    "experiment_id",
+    "member_id",
+    "table_id",
+    "variable_id",
+    "grid_label",
+    "conventions",
+    "frequency",
+    "modeling_realm"
+  ]
+}

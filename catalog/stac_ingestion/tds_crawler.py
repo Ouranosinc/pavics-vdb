@@ -1,5 +1,9 @@
 from siphon.catalog import TDSCatalog
 from utils import bcolors
+# from __validation.schema_validator import JsonSchemaValidator
+# from __validation.schema_uri_map import SchemaUriMap
+# from __validation.schema_exception_logger import SchemaExceptionLogger
+from metadata_validator import MetadataValidator, REGISTERED_SCHEMAS, OBJECT_TYPE
 
 # TODO : hackish import from parent folder
 import sys
@@ -53,11 +57,14 @@ class TDSCrawler(object):
 
             print(f"{bcolors.OKGREEN}[INFO] Found TDS dataset [{dataset_name}]{bcolors.ENDC}")
             item = self.add_tds_ds_metadata(item)
+            item_metadata_schema_uri = REGISTERED_SCHEMAS["cmip5"][OBJECT_TYPE.ITEM]
+            metadata_validator = MetadataValidator()
+            valid_item = metadata_validator.validate(item, item_metadata_schema_uri)
 
-            # TODO : validate cmip5 schema with CV
-            # TODO : datasets.append(item) only if valid schema, otherwise log exception
-
-            datasets.append(item)
+            if valid_item:
+                datasets.append(item)
+            else:
+                print(f"[WARNING] Schema exception")
 
         for catalog_name, catalog_obj in catalog.catalog_refs.items():
             d = self.parse_datasets(catalog_obj.follow())
@@ -70,26 +77,11 @@ class TDSCrawler(object):
         """
         Add extra metadata to item.
         """
-        # TODO : hardcoded, especially for url_attrs. Replace with regexes
+        # TODO : hardcoded, replace with regexes
         # TODO : Extract metadata from ncml_url and iso_url
         url_attrs = ds["http_url"].split("/")
         ds_attrs = ds["dataset_name"].split("_")
-
         ncml_attrs = tds.attrs_from_ncml(ds["ncml_url"])
-
-        # cv = {
-        #     "activity_id": "CMIP5",
-        #     "institution_id": "CCCma",
-        #     "source_id": "na",
-        #     "experiment_id": "",  # url_attrs[14],
-        #     "member_id": "na",
-        #     "table_id": "na",
-        #     "variable_id": "",  # url_attrs[13],
-        #     "grid_label": "na",
-        #     "conventions": "na",
-        #     "frequency": "",  # url_attrs[15],
-        #     "modeling_realm": ""  # ds_attrs[0]
-        # }
 
         extra_meta = {
             "provider": "pavics-thredds",

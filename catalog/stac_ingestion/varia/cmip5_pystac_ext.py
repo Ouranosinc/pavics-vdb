@@ -8,7 +8,7 @@ CMIP5_EXTENSION_SCHEMA_URL = "TODO"
 # Note : based on EOItemExt
 
 class CMIP5ItemExt(ItemExtension):
-    """CMIP5ItemExt is the extension of the Item in the cmip5 extension.
+    """CMIP5ItemExt is the extension of the Item in the cv extension.
 
     Args:
         item (Item): The item to be extended.
@@ -17,7 +17,7 @@ class CMIP5ItemExt(ItemExtension):
         item (Item): The Item that is being extended.
 
     Note:
-        Using CMIP5ItemExt to directly wrap an item will add the 'cmip5' extension ID to
+        Using CMIP5ItemExt to directly wrap an item will add the 'cv' extension ID to
         the item's stac_extensions.
     """
     def __init__(self, item):
@@ -58,10 +58,10 @@ class CMIP5ItemExt(ItemExtension):
         Returns:
             string
         """
-        if asset is None or 'cmip5:variable_id' not in asset.properties:
-            return self.item.properties.get('cmip5:variable_id')
+        if asset is None or 'cv:variable_id' not in asset.properties:
+            return self.item.properties.get('cv:variable_id')
         else:
-            return asset.properties.get('cmip5:variable_id')
+            return asset.properties.get('cv:variable_id')
 
     def set_variable_id(self, variable_id, asset=None):
         """Set an Item or an Asset variable_id.
@@ -70,9 +70,9 @@ class CMIP5ItemExt(ItemExtension):
         Otherwise sets the Item's value.
         """
         if asset is None:
-            self.item.properties['cmip5:variable_id'] = variable_id
+            self.item.properties['cv:variable_id'] = variable_id
         else:
-            asset.properties['cmip5:variable_id'] = variable_id
+            asset.properties['cv:variable_id'] = variable_id
 
     def __repr__(self):
         return '<CMIP5ItemExt Item id={}>'.format(self.item.id)
