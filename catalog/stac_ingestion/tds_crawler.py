@@ -1,6 +1,10 @@
 from siphon.catalog import TDSCatalog
 from utils import bcolors
 
+# TODO : hackish import from parent folder
+import sys
+sys.path.append('..')
+import tds
 
 class TDSCrawler(object):
     def run(self, tds_catalog_url):
@@ -49,6 +53,10 @@ class TDSCrawler(object):
 
             print(f"{bcolors.OKGREEN}[INFO] Found TDS dataset [{dataset_name}]{bcolors.ENDC}")
             item = self.add_tds_ds_metadata(item)
+
+            # TODO : validate cmip5 schema with CV
+            # TODO : datasets.append(item) only if valid schema, otherwise log exception
+
             datasets.append(item)
 
         for catalog_name, catalog_obj in catalog.catalog_refs.items():
@@ -67,19 +75,35 @@ class TDSCrawler(object):
         url_attrs = ds["http_url"].split("/")
         ds_attrs = ds["dataset_name"].split("_")
 
+        ncml_attrs = tds.attrs_from_ncml(ds["ncml_url"])
+
+        # cv = {
+        #     "activity_id": "CMIP5",
+        #     "institution_id": "CCCma",
+        #     "source_id": "na",
+        #     "experiment_id": "",  # url_attrs[14],
+        #     "member_id": "na",
+        #     "table_id": "na",
+        #     "variable_id": "",  # url_attrs[13],
+        #     "grid_label": "na",
+        #     "conventions": "na",
+        #     "frequency": "",  # url_attrs[15],
+        #     "modeling_realm": ""  # ds_attrs[0]
+        # }
+
         extra_meta = {
-            "provider": "thredds",
-            "activity_id": "na",
-            "institution_id": "na",
+            "provider": "pavics-thredds",
+            "activity_id": "CMIP5",
+            "institution_id": "CCCS",
             "source_id": "na",
-            "experiment_id": url_attrs[14],
+            "experiment_id": "", # url_attrs[14],
             "member_id": "na",
             "table_id": "na",
-            "variable_id": url_attrs[13],
+            "variable_id": "",  # url_attrs[13],
             "grid_label": "na",
             "conventions": "na",
-            "frequency": url_attrs[15],
-            "modeling_realm": ds_attrs[0]
+            "frequency": "", # url_attrs[15],
+            "modeling_realm": ""  # ds_attrs[0]
         }
 
         return dict(ds, **extra_meta)
