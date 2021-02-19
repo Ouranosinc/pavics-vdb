@@ -1,6 +1,9 @@
+from pathlib import Path
+
 import json
 import jsonschema
 import os
+
 
 class OBJECT_TYPE:
     ITEM = "ITEM"
@@ -12,32 +15,20 @@ REGISTERED_SCHEMAS = {
     }
 }
 
+
 class MetadataValidator(object):
     def validate(self, item, schema_uri):
-        # TODO : use cache for json files
-
+        # TODO : local path test
+        HERE = Path(__file__).resolve().parent
+        SCHEMA_DIR = HERE / "cv" / "cmip5"
         valid = False
 
         with open(schema_uri) as f:
             schema = json.load(f)
 
         try:
-            jsonschema.validate(instance=item, schema=schema)
-
-            for field in schema["required"]:
-                filepath = f"cv/cmip5/{field}.json".format(field)
-
-                if not os.path.exists(filepath):
-                    print("[CRITICAL] one or more schema does not exist")
-                    return False
-
-                with open(filepath) as f:
-                    try:
-                        schema = json.load(f)
-                    except Exception:
-                        print("[CRITICAL] one or more schema not in json format")
-
-                jsonschema.validate(instance=item[field], schema=schema)
+            resolver = jsonschema.RefResolver(base_uri=f"file://{SCHEMA_DIR}{os.path.sep}", referrer=schema)
+            jsonschema.validate(instance=item, schema=schema, resolver=resolver)
 
             valid = True
         except jsonschema.exceptions.ValidationError as err:

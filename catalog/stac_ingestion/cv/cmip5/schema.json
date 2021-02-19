@@ -3,38 +3,37 @@
   "type": "object",
   "properties": {
     "activity_id": {
-      "type": "string",
-      "value": { "$ref" : "activity_id.json" }
+      "$ref": "activity_id.json#/definitions/field"
     },
     "institution_id": {
-      "type": "string"
+      "$ref": "institution_id.json#/definitions/field"
     },
     "source_id": {
-      "type": "string"
+      "$ref": "source_id.json#/definitions/field"
     },
     "experiment_id": {
-      "type": "string"
+      "$ref": "experiment_id.json#/definitions/field"
     },
     "member_id": {
-      "type": "string"
+      "$ref": "member_id.json#/definitions/field"
     },
     "table_id": {
-      "type": "string"
+      "$ref": "table_id.json#/definitions/field"
     },
     "variable_id": {
-      "type": "string"
+      "$ref": "variable_id.json#/definitions/field"
     },
     "grid_label": {
-      "type": "string"
+      "$ref": "grid_label.json#/definitions/field"
     },
     "conventions": {
-      "type": "string"
+      "$ref": "conventions.json#/definitions/field"
     },
     "frequency": {
-      "type": "string"
+      "$ref": "frequency.json#/definitions/field"
     },
     "modeling_realm": {
-      "type": "string"
+      "$ref": "modeling_realm.json#/definitions/field"
     }
   },
   "required": [
