@@ -65,7 +65,6 @@ class TDSCrawler(object):
                 "wms_url" : wms_url
             }
 
-            # print(f"{bcolors.OKGREEN}[INFO] Found TDS dataset [{dataset_name}]{bcolors.ENDC}")
             LOGGER.info("[INFO] Found TDS dataset [%s]", dataset_name)
             item = self.add_tds_ds_metadata(item)
             item_metadata_schema_uri = REGISTERED_SCHEMAS[SCHEMAS.CMIP5][OBJECT_TYPE.SCHEMA]
