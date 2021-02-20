@@ -13,3 +13,4 @@ tzlocal
 pytz
 python-dotenv
 jsonschema
+colorlog

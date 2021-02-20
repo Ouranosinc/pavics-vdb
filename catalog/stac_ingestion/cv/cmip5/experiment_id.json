@@ -3,10 +3,7 @@
   "type": "object",
   "definitions": {
     "field": {
-      "type": "string",
-      "enum": [
-          ""
-      ]
+      "pattern": "rcp"
     }
   }
 }

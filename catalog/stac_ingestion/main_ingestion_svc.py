@@ -10,11 +10,6 @@ load_dotenv()
 
 
 def main():
-    """
-    Orchestrates all the PoC's logics.
-
-    :return:
-    """
     CACHE_FILEPATH = "tds_cache.json"
     TEST_DATA = False
     tds_catalog_url = os.getenv("THREDDS_CATALOG")

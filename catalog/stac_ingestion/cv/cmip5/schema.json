@@ -34,6 +34,9 @@
     },
     "modeling_realm": {
       "$ref": "modeling_realm.json#/definitions/field"
+    },
+    "model_id": {
+      "$ref": "model_id.json#/definitions/field"
     }
   },
   "required": [
@@ -47,6 +50,7 @@
     "grid_label",
     "conventions",
     "frequency",
-    "modeling_realm"
+    "modeling_realm",
+    "model_id"
   ]
 }

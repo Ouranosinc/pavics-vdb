@@ -14,16 +14,26 @@ LOGGER.setLevel(logging.INFO)
 LOGGER.propagate = False
 
 
+class SCHEMAS:
+    CMIP5 = "cmip5"
+
+
 class OBJECT_TYPE:
-    ITEM = "ITEM"
+    SCHEMA = "schema"
+    ROOT = "root"
 
 
 # TODO : handle version range, http ref
 REGISTERED_SCHEMAS = {
-    "cmip5" : {
-        OBJECT_TYPE.ITEM : "cv/cmip5/schema.json"
+    "cmip5": {
+        "schema": "cv/cmip5/schema.json",
+        "root": "cv/cmip5/"
     }
 }
+
+
+def get_schemas():
+    return REGISTERED_SCHEMAS.keys()
 
 
 def single_line(s):
@@ -31,10 +41,10 @@ def single_line(s):
 
 
 class MetadataValidator(object):
-    def is_valid(self, item, schema_uri):
+    def is_valid(self, item, schema_uri, schema_root):
         # TODO : local path test
         HERE = Path(__file__).resolve().parent
-        SCHEMA_DIR = HERE / "cv" / "cmip5"
+        SCHEMA_DIR = HERE.joinpath(schema_root)
         valid = False
 
         with open(schema_uri) as f:

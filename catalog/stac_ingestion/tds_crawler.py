@@ -1,14 +1,24 @@
 from siphon.catalog import TDSCatalog
-from utils import bcolors
-# from __validation.schema_validator import JsonSchemaValidator
-# from __validation.schema_uri_map import SchemaUriMap
-# from __validation.schema_exception_logger import SchemaExceptionLogger
-from metadata_validator import MetadataValidator, REGISTERED_SCHEMAS, OBJECT_TYPE
+from metadata_validator import MetadataValidator, REGISTERED_SCHEMAS, OBJECT_TYPE, SCHEMAS
+from colorlog import ColoredFormatter
 
 # TODO : hackish import from parent folder
 import sys
 sys.path.append('..')
 import tds
+import logging
+
+
+# setup logger
+LOGGER = logging.getLogger(__name__)
+LOGFORMAT = "  %(log_color)s%(levelname)-8s%(reset)s | %(log_color)s%(message)s%(reset)s"
+formatter = ColoredFormatter(LOGFORMAT)
+stream = logging.StreamHandler()
+stream.setFormatter(formatter)
+LOGGER.addHandler(stream)
+LOGGER.setLevel(logging.INFO)
+LOGGER.propagate = False
+
 
 class TDSCrawler(object):
     def run(self, tds_catalog_url):
@@ -55,14 +65,19 @@ class TDSCrawler(object):
                 "wms_url" : wms_url
             }
 
-            print(f"{bcolors.OKGREEN}[INFO] Found TDS dataset [{dataset_name}]{bcolors.ENDC}")
+            # print(f"{bcolors.OKGREEN}[INFO] Found TDS dataset [{dataset_name}]{bcolors.ENDC}")
+            LOGGER.info("[INFO] Found TDS dataset [%s]", dataset_name)
             item = self.add_tds_ds_metadata(item)
-            item_metadata_schema_uri = REGISTERED_SCHEMAS["cmip5"][OBJECT_TYPE.ITEM]
+            item_metadata_schema_uri = REGISTERED_SCHEMAS[SCHEMAS.CMIP5][OBJECT_TYPE.SCHEMA]
+            item_metadata_root = REGISTERED_SCHEMAS[SCHEMAS.CMIP5][OBJECT_TYPE.ROOT]
             metadata_validator = MetadataValidator()
-            is_valid = metadata_validator.is_valid(item, item_metadata_schema_uri)
+            is_valid = metadata_validator.is_valid(item, item_metadata_schema_uri, item_metadata_root)
 
             if is_valid:
                 datasets.append(item)
+                LOGGER.info("[INFO] Valid dataset [%s]", dataset_name)
+            else:
+                LOGGER.warning("[WARNING] Invalid dataset [%s]", dataset_name)
 
         for catalog_name, catalog_obj in catalog.catalog_refs.items():
             d = self.parse_datasets(catalog_obj.follow())
@@ -83,17 +98,18 @@ class TDSCrawler(object):
 
         extra_meta = {
             "provider": "pavics-thredds",
-            "activity_id": "CMIP5",
-            "institution_id": "CCCS",
+            "activity_id": ncml_attrs.get("project_id", ""),
+            "institution_id": ncml_attrs.get("institute_id", ""),
             "source_id": "na",
-            "experiment_id": "", # url_attrs[14],
+            "experiment_id": ncml_attrs.get("driving_experiment", ""),
             "member_id": "na",
             "table_id": "na",
-            "variable_id": "",  # url_attrs[13],
+            "variable_id": "",
             "grid_label": "na",
-            "conventions": "na",
-            "frequency": "", # url_attrs[15],
-            "modeling_realm": ""  # ds_attrs[0]
+            "conventions": ncml_attrs.get("Conventions", ""),
+            "frequency": ncml_attrs.get("frequency", ""),
+            "modeling_realm": ncml_attrs.get("modeling_realm", ""),
+            "model_id": ncml_attrs.get("model_id", "")
         }
 
         return dict(ds, **extra_meta)
