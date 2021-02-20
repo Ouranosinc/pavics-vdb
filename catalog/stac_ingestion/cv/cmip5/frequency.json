@@ -5,7 +5,11 @@
     "field": {
       "type": "string",
       "enum": [
-          "day"
+        "day",
+        "MS",
+        "YS",
+        "QS-DEC",
+        "2QS-APR"
       ]
     }
   }

@@ -107,7 +107,7 @@ class TDSCrawler(object):
             "variable_id": "",
             "grid_label": "na",
             "conventions": ncml_attrs.get("Conventions", ""),
-            "frequency": ncml_attrs.get("frequency", ""),
+            "frequency": ncml_attrs.get("frequency", url_attrs[15]),
             "modeling_realm": ncml_attrs.get("modeling_realm", ""),
             "model_id": ncml_attrs.get("model_id", "")
         }
