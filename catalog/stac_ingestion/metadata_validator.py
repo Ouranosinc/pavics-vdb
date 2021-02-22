@@ -26,8 +26,8 @@ class OBJECT_TYPE:
 # TODO : handle version range, http ref
 REGISTERED_SCHEMAS = {
     "cmip5": {
-        "schema": "cv/cmip5/schema.json",
-        "root": "cv/cmip5/"
+        "schema": "../CV/cmip5/schema.json",
+        "root": "../CV/cmip5/"
     }
 }
 
