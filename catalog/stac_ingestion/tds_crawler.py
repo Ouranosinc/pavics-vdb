@@ -95,20 +95,38 @@ class TDSCrawler(object):
         ds_attrs = ds["dataset_name"].split("_")
         ncml_attrs = tds.attrs_from_ncml(ds["ncml_url"])
 
+        # # cmip5 sample
+        # extra_meta = {
+        #     "provider": "pavics-thredds",
+        #     "activity_id": ncml_attrs.get("project_id", ""),
+        #     "institution_id": ncml_attrs.get("institute_id", ""),
+        #     "source_id": "na",
+        #     "experiment_id": ncml_attrs.get("driving_experiment", ""),
+        #     "member_id": "na",
+        #     "table_id": "na",
+        #     "variable_id": "",
+        #     "grid_label": "na",
+        #     "conventions": ncml_attrs.get("Conventions", ""),
+        #     "frequency": ncml_attrs.get("frequency", url_attrs[15]),
+        #     "modeling_realm": ncml_attrs.get("modeling_realm", ""),
+        #     "model_id": ncml_attrs.get("model_id", "")
+        # }
+
+        # cmip6 sample
         extra_meta = {
             "provider": "pavics-thredds",
-            "activity_id": ncml_attrs.get("project_id", ""),
-            "institution_id": ncml_attrs.get("institute_id", ""),
-            "source_id": "na",
-            "experiment_id": ncml_attrs.get("driving_experiment", ""),
-            "member_id": "na",
-            "table_id": "na",
-            "variable_id": "",
-            "grid_label": "na",
-            "conventions": ncml_attrs.get("Conventions", ""),
-            "frequency": ncml_attrs.get("frequency", url_attrs[15]),
-            "modeling_realm": ncml_attrs.get("modeling_realm", ""),
-            "model_id": ncml_attrs.get("model_id", "")
+            "activity_id": "CMIP",
+            "experiment_id": "1pctCO2",
+            "frequency": "mon",
+            "grid_label": "gm",
+            "institution_id": "CCCma",
+            "license": "none",
+            "nominal_resolution": "1 km",
+            "realm": "atmos",
+            "source_id": "4AOP-v1-5",
+            "source_type": "AER",
+            "sub_experiment_id": "s1910",
+            "table_id": "3hr"
         }
 
         return dict(ds, **extra_meta)
