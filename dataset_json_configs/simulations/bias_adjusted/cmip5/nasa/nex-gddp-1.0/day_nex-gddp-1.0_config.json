@@ -31,11 +31,11 @@
       "value": "Thrasher et al., 2012, Hydrol. Earth Syst. Sci.,16, 3309-3314. \nRef period obs: latest version of the Princeton Global Meteorological Forcings (http://hydrology.princeton.edu/data.php), \nbased on Sheffield et al., 2006, J. Climate, 19 (13), 3088-3111.",
       "type": "String"
     },
-    "licence_type": {
+    "license_type": {
       "value": "permissive",
       "type": "String"
     },
-    "licence": {
+    "license": {
       "value": "http://www.usa.gov/publicdomain/label/1.0/. ",
       "type": "String"
     },

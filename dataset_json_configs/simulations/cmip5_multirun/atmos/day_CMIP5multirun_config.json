@@ -2,7 +2,7 @@
 	"attribute": {"type": {"value": "GCM", "type": "String"},
 		"processing": {"value": "raw_data", "type": "String"},
 		"licence_type": {"value": "permissive", "type": "String"},
-		"terms_of_use": {"value": "https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html", "type": "String"},
+		"licence": {"value": "https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html", "type": "String"},
 		"attribution": {"value": "https://pcmdi.llnl.gov/mips/cmip5/citation.html", "type": "String"}
 	},
 	"location": "/pavics-data/cmip5/",

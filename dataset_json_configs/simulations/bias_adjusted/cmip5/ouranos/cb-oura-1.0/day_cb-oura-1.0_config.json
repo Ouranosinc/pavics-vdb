@@ -41,11 +41,11 @@
       "value": "CMIP5",
       "type": "String"
     },
-    "licence_type": {
+    "license_type": {
       "value": "permissive non-commercial",
       "type": "String"
     },
-    "licence":{
+    "license":{
       "value":"Creative Commons Attribution-NonCommercial 4.0 International Public License: https://creativecommons.org/licenses/by-nc/4.0/legalcode",
       "type": "String"
     },
