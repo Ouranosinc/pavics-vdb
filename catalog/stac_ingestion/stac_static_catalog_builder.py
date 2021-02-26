@@ -69,6 +69,7 @@ class StacStaticCatalogBuilder(object):
                                       bbox=bbox,
                                       datetime=datetime.utcnow(),
                                       properties={},
+                                      collection=item["collection_name"],
                                       stac_extensions=[pystac.Extensions.DATACUBE])
 
         # TODO : utils.MockDateTime() has been used since STAC API requires date in %Y-%m-%dT%H:%M:%SZ format while
@@ -91,8 +92,11 @@ class StacStaticCatalogBuilder(object):
         collection_item.properties["cv:frequency"] = item["frequency"]
         collection_item.properties["cv:modeling_realm"] = item["modeling_realm"]
 
-        link = pystac.Link("file", item["http_url"], "application/netcdf")
-        collection_item.add_link(link)
+        # link = pystac.Link("file", item["http_url"], "application/netcdf")
+        # collection_item.add_link(link)
+
+        asset = pystac.Asset(href=item["http_url"], media_type="application/netcdf", title="NetCDF file")
+        collection_item.add_asset('metadata_http', asset)
 
         asset = pystac.Asset(href=item["iso_url"], media_type="application/xml", title="Metadata ISO")
         collection_item.add_asset('metadata_iso', asset)
@@ -121,7 +125,7 @@ class StacStaticCatalogBuilder(object):
 
 
     def get_catalog(self, collections):
-        catalog = pystac.Catalog(id='STAC API TDS Climate Data Catalog',
+        catalog = pystac.Catalog(id='STAC TDS Climate Data Catalog',
                                  description='List of TDS catalog data represented in a STAC catalog.')
 
         catalog.clear_items()

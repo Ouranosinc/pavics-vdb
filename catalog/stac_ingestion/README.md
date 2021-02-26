@@ -7,6 +7,11 @@ This project shows a PoC of the different parts of the ingestion process.
 ![pipeline view](assets/hl_arch.png "Pipeline")
 
 
+## Notes
+
+- Too avoid useless queries to Thredds, a file named `tds_cache.json` is created after each run of `tds_crawler.py`. Delete it to crawl again Thredds.
+
+
 ## Dependencies
 
 Required
@@ -47,6 +52,13 @@ python3 -m stac_api_data_eraser                     # Remove all data from STAC 
 
 
 ## Other useful stuff
+
+### Push static catalog to demo server
+
+```
+chmod +x ./Taskfile
+./Taskfile push
+```
 
 
 ### Schema validation
