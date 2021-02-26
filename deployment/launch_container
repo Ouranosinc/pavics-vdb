@@ -1,0 +1,99 @@
+#!/bin/sh
+# Generic wrapper to capture run-time env for any script using Docker.
+#
+# Setting environment variable LAUNCH_CONTAINER_LOGFILE='/path/to/logfile.log'
+# will redirect all STDOUT and STDERR to that logfile so this script will be
+# completely silent.
+#
+# This script should be able to run from a minimal Docker image like
+# 'docker:VERSION-git'.
+#
+# All LAUNCH_CONTAINER_* vars are env var or can be set in the config file
+# LAUNCH_CONTAINER_CONFIG_FILE.
+#
+# See file launch_container.conf.sample for documentation for all the
+# configuration env vars.
+#
+# Possible usage of this script:
+#
+# ./launch_container ./launch_container.conf.sample
+#
+# LAUNCH_CONTAINER_CONFIG_FILE="./launch_container.conf.sample" ./launch_container
+#
+# ./launch_container ./launch_container.conf.sample arg1 arg2 arg3
+#
+# ENV_VAR_1=/tmp/launch_container_test_custom ENV_VAR_4=now_exist ./launch_container ./launch_container.conf.sample
+#
+# LAUNCH_CONTAINER_DOCKER_RUN_EXTRA_OPTS="--env ENV_VAR_5=value5 --env ENV_VAR_3=overriden" ./launch_container ./launch_container.conf.sample
+#
+
+if [ ! -z "$LAUNCH_CONTAINER_LOGFILE" ]; then
+    exec >>$LAUNCH_CONTAINER_LOGFILE 2>&1
+fi
+
+CONFIG_FILE="$1"
+if [ -z "$CONFIG_FILE" ]; then
+    CONFIG_FILE="$LAUNCH_CONTAINER_CONFIG_FILE"
+else
+    # So the rest can be given as opts to script.
+    shift
+fi
+
+if [ -z "$CONFIG_FILE" ]; then
+    echo "ERROR: please provide a config file or set LAUNCH_CONTAINER_CONFIG_FILE='path/to/configfile.conf'" 1>&2
+    exit 2
+fi
+
+. $CONFIG_FILE
+
+
+cleanup_on_exit() {
+    set +x
+    echo "
+launch_container '$LAUNCH_CONTAINER_RUN_NAME' finished START_TIME=$START_TIME
+launch_container '$LAUNCH_CONTAINER_RUN_NAME' finished   END_TIME=`date -Isecond`"
+}
+
+trap cleanup_on_exit EXIT
+
+
+START_TIME="`date -Isecond`"
+echo "==========
+launch_container '$LAUNCH_CONTAINER_RUN_NAME' START_TIME=$START_TIME"
+
+set -x
+
+CONFIG_FILE_PATH="`realpath "$CONFIG_FILE"`"
+CONFIG_FILE_DIR="`dirname "$CONFIG_FILE_PATH"`"
+WORK_DIR="`realpath "$CONFIG_FILE_DIR/$LAUNCH_CONTAINER_RO_WORKDIR"`"
+
+USER_ID="`id -u`"
+GROUP_ID="`id -g`"
+
+for var in $LAUNCH_CONTAINER_ENV_VAR_PATH_LIST; do
+    if [ -z "`eval echo \\$${var}`" ]; then
+        eval "$var=\$${var}_DEFAULT"
+    fi
+
+    # Ensure dirs are pre-created using current USER_ID/GROUP_ID for
+    # next run to have proper write access.
+    eval mkdir -p "\$$var"
+
+    VOLUME_MOUNT_OPTS="$VOLUME_MOUNT_OPTS `eval echo "--volume \\$$var:\\$$var:rw"`"
+
+    ENV_OPTS="$ENV_OPTS `eval echo "--env $var=\\$$var"`"
+done
+
+docker run --rm --name $LAUNCH_CONTAINER_RUN_NAME \
+    $VOLUME_MOUNT_OPTS \
+    --volume $CONFIG_FILE_PATH:$CONFIG_FILE_PATH:ro \
+    --volume $WORK_DIR:$WORK_DIR:ro \
+    --workdir $WORK_DIR \
+    $ENV_OPTS \
+    --user $USER_ID:$GROUP_ID \
+    $LAUNCH_CONTAINER_DOCKER_RUN_EXTRA_OPTS \
+    $LAUNCH_CONTAINER_IMAGE \
+    $LAUNCH_CONTAINER_COMMAND "$@"
+
+
+# vi: tabstop=8 expandtab shiftwidth=4 softtabstop=4
