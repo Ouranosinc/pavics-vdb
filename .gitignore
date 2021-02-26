@@ -1,3 +1,4 @@
 .ipynb_checkpoints/
 .idea/
 catalog/__pycache__/
+catalog/intake_ingestion/__pycache__/
