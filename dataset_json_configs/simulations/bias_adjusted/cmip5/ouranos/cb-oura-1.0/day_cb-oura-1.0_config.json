@@ -13,6 +13,7 @@
     },
     "title": {"value": "Ouranos standard ensemble of bias-adjusted climate scenarios version 1.0 (cb-oura-1.0)",
       "type": "String"},
+    "dataset_id": {"value": "cb-oura-1.0", "type":"String"},
     "type": {
       "value": "GCM",
       "type": "String"

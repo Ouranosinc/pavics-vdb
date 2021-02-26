@@ -7,6 +7,7 @@
   },
   "attribute": {
     "title": {"value": "The NASA Earth Exchange Global Daily Downscaled Projections (NEX-GDDP) ","type": "String"},
+    "dataset_id": {"value": "nex-gddp", "type":"String"},
     "type": {
       "value": "GCM",
       "type": "String"
