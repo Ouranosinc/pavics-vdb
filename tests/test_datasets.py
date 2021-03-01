@@ -10,6 +10,7 @@ import xarray as xr
 import xncml
 from xclim import subset, ensembles
 import netCDF4
+import warnings
 
 from lxml import etree
 
@@ -130,7 +131,7 @@ class TestDataset:
 
 
 
-    def test_BCCAQv2(self):
+    def test_BCCAQv2(self, compare_raw=False):
 
             datasets = sorted(list(path.Path('../tmp/simulations/bias_adjusted/cmip5/pcic/bccaqv2').rglob('*.ncml')))
 
@@ -159,9 +160,9 @@ class TestDataset:
                     lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
                 )
 
-                compare_ncml_rawdata(dataset, dsNcML)
+                compare_ncml_rawdata(dataset, dsNcML, compare_raw)
 
-    def test_OuraScenGen(self):
+    def test_OuraScenGen(self, compare_raw=False):
 
         datasets = sorted(list(path.Path('../tmp/simulations/bias_adjusted/cmip5/ouranos/cb-oura-1.0').rglob('*.ncml')))
 
@@ -190,11 +191,11 @@ class TestDataset:
                 lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
             )
 
-            compare_ncml_rawdata(dataset,dsNcML)
+            compare_ncml_rawdata(dataset,dsNcML, compare_raw)
 
 
 
-    def test_NEXGDDP(self):
+    def test_NEXGDDP(self, compare_raw=False):
 
         datasets = sorted(list(path.Path('../tmp/simulations/bias_adjusted/cmip5/nasa/nex-gddp-1.0').rglob('*.ncml')))
 
@@ -223,9 +224,9 @@ class TestDataset:
                 lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
             )
 
-            compare_ncml_rawdata(dataset,dsNcML)
+            compare_ncml_rawdata(dataset,dsNcML, compare_raw)
 
-def compare_ncml_rawdata(dataset, dsNcML):
+def compare_ncml_rawdata(dataset, dsNcML, compare_vals):
     ncml = xncml.Dataset(dataset)
     l1 = list(recursive_items(ncml.ncroot, '@location'))[0]
 
@@ -265,8 +266,9 @@ def compare_ncml_rawdata(dataset, dsNcML):
                     #print(t)
                     y = netCDF4.Dataset(t)
                     time_y = y.variables['time']
-                    dtime = netCDF4.num2date(time_y[:], units=time_y.units, calendar=time_y.calendar)
-                    if dtime.max().year > 2100:
+                    warnings.simplefilter('ignore')
+                    dtime = xr.DataArray(netCDF4.num2date(time_y[:], units=time_y.units, calendar=time_y.calendar))
+                    if dtime.dt.year.max() > 2100:
                         print('removing ' , t)
                         remove.append(t)
                 for t in remove:
@@ -291,17 +293,18 @@ def compare_ncml_rawdata(dataset, dsNcML):
             for coord in ds.coords:
                 np.testing.assert_array_equal(ds[coord].values, test[coord].values)
             time1 = np.random.choice(ds.time, 10)
-            with ProgressBar():
-                for v in ds.data_vars:
-                    print(v)
-                    if 'time' in ds[v].dims:
-                        test2 = test[v].sel(time=time1).load()
-                        if v == 'pr' and dsNcML[v].units == 'kg m-2 s-1':
-                            np.testing.assert_array_almost_equal(ds[v].sel(time=time1).values*3600*24, test2*3600*24, decimal=2)
+            if compare_vals:
+                with ProgressBar():
+                    for v in ds.data_vars:
+                        print(v)
+                        if 'time' in ds[v].dims:
+                            test2 = test[v].sel(time=time1).load()
+                            if v == 'pr' and dsNcML[v].units == 'kg m-2 s-1':
+                                np.testing.assert_array_almost_equal(ds[v].sel(time=time1).values*3600*24, test2*3600*24, decimal=2)
+                            else:
+                                np.testing.assert_array_almost_equal(ds[v].sel(time=time1).values, test2, decimal=3)
                         else:
-                            np.testing.assert_array_almost_equal(ds[v].sel(time=time1).values, test2, decimal=3)
-                    else:
-                        np.testing.assert_array_almost_equal(ds[v].values, test[v].values)
+                            np.testing.assert_array_almost_equal(ds[v].values, test[v].values)
 
     print(dataset,'ok')
     movfile = path.Path(str(dataset).replace('tmp','1-Datasets'))
@@ -311,8 +314,12 @@ def compare_ncml_rawdata(dataset, dsNcML):
 
 
 def main():
+    # test = TestDataset.test_OuraScenGen
+    # test(self=test,compare_raw=False)
+    #test = TestDataset.test_BCCAQv2
+    #test(self=test, compare_raw=False)
     test = TestDataset.test_NEXGDDP
-    test(test)
+    test(self=test, compare_raw=False)
 
 if 'main' in __name__:
     main()

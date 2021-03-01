@@ -12,8 +12,8 @@
   <attribute name="dataset_id" type="String" value="NRCAN_anusplin_daily_v2" />
   <attribute name="version" type="String" value="2.0" />
   <attribute name="frequency" type="String" value="day" />
-  <attribute name="licence_type" type="String" value="permissive" />
-  <attribute name="licence" type="String" value="https://open.canada.ca/en/open-government-licence-canada" />
+  <attribute name="license_type" type="String" value="permissive" />
+  <attribute name="license" type="String" value="https://open.canada.ca/en/open-government-licence-canada" />
   <attribute name="attribution" type="String" value="The authors provide this data under the Environment and Climate Change Canada Data Server End Use License and demand that any references to or derivative works based on this dataset be cited using the provided citation information"/>
   <attribute name="citation" type="String" value="Natural Resources Canada ANUSPLIN interpolated historical climate model from McKenney, D.W., M.F. Hutchinson, P. Papadol, K. Lawrence, J. Pedlar, K. Campbell, E. Milewska, R.F. Hopkinson, D. Price, and T. Owen, 2011. Customized Spatial Climate Models for North America. Bull. Amer. Meteor. Soc., 92, 1611-1622, https://doi.org/10.1175/2011BAMS3132.1" />
 

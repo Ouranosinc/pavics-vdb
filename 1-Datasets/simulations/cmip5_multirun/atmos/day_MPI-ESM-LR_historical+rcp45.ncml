@@ -4,8 +4,8 @@
 	<remove name="realization" type="attribute"></remove>
 	<attribute name="type" type="String" value="GCM"></attribute>
 	<attribute name="processing" type="String" value="raw_data"></attribute>
-	<attribute name="licence_type" type="String" value="permissive"></attribute>
-	<attribute name="terms_of_use" type="String" value="https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html"></attribute>
+	<attribute name="license_type" type="String" value="permissive"></attribute>
+	<attribute name="license" type="String" value="https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html"></attribute>
 	<attribute name="attribution" type="String" value="https://pcmdi.llnl.gov/mips/cmip5/citation.html"></attribute>
 	<aggregation dimName="realization" type="joinNew">
 		<variableAgg name="tasmin"></variableAgg>
