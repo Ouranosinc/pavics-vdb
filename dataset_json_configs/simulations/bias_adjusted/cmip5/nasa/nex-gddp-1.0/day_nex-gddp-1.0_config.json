@@ -24,6 +24,10 @@
       "value":"https://www.nccs.nasa.gov/services/data-collections/land-based-products/nex-gddp",
       "type": "String"
     },
+    "abstract": {
+      "value": "The NASA Earth Exchange Global Daily Downscaled Projections (NEX-GDDP) dataset is comprised of downscaled climate scenarios for the globe that are derived from the General Circulation Model (GCM) runs conducted under the Coupled Model Intercomparison Project Phase 5 (CMIP5) and across two of the four greenhouse gas emissions scenarios known as Representative Concentration Pathways (RCPs).",
+      "type": "String"
+    },
     "bias_adjustment_method": {
       "value":"BCSD",
       "type": "String"

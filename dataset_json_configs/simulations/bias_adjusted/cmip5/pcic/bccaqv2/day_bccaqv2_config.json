@@ -10,7 +10,7 @@
   "attribute": {
 
     "title": {"value": "PCIC/ECCC statistically downscaled daily Canada-wide climate scenarios version 2 (BCCAQv2)","type": "String"},
-    "dataset_id": {"value": "bccaqv2", "type":"String"},
+    "dataset_id": {"value": "BCCAQv2", "type":"String"},
     "type": {
       "value": "GCM",
       "type": "String"
