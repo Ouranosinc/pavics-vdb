@@ -14,7 +14,7 @@ def main():
 
     overwrite_to_tmp = True
 
-    dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('*.json')
+    dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('*nex-gddp*.json')
     for dataset in dataset_configs:
         with open(dataset, 'r') as f:
             ncml_modify = json.load(f)
@@ -354,6 +354,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
         location = p.Path(config['location'].replace('pavics-data', pavics_root))
         mods = list(location.rglob('*tasmin*historical*1950*.nc'))
         for mod in mods:
+
             for exp in config['experiments']:
                 agg_dict = {"@type": "Union"}
                 agg = ncml_add_aggregation(agg_dict)
@@ -386,6 +387,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
                 ncml1 = xncml.Dataset(ncml_template)
                 ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
                 attrs = config['attribute']
+                attrs['driving_experiment'] = dict(value=exp.replace('+',','), type='String')
                 ncml1.ncroot['netcdf']['attribute'] = ncml_add_attributes(attrs)
                 ncml1.ncroot['netcdf']['aggregation'] = agg
                 ncmls[f"day_{mod.name.split('i1p1_')[-1].split('_1950')[0]}_{exp}_nex-gddp"] = ncml1
