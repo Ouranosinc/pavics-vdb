@@ -11,6 +11,9 @@ pavics_root = f"{home}/boreas/boreas"
 
 
 def main():
+
+    overwrite_to_tmp = True
+
     dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('*.json')
     for dataset in dataset_configs:
         with open(dataset, 'r') as f:
@@ -37,7 +40,7 @@ def main():
                     f"{d}.ncml")
 
 
-            if not p.Path(outpath.parent.as_posix().replace('tmp','1-Datasets')).joinpath(outpath.name).exists():
+            if overwrite_to_tmp:
                 if not outpath.parent.exists():
                     outpath.parent.mkdir(parents=True)
                 datasets[d].to_ncml(outpath)
