@@ -20,6 +20,7 @@
 	<attribute name="modeling_realm" type="String" value="atmos"></attribute>
 	<attribute name="target_dataset_references" type="String" value="Sheffield J, Goteti G, Wood EF (2006) Development of a 50-yr high-resolution global dataset of meteorological forcings for land surface modeling. J. Climate 19 (13): 3088-3111."></attribute>
 	<attribute name="target_dataset" type="String" value="Sheffield 2006. Global historical gridded daily observations"></attribute>
+	<attribute name="driving_experiment" type="String" value="historical,rcp85"></attribute>
 	<aggregation type="Union">
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
