@@ -7,14 +7,14 @@
         "3hrPt":"sampled 3 hourly, at specified time point within the time period",
         "6hr":"sampled every 6 hours",
         "6hrPt":"sampled 6 hourly, at specified time point within the time period",
-        "day":"daily mean samples",
+        "day":"daily samples",
         "dec":"decadal mean samples",
         "fx":"fixed (time invariant) field",
-        "mon":"monthly mean samples",
+        "mon":"monthly samples",
         "monC":"monthly climatology computed from monthly mean samples",
         "monPt":"sampled monthly, at specified time point within the time period",
         "subhrPt":"sampled sub-hourly, at specified time point within an hour",
-        "yr":"annual mean samples",
+        "yr":"annual samples",
         "yrPt":"sampled yearly, at specified time point within the time period"
     }
 }

@@ -86,7 +86,7 @@ class Intake:
             raise ConnectionError(f"Could not open {url}\n") from err
 
         table = [self.header()]
-        for name, ds in tds.walk(cat):
+        for name, ds in tds.walk(cat, depth=None):
             attrs = tds.attrs_from_ds(ds)
 
             # Global attributes
