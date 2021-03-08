@@ -1,41 +1,43 @@
 <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-  <remove name="redistribution" type="attribute" />
-  <remove name="source" type="attribute" />
-  <remove name="institution" type="attribute" />
-  <remove name="project_id" type="attribute" />
-  <remove name="model_id" type="attribute" />
-  <remove name="references" type="attribute" />
-  <attribute name="title" type="String" value="NRCAN ANUSPLIN daily gridded dataset : version 2" />
-  <attribute name="type" type="String" value="gridded_obs" />
-  <attribute name="institute" type="String" value="Natural Resources Canada : Canadian Forest Service" />
-  <attribute name="institute_id" type="String" value="NRCAN" />
-  <attribute name="dataset_id" type="String" value="NRCAN_anusplin_daily_v2" />
-  <attribute name="version" type="String" value="2.0" />
-  <attribute name="frequency" type="String" value="day" />
-  <attribute name="license_type" type="String" value="permissive" />
-  <attribute name="license" type="String" value="https://open.canada.ca/en/open-government-licence-canada" />
-  <attribute name="attribution" type="String" value="The authors provide this data under the Environment and Climate Change Canada Data Server End Use License and demand that any references to or derivative works based on this dataset be cited using the provided citation information"/>
-  <attribute name="citation" type="String" value="Natural Resources Canada ANUSPLIN interpolated historical climate model from McKenney, D.W., M.F. Hutchinson, P. Papadol, K. Lawrence, J. Pedlar, K. Campbell, E. Milewska, R.F. Hopkinson, D. Price, and T. Owen, 2011. Customized Spatial Climate Models for North America. Bull. Amer. Meteor. Soc., 92, 1611-1622, https://doi.org/10.1175/2011BAMS3132.1" />
+    <remove name="redistribution" type="attribute" />
+    <remove name="source" type="attribute" />
+    <remove name="institution" type="attribute" />
+    <remove name="project_id" type="attribute" />
+    <remove name="model_id" type="attribute" />
+    <remove name="references" type="attribute" />
+    <attribute name="title" type="String" value="NRCAN ANUSPLIN daily gridded dataset : version 2" />
+    <attribute name="abstract" type="String" value="Gridded daily observational dataset produced by Natural Resources Canada (NRCan), available at 300 arc second spatial resolution (1/12° grids, ~10 km) over Canada. The version 2 dataset was updated in its entirety compared with version 1 and is not a simple extension of version 1 with additional years of data. Gridding was accomplished with the Australian National University Spline (ANUSPLIN) implementation of the trivariate thin plate splines interpolation method with latitude, longitude and elevation as predictors. " />
+    <attribute name="dataset_description" type="String" value="https://cfs.nrcan.gc.ca/projects/3/1"></attribute>
+    <attribute name="type" type="String" value="gridded_obs" />
+    <attribute name="institute" type="String" value="Natural Resources Canada : Canadian Forest Service" />
+    <attribute name="institute_id" type="String" value="NRCAN" />
+    <attribute name="dataset_id" type="String" value="NRCAN_anusplin_daily_v2" />
+    <attribute name="version" type="String" value="2.0" />
+    <attribute name="frequency" type="String" value="day" />
+    <attribute name="license_type" type="String" value="permissive" />
+    <attribute name="license" type="String" value="https://open.canada.ca/en/open-government-licence-canada" />
+    <attribute name="attribution" type="String" value="The authors provide this data under the Environment and Climate Change Canada Data Server End Use License and demand that any references to or derivative works based on this dataset be cited using the provided citation information"/>
+    <attribute name="citation" type="String" value="Natural Resources Canada ANUSPLIN interpolated historical climate model from McKenney, D.W., M.F. Hutchinson, P. Papadol, K. Lawrence, J. Pedlar, K. Campbell, E. Milewska, R.F. Hopkinson, D. Price, and T. Owen, 2011. Customized Spatial Climate Models for North America. Bull. Amer. Meteor. Soc., 92, 1611-1622, https://doi.org/10.1175/2011BAMS3132.1" />
 
 
-  <aggregation type="union">
-	    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-		    <aggregation dimName="time" type="joinExisting" timeUnitsChange = "true">
-			<scan location="/pavics-data/nrcan/nrcan_canada_daily_v2/tasmin" suffix=".nc" subdirs="false"/>
-		    </aggregation>
-	    </netcdf>
+    <aggregation type="union">
+        <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+            <aggregation dimName="time" type="joinExisting" timeUnitsChange = "true">
+            <scan location="/pavics-data/nrcan/nrcan_canada_daily_v2/tasmin" suffix=".nc" subdirs="false"/>
+            </aggregation>
+        </netcdf>
 
-	    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-		    <aggregation dimName="time" type="joinExisting" timeUnitsChange = "true">
-			<scan location="/pavics-data/nrcan/nrcan_canada_daily_v2/tasmax" suffix=".nc" subdirs="false"/>
-		    </aggregation>
-	    </netcdf>
+        <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+            <aggregation dimName="time" type="joinExisting" timeUnitsChange = "true">
+            <scan location="/pavics-data/nrcan/nrcan_canada_daily_v2/tasmax" suffix=".nc" subdirs="false"/>
+            </aggregation>
+        </netcdf>
 
-	    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-		    <aggregation dimName="time" type="joinExisting" timeUnitsChange = "true">
-			<scan location="/pavics-data/nrcan/nrcan_canada_daily_v2/pr" suffix=".nc" subdirs="false"/>
-		    </aggregation>
-	    </netcdf>
-    	</aggregation>
+        <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+            <aggregation dimName="time" type="joinExisting" timeUnitsChange = "true">
+            <scan location="/pavics-data/nrcan/nrcan_canada_daily_v2/pr" suffix=".nc" subdirs="false"/>
+            </aggregation>
+        </netcdf>
+        </aggregation>
 </netcdf>
 
