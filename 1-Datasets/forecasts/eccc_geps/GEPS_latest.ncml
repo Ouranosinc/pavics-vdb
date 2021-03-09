@@ -2,6 +2,7 @@
 <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/forecasts/geps/GEPS_latest.nc">
     <attribute name="title" type="String" value="Global Ensemble Prediction System (GEPS) - ECCC" />
     <attribute name="abstract" type="String" value="Global ensemble forecasts are made twice a day using the canadian GEM model to generate potential weather scenarios up to 16 days. 20 'perturbed' weather forecasts are performed. The 20 models have different physics parametrizations, data assimilation cycles and sets of perturbed observations" />
+    <attribute name="dataset_description" type="String" value="https://weather.gc.ca/grib/grib2_ens_geps_e.html"></attribute>
     <attribute name="dataset_id" type="String" value="GEPS" />
     <attribute name="type" type="String" value="forecast" />
     <attribute name="license_type" type="String" value="permissive" />
