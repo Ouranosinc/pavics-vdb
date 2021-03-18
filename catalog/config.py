@@ -5,6 +5,7 @@ CATALOG_TDS_PATH = {"cmip5": "simulations/cmip5_multirun",
                     "biasadjusted": "simulations/bias_adjusted",
                     "reanalysis": "reanalyses",
                     "gridobs": "gridded_obs",
+                    "stationobs": "station_obs",
                     "forecast": "forecasts"}
 
 # Catalog output path
