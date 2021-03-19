@@ -148,6 +148,7 @@ class StationObs(CV):
     frequency: str
     dataset_id: str
 
+
 # I think we're missing some info here (e.g. name of forecast model).
 @register("forecast")
 @dataclass
