@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# for test only - requires ssh host setup
+function push {
+    echo "Pushing static catalog to stac-dev.crim.ca"
+    rsync -r ./output ubuntu@stac-poc-provenma:/home/ubuntu/stac-compose/
+}
+
+function default {
+    help
+}
+
+function help {
+    echo "Stac ingestion utility tool"
+    compgen -A function | grep -v help | grep -v default | cat -n
+}
+
+TIMEFORMAT="Task completed in %3lR"
+time ${@:-default}

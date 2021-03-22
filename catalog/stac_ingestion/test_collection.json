@@ -1,0 +1,61 @@
+{
+    "stac_version": "1.0.0-beta.2",
+    "stac_extensions": [],
+    "id": "cmip5",
+    "title": "CMIP5",
+    "description": "CMIP5 collection",
+    "keywords": [
+      "cmip5",
+      "climate",
+      "forecast"
+    ],
+    "extent": {
+      "spatial": {
+        "bbox": [
+          [
+            -180,
+            -90,
+            180,
+            90
+          ]
+        ]
+      },
+      "temporal": {
+        "interval": [
+          [
+            "1950-01-01T00:00:00",
+            "2100-12-31T23:59:59"
+          ]
+        ]
+      }
+    },
+    "providers": [
+
+    ],
+    "license": "na",
+    "summaries": {
+      
+    },
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://stac-dev.crim.ca/collections/cmip5"
+      },
+      {
+        "rel": "child",
+        "href": "https://stac-dev.crim.ca/collections/cmip5/items"
+      },
+      {
+        "rel": "collection",
+        "href": "https://stac-dev.crim.ca/collections/cmip5"
+      },
+      {
+        "rel": "parent",
+        "href": "https://stac-dev.crim.ca/collections"
+      },
+      {
+        "rel": "root",
+        "href": "https://stac-dev.crim.ca"
+      }
+    ]
+  }

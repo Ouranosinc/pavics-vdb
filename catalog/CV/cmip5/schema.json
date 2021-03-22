@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "activity_id": {
+      "$ref": "activity_id.json#/definitions/field"
+    },
+    "institution_id": {
+      "$ref": "institution_id.json#/definitions/field"
+    },
+    "source_id": {
+      "$ref": "source_id.json#/definitions/field"
+    },
+    "experiment_id": {
+      "$ref": "experiment_id.json#/definitions/field"
+    },
+    "member_id": {
+      "$ref": "member_id.json#/definitions/field"
+    },
+    "table_id": {
+      "$ref": "table_id.json#/definitions/field"
+    },
+    "variable_id": {
+      "$ref": "variable_id.json#/definitions/field"
+    },
+    "grid_label": {
+      "$ref": "grid_label.json#/definitions/field"
+    },
+    "conventions": {
+      "$ref": "conventions.json#/definitions/field"
+    },
+    "frequency": {
+      "$ref": "frequency.json#/definitions/field"
+    },
+    "modeling_realm": {
+      "$ref": "modeling_realm.json#/definitions/field"
+    },
+    "model_id": {
+      "$ref": "model_id.json#/definitions/field"
+    }
+  },
+  "required": [
+    "activity_id",
+    "institution_id",
+    "source_id",
+    "experiment_id",
+    "member_id",
+    "table_id",
+    "variable_id",
+    "grid_label",
+    "conventions",
+    "frequency",
+    "modeling_realm",
+    "model_id"
+  ]
+}

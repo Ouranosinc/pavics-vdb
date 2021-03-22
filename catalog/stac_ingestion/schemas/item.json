@@ -1,0 +1,101 @@
+{
+    "$id":"item.json#",
+    "$schema":"http://json-schema.org/draft-07/schema#",
+    "title":"CMIP5 Extension",
+    "allOf":[
+        {
+            "$ref":"#/definitions/item"
+        }
+    ],
+    "definitions":{
+        "item":{
+            "properties":{
+                "meta:provider":{
+                    "title":"Provider",
+                    "type":"string"
+                },
+                "cmip5:activity_id":{
+                    "title":"Activity id",
+                    "type":"string"
+                },
+                "cmip5:institution_id":{
+                    "title":"Institution id",
+                    "type":"string"
+                },
+                "cmip5:source_id":{
+                    "title":"Source id",
+                    "type":"string"
+                },
+                "cmip5:experiment_id":{
+                    "title":"Experiment id",
+                    "type":"string"
+                },
+                "cmip5:member_id":{
+                    "title":"Member id",
+                    "type":"string"
+                },
+                "cmip5:table_id":{
+                    "title":"Table id",
+                    "type":"string"
+                },
+                "cmip5:variable_id":{
+                    "title":"Variable id",
+                    "type":"string"
+                },
+                "cmip5:grid_label":{
+                    "title":"Grid label",
+                    "type":"string"
+                },
+                "cmip5:conventions":{
+                    "title":"Conventions",
+                    "type":"string"
+                },
+                "cmip5:frequency":{
+                    "title":"Frequency",
+                    "type":"string"
+                },
+                "cmip5:modeling_realm":{
+                    "title":"Modeling realm",
+                    "type":"string"
+                }
+            },
+            "required":[
+                "cmip5:variable_id",
+                "cmip5:frequency"
+            ],
+            "title":"Item",
+            "type":"object"
+        },
+        "link":{
+            "properties":{
+                "file":{
+                    "href": "",
+                    "title":"Actual file",
+                    "type":"application/netcdf"
+                }
+            },
+            "required":[
+                "file"
+            ],
+            "type":"object"
+        },
+        "asset":{
+            "type":"object",
+            "properties":{
+                "metadata_iso":{
+                    "href": "",
+                    "title":"Metadata ISO",
+                    "type":"application/xml"
+                },
+                "metadata_ncml":{
+                    "href": "",
+                    "title":"Metadata NcML",
+                    "type":"application/xml"
+                }
+            },
+            "required":[
+                
+            ]
+        }
+    }
+}
