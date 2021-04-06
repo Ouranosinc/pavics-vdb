@@ -11,7 +11,7 @@ import xncml
 from xclim import subset, ensembles
 import netCDF4
 import warnings
-
+import random
 from lxml import etree
 
 
@@ -226,85 +226,118 @@ class TestDataset:
 
             compare_ncml_rawdata(dataset,dsNcML, compare_raw)
 
-def compare_ncml_rawdata(dataset, dsNcML, compare_vals):
+    def test_CLIMEX(self, compare_raw=False):
+
+        datasets = sorted(list(path.Path('../tmp/simulations/climex').rglob('*.ncml')))
+
+        thredds_test_dir = f'{thredds_root}/simulations/climex'
+        thredds_path_server = f'{thredds_cat_root}/simulations/climex/catalog.html'
+        thredds_test_dir = path.Path(thredds_test_dir)
+
+        for ii, dataset in enumerate(datasets):
+            if thredds_test_dir.exists():
+                shutil.rmtree(thredds_test_dir)
+            thredds_test_dir.mkdir(parents=True, exist_ok=True)
+            print('trying', dataset.name)
+            # copy to thredds:
+            shutil.copy(dataset, thredds_test_dir)
+            ncmls_all = [ncml for ncml in threddsclient.crawl(thredds_path_server, depth=0)]
+            ncmls = []
+            for n in ncmls_all:
+                if dataset.name in n.name:
+                    ncmls.append(n)
+
+            if len(ncmls) != 1:
+                raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
+
+            dsNcML = subset.subset_bbox(
+                xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=30, realization=1)),
+                lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
+            )
+
+            compare_ncml_rawdata(dataset, dsNcML, compare_raw, check_times=False, files_perrun=1)
+
+def compare_ncml_rawdata(dataset, dsNcML, compare_vals, check_times=True, files_perrun=None):
     ncml = xncml.Dataset(dataset)
-    l1 = list(recursive_items(ncml.ncroot, '@location'))[0]
+    for l1 in list(set(list(recursive_items(ncml.ncroot, '@location')))):
 
-    if 'nasa/nex_gddp' not in l1[1]:
-        key1 = '@location'
-    else:
-        key1 = '@regExp'
-    for l in list(recursive_items(ncml.ncroot, key1)):
+        if 'nasa/nex_gddp' in l1[1]:
+            key1 = '@regExp'
+        else:
+            key1 = '@location'
 
-        mod = dataset.name.split('day_')[-1].split('_historical+')[0]
-        rcp = dataset.name.split('_historical+')[-1][0:5]
-        assert mod in l[1]
-        assert ('historical' in l[1] or rcp in l[1])
+        if 'climex' not in l1[1]:
+            for l in list(recursive_items(ncml.ncroot, key1)):
+                mod = dataset.name.split('day_')[-1].split('_historical+')[0]
+                rcp = dataset.name.split('_historical+')[-1][0:5]
+                assert mod in l[1]
+                assert ('historical' in l[1] or rcp in l[1])
 
 
-
-    files = {}
-    for l in list(recursive_items(ncml.ncroot, key1)):
-        local_path = str(l[1].replace('pavics-data', pavics_root))
-        #print(local_path)
-        if path.Path(local_path).is_dir() or path.Path(local_path).is_file() or key1 == '@regExp' :
-            if path.Path(local_path).is_file():
-                ds = subset.subset_bbox(xr.open_dataset(path.Path(local_path),
-                                        chunks=dict(time=10, lon=50, lat=50)),
-                                        lon_bnds=test_reg['lon'],
-                                        lat_bnds=test_reg['lat'],
-                                        start_date=str(dsNcML.time.dt.year.min().values),
-                                        end_date=str(dsNcML.time.dt.year.max().values))
-            else:
-                if key1 == '@location':
-                    test_files = list(sorted(path.Path(local_path).rglob('*.nc')))
+        files = {}
+        for l in list(recursive_items(ncml.ncroot, key1)):
+            local_path = str(l[1].replace('pavics-data', pavics_root))
+            #print(local_path)
+            if path.Path(local_path).is_dir() or path.Path(local_path).is_file() or key1 == '@regExp' :
+                if path.Path(local_path).is_file():
+                    ds = subset.subset_bbox(xr.open_dataset(path.Path(local_path),
+                                            chunks=dict(time=10, lon=50, lat=50)),
+                                            lon_bnds=test_reg['lon'],
+                                            lat_bnds=test_reg['lat'],
+                                            start_date=str(dsNcML.time.dt.year.min().values),
+                                            end_date=str(dsNcML.time.dt.year.max().values))
                 else:
-                    local_path = str(l1[1].replace('pavics-data', pavics_root))
-                    test_files = list(sorted(path.Path(local_path).rglob(l[1].replace(r'.*\.nc$','*.nc'))))
-                remove =[]
-                for t in test_files:
-                    #print(t)
-                    y = netCDF4.Dataset(t)
-                    time_y = y.variables['time']
-                    warnings.simplefilter('ignore')
-                    dtime = xr.DataArray(netCDF4.num2date(time_y[:], units=time_y.units, calendar=time_y.calendar))
-                    if dtime.dt.year.max() > 2100:
-                        print('removing ' , t)
-                        remove.append(t)
-                for t in remove:
-                    test_files.remove(t)
-                run = path.Path(local_path).parent.name
+                    if key1 == '@location':
+                        test_files = list(sorted(path.Path(local_path).rglob('*.nc')))
+                    else:
+                        local_path = str(l1[1].replace('pavics-data', pavics_root))
+                        test_files = list(sorted(path.Path(local_path).rglob(l[1].replace(r'\.nc$','.nc').replace('.*','*'))))
+                    remove =[]
+                    if check_times:
+                        for t in test_files:
+                            print(t)
+                            y = netCDF4.Dataset(t)
+                            time_y = y.variables['time']
+                            warnings.simplefilter('ignore')
+                            dtime = xr.DataArray(netCDF4.num2date(time_y[:], units=time_y.units, calendar=time_y.calendar))
+                            if dtime.dt.year.max() > 2100:
+                                print('removing ' , t)
+                                remove.append(t)
 
-                ds = subset.subset_bbox(xr.open_mfdataset(test_files,
-                                       combine='by_coords',
-                                       data_vars='minimal',
-                                       chunks=dict(time=10, lon=50, lat=50)),
-                                       lon_bnds=test_reg['lon'],
-                                       lat_bnds=test_reg['lat'],
-                                       start_date=str(dsNcML.time.dt.year.min().values),
-                                       end_date=str(dsNcML.time.dt.year.max().values))
+                    for t in remove:
+                        test_files.remove(t)
 
-            if 'time_vectors' in ds.data_vars:
-                ds = ds.drop_vars(['time_vectors','ts'])
-            if 'time_bnds' in ds.data_vars:
-                ds = ds.drop_vars(['time_bnds'])
+                    run = path.Path(local_path).parent.name
+                if files_perrun is None:
+                    ds = subset.subset_bbox(xr.open_mfdataset(test_files,
+                                           combine='by_coords',
+                                           data_vars='minimal',
+                                           chunks=dict(time=10, lon=50, lat=50)),
+                                           lon_bnds=test_reg['lon'],
+                                           lat_bnds=test_reg['lat'],
+                                           start_date=str(dsNcML.time.dt.year.min().values),
+                                           end_date=str(dsNcML.time.dt.year.max().values))
 
-            test = dsNcML.sel(time=ds.time).squeeze()
-            for coord in ds.coords:
-                np.testing.assert_array_equal(ds[coord].values, test[coord].values)
-            time1 = np.random.choice(ds.time, 10)
-            if compare_vals:
-                with ProgressBar():
-                    for v in ds.data_vars:
-                        print(v)
-                        if 'time' in ds[v].dims:
-                            test2 = test[v].sel(time=time1).load()
-                            if v == 'pr' and dsNcML[v].units == 'kg m-2 s-1':
-                                np.testing.assert_array_almost_equal(ds[v].sel(time=time1).values*3600*24, test2*3600*24, decimal=2)
-                            else:
-                                np.testing.assert_array_almost_equal(ds[v].sel(time=time1).values, test2, decimal=3)
+                    if 'time_vectors' in ds.data_vars:
+                        ds = ds.drop_vars(['time_vectors','ts'])
+                    if 'time_bnds' in ds.data_vars:
+                        ds = ds.drop_vars(['time_bnds'])
+                    compare_vals(dsNcML, ds, compare_vals)
+                else:
+                    for file1 in random.sample(test_files, files_perrun):
+                        print(file1)
+                        ds = subset.subset_bbox(xr.open_dataset(file1, chunks=dict(time=-1)),
+                                                lon_bnds=test_reg['lon'],
+                                                lat_bnds=test_reg['lat'],
+                                                )
+                        if 'climex' in l1[1]:
+                            compare_values(dsNcML.sel(realization=bytes(file1.parent.name.split('-rcp')[0],  'utf-8')), ds, compare_vals)
                         else:
-                            np.testing.assert_array_almost_equal(ds[v].values, test[v].values)
+                            compare_values(dsNcML, ds, compare_vals)
+
+
+
+
 
     print(dataset,'ok')
     movfile = path.Path(str(dataset).replace('tmp','1-Datasets'))
@@ -312,14 +345,55 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals):
         movfile.parent.mkdir(parents=True)
     shutil.move(dataset,movfile)
 
+def compare_values(dsNcML, ds, compare_vals):
+    try:
+        test = dsNcML.sel(time=ds.time).squeeze()
+        for coord in ds.coords :
+            if coord != 'height':
+                np.testing.assert_array_equal(ds[coord].values, test[coord].values)
+        time1 = np.random.choice(ds.time, 10)
+
+    except:
+        # Climex raw precip is at 0h vs 12h in ncml (aggregation aligns time of all vars)
+        sel_str = slice(max(ds.time[0], dsNcML.time[0]).dt.strftime('%Y-%m-%d').values, min(ds.time[-1], dsNcML.time[-1]).dt.strftime('%Y-%m-%d').values)
+        test = dsNcML.sel(time=sel_str).squeeze()
+        ds = ds.sel(time=sel_str)
+        offset = np.unique(test.time.values - ds.time.values)
+        ds['time'] = ds.time + offset
+        test = dsNcML.sel(time=ds.time).squeeze()
+        time1 = np.random.choice(ds.time, 10)
+
+
+
+        for coord in ds.coords:
+            if coord != 'time' and coord != 'height':
+                np.testing.assert_array_equal(ds[coord].values, test[coord].values)
+
+    if compare_vals:
+        with ProgressBar():
+            for v in ds.data_vars:
+                if v not in ['time_bnds','lat','lon'] and ds[v].dtype != 'S1':
+                    print(v)
+                    if 'time' in ds[v].dims:
+                        test2 = test[v].sel(time=time1).load()
+                        if v == 'pr' and dsNcML[v].units == 'kg m-2 s-1':
+                            np.testing.assert_array_almost_equal(ds[v].sel(time=time1).values * 3600 * 24,
+
+                                                                 test2 * 3600 * 24, decimal=2)
+                        else:
+                            np.testing.assert_array_almost_equal(ds[v].sel(time=time1).values, test2, decimal=3)
+                    else:
+                        np.testing.assert_array_almost_equal(ds[v].values, test[v].values)
+
 
 def main():
     # test = TestDataset.test_OuraScenGen
     # test(self=test,compare_raw=False)
     #test = TestDataset.test_BCCAQv2
     #test(self=test, compare_raw=False)
-    test = TestDataset.test_NEXGDDP
-    test(self=test, compare_raw=False)
+    #test = TestDataset.test_NEXGDDP
+    test = TestDataset.test_CLIMEX
+    test(self=test, compare_raw=True)
 
 if 'main' in __name__:
     main()

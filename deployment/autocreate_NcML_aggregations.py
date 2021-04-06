@@ -14,7 +14,7 @@ def main():
 
     overwrite_to_tmp = True
 
-    dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('*nex-gddp*.json')
+    dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('*climex*.json')
     for dataset in dataset_configs:
         with open(dataset, 'r') as f:
             ncml_modify = json.load(f)
@@ -88,6 +88,53 @@ def ncml_create_datasets(ncml_template=None, config=None):
 
         return ncmls
 
+    elif config['ncml_type'] == 'multirun':
+        ncmls = {}
+        for exp in config['experiments']:
+            agg_dict = {"@dimName": "realization", "@type": "joinNew", "variableAgg": config['variables']}
+            agg = ncml_add_aggregation(agg_dict)
+            freq = config['frequency']
+            realm = config['realm']
+
+            location = config['location'].replace('pavics-data', pavics_root)
+            # add runs
+            agg['netcdf'] = []
+            for run in [x for x in p.Path(location).iterdir() if x.is_dir()]:
+                print(run)
+                netcdf = ncml_netcdf_container(dict={'@coordValue': run.name.split('-rcp')[0]})
+                netcdf['aggregation'] = ncml_add_aggregation({"@type": "union"})
+                netcdf['aggregation']['netcdf'] = []
+                for v in config['variables']:
+                    netcdf2 = ncml_netcdf_container()
+                    netcdf2['aggregation'] = ncml_add_aggregation(
+                        {'@dimName': 'time', '@type': 'joinExisting', '@recheckEvery': '1 day'})
+
+                    reg_replace = r'.*\.'
+                    reg1 = f'.*{v}*.nc'
+                    infiles = run.rglob(reg1)
+
+                    scan = {'@location': run.as_posix().replace(pavics_root, 'pavics-data'),
+                            '@regExp': f"{reg1.replace('*.', reg_replace)}$", '@subdirs': 'True',
+                            '@suffix': '.nc'}
+
+                    netcdf2['aggregation']['scan'] = ncml_add_scan(scan)
+                    #netcdf2['aggregation']['remove'] = ncml_remove_items(config['remove_coords'])
+                    netcdf['aggregation']['netcdf'].append(netcdf2)
+
+
+
+                    del netcdf2
+
+                agg['netcdf'].append(netcdf)
+            ncml1 = xncml.Dataset(ncml_template)
+            ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
+#            ncml1.ncroot['netcdf']['remove'].append(ncml_remove_items(config['remove_dims']))
+            ncml1.ncroot['netcdf']['attribute'] = ncml_add_attributes(config['attribute'])
+            ncml1.ncroot['netcdf']['aggregation'] = agg
+            ncmls[config['filename_template'].format(exp=exp)] = ncml1
+            del ncml1
+
+        return ncmls
     elif config['ncml_type'] == 'cmip5-1run-batch-model':
         ncmls = {}
         for exp in config['experiments']:
