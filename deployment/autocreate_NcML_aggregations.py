@@ -110,7 +110,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
                         {'@dimName': 'time', '@type': 'joinExisting', '@recheckEvery': '1 day'})
 
                     reg_replace = r'.*\.'
-                    reg1 = f'.*{v}*.nc'
+                    reg1 = config['regexp_template'].format(v=v)
                     infiles = run.rglob(reg1)
 
                     scan = {'@location': run.as_posix().replace(pavics_root, 'pavics-data'),
