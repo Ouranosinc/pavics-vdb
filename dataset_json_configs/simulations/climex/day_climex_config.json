@@ -77,5 +77,6 @@
   ],
   "frequency": "day",
   "realm": "atmos",
-  "filename_template": "day_climex-crcm5_{exp}"
+  "filename_template": "day_climex-crcm5_{exp}",
+  "regexp_template": "day_{v}_*.nc"
 }
