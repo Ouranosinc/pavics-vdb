@@ -8,6 +8,7 @@
 	<remove name="ouranos_run_id" type="attribute"></remove>
 	<remove name="acknowlegement" type="attribute"></remove>
 	<remove name="history" type="attribute"></remove>
+	<attribute name="abstract" type="String" value="The ClimEx CRCM5 Large Ensemble of high-resolution data for North-Eastern North America. This dataset consists of dynamically downscaled runs from 50 members of the CanESM2 GCM. The large ensemble with several thousand model years provides the potential to catch rare extreme events and improve the process understanding of extreme events with return periods of 100+ years."></attribute>
 	<attribute name="institution" type="String" value="Ouranos Consortium on Regional Climatology and Adaptation to Climate Change"></attribute>
 	<attribute name="institute_id" type="String" value="Ouranos"></attribute>
 	<attribute name="driving_experiment" type="String" value="historical, rcp85"></attribute>
