@@ -11,7 +11,7 @@
   },
   "attribute": {
     "abstract": {
-      "value": "The ClimEx CRCM5 Large Ensemble of high-resolution data for North-Eastern North America. This dataset consists of dynamically downscaled runs from 50 members of the CanESM2 GCM. The large ensemble with several thousand model years provides the potential to catch rare extreme events and improve the process understanding of extreme events with return periods of 100+ years.",
+      "value": "The ClimEx CRCM5 Large Ensemble of high-resolution data for North-Eastern North America. This dataset consists of Canadian Regional Climate Model v.5 dynamically downscaled runs driven from 50 members of the CanESM2 GCM. The large ensemble with several thousand model years provides the potential to catch rare extreme events and improve the process understanding of extreme events with return periods of 100+ years.",
       "type": "String"
     },
     "institution": {
