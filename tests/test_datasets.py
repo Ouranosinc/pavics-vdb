@@ -259,81 +259,97 @@ class TestDataset:
 
 def compare_ncml_rawdata(dataset, dsNcML, compare_vals, check_times=True, files_perrun=None):
     ncml = xncml.Dataset(dataset)
-    for l1 in list(set(list(recursive_items(ncml.ncroot, '@location')))):
+    l1 = list(recursive_items(ncml.ncroot, '@location'))[0]
 
-        if 'nasa/nex_gddp' in l1[1]:
-            key1 = '@regExp'
-        else:
-            key1 = '@location'
+    if 'bccaqv2' not in l1[1]:
+        key1 = 'scan'
+    else:
+        key1 = '@location'
 
-        if 'climex' not in l1[1]:
-            for l in list(recursive_items(ncml.ncroot, key1)):
-                mod = dataset.name.split('day_')[-1].split('_historical+')[0]
-                rcp = dataset.name.split('_historical+')[-1][0:5]
-                assert mod in l[1]
-                assert ('historical' in l[1] or rcp in l[1])
-
-
-        files = {}
+    if 'climex' not in l1[1]:
         for l in list(recursive_items(ncml.ncroot, key1)):
+            mod = dataset.name.split('day_')[-1].split('_historical+')[0]
+            rcp = dataset.name.split('_historical+')[-1][0:5]
+            assert mod in l[1]
+            assert ('historical' in l[1] or rcp in l[1])
+
+
+    files = {}
+    for l in list(recursive_items(ncml.ncroot, key1)):
+        if isinstance(l[1],collections.OrderedDict):
+            local_path = str(l[1]['@location'].replace('pavics-data', pavics_root))
+        else:
             local_path = str(l[1].replace('pavics-data', pavics_root))
-            #print(local_path)
-            if path.Path(local_path).is_dir() or path.Path(local_path).is_file() or key1 == '@regExp' :
-                if path.Path(local_path).is_file():
-                    ds = subset.subset_bbox(xr.open_dataset(path.Path(local_path),
-                                            chunks=dict(time=10, lon=50, lat=50)),
+        #print(local_path)
+        if path.Path(local_path).is_dir() or path.Path(local_path).is_file() or key1 == '@regExp' :
+            if path.Path(local_path).is_file():
+                ds = subset.subset_bbox(xr.open_dataset(path.Path(local_path),
+                                        chunks=dict(time=10, lon=50, lat=50)),
+                                        lon_bnds=test_reg['lon'],
+                                        lat_bnds=test_reg['lat'],
+                                        start_date=str(dsNcML.time.dt.year.min().values),
+                                        end_date=str(dsNcML.time.dt.year.max().values))
+            else:
+                str1 = ''
+
+                if '@suffix' in l[1].keys():
+                    str1 = f"*{l[1]['@suffix']}"
+
+                if '@regExp' in l[1].keys():
+                    regexp = l[1]['@regExp'].replace(r'\.nc$', '.nc').replace('.*', '*')
+                    str1 = f"{regexp.replace(str1,'')}{str1}"  # regexp can occasionally already have suffix replace double
+
+                if  '@subdirs' in l[1].keys():
+                    # use rglob
+                    if l[1]['@subdirs'] == 'True':
+                        test_files = list(sorted(path.Path(local_path).rglob(str1)))
+                    else:
+                        test_files = list(sorted(path.Path(local_path).glob(str1)))
+                else:
+                    test_files = list(sorted(path.Path(local_path).glob(str1)))
+
+                remove =[]
+                if check_times:
+                    for t in test_files:
+                        print(t)
+                        y = netCDF4.Dataset(t)
+                        time_y = y.variables['time']
+                        warnings.simplefilter('ignore')
+                        dtime = xr.DataArray(netCDF4.num2date(time_y[:], units=time_y.units, calendar=time_y.calendar))
+                        if dtime.dt.year.max() > 2100:
+                            print('removing ' , t)
+                            remove.append(t)
+
+                for t in remove:
+                    test_files.remove(t)
+
+                run = path.Path(local_path).parent.name
+            if files_perrun is None:
+                ds = subset.subset_bbox(xr.open_mfdataset(test_files,
+                                       combine='by_coords',
+                                       data_vars='minimal',
+                                       chunks=dict(time=10, lon=50, lat=50)),
+                                       lon_bnds=test_reg['lon'],
+                                       lat_bnds=test_reg['lat'],
+                                       start_date=str(dsNcML.time.dt.year.min().values),
+                                       end_date=str(dsNcML.time.dt.year.max().values))
+
+                if 'time_vectors' in ds.data_vars:
+                    ds = ds.drop_vars(['time_vectors','ts'])
+                if 'time_bnds' in ds.data_vars:
+                    ds = ds.drop_vars(['time_bnds'])
+                compare_vals(dsNcML, ds, compare_vals)
+            else:
+                for file1 in random.sample(test_files, files_perrun):
+                    print(file1)
+                    ds = subset.subset_bbox(xr.open_dataset(file1, chunks=dict(time=-1)),
                                             lon_bnds=test_reg['lon'],
                                             lat_bnds=test_reg['lat'],
-                                            start_date=str(dsNcML.time.dt.year.min().values),
-                                            end_date=str(dsNcML.time.dt.year.max().values))
-                else:
-                    if key1 == '@location':
-                        test_files = list(sorted(path.Path(local_path).rglob('*.nc')))
+                                            )
+                    if 'climex' in l1[1]:
+                        compare_values(dsNcML.sel(realization=bytes(file1.parent.name.split('-rcp')[0],  'utf-8')), ds, compare_vals)
                     else:
-                        local_path = str(l1[1].replace('pavics-data', pavics_root))
-                        test_files = list(sorted(path.Path(local_path).rglob(l[1].replace(r'\.nc$','.nc').replace('.*','*'))))
-                    remove =[]
-                    if check_times:
-                        for t in test_files:
-                            print(t)
-                            y = netCDF4.Dataset(t)
-                            time_y = y.variables['time']
-                            warnings.simplefilter('ignore')
-                            dtime = xr.DataArray(netCDF4.num2date(time_y[:], units=time_y.units, calendar=time_y.calendar))
-                            if dtime.dt.year.max() > 2100:
-                                print('removing ' , t)
-                                remove.append(t)
-
-                    for t in remove:
-                        test_files.remove(t)
-
-                    run = path.Path(local_path).parent.name
-                if files_perrun is None:
-                    ds = subset.subset_bbox(xr.open_mfdataset(test_files,
-                                           combine='by_coords',
-                                           data_vars='minimal',
-                                           chunks=dict(time=10, lon=50, lat=50)),
-                                           lon_bnds=test_reg['lon'],
-                                           lat_bnds=test_reg['lat'],
-                                           start_date=str(dsNcML.time.dt.year.min().values),
-                                           end_date=str(dsNcML.time.dt.year.max().values))
-
-                    if 'time_vectors' in ds.data_vars:
-                        ds = ds.drop_vars(['time_vectors','ts'])
-                    if 'time_bnds' in ds.data_vars:
-                        ds = ds.drop_vars(['time_bnds'])
-                    compare_vals(dsNcML, ds, compare_vals)
-                else:
-                    for file1 in random.sample(test_files, files_perrun):
-                        print(file1)
-                        ds = subset.subset_bbox(xr.open_dataset(file1, chunks=dict(time=-1)),
-                                                lon_bnds=test_reg['lon'],
-                                                lat_bnds=test_reg['lat'],
-                                                )
-                        if 'climex' in l1[1]:
-                            compare_values(dsNcML.sel(realization=bytes(file1.parent.name.split('-rcp')[0],  'utf-8')), ds, compare_vals)
-                        else:
-                            compare_values(dsNcML, ds, compare_vals)
+                        compare_values(dsNcML, ds, compare_vals)
 
 
 
@@ -376,7 +392,7 @@ def compare_values(dsNcML, ds, compare_vals):
                     print(v)
                     if 'time' in ds[v].dims:
                         test2 = test[v].sel(time=time1).load()
-                        if v == 'pr' and dsNcML[v].units == 'kg m-2 s-1':
+                        if v in ['pr','prsn'] and dsNcML[v].units == 'kg m-2 s-1':
                             np.testing.assert_array_almost_equal(ds[v].sel(time=time1).values * 3600 * 24,
 
                                                                  test2 * 3600 * 24, decimal=2)
