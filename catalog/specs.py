@@ -106,6 +106,20 @@ class BiasAdjusted(CV):
     driving_institution: str  # driving_institute ?
     driving_institute_id: str
 
+@register("climex")
+@dataclass
+class Climex(CV):
+    """Bias adjusted projections."""
+    title: str
+    institution: str
+    driving_model_id: str
+    driving_experiment: str
+    type: str
+    processing: str
+    project_id: str  # activity ?
+    frequency: str
+    modeling_realm: str
+
 
 @register("reanalysis")
 @dataclass
@@ -118,7 +132,9 @@ class Reanalysis(CV):
     """
     title: str
     institute_id: str
+    institute: str
     dataset_id: str
+
 
     # assimilation_algorithm
     # resolution
@@ -154,6 +170,7 @@ class StationObs(CV):
 @dataclass
 class Forecast(CV):
     """Weather forecasts"""
+    title: str
     institution: str
     member: int
     #model: str
