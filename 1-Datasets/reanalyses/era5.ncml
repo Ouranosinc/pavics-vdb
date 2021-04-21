@@ -1,5 +1,5 @@
 <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-    <attribute name="title" type="String" value="ERA5 reanalysis" />
+    <attribute name="title" type="String" value="ERA5 reanalysis (hourly)" />
     <attribute name="type" type="String" value="reanalysis" />
     <attribute name="institute" type="String" value="European Centre for Medium-Range Weather Forecasts" />
     <attribute name="institute_id" type="String" value="ECMWF" />
@@ -27,4 +27,8 @@
             </aggregation>
         </netcdf>
     </aggregation>
+    <dimension name="lat" orgName="latitude" />
+    <dimension name="lon" orgName="longitude" />
+    <variable name="lat" orgName="latitude" />
+    <variable name="lon" orgName="longitude" />
 </netcdf>
