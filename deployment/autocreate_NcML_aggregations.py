@@ -118,6 +118,8 @@ def ncml_create_datasets(ncml_template=None, config=None):
                             '@suffix': '.nc'}
 
                     netcdf2['aggregation']['scan'] = ncml_add_scan(scan)
+                    netcdf2['aggregation']['remove'] = []
+                    netcdf2['aggregation']['remove'].append({"@name": "time_bnds", "@type": "variable"})
                     #netcdf2['aggregation']['remove'] = ncml_remove_items(config['remove_coords'])
                     netcdf['aggregation']['netcdf'].append(netcdf2)
 

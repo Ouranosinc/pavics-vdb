@@ -255,7 +255,7 @@ class TestDataset:
                 lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
             )
 
-            compare_ncml_rawdata(dataset, dsNcML, compare_raw, check_times=False, files_perrun=1)
+            compare_ncml_rawdata(dataset, dsNcML, compare_raw, check_times=False, files_perrun=3)
 
 def compare_ncml_rawdata(dataset, dsNcML, compare_vals, check_times=True, files_perrun=None):
     ncml = xncml.Dataset(dataset)

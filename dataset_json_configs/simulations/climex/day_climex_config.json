@@ -9,6 +9,8 @@
     "acknowlegement": "attribute",
     "history": "attribute"
   },
+  "var_attributes": {
+    "time_bnds": {"units": {"value": "days since 1955-01-01 00:00:00", "type": "String"}}},
   "attribute": {
     "abstract": {
       "value": "The ClimEx CRCM5 Large Ensemble of high-resolution data for North-Eastern North America. This dataset consists of Canadian Regional Climate Model v.5 dynamically downscaled runs driven from 50 members of the CanESM2 GCM. The large ensemble with several thousand model years provides the potential to catch rare extreme events and improve the process understanding of extreme events with return periods of 100+ years.",
@@ -77,11 +79,12 @@
   "variables": [
     "tasmin",
     "tasmax",
+    "tas",
     "pr",
     "prsn"
   ],
   "frequency": "day",
   "realm": "atmos",
   "filename_template": "day_climex-crcm5_{exp}",
-  "regexp_template": "day_{v}_*.nc"
+  "regexp_template": "day_{v}_historical*.nc"
 }
