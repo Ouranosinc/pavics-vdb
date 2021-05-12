@@ -23,7 +23,7 @@
       "type": "String"
     },
     "driving_experiment": {"value":  "historical, rcp85", "type":  "String"},
-    "title": {"value": "The ClimEx CRCM5 Large Ensemble (v2.1)","type": "String"},
+    "title": {"value": "The ClimEx CRCM5 Large Ensemble","type": "String"},
     "type": {
       "value": "RCM",
       "type": "String"
