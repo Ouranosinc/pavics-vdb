@@ -1,0 +1,56 @@
+{
+  "remove": {
+    "redistribution": "attribute"
+  },
+  "attribute": {
+    "abstract": {
+      "value": "This dataset provides access to yearly gridded observation climate indicator data driving time-series visualizations on ClimateData.ca. Climatedata.ca is a climate data portal produced collaboratively by the country’s leading climate organizations and supported, in part, by the Government of Canada. The goal of this portal is to support decision makers across a broad spectrum of sectors and locations by providing the most up to date climate data in easy to use formats and visualizations.",
+      "type": "String"
+    },
+    "climateindex_package_id": {
+      "value": "https://github.com/Ouranosinc/xclim",
+      "type": "String"
+    },
+    "institution": {
+      "value": "Canadian Centre for Climate Services",
+      "type": "String"
+    },
+    "institute_id": {
+      "value": "CCCS",
+      "type": "String"
+    },
+    "title": {"value": "Climatedata.ca : Yearly observed values for NRCAN ANUSPLIN v1 derived climate indicators","type": "String"},
+    "type": {
+      "value": "gridded_obs",
+      "type": "String"
+    },
+    "dataset_description": {
+      "value": "https://climatedata.ca/",
+      "type": "String"
+    },
+    "dataset_id": {"value": "climatedata_ca_ANUSPLIN", "type":"String"},
+    "license_type": {
+      "value": "permissive",
+      "type": "String"
+    },
+    "license": {
+      "value": "https://open.canada.ca/en/open-government-licence-canada",
+      "type": "String"
+    },
+    "terms_of_use": {
+      "value": "Please see further terms of use associated with BCCAQv2 input dataset used in climate indicator calculations at https://pacificclimate.org/data/statistically-downscaled-climate-scenarios.",
+      "type": "String"
+    }
+
+  },
+  "location": "/pavics-data/cccs_portal/indices/Final/ANUSPLIN_v1/",
+  "ncml_type": "climatedata.ca",
+  "experiments": [
+    "nrcan"
+  ],
+  "aggregation": {"":"yearly"},
+  "frequency": {"YS": "annual", "MS": "monthly","QS-DEC": "seasonal"},
+  "realm": "atmos",
+  "regexp_template": "{agg}nrcan_canada*_{v}_*{frequency}*.nc",
+  "filename_template": "{aggregation}{frequency}-anusplin_v1_climindices"
+}

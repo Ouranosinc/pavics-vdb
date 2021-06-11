@@ -5,6 +5,7 @@ import pathlib as p
 from collections import OrderedDict
 import collections
 import xncml
+import calendar
 
 home = os.environ['HOME']
 pavics_root = f"{home}/boreas/boreas"
@@ -14,7 +15,7 @@ def main():
 
     overwrite_to_tmp = True
 
-    dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('*climex*.json')
+    dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('*_climindices*.json')
     for dataset in dataset_configs:
         with open(dataset, 'r') as f:
             ncml_modify = json.load(f)
@@ -29,12 +30,17 @@ def main():
                 run = keylist['@location'][0].split(exp)[-1].split('_195')[0].replace('_','')
                 outpath = p.Path(str(dataset.parent).replace('dataset_json_configs', 'tmp')).joinpath(
                     f"{ncml_modify['filename_template'].format(freq=ncml_modify['frequency'], model=d, run=run)}.ncml")
+            elif ncml_modify['ncml_type'] == 'climatedata.ca':
+                agg, freq = d.split('_')
+                outpath = p.Path(str(dataset.parent).replace('dataset_json_configs', 'tmp')).joinpath(agg,f"{dataset.name.split('_config')[0]}_{d}.ncml")
             else:
                 if "separate_model_directory" in ncml_modify.keys():
                     if ncml_modify["separate_model_directory"]=="True":
                         mod = d.split('_hist')[0]
                         outpath = p.Path(str(dataset.parent).replace('dataset_json_configs', 'tmp')).joinpath(mod,
                             f"{d}.ncml")
+
+
                 else:
                     outpath = p.Path(str(dataset.parent).replace('dataset_json_configs', 'tmp')).joinpath(
                     f"{d}.ncml")
@@ -357,6 +363,58 @@ def ncml_create_datasets(ncml_template=None, config=None):
 
                 ncmls[f'day_{center.name}_{exp}_r1i1p1_na10kgrid_qm-moving-50bins-detrend_1950-2100'] = ncml1
                 del ncml1
+        return ncmls
+
+    elif config['ncml_type'] == "climatedata.ca":
+
+        ncmls = {}
+        location = p.Path(config['location'].replace('pavics-data', pavics_root))
+        for aggkey, agg1 in config['aggregation'].items():
+            for freq1, frequency1 in config['frequency'].items():
+                if freq1 == 'YS':
+                    freq1 = [freq1]
+                elif freq1 == 'MS':
+                    freq1 = [f"{str(x).zfill(2)}{calendar.month_name[x]}" for x in range(1,13)]
+                elif freq1 == 'QS-DEC':
+                    freq1 = ['winterDJF', 'springMAM', 'summerJJA','fallSON']
+                else:
+                    raise Exception(f"unexpected frequency : {freq1}")
+
+                for freq in freq1:
+                    for exp in config['experiments']:
+                        agg_dict = {"@type": "Union"}
+                        agg = ncml_add_aggregation(agg_dict)
+                        # add runs
+                        agg['netcdf'] = []
+                        realm = config['realm']
+                        rcp = exp.split('+')[-1]
+                        #runs = sorted(glob.glob(path.join(inrep1, "*" + m + "_hist*r*i1p1*195*2*" + f + "*.nc")))
+
+                        for v in [x for x in location.iterdir() if x.is_dir()]:
+                            print(v)
+                            runs = sorted(list(location.joinpath(v).rglob(config['regexp_template'].format(agg=aggkey, v=v.name, frequency=freq))))
+                            if len(runs)>0:
+                                netcdf2 = ncml_netcdf_container()
+                                netcdf2['aggregation'] = ncml_add_aggregation(
+                                    {'@dimName': 'time', '@type': 'joinExisting', '@timeUnitsChange':"true", '@recheckEvery': '1 day'})
+                                netcdf2['aggregation']['netcdf'] = []
+                                for run in runs:
+
+                                    netcdf3 = ncml_netcdf_container()
+                                    #r1 = runs.name.split(exp)[-1].split('_')[1]
+                                    netcdf3['@location'] = str(run).replace(pavics_root,'pavics-data')
+                                    netcdf2['aggregation']['netcdf'].append(netcdf3)
+                                    del netcdf3
+                                agg['netcdf'].append(netcdf2)
+                                del netcdf2
+
+                    ncml1 = xncml.Dataset(ncml_template)
+                    ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
+                    attrs = config['attribute']
+                    ncml1.ncroot['netcdf']['attribute'] = ncml_add_attributes(attrs)
+                    ncml1.ncroot['netcdf']['aggregation'] = agg
+                    ncmls[f"{agg1}_{freq.replace('YS','annual')}"] = ncml1
+                    del ncml1
         return ncmls
 
     elif config['ncml_type'] == "pcic-bccaqv2":

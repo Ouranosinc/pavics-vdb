@@ -123,13 +123,42 @@ class TestDataset:
                 raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
             #print('loading NcML via opendap')
             dsNcML = subset.subset_bbox(
-                xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=256, lon=32, lat=32)),
+                xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=256, lon=32, lat=32)), decode_timedelta=False,
                 lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
             )
 
             ncml = xncml.Dataset(dataset)
 
+    def test_ClimateData(self, compare_raw=False):
 
+        datasets = sorted(list(path.Path('../tmp/simulations/climatedata_ca').rglob('*.ncml')))
+
+        thredds_test_dir = f'{thredds_root}/simulations/climatedata_ca'
+        thredds_path_server = f'{thredds_cat_root}/simulations/climatedata_ca/catalog.html'
+        thredds_test_dir = path.Path(thredds_test_dir)
+
+        for ii, dataset in enumerate(datasets):
+            if thredds_test_dir.exists():
+                shutil.rmtree(thredds_test_dir)
+            thredds_test_dir.mkdir(parents=True, exist_ok=True)
+            print('trying', dataset.name)
+            # copy to thredds:
+            shutil.copy(dataset, thredds_test_dir)
+            ncmls_all = [ncml for ncml in threddsclient.crawl(thredds_path_server, depth=0)]
+            ncmls = []
+            for n in ncmls_all:
+                if dataset.name in n.name:
+                    ncmls.append(n)
+
+            if len(ncmls) != 1:
+                raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
+
+            dsNcML = subset.subset_bbox(
+                xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=365, lon=50, lat=56),decode_timedelta=False),
+                lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
+            )
+
+            compare_ncml_rawdata(dataset, dsNcML, compare_raw)
 
     def test_BCCAQv2(self, compare_raw=False):
 
@@ -156,7 +185,7 @@ class TestDataset:
                     raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
 
                 dsNcML = subset.subset_bbox(
-                    xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=365, lon=50, lat=56)),
+                    xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=365, lon=50, lat=56), decode_timedelta=False),
                     lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
                 )
 
@@ -187,7 +216,7 @@ class TestDataset:
                 raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
 
             dsNcML = subset.subset_bbox(
-                xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=365, lon=50, lat=56)),
+                xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=365, lon=50, lat=56), decode_timedelta=False),
                 lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
             )
 
@@ -220,7 +249,7 @@ class TestDataset:
                 raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
 
             dsNcML = subset.subset_bbox(
-                xr.open_dataset(ncmls[0].opendap_url(), chunks='auto'),
+                xr.open_dataset(ncmls[0].opendap_url(), chunks='auto', decode_timedelta=False),
                 lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
             )
 
@@ -251,7 +280,7 @@ class TestDataset:
                 raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
 
             dsNcML = subset.subset_bbox(
-                xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=30, realization=1)),
+                xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=30, realization=1), decode_timedelta=False),
                 lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
             )
 
@@ -261,12 +290,13 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, check_times=True, files_
     ncml = xncml.Dataset(dataset)
     l1 = list(recursive_items(ncml.ncroot, '@location'))[0]
 
-    if 'bccaqv2' not in l1[1]:
-        key1 = 'scan'
-    else:
+    if 'bccaqv2' in l1[1] or 'cccs_portal' in l1[1]:
         key1 = '@location'
+    else:
+        key1 = 'scan'
 
-    if 'climex' not in l1[1]:
+
+    if 'climex' not in l1[1] and 'cccs_portal' not in l1[1]:
         for l in list(recursive_items(ncml.ncroot, key1)):
             mod = dataset.name.split('day_')[-1].split('_historical+')[0]
             rcp = dataset.name.split('_historical+')[-1][0:5]
@@ -283,7 +313,7 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, check_times=True, files_
         #print(local_path)
         if path.Path(local_path).is_dir() or path.Path(local_path).is_file() or key1 == '@regExp' :
             if path.Path(local_path).is_file():
-                ds = subset.subset_bbox(xr.open_dataset(path.Path(local_path),
+                ds = subset.subset_bbox(xr.open_dataset(path.Path(local_path), decode_timedelta=False,
                                         chunks=dict(time=10, lon=50, lat=50)),
                                         lon_bnds=test_reg['lon'],
                                         lat_bnds=test_reg['lat'],
@@ -324,32 +354,33 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, check_times=True, files_
                     test_files.remove(t)
 
                 run = path.Path(local_path).parent.name
-            if files_perrun is None:
-                ds = subset.subset_bbox(xr.open_mfdataset(test_files,
-                                       combine='by_coords',
-                                       data_vars='minimal',
-                                       chunks=dict(time=10, lon=50, lat=50)),
-                                       lon_bnds=test_reg['lon'],
-                                       lat_bnds=test_reg['lat'],
-                                       start_date=str(dsNcML.time.dt.year.min().values),
-                                       end_date=str(dsNcML.time.dt.year.max().values))
+                if files_perrun is None:
+                    ds = subset.subset_bbox(xr.open_mfdataset(test_files,
+                                           decode_timedelta=False,
+                                           combine='by_coords',
+                                           data_vars='minimal',
+                                           chunks=dict(time=10, lon=50, lat=50)),
+                                           lon_bnds=test_reg['lon'],
+                                           lat_bnds=test_reg['lat'],
+                                           start_date=str(dsNcML.time.dt.year.min().values),
+                                           end_date=str(dsNcML.time.dt.year.max().values))
 
-                if 'time_vectors' in ds.data_vars:
-                    ds = ds.drop_vars(['time_vectors','ts'])
-                if 'time_bnds' in ds.data_vars:
-                    ds = ds.drop_vars(['time_bnds'])
-                compare_vals(dsNcML, ds, compare_vals)
+                    if 'time_vectors' in ds.data_vars:
+                        ds = ds.drop_vars(['time_vectors','ts'])
+                    if 'time_bnds' in ds.data_vars:
+                        ds = ds.drop_vars(['time_bnds'])
+                    compare_vals(dsNcML, ds, compare_vals)
+                else:
+                    for file1 in random.sample(test_files, files_perrun):
+                        print(file1)
+                        ds = subset.subset_bbox(xr.open_dataset(file1, chunks=dict(time=-1)), decode_timedelta=False,
+                                                lon_bnds=test_reg['lon'],
+                                                lat_bnds=test_reg['lat'],
+                                                )
+            if 'climex' in l1[1]:
+                compare_values(dsNcML.sel(realization=bytes(file1.parent.name.split('-rcp')[0],  'utf-8')), ds, compare_vals)
             else:
-                for file1 in random.sample(test_files, files_perrun):
-                    print(file1)
-                    ds = subset.subset_bbox(xr.open_dataset(file1, chunks=dict(time=-1)),
-                                            lon_bnds=test_reg['lon'],
-                                            lat_bnds=test_reg['lat'],
-                                            )
-                    if 'climex' in l1[1]:
-                        compare_values(dsNcML.sel(realization=bytes(file1.parent.name.split('-rcp')[0],  'utf-8')), ds, compare_vals)
-                    else:
-                        compare_values(dsNcML, ds, compare_vals)
+                compare_values(dsNcML, ds, compare_vals)
 
 
 
@@ -382,7 +413,7 @@ def compare_values(dsNcML, ds, compare_vals):
 
 
         for coord in ds.coords:
-            if coord != 'time' and coord != 'height':
+            if coord != 'time' and coord != 'height' and coord != 'season':
                 np.testing.assert_array_equal(ds[coord].values, test[coord].values)
 
     if compare_vals:
@@ -408,7 +439,8 @@ def main():
     #test = TestDataset.test_BCCAQv2
     #test(self=test, compare_raw=False)
     #test = TestDataset.test_NEXGDDP
-    test = TestDataset.test_CLIMEX
+    #test = TestDataset.test_CLIMEX
+    test = TestDataset.test_ClimateData
     test(self=test, compare_raw=True)
 
 if 'main' in __name__:
