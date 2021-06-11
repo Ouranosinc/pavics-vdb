@@ -15,7 +15,7 @@ def main():
 
     overwrite_to_tmp = True
 
-    dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('*bccaqv2_climindices*.json')
+    dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('*_climindices*.json')
     for dataset in dataset_configs:
         with open(dataset, 'r') as f:
             ncml_modify = json.load(f)
@@ -375,6 +375,10 @@ def ncml_create_datasets(ncml_template=None, config=None):
                     freq1 = [freq1]
                 elif freq1 == 'MS':
                     freq1 = [f"{str(x).zfill(2)}{calendar.month_name[x]}" for x in range(1,13)]
+                elif freq1 == 'QS-DEC':
+                    freq1 = ['winterDJF', 'springMAM', 'summerJJA','fallSON']
+                else:
+                    raise Exception(f"unexpected frequency : {freq1}")
 
                 for freq in freq1:
                     for exp in config['experiments']:

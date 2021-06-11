@@ -413,7 +413,7 @@ def compare_values(dsNcML, ds, compare_vals):
 
 
         for coord in ds.coords:
-            if coord != 'time' and coord != 'height':
+            if coord != 'time' and coord != 'height' and coord != 'season':
                 np.testing.assert_array_equal(ds[coord].values, test[coord].values)
 
     if compare_vals:

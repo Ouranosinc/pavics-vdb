@@ -38,6 +38,7 @@
       "value": "https://climatedata.ca/",
       "type": "String"
     },
+    "dataset_id": {"value": "climatedata_ca_BCCAQv2", "type":"String"},
     "project_id": {
       "value": "CMIP5",
       "type": "String"
@@ -74,7 +75,7 @@
     "allrcps"
   ],
   "aggregation": {"":"yearly","30yAvg_":"30yAvg"},
-  "frequency": {"YS": "annual", "MS": "monthly"},
+  "frequency": {"YS": "annual", "MS": "monthly","QS-DEC": "seasonal"},
   "realm": "atmos",
   "regexp_template": "{agg}BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_*_{v}_*{frequency}*.nc",
   "filename_template": "{aggregation}{frequency}-bccaqv2_climindices-ensemble_percentiles"
