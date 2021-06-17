@@ -14,7 +14,7 @@ TODO: Include CV validation mechanism. Using `attrs` or `pydantic` ? The CV can 
 from dataclasses import dataclass, fields, asdict, astuple
 
 
-__all__ = ["CMIP5", "BiasAdjusted", "Reanalysis", "GridObs", "StationObs", "Forecast", "REGISTRY"]
+__all__ = ["CMIP5", "BiasAdjusted", "ClimateDataCa", "Reanalysis", "GridObs", "StationObs", "Forecast", "REGISTRY"]
 
 
 REGISTRY = {}
@@ -164,6 +164,14 @@ class StationObs(CV):
     frequency: str
     dataset_id: str
 
+@register("climatedata.ca")
+@dataclass
+class ClimateDataCa(CV):
+    """station observations"""
+    title: str
+    institute_id: str
+    institute: str
+    dataset_id: str
 
 # I think we're missing some info here (e.g. name of forecast model).
 @register("forecast")
