@@ -7,6 +7,7 @@
 	<attribute name="institute_id" type="String" value="CCCS"></attribute>
 	<attribute name="title" type="String" value="Climatedata.ca : Yearly observed values for NRCAN ANUSPLIN v1 derived climate indicators"></attribute>
 	<attribute name="type" type="String" value="gridded_obs"></attribute>
+	<attribute name="frequency" type="String" value="yr"></attribute>
 	<attribute name="dataset_description" type="String" value="https://climatedata.ca/"></attribute>
 	<attribute name="dataset_id" type="String" value="climatedata_ca_ANUSPLIN"></attribute>
 	<attribute name="license_type" type="String" value="permissive"></attribute>
