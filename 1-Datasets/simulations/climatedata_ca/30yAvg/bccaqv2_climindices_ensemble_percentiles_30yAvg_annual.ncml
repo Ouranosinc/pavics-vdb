@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+	<remove name="institution" type="attribute"></remove>
 	<remove name="driving_model_id" type="attribute"></remove>
 	<remove name="driving_institute_id" type="attribute"></remove>
 	<remove name="driving_realization" type="attribute"></remove>
@@ -7,7 +8,7 @@
 	<remove name="driving_physics_version" type="attribute"></remove>
 	<attribute name="abstract" type="String" value="This dataset provides access to climate indicator ensemble statisics data that drives mapping and time-series visualizations on ClimateData.ca. Climatedata.ca is a climate data portal produced collaboratively by the country’s leading climate organizations and supported, in part, by the Government of Canada. The goal of this portal is to support decision makers across a broad spectrum of sectors and locations by providing the most up to date climate data in easy to use formats and visualizations."></attribute>
 	<attribute name="climateindex_package_id" type="String" value="https://github.com/Ouranosinc/xclim"></attribute>
-	<attribute name="institution" type="String" value="Canadian Centre for Climate Services"></attribute>
+	<attribute name="institute" type="String" value="Canadian Centre for Climate Services"></attribute>
 	<attribute name="institute_id" type="String" value="CCCS"></attribute>
 	<attribute name="driving_experiment" type="String" value="historical, rcp26, rcp45, rcp85"></attribute>
 	<attribute name="title" type="String" value="Climatedata.ca : Climatic normal (30 year average) ensemble percentiles for BCCAQv2 derived climate indicators"></attribute>
