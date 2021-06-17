@@ -25,7 +25,7 @@
       "type": "String"
     },
     "driving_experiment": {"value":  "historical, rcp26, rcp45, rcp85", "type":  "String"},
-    "title": {"value": "Climatedata.ca : Yearly and climatic normal (30 year) ensemble percentiles for BCCAQv2 derived climate indicators","type": "String"},
+    "title": {"value": "Climatedata.ca : Yearly ensemble percentiles for BCCAQv2 derived climate indicators","type": "String"},
     "type": {
       "value": "GCM",
       "type": "String"
@@ -38,6 +38,7 @@
       "value": "https://climatedata.ca/",
       "type": "String"
     },
+    "frequency": {"value": "yr","type": "String"},
     "dataset_id": {"value": "climatedata_ca_BCCAQv2", "type":"String"},
     "project_id": {
       "value": "CMIP5",
@@ -74,7 +75,7 @@
   "experiments": [
     "allrcps"
   ],
-  "aggregation": {"":"yearly","30yAvg_":"30yAvg"},
+  "aggregation": {"":"yearly"},
   "frequency": {"YS": "annual", "MS": "monthly","QS-DEC": "seasonal"},
   "realm": "atmos",
   "regexp_template": "{agg}BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_*_{v}_*{frequency}*.nc",

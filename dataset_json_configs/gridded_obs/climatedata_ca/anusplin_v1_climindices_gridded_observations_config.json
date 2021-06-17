@@ -24,6 +24,7 @@
       "value": "gridded_obs",
       "type": "String"
     },
+    "frequency": {"value": "yr","type": "String"},
     "dataset_description": {
       "value": "https://climatedata.ca/",
       "type": "String"
@@ -48,7 +49,7 @@
   "experiments": [
     "nrcan"
   ],
-  "aggregation": {"":"yearly"},
+  "aggregation": {"":""},
   "frequency": {"YS": "annual", "MS": "monthly","QS-DEC": "seasonal"},
   "realm": "atmos",
   "regexp_template": "{agg}nrcan_canada*_{v}_*{frequency}*.nc",

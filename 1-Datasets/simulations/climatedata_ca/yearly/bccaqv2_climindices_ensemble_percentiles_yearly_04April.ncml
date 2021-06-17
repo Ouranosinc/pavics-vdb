@@ -10,10 +10,11 @@
 	<attribute name="institution" type="String" value="Canadian Centre for Climate Services"></attribute>
 	<attribute name="institute_id" type="String" value="CCCS"></attribute>
 	<attribute name="driving_experiment" type="String" value="historical, rcp26, rcp45, rcp85"></attribute>
-	<attribute name="title" type="String" value="Climatedata.ca : Yearly and climatic normal (30 year) ensemble percentiles for BCCAQv2 derived climate indicators"></attribute>
+	<attribute name="title" type="String" value="Climatedata.ca : Yearly ensemble percentiles for BCCAQv2 derived climate indicators"></attribute>
 	<attribute name="type" type="String" value="GCM"></attribute>
 	<attribute name="processing" type="String" value="bias_adjusted"></attribute>
 	<attribute name="dataset_description" type="String" value="https://climatedata.ca/"></attribute>
+	<attribute name="frequency" type="String" value="yr"></attribute>
 	<attribute name="dataset_id" type="String" value="climatedata_ca_BCCAQv2"></attribute>
 	<attribute name="project_id" type="String" value="CMIP5"></attribute>
 	<attribute name="bias_adjustment_method" type="String" value="Quantile Delta Mapping"></attribute>

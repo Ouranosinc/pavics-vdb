@@ -132,7 +132,7 @@ class TestDataset:
     def test_ClimateData(self, compare_raw=False):
 
         datasets = sorted(list(path.Path('../tmp/simulations/climatedata_ca').rglob('*.ncml')))
-
+        datasets.extend(sorted(list(path.Path('../tmp/gridded_obs/climatedata_ca').rglob('*.ncml'))))
         thredds_test_dir = f'{thredds_root}/simulations/climatedata_ca'
         thredds_path_server = f'{thredds_cat_root}/simulations/climatedata_ca/catalog.html'
         thredds_test_dir = path.Path(thredds_test_dir)
