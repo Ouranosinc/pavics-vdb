@@ -32,7 +32,7 @@ def main():
                     f"{ncml_modify['filename_template'].format(freq=ncml_modify['frequency'], model=d, run=run)}.ncml")
             elif ncml_modify['ncml_type'] == 'climatedata.ca':
                 agg, freq = d.split('_')
-                outpath = p.Path(str(dataset.parent).replace('dataset_json_configs', 'tmp')).joinpath(agg,f"{dataset.name.split('_config')[0]}_{d}.ncml")
+                outpath = p.Path(str(dataset.parent).replace('dataset_json_configs', 'tmp')).joinpath(agg,f"{dataset.name.split('_config')[0]}_{freq}.ncml".replace("__","_"))
             else:
                 if "separate_model_directory" in ncml_modify.keys():
                     if ncml_modify["separate_model_directory"]=="True":
