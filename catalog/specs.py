@@ -1,11 +1,15 @@
 """Catalogs specifications
+
 :class:`CV` defines attributes common to all types of data.
+
 Subclasses of CV define attributes for sub-categories. The attribute names should be defined in the global
 attributes of each NcML file, except for attributes starting with `variable_`.
+
 TODO: Clarify institute/institution for bias-adjusted
 TODO: `type` is used for different purposes (GCM, reanalysis)
 TODO: Include CV validation mechanism. Using `attrs` or `pydantic` ? The CV can probably be programmatically
       converted to a CV subclass.
+
 """
 from dataclasses import dataclass, fields, asdict, astuple
 
@@ -29,6 +33,7 @@ def register(name: str):
 @dataclass
 class CV:
     """Controlled vocabulary
+
     Common controlled vocabulary applying to all datasets.
     """
     license_type: str
@@ -64,6 +69,7 @@ class CV:
 @dataclass
 class CMIP5(CV):
     """CMIP5 simulations
+
     References
     ----------
     CMIP5 CV: https://www.medcordex.eu/cmip5_data_reference_syntax.pdf
@@ -119,6 +125,7 @@ class Climex(CV):
 @dataclass
 class Reanalysis(CV):
     """Reanalyses
+
     References
     ----------
     https://reanalyses.org/atmosphere/comparison-table
@@ -167,3 +174,4 @@ class Forecast(CV):
     institution: str
     member: int
     #model: str
+
