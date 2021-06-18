@@ -1,6 +1,5 @@
 {
   "remove": {
-    "institution": "attribute",
     "driving_model_id": "attribute",
     "driving_institute_id": "attribute",
     "driving_model_id": "attribute",
@@ -17,7 +16,7 @@
       "value": "https://github.com/Ouranosinc/xclim",
       "type": "String"
     },
-    "institute": {
+    "institution": {
       "value": "Canadian Centre for Climate Services",
       "type": "String"
     },
