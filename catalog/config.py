@@ -4,7 +4,6 @@ TDS_ROOT = "https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/dataset
 CATALOG_TDS_PATH = {"cmip5": "simulations/cmip5_multirun",
                     "biasadjusted": "simulations/bias_adjusted",
                     "climex": "simulations/climex",
-                    "climatedata.ca": "simulations/climatedata_ca",
                     "reanalysis": "reanalyses",
                     "gridobs": "gridded_obs",
                     "stationobs": "station_obs",
