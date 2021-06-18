@@ -39,7 +39,7 @@
       "value": "https://climatedata.ca/",
       "type": "String"
     },
-    "frequency": {"value": "yr","type": "String"},
+    "frequency": {"value": " ","type": "String"},
     "dataset_id": {"value": "climatedata_ca_BCCAQv2", "type":"String"},
     "project_id": {
       "value": "CMIP5",

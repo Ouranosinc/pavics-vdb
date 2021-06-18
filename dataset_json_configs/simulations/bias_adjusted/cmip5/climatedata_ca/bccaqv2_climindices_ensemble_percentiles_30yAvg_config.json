@@ -34,6 +34,7 @@
       "value": "bias_adjusted",
       "type": "String"
     },
+    "frequency": {"value": " ","type": "String"},
     "dataset_description": {
       "value": "https://climatedata.ca/",
       "type": "String"
