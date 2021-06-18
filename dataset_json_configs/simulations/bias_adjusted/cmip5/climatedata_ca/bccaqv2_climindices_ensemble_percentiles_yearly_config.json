@@ -1,6 +1,5 @@
 {
   "remove": {
-    "institution": "attribute",
     "driving_model_id": "attribute",
     "driving_institute_id": "attribute",
     "driving_model_id": "attribute",
