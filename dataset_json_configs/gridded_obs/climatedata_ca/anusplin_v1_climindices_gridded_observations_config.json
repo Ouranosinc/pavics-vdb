@@ -1,6 +1,7 @@
 {
   "remove": {
-    "redistribution": "attribute"
+    "redistribution": "attribute",
+    "institution": "attribute"
   },
   "attribute": {
     "abstract": {
@@ -11,7 +12,7 @@
       "value": "https://github.com/Ouranosinc/xclim",
       "type": "String"
     },
-    "institution": {
+    "institute": {
       "value": "Canadian Centre for Climate Services",
       "type": "String"
     },
