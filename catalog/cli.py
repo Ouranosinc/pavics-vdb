@@ -1,4 +1,3 @@
-import os
 from specs import REGISTRY
 from config import TDS_ROOT, CATALOG_TDS_PATH, CATALOG_OUTPATH
 import click
@@ -14,7 +13,8 @@ collections = list(REGISTRY.keys())
               default=collections,
               multiple=True,
               help=f"Name of dataset collection to catalog. One of {collections}, or all of them if None.")
-@click.option('-o', '--output', default=lambda: os.environ.get('CATALOG_OUTPATH', CATALOG_OUTPATH),
+@click.option('-o', '--output', default=CATALOG_OUTPATH,
+              show_default=True,
               help="Output path for catalog files.")
 def intake_cli(collection, output):
     for coll in collection:

@@ -1,3 +1,5 @@
+import os
+
 TDS_ROOT = "https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/datasets/"
 
 # Mapping of CV registered specs to TDS paths.
@@ -10,4 +12,4 @@ CATALOG_TDS_PATH = {"cmip5": "simulations/cmip5_multirun",
                     "forecast": "forecasts"}
 
 # Catalog output path
-CATALOG_OUTPATH = "/tmp/intake"
+CATALOG_OUTPATH = os.environ.get('CATALOG_OUTPATH', default="/tmp/intake")
