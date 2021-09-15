@@ -11,8 +11,10 @@ TODO: Include CV validation mechanism. Using `attrs` or `pydantic` ? The CV can 
       converted to a CV subclass.
 
 """
-from dataclasses import dataclass, fields, asdict, astuple
-
+from typing_extensions import Literal
+from pydantic import create_model, BaseModel
+from pydantic.dataclasses import dataclass
+import cv
 
 __all__ = ["CMIP5", "BiasAdjusted", "Reanalysis", "GridObs", "StationObs", "Forecast", "REGISTRY"]
 
@@ -30,8 +32,7 @@ def register(name: str):
     return _register
 
 
-@dataclass
-class CV:
+class CV(BaseModel):
     """Controlled vocabulary
 
     Common controlled vocabulary applying to all datasets.
@@ -53,7 +54,7 @@ class CV:
 
     @classmethod
     def attributes(cls):
-        return [f.name for f in fields(cls)]
+        return list(cls.__fields__.keys())
 
     @classmethod
     def global_attributes(cls):
@@ -65,30 +66,29 @@ class CV:
         return [k for k in cls.attributes() if k.startswith("variable_")]
 
 
+_CMIP5 = create_model("_CMIP5", **cv.cv2enum(cv.load_cvs("../CV/_cmip5")))
+
 @register("cmip5")
-@dataclass
-class CMIP5(CV):
+class CMIP5(_CMIP5, CV):
     """CMIP5 simulations
 
     References
     ----------
     CMIP5 CV: https://www.medcordex.eu/cmip5_data_reference_syntax.pdf
     """
-    activity: str
-    product: str
     institute: str
     model: str
     experiment: str
-    frequency: str
-    modeling_realm: str
+    frequency: cv.Frequency
     mip_table: str
     ensemble_member: str
     version_number: str
 
 
+_BiasAdjusted = create_model("_BiasAdjusted", **cv.cv2enum(cv.load_cvs("../CV/biasadjusted")))
+
 @register("biasadjusted")
-@dataclass
-class BiasAdjusted(CV):
+class BiasAdjusted(_BiasAdjusted, CV):
     """Bias adjusted projections."""
     title: str
     institution: str
@@ -98,7 +98,6 @@ class BiasAdjusted(CV):
     institute: str
     type: str
     processing: str
-    bias_adjustment_method: str
     project_id: str  # activity ?
     frequency: str
     modeling_realm: str
@@ -106,8 +105,21 @@ class BiasAdjusted(CV):
     driving_institution: str  # driving_institute ?
     driving_institute_id: str
 
+
+_Cordex = create_model("_Climex", **cv.cv2enum(cv.load_cvs("../CV/cordex")))
+
+class Cordex(_Cordex, CV):
+    """
+    References
+    ----------
+    https://is-enes-data.github.io/
+    """
+    driving_model_ensemble_member: cv.cmip5_member
+    frequency: cv.CordexFrequency
+    project_id: Literal["CORDEX"]
+
+
 @register("climex")
-@dataclass
 class Climex(CV):
     """Bias adjusted projections."""
     title: str
