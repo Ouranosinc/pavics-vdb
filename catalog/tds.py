@@ -49,10 +49,23 @@ def walk_fs(paths):
             yield file
 
 
-def walk_tds_ncml(cat, depth=1):
+def walk_tds_ncml(url, depth=1):
     """Return attributes from TDS NcML service for all datasets in catalog."""
+    from siphon.catalog import TDSCatalog
+    from xml.etree.ElementTree import ParseError
+
+    # Open catalog
+    try:
+        cat = TDSCatalog(url)
+    except ParseError as err:
+        raise ConnectionError(f"Could not open {url}\n") from err
+
+    # Walk through catalog and return attributes from the NcML service
     for name, ds in walk_tds(cat, depth):
-        yield attrs_from_ds(ds)
+        attrs = attrs_from_ds(ds)
+        if attrs == {}:
+            continue
+        yield attrs
 
 
 def walk_disk_ncml(paths):
@@ -64,6 +77,9 @@ def walk_disk_ncml(paths):
 
     for path in walk_fs(paths):
         attrs = attrs_from_ncml(_ncdump(Path(path)))
+        if attrs == {}:
+            print(f"Failed to read {path}")
+            continue
         attrs["__services__"] = {"FS": path}
         yield attrs
 
@@ -75,6 +91,9 @@ def attrs_from_ds(ds):
     url = ds.access_urls["NCML"]
     xml = requests.get(url).content
     attrs = attrs_from_ncml(xml)
+    if attrs == {}:
+        print(f"Failed to read {url}")
+        return attrs
     attrs["__services__"] = ds.access_urls
     return attrs
 
@@ -100,27 +119,31 @@ def attrs_from_ncml(xml):
     ns = {"ncml": "http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"}
 
     # Parse XML content - UTF-8 encoded documents need to be read as bytes
+    try:
+        doc = lxml.etree.fromstring(xml, parser=parser)
+    except lxml.etree.XMLSyntaxError:
+        return {}
 
-    doc = lxml.etree.fromstring(xml, parser=parser)
     nc = doc.xpath("/ncml:netcdf", namespaces=ns)[0]
 
+    out = {}
+
     # Extract global attributes
-    out = _attrib_to_dict(nc.xpath("ncml:attribute", namespaces=ns))
+    out["global"] = _attrib_to_dict(nc.xpath("ncml:attribute", namespaces=ns))
+
+    # Extract dimension attributes
+    out["dimensions"] = _attrib_to_dict(nc.xpath("ncml:dimension", namespaces=ns))
 
     # Extract group attributes
-    gr = {}
     for group in nc.xpath("ncml:group", namespaces=ns):
-        gr[group.attrib["name"]] = _attrib_to_dict(group.xpath("ncml:attribute", namespaces=ns))
+        out[group.attrib["name"]] = _attrib_to_dict(group.xpath("ncml:attribute", namespaces=ns))
 
     # Extract variable attributes
-    va = {}
+    out["variable"] = {}
     for variable in nc.xpath("ncml:variable", namespaces=ns):
         if '_CoordinateAxisType' in variable.xpath("ncml:attribute/@name", namespaces=ns):
             continue
-        va[variable.attrib["name"]] = _attrib_to_dict(variable.xpath("ncml:attribute", namespaces=ns))
-
-    out["__group__"] = gr
-    out["__variable__"] = va
+        out["variable"][variable.attrib["name"]] = _attrib_to_dict(variable.xpath("ncml:attribute", namespaces=ns))
 
     return out
 
@@ -136,5 +159,27 @@ def _attrib_to_dict(elems):
         a = e.attrib
         if a["name"].startswith(hidden_prefix):
             continue
-        out[a["name"]] = a["value"]
+
+        # Casting
+        if "type" in a:
+            if a["type"] in ["float", "double"]:
+                typ = float
+            elif a["type"] in ["int", "long"]:
+                typ = int
+            else:
+                raise NotImplementedError(a)
+        else:
+            typ = str
+
+        # An attribute
+        if "value" in a:
+            if typ in [float, int] and " " in a["value"]:
+                out[a["name"]] = list(map(typ, a["value"].split(" ")))
+            else:
+                out[a["name"]] = typ(a["value"])
+
+        # A dimension length
+        elif "length" in a:
+            out[f"dim_{a['name']}_len"] = int(a["length"])
+
     return out

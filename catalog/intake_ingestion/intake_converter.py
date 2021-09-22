@@ -15,10 +15,10 @@ https://intake-esm.readthedocs.io/en/latest/user-guide/multi-variable-assets.htm
 
 """
 from collections import defaultdict
-from siphon.catalog import TDSCatalog
-from xml.etree.ElementTree import ParseError
-from dataclasses import dataclass, fields, asdict, astuple
+from dataclasses import asdict
+from pydantic import ValidationError
 import tds
+import cv
 
 ESMCAT_VERSION = "0.1.0"
 
@@ -65,53 +65,70 @@ class Intake:
 
     def header(self):
         """Return attribute table header names."""
-        return self.cv.global_attributes() + self.cv.variable_attributes() + [self.asset_attribute]
+        return self.cv.global_attributes() + \
+               self.cv.dim_len_attributes() + \
+               self.cv.variable_attributes()
 
-    def validate(self, **kwargs):
-        """Return an instance of the CV class, which is responsible for validating the metadata."""
-        return self.cv(**kwargs)
-
-    def aslist(self, entry, asset):
+    def aslist(self, entry):
         """Return tuple of values."""
-        d = asdict(entry)
-        d[self.asset_attribute] = asset
-        return [d[k] for k in self.header()]
+        d = entry.dict()
+        return [getattr(d[k], "value", d[k]) for k in self.header()]
 
-    def parse(self, url):
+    def parse(self, path):
         """Return a table including a header and rows of attribute values based on CV.
+
+        Parameters
+        ----------
+        path : str, list
+          URL pointing to a THREDDS catalog, or paths to directories storing netCDF files.
         """
-        try:
-            cat = TDSCatalog(url)
-        except ParseError as err:
-            raise ConnectionError(f"Could not open {url}\n") from err
+        kind = "public" if isinstance(path, str) else "private"
 
+        if kind == "public":
+            walker = tds.walk_tds_ncml(path, depth=None)
+        else:
+            walker = tds.walk_disk_ncml(path)
+
+        # Fill parameter table
         table = [self.header()]
-        for name, ds in tds.walk(cat, depth=None):
-            attrs = tds.attrs_from_ds(ds)
-
-            # Global attributes
-            g_val = {k: attrs.get(k, "NA") for k in self.cv.global_attributes()}
-
-            # Variable attributes (lists)
-            v_val = defaultdict(list)
-            for key in self.cv.variable_attributes():
-                k = key.split("variable_")[1]
-                for vk, vd in attrs["__variable__"].items():
-                    if k in vd:
-                        v_val[key].append(vd[k])
-                    elif k == "name":
-                        v_val[key].append(vk)
-                    else:
-                        v_val[key].append("NA")
-
-            # Spec validation
-            entry = self.validate(**g_val, **v_val)
+        for ncml_attrs in walker:
+            # Flatten dictionary of NcML attributes
+            attrs = {}
+            for gr, values in ncml_attrs.items():
+                if gr == "variable":
+                    # Special case to construct `variable` attributes
+                    vars = []
+                    for (k, v) in values.items():
+                        try:
+                            # Note that this filters out variables that do not match the spec
+                            vars.append(cv.CFVariable(name=k, **v))
+                        except ValidationError:
+                            pass
+                    for key in cv.CFVariable.__fields__:
+                        attrs[f"variable_{key}"] = [getattr(v, key) for v in vars]
+                else:
+                    # All other attributes
+                    # Warning, possibility of overwriting fields with the same key in different groups
+                    attrs.update(values)
 
             # Asset path
-            asset = attrs["__services__"]["OPENDAP"]
+            if kind == "public":
+                asset = attrs["opendap"]  # Siphon stores this as a CaseInsentiveStr...
+            else:
+                asset = attrs["FS"]
 
-            row = self.aslist(entry, asset=asset)
-            table.append(row)
+            attrs[self.asset_attribute] = asset
+
+            # Spec validation - this also filters irrelevant attributes, keeping only what is in the spec.
+            # If an entry is not up to spec, this will raise a ValidationError.
+            try:
+                entry = self.cv(**attrs)
+                row = self.aslist(entry)
+                table.append(row)
+            except ValidationError as err:
+                print(err, attrs)
+
+
 
         return table
 

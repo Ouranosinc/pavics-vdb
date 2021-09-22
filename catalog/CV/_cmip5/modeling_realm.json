@@ -1,5 +1,5 @@
 {
-  "realm": {
+  "modeling_realm": {
     "aerosol": "Aerosol",
     "atmos": "Atmosphere",
     "atmosChem": "Atmospheric Chemistry",

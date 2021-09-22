@@ -1,5 +1,9 @@
 {"driving_experiment_name":  {
   "ERAINT":  "ERAINT",
-  "ERA40": "ERA40"
+  "ERA40": "ERA40",
+  "rcp85": "RCP85",
+  "rcp45": "RCP45",
+  "evaluation": "evaluation",
+  "historical": "historical"
   }
 }

@@ -1,1 +1,5 @@
-{"bias_adjustment_method": {"1D-Quantile Mapping":"One dimensional quantile mapping"}}
+{"bias_adjustment_method":
+  {"1D-Quantile Mapping": "One dimensional quantile mapping",
+  "Quantile Delta Mapping":  "QDM",
+  "BCSD":  "Bias-correction Spatial Disaggregation"}
+}
