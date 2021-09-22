@@ -38,8 +38,7 @@
     "license": {
       "value": "https://open.canada.ca/en/open-government-licence-canada",
       "type": "String"
-    },
-
+    }
   },
   "location": "/pavics-data/cccs_portal/indices/Final/ANUSPLIN_v1/",
   "ncml_type": "climatedata.ca",
