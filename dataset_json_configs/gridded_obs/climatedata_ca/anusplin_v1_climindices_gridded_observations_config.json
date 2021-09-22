@@ -39,10 +39,6 @@
       "value": "https://open.canada.ca/en/open-government-licence-canada",
       "type": "String"
     },
-    "terms_of_use": {
-      "value": "Please see further terms of use associated with BCCAQv2 input dataset used in climate indicator calculations at https://pacificclimate.org/data/statistically-downscaled-climate-scenarios.",
-      "type": "String"
-    }
 
   },
   "location": "/pavics-data/cccs_portal/indices/Final/ANUSPLIN_v1/",
