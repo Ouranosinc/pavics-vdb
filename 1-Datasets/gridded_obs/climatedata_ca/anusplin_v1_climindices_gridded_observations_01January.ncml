@@ -13,7 +13,6 @@
 	<attribute name="dataset_id" type="String" value="climatedata_ca_ANUSPLIN"></attribute>
 	<attribute name="license_type" type="String" value="permissive"></attribute>
 	<attribute name="license" type="String" value="https://open.canada.ca/en/open-government-licence-canada"></attribute>
-	<attribute name="terms_of_use" type="String" value="Please see further terms of use associated with BCCAQv2 input dataset used in climate indicator calculations at https://pacificclimate.org/data/statistically-downscaled-climate-scenarios."></attribute>
 	<aggregation type="Union">
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
