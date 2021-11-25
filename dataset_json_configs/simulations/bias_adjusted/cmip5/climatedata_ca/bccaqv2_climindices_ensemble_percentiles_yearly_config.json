@@ -78,6 +78,6 @@
   "aggregation": {"":"yearly"},
   "frequency": {"YS": "annual", "MS": "monthly","QS-DEC": "seasonal"},
   "realm": "atmos",
-  "regexp_template": "{agg}BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_*_{v}_*{frequency}*.nc",
+  "regexp_template": "{agg}BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+{rcp}_*_{v}_*{frequency}*.nc",
   "filename_template": "{aggregation}{frequency}-bccaqv2_climindices-ensemble_percentiles"
 }

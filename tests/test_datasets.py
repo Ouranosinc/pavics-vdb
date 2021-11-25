@@ -131,7 +131,7 @@ class TestDataset:
 
     def test_ClimateData(self, compare_raw=False):
 
-        datasets = sorted(list(path.Path('../tmp/simulations/climatedata_ca').rglob('*.ncml')))
+        datasets = sorted(list(path.Path('../tmp/simulations/bias_adjusted/cmip5/climatedata_ca').rglob('*.ncml')))
         datasets.extend(sorted(list(path.Path('../tmp/gridded_obs/climatedata_ca').rglob('*.ncml'))))
         thredds_test_dir = f'{thredds_root}/simulations/climatedata_ca'
         thredds_path_server = f'{thredds_cat_root}/simulations/climatedata_ca/catalog.html'
@@ -377,9 +377,21 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, check_times=True, files_
                                                 lon_bnds=test_reg['lon'],
                                                 lat_bnds=test_reg['lat'],
                                                 )
+
             if 'climex' in l1[1]:
                 compare_values(dsNcML.sel(realization=bytes(file1.parent.name.split('-rcp')[0],  'utf-8')), ds, compare_vals)
             else:
+                if 'cccs_portal' in l1[1]:
+                    rcp = [rcp for rcp in ['rcp26','rcp45','rcp85'] if rcp in local_path]
+                    if len(rcp)>1:
+                        raise ValueError(f'expected single rcp value found {rcp}')
+                    rcp = rcp[0]
+                    print(local_path, rcp)
+                    for v in ds.data_vars:
+                        if v not in dsNcML.data_vars and f"{rcp}_{v}" in dsNcML.data_vars:
+                            ds = ds.rename({v:f"{rcp}_{v}"})
+                    del rcp
+
                 compare_values(dsNcML, ds, compare_vals)
 
 

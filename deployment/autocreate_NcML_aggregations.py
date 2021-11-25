@@ -6,7 +6,7 @@ from collections import OrderedDict
 import collections
 import xncml
 import calendar
-
+import xarray as xr
 home = os.environ['HOME']
 pavics_root = f"{home}/boreas/boreas"
 
@@ -15,7 +15,7 @@ def main():
 
     overwrite_to_tmp = True
 
-    dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('*_climindices*.json')
+    dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('bccaqv2*_climindices*.json')
     for dataset in dataset_configs:
         with open(dataset, 'r') as f:
             ncml_modify = json.load(f)
@@ -381,18 +381,18 @@ def ncml_create_datasets(ncml_template=None, config=None):
                     raise Exception(f"unexpected frequency : {freq1}")
 
                 for freq in freq1:
-                    for exp in config['experiments']:
-                        agg_dict = {"@type": "Union"}
-                        agg = ncml_add_aggregation(agg_dict)
-                        # add runs
-                        agg['netcdf'] = []
-                        realm = config['realm']
-                        rcp = exp.split('+')[-1]
-                        #runs = sorted(glob.glob(path.join(inrep1, "*" + m + "_hist*r*i1p1*195*2*" + f + "*.nc")))
+                    #runs = sorted(glob.glob(path.join(inrep1, "*" + m + "_hist*r*i1p1*195*2*" + f + "*.nc")))
+                    agg_dict = {"@type": "Union"}
+                    agg = ncml_add_aggregation(agg_dict)
+                    # add runs
+                    agg['netcdf'] = []
+                    for v in [x for x in location.iterdir() if x.is_dir()]:
+                        print(v)
+                        for exp in config['experiments']:
+                            realm = config['realm']
+                            rcp = exp.split('+')[-1]
 
-                        for v in [x for x in location.iterdir() if x.is_dir()]:
-                            print(v)
-                            runs = sorted(list(location.joinpath(v).rglob(config['regexp_template'].format(agg=aggkey, v=v.name, frequency=freq))))
+                            runs = sorted(list(location.joinpath(v).rglob(config['regexp_template'].format(agg=aggkey, rcp=exp, v=v.name, frequency=freq))))
                             if len(runs)>0:
                                 netcdf2 = ncml_netcdf_container()
                                 netcdf2['aggregation'] = ncml_add_aggregation(
@@ -403,6 +403,17 @@ def ncml_create_datasets(ncml_template=None, config=None):
                                     netcdf3 = ncml_netcdf_container()
                                     #r1 = runs.name.split(exp)[-1].split('_')[1]
                                     netcdf3['@location'] = str(run).replace(pavics_root,'pavics-data')
+                                    var_names = []
+                                    for vv in xr.open_dataset(run).data_vars:
+                                        if exp not in vv:
+                                            d1 = OrderedDict()
+
+                                            d1["@name"] = f"{exp}_{vv}"
+                                            d1["@orgName"] = vv
+                                            var_names.append(d1)
+                                            del d1
+                                    if var_names:
+                                        netcdf3['variable'] = var_names
                                     netcdf2['aggregation']['netcdf'].append(netcdf3)
                                     del netcdf3
                                 agg['netcdf'].append(netcdf2)

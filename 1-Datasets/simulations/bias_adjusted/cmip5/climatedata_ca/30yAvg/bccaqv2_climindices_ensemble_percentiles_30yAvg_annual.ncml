@@ -26,202 +26,1424 @@
 	<aggregation type="Union">
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tx_mean/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_tx_mean_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tx_mean/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_tx_mean_YS.nc">
+					<variable name="rcp26_tx_mean_p10" orgName="tx_mean_p10"></variable>
+					<variable name="rcp26_tx_mean_p50" orgName="tx_mean_p50"></variable>
+					<variable name="rcp26_tx_mean_p90" orgName="tx_mean_p90"></variable>
+					<variable name="rcp26_tx_mean_delta7100_p10" orgName="tx_mean_delta7100_p10"></variable>
+					<variable name="rcp26_tx_mean_delta7100_p50" orgName="tx_mean_delta7100_p50"></variable>
+					<variable name="rcp26_tx_mean_delta7100_p90" orgName="tx_mean_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tx_max/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_tx_max_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tx_mean/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_tx_mean_YS.nc">
+					<variable name="rcp45_tx_mean_p10" orgName="tx_mean_p10"></variable>
+					<variable name="rcp45_tx_mean_p50" orgName="tx_mean_p50"></variable>
+					<variable name="rcp45_tx_mean_p90" orgName="tx_mean_p90"></variable>
+					<variable name="rcp45_tx_mean_delta7100_p10" orgName="tx_mean_delta7100_p10"></variable>
+					<variable name="rcp45_tx_mean_delta7100_p50" orgName="tx_mean_delta7100_p50"></variable>
+					<variable name="rcp45_tx_mean_delta7100_p90" orgName="tx_mean_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tx_min/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_tx_min_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tx_mean/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_tx_mean_YS.nc">
+					<variable name="rcp85_tx_mean_p10" orgName="tx_mean_p10"></variable>
+					<variable name="rcp85_tx_mean_p50" orgName="tx_mean_p50"></variable>
+					<variable name="rcp85_tx_mean_p90" orgName="tx_mean_p90"></variable>
+					<variable name="rcp85_tx_mean_delta7100_p10" orgName="tx_mean_delta7100_p10"></variable>
+					<variable name="rcp85_tx_mean_delta7100_p50" orgName="tx_mean_delta7100_p50"></variable>
+					<variable name="rcp85_tx_mean_delta7100_p90" orgName="tx_mean_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tn_mean/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_tn_mean_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tx_max/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_tx_max_YS.nc">
+					<variable name="rcp26_tx_max_p10" orgName="tx_max_p10"></variable>
+					<variable name="rcp26_tx_max_p50" orgName="tx_max_p50"></variable>
+					<variable name="rcp26_tx_max_p90" orgName="tx_max_p90"></variable>
+					<variable name="rcp26_tx_max_delta7100_p10" orgName="tx_max_delta7100_p10"></variable>
+					<variable name="rcp26_tx_max_delta7100_p50" orgName="tx_max_delta7100_p50"></variable>
+					<variable name="rcp26_tx_max_delta7100_p90" orgName="tx_max_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tn_max/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_tn_max_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tx_max/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_tx_max_YS.nc">
+					<variable name="rcp45_tx_max_p10" orgName="tx_max_p10"></variable>
+					<variable name="rcp45_tx_max_p50" orgName="tx_max_p50"></variable>
+					<variable name="rcp45_tx_max_p90" orgName="tx_max_p90"></variable>
+					<variable name="rcp45_tx_max_delta7100_p10" orgName="tx_max_delta7100_p10"></variable>
+					<variable name="rcp45_tx_max_delta7100_p50" orgName="tx_max_delta7100_p50"></variable>
+					<variable name="rcp45_tx_max_delta7100_p90" orgName="tx_max_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tn_min/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_tn_min_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tx_max/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_tx_max_YS.nc">
+					<variable name="rcp85_tx_max_p10" orgName="tx_max_p10"></variable>
+					<variable name="rcp85_tx_max_p50" orgName="tx_max_p50"></variable>
+					<variable name="rcp85_tx_max_p90" orgName="tx_max_p90"></variable>
+					<variable name="rcp85_tx_max_delta7100_p10" orgName="tx_max_delta7100_p10"></variable>
+					<variable name="rcp85_tx_max_delta7100_p50" orgName="tx_max_delta7100_p50"></variable>
+					<variable name="rcp85_tx_max_delta7100_p90" orgName="tx_max_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tg_mean/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_tg_mean_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tx_min/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_tx_min_YS.nc">
+					<variable name="rcp26_tx_min_p10" orgName="tx_min_p10"></variable>
+					<variable name="rcp26_tx_min_p50" orgName="tx_min_p50"></variable>
+					<variable name="rcp26_tx_min_p90" orgName="tx_min_p90"></variable>
+					<variable name="rcp26_tx_min_delta7100_p10" orgName="tx_min_delta7100_p10"></variable>
+					<variable name="rcp26_tx_min_delta7100_p50" orgName="tx_min_delta7100_p50"></variable>
+					<variable name="rcp26_tx_min_delta7100_p90" orgName="tx_min_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/frost_days/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_frost_days_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tx_min/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_tx_min_YS.nc">
+					<variable name="rcp45_tx_min_p10" orgName="tx_min_p10"></variable>
+					<variable name="rcp45_tx_min_p50" orgName="tx_min_p50"></variable>
+					<variable name="rcp45_tx_min_p90" orgName="tx_min_p90"></variable>
+					<variable name="rcp45_tx_min_delta7100_p10" orgName="tx_min_delta7100_p10"></variable>
+					<variable name="rcp45_tx_min_delta7100_p50" orgName="tx_min_delta7100_p50"></variable>
+					<variable name="rcp45_tx_min_delta7100_p90" orgName="tx_min_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/ice_days/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_ice_days_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tx_min/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_tx_min_YS.nc">
+					<variable name="rcp85_tx_min_p10" orgName="tx_min_p10"></variable>
+					<variable name="rcp85_tx_min_p50" orgName="tx_min_p50"></variable>
+					<variable name="rcp85_tx_min_p90" orgName="tx_min_p90"></variable>
+					<variable name="rcp85_tx_min_delta7100_p10" orgName="tx_min_delta7100_p10"></variable>
+					<variable name="rcp85_tx_min_delta7100_p50" orgName="tx_min_delta7100_p50"></variable>
+					<variable name="rcp85_tx_min_delta7100_p90" orgName="tx_min_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/prcptot/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_prcptot_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tn_mean/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_tn_mean_YS.nc">
+					<variable name="rcp26_tn_mean_p10" orgName="tn_mean_p10"></variable>
+					<variable name="rcp26_tn_mean_p50" orgName="tn_mean_p50"></variable>
+					<variable name="rcp26_tn_mean_p90" orgName="tn_mean_p90"></variable>
+					<variable name="rcp26_tn_mean_delta7100_p10" orgName="tn_mean_delta7100_p10"></variable>
+					<variable name="rcp26_tn_mean_delta7100_p50" orgName="tn_mean_delta7100_p50"></variable>
+					<variable name="rcp26_tn_mean_delta7100_p90" orgName="tn_mean_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/rx1day/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_rx1day_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tn_mean/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_tn_mean_YS.nc">
+					<variable name="rcp45_tn_mean_p10" orgName="tn_mean_p10"></variable>
+					<variable name="rcp45_tn_mean_p50" orgName="tn_mean_p50"></variable>
+					<variable name="rcp45_tn_mean_p90" orgName="tn_mean_p90"></variable>
+					<variable name="rcp45_tn_mean_delta7100_p10" orgName="tn_mean_delta7100_p10"></variable>
+					<variable name="rcp45_tn_mean_delta7100_p50" orgName="tn_mean_delta7100_p50"></variable>
+					<variable name="rcp45_tn_mean_delta7100_p90" orgName="tn_mean_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/SDII/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_SDII_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tn_mean/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_tn_mean_YS.nc">
+					<variable name="rcp85_tn_mean_p10" orgName="tn_mean_p10"></variable>
+					<variable name="rcp85_tn_mean_p50" orgName="tn_mean_p50"></variable>
+					<variable name="rcp85_tn_mean_p90" orgName="tn_mean_p90"></variable>
+					<variable name="rcp85_tn_mean_delta7100_p10" orgName="tn_mean_delta7100_p10"></variable>
+					<variable name="rcp85_tn_mean_delta7100_p50" orgName="tn_mean_delta7100_p50"></variable>
+					<variable name="rcp85_tn_mean_delta7100_p90" orgName="tn_mean_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/r1mm/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_r1mm_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tn_max/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_tn_max_YS.nc">
+					<variable name="rcp26_tn_max_p10" orgName="tn_max_p10"></variable>
+					<variable name="rcp26_tn_max_p50" orgName="tn_max_p50"></variable>
+					<variable name="rcp26_tn_max_p90" orgName="tn_max_p90"></variable>
+					<variable name="rcp26_tn_max_delta7100_p10" orgName="tn_max_delta7100_p10"></variable>
+					<variable name="rcp26_tn_max_delta7100_p50" orgName="tn_max_delta7100_p50"></variable>
+					<variable name="rcp26_tn_max_delta7100_p90" orgName="tn_max_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/r10mm/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_r10mm_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tn_max/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_tn_max_YS.nc">
+					<variable name="rcp45_tn_max_p10" orgName="tn_max_p10"></variable>
+					<variable name="rcp45_tn_max_p50" orgName="tn_max_p50"></variable>
+					<variable name="rcp45_tn_max_p90" orgName="tn_max_p90"></variable>
+					<variable name="rcp45_tn_max_delta7100_p10" orgName="tn_max_delta7100_p10"></variable>
+					<variable name="rcp45_tn_max_delta7100_p50" orgName="tn_max_delta7100_p50"></variable>
+					<variable name="rcp45_tn_max_delta7100_p90" orgName="tn_max_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/r20mm/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_r20mm_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tn_max/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_tn_max_YS.nc">
+					<variable name="rcp85_tn_max_p10" orgName="tn_max_p10"></variable>
+					<variable name="rcp85_tn_max_p50" orgName="tn_max_p50"></variable>
+					<variable name="rcp85_tn_max_p90" orgName="tn_max_p90"></variable>
+					<variable name="rcp85_tn_max_delta7100_p10" orgName="tn_max_delta7100_p10"></variable>
+					<variable name="rcp85_tn_max_delta7100_p50" orgName="tn_max_delta7100_p50"></variable>
+					<variable name="rcp85_tn_max_delta7100_p90" orgName="tn_max_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/txgt_25/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_txgt_25_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tn_min/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_tn_min_YS.nc">
+					<variable name="rcp26_tn_min_p10" orgName="tn_min_p10"></variable>
+					<variable name="rcp26_tn_min_p50" orgName="tn_min_p50"></variable>
+					<variable name="rcp26_tn_min_p90" orgName="tn_min_p90"></variable>
+					<variable name="rcp26_tn_min_delta7100_p10" orgName="tn_min_delta7100_p10"></variable>
+					<variable name="rcp26_tn_min_delta7100_p50" orgName="tn_min_delta7100_p50"></variable>
+					<variable name="rcp26_tn_min_delta7100_p90" orgName="tn_min_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/txgt_30/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_txgt_30_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tn_min/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_tn_min_YS.nc">
+					<variable name="rcp45_tn_min_p10" orgName="tn_min_p10"></variable>
+					<variable name="rcp45_tn_min_p50" orgName="tn_min_p50"></variable>
+					<variable name="rcp45_tn_min_p90" orgName="tn_min_p90"></variable>
+					<variable name="rcp45_tn_min_delta7100_p10" orgName="tn_min_delta7100_p10"></variable>
+					<variable name="rcp45_tn_min_delta7100_p50" orgName="tn_min_delta7100_p50"></variable>
+					<variable name="rcp45_tn_min_delta7100_p90" orgName="tn_min_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/gddgrow_5/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_gddgrow_5_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tn_min/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_tn_min_YS.nc">
+					<variable name="rcp85_tn_min_p10" orgName="tn_min_p10"></variable>
+					<variable name="rcp85_tn_min_p50" orgName="tn_min_p50"></variable>
+					<variable name="rcp85_tn_min_p90" orgName="tn_min_p90"></variable>
+					<variable name="rcp85_tn_min_delta7100_p10" orgName="tn_min_delta7100_p10"></variable>
+					<variable name="rcp85_tn_min_delta7100_p50" orgName="tn_min_delta7100_p50"></variable>
+					<variable name="rcp85_tn_min_delta7100_p90" orgName="tn_min_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/gddgrow_10/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_gddgrow_10_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tg_mean/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_tg_mean_YS.nc">
+					<variable name="rcp26_tg_mean_p10" orgName="tg_mean_p10"></variable>
+					<variable name="rcp26_tg_mean_p50" orgName="tg_mean_p50"></variable>
+					<variable name="rcp26_tg_mean_p90" orgName="tg_mean_p90"></variable>
+					<variable name="rcp26_tg_mean_delta7100_p10" orgName="tg_mean_delta7100_p10"></variable>
+					<variable name="rcp26_tg_mean_delta7100_p50" orgName="tg_mean_delta7100_p50"></variable>
+					<variable name="rcp26_tg_mean_delta7100_p90" orgName="tg_mean_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/hddheat_17/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_hddheat_17_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tg_mean/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_tg_mean_YS.nc">
+					<variable name="rcp45_tg_mean_p10" orgName="tg_mean_p10"></variable>
+					<variable name="rcp45_tg_mean_p50" orgName="tg_mean_p50"></variable>
+					<variable name="rcp45_tg_mean_p90" orgName="tg_mean_p90"></variable>
+					<variable name="rcp45_tg_mean_delta7100_p10" orgName="tg_mean_delta7100_p10"></variable>
+					<variable name="rcp45_tg_mean_delta7100_p50" orgName="tg_mean_delta7100_p50"></variable>
+					<variable name="rcp45_tg_mean_delta7100_p90" orgName="tg_mean_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/cddcold_18/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_cddcold_18_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tg_mean/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_tg_mean_YS.nc">
+					<variable name="rcp85_tg_mean_p10" orgName="tg_mean_p10"></variable>
+					<variable name="rcp85_tg_mean_p50" orgName="tg_mean_p50"></variable>
+					<variable name="rcp85_tg_mean_p90" orgName="tg_mean_p90"></variable>
+					<variable name="rcp85_tg_mean_delta7100_p10" orgName="tg_mean_delta7100_p10"></variable>
+					<variable name="rcp85_tg_mean_delta7100_p50" orgName="tg_mean_delta7100_p50"></variable>
+					<variable name="rcp85_tg_mean_delta7100_p90" orgName="tg_mean_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tr_20/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_tr_20_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/frost_days/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_frost_days_YS.nc">
+					<variable name="rcp26_frost_days_p10" orgName="frost_days_p10"></variable>
+					<variable name="rcp26_frost_days_p50" orgName="frost_days_p50"></variable>
+					<variable name="rcp26_frost_days_p90" orgName="frost_days_p90"></variable>
+					<variable name="rcp26_frost_days_delta7100_p10" orgName="frost_days_delta7100_p10"></variable>
+					<variable name="rcp26_frost_days_delta7100_p50" orgName="frost_days_delta7100_p50"></variable>
+					<variable name="rcp26_frost_days_delta7100_p90" orgName="frost_days_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tr_22/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_tr_22_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/frost_days/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_frost_days_YS.nc">
+					<variable name="rcp45_frost_days_p10" orgName="frost_days_p10"></variable>
+					<variable name="rcp45_frost_days_p50" orgName="frost_days_p50"></variable>
+					<variable name="rcp45_frost_days_p90" orgName="frost_days_p90"></variable>
+					<variable name="rcp45_frost_days_delta7100_p10" orgName="frost_days_delta7100_p10"></variable>
+					<variable name="rcp45_frost_days_delta7100_p50" orgName="frost_days_delta7100_p50"></variable>
+					<variable name="rcp45_frost_days_delta7100_p90" orgName="frost_days_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/txgt_32/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_txgt_32_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/frost_days/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_frost_days_YS.nc">
+					<variable name="rcp85_frost_days_p10" orgName="frost_days_p10"></variable>
+					<variable name="rcp85_frost_days_p50" orgName="frost_days_p50"></variable>
+					<variable name="rcp85_frost_days_p90" orgName="frost_days_p90"></variable>
+					<variable name="rcp85_frost_days_delta7100_p10" orgName="frost_days_delta7100_p10"></variable>
+					<variable name="rcp85_frost_days_delta7100_p50" orgName="frost_days_delta7100_p50"></variable>
+					<variable name="rcp85_frost_days_delta7100_p90" orgName="frost_days_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/txgt_29/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_txgt_29_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/ice_days/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_ice_days_YS.nc">
+					<variable name="rcp26_ice_days_p10" orgName="ice_days_p10"></variable>
+					<variable name="rcp26_ice_days_p50" orgName="ice_days_p50"></variable>
+					<variable name="rcp26_ice_days_p90" orgName="ice_days_p90"></variable>
+					<variable name="rcp26_ice_days_delta7100_p10" orgName="ice_days_delta7100_p10"></variable>
+					<variable name="rcp26_ice_days_delta7100_p50" orgName="ice_days_delta7100_p50"></variable>
+					<variable name="rcp26_ice_days_delta7100_p90" orgName="ice_days_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/txgt_27/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_txgt_27_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/ice_days/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_ice_days_YS.nc">
+					<variable name="rcp45_ice_days_p10" orgName="ice_days_p10"></variable>
+					<variable name="rcp45_ice_days_p50" orgName="ice_days_p50"></variable>
+					<variable name="rcp45_ice_days_p90" orgName="ice_days_p90"></variable>
+					<variable name="rcp45_ice_days_delta7100_p10" orgName="ice_days_delta7100_p10"></variable>
+					<variable name="rcp45_ice_days_delta7100_p50" orgName="ice_days_delta7100_p50"></variable>
+					<variable name="rcp45_ice_days_delta7100_p90" orgName="ice_days_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tr_24/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_tr_24_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/ice_days/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_ice_days_YS.nc">
+					<variable name="rcp85_ice_days_p10" orgName="ice_days_p10"></variable>
+					<variable name="rcp85_ice_days_p50" orgName="ice_days_p50"></variable>
+					<variable name="rcp85_ice_days_p90" orgName="ice_days_p90"></variable>
+					<variable name="rcp85_ice_days_delta7100_p10" orgName="ice_days_delta7100_p10"></variable>
+					<variable name="rcp85_ice_days_delta7100_p50" orgName="ice_days_delta7100_p50"></variable>
+					<variable name="rcp85_ice_days_delta7100_p90" orgName="ice_days_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tr_18/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_tr_18_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/prcptot/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_prcptot_YS.nc">
+					<variable name="rcp26_prcptot_p10" orgName="prcptot_p10"></variable>
+					<variable name="rcp26_prcptot_p50" orgName="prcptot_p50"></variable>
+					<variable name="rcp26_prcptot_p90" orgName="prcptot_p90"></variable>
+					<variable name="rcp26_prcptot_delta7100_p10" orgName="prcptot_delta7100_p10"></variable>
+					<variable name="rcp26_prcptot_delta7100_p50" orgName="prcptot_delta7100_p50"></variable>
+					<variable name="rcp26_prcptot_delta7100_p90" orgName="prcptot_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tnlt_-25/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_tnlt_-25_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/prcptot/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_prcptot_YS.nc">
+					<variable name="rcp45_prcptot_p10" orgName="prcptot_p10"></variable>
+					<variable name="rcp45_prcptot_p50" orgName="prcptot_p50"></variable>
+					<variable name="rcp45_prcptot_p90" orgName="prcptot_p90"></variable>
+					<variable name="rcp45_prcptot_delta7100_p10" orgName="prcptot_delta7100_p10"></variable>
+					<variable name="rcp45_prcptot_delta7100_p50" orgName="prcptot_delta7100_p50"></variable>
+					<variable name="rcp45_prcptot_delta7100_p90" orgName="prcptot_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tnlt_-15/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_tnlt_-15_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/prcptot/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_prcptot_YS.nc">
+					<variable name="rcp85_prcptot_p10" orgName="prcptot_p10"></variable>
+					<variable name="rcp85_prcptot_p50" orgName="prcptot_p50"></variable>
+					<variable name="rcp85_prcptot_p90" orgName="prcptot_p90"></variable>
+					<variable name="rcp85_prcptot_delta7100_p10" orgName="prcptot_delta7100_p10"></variable>
+					<variable name="rcp85_prcptot_delta7100_p50" orgName="prcptot_delta7100_p50"></variable>
+					<variable name="rcp85_prcptot_delta7100_p90" orgName="prcptot_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/gddgrow_0/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_gddgrow_0_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/rx1day/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_rx1day_YS.nc">
+					<variable name="rcp26_rx1day_p10" orgName="rx1day_p10"></variable>
+					<variable name="rcp26_rx1day_p50" orgName="rx1day_p50"></variable>
+					<variable name="rcp26_rx1day_p90" orgName="rx1day_p90"></variable>
+					<variable name="rcp26_rx1day_delta7100_p10" orgName="rx1day_delta7100_p10"></variable>
+					<variable name="rcp26_rx1day_delta7100_p50" orgName="rx1day_delta7100_p50"></variable>
+					<variable name="rcp26_rx1day_delta7100_p90" orgName="rx1day_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/cdd/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_cdd_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/rx1day/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_rx1day_YS.nc">
+					<variable name="rcp45_rx1day_p10" orgName="rx1day_p10"></variable>
+					<variable name="rcp45_rx1day_p50" orgName="rx1day_p50"></variable>
+					<variable name="rcp45_rx1day_p90" orgName="rx1day_p90"></variable>
+					<variable name="rcp45_rx1day_delta7100_p10" orgName="rx1day_delta7100_p10"></variable>
+					<variable name="rcp45_rx1day_delta7100_p50" orgName="rx1day_delta7100_p50"></variable>
+					<variable name="rcp45_rx1day_delta7100_p90" orgName="rx1day_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/nr_cdd/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_nr_cdd_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/rx1day/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_rx1day_YS.nc">
+					<variable name="rcp85_rx1day_p10" orgName="rx1day_p10"></variable>
+					<variable name="rcp85_rx1day_p50" orgName="rx1day_p50"></variable>
+					<variable name="rcp85_rx1day_p90" orgName="rx1day_p90"></variable>
+					<variable name="rcp85_rx1day_delta7100_p10" orgName="rx1day_delta7100_p10"></variable>
+					<variable name="rcp85_rx1day_delta7100_p50" orgName="rx1day_delta7100_p50"></variable>
+					<variable name="rcp85_rx1day_delta7100_p90" orgName="rx1day_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/rx5day/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_rx5day_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/SDII/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_SDII_YS.nc">
+					<variable name="rcp26_sdii_p10" orgName="sdii_p10"></variable>
+					<variable name="rcp26_sdii_p50" orgName="sdii_p50"></variable>
+					<variable name="rcp26_sdii_p90" orgName="sdii_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/first_fall_frost/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_first_fall_frost_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/SDII/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_SDII_YS.nc">
+					<variable name="rcp45_sdii_p10" orgName="sdii_p10"></variable>
+					<variable name="rcp45_sdii_p50" orgName="sdii_p50"></variable>
+					<variable name="rcp45_sdii_p90" orgName="sdii_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/last_spring_frost/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_last_spring_frost_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/SDII/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_SDII_YS.nc">
+					<variable name="rcp85_sdii_p10" orgName="sdii_p10"></variable>
+					<variable name="rcp85_sdii_p50" orgName="sdii_p50"></variable>
+					<variable name="rcp85_sdii_p90" orgName="sdii_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/frost_free_season/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_frost_free_season_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/r1mm/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_r1mm_YS.nc">
+					<variable name="rcp26_r1mm_p10" orgName="r1mm_p10"></variable>
+					<variable name="rcp26_r1mm_p50" orgName="r1mm_p50"></variable>
+					<variable name="rcp26_r1mm_p90" orgName="r1mm_p90"></variable>
+					<variable name="rcp26_r1mm_delta7100_p10" orgName="r1mm_delta7100_p10"></variable>
+					<variable name="rcp26_r1mm_delta7100_p50" orgName="r1mm_delta7100_p50"></variable>
+					<variable name="rcp26_r1mm_delta7100_p90" orgName="r1mm_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/hddheat_18/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_hddheat_18_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/r1mm/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_r1mm_YS.nc">
+					<variable name="rcp45_r1mm_p10" orgName="r1mm_p10"></variable>
+					<variable name="rcp45_r1mm_p50" orgName="r1mm_p50"></variable>
+					<variable name="rcp45_r1mm_p90" orgName="r1mm_p90"></variable>
+					<variable name="rcp45_r1mm_delta7100_p10" orgName="r1mm_delta7100_p10"></variable>
+					<variable name="rcp45_r1mm_delta7100_p50" orgName="r1mm_delta7100_p50"></variable>
+					<variable name="rcp45_r1mm_delta7100_p90" orgName="r1mm_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/dlyfrzthw_tx0_tn-1/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_dlyfrzthw_tx0_tn-1_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/r1mm/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_r1mm_YS.nc">
+					<variable name="rcp85_r1mm_p10" orgName="r1mm_p10"></variable>
+					<variable name="rcp85_r1mm_p50" orgName="r1mm_p50"></variable>
+					<variable name="rcp85_r1mm_p90" orgName="r1mm_p90"></variable>
+					<variable name="rcp85_r1mm_delta7100_p10" orgName="r1mm_delta7100_p10"></variable>
+					<variable name="rcp85_r1mm_delta7100_p50" orgName="r1mm_delta7100_p50"></variable>
+					<variable name="rcp85_r1mm_delta7100_p90" orgName="r1mm_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/txgt_37/allrcps_ensemble_stats/YS/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_txgt_37_YS.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/r10mm/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_r10mm_YS.nc">
+					<variable name="rcp26_r10mm_p10" orgName="r10mm_p10"></variable>
+					<variable name="rcp26_r10mm_p50" orgName="r10mm_p50"></variable>
+					<variable name="rcp26_r10mm_p90" orgName="r10mm_p90"></variable>
+					<variable name="rcp26_r10mm_delta7100_p10" orgName="r10mm_delta7100_p10"></variable>
+					<variable name="rcp26_r10mm_delta7100_p50" orgName="r10mm_delta7100_p50"></variable>
+					<variable name="rcp26_r10mm_delta7100_p90" orgName="r10mm_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/r10mm/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_r10mm_YS.nc">
+					<variable name="rcp45_r10mm_p10" orgName="r10mm_p10"></variable>
+					<variable name="rcp45_r10mm_p50" orgName="r10mm_p50"></variable>
+					<variable name="rcp45_r10mm_p90" orgName="r10mm_p90"></variable>
+					<variable name="rcp45_r10mm_delta7100_p10" orgName="r10mm_delta7100_p10"></variable>
+					<variable name="rcp45_r10mm_delta7100_p50" orgName="r10mm_delta7100_p50"></variable>
+					<variable name="rcp45_r10mm_delta7100_p90" orgName="r10mm_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/r10mm/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_r10mm_YS.nc">
+					<variable name="rcp85_r10mm_p10" orgName="r10mm_p10"></variable>
+					<variable name="rcp85_r10mm_p50" orgName="r10mm_p50"></variable>
+					<variable name="rcp85_r10mm_p90" orgName="r10mm_p90"></variable>
+					<variable name="rcp85_r10mm_delta7100_p10" orgName="r10mm_delta7100_p10"></variable>
+					<variable name="rcp85_r10mm_delta7100_p50" orgName="r10mm_delta7100_p50"></variable>
+					<variable name="rcp85_r10mm_delta7100_p90" orgName="r10mm_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/r20mm/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_r20mm_YS.nc">
+					<variable name="rcp26_r20mm_p10" orgName="r20mm_p10"></variable>
+					<variable name="rcp26_r20mm_p50" orgName="r20mm_p50"></variable>
+					<variable name="rcp26_r20mm_p90" orgName="r20mm_p90"></variable>
+					<variable name="rcp26_r20mm_delta7100_p10" orgName="r20mm_delta7100_p10"></variable>
+					<variable name="rcp26_r20mm_delta7100_p50" orgName="r20mm_delta7100_p50"></variable>
+					<variable name="rcp26_r20mm_delta7100_p90" orgName="r20mm_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/r20mm/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_r20mm_YS.nc">
+					<variable name="rcp45_r20mm_p10" orgName="r20mm_p10"></variable>
+					<variable name="rcp45_r20mm_p50" orgName="r20mm_p50"></variable>
+					<variable name="rcp45_r20mm_p90" orgName="r20mm_p90"></variable>
+					<variable name="rcp45_r20mm_delta7100_p10" orgName="r20mm_delta7100_p10"></variable>
+					<variable name="rcp45_r20mm_delta7100_p50" orgName="r20mm_delta7100_p50"></variable>
+					<variable name="rcp45_r20mm_delta7100_p90" orgName="r20mm_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/r20mm/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_r20mm_YS.nc">
+					<variable name="rcp85_r20mm_p10" orgName="r20mm_p10"></variable>
+					<variable name="rcp85_r20mm_p50" orgName="r20mm_p50"></variable>
+					<variable name="rcp85_r20mm_p90" orgName="r20mm_p90"></variable>
+					<variable name="rcp85_r20mm_delta7100_p10" orgName="r20mm_delta7100_p10"></variable>
+					<variable name="rcp85_r20mm_delta7100_p50" orgName="r20mm_delta7100_p50"></variable>
+					<variable name="rcp85_r20mm_delta7100_p90" orgName="r20mm_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/txgt_25/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_txgt_25_YS.nc">
+					<variable name="rcp26_txgt_25_p10" orgName="txgt_25_p10"></variable>
+					<variable name="rcp26_txgt_25_p50" orgName="txgt_25_p50"></variable>
+					<variable name="rcp26_txgt_25_p90" orgName="txgt_25_p90"></variable>
+					<variable name="rcp26_txgt_25_delta7100_p10" orgName="txgt_25_delta7100_p10"></variable>
+					<variable name="rcp26_txgt_25_delta7100_p50" orgName="txgt_25_delta7100_p50"></variable>
+					<variable name="rcp26_txgt_25_delta7100_p90" orgName="txgt_25_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/txgt_25/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_txgt_25_YS.nc">
+					<variable name="rcp45_txgt_25_p10" orgName="txgt_25_p10"></variable>
+					<variable name="rcp45_txgt_25_p50" orgName="txgt_25_p50"></variable>
+					<variable name="rcp45_txgt_25_p90" orgName="txgt_25_p90"></variable>
+					<variable name="rcp45_txgt_25_delta7100_p10" orgName="txgt_25_delta7100_p10"></variable>
+					<variable name="rcp45_txgt_25_delta7100_p50" orgName="txgt_25_delta7100_p50"></variable>
+					<variable name="rcp45_txgt_25_delta7100_p90" orgName="txgt_25_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/txgt_25/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_txgt_25_YS.nc">
+					<variable name="rcp85_txgt_25_p10" orgName="txgt_25_p10"></variable>
+					<variable name="rcp85_txgt_25_p50" orgName="txgt_25_p50"></variable>
+					<variable name="rcp85_txgt_25_p90" orgName="txgt_25_p90"></variable>
+					<variable name="rcp85_txgt_25_delta7100_p10" orgName="txgt_25_delta7100_p10"></variable>
+					<variable name="rcp85_txgt_25_delta7100_p50" orgName="txgt_25_delta7100_p50"></variable>
+					<variable name="rcp85_txgt_25_delta7100_p90" orgName="txgt_25_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/txgt_30/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_txgt_30_YS.nc">
+					<variable name="rcp26_txgt_30_p10" orgName="txgt_30_p10"></variable>
+					<variable name="rcp26_txgt_30_p50" orgName="txgt_30_p50"></variable>
+					<variable name="rcp26_txgt_30_p90" orgName="txgt_30_p90"></variable>
+					<variable name="rcp26_txgt_30_delta7100_p10" orgName="txgt_30_delta7100_p10"></variable>
+					<variable name="rcp26_txgt_30_delta7100_p50" orgName="txgt_30_delta7100_p50"></variable>
+					<variable name="rcp26_txgt_30_delta7100_p90" orgName="txgt_30_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/txgt_30/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_txgt_30_YS.nc">
+					<variable name="rcp45_txgt_30_p10" orgName="txgt_30_p10"></variable>
+					<variable name="rcp45_txgt_30_p50" orgName="txgt_30_p50"></variable>
+					<variable name="rcp45_txgt_30_p90" orgName="txgt_30_p90"></variable>
+					<variable name="rcp45_txgt_30_delta7100_p10" orgName="txgt_30_delta7100_p10"></variable>
+					<variable name="rcp45_txgt_30_delta7100_p50" orgName="txgt_30_delta7100_p50"></variable>
+					<variable name="rcp45_txgt_30_delta7100_p90" orgName="txgt_30_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/txgt_30/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_txgt_30_YS.nc">
+					<variable name="rcp85_txgt_30_p10" orgName="txgt_30_p10"></variable>
+					<variable name="rcp85_txgt_30_p50" orgName="txgt_30_p50"></variable>
+					<variable name="rcp85_txgt_30_p90" orgName="txgt_30_p90"></variable>
+					<variable name="rcp85_txgt_30_delta7100_p10" orgName="txgt_30_delta7100_p10"></variable>
+					<variable name="rcp85_txgt_30_delta7100_p50" orgName="txgt_30_delta7100_p50"></variable>
+					<variable name="rcp85_txgt_30_delta7100_p90" orgName="txgt_30_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/gddgrow_5/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_gddgrow_5_YS.nc">
+					<variable name="rcp26_gddgrow_5_p10" orgName="gddgrow_5_p10"></variable>
+					<variable name="rcp26_gddgrow_5_p50" orgName="gddgrow_5_p50"></variable>
+					<variable name="rcp26_gddgrow_5_p90" orgName="gddgrow_5_p90"></variable>
+					<variable name="rcp26_gddgrow_5_delta7100_p10" orgName="gddgrow_5_delta7100_p10"></variable>
+					<variable name="rcp26_gddgrow_5_delta7100_p50" orgName="gddgrow_5_delta7100_p50"></variable>
+					<variable name="rcp26_gddgrow_5_delta7100_p90" orgName="gddgrow_5_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/gddgrow_5/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_gddgrow_5_YS.nc">
+					<variable name="rcp45_gddgrow_5_p10" orgName="gddgrow_5_p10"></variable>
+					<variable name="rcp45_gddgrow_5_p50" orgName="gddgrow_5_p50"></variable>
+					<variable name="rcp45_gddgrow_5_p90" orgName="gddgrow_5_p90"></variable>
+					<variable name="rcp45_gddgrow_5_delta7100_p10" orgName="gddgrow_5_delta7100_p10"></variable>
+					<variable name="rcp45_gddgrow_5_delta7100_p50" orgName="gddgrow_5_delta7100_p50"></variable>
+					<variable name="rcp45_gddgrow_5_delta7100_p90" orgName="gddgrow_5_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/gddgrow_5/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_gddgrow_5_YS.nc">
+					<variable name="rcp85_gddgrow_5_p10" orgName="gddgrow_5_p10"></variable>
+					<variable name="rcp85_gddgrow_5_p50" orgName="gddgrow_5_p50"></variable>
+					<variable name="rcp85_gddgrow_5_p90" orgName="gddgrow_5_p90"></variable>
+					<variable name="rcp85_gddgrow_5_delta7100_p10" orgName="gddgrow_5_delta7100_p10"></variable>
+					<variable name="rcp85_gddgrow_5_delta7100_p50" orgName="gddgrow_5_delta7100_p50"></variable>
+					<variable name="rcp85_gddgrow_5_delta7100_p90" orgName="gddgrow_5_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/gddgrow_10/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_gddgrow_10_YS.nc">
+					<variable name="rcp26_gddgrow_10_p10" orgName="gddgrow_10_p10"></variable>
+					<variable name="rcp26_gddgrow_10_p50" orgName="gddgrow_10_p50"></variable>
+					<variable name="rcp26_gddgrow_10_p90" orgName="gddgrow_10_p90"></variable>
+					<variable name="rcp26_gddgrow_10_delta7100_p10" orgName="gddgrow_10_delta7100_p10"></variable>
+					<variable name="rcp26_gddgrow_10_delta7100_p50" orgName="gddgrow_10_delta7100_p50"></variable>
+					<variable name="rcp26_gddgrow_10_delta7100_p90" orgName="gddgrow_10_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/gddgrow_10/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_gddgrow_10_YS.nc">
+					<variable name="rcp45_gddgrow_10_p10" orgName="gddgrow_10_p10"></variable>
+					<variable name="rcp45_gddgrow_10_p50" orgName="gddgrow_10_p50"></variable>
+					<variable name="rcp45_gddgrow_10_p90" orgName="gddgrow_10_p90"></variable>
+					<variable name="rcp45_gddgrow_10_delta7100_p10" orgName="gddgrow_10_delta7100_p10"></variable>
+					<variable name="rcp45_gddgrow_10_delta7100_p50" orgName="gddgrow_10_delta7100_p50"></variable>
+					<variable name="rcp45_gddgrow_10_delta7100_p90" orgName="gddgrow_10_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/gddgrow_10/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_gddgrow_10_YS.nc">
+					<variable name="rcp85_gddgrow_10_p10" orgName="gddgrow_10_p10"></variable>
+					<variable name="rcp85_gddgrow_10_p50" orgName="gddgrow_10_p50"></variable>
+					<variable name="rcp85_gddgrow_10_p90" orgName="gddgrow_10_p90"></variable>
+					<variable name="rcp85_gddgrow_10_delta7100_p10" orgName="gddgrow_10_delta7100_p10"></variable>
+					<variable name="rcp85_gddgrow_10_delta7100_p50" orgName="gddgrow_10_delta7100_p50"></variable>
+					<variable name="rcp85_gddgrow_10_delta7100_p90" orgName="gddgrow_10_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/hddheat_17/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_hddheat_17_YS.nc">
+					<variable name="rcp26_hddheat_17_p10" orgName="hddheat_17_p10"></variable>
+					<variable name="rcp26_hddheat_17_p50" orgName="hddheat_17_p50"></variable>
+					<variable name="rcp26_hddheat_17_p90" orgName="hddheat_17_p90"></variable>
+					<variable name="rcp26_hddheat_17_delta7100_p10" orgName="hddheat_17_delta7100_p10"></variable>
+					<variable name="rcp26_hddheat_17_delta7100_p50" orgName="hddheat_17_delta7100_p50"></variable>
+					<variable name="rcp26_hddheat_17_delta7100_p90" orgName="hddheat_17_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/hddheat_17/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_hddheat_17_YS.nc">
+					<variable name="rcp45_hddheat_17_p10" orgName="hddheat_17_p10"></variable>
+					<variable name="rcp45_hddheat_17_p50" orgName="hddheat_17_p50"></variable>
+					<variable name="rcp45_hddheat_17_p90" orgName="hddheat_17_p90"></variable>
+					<variable name="rcp45_hddheat_17_delta7100_p10" orgName="hddheat_17_delta7100_p10"></variable>
+					<variable name="rcp45_hddheat_17_delta7100_p50" orgName="hddheat_17_delta7100_p50"></variable>
+					<variable name="rcp45_hddheat_17_delta7100_p90" orgName="hddheat_17_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/hddheat_17/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_hddheat_17_YS.nc">
+					<variable name="rcp85_hddheat_17_p10" orgName="hddheat_17_p10"></variable>
+					<variable name="rcp85_hddheat_17_p50" orgName="hddheat_17_p50"></variable>
+					<variable name="rcp85_hddheat_17_p90" orgName="hddheat_17_p90"></variable>
+					<variable name="rcp85_hddheat_17_delta7100_p10" orgName="hddheat_17_delta7100_p10"></variable>
+					<variable name="rcp85_hddheat_17_delta7100_p50" orgName="hddheat_17_delta7100_p50"></variable>
+					<variable name="rcp85_hddheat_17_delta7100_p90" orgName="hddheat_17_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/cddcold_18/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_cddcold_18_YS.nc">
+					<variable name="rcp26_cddcold_18_p10" orgName="cddcold_18_p10"></variable>
+					<variable name="rcp26_cddcold_18_p50" orgName="cddcold_18_p50"></variable>
+					<variable name="rcp26_cddcold_18_p90" orgName="cddcold_18_p90"></variable>
+					<variable name="rcp26_cddcold_18_delta7100_p10" orgName="cddcold_18_delta7100_p10"></variable>
+					<variable name="rcp26_cddcold_18_delta7100_p50" orgName="cddcold_18_delta7100_p50"></variable>
+					<variable name="rcp26_cddcold_18_delta7100_p90" orgName="cddcold_18_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/cddcold_18/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_cddcold_18_YS.nc">
+					<variable name="rcp45_cddcold_18_p10" orgName="cddcold_18_p10"></variable>
+					<variable name="rcp45_cddcold_18_p50" orgName="cddcold_18_p50"></variable>
+					<variable name="rcp45_cddcold_18_p90" orgName="cddcold_18_p90"></variable>
+					<variable name="rcp45_cddcold_18_delta7100_p10" orgName="cddcold_18_delta7100_p10"></variable>
+					<variable name="rcp45_cddcold_18_delta7100_p50" orgName="cddcold_18_delta7100_p50"></variable>
+					<variable name="rcp45_cddcold_18_delta7100_p90" orgName="cddcold_18_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/cddcold_18/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_cddcold_18_YS.nc">
+					<variable name="rcp85_cddcold_18_p10" orgName="cddcold_18_p10"></variable>
+					<variable name="rcp85_cddcold_18_p50" orgName="cddcold_18_p50"></variable>
+					<variable name="rcp85_cddcold_18_p90" orgName="cddcold_18_p90"></variable>
+					<variable name="rcp85_cddcold_18_delta7100_p10" orgName="cddcold_18_delta7100_p10"></variable>
+					<variable name="rcp85_cddcold_18_delta7100_p50" orgName="cddcold_18_delta7100_p50"></variable>
+					<variable name="rcp85_cddcold_18_delta7100_p90" orgName="cddcold_18_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tr_20/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_tr_20_YS.nc">
+					<variable name="rcp26_tr_20_p10" orgName="tr_20_p10"></variable>
+					<variable name="rcp26_tr_20_p50" orgName="tr_20_p50"></variable>
+					<variable name="rcp26_tr_20_p90" orgName="tr_20_p90"></variable>
+					<variable name="rcp26_tr_20_delta7100_p10" orgName="tr_20_delta7100_p10"></variable>
+					<variable name="rcp26_tr_20_delta7100_p50" orgName="tr_20_delta7100_p50"></variable>
+					<variable name="rcp26_tr_20_delta7100_p90" orgName="tr_20_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tr_20/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_tr_20_YS.nc">
+					<variable name="rcp45_tr_20_p10" orgName="tr_20_p10"></variable>
+					<variable name="rcp45_tr_20_p50" orgName="tr_20_p50"></variable>
+					<variable name="rcp45_tr_20_p90" orgName="tr_20_p90"></variable>
+					<variable name="rcp45_tr_20_delta7100_p10" orgName="tr_20_delta7100_p10"></variable>
+					<variable name="rcp45_tr_20_delta7100_p50" orgName="tr_20_delta7100_p50"></variable>
+					<variable name="rcp45_tr_20_delta7100_p90" orgName="tr_20_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tr_20/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_tr_20_YS.nc">
+					<variable name="rcp85_tr_20_p10" orgName="tr_20_p10"></variable>
+					<variable name="rcp85_tr_20_p50" orgName="tr_20_p50"></variable>
+					<variable name="rcp85_tr_20_p90" orgName="tr_20_p90"></variable>
+					<variable name="rcp85_tr_20_delta7100_p10" orgName="tr_20_delta7100_p10"></variable>
+					<variable name="rcp85_tr_20_delta7100_p50" orgName="tr_20_delta7100_p50"></variable>
+					<variable name="rcp85_tr_20_delta7100_p90" orgName="tr_20_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tr_22/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_tr_22_YS.nc">
+					<variable name="rcp26_tr_22_p10" orgName="tr_22_p10"></variable>
+					<variable name="rcp26_tr_22_p50" orgName="tr_22_p50"></variable>
+					<variable name="rcp26_tr_22_p90" orgName="tr_22_p90"></variable>
+					<variable name="rcp26_tr_22_delta7100_p10" orgName="tr_22_delta7100_p10"></variable>
+					<variable name="rcp26_tr_22_delta7100_p50" orgName="tr_22_delta7100_p50"></variable>
+					<variable name="rcp26_tr_22_delta7100_p90" orgName="tr_22_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tr_22/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_tr_22_YS.nc">
+					<variable name="rcp45_tr_22_p10" orgName="tr_22_p10"></variable>
+					<variable name="rcp45_tr_22_p50" orgName="tr_22_p50"></variable>
+					<variable name="rcp45_tr_22_p90" orgName="tr_22_p90"></variable>
+					<variable name="rcp45_tr_22_delta7100_p10" orgName="tr_22_delta7100_p10"></variable>
+					<variable name="rcp45_tr_22_delta7100_p50" orgName="tr_22_delta7100_p50"></variable>
+					<variable name="rcp45_tr_22_delta7100_p90" orgName="tr_22_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tr_22/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_tr_22_YS.nc">
+					<variable name="rcp85_tr_22_p10" orgName="tr_22_p10"></variable>
+					<variable name="rcp85_tr_22_p50" orgName="tr_22_p50"></variable>
+					<variable name="rcp85_tr_22_p90" orgName="tr_22_p90"></variable>
+					<variable name="rcp85_tr_22_delta7100_p10" orgName="tr_22_delta7100_p10"></variable>
+					<variable name="rcp85_tr_22_delta7100_p50" orgName="tr_22_delta7100_p50"></variable>
+					<variable name="rcp85_tr_22_delta7100_p90" orgName="tr_22_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/txgt_32/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_txgt_32_YS.nc">
+					<variable name="rcp26_txgt_32_p10" orgName="txgt_32_p10"></variable>
+					<variable name="rcp26_txgt_32_p50" orgName="txgt_32_p50"></variable>
+					<variable name="rcp26_txgt_32_p90" orgName="txgt_32_p90"></variable>
+					<variable name="rcp26_txgt_32_delta7100_p10" orgName="txgt_32_delta7100_p10"></variable>
+					<variable name="rcp26_txgt_32_delta7100_p50" orgName="txgt_32_delta7100_p50"></variable>
+					<variable name="rcp26_txgt_32_delta7100_p90" orgName="txgt_32_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/txgt_32/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_txgt_32_YS.nc">
+					<variable name="rcp45_txgt_32_p10" orgName="txgt_32_p10"></variable>
+					<variable name="rcp45_txgt_32_p50" orgName="txgt_32_p50"></variable>
+					<variable name="rcp45_txgt_32_p90" orgName="txgt_32_p90"></variable>
+					<variable name="rcp45_txgt_32_delta7100_p10" orgName="txgt_32_delta7100_p10"></variable>
+					<variable name="rcp45_txgt_32_delta7100_p50" orgName="txgt_32_delta7100_p50"></variable>
+					<variable name="rcp45_txgt_32_delta7100_p90" orgName="txgt_32_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/txgt_32/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_txgt_32_YS.nc">
+					<variable name="rcp85_txgt_32_p10" orgName="txgt_32_p10"></variable>
+					<variable name="rcp85_txgt_32_p50" orgName="txgt_32_p50"></variable>
+					<variable name="rcp85_txgt_32_p90" orgName="txgt_32_p90"></variable>
+					<variable name="rcp85_txgt_32_delta7100_p10" orgName="txgt_32_delta7100_p10"></variable>
+					<variable name="rcp85_txgt_32_delta7100_p50" orgName="txgt_32_delta7100_p50"></variable>
+					<variable name="rcp85_txgt_32_delta7100_p90" orgName="txgt_32_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/txgt_29/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_txgt_29_YS.nc">
+					<variable name="rcp26_txgt_29_p10" orgName="txgt_29_p10"></variable>
+					<variable name="rcp26_txgt_29_p50" orgName="txgt_29_p50"></variable>
+					<variable name="rcp26_txgt_29_p90" orgName="txgt_29_p90"></variable>
+					<variable name="rcp26_txgt_29_delta7100_p10" orgName="txgt_29_delta7100_p10"></variable>
+					<variable name="rcp26_txgt_29_delta7100_p50" orgName="txgt_29_delta7100_p50"></variable>
+					<variable name="rcp26_txgt_29_delta7100_p90" orgName="txgt_29_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/txgt_29/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_txgt_29_YS.nc">
+					<variable name="rcp45_txgt_29_p10" orgName="txgt_29_p10"></variable>
+					<variable name="rcp45_txgt_29_p50" orgName="txgt_29_p50"></variable>
+					<variable name="rcp45_txgt_29_p90" orgName="txgt_29_p90"></variable>
+					<variable name="rcp45_txgt_29_delta7100_p10" orgName="txgt_29_delta7100_p10"></variable>
+					<variable name="rcp45_txgt_29_delta7100_p50" orgName="txgt_29_delta7100_p50"></variable>
+					<variable name="rcp45_txgt_29_delta7100_p90" orgName="txgt_29_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/txgt_29/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_txgt_29_YS.nc">
+					<variable name="rcp85_txgt_29_p10" orgName="txgt_29_p10"></variable>
+					<variable name="rcp85_txgt_29_p50" orgName="txgt_29_p50"></variable>
+					<variable name="rcp85_txgt_29_p90" orgName="txgt_29_p90"></variable>
+					<variable name="rcp85_txgt_29_delta7100_p10" orgName="txgt_29_delta7100_p10"></variable>
+					<variable name="rcp85_txgt_29_delta7100_p50" orgName="txgt_29_delta7100_p50"></variable>
+					<variable name="rcp85_txgt_29_delta7100_p90" orgName="txgt_29_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/txgt_27/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_txgt_27_YS.nc">
+					<variable name="rcp26_txgt_27_p10" orgName="txgt_27_p10"></variable>
+					<variable name="rcp26_txgt_27_p50" orgName="txgt_27_p50"></variable>
+					<variable name="rcp26_txgt_27_p90" orgName="txgt_27_p90"></variable>
+					<variable name="rcp26_txgt_27_delta7100_p10" orgName="txgt_27_delta7100_p10"></variable>
+					<variable name="rcp26_txgt_27_delta7100_p50" orgName="txgt_27_delta7100_p50"></variable>
+					<variable name="rcp26_txgt_27_delta7100_p90" orgName="txgt_27_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/txgt_27/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_txgt_27_YS.nc">
+					<variable name="rcp45_txgt_27_p10" orgName="txgt_27_p10"></variable>
+					<variable name="rcp45_txgt_27_p50" orgName="txgt_27_p50"></variable>
+					<variable name="rcp45_txgt_27_p90" orgName="txgt_27_p90"></variable>
+					<variable name="rcp45_txgt_27_delta7100_p10" orgName="txgt_27_delta7100_p10"></variable>
+					<variable name="rcp45_txgt_27_delta7100_p50" orgName="txgt_27_delta7100_p50"></variable>
+					<variable name="rcp45_txgt_27_delta7100_p90" orgName="txgt_27_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/txgt_27/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_txgt_27_YS.nc">
+					<variable name="rcp85_txgt_27_p10" orgName="txgt_27_p10"></variable>
+					<variable name="rcp85_txgt_27_p50" orgName="txgt_27_p50"></variable>
+					<variable name="rcp85_txgt_27_p90" orgName="txgt_27_p90"></variable>
+					<variable name="rcp85_txgt_27_delta7100_p10" orgName="txgt_27_delta7100_p10"></variable>
+					<variable name="rcp85_txgt_27_delta7100_p50" orgName="txgt_27_delta7100_p50"></variable>
+					<variable name="rcp85_txgt_27_delta7100_p90" orgName="txgt_27_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tr_24/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_tr_24_YS.nc">
+					<variable name="rcp26_tr_24_p10" orgName="tr_24_p10"></variable>
+					<variable name="rcp26_tr_24_p50" orgName="tr_24_p50"></variable>
+					<variable name="rcp26_tr_24_p90" orgName="tr_24_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tr_24/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_tr_24_YS.nc">
+					<variable name="rcp45_tr_24_p10" orgName="tr_24_p10"></variable>
+					<variable name="rcp45_tr_24_p50" orgName="tr_24_p50"></variable>
+					<variable name="rcp45_tr_24_p90" orgName="tr_24_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tr_24/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_tr_24_YS.nc">
+					<variable name="rcp85_tr_24_p10" orgName="tr_24_p10"></variable>
+					<variable name="rcp85_tr_24_p50" orgName="tr_24_p50"></variable>
+					<variable name="rcp85_tr_24_p90" orgName="tr_24_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tr_18/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_tr_18_YS.nc">
+					<variable name="rcp26_tr_18_p10" orgName="tr_18_p10"></variable>
+					<variable name="rcp26_tr_18_p50" orgName="tr_18_p50"></variable>
+					<variable name="rcp26_tr_18_p90" orgName="tr_18_p90"></variable>
+					<variable name="rcp26_tr_18_delta7100_p10" orgName="tr_18_delta7100_p10"></variable>
+					<variable name="rcp26_tr_18_delta7100_p50" orgName="tr_18_delta7100_p50"></variable>
+					<variable name="rcp26_tr_18_delta7100_p90" orgName="tr_18_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tr_18/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_tr_18_YS.nc">
+					<variable name="rcp45_tr_18_p10" orgName="tr_18_p10"></variable>
+					<variable name="rcp45_tr_18_p50" orgName="tr_18_p50"></variable>
+					<variable name="rcp45_tr_18_p90" orgName="tr_18_p90"></variable>
+					<variable name="rcp45_tr_18_delta7100_p10" orgName="tr_18_delta7100_p10"></variable>
+					<variable name="rcp45_tr_18_delta7100_p50" orgName="tr_18_delta7100_p50"></variable>
+					<variable name="rcp45_tr_18_delta7100_p90" orgName="tr_18_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tr_18/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_tr_18_YS.nc">
+					<variable name="rcp85_tr_18_p10" orgName="tr_18_p10"></variable>
+					<variable name="rcp85_tr_18_p50" orgName="tr_18_p50"></variable>
+					<variable name="rcp85_tr_18_p90" orgName="tr_18_p90"></variable>
+					<variable name="rcp85_tr_18_delta7100_p10" orgName="tr_18_delta7100_p10"></variable>
+					<variable name="rcp85_tr_18_delta7100_p50" orgName="tr_18_delta7100_p50"></variable>
+					<variable name="rcp85_tr_18_delta7100_p90" orgName="tr_18_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tnlt_-25/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_tnlt_-25_YS.nc">
+					<variable name="rcp26_tnlt_-25_p10" orgName="tnlt_-25_p10"></variable>
+					<variable name="rcp26_tnlt_-25_p50" orgName="tnlt_-25_p50"></variable>
+					<variable name="rcp26_tnlt_-25_p90" orgName="tnlt_-25_p90"></variable>
+					<variable name="rcp26_tnlt_-25_delta7100_p10" orgName="tnlt_-25_delta7100_p10"></variable>
+					<variable name="rcp26_tnlt_-25_delta7100_p50" orgName="tnlt_-25_delta7100_p50"></variable>
+					<variable name="rcp26_tnlt_-25_delta7100_p90" orgName="tnlt_-25_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tnlt_-25/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_tnlt_-25_YS.nc">
+					<variable name="rcp45_tnlt_-25_p10" orgName="tnlt_-25_p10"></variable>
+					<variable name="rcp45_tnlt_-25_p50" orgName="tnlt_-25_p50"></variable>
+					<variable name="rcp45_tnlt_-25_p90" orgName="tnlt_-25_p90"></variable>
+					<variable name="rcp45_tnlt_-25_delta7100_p10" orgName="tnlt_-25_delta7100_p10"></variable>
+					<variable name="rcp45_tnlt_-25_delta7100_p50" orgName="tnlt_-25_delta7100_p50"></variable>
+					<variable name="rcp45_tnlt_-25_delta7100_p90" orgName="tnlt_-25_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tnlt_-25/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_tnlt_-25_YS.nc">
+					<variable name="rcp85_tnlt_-25_p10" orgName="tnlt_-25_p10"></variable>
+					<variable name="rcp85_tnlt_-25_p50" orgName="tnlt_-25_p50"></variable>
+					<variable name="rcp85_tnlt_-25_p90" orgName="tnlt_-25_p90"></variable>
+					<variable name="rcp85_tnlt_-25_delta7100_p10" orgName="tnlt_-25_delta7100_p10"></variable>
+					<variable name="rcp85_tnlt_-25_delta7100_p50" orgName="tnlt_-25_delta7100_p50"></variable>
+					<variable name="rcp85_tnlt_-25_delta7100_p90" orgName="tnlt_-25_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tnlt_-15/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_tnlt_-15_YS.nc">
+					<variable name="rcp26_tnlt_-15_p10" orgName="tnlt_-15_p10"></variable>
+					<variable name="rcp26_tnlt_-15_p50" orgName="tnlt_-15_p50"></variable>
+					<variable name="rcp26_tnlt_-15_p90" orgName="tnlt_-15_p90"></variable>
+					<variable name="rcp26_tnlt_-15_delta7100_p10" orgName="tnlt_-15_delta7100_p10"></variable>
+					<variable name="rcp26_tnlt_-15_delta7100_p50" orgName="tnlt_-15_delta7100_p50"></variable>
+					<variable name="rcp26_tnlt_-15_delta7100_p90" orgName="tnlt_-15_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tnlt_-15/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_tnlt_-15_YS.nc">
+					<variable name="rcp45_tnlt_-15_p10" orgName="tnlt_-15_p10"></variable>
+					<variable name="rcp45_tnlt_-15_p50" orgName="tnlt_-15_p50"></variable>
+					<variable name="rcp45_tnlt_-15_p90" orgName="tnlt_-15_p90"></variable>
+					<variable name="rcp45_tnlt_-15_delta7100_p10" orgName="tnlt_-15_delta7100_p10"></variable>
+					<variable name="rcp45_tnlt_-15_delta7100_p50" orgName="tnlt_-15_delta7100_p50"></variable>
+					<variable name="rcp45_tnlt_-15_delta7100_p90" orgName="tnlt_-15_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tnlt_-15/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_tnlt_-15_YS.nc">
+					<variable name="rcp85_tnlt_-15_p10" orgName="tnlt_-15_p10"></variable>
+					<variable name="rcp85_tnlt_-15_p50" orgName="tnlt_-15_p50"></variable>
+					<variable name="rcp85_tnlt_-15_p90" orgName="tnlt_-15_p90"></variable>
+					<variable name="rcp85_tnlt_-15_delta7100_p10" orgName="tnlt_-15_delta7100_p10"></variable>
+					<variable name="rcp85_tnlt_-15_delta7100_p50" orgName="tnlt_-15_delta7100_p50"></variable>
+					<variable name="rcp85_tnlt_-15_delta7100_p90" orgName="tnlt_-15_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/gddgrow_0/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_gddgrow_0_YS.nc">
+					<variable name="rcp26_gddgrow_0_p10" orgName="gddgrow_0_p10"></variable>
+					<variable name="rcp26_gddgrow_0_p50" orgName="gddgrow_0_p50"></variable>
+					<variable name="rcp26_gddgrow_0_p90" orgName="gddgrow_0_p90"></variable>
+					<variable name="rcp26_gddgrow_0_delta7100_p10" orgName="gddgrow_0_delta7100_p10"></variable>
+					<variable name="rcp26_gddgrow_0_delta7100_p50" orgName="gddgrow_0_delta7100_p50"></variable>
+					<variable name="rcp26_gddgrow_0_delta7100_p90" orgName="gddgrow_0_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/gddgrow_0/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_gddgrow_0_YS.nc">
+					<variable name="rcp45_gddgrow_0_p10" orgName="gddgrow_0_p10"></variable>
+					<variable name="rcp45_gddgrow_0_p50" orgName="gddgrow_0_p50"></variable>
+					<variable name="rcp45_gddgrow_0_p90" orgName="gddgrow_0_p90"></variable>
+					<variable name="rcp45_gddgrow_0_delta7100_p10" orgName="gddgrow_0_delta7100_p10"></variable>
+					<variable name="rcp45_gddgrow_0_delta7100_p50" orgName="gddgrow_0_delta7100_p50"></variable>
+					<variable name="rcp45_gddgrow_0_delta7100_p90" orgName="gddgrow_0_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/gddgrow_0/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_gddgrow_0_YS.nc">
+					<variable name="rcp85_gddgrow_0_p10" orgName="gddgrow_0_p10"></variable>
+					<variable name="rcp85_gddgrow_0_p50" orgName="gddgrow_0_p50"></variable>
+					<variable name="rcp85_gddgrow_0_p90" orgName="gddgrow_0_p90"></variable>
+					<variable name="rcp85_gddgrow_0_delta7100_p10" orgName="gddgrow_0_delta7100_p10"></variable>
+					<variable name="rcp85_gddgrow_0_delta7100_p50" orgName="gddgrow_0_delta7100_p50"></variable>
+					<variable name="rcp85_gddgrow_0_delta7100_p90" orgName="gddgrow_0_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/cdd/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_cdd_YS.nc">
+					<variable name="rcp26_cdd_p10" orgName="cdd_p10"></variable>
+					<variable name="rcp26_cdd_p50" orgName="cdd_p50"></variable>
+					<variable name="rcp26_cdd_p90" orgName="cdd_p90"></variable>
+					<variable name="rcp26_cdd_delta7100_p10" orgName="cdd_delta7100_p10"></variable>
+					<variable name="rcp26_cdd_delta7100_p50" orgName="cdd_delta7100_p50"></variable>
+					<variable name="rcp26_cdd_delta7100_p90" orgName="cdd_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/cdd/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_cdd_YS.nc">
+					<variable name="rcp45_cdd_p10" orgName="cdd_p10"></variable>
+					<variable name="rcp45_cdd_p50" orgName="cdd_p50"></variable>
+					<variable name="rcp45_cdd_p90" orgName="cdd_p90"></variable>
+					<variable name="rcp45_cdd_delta7100_p10" orgName="cdd_delta7100_p10"></variable>
+					<variable name="rcp45_cdd_delta7100_p50" orgName="cdd_delta7100_p50"></variable>
+					<variable name="rcp45_cdd_delta7100_p90" orgName="cdd_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/cdd/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_cdd_YS.nc">
+					<variable name="rcp85_cdd_p10" orgName="cdd_p10"></variable>
+					<variable name="rcp85_cdd_p50" orgName="cdd_p50"></variable>
+					<variable name="rcp85_cdd_p90" orgName="cdd_p90"></variable>
+					<variable name="rcp85_cdd_delta7100_p10" orgName="cdd_delta7100_p10"></variable>
+					<variable name="rcp85_cdd_delta7100_p50" orgName="cdd_delta7100_p50"></variable>
+					<variable name="rcp85_cdd_delta7100_p90" orgName="cdd_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/nr_cdd/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_nr_cdd_YS.nc">
+					<variable name="rcp26_nr_cdd_p10" orgName="nr_cdd_p10"></variable>
+					<variable name="rcp26_nr_cdd_p50" orgName="nr_cdd_p50"></variable>
+					<variable name="rcp26_nr_cdd_p90" orgName="nr_cdd_p90"></variable>
+					<variable name="rcp26_nr_cdd_delta7100_p10" orgName="nr_cdd_delta7100_p10"></variable>
+					<variable name="rcp26_nr_cdd_delta7100_p50" orgName="nr_cdd_delta7100_p50"></variable>
+					<variable name="rcp26_nr_cdd_delta7100_p90" orgName="nr_cdd_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/nr_cdd/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_nr_cdd_YS.nc">
+					<variable name="rcp45_nr_cdd_p10" orgName="nr_cdd_p10"></variable>
+					<variable name="rcp45_nr_cdd_p50" orgName="nr_cdd_p50"></variable>
+					<variable name="rcp45_nr_cdd_p90" orgName="nr_cdd_p90"></variable>
+					<variable name="rcp45_nr_cdd_delta7100_p10" orgName="nr_cdd_delta7100_p10"></variable>
+					<variable name="rcp45_nr_cdd_delta7100_p50" orgName="nr_cdd_delta7100_p50"></variable>
+					<variable name="rcp45_nr_cdd_delta7100_p90" orgName="nr_cdd_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/nr_cdd/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_nr_cdd_YS.nc">
+					<variable name="rcp85_nr_cdd_p10" orgName="nr_cdd_p10"></variable>
+					<variable name="rcp85_nr_cdd_p50" orgName="nr_cdd_p50"></variable>
+					<variable name="rcp85_nr_cdd_p90" orgName="nr_cdd_p90"></variable>
+					<variable name="rcp85_nr_cdd_delta7100_p10" orgName="nr_cdd_delta7100_p10"></variable>
+					<variable name="rcp85_nr_cdd_delta7100_p50" orgName="nr_cdd_delta7100_p50"></variable>
+					<variable name="rcp85_nr_cdd_delta7100_p90" orgName="nr_cdd_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/rx5day/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_rx5day_YS.nc">
+					<variable name="rcp26_rx5day_p10" orgName="rx5day_p10"></variable>
+					<variable name="rcp26_rx5day_p50" orgName="rx5day_p50"></variable>
+					<variable name="rcp26_rx5day_p90" orgName="rx5day_p90"></variable>
+					<variable name="rcp26_rx5day_delta7100_p10" orgName="rx5day_delta7100_p10"></variable>
+					<variable name="rcp26_rx5day_delta7100_p50" orgName="rx5day_delta7100_p50"></variable>
+					<variable name="rcp26_rx5day_delta7100_p90" orgName="rx5day_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/rx5day/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_rx5day_YS.nc">
+					<variable name="rcp45_rx5day_p10" orgName="rx5day_p10"></variable>
+					<variable name="rcp45_rx5day_p50" orgName="rx5day_p50"></variable>
+					<variable name="rcp45_rx5day_p90" orgName="rx5day_p90"></variable>
+					<variable name="rcp45_rx5day_delta7100_p10" orgName="rx5day_delta7100_p10"></variable>
+					<variable name="rcp45_rx5day_delta7100_p50" orgName="rx5day_delta7100_p50"></variable>
+					<variable name="rcp45_rx5day_delta7100_p90" orgName="rx5day_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/rx5day/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_rx5day_YS.nc">
+					<variable name="rcp85_rx5day_p10" orgName="rx5day_p10"></variable>
+					<variable name="rcp85_rx5day_p50" orgName="rx5day_p50"></variable>
+					<variable name="rcp85_rx5day_p90" orgName="rx5day_p90"></variable>
+					<variable name="rcp85_rx5day_delta7100_p10" orgName="rx5day_delta7100_p10"></variable>
+					<variable name="rcp85_rx5day_delta7100_p50" orgName="rx5day_delta7100_p50"></variable>
+					<variable name="rcp85_rx5day_delta7100_p90" orgName="rx5day_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/first_fall_frost/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_first_fall_frost_YS.nc">
+					<variable name="rcp26_first_fall_frost_p10" orgName="first_fall_frost_p10"></variable>
+					<variable name="rcp26_first_fall_frost_p50" orgName="first_fall_frost_p50"></variable>
+					<variable name="rcp26_first_fall_frost_p90" orgName="first_fall_frost_p90"></variable>
+					<variable name="rcp26_first_fall_frost_delta7100_p10" orgName="first_fall_frost_delta7100_p10"></variable>
+					<variable name="rcp26_first_fall_frost_delta7100_p50" orgName="first_fall_frost_delta7100_p50"></variable>
+					<variable name="rcp26_first_fall_frost_delta7100_p90" orgName="first_fall_frost_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/first_fall_frost/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_first_fall_frost_YS.nc">
+					<variable name="rcp45_first_fall_frost_p10" orgName="first_fall_frost_p10"></variable>
+					<variable name="rcp45_first_fall_frost_p50" orgName="first_fall_frost_p50"></variable>
+					<variable name="rcp45_first_fall_frost_p90" orgName="first_fall_frost_p90"></variable>
+					<variable name="rcp45_first_fall_frost_delta7100_p10" orgName="first_fall_frost_delta7100_p10"></variable>
+					<variable name="rcp45_first_fall_frost_delta7100_p50" orgName="first_fall_frost_delta7100_p50"></variable>
+					<variable name="rcp45_first_fall_frost_delta7100_p90" orgName="first_fall_frost_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/first_fall_frost/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_first_fall_frost_YS.nc">
+					<variable name="rcp85_first_fall_frost_p10" orgName="first_fall_frost_p10"></variable>
+					<variable name="rcp85_first_fall_frost_p50" orgName="first_fall_frost_p50"></variable>
+					<variable name="rcp85_first_fall_frost_p90" orgName="first_fall_frost_p90"></variable>
+					<variable name="rcp85_first_fall_frost_delta7100_p10" orgName="first_fall_frost_delta7100_p10"></variable>
+					<variable name="rcp85_first_fall_frost_delta7100_p50" orgName="first_fall_frost_delta7100_p50"></variable>
+					<variable name="rcp85_first_fall_frost_delta7100_p90" orgName="first_fall_frost_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/last_spring_frost/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_last_spring_frost_YS.nc">
+					<variable name="rcp26_last_spring_frost_p10" orgName="last_spring_frost_p10"></variable>
+					<variable name="rcp26_last_spring_frost_p50" orgName="last_spring_frost_p50"></variable>
+					<variable name="rcp26_last_spring_frost_p90" orgName="last_spring_frost_p90"></variable>
+					<variable name="rcp26_last_spring_frost_delta7100_p10" orgName="last_spring_frost_delta7100_p10"></variable>
+					<variable name="rcp26_last_spring_frost_delta7100_p50" orgName="last_spring_frost_delta7100_p50"></variable>
+					<variable name="rcp26_last_spring_frost_delta7100_p90" orgName="last_spring_frost_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/last_spring_frost/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_last_spring_frost_YS.nc">
+					<variable name="rcp45_last_spring_frost_p10" orgName="last_spring_frost_p10"></variable>
+					<variable name="rcp45_last_spring_frost_p50" orgName="last_spring_frost_p50"></variable>
+					<variable name="rcp45_last_spring_frost_p90" orgName="last_spring_frost_p90"></variable>
+					<variable name="rcp45_last_spring_frost_delta7100_p10" orgName="last_spring_frost_delta7100_p10"></variable>
+					<variable name="rcp45_last_spring_frost_delta7100_p50" orgName="last_spring_frost_delta7100_p50"></variable>
+					<variable name="rcp45_last_spring_frost_delta7100_p90" orgName="last_spring_frost_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/last_spring_frost/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_last_spring_frost_YS.nc">
+					<variable name="rcp85_last_spring_frost_p10" orgName="last_spring_frost_p10"></variable>
+					<variable name="rcp85_last_spring_frost_p50" orgName="last_spring_frost_p50"></variable>
+					<variable name="rcp85_last_spring_frost_p90" orgName="last_spring_frost_p90"></variable>
+					<variable name="rcp85_last_spring_frost_delta7100_p10" orgName="last_spring_frost_delta7100_p10"></variable>
+					<variable name="rcp85_last_spring_frost_delta7100_p50" orgName="last_spring_frost_delta7100_p50"></variable>
+					<variable name="rcp85_last_spring_frost_delta7100_p90" orgName="last_spring_frost_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/frost_free_season/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_frost_free_season_YS.nc">
+					<variable name="rcp26_frost_free_season_p10" orgName="frost_free_season_p10"></variable>
+					<variable name="rcp26_frost_free_season_p50" orgName="frost_free_season_p50"></variable>
+					<variable name="rcp26_frost_free_season_p90" orgName="frost_free_season_p90"></variable>
+					<variable name="rcp26_frost_free_season_delta7100_p10" orgName="frost_free_season_delta7100_p10"></variable>
+					<variable name="rcp26_frost_free_season_delta7100_p50" orgName="frost_free_season_delta7100_p50"></variable>
+					<variable name="rcp26_frost_free_season_delta7100_p90" orgName="frost_free_season_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/frost_free_season/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_frost_free_season_YS.nc">
+					<variable name="rcp45_frost_free_season_p10" orgName="frost_free_season_p10"></variable>
+					<variable name="rcp45_frost_free_season_p50" orgName="frost_free_season_p50"></variable>
+					<variable name="rcp45_frost_free_season_p90" orgName="frost_free_season_p90"></variable>
+					<variable name="rcp45_frost_free_season_delta7100_p10" orgName="frost_free_season_delta7100_p10"></variable>
+					<variable name="rcp45_frost_free_season_delta7100_p50" orgName="frost_free_season_delta7100_p50"></variable>
+					<variable name="rcp45_frost_free_season_delta7100_p90" orgName="frost_free_season_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/frost_free_season/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_frost_free_season_YS.nc">
+					<variable name="rcp85_frost_free_season_p10" orgName="frost_free_season_p10"></variable>
+					<variable name="rcp85_frost_free_season_p50" orgName="frost_free_season_p50"></variable>
+					<variable name="rcp85_frost_free_season_p90" orgName="frost_free_season_p90"></variable>
+					<variable name="rcp85_frost_free_season_delta7100_p10" orgName="frost_free_season_delta7100_p10"></variable>
+					<variable name="rcp85_frost_free_season_delta7100_p50" orgName="frost_free_season_delta7100_p50"></variable>
+					<variable name="rcp85_frost_free_season_delta7100_p90" orgName="frost_free_season_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/hddheat_18/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_hddheat_18_YS.nc">
+					<variable name="rcp26_hddheat_18_p10" orgName="hddheat_18_p10"></variable>
+					<variable name="rcp26_hddheat_18_p50" orgName="hddheat_18_p50"></variable>
+					<variable name="rcp26_hddheat_18_p90" orgName="hddheat_18_p90"></variable>
+					<variable name="rcp26_hddheat_18_delta7100_p10" orgName="hddheat_18_delta7100_p10"></variable>
+					<variable name="rcp26_hddheat_18_delta7100_p50" orgName="hddheat_18_delta7100_p50"></variable>
+					<variable name="rcp26_hddheat_18_delta7100_p90" orgName="hddheat_18_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/hddheat_18/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_hddheat_18_YS.nc">
+					<variable name="rcp45_hddheat_18_p10" orgName="hddheat_18_p10"></variable>
+					<variable name="rcp45_hddheat_18_p50" orgName="hddheat_18_p50"></variable>
+					<variable name="rcp45_hddheat_18_p90" orgName="hddheat_18_p90"></variable>
+					<variable name="rcp45_hddheat_18_delta7100_p10" orgName="hddheat_18_delta7100_p10"></variable>
+					<variable name="rcp45_hddheat_18_delta7100_p50" orgName="hddheat_18_delta7100_p50"></variable>
+					<variable name="rcp45_hddheat_18_delta7100_p90" orgName="hddheat_18_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/hddheat_18/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_hddheat_18_YS.nc">
+					<variable name="rcp85_hddheat_18_p10" orgName="hddheat_18_p10"></variable>
+					<variable name="rcp85_hddheat_18_p50" orgName="hddheat_18_p50"></variable>
+					<variable name="rcp85_hddheat_18_p90" orgName="hddheat_18_p90"></variable>
+					<variable name="rcp85_hddheat_18_delta7100_p10" orgName="hddheat_18_delta7100_p10"></variable>
+					<variable name="rcp85_hddheat_18_delta7100_p50" orgName="hddheat_18_delta7100_p50"></variable>
+					<variable name="rcp85_hddheat_18_delta7100_p90" orgName="hddheat_18_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/dlyfrzthw_tx0_tn-1/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_dlyfrzthw_tx0_tn-1_YS.nc">
+					<variable name="rcp26_dlyfrzthw_tx0_tn-1_p10" orgName="dlyfrzthw_tx0_tn-1_p10"></variable>
+					<variable name="rcp26_dlyfrzthw_tx0_tn-1_p50" orgName="dlyfrzthw_tx0_tn-1_p50"></variable>
+					<variable name="rcp26_dlyfrzthw_tx0_tn-1_p90" orgName="dlyfrzthw_tx0_tn-1_p90"></variable>
+					<variable name="rcp26_dlyfrzthw_tx0_tn-1_delta7100_p10" orgName="dlyfrzthw_tx0_tn-1_delta7100_p10"></variable>
+					<variable name="rcp26_dlyfrzthw_tx0_tn-1_delta7100_p50" orgName="dlyfrzthw_tx0_tn-1_delta7100_p50"></variable>
+					<variable name="rcp26_dlyfrzthw_tx0_tn-1_delta7100_p90" orgName="dlyfrzthw_tx0_tn-1_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/dlyfrzthw_tx0_tn-1/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_dlyfrzthw_tx0_tn-1_YS.nc">
+					<variable name="rcp45_dlyfrzthw_tx0_tn-1_p10" orgName="dlyfrzthw_tx0_tn-1_p10"></variable>
+					<variable name="rcp45_dlyfrzthw_tx0_tn-1_p50" orgName="dlyfrzthw_tx0_tn-1_p50"></variable>
+					<variable name="rcp45_dlyfrzthw_tx0_tn-1_p90" orgName="dlyfrzthw_tx0_tn-1_p90"></variable>
+					<variable name="rcp45_dlyfrzthw_tx0_tn-1_delta7100_p10" orgName="dlyfrzthw_tx0_tn-1_delta7100_p10"></variable>
+					<variable name="rcp45_dlyfrzthw_tx0_tn-1_delta7100_p50" orgName="dlyfrzthw_tx0_tn-1_delta7100_p50"></variable>
+					<variable name="rcp45_dlyfrzthw_tx0_tn-1_delta7100_p90" orgName="dlyfrzthw_tx0_tn-1_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/dlyfrzthw_tx0_tn-1/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_dlyfrzthw_tx0_tn-1_YS.nc">
+					<variable name="rcp85_dlyfrzthw_tx0_tn-1_p10" orgName="dlyfrzthw_tx0_tn-1_p10"></variable>
+					<variable name="rcp85_dlyfrzthw_tx0_tn-1_p50" orgName="dlyfrzthw_tx0_tn-1_p50"></variable>
+					<variable name="rcp85_dlyfrzthw_tx0_tn-1_p90" orgName="dlyfrzthw_tx0_tn-1_p90"></variable>
+					<variable name="rcp85_dlyfrzthw_tx0_tn-1_delta7100_p10" orgName="dlyfrzthw_tx0_tn-1_delta7100_p10"></variable>
+					<variable name="rcp85_dlyfrzthw_tx0_tn-1_delta7100_p50" orgName="dlyfrzthw_tx0_tn-1_delta7100_p50"></variable>
+					<variable name="rcp85_dlyfrzthw_tx0_tn-1_delta7100_p90" orgName="dlyfrzthw_tx0_tn-1_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/txgt_37/YS/rcp26/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp26_1951-2100_txgt_37_YS.nc">
+					<variable name="rcp26_txgt_37_p10" orgName="txgt_37_p10"></variable>
+					<variable name="rcp26_txgt_37_p50" orgName="txgt_37_p50"></variable>
+					<variable name="rcp26_txgt_37_p90" orgName="txgt_37_p90"></variable>
+					<variable name="rcp26_txgt_37_delta7100_p10" orgName="txgt_37_delta7100_p10"></variable>
+					<variable name="rcp26_txgt_37_delta7100_p50" orgName="txgt_37_delta7100_p50"></variable>
+					<variable name="rcp26_txgt_37_delta7100_p90" orgName="txgt_37_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/txgt_37/YS/rcp45/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp45_1951-2100_txgt_37_YS.nc">
+					<variable name="rcp45_txgt_37_p10" orgName="txgt_37_p10"></variable>
+					<variable name="rcp45_txgt_37_p50" orgName="txgt_37_p50"></variable>
+					<variable name="rcp45_txgt_37_p90" orgName="txgt_37_p90"></variable>
+					<variable name="rcp45_txgt_37_delta7100_p10" orgName="txgt_37_delta7100_p10"></variable>
+					<variable name="rcp45_txgt_37_delta7100_p50" orgName="txgt_37_delta7100_p50"></variable>
+					<variable name="rcp45_txgt_37_delta7100_p90" orgName="txgt_37_delta7100_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/txgt_37/YS/rcp85/ensemble_percentiles/30yAvg_BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+rcp85_1951-2100_txgt_37_YS.nc">
+					<variable name="rcp85_txgt_37_p10" orgName="txgt_37_p10"></variable>
+					<variable name="rcp85_txgt_37_p50" orgName="txgt_37_p50"></variable>
+					<variable name="rcp85_txgt_37_p90" orgName="txgt_37_p90"></variable>
+					<variable name="rcp85_txgt_37_delta7100_p10" orgName="txgt_37_delta7100_p10"></variable>
+					<variable name="rcp85_txgt_37_delta7100_p50" orgName="txgt_37_delta7100_p50"></variable>
+					<variable name="rcp85_txgt_37_delta7100_p90" orgName="txgt_37_delta7100_p90"></variable>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 	</aggregation>
