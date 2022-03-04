@@ -75,7 +75,7 @@ def load_cvs(path):
 
 
 def test_model_from_cvs():
-    cvs = load_cvs("CV/_cmip5")
+    cvs = load_cvs("CV/cmip5")
     M = model_from_cvs("CMIP5", cvs)
 
     # Check that this validates
