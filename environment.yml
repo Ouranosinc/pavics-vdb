@@ -1,0 +1,9 @@
+name: catalog
+channels:
+  - default
+dependencies:
+  - pydantic
+  - click
+  - lxml
+  - pip:
+    - siphon
