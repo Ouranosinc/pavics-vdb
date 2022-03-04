@@ -106,6 +106,7 @@ class BiasAdjusted(CV):
     driving_institution: str  # driving_institute ?
     driving_institute_id: str
 
+
 @register("climex")
 @dataclass
 class Climex(CV):

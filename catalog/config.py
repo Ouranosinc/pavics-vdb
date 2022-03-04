@@ -13,3 +13,4 @@ CATALOG_TDS_PATH = {"cmip5": "simulations/cmip5_multirun",
 
 # Catalog output path
 CATALOG_OUTPATH = os.environ.get('CATALOG_OUTPATH', default="/tmp/intake")
+
