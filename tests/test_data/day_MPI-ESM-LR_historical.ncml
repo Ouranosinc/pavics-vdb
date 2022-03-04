@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncml:netcdf xmlns:ncml="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/dodsC/datasets/simulations/cmip5_multirun/atmos/day_MPI-ESM-LR_historical.ncml">
+  <ncml:attribute name="institution" value="Max Planck Institute for Meteorology" />
+  <ncml:attribute name="institute_id" value="MPI-M" />
+  <ncml:attribute name="experiment_id" value="historical" />
+  <ncml:attribute name="source" value="MPI-ESM-LR 2011; URL: http://svn.zmaw.de/svn/cosmos/branches/releases/mpi-esm-cmip5/src/mod; atmosphere: ECHAM6 (REV: 4603), T63L47; land: JSBACH (REV: 4603); ocean: MPIOM (REV: 4603), GR15L40; sea ice: 4603; marine bgc: HAMOCC (REV: 4603);" />
+  <ncml:attribute name="model_id" value="MPI-ESM-LR" />
+  <ncml:attribute name="forcing" value="GHG Oz SD Sl Vl LU" />
+  <ncml:attribute name="parent_experiment_id" value="piControl" />
+  <ncml:attribute name="branch_time" type="double" value="47481.0" />
+  <ncml:attribute name="contact" value="cmip5-mpi-esm@dkrz.de" />
+  <ncml:attribute name="history" value="Model raw output postprocessing with modelling environment (IMDI) at DKRZ: URL: http://svn-mad.zmaw.de/svn/mad/Model/IMDI/trunk, REV: 3209 2011-06-09T00:21:17Z CMOR rewrote data to comply with CF standards and CMIP5 requirements." />
+  <ncml:attribute name="references" value="ECHAM6: n/a; JSBACH: Raddatz et al., 2007. Will the tropical land biosphere dominate the climate-carbon cycle feedback during the twenty first century? Climate Dynamics, 29, 565-574, doi 10.1007/s00382-007-0247-8;  MPIOM: Marsland et al., 2003. The Max-Planck-Institute global ocean/sea ice model with orthogonal curvilinear coordinates. Ocean Modelling, 5, 91-127;  HAMOCC: http://www.mpimet.mpg.de/fileadmin/models/MPIOM/HAMOCC5.1_TECHNICAL_REPORT.pdf;" />
+  <ncml:attribute name="initialization_method" type="int" value="1" />
+  <ncml:attribute name="physics_version" type="int" value="1" />
+  <ncml:attribute name="tracking_id" value="20d37999-a9a0-4ea0-8a05-301853c48fe9" />
+  <ncml:attribute name="product" value="output" />
+  <ncml:attribute name="experiment" value="historical" />
+  <ncml:attribute name="frequency" value="day" />
+  <ncml:attribute name="creation_date" value="2011-06-09T00:21:17Z" />
+  <ncml:attribute name="Conventions" value="CF-1.4" />
+  <ncml:attribute name="project_id" value="CMIP5" />
+  <ncml:attribute name="table_id" value="Table day (27 April 2011) 86d1558d99b6ed1e7a886ab3fd717b58" />
+  <ncml:attribute name="title" value="MPI-ESM-LR model output prepared for CMIP5 historical" />
+  <ncml:attribute name="parent_experiment" value="pre-industrial control" />
+  <ncml:attribute name="modeling_realm" value="atmos" />
+  <ncml:attribute name="cmor_version" value="2.5.9" />
+  <ncml:attribute name="type" value="GCM" />
+  <ncml:attribute name="processing" value="raw_data" />
+  <ncml:attribute name="licence_type" value="permissive" />
+  <ncml:attribute name="terms_of_use" value="https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html" />
+  <ncml:attribute name="attribution" value="https://pcmdi.llnl.gov/mips/cmip5/citation.html" />
+  <ncml:attribute name="_CoordSysBuilder" value="ucar.nc2.dataset.conv.CF1Convention" />
+  <ncml:dimension name="lat" length="96" />
+  <ncml:dimension name="lon" length="192" />
+  <ncml:dimension name="bnds" length="2" />
+  <ncml:dimension name="time" length="56978" />
+  <ncml:dimension name="realization" length="3" />
+  <group xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" name="CFMetadata">
+    <attribute name="geospatial_lon_min" value=".0" type="float" />
+    <attribute name="geospatial_lat_min" value="-88.57217" type="float" />
+    <attribute name="geospatial_lon_max" value="358.125" type="float" />
+    <attribute name="geospatial_lat_max" value="88.57217" type="float" />
+    <attribute name="geospatial_lon_units" value="degrees_east" />
+    <attribute name="geospatial_lat_units" value="degrees_north" />
+    <attribute name="geospatial_lon_resolution" value="1.875" />
+    <attribute name="geospatial_lat_resolution" value="1.8646771882709703" />
+    <attribute name="geospatial_vertical_min" value="2.0" />
+    <attribute name="geospatial_vertical_max" value="2.0" />
+    <attribute name="geospatial_vertical_units" value="m" />
+    <attribute name="geospatial_vertical_resolution" value="0.0" />
+    <attribute name="geospatial_vertical_positive" value="up" />
+    <attribute name="time_coverage_start" value="1850-01-01T12:00:00Z" />
+    <attribute name="time_coverage_end" value="2005-12-31T12:00:00Z" />
+    <attribute name="time_coverage_units" value="seconds" />
+    <attribute name="time_coverage_resolution" value="86400.0" />
+    <attribute name="time_coverage_duration" value="P0Y0M56977DT0H0M0.000S" />
+  </group>
+  <group xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" name="NCISOMetadata">
+    <attribute name="metadata_creation" value="2021-01-12" />
+    <attribute name="nciso_version" value="2.2.3" />
+  </group>
+  <group xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" name="THREDDSMetadata">
+    <attribute name="id" value="datasets/simulations/cmip5_multirun/atmos/day_MPI-ESM-LR_historical.ncml" />
+    <attribute name="full_name" value="atmos/day_MPI-ESM-LR_historical.ncml" />
+    <group name="services">
+      <attribute name="httpserver_service" value="https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/fileServer/datasets/simulations/cmip5_multirun/atmos/day_MPI-ESM-LR_historical.ncml" />
+      <attribute name="opendap_service" value="https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/dodsC/datasets/simulations/cmip5_multirun/atmos/day_MPI-ESM-LR_historical.ncml" />
+      <attribute name="wcs_service" value="https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/wcs/datasets/simulations/cmip5_multirun/atmos/day_MPI-ESM-LR_historical.ncml?service=WCS&amp;version=1.0.0&amp;request=GetCapabilities" />
+      <attribute name="wms_service" value="https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/wms/datasets/simulations/cmip5_multirun/atmos/day_MPI-ESM-LR_historical.ncml?service=WMS&amp;version=1.3.0&amp;request=GetCapabilities" />
+    </group>
+    <group name="dates">
+      <attribute name="date" value="2020-09-30T20:01:02Z" type="modified" />
+    </group>
+  </group>
+  <ncml:variable name="lat_bnds" shape="lat bnds" type="double" />
+  <ncml:variable name="lon_bnds" shape="lon bnds" type="double" />
+  <ncml:variable name="time_bnds" shape="time bnds" type="double" />
+  <ncml:variable name="tas" shape="realization time lat lon" type="float">
+    <ncml:attribute name="standard_name" value="air_temperature" />
+    <ncml:attribute name="long_name" value="Near-Surface Air Temperature" />
+    <ncml:attribute name="units" value="K" />
+    <ncml:attribute name="cell_methods" value="time: mean" />
+    <ncml:attribute name="cell_measures" value="area: areacella" />
+    <ncml:attribute name="history" value="2011-06-09T00:21:17Z altered by CMOR: Treated scalar dimension: 'height'." />
+    <ncml:attribute name="coordinates" value="height" />
+    <ncml:attribute name="missing_value" type="float" value="1.0E20" />
+    <ncml:attribute name="_FillValue" type="float" value="1.0E20" />
+    <ncml:attribute name="associated_files" value="baseURL: http://cmip-pcmdi.llnl.gov/CMIP5/dataLocation gridspecFile: gridspec_atmos_fx_MPI-ESM-LR_historical_r0i0p0.nc areacella: areacella_fx_MPI-ESM-LR_historical_r0i0p0.nc" />
+  </ncml:variable>
+  <ncml:variable name="pr" shape="realization time lat lon" type="float">
+    <ncml:attribute name="standard_name" value="precipitation_flux" />
+    <ncml:attribute name="long_name" value="Precipitation" />
+    <ncml:attribute name="comment" value="at surface; includes both liquid and solid phases from all types of clouds (both large-scale and convective)" />
+    <ncml:attribute name="units" value="kg m-2 s-1" />
+    <ncml:attribute name="cell_methods" value="time: mean" />
+    <ncml:attribute name="cell_measures" value="area: areacella" />
+    <ncml:attribute name="history" value="2011-06-09T00:21:22Z altered by CMOR: replaced missing value flag (2e+20) with standard missing value (1e+20)." />
+    <ncml:attribute name="missing_value" type="float" value="1.0E20" />
+    <ncml:attribute name="_FillValue" type="float" value="1.0E20" />
+    <ncml:attribute name="associated_files" value="baseURL: http://cmip-pcmdi.llnl.gov/CMIP5/dataLocation gridspecFile: gridspec_atmos_fx_MPI-ESM-LR_historical_r0i0p0.nc areacella: areacella_fx_MPI-ESM-LR_historical_r0i0p0.nc" />
+  </ncml:variable>
+  <ncml:variable name="lat" shape="lat" type="double">
+    <ncml:attribute name="bounds" value="lat_bnds" />
+    <ncml:attribute name="units" value="degrees_north" />
+    <ncml:attribute name="axis" value="Y" />
+    <ncml:attribute name="long_name" value="latitude" />
+    <ncml:attribute name="standard_name" value="latitude" />
+    <ncml:attribute name="_CoordinateAxisType" value="Lat" />
+  </ncml:variable>
+  <ncml:variable name="lon" shape="lon" type="double">
+    <ncml:attribute name="bounds" value="lon_bnds" />
+    <ncml:attribute name="units" value="degrees_east" />
+    <ncml:attribute name="axis" value="X" />
+    <ncml:attribute name="long_name" value="longitude" />
+    <ncml:attribute name="standard_name" value="longitude" />
+    <ncml:attribute name="_CoordinateAxisType" value="Lon" />
+  </ncml:variable>
+  <ncml:variable name="height" shape="" type="double">
+    <ncml:attribute name="units" value="m" />
+    <ncml:attribute name="axis" value="Z" />
+    <ncml:attribute name="positive" value="up" />
+    <ncml:attribute name="long_name" value="height" />
+    <ncml:attribute name="standard_name" value="height" />
+    <ncml:attribute name="_CoordinateAxisType" value="Height" />
+    <ncml:attribute name="_CoordinateZisPositive" value="up" />
+  </ncml:variable>
+  <ncml:variable name="time" shape="time" type="double">
+    <ncml:attribute name="bounds" value="time_bnds" />
+    <ncml:attribute name="units" value="days since 1850-1-1 00:00:00" />
+    <ncml:attribute name="calendar" value="proleptic_gregorian" />
+    <ncml:attribute name="axis" value="T" />
+    <ncml:attribute name="long_name" value="time" />
+    <ncml:attribute name="standard_name" value="time" />
+    <ncml:attribute name="_CoordinateAxisType" value="Time" />
+  </ncml:variable>
+  <ncml:variable name="realization" shape="realization" type="String" />
+</ncml:netcdf>
+
