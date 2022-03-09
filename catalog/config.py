@@ -1,4 +1,4 @@
-import os
+import os, sys
 
 TDS_ROOT = "https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/datasets/"
 
@@ -14,3 +14,13 @@ CATALOG_TDS_PATH = {"cmip5": "simulations/cmip5_multirun",
 # Catalog output path
 CATALOG_OUTPATH = os.environ.get('CATALOG_OUTPATH', default="/tmp/intake")
 
+# Path to log file
+LOGFILE = "/tmp/log/pavics_catalog.txt"
+
+# Loguru configuration
+log_config = {
+    "handlers": [
+        {"sink": sys.stdout, "level": "WARNING"},
+        {"sink": LOGFILE, "level": "INFO"},
+    ],
+}

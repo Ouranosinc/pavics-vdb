@@ -1,5 +1,5 @@
-from specs import REGISTRY
-from config import TDS_ROOT, CATALOG_TDS_PATH, CATALOG_OUTPATH
+from datamodels import REGISTRY
+from config import TDS_ROOT, CATALOG_TDS_PATH, CATALOG_OUTPATH, LOGFILE, log_config
 import click
 
 collections = list(REGISTRY.keys())
@@ -16,6 +16,9 @@ collections = list(REGISTRY.keys())
 @click.option('-o', '--output', default=CATALOG_OUTPATH,
               show_default=True,
               help="Output path for catalog files.")
+@click.option('-l', '--log', default=LOGFILE,
+              show_default=True,
+              help="Output path for log.")
 def intake_cli(collection, output):
     for coll in collection:
         create_intake_catalog(coll, output)
@@ -23,14 +26,21 @@ def intake_cli(collection, output):
 
 def create_intake_catalog(collection, output):
     """Parse metadata from TDS catalog and write intake spec and csv to disk."""
+    import ncml
     from intake_ingestion.intake_converter import Intake
+    from tds import walk
+    from loguru import logger
 
-    cls = REGISTRY[collection]
+    logger.configure(**log_config)
+    logger.info(f"Creating `{collection}` catalog.")
+
     url = TDS_ROOT + CATALOG_TDS_PATH[collection] + "/catalog.xml"
 
-    spec = Intake(cls)
-    table = spec.parse(url)
-    spec.to_catalog(table, output)
+    esmcat = Intake(cv=REGISTRY[collection])
+    catalog = esmcat.catalog(walk(url))
+
+    logger.info(f"Saving catalog to disk at {output}")
+    esmcat.save(catalog, output)
 
 
 if __name__ == '__main__':

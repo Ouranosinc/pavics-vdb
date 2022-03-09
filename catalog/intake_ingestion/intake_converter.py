@@ -14,11 +14,10 @@ cat.df
 https://intake-esm.readthedocs.io/en/latest/user-guide/multi-variable-assets.html
 
 """
-from collections import defaultdict
-from siphon.catalog import TDSCatalog
-from xml.etree.ElementTree import ParseError
-from dataclasses import dataclass, fields, asdict, astuple
-import tds
+from typing import List, Iterator
+from pydantic import ValidationError
+from loguru import logger
+from .. import ncml
 
 ESMCAT_VERSION = "0.1.0"
 
@@ -32,15 +31,15 @@ class Intake:
         """
         Parameters
         ----------
-        cv : CV subclass
-          CV subclass defining the controlled vocabulary for the catalog to be created.
+        cv : `datamodels.base.Common` subclass
+          Data model for the catalog entries.
         """
         self.cv = cv
 
     def to_intake_spec(self):
         """Return Intake specification file content."""
 
-        attributes = [{"column_name": key} for key in self.cv.global_attributes() + self.cv.variable_attributes()]
+        attributes = [{"column_name": key} for key in self.cv.attributes()]
         spec = {"esmcat_version": ESMCAT_VERSION,
                 "id": self.cv.__name__.lower(),
                 "description": self.cv.__doc__.splitlines()[0],
@@ -59,64 +58,58 @@ class Intake:
         return self.cv.__name__.lower()
 
     @property
-    def catalog_fn(self):
+    def catalog_fn(self) -> str:
         """Return catalog file name."""
         return f"{self.cid}.csv.gz"
 
-    def header(self):
-        """Return attribute table header names."""
-        return self.cv.global_attributes() + self.cv.variable_attributes() + [self.asset_attribute]
+    def header(self) -> List:
+        """Return attribute names."""
+        return self.cv.global_attributes() + self.cv.variable_attributes()
 
-    def validate(self, **kwargs):
-        """Return an instance of the CV class, which is responsible for validating the metadata."""
-        return self.cv(**kwargs)
+    def to_row(self, attrs) -> List:
+        """Return attribute values."""
+        return [attrs[k] for k in self.cv.global_attributes()] + \
+               [[vd[k] for vd in attrs["variables"]] for k in self.cv.variable_attributes()]
 
-    def aslist(self, entry, asset):
-        """Return tuple of values."""
-        d = asdict(entry)
-        d[self.asset_attribute] = asset
-        return [d[k] for k in self.header()]
+    def get_attrs(self, xml: bytes) -> dict:
+        """Extract metadata attributes defined by CV from NcML file.
 
-    def parse(self, url):
-        """Return a table including a header and rows of attribute values based on CV.
+        Parameters
+        ----------
+        xml : bytes
+          NcML content.
         """
-        try:
-            cat = TDSCatalog(url)
-        except ParseError as err:
-            raise ConnectionError(f"Could not open {url}\n") from err
+        # Create Element Node
+        elem = ncml.to_element(xml)
 
-        table = [self.header()]
-        for name, ds in tds.walk(cat, depth=None):
-            attrs = tds.attrs_from_ds(ds)
+        # Parse and validate datamodel
+        dm = self.cv.from_orm(elem)
 
-            # Global attributes
-            g_val = {k: attrs.get(k, "NA") for k in self.cv.global_attributes()}
+        return dm.dict()
 
-            # Variable attributes (lists)
-            v_val = defaultdict(list)
-            for key in self.cv.variable_attributes():
-                k = key.split("variable_")[1]
-                for vk, vd in attrs["__variable__"].items():
-                    if k in vd:
-                        v_val[key].append(vd[k])
-                    elif k == "name":
-                        v_val[key].append(vk)
-                    else:
-                        v_val[key].append("NA")
+    def catalog(self, iterator: Iterator) -> List:
+        """Create catalog entries by walking through iterator."""
+        out = [self.header()]
 
-            # Spec validation
-            entry = self.validate(**g_val, **v_val)
+        for item in iterator:
+            try:
+                attrs = self.get_attrs(item)
+                out.append(self.to_row(attrs))
 
-            # Asset path
-            asset = attrs["__services__"]["OPENDAP"]
+            except ValidationError as exc:
+                logger.warning(exc)
 
-            row = self.aslist(entry, asset=asset)
-            table.append(row)
+        if len(out) == 1:
+            raise ValueError("No valid data in table. Check logs for parsing errors.")
 
-        return table
+        return out
 
-    def to_catalog(self, table, path='.'):
-        """Write catalog table to disk."""
+    def save(self, catalog, path='.'):
+        """Write catalog table to disk.
+
+        An Intake-esm catalog has two pieces, an ESM-Collection json file that provides metadata about the catalog,
+        and a catalog csv file that lists the catalog content.
+        """
         import csv
         import json
         import gzip
@@ -124,12 +117,12 @@ class Intake:
 
         path = Path(path)
 
-        # Write spec
+        # Write ESM-Collection json file
         with open(path / f"{self.cid}.json", "w") as f:
             json.dump(self.to_intake_spec(), f)
 
-        # Write table in csv.gz format
+        # Write catalog data in csv.gz format
         with gzip.open(filename=path / self.catalog_fn, mode="wt") as f:
             w = csv.writer(f)
-            for row in table:
+            for row in catalog:
                 w.writerow(row)
