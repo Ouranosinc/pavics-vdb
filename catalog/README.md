@@ -14,7 +14,14 @@ To ensure catalog clarity, it is important that attributes are described as much
 
 Each catalog type (e.g. reanalysis) defines a _data model_, a representation of the attributes that make up a catalog entry. This data model is defined using pydantic, which makes it easy to impose rules and restrictions to the values entered in the catalog. It is possible, for example,  to constrain an attribute to a type, a list of possibilities or a regular expression. 
 
-The definition of CVs for attributes uses `pyessv`, the library underlying metadata validation in ES-DOC. The `pyessv-archive` repository is cloned locally and loaded by pyessv at import time. pyessv defines a naming hierarchy: authority, scope, collection, term. Within a data model, each attribute bound by a CV is typed as an `Enum`, with a list of _terms_ taken from a pyessv _collection_, for example:
+The definition of CVs for attributes uses `pyessv`, the library underlying metadata validation in ES-DOC. The `pyessv-archive` repository first needs to be cloned locally before being loaded by `pyessv` at import time. 
+
+```bash
+mkdir -p ~/.esdoc 
+git clone https://github.com/ES-DOC/pyessv-archive.git ~/.esdoc/pyessv-archive
+```
+
+`pyessv` defines a naming hierarchy: authority, scope, collection, term. Within a data model, each attribute bound by a CV is typed as an `Enum`, with a list of _terms_ taken from a `pyessv` _collection_, for example:
 
 ```python
 import pyessv
