@@ -44,7 +44,6 @@
       "value": "CMIP5",
       "type": "String"
     },
-    "bias_adjustment"
     "bias_adjustment_method": {
       "value":"Quantile Delta Mapping",
       "type": "String"
