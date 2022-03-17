@@ -5,7 +5,7 @@
 		"license": {"value": "https://pcmdi.llnl.gov/mips/cmip5/terms-of-use.html", "type": "String"},
 		"attribution": {"value": "https://pcmdi.llnl.gov/mips/cmip5/citation.html", "type": "String"}
 	},
-	"location": "/pavics-data/cmip5/",
+	"location": "/pavics-data/disk2/cmip5/",
 	"ncml_type": "cmip5-multirun-batch-model",
 	"experiments": ["historical+rcp45","historical+rcp85"],
 	"variables": ["tasmin","tasmax","tas","pr"],

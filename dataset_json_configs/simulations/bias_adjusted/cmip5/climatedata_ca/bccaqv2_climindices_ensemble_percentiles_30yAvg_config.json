@@ -44,6 +44,7 @@
       "value": "CMIP5",
       "type": "String"
     },
+    "bias_adjustment"
     "bias_adjustment_method": {
       "value":"Quantile Delta Mapping",
       "type": "String"
@@ -70,7 +71,7 @@
     }
 
   },
-  "location": "/pavics-data/cccs_portal/indices/Final/BCCAQv2/",
+  "location": "/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/",
   "ncml_type": "climatedata.ca",
   "experiments": [
     "rcp26", "rcp45", "rcp85"
