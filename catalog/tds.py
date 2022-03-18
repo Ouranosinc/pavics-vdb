@@ -3,6 +3,7 @@ from functools import lru_cache
 from loguru import logger
 from siphon.catalog import TDSCatalog
 from xml.etree.ElementTree import ParseError, Element
+from typing import Iterable
 
 
 def _walk(cat, depth=1):
@@ -28,14 +29,15 @@ def _walk(cat, depth=1):
             yield from _walk(child, depth=depth-1)
 
 
-def walk(url, max_iterations=1E6):
-    """Return generator walking through a THREDDS Data Server catalog, and yield XML nodes built from the NcML
-    service.
+def walk(url: str, max_iterations: int = 1E6) -> Iterable[bytes]:
+    """Return generator walking through a THREDDS Data Server catalog, and yield NcML file content.
 
     Parameters
     ----------
     url : str
       Thredds catalog url.
+    max_iterations : int
+      Maximum number of values returned by iterator.
 
     Returns
     -------
