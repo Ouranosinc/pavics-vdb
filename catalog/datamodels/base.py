@@ -32,6 +32,8 @@ class NcMLParser(GetterDict):
     Use this class by assigning it to the `getter_dict` attribute of pydantic models' `Config` class, along with
     `orm_mode=True`. It allows pydantic models to ingest an `lxml.etree.Element` using the `from_orm` method.
 
+    Class attributes can either be a xpath expression string, or a function taking an `Element` input.
+
     Example
     -------
     class DataParser(NcMLParser):
@@ -50,20 +52,24 @@ class NcMLParser(GetterDict):
     """
     _ns = ncml.NS
     _default = staticmethod(ncml.attribute)
+    variables = staticmethod(ncml.get_variables)
 
-    def expr(self, key: str):
-        """Return xpath expression stored in class attributes.
-        """
-        return getattr(self, key, self._default(key))
+    def xpath(self, expr, default):
+        out = self._obj.xpath(expr, namespaces=self._ns)
+        return out[0] if out else default
 
     def get(self, key, default):
         """Return XML element."""
-        if key == "variables":
-            return ncml.get_variables(self._obj) or default
+        getter = getattr(self, key, self._default(key))
 
-        expr = self.expr(key)
-        out = self._obj.xpath(expr, namespaces=self._ns)
-        return out[0] if out else default
+        if isinstance(getter, str):
+            return self.xpath(getter, default)
+
+        elif callable(getter):
+            return getter(self._obj) or default
+
+        else:
+            raise ValueError
 
 
 class PublicParser(NcMLParser):
