@@ -22,7 +22,7 @@
         </netcdf>
         <netcdf>
             <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-                <scan location="/pavics-data/ECMWF/ERA5/era5-single-levels/GLOBAL/1hr/tas" regExp="pr.*\.nc$" subdirs="false"/>
+                <scan location="/pavics-data/ECMWF/ERA5/era5-single-levels/GLOBAL/1hr/pr" regExp="pr.*\.nc$" subdirs="false"/>
                 <variable name="pr" orgName="tp" />
             </aggregation>
         </netcdf>
