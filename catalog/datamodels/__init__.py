@@ -13,3 +13,4 @@ from .reanalysis import Reanalysis
 from .gridobs import GridObs
 from .stationobs import StationObs
 from .forecast import Forecast
+from .cq2 import CQ2

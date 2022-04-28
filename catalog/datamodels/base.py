@@ -60,6 +60,8 @@ class NcMLParser(GetterDict):
 
     def get(self, key, default):
         """Return XML element."""
+        # getattr(self._obj, key, default)
+
         getter = getattr(self, key, self._default(key))
 
         if isinstance(getter, str):
@@ -96,7 +98,7 @@ class CFVariable(BaseModel):
     name: str
     standard_name: Optional[str]
     long_name: str
-    units: str
+    units: Optional[str]
 
     class Config:
         orm_mode = True

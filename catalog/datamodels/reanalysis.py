@@ -19,7 +19,9 @@ class Reanalysis(Public):
     dataset_id: str
 
 
+    # domain
+    # processing_level
     # assimilation_algorithm
     # resolution
     # areal_coverage
-    # frequency (time averaging)
+    # frequency

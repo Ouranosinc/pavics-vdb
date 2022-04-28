@@ -1,5 +1,5 @@
-from datamodels import REGISTRY
-from config import TDS_ROOT, CATALOG_TDS_PATH, CATALOG_OUTPATH, LOGFILE, log_config
+from .datamodels import REGISTRY
+from .config import TDS_ROOT, CATALOG_TDS_PATH, CATALOG_OUTPATH, LOGFILE, log_config
 import click
 
 collections = list(REGISTRY.keys())
@@ -26,9 +26,8 @@ def intake_cli(collection, output):
 
 def create_intake_catalog(collection, output):
     """Parse metadata from TDS catalog and write intake spec and csv to disk."""
-    import ncml
-    from intake_ingestion.intake_converter import Intake
-    from tds import walk
+    from .intake_ingestion.intake_converter import Intake
+    from .tds import walk
     from loguru import logger
 
     logger.configure(**log_config)
