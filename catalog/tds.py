@@ -1,4 +1,7 @@
-"""Utility function to parse metadata from a THREDDS Data Server catalog."""
+"""Utility function to parse metadata from a THREDDS Data Server catalog.
+
+To list all entries in a catalog, use `cat.datasets`.
+"""
 from functools import lru_cache
 from loguru import logger
 from siphon.catalog import TDSCatalog

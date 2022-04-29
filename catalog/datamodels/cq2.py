@@ -8,7 +8,7 @@ in the parser's init.
 
 Notes
 -----
-The CQ2_CVs need to be accessible from ... ?
+The CQ2_CVs need to be accessible from environment variable `CVS_PATH`.
 
 References
 ----------
@@ -125,4 +125,6 @@ class CQ2(Public):
     class Config:
         orm_mode = True
         getter_dict = CQ2Parser
+
+
 
