@@ -17,6 +17,8 @@
 
 
 # List of env var names containing writable paths required by the command.
+# User running in the docker container will need write access to all the
+# following writable paths.
 LAUNCH_CONTAINER_ENV_VAR_PATH_LIST=" \
   ENV_VAR_1 \
   ENV_VAR_2 \
