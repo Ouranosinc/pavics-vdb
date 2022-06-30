@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/SEA_LEVEL_RISE/Decadal_CMIP5_ensemble-percentiles_allrcps_2006-2100_slr_YS_final.nc">
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/SEA_LEVEL_RISE/Decadal_CMIP5_ensemble-percentiles_allrcps_2006-2100_slr_YS_final.nc">
 	<remove name="history" type="attribute"></remove>
 	<attribute name="title" type="String" value="Climatedata.ca : Relative sea-level projections for Canada based on the IPCC Fifth Assessment Report and the NAD83v70VG national crustal velocity model"></attribute>
 	<attribute name="institution" type="String" value="Natural Resources Canada"></attribute>

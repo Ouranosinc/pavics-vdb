@@ -70,7 +70,7 @@
     }
 
   },
-  "location": "/pavics-data/cccs_portal/indices/Final/BCCAQv2/",
+  "location": "/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/",
   "ncml_type": "climatedata.ca",
   "experiments": [
     "allrcps"
