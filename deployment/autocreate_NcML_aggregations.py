@@ -8,14 +8,14 @@ import xncml
 import calendar
 import xarray as xr
 home = os.environ['HOME']
-pavics_root = f"{home}/boreas/boreas"
+pavics_root = f"{home}/pavics/datasets"
 
 
 def main():
 
     overwrite_to_tmp = True
 
-    dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('bccaqv2*_climindices*.json')
+    dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('*ESPO-R*.json')
     for dataset in dataset_configs:
         with open(dataset, 'r') as f:
             ncml_modify = json.load(f)
@@ -363,6 +363,51 @@ def ncml_create_datasets(ncml_template=None, config=None):
 
                 ncmls[f'day_{center.name}_{exp}_r1i1p1_na10kgrid_qm-moving-50bins-detrend_1950-2100'] = ncml1
                 del ncml1
+        return ncmls
+
+    elif config['ncml_type'] == "ouranos-ESPO-R5":
+
+        ncmls = {}
+        location = config['location'].replace('pavics-data', pavics_root)
+        for sim in [x for x in p.Path(location).iterdir() if x.is_dir()]:
+
+            agg_dict = {"@type": "Union"}
+            agg = ncml_add_aggregation(agg_dict)
+            # add runs
+            agg['netcdf'] = []
+            freq = config['frequency']
+            realm = config['realm']
+            rcp = "rcp45" if "rcp45" in sim.name else "rcp85"
+            var_flag = [len(list(sim.glob(f"*{v}_*"))) > 0 for v in config['variables']]
+
+            if all(var_flag):
+
+                netcdf = ncml_netcdf_container()
+                # ensure all variables are present
+                for v in config['variables']:
+                    netcdf2 = ncml_netcdf_container()
+                    netcdf2['aggregation'] = ncml_add_aggregation(
+                        {'@dimName': 'time', '@type': 'joinExisting', '@recheckEvery': '1 day'})
+                    netcdf2['aggregation']['scan'] = []
+                    scan = {'@location': sim.as_posix().replace(pavics_root, 'pavics-data'), '@subdirs': 'false',
+                            '@suffix': f'{v}_*.nc'}
+                    netcdf2['aggregation']['scan'].append(ncml_add_scan(scan))
+                    netcdf2['aggregation']['remove'] = []
+                    netcdf2['aggregation']['remove'].append({"@name": "ts", "@type": "variable"})
+                    netcdf2['aggregation']['remove'].append({"@name":"time_vectors","@type":"variable"})
+
+                    agg['netcdf'].append(netcdf2)
+                    del netcdf2
+
+            ncml1 = xncml.Dataset(ncml_template)
+            ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
+            attrs = config['attribute']
+
+            ncml1.ncroot['netcdf']['attribute'] = ncml_add_attributes(attrs)
+            ncml1.ncroot['netcdf']['aggregation'] = agg
+
+            ncmls[sim] = ncml1
+            del ncml1
         return ncmls
 
     elif config['ncml_type'] == "climatedata.ca":
