@@ -1,0 +1,26 @@
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <attribute name="title" type="String" value="ERA5-Land : daily" />
+    <attribute name="type" type="String" value="reanalysis" />
+    <attribute name="institution" type="String" value="European Centre for Medium-Range Weather Forecasts" />
+    <attribute name="institution_id" type="String" value="ECMWF" />
+    <attribute name="dataset_id" type="String" value="ERA5-Land" />
+    <attribute name="abstract" type="String" value="ERA5-Land provides hourly high resolution information of surface variables. The data is a replay of the land component of the ERA5 climate reanalysis with a finer spatial resolution: ~9km grid spacing. ERA5-Land includes information about uncertainties for all variables at reduced spatial and temporal resolutions. The model used in the production of ERA5-Land is the tiled ECMWF Scheme for Surface Exchanges over Land incorporating land surface hydrology (H-TESSEL)." />
+    <attribute name="dataset_description" type="String" value="https://www.ecmwf.int/en/era5-land"></attribute>
+    <attribute name="license_type" type="String" value="permissive" />
+    <attribute name="license" type="String" value="Please acknowledge the use of ERA5-Land as stated in the Copernicus C3S/CAMS License agreement http://apps.ecmwf.int/datasets/licences/copernicus/" />
+    <attribute name="attribution" type="String" value="Contains modified Copernicus Climate Change Service Information 2022. Neither the European Commission nor ECMWF is responsible for any use that may be made of the Copernicus Information or Data it contains."/>
+    <attribute name="citation" type="String" value="Muñoz Sabater, J., (2021): ERA5-Land hourly data from 1950 to 1980. Copernicus Climate Change Service (C3S) Climate Data Store (CDS). (Accessed on 2022.06.07)" />
+    <attribute name="doi" type="String" value="https://doi.org/10.24381/cds.e2161bac"/>
+    <aggregation type="union">
+        <netcdf>
+            <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+                <scan location="/pavics-data/ecmwf/ERA5-Land/NAM/1hr/tas" regExp="tas_.*\.nc$" subdirs="false"/>
+            </aggregation>
+        </netcdf>
+        <netcdf>
+            <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+                <scan location="/pavics-data/ecmwf/ERA5-Land/NAM/1hr/pr" regExp="pr_.*\.nc$" subdirs="false"/>
+            </aggregation>
+        </netcdf>
+    </aggregation>
+</netcdf>
