@@ -1,8 +1,8 @@
 <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
     <attribute name="title" type="String" value="ERA5-Land : daily" />
     <attribute name="type" type="String" value="reanalysis" />
-    <attribute name="institution" type="String" value="European Centre for Medium-Range Weather Forecasts" />
-    <attribute name="institution_id" type="String" value="ECMWF" />
+    <attribute name="institute" type="String" value="European Centre for Medium-Range Weather Forecasts" />
+    <attribute name="institute_id" type="String" value="ECMWF" />
     <attribute name="dataset_id" type="String" value="ERA5-Land" />
     <attribute name="abstract" type="String" value="ERA5-Land provides hourly high resolution information of surface variables. The data is a replay of the land component of the ERA5 climate reanalysis with a finer spatial resolution: ~9km grid spacing. ERA5-Land includes information about uncertainties for all variables at reduced spatial and temporal resolutions. The model used in the production of ERA5-Land is the tiled ECMWF Scheme for Surface Exchanges over Land incorporating land surface hydrology (H-TESSEL)." />
     <attribute name="dataset_description" type="String" value="https://www.ecmwf.int/en/era5-land"></attribute>
