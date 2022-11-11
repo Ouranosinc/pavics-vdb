@@ -371,43 +371,42 @@ def ncml_create_datasets(ncml_template=None, config=None):
         location = config['location'].replace('pavics-data', pavics_root)
         for sim in [x for x in p.Path(location).iterdir() if x.is_dir()]:
 
-            agg_dict = {"@type": "Union"}
-            agg = ncml_add_aggregation(agg_dict)
+
             # add runs
-            agg['netcdf'] = []
+
             freq = config['frequency']
             realm = config['realm']
-            rcp = "rcp45" if "rcp45" in sim.name else "rcp85"
-            var_flag = [len(list(sim.glob(f"*{v}_*"))) > 0 for v in config['variables']]
+            for rcp in [r.split('historical+')[-1] for r in config['experiments']]:
 
-            if all(var_flag):
+                var_flag = [len(list(sim.rglob(f"*{v}_*_{rcp}_*.nc"))) >0 for v in config['variables']]
+                agg_dict = {"@type": "Union"}
+                agg = ncml_add_aggregation(agg_dict)
+                agg['netcdf'] = []
+                if all(var_flag):
 
-                netcdf = ncml_netcdf_container()
-                # ensure all variables are present
-                for v in config['variables']:
-                    netcdf2 = ncml_netcdf_container()
-                    netcdf2['aggregation'] = ncml_add_aggregation(
-                        {'@dimName': 'time', '@type': 'joinExisting', '@recheckEvery': '1 day'})
-                    netcdf2['aggregation']['scan'] = []
-                    scan = {'@location': sim.as_posix().replace(pavics_root, 'pavics-data'), '@subdirs': 'false',
-                            '@suffix': f'{v}_*.nc'}
-                    netcdf2['aggregation']['scan'].append(ncml_add_scan(scan))
-                    netcdf2['aggregation']['remove'] = []
-                    netcdf2['aggregation']['remove'].append({"@name": "ts", "@type": "variable"})
-                    netcdf2['aggregation']['remove'].append({"@name":"time_vectors","@type":"variable"})
+                    netcdf = ncml_netcdf_container()
+                    # ensure all variables are present
+                    for v in config['variables']:
+                        netcdf2 = ncml_netcdf_container()
+                        netcdf2['aggregation'] = ncml_add_aggregation(
+                            {'@dimName': 'time', '@type': 'joinExisting', '@recheckEvery': '1 day'})
+                        netcdf2['aggregation']['scan'] = []
+                        scan = {'@location': sim.as_posix().replace(pavics_root, 'pavics-data'), '@subdirs': 'true',
+                                '@suffix': f'{v}_*_{rcp}_*.nc'}
+                        netcdf2['aggregation']['scan'].append(ncml_add_scan(scan))
 
-                    agg['netcdf'].append(netcdf2)
-                    del netcdf2
+                        agg['netcdf'].append(netcdf2)
+                        del netcdf2
 
-            ncml1 = xncml.Dataset(ncml_template)
-            ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
-            attrs = config['attribute']
+                    ncml1 = xncml.Dataset(ncml_template)
+                    ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
+                    attrs = config['attribute']
 
-            ncml1.ncroot['netcdf']['attribute'] = ncml_add_attributes(attrs)
-            ncml1.ncroot['netcdf']['aggregation'] = agg
+                    ncml1.ncroot['netcdf']['attribute'] = ncml_add_attributes(attrs)
+                    ncml1.ncroot['netcdf']['aggregation'] = agg
 
-            ncmls[sim] = ncml1
-            del ncml1
+                    ncmls[f"{sim}_{rcp}"] = ncml1
+                    del ncml1
         return ncmls
 
     elif config['ncml_type'] == "climatedata.ca":
