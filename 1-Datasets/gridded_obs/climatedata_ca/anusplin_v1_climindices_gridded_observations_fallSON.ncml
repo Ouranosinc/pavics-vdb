@@ -16,42 +16,42 @@
 	<aggregation type="Union">
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/ANUSPLIN_v1/prcptot/QS-DEC/nrcan_canada_1950-2013_prcptot_QS-DEC_fallSON.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/ANUSPLIN_v1/prcptot/QS-DEC/nrcan_canada_1950-2013_prcptot_QS-DEC_fallSON.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/ANUSPLIN_v1/r10mm/QS-DEC/nrcan_canada_1950-2013_r10mm_QS-DEC_fallSON.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/ANUSPLIN_v1/r10mm/QS-DEC/nrcan_canada_1950-2013_r10mm_QS-DEC_fallSON.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/ANUSPLIN_v1/r1mm/QS-DEC/nrcan_canada_1950-2013_r1mm_QS-DEC_fallSON.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/ANUSPLIN_v1/r1mm/QS-DEC/nrcan_canada_1950-2013_r1mm_QS-DEC_fallSON.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/ANUSPLIN_v1/r20mm/QS-DEC/nrcan_canada_1950-2013_r20mm_QS-DEC_fallSON.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/ANUSPLIN_v1/r20mm/QS-DEC/nrcan_canada_1950-2013_r20mm_QS-DEC_fallSON.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/ANUSPLIN_v1/rx1day/QS-DEC/nrcan_canada_1950-2013_rx1day_QS-DEC_fallSON.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/ANUSPLIN_v1/rx1day/QS-DEC/nrcan_canada_1950-2013_rx1day_QS-DEC_fallSON.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/ANUSPLIN_v1/tg_mean/QS-DEC/nrcan_canada_1950-2013_tg_mean_QS-DEC_fallSON.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/ANUSPLIN_v1/tg_mean/QS-DEC/nrcan_canada_1950-2013_tg_mean_QS-DEC_fallSON.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/ANUSPLIN_v1/tn_mean/QS-DEC/nrcan_canada_1950-2013_tn_mean_QS-DEC_fallSON.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/ANUSPLIN_v1/tn_mean/QS-DEC/nrcan_canada_1950-2013_tn_mean_QS-DEC_fallSON.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/ANUSPLIN_v1/tx_mean/QS-DEC/nrcan_canada_1950-2013_tx_mean_QS-DEC_fallSON.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/ANUSPLIN_v1/tx_mean/QS-DEC/nrcan_canada_1950-2013_tx_mean_QS-DEC_fallSON.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 	</aggregation>

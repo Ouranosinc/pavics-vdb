@@ -135,7 +135,7 @@ class Reanalysis(CV):
     institute_id: str
     institute: str
     dataset_id: str
-
+    frequency: str
 
     # assimilation_algorithm
     # resolution

@@ -26,42 +26,42 @@
 	<aggregation type="Union">
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tx_mean/allrcps_ensemble_stats/QS-DEC/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_tx_mean_QS-DEC_summerJJA.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/tx_mean/allrcps_ensemble_stats/QS-DEC/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_tx_mean_QS-DEC_summerJJA.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tn_mean/allrcps_ensemble_stats/QS-DEC/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_tn_mean_QS-DEC_summerJJA.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/tn_mean/allrcps_ensemble_stats/QS-DEC/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_tn_mean_QS-DEC_summerJJA.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/tg_mean/allrcps_ensemble_stats/QS-DEC/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_tg_mean_QS-DEC_summerJJA.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/tg_mean/allrcps_ensemble_stats/QS-DEC/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_tg_mean_QS-DEC_summerJJA.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/prcptot/allrcps_ensemble_stats/QS-DEC/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_prcptot_QS-DEC_summerJJA.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/prcptot/allrcps_ensemble_stats/QS-DEC/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_prcptot_QS-DEC_summerJJA.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/rx1day/allrcps_ensemble_stats/QS-DEC/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_rx1day_QS-DEC_summerJJA.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/rx1day/allrcps_ensemble_stats/QS-DEC/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_rx1day_QS-DEC_summerJJA.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/r1mm/allrcps_ensemble_stats/QS-DEC/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_r1mm_QS-DEC_summerJJA.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/r1mm/allrcps_ensemble_stats/QS-DEC/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_r1mm_QS-DEC_summerJJA.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/r10mm/allrcps_ensemble_stats/QS-DEC/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_r10mm_QS-DEC_summerJJA.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/r10mm/allrcps_ensemble_stats/QS-DEC/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_r10mm_QS-DEC_summerJJA.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/cccs_portal/indices/Final/BCCAQv2/r20mm/allrcps_ensemble_stats/QS-DEC/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_r20mm_QS-DEC_summerJJA.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/r20mm/allrcps_ensemble_stats/QS-DEC/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_r20mm_QS-DEC_summerJJA.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 	</aggregation>

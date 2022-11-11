@@ -75,7 +75,7 @@
       "type": "String"
     }
   },
-  "location": "/pavics-data/ouranos/cb-oura-1.0",
+  "location": "/pavics-data/disk2/ouranos/cb-oura-1.0",
   "ncml_type": "ouranos-cb-oura-1.0",
   "experiments": [
     "historical+rcp45",
