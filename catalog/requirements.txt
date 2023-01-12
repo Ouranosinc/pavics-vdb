@@ -2,3 +2,4 @@ siphon
 lxml
 click
 loguru
+threddsclient

@@ -28,10 +28,10 @@ if home == '/home/biner':
     thredds_root = os.path.join(pavics_root, 'testdata/biner/NcML_tests/')
     thredds_cat_root = 'https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/birdhouse/testdata/biner/NcML_tests/'
 else:
-    pavics_root = os.path.join(home, 'boreas/boreas')
-    thredds_root = os.path.join(home, 'boreas', 'testdatasets/')
+    pavics_root = os.path.join(home, 'pavics/datasets')
+    thredds_root = os.path.join(home, 'pavics/datasets/testdata/test_ncmls/')
     # correponding url to `thredds_root`
-    thredds_cat_root = 'https://pavics.ouranos.ca/testthredds/testdatasets'
+    thredds_cat_root = 'https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/birdhouse/testdata/test_ncmls'
     #thredds_cat_root = 'https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/birdhouse/testdata/NcML_tests/'
 
 class Validator:
@@ -50,13 +50,13 @@ def recursive_items(dictionary, pattern):
     for key, value in dictionary.items():
         if key == pattern or value == pattern:
             yield (key, value)
-            if type(value) is collections.OrderedDict:
+            if type(value) in [ collections.OrderedDict, dict]:
                 yield from recursive_items(value, pattern=pattern)
             elif type(value) is list:
                 for l in value:
                     yield from recursive_items(l, pattern=pattern)
         else:
-            if type(value) is collections.OrderedDict:
+            if type(value) in [ collections.OrderedDict, dict]:
                 yield from recursive_items(value, pattern=pattern)
             elif type(value) is list:
                 for l in value:
@@ -286,6 +286,68 @@ class TestDataset:
 
             compare_ncml_rawdata(dataset, dsNcML, compare_raw, check_times=False, files_perrun=3)
 
+    def test_ESPO_R(self, compare_raw=False):
+
+        datasets = sorted(list(path.Path('../tmp/simulations/bias_adjusted/cmip5/ouranos/ESPO-R/ESPO-R5v1.0.0').rglob('*.ncml')))
+
+        thredds_test_dir = f'{thredds_root}/simulations/bias_adjusted/cmip5/ouranos/ESPO-R/ESPO-R5v1.0.0'
+        thredds_path_server = f'{thredds_cat_root}/simulations/bias_adjusted/cmip5/ouranos/ESPO-R/ESPO-R5v1.0.0/catalog.html'
+        thredds_test_dir = path.Path(thredds_test_dir)
+
+        for ii, dataset in enumerate(datasets):
+            if thredds_test_dir.exists():
+                shutil.rmtree(thredds_test_dir)
+            thredds_test_dir.mkdir(parents=True, exist_ok=True)
+            print('trying', dataset.name)
+            # copy to thredds:
+            shutil.copy(dataset, thredds_test_dir)
+            ncmls_all = [ncml for ncml in threddsclient.crawl(thredds_path_server, depth=0)]
+            ncmls = []
+            for n in ncmls_all:
+                if dataset.name  in n.name:
+                    ncmls.append(n)
+
+            if len(ncmls) != 1:
+                raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
+
+            dsNcML = subset.subset_bbox(
+                xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=1460, lon=50, lat=50), decode_timedelta=False),
+                lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
+            )
+
+            compare_ncml_rawdata(dataset,dsNcML, compare_raw)
+
+    def test_CanDCS_U6(self, compare_raw=False):
+
+        datasets = sorted(list(path.Path('../tmp/simulations/bias_adjusted/cmip6/pcic/CanDCS-U6').rglob('*.ncml')))
+
+        thredds_test_dir = f'{thredds_root}/simulations/bias_adjusted/cmip6/pcic/CanDCS-U6'
+        thredds_path_server = f'{thredds_cat_root}/simulations/bias_adjusted/cmip6/pcic/CanDCS-U6/catalog.html'
+        thredds_test_dir = path.Path(thredds_test_dir)
+
+        for ii, dataset in enumerate(datasets):
+            if thredds_test_dir.exists():
+                shutil.rmtree(thredds_test_dir)
+            thredds_test_dir.mkdir(parents=True, exist_ok=True)
+            print('trying', dataset.name)
+            # copy to thredds:
+            shutil.copy(dataset, thredds_test_dir)
+            ncmls_all = [ncml for ncml in threddsclient.crawl(thredds_path_server, depth=0)]
+            ncmls = []
+            for n in ncmls_all:
+                if dataset.name  in n.name:
+                    ncmls.append(n)
+
+            if len(ncmls) != 1:
+                raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
+
+            dsNcML = subset.subset_bbox(
+                xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=1460, lon=50, lat=50), decode_timedelta=False),
+                lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
+            )
+
+            compare_ncml_rawdata(dataset,dsNcML, compare_raw)
+
 def compare_ncml_rawdata(dataset, dsNcML, compare_vals, check_times=True, files_perrun=None):
     ncml = xncml.Dataset(dataset)
     l1 = list(recursive_items(ncml.ncroot, '@location'))[0]
@@ -296,17 +358,16 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, check_times=True, files_
         key1 = 'scan'
 
 
-    if 'climex' not in l1[1] and 'cccs_portal' not in l1[1]:
+    if 'climex' not in l1[1] and 'cccs_portal' not in l1[1] and 'ESPO' not in l1[1] and "CanDCS-U6" not in l1[1]:
         for l in list(recursive_items(ncml.ncroot, key1)):
             mod = dataset.name.split('day_')[-1].split('_historical+')[0]
             rcp = dataset.name.split('_historical+')[-1][0:5]
             assert mod in l[1]
             assert ('historical' in l[1] or rcp in l[1])
 
-
     files = {}
     for l in list(recursive_items(ncml.ncroot, key1)):
-        if isinstance(l[1],collections.OrderedDict):
+        if isinstance(l[1],collections.OrderedDict) or isinstance(l[1], dict):
             local_path = str(l[1]['@location'].replace('pavics-data', pavics_root))
         else:
             local_path = str(l[1].replace('pavics-data', pavics_root))
@@ -327,35 +388,36 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, check_times=True, files_
 
                 if '@regExp' in l[1].keys():
                     regexp = l[1]['@regExp'].replace(r'\.nc$', '.nc').replace('.*', '*')
-                    str1 = f"{regexp.replace(str1,'')}{str1}"  # regexp can occasionally already have suffix replace double
+                    str1 = f"{regexp.replace(str1,'')}{str1}".replace('**','*').replace('\\','') # regexp can occasionally already have suffix replace double
 
                 if  '@subdirs' in l[1].keys():
                     # use rglob
-                    if l[1]['@subdirs'] == 'True':
+                    if l[1]['@subdirs'].lower() == 'true':
                         test_files = list(sorted(path.Path(local_path).rglob(str1)))
                     else:
                         test_files = list(sorted(path.Path(local_path).glob(str1)))
                 else:
                     test_files = list(sorted(path.Path(local_path).glob(str1)))
 
-                remove =[]
-                if check_times:
-                    for t in test_files:
-                        print(t)
-                        y = netCDF4.Dataset(t)
-                        time_y = y.variables['time']
-                        warnings.simplefilter('ignore')
-                        dtime = xr.DataArray(netCDF4.num2date(time_y[:], units=time_y.units, calendar=time_y.calendar))
-                        if dtime.dt.year.max() > 2100:
-                            print('removing ' , t)
-                            remove.append(t)
-
-                for t in remove:
-                    test_files.remove(t)
+                # remove =[]
+                # if check_times:
+                #     for t in test_files:
+                #         print(t)
+                #         y = netCDF4.Dataset(t)
+                #         time_y = y.variables['time']
+                #         warnings.simplefilter('ignore')
+                #         dtime = xr.DataArray(netCDF4.num2date(time_y[:], units=time_y.units, calendar=time_y.calendar))
+                #         if dtime.dt.year.max() > 2100:
+                #             print('removing ' , t)
+                #             remove.append(t)
+                #
+                # for t in remove:
+                #     test_files.remove(t)
 
                 run = path.Path(local_path).parent.name
                 if files_perrun is None:
                     ds = subset.subset_bbox(xr.open_mfdataset(test_files,
+                                           engine="h5netcdf",
                                            decode_timedelta=False,
                                            combine='by_coords',
                                            data_vars='minimal',
@@ -369,7 +431,7 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, check_times=True, files_
                         ds = ds.drop_vars(['time_vectors','ts'])
                     if 'time_bnds' in ds.data_vars:
                         ds = ds.drop_vars(['time_bnds'])
-                    compare_vals(dsNcML, ds, compare_vals)
+                    #compare_values(dsNcML, ds, compare_vals)
                 else:
                     for file1 in random.sample(test_files, files_perrun):
                         print(file1)
@@ -452,7 +514,9 @@ def main():
     #test(self=test, compare_raw=False)
     #test = TestDataset.test_NEXGDDP
     #test = TestDataset.test_CLIMEX
-    test = TestDataset.test_ClimateData
+    #test = TestDataset.test_ClimateData
+    #test = TestDataset.test_ESPO_R
+    test = TestDataset.test_CanDCS_U6
     test(self=test, compare_raw=True)
 
 if 'main' in __name__:

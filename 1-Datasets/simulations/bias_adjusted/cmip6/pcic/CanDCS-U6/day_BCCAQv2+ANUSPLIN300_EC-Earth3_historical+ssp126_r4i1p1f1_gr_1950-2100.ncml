@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+	<remove name="product" type="attribute"></remove>
+	<remove name="downscaling_method" type="attribute"></remove>
+	<remove name="downscaling_method_id" type="attribute"></remove>
+	<remove name="downscaling_package_id" type="attribute"></remove>
+	<remove name="references" type="attribute"></remove>
+	<attribute name="title" type="String" value="PCIC/ECCC Canadian Downscaled Climate Scenarios – Univariate CMIP6"></attribute>
+	<attribute name="dataset_id" type="String" value="CanDCS-U6"></attribute>
+	<attribute name="type" type="String" value="GCM"></attribute>
+	<attribute name="processing" type="String" value="bias_adjusted"></attribute>
+	<attribute name="dataset_description" type="String" value="https://www.pacificclimate.org/data/statistically-downscaled-climate-scenarios"></attribute>
+	<attribute name="abstract" type="String" value="Statistically downscaled data (Bias Correction with Constructed Analogues and Quantile mapping, Version 2; BCCAQv2) derived from 26 CMIP6 global climate models and 3 Shared Socioeconomic Pathways (SSPs)."></attribute>
+	<attribute name="bias_adjustment_method" type="String" value="Quantile Delta Mapping"></attribute>
+	<attribute name="bias_adjustment_method_id" type="String" value="BCCAQv2"></attribute>
+	<attribute name="bias_adjustment_reference" type="String" value="Alex J. Cannon, Stephen R. Sobie, and Trevor Q. Murdock, 2015: Bias Correction of GCM Precipitation by Quantile Mapping: How Well Do Methods Preserve Changes in Quantiles and Extremes?. J. Climate, 28, 6938-6959."></attribute>
+	<attribute name="license_type" type="String" value="permissive"></attribute>
+	<attribute name="license" type="String" value="https://open.canada.ca/en/open-government-licence-canada"></attribute>
+	<attribute name="terms_of_use" type="String" value="Further terms of use at https://pacificclimate.org/data/statistically-downscaled-climate-scenarios."></attribute>
+	<attribute name="attribution" type="String" value="Citation information for this dataset can be found at https://pacificclimate.org/data/statistically-downscaled-climate-scenarios. "></attribute>
+	<aggregation type="Union">
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/pcic/CanDCS-U6/CMIP6_BCCAQv2/EC-Earth3" subdirs="true" regExp=".*tasmin_.*historical\+ssp126.*r4i1p1f1.*" suffix=".nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/pcic/CanDCS-U6/CMIP6_BCCAQv2/EC-Earth3" subdirs="true" regExp=".*tasmax_.*historical\+ssp126.*r4i1p1f1.*" suffix=".nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/pcic/CanDCS-U6/CMIP6_BCCAQv2/EC-Earth3" subdirs="true" regExp=".*pr_.*historical\+ssp126.*r4i1p1f1.*" suffix=".nc"></scan>
+			</aggregation>
+		</netcdf>
+	</aggregation>
+</netcdf>
