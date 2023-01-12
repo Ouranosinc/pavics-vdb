@@ -65,7 +65,7 @@
       "type": "String"
     }
   },
-  "location": "/pavics-data/nasa/nex_gddp/BCSD",
+  "location": "/pavics-data/disk2/nasa/nex_gddp/BCSD",
   "ncml_type": "nasa-nex_gddp-1.0",
   "experiments": [
     "historical+rcp45",

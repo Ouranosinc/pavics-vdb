@@ -56,7 +56,7 @@
       "type": "String"
     }
   },
-  "location": "/pavics-data/pcic/BCCAQv2",
+  "location": "/pavics-data/disk2/pcic/BCCAQv2",
   "ncml_type": "pcic-bccaqv2",
   "experiments": [
     "historical+rcp26",

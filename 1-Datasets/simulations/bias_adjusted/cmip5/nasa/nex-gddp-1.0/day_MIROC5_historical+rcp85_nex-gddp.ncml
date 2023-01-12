@@ -24,20 +24,20 @@
 	<aggregation type="Union">
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/nasa/nex_gddp/BCSD" regExp="tasmin_day_BCSD_historical_r1i1p1_MIROC5_.*\.nc$" subdirs="True" suffix=".nc"></scan>
-				<scan location="/pavics-data/nasa/nex_gddp/BCSD" regExp="tasmin_day_BCSD_rcp85_r1i1p1_MIROC5_.*\.nc$" subdirs="True" suffix=".nc"></scan>
+				<scan location="/pavics-data/disk2/nasa/nex_gddp/BCSD" regExp="tasmin_day_BCSD_historical_r1i1p1_MIROC5_.*\.nc$" subdirs="True" suffix=".nc"></scan>
+				<scan location="/pavics-data/disk2/nasa/nex_gddp/BCSD" regExp="tasmin_day_BCSD_rcp85_r1i1p1_MIROC5_.*\.nc$" subdirs="True" suffix=".nc"></scan>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/nasa/nex_gddp/BCSD" regExp="tasmax_day_BCSD_historical_r1i1p1_MIROC5_.*\.nc$" subdirs="True" suffix=".nc"></scan>
-				<scan location="/pavics-data/nasa/nex_gddp/BCSD" regExp="tasmax_day_BCSD_rcp85_r1i1p1_MIROC5_.*\.nc$" subdirs="True" suffix=".nc"></scan>
+				<scan location="/pavics-data/disk2/nasa/nex_gddp/BCSD" regExp="tasmax_day_BCSD_historical_r1i1p1_MIROC5_.*\.nc$" subdirs="True" suffix=".nc"></scan>
+				<scan location="/pavics-data/disk2/nasa/nex_gddp/BCSD" regExp="tasmax_day_BCSD_rcp85_r1i1p1_MIROC5_.*\.nc$" subdirs="True" suffix=".nc"></scan>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/nasa/nex_gddp/BCSD" regExp="pr_day_BCSD_historical_r1i1p1_MIROC5_.*\.nc$" subdirs="True" suffix=".nc"></scan>
-				<scan location="/pavics-data/nasa/nex_gddp/BCSD" regExp="pr_day_BCSD_rcp85_r1i1p1_MIROC5_.*\.nc$" subdirs="True" suffix=".nc"></scan>
+				<scan location="/pavics-data/disk2/nasa/nex_gddp/BCSD" regExp="pr_day_BCSD_historical_r1i1p1_MIROC5_.*\.nc$" subdirs="True" suffix=".nc"></scan>
+				<scan location="/pavics-data/disk2/nasa/nex_gddp/BCSD" regExp="pr_day_BCSD_rcp85_r1i1p1_MIROC5_.*\.nc$" subdirs="True" suffix=".nc"></scan>
 			</aggregation>
 		</netcdf>
 	</aggregation>
