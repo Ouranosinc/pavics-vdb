@@ -25,7 +25,7 @@ def refresh_testdata():
 
 def read_ncml(name):
     """Return test xml."""
-    return open(f"test_data/catalog/tds/{name}.ncml", "rb").read()
+    return open(f"tests/test_data/catalog/tds/{name}.ncml", "rb").read()
 
 
 def get_elem(name):
