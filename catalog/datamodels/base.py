@@ -94,9 +94,9 @@ class CFVariable(BaseModel):
     """Data model for netCDF variable attributes."""
 
     name: str
-    standard_name: Optional[str]
     long_name: str
-    units: str
+    standard_name: Optional[str]
+    units: Optional[str]
 
     class Config:
         orm_mode = True
