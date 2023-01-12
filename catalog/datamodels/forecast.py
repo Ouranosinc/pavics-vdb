@@ -3,7 +3,7 @@ Weather forecasts datasets catalog entry definition and validation rules.
 """
 
 from .base import register, Public, PublicParser
-from ncml import attribute, dimlen
+from ..ncml import attribute, dimlen
 
 
 class ForecastParser(PublicParser):

@@ -5,7 +5,7 @@ from pydantic import BaseModel, HttpUrl, constr, validator
 from pydantic.utils import GetterDict
 from enum import Enum
 import functools
-import ncml
+from .. import ncml
 from pathlib import Path
 import datetime as dt
 

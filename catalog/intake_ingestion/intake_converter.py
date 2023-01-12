@@ -17,7 +17,7 @@ https://intake-esm.readthedocs.io/en/latest/user-guide/multi-variable-assets.htm
 from typing import List, Iterator
 from pydantic import ValidationError
 from loguru import logger
-import ncml
+from .. import ncml
 
 ESMCAT_VERSION = "0.1.0"
 

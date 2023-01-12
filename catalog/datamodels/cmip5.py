@@ -12,7 +12,7 @@ CMIP5 CV: https://www.medcordex.eu/cmip5_data_reference_syntax.pdf
 from typing import Union, List
 import re
 from .base import register, Public, OrderedEnum, PublicParser, CFVariable
-from ncml import attribute
+from ..ncml import attribute
 from .cv_utils import collection2enum
 from pydantic import constr, validator
 import pyessv
