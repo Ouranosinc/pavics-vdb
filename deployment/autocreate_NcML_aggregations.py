@@ -563,7 +563,11 @@ def ncml_create_datasets(ncml_template=None, config=None):
                 ncml1 = xncml.Dataset(ncml_template)
                 ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
                 attrs = config['attribute']
+                if mod == "NorESM1-ME":
+                    attrs["missing driving_institution"] = {"value": "Norwegian Climate Center", "type": "String"}
+                    attrs["driving_institute_id"] = {"value": "NCC", "type": "String"}
                 ncml1.ncroot['netcdf']['attribute'] = ncml_add_attributes(attrs)
+
                 ncml1.ncroot['netcdf']['aggregation'] = agg
                 ncmls[f'{mod}_{exp}'] = ncml1
                 del ncml1
