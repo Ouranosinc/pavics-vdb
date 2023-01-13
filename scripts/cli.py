@@ -40,6 +40,11 @@ def create_intake_catalog(collection, output, log):
     logger.configure(**log_config)
     logger.info(f"Creating `{collection}` catalog.")
 
+    # Check that the different data models for a given collection are identical.
+    dms = CATALOG_TDS_PATH[collection].values()
+    if not unique_schemas(dms):
+        raise ValueError(f"Datamodels schemas for {collection} are not identical.")
+
     cat = []
     for path, dm in CATALOG_TDS_PATH[collection].items():
         url = TDS_ROOT + path + "/catalog.xml"
@@ -49,6 +54,13 @@ def create_intake_catalog(collection, output, log):
 
     logger.info(f"Saving catalog to disk at {output}")
     esmcat.save(cat, output)
+
+
+def unique_schemas(dms):
+    """Return True if datamodels have the same schema."""
+    from dataclasses import fields
+    schemas = [tuple(dm.schema().keys()) for dm in dms]
+    return len(set(schemas)) == 1
 
 
 if __name__ == '__main__':
