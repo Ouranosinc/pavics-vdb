@@ -38,6 +38,10 @@
     "license": {
       "value": "https://open.canada.ca/en/open-government-licence-canada",
       "type": "String"
+    },
+    "version": {
+      "value": "1.0",
+      "type": "String"
     }
   },
   "location": "/pavics-data/disk2/cccs_portal/indices/Final/ANUSPLIN_v1/",
