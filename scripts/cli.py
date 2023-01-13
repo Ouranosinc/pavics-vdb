@@ -40,13 +40,15 @@ def create_intake_catalog(collection, output, log):
     logger.configure(**log_config)
     logger.info(f"Creating `{collection}` catalog.")
 
-    url = TDS_ROOT + CATALOG_TDS_PATH[collection] + "/catalog.xml"
+    cat = []
+    for path, dm in CATALOG_TDS_PATH[collection].items():
+        url = TDS_ROOT + path + "/catalog.xml"
 
-    esmcat = Intake(cv=REGISTRY[collection])
-    catalog = esmcat.catalog(walk(url))
+        esmcat = Intake(cv=REGISTRY[dm])
+        cat.extend(esmcat.catalog(walk(url)))
 
     logger.info(f"Saving catalog to disk at {output}")
-    esmcat.save(catalog, output)
+    esmcat.save(cat, output)
 
 
 if __name__ == '__main__':

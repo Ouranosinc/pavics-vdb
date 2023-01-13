@@ -9,7 +9,7 @@ pyessv-archive: https://github.com/ES-DOC/pyessv-archive
 CMIP5 CV: https://www.medcordex.eu/cmip5_data_reference_syntax.pdf
 """
 
-from typing import Union, List
+from typing import Union, List, Dict
 import re
 from .base import register, Public, OrderedEnum, PublicParser, CFVariable
 from ..ncml import attribute
@@ -60,7 +60,7 @@ class CMIP5Parser(PublicParser):
 class CMIP5(Public):
     """Data model for catalog entries for CMIP5 simulations.
     """
-    variables: List[CFVariable5]
+    variables: Dict[str, CFVariable5]
     activity: Literal["CMIP5"] = "CMIP5"
     product: Literal["output"] = "output"
     institute: Institute

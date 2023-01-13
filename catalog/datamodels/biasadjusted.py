@@ -7,7 +7,14 @@ from ..ncml import attribute
 from .cmip5 import Frequency, Realm
 
 
-class BAParser(PublicParser):
+class BAParser5(PublicParser):
+    """Map catalog entries to metadata attributes found in netCDF."""
+    activity = attribute("project_id")
+    institute = attribute("institute_id")
+    driving_model = attribute("driving_model_id")
+
+
+class BAParser6(PublicParser):
     """Map catalog entries to metadata attributes found in netCDF."""
     activity = attribute("project_id")
     driving_model = attribute("GCM__model_id")
@@ -18,8 +25,8 @@ class BAParser(PublicParser):
     driving_institute_id = attribute("GCM__institution_id")
 
 
-@register("biasadjusted")
-class BiasAdjusted(Public):
+@register("biasadjusted5")
+class BiasAdjusted5(Public):
     """Data model for catalog entries for bias-adjusted datasets."""
     activity: str
     title: str
@@ -39,4 +46,12 @@ class BiasAdjusted(Public):
 
     class Config:
         orm_mode = True
-        getter_dict = BAParser
+        getter_dict = BAParser5
+
+
+@register("biasadjusted6")
+class BiasAdjusted6(BiasAdjusted5):
+    class Config:
+        orm_mode = True
+        getter_dict = BAParser6
+

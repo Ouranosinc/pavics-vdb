@@ -7,7 +7,7 @@ Common classes are defined in `base.py`, while each individual data model is des
 """
 from .base import REGISTRY
 from .cmip5 import CMIP5
-from .biasadjusted import BiasAdjusted
+from .biasadjusted import BiasAdjusted5, BiasAdjusted6
 from .climex import Climex
 from .reanalysis import Reanalysis
 from .gridobs import GridObs

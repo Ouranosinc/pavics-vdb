@@ -1,6 +1,6 @@
 """Base classes for metadata attributes data model and NcML parsers."""
 
-from typing import Union, List, Any, Optional
+from typing import Union, List, Any, Optional, Dict
 from pydantic import BaseModel, HttpUrl, constr, validator
 from pydantic.utils import GetterDict
 from enum import Enum
@@ -111,7 +111,7 @@ class Common(BaseModel):
     Do not create attributes that have the same name as internal `variables` attributes (name,
     standard_name, long_name, units).
     """
-    variables: List[CFVariable]
+    variables: Dict[str, CFVariable]
 
     class Config:
         orm_mode = True

@@ -69,7 +69,7 @@ class Intake:
     def to_row(self, attrs) -> List:
         """Return attribute values."""
         return [attrs[k] for k in self.cv.global_attributes()] + \
-               [[vd[k] for vd in attrs["variables"]] for k in self.cv.variable_attributes()]
+               [[vd[k] for vd in attrs["variables"].values()] for k in self.cv.variable_attributes()]
 
     def get_attrs(self, xml: bytes) -> dict:
         """Extract metadata attributes defined by CV from NcML file.
@@ -89,7 +89,7 @@ class Intake:
 
     def catalog(self, iterator: Iterator) -> List:
         """Create catalog entries by walking through iterator."""
-        out = [self.header()]
+        out = []
 
         for item in iterator:
             try:
@@ -124,5 +124,6 @@ class Intake:
         # Write catalog data in csv.gz format
         with gzip.open(filename=path / self.catalog_fn, mode="wt") as f:
             w = csv.writer(f)
+            w.writerow(self.header())
             for row in catalog:
                 w.writerow(row)

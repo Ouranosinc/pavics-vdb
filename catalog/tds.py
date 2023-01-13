@@ -1,12 +1,14 @@
 """Utility function to parse metadata from a THREDDS Data Server catalog."""
 from functools import lru_cache
+
+import requests
 from loguru import logger
 from siphon.catalog import TDSCatalog
 from xml.etree.ElementTree import ParseError, Element
 from typing import Iterable
 
 
-def _walk(cat, depth=1):
+def _walk(cat, depth: int = 1, limit: int = None):
     """Generator walking a THREDDS data catalog for datasets.
 
     Parameters
@@ -16,8 +18,12 @@ def _walk(cat, depth=1):
     depth : int
       Maximum recursive depth. Setting 0 will return only datasets within the top-level catalog. If None,
       depth is set to 1000.
+    limit : int
+      Maximum number of datasets per catalog to walk through. Default is to go through all datasets.
     """
-    for name, ds in cat.datasets.items():
+    for i, (name, ds) in enumerate(cat.datasets.items()):
+        if limit and i == limit:
+            break
         yield cat, name, ds
 
     if depth is None:
@@ -25,11 +31,17 @@ def _walk(cat, depth=1):
 
     if depth > 0:
         for name, ref in cat.catalog_refs.items():
-            child = ref.follow()
-            yield from _walk(child, depth=depth-1)
+            try:
+                child = ref.follow()
+                yield from _walk(child, depth=depth - 1, limit=limit)
+
+            except requests.HTTPError as exc:
+                logger.warning(exc)
 
 
-def walk(url: str, max_iterations: int = 1E6) -> Iterable[bytes]:
+
+
+def walk(url: str, max_iterations: int = 1E6, limit: int = None) -> Iterable[bytes]:
     """Return generator walking through a THREDDS Data Server catalog, and yield NcML file content.
 
     Parameters
@@ -38,6 +50,8 @@ def walk(url: str, max_iterations: int = 1E6) -> Iterable[bytes]:
       Thredds catalog url.
     max_iterations : int
       Maximum number of values returned by iterator.
+    limit : int
+      Maximum number of datasets per catalog.
 
     Returns
     -------
@@ -52,7 +66,7 @@ def walk(url: str, max_iterations: int = 1E6) -> Iterable[bytes]:
     except ParseError as err:
         raise ConnectionError(f"Could not open {url}\n") from err
 
-    for i, (cat, name, ds) in enumerate(_walk(catalog, depth=None)):
+    for i, (cat, name, ds) in enumerate(_walk(catalog, depth=None, limit=limit)):
         if i >= max_iterations:
             return
         ncml_url = ds.access_urls["NCML"]

@@ -28,7 +28,7 @@ def dimlen(name: str) -> str:
     return f"./ncml:dimension[@name='{name}']/@length"
 
 
-def get_variables(elem: Element) -> Element:
+def get_variables(elem: Element) -> dict:
     """Return <variable> nodes that are not coordinates.
 
     Parameters
@@ -50,4 +50,4 @@ def get_variables(elem: Element) -> Element:
     dimensions = elem.xpath(dexpr, namespaces=NS)
 
     exclude = bounds + dimensions
-    return [el for el in elements if el.xpath("@name")[0] not in exclude]
+    return {el.xpath("@name")[0]: el for el in elements if el.xpath("@name")[0] not in exclude}
