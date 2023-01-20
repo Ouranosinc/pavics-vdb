@@ -1731,4 +1731,12 @@
 			</aggregation>
 		</netcdf>
 	</aggregation>
+	<variable name="remove_var" orgName="rotated_pole" />
+	<remove name="remove_var" type="variable" />
+	<variable name="rotated_pole" shape="" type="char">
+    		<attribute name="grid_mapping_name" type="String" value="rotated_latitude_longitude" />
+    		<attribute name="grid_north_pole_latitude" type="Float" value="42.5" />
+      		<attribute name="grid_north_pole_longitude" type="Float" value="83.0" />
+      		<attribute name="north_pole_grid_longitude" type="Float" value="0.0" />
+  	</variable>	
 </netcdf>
