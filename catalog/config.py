@@ -8,7 +8,7 @@ CATALOG_TDS_PATH = {"cmip5": {"simulations/cmip5_multirun": "cmip5"},
                     "biasadjusted": {"simulations/bias_adjusted/cmip6": "biasadjusted6",
                                      "simulations/bias_adjusted/cmip5": "biasadjusted5"},
                     "climex": {"simulations/climex": "climex"},
-                    "reanalysis": {"reanalyses": "reanalyses"},
+                    "reanalysis": {"reanalyses": "reanalysis"},
                     "gridobs": {"gridded_obs": "gridded_obs"},
                     "stationobs": {"station_obs": "station_obs"},
                     "forecast": {"forecasts": "forecasts"}}

@@ -38,7 +38,7 @@ def get_elems(name):
             yield fn.name, dm, fromstring(xml.read(), parser=parser)
 
 
-@pytest.mark.parametrize("collection", ["biasadjusted"]) #collections
+@pytest.mark.parametrize("collection", collections)
 def test_datamodel(collection):
     """Test attributes parsing and ingestion."""
 

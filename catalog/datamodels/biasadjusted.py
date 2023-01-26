@@ -2,9 +2,21 @@
 Bias-adjusted datasets catalog entry definition and validation rules.
 """
 
-from .base import register, Public, PublicParser
+from .base import register, Public, PublicParser, OrderedEnum
 from ..ncml import attribute
 from .cmip5 import Frequency, Realm
+
+class Frequency(OrderedEnum):
+    """Frequency attribute that supports inequality comparisons."""
+    FX = "fx"
+    HOUR = "1hr"
+    HOUR3 = "3hr"
+    HOUR6 = "6hr"
+    DAY = "day"
+    MONTH = "mon"
+    YEAR = "yr"
+    DEC = "dec"
+    NONSTD = "non-std"  # non standard
 
 
 class BAParser5(PublicParser):

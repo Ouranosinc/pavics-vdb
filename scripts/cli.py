@@ -1,8 +1,10 @@
+import sys
+sys.path.append(".")
 from catalog.datamodels import REGISTRY
 from catalog.config import TDS_ROOT, CATALOG_TDS_PATH, CATALOG_OUTPATH, LOGFILE
 import click
 
-collections = list(REGISTRY.keys())
+collections = list(CATALOG_TDS_PATH.keys())
 
 # Mathieu, je pense qu'on pourrait créer un click.group() pour ajouter une commande stac_cli.
 # Voir https://click.palletsprojects.com/en/7.x/commands/
@@ -41,7 +43,7 @@ def create_intake_catalog(collection, output, log):
     logger.info(f"Creating `{collection}` catalog.")
 
     # Check that the different data models for a given collection are identical.
-    dms = CATALOG_TDS_PATH[collection].values()
+    dms = [REGISTRY[name] for name in CATALOG_TDS_PATH[collection].values()]
     if not unique_schemas(dms):
         raise ValueError(f"Datamodels schemas for {collection} are not identical.")
 
