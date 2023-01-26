@@ -94,7 +94,7 @@ class CFVariable(BaseModel):
     """Data model for netCDF variable attributes."""
 
     name: str
-    long_name: str
+    long_name: Optional[str]  # Some variables (e.g. grid mappings do not require this)
     standard_name: Optional[str]
     units: Optional[str]
 

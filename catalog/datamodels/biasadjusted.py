@@ -15,8 +15,9 @@ class Frequency(OrderedEnum):
     DAY = "day"
     MONTH = "mon"
     YEAR = "yr"
-    DEC = "dec"
-    NONSTD = "non-std"  # non standard
+    DEC = "10yr"
+
+    NONSTD = "non-standard"  # non standard
 
 
 class BAParser5(PublicParser):

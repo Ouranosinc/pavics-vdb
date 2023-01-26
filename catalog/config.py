@@ -9,9 +9,9 @@ CATALOG_TDS_PATH = {"cmip5": {"simulations/cmip5_multirun": "cmip5"},
                                      "simulations/bias_adjusted/cmip5": "biasadjusted5"},
                     "climex": {"simulations/climex": "climex"},
                     "reanalysis": {"reanalyses": "reanalysis"},
-                    "gridobs": {"gridded_obs": "gridded_obs"},
-                    "stationobs": {"station_obs": "station_obs"},
-                    "forecast": {"forecasts": "forecasts"}}
+                    "gridobs": {"gridded_obs": "gridobs"},
+                    "stationobs": {"station_obs": "stationobs"},
+                    "forecast": {"forecasts": "forecast"}}
 
 # Catalog output path
 CATALOG_OUTPATH = os.environ.get('CATALOG_OUTPATH', default="/tmp/intake")

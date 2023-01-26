@@ -5,7 +5,7 @@
 	<attribute name="abstract" type="String" value="This dataset provides access to yearly gridded observation climate indicator data driving time-series visualizations on ClimateData.ca. Climatedata.ca is a climate data portal produced collaboratively by the country’s leading climate organizations and supported, in part, by the Government of Canada. The goal of this portal is to support decision makers across a broad spectrum of sectors and locations by providing the most up to date climate data in easy to use formats and visualizations."></attribute>
 	<attribute name="climateindex_package_id" type="String" value="https://github.com/Ouranosinc/xclim"></attribute>
 	<attribute name="institute" type="String" value="Canadian Centre for Climate Services"></attribute>
-	<attribute name="institute_id" type="String" value="CCCS"></attribute>
+	<attribute name="institute_id" type="String" value="CCCS"></attribute>v
 	<attribute name="title" type="String" value="Climatedata.ca : Yearly observed values for NRCAN ANUSPLIN v1 derived climate indicators"></attribute>
 	<attribute name="type" type="String" value="gridded_obs"></attribute>
 	<attribute name="frequency" type="String" value="yr"></attribute>

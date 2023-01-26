@@ -18,6 +18,7 @@ from typing import List, Iterator
 from pydantic import ValidationError
 from loguru import logger
 from .. import ncml
+from ..datamodels.base import Common
 
 ESMCAT_VERSION = "0.1.0"
 
@@ -88,16 +89,23 @@ class Intake:
         return dm.dict()
 
     def catalog(self, iterator: Iterator) -> List:
-        """Create catalog entries by walking through iterator."""
+        """Create catalog entries by walking through iterator.
+
+        Parameters
+        ----------
+        iterator : iterable
+          Sequence of (name: str, xml: bytes)
+        """
         out = []
 
-        for item in iterator:
+        for name, item in iterator:
+            attrs = self.get_attrs(item)
             try:
                 attrs = self.get_attrs(item)
                 out.append(self.to_row(attrs))
 
             except ValidationError as exc:
-                logger.warning(exc)
+                logger.warning(f"Metadata error in {name}:\n {exc}")
 
         if len(out) == 1:
             raise ValueError("No valid data in table. Check logs for parsing errors.")

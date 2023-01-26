@@ -8,7 +8,7 @@ from xml.etree.ElementTree import ParseError, Element
 from typing import Iterable
 
 
-def _walk(cat, depth: int = 1, limit: int = None):
+def _walk_catalog(cat, depth: int = 1, limit: int = None):
     """Generator walking a THREDDS data catalog for datasets.
 
     Parameters
@@ -33,16 +33,14 @@ def _walk(cat, depth: int = 1, limit: int = None):
         for name, ref in cat.catalog_refs.items():
             try:
                 child = ref.follow()
-                yield from _walk(child, depth=depth - 1, limit=limit)
+                yield from _walk_catalog(child, depth=depth - 1, limit=limit)
 
             except requests.HTTPError as exc:
                 logger.warning(exc)
 
 
-
-
-def walk(url: str, max_iterations: int = 1E6, limit: int = None) -> Iterable[bytes]:
-    """Return generator walking through a THREDDS Data Server catalog, and yield NcML file content.
+def walk(url: str, max_iterations: int = 1E6, limit: int = None) -> Iterable:
+    """Return generator walking through a THREDDS Data Server catalog.
 
     Parameters
     ----------
@@ -55,8 +53,7 @@ def walk(url: str, max_iterations: int = 1E6, limit: int = None) -> Iterable[byt
 
     Returns
     -------
-    Element
-      <ncml:netcdf> element.
+    name, xml
     """
     logger.info(f"Walking {url}")
 
@@ -66,11 +63,12 @@ def walk(url: str, max_iterations: int = 1E6, limit: int = None) -> Iterable[byt
     except ParseError as err:
         raise ConnectionError(f"Could not open {url}\n") from err
 
-    for i, (cat, name, ds) in enumerate(_walk(catalog, depth=None, limit=limit)):
+    for i, (cat, name, ds) in enumerate(_walk_catalog(catalog, depth=None, limit=limit)):
         if i >= max_iterations:
             return
         ncml_url = ds.access_urls["NCML"]
-        yield get_ncml(ncml_url, catalog=cat.catalog_url, dataset=ds.url_path)
+        xml = get_ncml(ncml_url, catalog=cat.catalog_url, dataset=ds.url_path)
+        yield name, xml
 
 
 @lru_cache(512)
