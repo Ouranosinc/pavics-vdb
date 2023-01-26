@@ -23,7 +23,6 @@
     },
     "driving_experiment": {"value":  "historical, rcp26, rcp45, rcp85", "type":  "String"},
     "driving_model_id": {"value":  "multi-model statistics", "type":  "String"},
-    "driving_institution": {"value":  "multi-model statistics", "type":  "String"},
     "driving_institute_id": {"value":  "multi-model statistics", "type":  "String"},
     "title": {"value": "Climatedata.ca : CMIP5 : Climatic normal (30 year average) ensemble percentiles for CanDCS-U5 (BCCAQv2) derived climate indicators","type": "String"},
     "type": {
@@ -34,7 +33,7 @@
       "value": "bias_adjusted",
       "type": "String"
     },
-    "frequency": {"value": "yrC","type": "String"},
+    "frequency": {"value": "10yr","type": "String"},
     "dataset_description": {
       "value": "https://climatedata.ca/",
       "type": "String"

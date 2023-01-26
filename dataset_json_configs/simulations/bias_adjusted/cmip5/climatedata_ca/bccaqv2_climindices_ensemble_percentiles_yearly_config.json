@@ -23,7 +23,6 @@
     },
     "driving_experiment": {"value":  "historical, rcp26, rcp45, rcp85", "type":  "String"},
     "driving_model_id": {"value":  "multi-model statistics", "type":  "String"},
-    "driving_institution": {"value":  "multi-model statistics", "type":  "String"},
     "driving_institute_id": {"value":  "multi-model statistics", "type":  "String"},
     "title": {"value": "Climatedata.ca : CMIP5 : Yearly ensemble percentiles for CanDCS-U5 (BCCAQv2) derived climate indicators","type": "String"},
     "type": {
