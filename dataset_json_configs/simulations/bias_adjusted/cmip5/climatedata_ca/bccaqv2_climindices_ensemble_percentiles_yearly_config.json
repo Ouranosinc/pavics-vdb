@@ -1,8 +1,5 @@
 {
   "remove": {
-    "driving_model_id": "attribute",
-    "driving_institute_id": "attribute",
-    "driving_model_id": "attribute",
     "driving_realization": "attribute",
     "driving_initialization_method": "attribute",
     "driving_physics_version": "attribute"
@@ -25,7 +22,7 @@
       "type": "String"
     },
     "driving_experiment": {"value":  "historical, rcp26, rcp45, rcp85", "type":  "String"},
-    "driving_model": {"value":  "multi-model statistics", "type":  "String"},
+    "driving_model_id": {"value":  "multi-model statistics", "type":  "String"},
     "driving_institution": {"value":  "multi-model statistics", "type":  "String"},
     "driving_institute_id": {"value":  "multi-model statistics", "type":  "String"},
     "title": {"value": "Climatedata.ca : CMIP5 : Yearly ensemble percentiles for CanDCS-U5 (BCCAQv2) derived climate indicators","type": "String"},
