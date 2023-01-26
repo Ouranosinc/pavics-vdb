@@ -5,7 +5,10 @@
     <attribute name="frequency" type="String" value="day" />
     <attribute name="license_type" orgName="licence_type" />
     <attribute name="license" orgName="licence" />
-
+    <variable name="joined">
+      <attribute name="long_name" value="Data is from multiple co-located stations"/>
+    </variable>
+    <remove name="no" type="variable"></remove>
 
 </netcdf>
 

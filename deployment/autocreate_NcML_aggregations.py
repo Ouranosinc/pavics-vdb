@@ -16,8 +16,7 @@ pavics_root = f"{home}/pavics/datasets"
 def main():
 
     overwrite_to_tmp = True
-
-    dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('*CanDCS-U6*.json')
+    dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('bccaqv2_climindices_ensemble_percentiles_30y*.json')
     for dataset in dataset_configs:
         with open(dataset, 'r') as f:
             ncml_modify = json.load(f)
@@ -452,8 +451,8 @@ def ncml_create_datasets(ncml_template=None, config=None):
                                     #r1 = runs.name.split(exp)[-1].split('_')[1]
                                     netcdf3['@location'] = str(run).replace(pavics_root,'pavics-data')
                                     var_names = []
-                                    for vv in xr.open_dataset(run).data_vars:
-                                        if exp not in vv:
+                                    for vv in xr.open_dataset(run,engine = "h5netcdf").data_vars:
+                                        if exp not in vv and exp != 'allrcps':
                                             d1 = OrderedDict()
 
                                             d1["@name"] = f"{exp}_{vv}"
@@ -562,8 +561,12 @@ def ncml_create_datasets(ncml_template=None, config=None):
 
                 ncml1 = xncml.Dataset(ncml_template)
                 ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
-                attrs = config['attribute']
+                attrs = config['attribute'].copy()
+                if mod == "NorESM1-ME":
+                    attrs["driving_institution"] = {"value": "Norwegian Climate Center", "type": "String"}
+                    attrs["driving_institute_id"] = {"value": "NCC", "type": "String"}
                 ncml1.ncroot['netcdf']['attribute'] = ncml_add_attributes(attrs)
+
                 ncml1.ncroot['netcdf']['aggregation'] = agg
                 ncmls[f'{mod}_{exp}'] = ncml1
                 del ncml1
@@ -673,13 +676,13 @@ def recursive_items(dictionary, pattern):
     for key, value in dictionary.items():
         if key == pattern or value==pattern:
             yield (key, value)
-            if type(value) is collections.OrderedDict:
+            if type(value) in [collections.OrderedDict, dict]:
                 yield from recursive_items(value, pattern=pattern)
             elif type(value) is list:
                 for l in value:
                     yield from recursive_items(l, pattern=pattern)
         else:
-            if type(value) is collections.OrderedDict:
+            if type(value) in [collections.OrderedDict, dict]:
                 yield from recursive_items(value, pattern=pattern)
             elif type(value) is list:
                 for l in value:

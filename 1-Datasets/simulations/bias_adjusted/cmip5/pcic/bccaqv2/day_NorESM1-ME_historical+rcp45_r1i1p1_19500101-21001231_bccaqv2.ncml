@@ -18,6 +18,8 @@
 	<attribute name="license" type="String" value="https://open.canada.ca/en/open-government-licence-canada"></attribute>
 	<attribute name="terms_of_use" type="String" value="Further terms of use at https://pacificclimate.org/data/statistically-downscaled-climate-scenarios."></attribute>
 	<attribute name="attribution" type="String" value="Citation information for this dataset can be found at https://pacificclimate.org/data/statistically-downscaled-climate-scenarios. "></attribute>
+	<attribute name="driving_institution" type="String" value="Norwegian Climate Center"></attribute>
+	<attribute name="driving_institute_id" type="String" value="NCC"></attribute>
 	<aggregation type="Union">
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/pcic/BCCAQv2/tasmin_day_BCCAQv2+ANUSPLIN300_NorESM1-ME_historical+rcp45_r1i1p1_19500101-21001231.nc"></netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/pcic/BCCAQv2/tasmax_day_BCCAQv2+ANUSPLIN300_NorESM1-ME_historical+rcp45_r1i1p1_19500101-21001231.nc"></netcdf>
