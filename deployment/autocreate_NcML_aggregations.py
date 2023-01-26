@@ -16,7 +16,7 @@ pavics_root = f"{home}/pavics/datasets"
 def main():
 
     overwrite_to_tmp = True
-    dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('bccaqv2_climindices_ensemble_percentiles_30y*.json')
+    dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('bccaqv2_climindices_ensemble_percentiles*.json')
     for dataset in dataset_configs:
         with open(dataset, 'r') as f:
             ncml_modify = json.load(f)
