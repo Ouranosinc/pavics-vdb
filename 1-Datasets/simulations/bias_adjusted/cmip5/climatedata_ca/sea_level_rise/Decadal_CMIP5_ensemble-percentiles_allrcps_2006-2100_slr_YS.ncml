@@ -8,7 +8,7 @@
     <attribute name="type" type="String" value="GCM"></attribute>
     <attribute name="project_id" type="String" value="CMIP5"></attribute>
     <attribute name="processing" type="String" value="bias_adjusted"></attribute>
-    <attribute name="frequency" type="String" value="yrPt (non-standard)"></attribute>
+    <attribute name="frequency" type="String" value="non-standard"></attribute>
     <attribute name="driving_model" type="String" value="multi-model statistics"></attribute>
     <attribute name="driving_institution" type="String" value="multi-model statistics"></attribute>
     <attribute name="driving_institute_id" type="String" value="multi-model statistics"></attribute>
