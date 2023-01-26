@@ -9,7 +9,7 @@
     <attribute name="project_id" type="String" value="CMIP5"></attribute>
     <attribute name="processing" type="String" value="bias_adjusted"></attribute>
     <attribute name="frequency" type="String" value="non-standard"></attribute>
-    <attribute name="driving_model" type="String" value="multi-model statistics"></attribute>
+    <attribute name="driving_model_id" type="String" value="multi-model statistics"></attribute>
     <attribute name="driving_institution" type="String" value="multi-model statistics"></attribute>
     <attribute name="driving_institute_id" type="String" value="multi-model statistics"></attribute>
     <attribute name="driving_experiment" type="String" value="rcp26, rcp45, rcp85"></attribute>
