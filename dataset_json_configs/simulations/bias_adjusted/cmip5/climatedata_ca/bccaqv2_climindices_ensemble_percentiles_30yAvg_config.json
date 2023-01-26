@@ -1,5 +1,6 @@
 {
   "remove": {
+    "driving_experiment_id": "attribute",
     "driving_realization": "attribute",
     "driving_initialization_method": "attribute",
     "driving_physics_version": "attribute"
