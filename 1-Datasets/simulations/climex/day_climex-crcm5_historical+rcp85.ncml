@@ -1732,9 +1732,9 @@
 		</netcdf>
 	</aggregation>
 	<variable name="rotated_pole" shape="" type="char">
-			<attribute name="grid_mapping_name" type="String" value="rotated_latitude_longitude" />
-			<attribute name="grid_north_pole_latitude" type="float" value="42.5" />
-			<attribute name="grid_north_pole_longitude" type="float" value="83.0" />
-			<attribute name="north_pole_grid_longitude" type="float" value="0.0" />
+		<attribute name="grid_mapping_name" type="String" value="rotated_latitude_longitude" />
+		<attribute name="grid_north_pole_latitude" type="float" value="42.5" />
+		<attribute name="grid_north_pole_longitude" type="float" value="83.0" />
+		<attribute name="north_pole_grid_longitude" type="float" value="0.0" />
   	</variable>
 </netcdf>
