@@ -21,6 +21,7 @@
       "type": "String"
     },
     "title": {"value": "Climatedata.ca : Yearly observed values for NRCAN ANUSPLIN v1 derived climate indicators","type": "String"},
+    "version": {"value":  "1.0", "type":  "String"},
     "type": {
       "value": "gridded_obs",
       "type": "String"
