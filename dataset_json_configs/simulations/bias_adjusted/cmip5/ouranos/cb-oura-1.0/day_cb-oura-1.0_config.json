@@ -1,6 +1,7 @@
 {
   "remove": {
-    "redistribution": "attribute"
+    "redistribution": "attribute",
+    "driving_model": "attribute"
   },
   "attribute": {
      "institution": {
@@ -30,6 +31,7 @@
       "value": "In order to satisfy growing demand and ensure the availability of climate scenarios that meet the needs of vulnerability, impact and adaptation (VIA) studies, a standard ensemble of bias-adjusted climate scenarios has been produced. Resulting climate scenarios are constructed using outputs of 11 individual global climate models and two future greenhouse gas emissions scenarios (RCP 4.5 and RCP 8.5) to cover the range of plausible of future changes and post-processed to refine the spatial scales and correct biases. The selection of a subset of simulations from the entire CMIP5 ensemble was carried out using a cluster analysis. The selection criteria include projected monthly changes in maximum and minimum temperatures as well as in total precipitations for two future horizons (2041 to 2070 and 2071 to 2100)",
       "type": "String"
     },
+    "driving_model_id": { "type": "String", "orgName": "driving_model"},
     "bias_adjustment_method": {
       "value": "1D-Quantile Mapping",
       "type": "String"
@@ -75,7 +77,7 @@
       "type": "String"
     }
   },
-  "location": "/pavics-data/disk2/ouranos/cb-oura-1.0",
+  "location": "/pavics-data/ouranos/cb-oura-1.0",
   "ncml_type": "ouranos-cb-oura-1.0",
   "experiments": [
     "historical+rcp45",
