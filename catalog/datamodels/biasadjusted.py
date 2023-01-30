@@ -1,10 +1,13 @@
 """
 Bias-adjusted datasets catalog entry definition and validation rules.
 """
+# https://docs.pydantic.dev/usage/types/#discriminated-unions-aka-tagged-unions
 
-from .base import register, Public, PublicParser, OrderedEnum, BaseModel
+from .base import register, Public, PublicParser, OrderedEnum
 from ..ncml import attribute
 from .cmip5 import Frequency, Realm
+from typing import Pattern, Union
+from pydantic import BaseModel, Field, HttpUrl, constr
 
 
 class Frequency(OrderedEnum):
@@ -47,6 +50,7 @@ class BAParser6(PublicParser):
 @register("biasadjusted5")
 class BiasAdjusted5(Public):
     """Data model for catalog entries for bias-adjusted datasets."""
+    #path: constr(regex=".*/datasets/simulations/bias_adjusted/cmip5/*")
     activity: str
     title: str
     institution: str
@@ -69,7 +73,8 @@ class BiasAdjusted5(Public):
 
 
 @register("cb_oura_1_0")
-class BiasAdjusted6(BiasAdjusted5):
+class BiasAdjustedOura5(BiasAdjusted5):
+    #path: constr(regex=".*/datasets/simulations/bias_adjusted/cmip5/ouranos/*")
     class Config:
         orm_mode = True
         getter_dict = BAOuraParser5
@@ -77,8 +82,13 @@ class BiasAdjusted6(BiasAdjusted5):
 
 @register("biasadjusted6")
 class BiasAdjusted6(BiasAdjusted5):
+    #path: constr(regex=".*/datasets/simulations/bias_adjusted/cmip6/*")
     class Config:
         orm_mode = True
         getter_dict = BAParser6
 
 
+class BiasAjustedMeta(BaseModel):
+    meta: Union[BiasAdjustedOura5, BiasAdjustedOura5, BiasAdjusted6] = Field(..., discriminator="path")
+    class Config:
+        orm_mode = True

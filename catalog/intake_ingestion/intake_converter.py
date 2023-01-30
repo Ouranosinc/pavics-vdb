@@ -102,8 +102,8 @@ class Intake:
             except ValidationError as exc:
                 logger.warning(f"Metadata error in {name}:\n {exc}")
 
-        if len(out) == 1:
-            raise ValueError("No valid data in table. Check logs for parsing errors.")
+        if len(out) == 0:
+            logger.warning("Empty table.")
 
         return out
 

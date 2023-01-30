@@ -1,7 +1,7 @@
 import pytest
 from catalog.datamodels import REGISTRY
 from catalog.intake_ingestion.intake_converter import Intake
-
+from catalog.ncml import to_element
 
 collections = list(REGISTRY.keys())
 
@@ -40,11 +40,10 @@ def get_elems(name):
     if not data_dir.exists():
         raise IOError(Path(".").absolute())
     fns = data_dir.glob(f"{name}*")
-    parser = XMLParser(encoding='UTF-8')
     for fn in fns:
         with open(fn, "rb") as xml:
             dm = fn.stem.split("_")[0]
-            yield fn.name, dm, fromstring(xml.read(), parser=parser)
+            yield fn.name, dm, to_element(xml.read())
 
 
 @pytest.mark.parametrize("collection", collections)
@@ -63,6 +62,15 @@ def test_datamodel(collection):
             dm.from_orm(elem)
         except ValidationError as exc:
             raise ValueError(f"{fn}: \n{exc}")
+
+
+
+def test_meta():
+    from catalog.datamodels.biasadjusted import BiasAjustedMeta
+    from catalog.ncml import to_element
+
+    for fn, dm_name, elem in get_elems("biasadjusted"):
+        BiasAjustedMeta.from_orm(elem)
 
 
 @pytest.mark.parametrize("collection", collections)
