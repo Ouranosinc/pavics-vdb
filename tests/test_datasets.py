@@ -362,8 +362,8 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, check_times=True, files_
         for l in list(recursive_items(ncml.ncroot, key1)):
             mod = dataset.name.split('day_')[-1].split('_historical+')[0]
             rcp = dataset.name.split('_historical+')[-1][0:5]
-            assert mod in l[1]
-            assert ('historical' in l[1] or rcp in l[1])
+            assert mod in l[1]['@location']
+            assert ('historical' in l[1]['@location'] or rcp in l[1]['@location'])
 
     files = {}
     for l in list(recursive_items(ncml.ncroot, key1)):
@@ -508,7 +508,7 @@ def compare_values(dsNcML, ds, compare_vals):
 
 
 def main():
-    # test = TestDataset.test_OuraScenGen
+    test = TestDataset.test_OuraScenGen
     # test(self=test,compare_raw=False)
     #test = TestDataset.test_BCCAQv2
     #test(self=test, compare_raw=False)
@@ -516,7 +516,7 @@ def main():
     #test = TestDataset.test_CLIMEX
     #test = TestDataset.test_ClimateData
     #test = TestDataset.test_ESPO_R
-    test = TestDataset.test_CanDCS_U6
+    #test = TestDataset.test_CanDCS_U6
     test(self=test, compare_raw=True)
 
 if 'main' in __name__:
