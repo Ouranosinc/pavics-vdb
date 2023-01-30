@@ -2,9 +2,10 @@
 Bias-adjusted datasets catalog entry definition and validation rules.
 """
 
-from .base import register, Public, PublicParser, OrderedEnum
+from .base import register, Public, PublicParser, OrderedEnum, BaseModel
 from ..ncml import attribute
 from .cmip5 import Frequency, Realm
+
 
 class Frequency(OrderedEnum):
     """Frequency attribute that supports inequality comparisons."""
@@ -25,6 +26,11 @@ class BAParser5(PublicParser):
     activity = attribute("project_id")
     institute = attribute("institute_id")
     driving_model = attribute("driving_model_id")
+
+
+class BAOuraParser5(PublicParser):
+    activity = attribute("project_id")
+    institute = attribute("institute_id")
 
 
 class BAParser6(PublicParser):
@@ -62,9 +68,17 @@ class BiasAdjusted5(Public):
         getter_dict = BAParser5
 
 
+@register("cb_oura_1_0")
+class BiasAdjusted6(BiasAdjusted5):
+    class Config:
+        orm_mode = True
+        getter_dict = BAOuraParser5
+
+
 @register("biasadjusted6")
 class BiasAdjusted6(BiasAdjusted5):
     class Config:
         orm_mode = True
         getter_dict = BAParser6
+
 

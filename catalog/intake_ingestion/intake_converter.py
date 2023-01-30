@@ -37,14 +37,14 @@ class Intake:
         """
         self.cv = cv
 
-    def to_intake_spec(self):
+    def to_intake_spec(self, name=None, description=""):
         """Return Intake specification file content."""
 
         attributes = [{"column_name": key} for key in self.cv.attributes()]
         spec = {"esmcat_version": ESMCAT_VERSION,
                 "id": self.cv.__name__.lower(),
-                "description": self.cv.__doc__.splitlines()[0],
-                "catalog_file": self.catalog_fn,
+                "description": description,
+                "catalog_file": f"{name}.csv.gz",
                 "attributes": attributes,
                 "assets": {
                     "column_name": self.asset_attribute,
@@ -57,11 +57,6 @@ class Intake:
     def cid(self):
         """Return class ID."""
         return self.cv.__name__.lower()
-
-    @property
-    def catalog_fn(self) -> str:
-        """Return catalog file name."""
-        return f"{self.cid}.csv.gz"
 
     def header(self) -> List:
         """Return attribute names."""
@@ -99,7 +94,7 @@ class Intake:
         out = []
 
         for name, item in iterator:
-            attrs = self.get_attrs(item)
+
             try:
                 attrs = self.get_attrs(item)
                 out.append(self.to_row(attrs))
@@ -112,11 +107,21 @@ class Intake:
 
         return out
 
-    def save(self, catalog, path='.'):
+    def save(self, catalog, path='.', name=None):
         """Write catalog table to disk.
 
         An Intake-esm catalog has two pieces, an ESM-Collection json file that provides metadata about the catalog,
         and a catalog csv file that lists the catalog content.
+
+        Parameters
+        ----------
+        catalog : list
+          Metadata table.
+        path : str
+          Directory where catalog files should be written.
+        name : str
+          Catalog name (no extension). Defaults to the data model name.
+
         """
         import csv
         import json
@@ -124,13 +129,14 @@ class Intake:
         from pathlib import Path
 
         path = Path(path)
+        name = name or self.cid
 
         # Write ESM-Collection json file
-        with open(path / f"{self.cid}.json", "w") as f:
-            json.dump(self.to_intake_spec(), f)
+        with open(path / f"{name}.json", "w") as f:
+            json.dump(self.to_intake_spec(name), f)
 
         # Write catalog data in csv.gz format
-        with gzip.open(filename=path / self.catalog_fn, mode="wt") as f:
+        with gzip.open(filename=path / f"{name}.csv.gz", mode="wt") as f:
             w = csv.writer(f)
             w.writerow(self.header())
             for row in catalog:

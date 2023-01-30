@@ -27,7 +27,14 @@ def intake_cli(collection, output, log):
 
 
 def create_intake_catalog(collection, output, log):
-    """Parse metadata from TDS catalog and write intake spec and csv to disk."""
+    """Parse metadata from TDS catalog and write intake spec and csv to disk.
+
+    Parameters
+    ----------
+    collection: str
+      Collection name. Should be a key in the `CATALOG_TDS_PATH` configuration.
+
+    """
     from catalog.intake_ingestion.intake_converter import Intake
     from catalog.tds import walk
     from loguru import logger
@@ -55,7 +62,7 @@ def create_intake_catalog(collection, output, log):
         cat.extend(esmcat.catalog(walk(url)))
 
     logger.info(f"Saving catalog to disk at {output}")
-    esmcat.save(cat, output)
+    esmcat.save(cat, path=output, name=collection)
 
 
 def unique_schemas(dms):
