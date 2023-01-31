@@ -17,8 +17,8 @@ https://intake-esm.readthedocs.io/en/latest/user-guide/multi-variable-assets.htm
 from typing import List, Iterator
 from pydantic import ValidationError
 from loguru import logger
-from .. import ncml
-from ..datamodels.base import Common
+import xncml
+
 
 ESMCAT_VERSION = "0.1.0"
 
@@ -40,7 +40,9 @@ class Intake:
     def to_intake_spec(self, name=None, description=""):
         """Return Intake specification file content."""
 
-        attributes = [{"column_name": key} for key in self.cv.attributes()]
+        # Define column names
+
+        attributes = [{"column_name": key} for key in self.header()]
         spec = {"esmcat_version": ESMCAT_VERSION,
                 "id": self.cv.__name__.lower(),
                 "description": description,
@@ -60,12 +62,24 @@ class Intake:
 
     def header(self) -> List:
         """Return attribute names."""
-        return self.cv.global_attributes() + self.cv.variable_attributes()
+        columns = get_field_names(self.cv, "attributes")
+        columns += [f"var_{k}" for k in get_field_names(self.cv, "variables")]
+        return columns
 
     def to_row(self, attrs) -> List:
-        """Return attribute values."""
-        return [attrs[k] for k in self.cv.global_attributes()] + \
-               [[vd[k] for vd in attrs["variables"].values()] for k in self.cv.variable_attributes()]
+        """Return attribute values in a flat row."""
+
+        # Global attributes
+        g_fields = get_field_names(self.cv, "attributes")
+        out = [attrs["attributes"][k] for k in g_fields]
+
+        # Variable attributes
+        variables = attrs["variables"].values()
+        v_fields = get_field_names(self.cv, "variables")
+        for k in v_fields:
+            out.append([v[k] for v in variables])
+
+        return out
 
     def get_attrs(self, xml: bytes) -> dict:
         """Extract metadata attributes defined by CV from NcML file.
@@ -75,11 +89,14 @@ class Intake:
         xml : bytes
           NcML content.
         """
+        from tempfile import NamedTemporaryFile
         # Create Element Node
-        elem = ncml.to_element(xml)
+        f = NamedTemporaryFile()
+        f.write(xml)
+        attrs = xncml.Dataset(f.name).to_cf_dict()
 
         # Parse and validate datamodel
-        dm = self.cv.from_orm(elem)
+        dm = self.cv(**attrs)
 
         return dm.dict()
 
@@ -107,7 +124,7 @@ class Intake:
 
         return out
 
-    def save(self, catalog, path='.', name=None):
+    def save(self, catalog, path='.', name=None) -> str:
         """Write catalog table to disk.
 
         An Intake-esm catalog has two pieces, an ESM-Collection json file that provides metadata about the catalog,
@@ -122,6 +139,10 @@ class Intake:
         name : str
           Catalog name (no extension). Defaults to the data model name.
 
+        Returns
+        -------
+        str
+          Filename of catalog json description.
         """
         import csv
         import json
@@ -132,7 +153,8 @@ class Intake:
         name = name or self.cid
 
         # Write ESM-Collection json file
-        with open(path / f"{name}.json", "w") as f:
+        fn = path / f"{name}.json"
+        with open(fn, "w") as f:
             json.dump(self.to_intake_spec(name), f)
 
         # Write catalog data in csv.gz format
@@ -141,3 +163,21 @@ class Intake:
             w.writerow(self.header())
             for row in catalog:
                 w.writerow(row)
+
+        return fn
+
+def get_field_names(cls, attr: str) -> list:
+    """List of attribute names for given attribute (assuming it's another BaseModel)."""
+    model = cls.__fields__[attr]
+    if model.sub_fields:
+        _check_fields_identical(model.sub_fields)
+        model = model.sub_fields[0]
+    return list(model.type_.__fields__.keys())
+
+
+def _check_fields_identical(fields):
+    attrs = []
+    for field in fields:
+        attrs.append(tuple(field.type_.__fields__.keys()))
+    if len(set(attrs)) > 1:
+        raise AttributeError("Fields are not identical across submodels.")

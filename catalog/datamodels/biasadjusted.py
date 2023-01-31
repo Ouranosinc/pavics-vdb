@@ -3,11 +3,10 @@ Bias-adjusted datasets catalog entry definition and validation rules.
 """
 # https://docs.pydantic.dev/usage/types/#discriminated-unions-aka-tagged-unions
 
-from .base import register, Public, PublicParser, OrderedEnum
-from ..ncml import attribute
-from .cmip5 import Frequency, Realm
-from typing import Pattern, Union
-from pydantic import BaseModel, Field, HttpUrl, constr
+from .base import register, OrderedEnum, Attributes, Catalog
+from .cmip5 import  Realm
+from typing import Union
+from pydantic import BaseModel, Field, constr
 
 
 class Frequency(OrderedEnum):
@@ -24,40 +23,17 @@ class Frequency(OrderedEnum):
     NONSTD = "non-standard"  # non standard
 
 
-class BAParser5(PublicParser):
-    """Map catalog entries to metadata attributes found in netCDF."""
-    activity = attribute("project_id")
-    institute = attribute("institute_id")
-    driving_model = attribute("driving_model_id")
 
-
-class BAOuraParser5(PublicParser):
-    activity = attribute("project_id")
-    institute = attribute("institute_id")
-
-
-class BAParser6(PublicParser):
-    """Map catalog entries to metadata attributes found in netCDF."""
-    activity = attribute("project_id")
-    driving_model = attribute("GCM__model_id")
-    driving_experiment = attribute("GCM__experiment_id")
-    institute = attribute("target__institution_id")
-    target_dataset = attribute("target__dataset")
-    driving_institution = attribute("GCM__institution")
-    driving_institute_id = attribute("GCM__institution_id")
-
-
-@register("biasadjusted5")
-class BiasAdjusted5(Public):
+class BiasAdjustedAttributes5(Attributes):
     """Data model for catalog entries for bias-adjusted datasets."""
-    #path: constr(regex=".*/datasets/simulations/bias_adjusted/cmip5/*")
-    activity: str
+    path_: constr(regex=".*/datasets/simulations/bias_adjusted/cmip5/*")
+    activity: str = Field(..., alias="project_id")
     title: str
     institution: str
     dataset_id: str
-    driving_model: str
+    driving_model: str = Field(..., alias="driving_model_id")
     driving_experiment: str
-    institute: str
+    institute: str = Field(..., alias="institute_id")
     type: str
     processing: str
     bias_adjustment_method: str
@@ -67,28 +43,18 @@ class BiasAdjusted5(Public):
     driving_institution: str  # driving_institute ?
     driving_institute_id: str
 
-    class Config:
-        orm_mode = True
-        getter_dict = BAParser5
+
+class BiasAdjustedAttributes6(BiasAdjustedAttributes5):
+    path_: constr(regex=".*/datasets/simulations/bias_adjusted/cmip6/*")
+    driving_model: str = Field(..., alias="GCM__model_id")
+    driving_experiment: str = Field(..., alias="GCM__experiment_id")
+    institute: str = Field(..., alias="target__institution_id")
+    target_dataset: str = Field(..., alias="target__dataset")
+    driving_institution: str = Field(..., alias="GCM__institution")
+    driving_institute_id: str = Field(..., alias="GCM__institution_id")
 
 
-@register("cb_oura_1_0")
-class BiasAdjustedOura5(BiasAdjusted5):
-    #path: constr(regex=".*/datasets/simulations/bias_adjusted/cmip5/ouranos/*")
-    class Config:
-        orm_mode = True
-        getter_dict = BAOuraParser5
-
-
-@register("biasadjusted6")
-class BiasAdjusted6(BiasAdjusted5):
-    #path: constr(regex=".*/datasets/simulations/bias_adjusted/cmip6/*")
-    class Config:
-        orm_mode = True
-        getter_dict = BAParser6
-
-
-class BiasAjustedMeta(BaseModel):
-    meta: Union[BiasAdjustedOura5, BiasAdjustedOura5, BiasAdjusted6] = Field(..., discriminator="path")
-    class Config:
-        orm_mode = True
+@register("biasadjusted")
+class BiasAdjusted(Catalog):
+    #attributes: BiasAdjusted5
+    attributes: Union[BiasAdjustedAttributes5, BiasAdjustedAttributes6] = Field(..., discriminator="path_")

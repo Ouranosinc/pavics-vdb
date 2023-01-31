@@ -2,11 +2,11 @@
 Reanalysis datasets catalog entry definition and validation rules.
 """
 
-from .base import register, Public
+from .base import register, Attributes, Catalog
 
 
-@register("reanalysis")
-class Reanalysis(Public):
+
+class ReanalysisAttributes(Attributes):
     """Data model for catalog entries for reanalysis datasets.
 
     References
@@ -23,3 +23,6 @@ class Reanalysis(Public):
     # resolution
     # areal_coverage
     # frequency (time averaging)
+@register("reanalysis")
+class Reanalysis(Catalog):
+    attributes: ReanalysisAttributes

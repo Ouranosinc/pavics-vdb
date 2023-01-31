@@ -3,12 +3,11 @@ ClimEx datasets catalog entry definition and validation rules.
 """
 
 from typing_extensions import Literal
-from .base import register, Public
+from .base import register, Attributes, Catalog
 from .cmip5 import Frequency, Realm
 
 
-@register("climex")
-class Climex(Public):
+class ClimexAttributes(Attributes):
     """Data model for catalog entries for ClimEx datasets."""
     activity: Literal["ClimEx"] = "ClimEx"
     title: str
@@ -20,3 +19,7 @@ class Climex(Public):
     frequency: Frequency
     modeling_realm: Realm
 
+
+@register("climex")
+class Climex(Catalog):
+    attributes: ClimexAttributes

@@ -2,26 +2,25 @@
 Weather forecasts datasets catalog entry definition and validation rules.
 """
 
-from .base import register, Public, PublicParser
+from .base import register, Attributes, Catalog
 from ..ncml import attribute, dimlen
+from pydantic import Field
 
-
-class ForecastParser(PublicParser):
-    """Map catalog entries to metadata attributes found in netCDF."""
-    model = attribute("dataset_id")
-    member = dimlen("member")
 
 
 # I think we're missing some info here (e.g. name of forecast model).
-@register("forecast")
-class Forecast(Public):
+class ForecastAttributes(Attributes):
     """Data model for catalog entries for numerical weather forecasts datasets."""
     title: str
     institution: str
     member: int
-    model: str
+    model: str = Field(..., alias="dataset_id")
 
-    class Config:
-        orm_mode = True
-        getter_dict = ForecastParser
 
+@register("forecast")
+class Forecast(Catalog):
+    attributes: ForecastAttributes
+
+    def __init__(self, **kwargs):
+        kwargs["attributes"]["member"] = kwargs["dimensions"]["member"]
+        super().__init__(**kwargs)

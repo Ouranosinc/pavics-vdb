@@ -11,10 +11,10 @@ CMIP5 CV: https://www.medcordex.eu/cmip5_data_reference_syntax.pdf
 
 from typing import Union, List, Dict
 import re
-from .base import register, Public, OrderedEnum, PublicParser, CFVariable
+from .base import register, OrderedEnum, CFVariable, Attributes, Catalog
 from ..ncml import attribute
 from .cv_utils import collection2enum
-from pydantic import constr, validator
+from pydantic import constr, validator, Field
 import pyessv
 from typing_extensions import Literal
 
@@ -48,28 +48,18 @@ class CFVariable5(CFVariable):
     name: Variable
 
 
-class CMIP5Parser(PublicParser):
-    """Map catalog entries to metadata attribute found in netCDF."""
-    institute = attribute("institute_id")
-    activity = attribute("project_id")
-    model = attribute("model_id")
-    mip_table = attribute("table_id")
-
-
-@register("cmip5")
-class CMIP5(Public):
+class CMIP5Attributes(Attributes):
     """Data model for catalog entries for CMIP5 simulations.
     """
-    variables: Dict[str, CFVariable5]
-    activity: Literal["CMIP5"] = "CMIP5"
+    activity: Literal["CMIP5"] = Field("CMIP5", alias="project_id")
     product: Literal["output"] = "output"
-    institute: Institute
-    model: Model
+    institute: Institute = Field(..., alias="institute_id")
+    model: Model = Field(..., alias="model_id")
     experiment_id: Experiment
     experiment: Literal["RCP2.6", "RCP4.5", "RCP6.0", "RCP8.5"]
     frequency: Frequency
     modeling_realm: Realm
-    mip_table: str  # See custom validator below
+    mip_table: str = Field(..., alias="table_id")
     ensemble_member: Union[constr(regex=CV.ensemble.term_regex), None]
     version_number: str = None
 
@@ -88,6 +78,8 @@ class CMIP5(Public):
                 return match.group()
             raise err
 
-    class Config:
-        orm_mode = True
-        getter_dict = CMIP5Parser
+
+@register("cmip5")
+class CMIP5(Catalog):
+    attributes: CMIP5Attributes
+    variables: Dict[str, CFVariable5]

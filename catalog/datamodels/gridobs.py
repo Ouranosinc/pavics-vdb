@@ -1,11 +1,11 @@
 """
 Gridded observations datasets catalog entry definition and validation rules.
 """
-from .base import register, Public
+from .base import register, Attributes, Catalog
 
 
-@register("gridobs")
-class GridObs(Public):
+
+class GridObsAttributes(Attributes):
     """Data model for catalog entries for gridded observations datasets."""
     title: str
     institute_id: str
@@ -13,3 +13,8 @@ class GridObs(Public):
     frequency: str
     dataset_id: str
     version: str
+
+
+@register("gridobs")
+class GridObs(Catalog):
+    attributes: GridObsAttributes

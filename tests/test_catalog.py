@@ -2,9 +2,9 @@ import pytest
 from catalog.datamodels import REGISTRY
 from catalog.intake_ingestion.intake_converter import Intake
 from catalog.ncml import to_element
-
+import xncml
 collections = list(REGISTRY.keys())
-
+import intake
 
 def refresh_testdata():
     """For each catalog data model, fetch an NcML file from the server and save on disk.
@@ -25,7 +25,7 @@ def refresh_testdata():
                     fh.write(xml)
 
 
-def get_elems(name):
+def walk_test_collection(name):
     """Element node parsed from the XML for the given data model.
 
     Parameters
@@ -33,7 +33,6 @@ def get_elems(name):
     name: str
       Data model name.
     """
-    from lxml.etree import XMLParser, fromstring
     from pathlib import Path
 
     data_dir = Path(f"test_data/catalog/tds/")
@@ -41,44 +40,29 @@ def get_elems(name):
         raise IOError(Path(".").absolute())
     fns = data_dir.glob(f"{name}*")
     for fn in fns:
-        with open(fn, "rb") as xml:
-            dm = fn.stem.split("_")[0]
-            yield fn.name, dm, to_element(xml.read())
+        yield fn
 
 
 @pytest.mark.parametrize("collection", collections)
 def test_datamodel(collection):
     """Test attributes parsing and ingestion."""
-    from pydantic import ValidationError
 
-    # Load example XML node
-    # Make sure you've run `refresh_testdata`.
-    for fn, dm_name, elem in get_elems(collection):
-
-        # Get data model
-        dm = REGISTRY[dm_name]
-        # Parse the attributes
-        try:
-            dm.from_orm(elem)
-        except ValidationError as exc:
-            raise ValueError(f"{fn}: \n{exc}")
-
-
-
-def test_meta():
-    from catalog.datamodels.biasadjusted import BiasAjustedMeta
-    from catalog.ncml import to_element
-
-    for fn, dm_name, elem in get_elems("biasadjusted"):
-        BiasAjustedMeta.from_orm(elem)
+    dm = REGISTRY[collection]
+    for fn in walk_test_collection(collection):
+        attrs = xncml.Dataset(fn).to_cf_dict()
+        dm(**attrs)
 
 
 @pytest.mark.parametrize("collection", collections)
-def test_intake_converter(collection):
+def test_intake_converter(collection, tmp_path):
     """Test catalog creation."""
     dm = REGISTRY[collection]
-    ncml = read_ncml(collection)
-
     esmcat = Intake(cv=dm)
-    esmcat.catalog([ncml])
+
+    for fn in walk_test_collection(collection):
+        ncml = fn.read_bytes()
+        cat = esmcat.catalog([[collection, ncml],])
+        out_fn = esmcat.save(cat, path=tmp_path, name=collection)
+        intake.open_esm_datastore(out_fn)
+
 
