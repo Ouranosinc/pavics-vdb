@@ -9,6 +9,9 @@
       <attribute name="long_name" value="Data is from multiple co-located stations"/>
     </variable>
     <remove name="no" type="variable"></remove>
+    <remove name="tas_flag" type="variable"></remove>
+    <remove name="tasmin_flag" type="variable"></remove>
+    <remove name="tasmax_flag" type="variable"></remove>
 
 </netcdf>
 
