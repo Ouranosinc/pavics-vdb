@@ -317,6 +317,37 @@ class TestDataset:
 
             compare_ncml_rawdata(dataset,dsNcML, compare_raw)
 
+    def test_ESPO_G(self, compare_raw=False):
+
+        datasets = sorted(list(path.Path('../tmp/simulations/bias_adjusted/cmip6/ouranos/ESPO-G/ESPO-G6v1.0.0').rglob('*.ncml')))
+
+        thredds_test_dir = f'{thredds_root}/simulations/bias_adjusted/cmip6/ouranos/ESPO-G/ESPO-G6v1.0.0'
+        thredds_path_server = f'{thredds_cat_root}/simulations/bias_adjusted/cmip6/ouranos/ESPO-G/ESPO-G6v1.0.0/catalog.html'
+        thredds_test_dir = path.Path(thredds_test_dir)
+
+        for ii, dataset in enumerate(datasets):
+            if thredds_test_dir.exists():
+                shutil.rmtree(thredds_test_dir)
+            thredds_test_dir.mkdir(parents=True, exist_ok=True)
+            print('trying', dataset.name)
+            # copy to thredds:
+            shutil.copy(dataset, thredds_test_dir)
+            ncmls_all = [ncml for ncml in threddsclient.crawl(thredds_path_server, depth=0)]
+            ncmls = []
+            for n in ncmls_all:
+                if dataset.name  in n.name:
+                    ncmls.append(n)
+
+            if len(ncmls) != 1:
+                raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
+
+            dsNcML = subset.subset_bbox(
+                xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=1460, lon=50, lat=50), decode_timedelta=False),
+                lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
+            )
+
+            compare_ncml_rawdata(dataset,dsNcML, compare_raw)
+
     def test_CanDCS_U6(self, compare_raw=False):
 
         datasets = sorted(list(path.Path('../tmp/simulations/bias_adjusted/cmip6/pcic/CanDCS-U6').rglob('*.ncml')))
@@ -472,7 +503,7 @@ def compare_values(dsNcML, ds, compare_vals):
         for coord in ds.coords :
             if coord != 'height':
                 np.testing.assert_array_equal(ds[coord].values, test[coord].values)
-        time1 = np.random.choice(ds.time, 10)
+        time1 = np.random.choice(ds.time, 20)
 
     except:
         # Climex raw precip is at 0h vs 12h in ncml (aggregation aligns time of all vars)
@@ -482,7 +513,7 @@ def compare_values(dsNcML, ds, compare_vals):
         offset = np.unique(test.time.values - ds.time.values)
         ds['time'] = ds.time + offset
         test = dsNcML.sel(time=ds.time).squeeze()
-        time1 = np.random.choice(ds.time, 10)
+        time1 = np.random.choice(ds.time, 20)
 
 
 
@@ -508,7 +539,7 @@ def compare_values(dsNcML, ds, compare_vals):
 
 
 def main():
-    test = TestDataset.test_OuraScenGen
+    #test = TestDataset.test_OuraScenGen
     # test(self=test,compare_raw=False)
     #test = TestDataset.test_BCCAQv2
     #test(self=test, compare_raw=False)
@@ -516,6 +547,7 @@ def main():
     #test = TestDataset.test_CLIMEX
     #test = TestDataset.test_ClimateData
     #test = TestDataset.test_ESPO_R
+    test = TestDataset.test_ESPO_G
     #test = TestDataset.test_CanDCS_U6
     test(self=test, compare_raw=True)
 
