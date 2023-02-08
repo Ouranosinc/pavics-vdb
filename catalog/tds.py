@@ -36,7 +36,7 @@ def _walk_catalog(cat, depth: int = 1, limit: int = None):
                 yield from _walk_catalog(child, depth=depth - 1, limit=limit)
 
             except requests.HTTPError as exc:
-                logger.warning(exc)
+                logger.exception(exc)
 
 
 def walk(url: str, max_iterations: int = 1E6, limit: int = None) -> Iterable:
