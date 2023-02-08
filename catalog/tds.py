@@ -28,7 +28,7 @@ def walk(cat, depth=1):
                 yield from walk(child, depth=depth - 1)
 
             except requests.HTTPError as exc:
-                LOGGER.warning(exc)
+                LOGGER.exception(exc)
 
 
 
