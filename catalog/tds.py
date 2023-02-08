@@ -1,4 +1,9 @@
 """Utility function to parse metadata from a THREDDS Data Server catalog."""
+import requests
+import logging
+
+# setup logger
+LOGGER = logging.getLogger(__name__)
 
 
 def walk(cat, depth=1):
@@ -18,8 +23,13 @@ def walk(cat, depth=1):
 
     if depth > 0:
         for name, ref in cat.catalog_refs.items():
-            child = ref.follow()
-            yield from walk(child, depth=depth-1)
+            try:
+                child = ref.follow()
+                yield from walk(child, depth=depth - 1)
+
+            except requests.HTTPError as exc:
+                LOGGER.exception(exc)
+
 
 
 def attrs_from_ds(ds):
@@ -45,7 +55,6 @@ def attrs_from_ncml(url):
       additional specialized attributes in `__group__` nested dict.
     """
     import lxml.etree
-    import requests
     parser = lxml.etree.XMLParser(encoding='UTF-8')
 
     ns = {"ncml": "http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"}
