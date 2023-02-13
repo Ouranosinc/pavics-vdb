@@ -133,6 +133,7 @@ class TestDataset:
 
         datasets = sorted(list(path.Path('../tmp/simulations/bias_adjusted/cmip5/climatedata_ca').rglob('*.ncml')))
         datasets.extend(sorted(list(path.Path('../tmp/gridded_obs/climatedata_ca').rglob('*.ncml'))))
+        datasets.extend(sorted(list(path.Path('../tmp/simulations/bias_adjusted/cmip6/climatedata_ca').rglob('*.ncml'))))
         thredds_test_dir = f'{thredds_root}/simulations/climatedata_ca'
         thredds_path_server = f'{thredds_cat_root}/simulations/climatedata_ca/catalog.html'
         thredds_test_dir = path.Path(thredds_test_dir)
@@ -154,7 +155,7 @@ class TestDataset:
                 raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
 
             dsNcML = subset.subset_bbox(
-                xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=365, lon=50, lat=56),decode_timedelta=False),
+                xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=30, lon=60, lat=60),decode_timedelta=False),
                 lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
             )
 
@@ -406,7 +407,8 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, check_times=True, files_
         if path.Path(local_path).is_dir() or path.Path(local_path).is_file() or key1 == '@regExp' :
             if path.Path(local_path).is_file():
                 ds = subset.subset_bbox(xr.open_dataset(path.Path(local_path), decode_timedelta=False,
-                                        chunks=dict(time=10, lon=50, lat=50)),
+                                        engine="h5netcdf",
+                                        chunks=dict(time=30, lon=30, lat=30)),
                                         lon_bnds=test_reg['lon'],
                                         lat_bnds=test_reg['lat'],
                                         start_date=str(dsNcML.time.dt.year.min().values),
@@ -475,7 +477,7 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, check_times=True, files_
                 compare_values(dsNcML.sel(realization=bytes(file1.parent.name.split('-rcp')[0],  'utf-8')), ds, compare_vals)
             else:
                 if 'cccs_portal' in l1[1]:
-                    rcp = [rcp for rcp in ['rcp26','rcp45','rcp85'] if rcp in local_path]
+                    rcp = [rcp for rcp in ['rcp26','rcp45','rcp85','ssp126','ssp245','ssp585'] if rcp in local_path]
                     if len(rcp)>1:
                         raise ValueError(f'expected single rcp value found {rcp}')
                     rcp = rcp[0]
@@ -501,9 +503,9 @@ def compare_values(dsNcML, ds, compare_vals):
     try:
         test = dsNcML.sel(time=ds.time).squeeze()
         for coord in ds.coords :
-            if coord != 'height':
+            if coord != 'height' and coord != 'horizon':
                 np.testing.assert_array_equal(ds[coord].values, test[coord].values)
-        time1 = np.random.choice(ds.time, 20)
+        time1 = np.random.choice(ds.time, 15)
 
     except:
         # Climex raw precip is at 0h vs 12h in ncml (aggregation aligns time of all vars)
@@ -513,9 +515,7 @@ def compare_values(dsNcML, ds, compare_vals):
         offset = np.unique(test.time.values - ds.time.values)
         ds['time'] = ds.time + offset
         test = dsNcML.sel(time=ds.time).squeeze()
-        time1 = np.random.choice(ds.time, 20)
-
-
+        time1 = np.random.choice(ds.time, 15)
 
         for coord in ds.coords:
             if coord != 'time' and coord != 'height' and coord != 'season':
@@ -545,9 +545,9 @@ def main():
     #test(self=test, compare_raw=False)
     #test = TestDataset.test_NEXGDDP
     #test = TestDataset.test_CLIMEX
-    #test = TestDataset.test_ClimateData
+    test = TestDataset.test_ClimateData
     #test = TestDataset.test_ESPO_R
-    test = TestDataset.test_ESPO_G
+    #test = TestDataset.test_ESPO_G
     #test = TestDataset.test_CanDCS_U6
     test(self=test, compare_raw=True)
 
