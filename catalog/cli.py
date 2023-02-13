@@ -1,5 +1,5 @@
-from specs import REGISTRY
-from config import TDS_ROOT, CATALOG_TDS_PATH, CATALOG_OUTPATH
+from catalog.specs import REGISTRY
+from catalog.config import TDS_ROOT, CATALOG_TDS_PATH, CATALOG_OUTPATH
 import click
 
 collections = list(REGISTRY.keys())
@@ -18,12 +18,13 @@ collections = list(REGISTRY.keys())
               help="Output path for catalog files.")
 def intake_cli(collection, output):
     for coll in collection:
+        print(coll)
         create_intake_catalog(coll, output)
 
 
 def create_intake_catalog(collection, output):
     """Parse metadata from TDS catalog and write intake spec and csv to disk."""
-    from intake_ingestion.intake_converter import Intake
+    from catalog.intake_ingestion.intake_converter import Intake
 
     cls = REGISTRY[collection]
     url = TDS_ROOT + CATALOG_TDS_PATH[collection] + "/catalog.xml"

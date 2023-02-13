@@ -18,8 +18,9 @@ def walk(cat, depth=1):
 
     if depth > 0:
         for name, ref in cat.catalog_refs.items():
-            child = ref.follow()
-            yield from walk(child, depth=depth-1)
+            if 'ESPO' not in name:
+                child = ref.follow()
+                yield from walk(child, depth=depth-1)
 
 
 def attrs_from_ds(ds):
