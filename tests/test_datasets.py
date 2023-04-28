@@ -320,10 +320,10 @@ class TestDataset:
 
     def test_ESPO_G(self, compare_raw=False):
 
-        datasets = sorted(list(path.Path('../tmp/simulations/bias_adjusted/cmip6/ouranos/ESPO-G/ESPO-G6v1.0.0').rglob('*.ncml')))
+        datasets = sorted(list(path.Path('../tmp/simulations/bias_adjusted/cmip6/ouranos/ESPO-G/').rglob('*.ncml')))
 
-        thredds_test_dir = f'{thredds_root}/simulations/bias_adjusted/cmip6/ouranos/ESPO-G/ESPO-G6v1.0.0'
-        thredds_path_server = f'{thredds_cat_root}/simulations/bias_adjusted/cmip6/ouranos/ESPO-G/ESPO-G6v1.0.0/catalog.html'
+        thredds_test_dir = f'{thredds_root}/simulations/bias_adjusted/cmip6/ouranos/ESPO-G/'
+        thredds_path_server = f'{thredds_cat_root}/simulations/bias_adjusted/cmip6/ouranos/ESPO-G/catalog.html'
         thredds_test_dir = path.Path(thredds_test_dir)
 
         for ii, dataset in enumerate(datasets):
@@ -341,9 +341,15 @@ class TestDataset:
 
             if len(ncmls) != 1:
                 raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
-
-            dsNcML = subset.subset_bbox(
-                xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=1460, lon=50, lat=50), decode_timedelta=False),
+            if "ESPO-G6-R2" in dataset.name:
+                chunks=dict(time=1460/4, rlon=150, rlat=150)
+            else:
+                chunks = dict(time=1460, lon=50, lat=50)
+            dsNcML = xr.open_dataset(ncmls[0].opendap_url(), chunks=chunks, decode_timedelta=False)
+            for ll in ['lat','lon']:
+                with ProgressBar():
+                    dsNcML[ll] = dsNcML[ll].load()
+            dsNcML = subset.subset_bbox(dsNcML,
                 lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
             )
 
@@ -545,9 +551,9 @@ def main():
     #test(self=test, compare_raw=False)
     #test = TestDataset.test_NEXGDDP
     #test = TestDataset.test_CLIMEX
-    test = TestDataset.test_ClimateData
+    #test = TestDataset.test_ClimateData
     #test = TestDataset.test_ESPO_R
-    #test = TestDataset.test_ESPO_G
+    test = TestDataset.test_ESPO_G
     #test = TestDataset.test_CanDCS_U6
     test(self=test, compare_raw=True)
 
