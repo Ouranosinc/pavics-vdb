@@ -1,0 +1,89 @@
+{
+  "remove": {
+    "redistribution": "attribute"
+  },
+
+  "attribute": {
+    "institution": {
+      "value": "Ouranos Consortium on Regional Climatology and Adaptation to Climate Change",
+      "type": "String"
+    },
+    "institution_id": {
+      "value": "Ouranos",
+      "type": "String"
+    },
+    "title": {"value": "ESPO-G6-R2 v1.0.0 : Ouranos Multipurpose Climate Scenarios - Global Models CMIP6",
+      "type": "String"},
+    "dataset_id": {"value": "ESPO-G6-R2 v1.0.0", "type":"String"},
+    "type": {
+      "value": "GCM",
+      "type": "String"
+    },
+    "processing": {
+      "value": "bias_adjusted",
+      "type": "String"
+    },
+    "dataset_description": {
+      "value": "https://github.com/Ouranosinc/ESPO-G",
+      "type": "String"
+    },
+    "doi": {
+      "value": "https://doi.org/10.5281/zenodo.7764930",
+      "type": "String"
+    },
+    "abstract": {
+      "value": "The need to adapt to climate change is present in a growing number of fields, leading to an increase in the demand for climate scenarios for often interrelated sectors of activity. In order to meet this growing demand and to ensure the availability of climate scenarios responding to numerous vulnerability, impact and adaptation (VIA) studies, Ouranos is working to create a set of operational multipurpose climate scenarios called \"Ensemble de Scénarios Polyvalents d'Ouranos” (ESPO) covering North America at a resolution of 0.1 degree (~9km). This operational product actually consists of two related datasets 1) ESPO-R (described here) produced from bias-adjusted regional climate simulations, and 2) ESPO-G produced following the same methodology, but from global simulations available via the CMIP program.",
+      "type": "String"
+    },
+    "bias_adjust_method": {
+      "value": "1D-Detrended Quantile Mapping (https://xclim.readthedocs.io/en/stable/sdba.html#sdba-user-api)",
+      "type": "String"
+    },
+    "bias_adjust_method_citation": {
+      "value": "https://doi.org/10.1175/JCLI-D-14-00754.1",
+      "type": "String"
+    },
+    "bias_adjust_reference": {
+      "value": "Regional Deterministic Reforecast System (RDRS) v2.1 (1989-2018)",
+      "type": "String"
+    },
+    "bias_adjust_reference_citation": {
+      "value": "https://doi.org/10.5194/hess-25-4917-2021",
+      "type": "String"
+    },
+    "license_type": {
+      "value": "permissive",
+      "type": "String"
+    },
+    "license":{
+      "value":"Creative Commons Attribution 4.0 International Public License: https://creativecommons.org/licenses/by/4.0/legalcode",
+      "type": "String"
+    },
+    "terms_of_use": {
+      "value": "In addition to the provided licence, the data used for the realization of climate scenarios are subject to the conditions of the source data. For more details, please refer to: https://pcmdi.llnl.gov/CMIP6/TermsOfUse/TermsOfUse6-2.html",
+      "type": "String"
+    },
+    "attribution": {
+      "value": "Use of this dataset should be acknowledged as 'Data produced and provided by the Ouranos Consortium on Regional Climatology and Adaptation to Climate Change'. Furthermore, the modeling groups from which the bias-adjusted climate scenarios were consructed must also be acknowledged, please refer to: The CORDEX-NA Project https://na-cordex.org",
+      "type": "String"
+    },
+    "modeling_realm": {
+      "value": "atmos",
+      "type": "String"
+    }
+  },
+  "location": "/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0",
+  "ncml_type": "ouranos-ESPO-G6",
+  "experiments": [
+    "historical+ssp245",
+    "historical+ssp370"
+  ],
+  "variables": [
+    "tasmin",
+    "tasmax",
+    "pr"
+  ],
+  "frequency": "day",
+  "realm": "atmos",
+  "filename_template": ""
+}
