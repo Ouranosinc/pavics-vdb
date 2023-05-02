@@ -12,9 +12,9 @@
       "value": "Ouranos",
       "type": "String"
     },
-    "title": {"value": "ESPO-G6 v1.0.0 : Ouranos Multipurpose Regional Climate Scenarios",
+    "title": {"value": "ESPO-G6-E5L v1.0.0 : Ouranos Multipurpose Climate Scenarios - Global Models CMIP6 - ERA5-Land",
       "type": "String"},
-    "dataset_id": {"value": "ESPO-G6 v1.0.0", "type":"String"},
+    "dataset_id": {"value": "ESPO-G6-E5L v1.0.0", "type":"String"},
     "type": {
       "value": "GCM",
       "type": "String"
@@ -28,7 +28,7 @@
       "type": "String"
     },
     "doi": {
-      "value": " ",
+      "value": "https://doi.org/10.5281/zenodo.7764929",
       "type": "String"
     },
     "abstract": {
@@ -72,7 +72,7 @@
       "type": "String"
     }
   },
-  "location": "/pavics-data/ouranos/ESPO-G/ESPO-G6v1.0.0",
+  "location": "/pavics-data/ouranos/ESPO-G/ESPO-G6-E5Lv1.0.0",
   "ncml_type": "ouranos-ESPO-G6",
   "experiments": [
     "historical+ssp245",
