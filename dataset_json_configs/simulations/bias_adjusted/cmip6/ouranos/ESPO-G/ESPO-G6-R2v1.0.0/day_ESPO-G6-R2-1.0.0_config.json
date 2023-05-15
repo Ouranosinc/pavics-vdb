@@ -12,7 +12,7 @@
       "value": "Ouranos",
       "type": "String"
     },
-    "title": {"value": "ESPO-G6-R2 v1.0.0 : Ouranos Multipurpose Climate Scenarios - Global Models CMIP6",
+    "title": {"value": "ESPO-G6-R2 v1.0.0 : Ouranos Multipurpose Climate Scenarios - Global Models CMIP6 - RDRS v2.1",
       "type": "String"},
     "dataset_id": {"value": "ESPO-G6-R2 v1.0.0", "type":"String"},
     "type": {
