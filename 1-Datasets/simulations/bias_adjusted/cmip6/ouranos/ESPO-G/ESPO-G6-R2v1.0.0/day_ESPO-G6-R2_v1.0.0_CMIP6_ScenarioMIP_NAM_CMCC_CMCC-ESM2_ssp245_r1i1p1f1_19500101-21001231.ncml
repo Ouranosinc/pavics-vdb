@@ -3,7 +3,7 @@
 	<remove name="redistribution" type="attribute"></remove>
 	<attribute name="institution" type="String" value="Ouranos Consortium on Regional Climatology and Adaptation to Climate Change"></attribute>
 	<attribute name="institution_id" type="String" value="Ouranos"></attribute>
-	<attribute name="title" type="String" value="ESPO-G6-R2 v1.0.0 : Ouranos Multipurpose Climate Scenarios - Global Models CMIP6"></attribute>
+	<attribute name="title" type="String" value="ESPO-G6-R2 v1.0.0 : Ouranos Multipurpose Climate Scenarios - Global Models CMIP6 - RDRS v2.1"></attribute>
 	<attribute name="dataset_id" type="String" value="ESPO-G6-R2 v1.0.0"></attribute>
 	<attribute name="type" type="String" value="GCM"></attribute>
 	<attribute name="processing" type="String" value="bias_adjusted"></attribute>
