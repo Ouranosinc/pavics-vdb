@@ -24,11 +24,11 @@
       "type": "String"
     },
     "dataset_description": {
-      "value": "https://github.com/Ouranosinc/ESPO-G",
+      "value": "https://doi.org/10.5281/zenodo.7877330",
       "type": "String"
     },
     "doi": {
-      "value": "https://doi.org/10.5281/zenodo.7764930",
+      "value": "https://doi.org/10.5281/zenodo.7877330",
       "type": "String"
     },
     "abstract": {

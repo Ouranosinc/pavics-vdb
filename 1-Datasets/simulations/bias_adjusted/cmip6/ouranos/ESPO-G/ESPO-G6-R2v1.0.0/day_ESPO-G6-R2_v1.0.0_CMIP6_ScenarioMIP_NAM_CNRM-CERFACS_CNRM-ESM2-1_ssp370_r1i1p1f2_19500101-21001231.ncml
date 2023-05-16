@@ -7,8 +7,8 @@
 	<attribute name="dataset_id" type="String" value="ESPO-G6-R2 v1.0.0"></attribute>
 	<attribute name="type" type="String" value="GCM"></attribute>
 	<attribute name="processing" type="String" value="bias_adjusted"></attribute>
-	<attribute name="dataset_description" type="String" value="https://github.com/Ouranosinc/ESPO-G"></attribute>
-	<attribute name="doi" type="String" value="https://doi.org/10.5281/zenodo.7764930"></attribute>
+	<attribute name="dataset_description" type="String" value="https://doi.org/10.5281/zenodo.7877330"></attribute>
+	<attribute name="doi" type="String" value="https://doi.org/10.5281/zenodo.7877330"></attribute>
 	<attribute name="abstract" type="String" value="The need to adapt to climate change is present in a growing number of fields, leading to an increase in the demand for climate scenarios for often interrelated sectors of activity. In order to meet this growing demand and to ensure the availability of climate scenarios responding to numerous vulnerability, impact and adaptation (VIA) studies, Ouranos is working to create a set of operational multipurpose climate scenarios called &quot;Ensemble de Scénarios Polyvalents d'Ouranos” (ESPO) covering North America at a resolution of 0.1 degree (~9km). This operational product actually consists of two related datasets 1) ESPO-R (described here) produced from bias-adjusted regional climate simulations, and 2) ESPO-G produced following the same methodology, but from global simulations available via the CMIP program."></attribute>
 	<attribute name="bias_adjust_method" type="String" value="1D-Detrended Quantile Mapping (https://xclim.readthedocs.io/en/stable/sdba.html#sdba-user-api)"></attribute>
 	<attribute name="bias_adjust_method_citation" type="String" value="https://doi.org/10.1175/JCLI-D-14-00754.1"></attribute>
