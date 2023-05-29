@@ -32,5 +32,50 @@
                 <scan location="/pavics-data/eccc/RDRS_v21/NAM/day/pr" regExp="pr_.*\.nc$" subdirs="false"/>
             </aggregation>
         </netcdf>
+        <netcdf>
+            <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+                <scan location="/pavics-data/eccc/RDRS_v21/NAM/day/tdpsmin" regExp="tdpsmin_.*\.nc$" subdirs="false"/>
+            </aggregation>
+        </netcdf>
+        <netcdf>
+            <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+                <scan location="/pavics-data/eccc/RDRS_v21/NAM/day/tdpsmax" regExp="tdpsmax_.*\.nc$" subdirs="false"/>
+            </aggregation>
+        </netcdf>
+        <netcdf>
+            <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+                <scan location="/pavics-data/eccc/RDRS_v21/NAM/day/tdps" regExp="tdps_.*\.nc$" subdirs="false"/>
+            </aggregation>
+        </netcdf>
+        <netcdf>
+            <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+                <scan location="/pavics-data/eccc/RDRS_v21/NAM/day/psl" regExp="psl_.*\.nc$" subdirs="false"/>
+            </aggregation>
+        </netcdf>
+        <netcdf>
+            <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+                <scan location="/pavics-data/eccc/RDRS_v21/NAM/day/ps" regExp="ps_.*\.nc$" subdirs="false"/>
+            </aggregation>
+        </netcdf>
+        <netcdf>
+            <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+                <scan location="/pavics-data/eccc/RDRS_v21/NAM/day/huss" regExp="huss_.*\.nc$" subdirs="false"/>
+            </aggregation>
+        </netcdf>
+        <netcdf>
+            <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+                <scan location="/pavics-data/eccc/RDRS_v21/NAM/day/hursmin" regExp="hursmin_.*\.nc$" subdirs="false"/>
+            </aggregation>
+        </netcdf>
+        <netcdf>
+            <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+                <scan location="/pavics-data/eccc/RDRS_v21/NAM/day/hursmax" regExp="hursmax_.*\.nc$" subdirs="false"/>
+            </aggregation>
+        </netcdf>
+        <netcdf>
+            <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+                <scan location="/pavics-data/eccc/RDRS_v21/NAM/day/hurs" regExp="hurs_.*\.nc$" subdirs="false"/>
+            </aggregation>
+        </netcdf>
     </aggregation>
 </netcdf>
