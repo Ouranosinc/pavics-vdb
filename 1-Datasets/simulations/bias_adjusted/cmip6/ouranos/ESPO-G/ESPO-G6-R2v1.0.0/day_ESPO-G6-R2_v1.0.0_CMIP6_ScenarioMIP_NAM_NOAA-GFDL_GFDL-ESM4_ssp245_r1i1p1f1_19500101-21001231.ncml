@@ -17,7 +17,7 @@
 	<attribute name="license_type" type="String" value="permissive"></attribute>
 	<attribute name="license" type="String" value="Creative Commons Attribution 4.0 International Public License: https://creativecommons.org/licenses/by/4.0/legalcode"></attribute>
 	<attribute name="terms_of_use" type="String" value="In addition to the provided licence, the data used for the realization of climate scenarios are subject to the conditions of the source data. For more details, please refer to: https://pcmdi.llnl.gov/CMIP6/TermsOfUse/TermsOfUse6-2.html"></attribute>
-	<attribute name="attribution" type="String" value="Use of this dataset should be acknowledged as 'Data produced and provided by the Ouranos Consortium on Regional Climatology and Adaptation to Climate Change'. Furthermore, the modeling groups from which the bias-adjusted climate scenarios were consructed must also be acknowledged, please refer to: The CORDEX-NA Project https://na-cordex.org"></attribute>
+	<attribute name="attribution" type="String" value="Use of this dataset should be acknowledged as 'Data produced and provided by the Ouranos Consortium on Regional Climatology and Adaptation to Climate Change'. Furthermore, the modeling groups from which the bias-adjusted climate scenarios were consructed must also be acknowledged, please refer to: : The Coupled Model Intercomparison Project https://wcrp-cmip.org/cmip-phase-6-cmip6/"></attribute>
 	<attribute name="modeling_realm" type="String" value="atmos"></attribute>
 	<attribute name="source_institution" type="String" value="NOAA-GFDL"></attribute>
 	<aggregation type="Union">
