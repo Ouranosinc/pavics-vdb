@@ -64,7 +64,7 @@
       "type": "String"
     },
     "attribution": {
-      "value": "Use of this dataset should be acknowledged as 'Data produced and provided by the Ouranos Consortium on Regional Climatology and Adaptation to Climate Change'. Furthermore, the modeling groups from which the bias-adjusted climate scenarios were consructed must also be acknowledged, please refer to: : The Coupled Model Intercomparison Project https://wcrp-cmip.org/cmip-phase-6-cmip6/",
+      "value": "Use of this dataset should be acknowledged as 'Data produced and provided by the Ouranos Consortium on Regional Climatology and Adaptation to Climate Change'. Furthermore, the modeling groups from which the bias-adjusted climate scenarios were constructed must also be acknowledged, please refer to: : The Coupled Model Intercomparison Project https://wcrp-cmip.org/cmip-phase-6-cmip6/",
       "type": "String"
     },
     "modeling_realm": {
