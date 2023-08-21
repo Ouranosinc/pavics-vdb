@@ -5,6 +5,8 @@
     <attribute name="frequency" type="String" value="day" />
     <attribute name="license_type" orgName="licence_type" />
     <attribute name="license" orgName="licence" />
-
+    <remove name="pr_flag" type="variable"></remove>
+    <remove name="prlp_flag" type="variable"></remove>
+    <remove name="prsn_flag" type="variable"></remove>
 </netcdf>
 

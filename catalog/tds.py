@@ -2,6 +2,13 @@
 from functools import lru_cache
 
 import requests
+import logging
+
+# setup logger
+LOGGER = logging.getLogger(__name__)
+
+
+import requests
 from loguru import logger
 from siphon.catalog import TDSCatalog
 from xml.etree.ElementTree import ParseError, Element
@@ -33,8 +40,13 @@ def _walk_catalog(cat, depth: int = 1, limit: int = None):
         for name, ref in cat.catalog_refs.items():
             try:
                 child = ref.follow()
-                yield from _walk_catalog(child, depth=depth - 1, limit=limit)
 
+
+                yield from _walk_catalog(child, depth=depth - 1, limit=limit)
+            except requests.HTTPError as exc:
+                LOGGER.exception(exc)
+
+ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
             except requests.HTTPError as exc:
                 logger.exception(exc)
 
@@ -55,7 +67,24 @@ def walk(url: str, max_iterations: int = 1E6, limit: int = None) -> Iterable:
     -------
     name, xml
     """
+
+
+
+    import lxml.etree
+    
     logger.info(f"Walking {url}")
+    
+    parser = lxml.etree.XMLParser(encoding='UTF-8')
+
+    ns = {"ncml": "http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"}
+
+    # Parse XML content - UTF-8 encoded documents need to be read as bytes
+    xml = requests.get(url).content
+    doc = lxml.etree.fromstring(xml, parser=parser)
+    nc = doc.xpath("/ncml:netcdf", namespaces=ns)[0]
+
+    # Extract global attributes
+    out = _attrib_to_dict(nc.xpath("ncml:attribute", namespaces=ns))
 
     try:
         catalog = TDSCatalog(url)

@@ -1,0 +1,51 @@
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <remove name="institution" type="attribute" />
+    <remove name="licence_type" type="attribute" />
+    <attribute name="title" type="String" value="Regional Deterministic Reforecast System - RDRS v2.1 : hourly" />
+    <attribute name="type" type="String" value="reanalysis" />
+    <attribute name="institute" type="String" value="Environment and Climate Change Canada" />
+    <attribute name="institute_id" type="String" value="ECCC" />
+    <attribute name="dataset_id" type="String" value="RDRSv2.1" />
+    <attribute name="abstract" type="String" value="Environment and Climate Change Canada has initiated the production of a 1980–2018, 10 km, North American precipitation and surface reanalysis. ERA-Interim is used to initialize the Global Deterministic Reforecast System (GDRS) at a 39 km resolution. Its output is then dynamically downscaled to 10 km by the Regional Deterministic Reforecast System (RDRS). Coupled with the RDRS, the Canadian Land Data Assimilation System (CaLDAS) and Precipitation Analysis (CaPA) are used to produce surface and precipitation analyses. All systems used are close to operational model versions and configurations." />
+    <attribute name="dataset_description" type="String" value="https://doi.org/10.5194/hess-25-4917-2021"></attribute>
+    <attribute name="license_type" type="String" value="permissive" />
+    <attribute name="license" type="String" value="https://eccc-msc.github.io/open-data/licence/readme_en/" />
+    <attribute name="citation" type="String" value="Gasset, N., Fortin, V., Dimitrijevic, M., Carrera, M., Bilodeau, B., Muncaster, R., Gaborit, É., Roy, G., Pentcheva, N., Bulat, M., Wang, X., Pavlovic, R., Lespinas, F., Khedhaouiria, D., and Mai, J. (2021): A 10km North American precipitation and land-surface reanalysis based on the GEM atmospheric model, Hydrol. Earth Syst. Sci., 25, 4917–4945" />
+    <aggregation type="union">
+        <netcdf>
+            <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+                <scan location="/pavics-data/eccc/RDRS_v21/NAM/1hr/tas" regExp="tas_.*\.nc$" subdirs="false"/>
+            </aggregation>
+        </netcdf>
+        <netcdf>
+            <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+                <scan location="/pavics-data/eccc/RDRS_v21/NAM/1hr/pr" regExp="pr_.*\.nc$" subdirs="false"/>
+            </aggregation>
+        </netcdf>
+        <netcdf>
+            <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+                <scan location="/pavics-data/eccc/RDRS_v21/NAM/1hr/tdps" regExp="tdps_.*\.nc$" subdirs="false"/>
+            </aggregation>
+        </netcdf>
+        <netcdf>
+            <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+                <scan location="/pavics-data/eccc/RDRS_v21/NAM/1hr/psl" regExp="psl_.*\.nc$" subdirs="false"/>
+            </aggregation>
+        </netcdf>
+        <netcdf>
+            <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+                <scan location="/pavics-data/eccc/RDRS_v21/NAM/1hr/ps" regExp="ps_.*\.nc$" subdirs="false"/>
+            </aggregation>
+        </netcdf>
+        <netcdf>
+            <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+                <scan location="/pavics-data/eccc/RDRS_v21/NAM/1hr/huss" regExp="huss_.*\.nc$" subdirs="false"/>
+            </aggregation>
+        </netcdf>
+        <netcdf>
+            <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+                <scan location="/pavics-data/eccc/RDRS_v21/NAM/1hr/hurs" regExp="hurs_.*\.nc$" subdirs="false"/>
+            </aggregation>
+        </netcdf>
+    </aggregation>
+</netcdf>

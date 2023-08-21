@@ -9,14 +9,14 @@ import calendar
 import xarray as xr
 import re
 import fnmatch
+
 home = os.environ['HOME']
 pavics_root = f"{home}/pavics/datasets"
 
 
 def main():
-
     overwrite_to_tmp = True
-    dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('anusplin_v1_climindices*.json')
+    dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('*day_ESPO-G6-*-1.0.0_config.json')
     for dataset in dataset_configs:
         with open(dataset, 'r') as f:
             ncml_modify = json.load(f)
@@ -28,24 +28,30 @@ def main():
             if ncml_modify['ncml_type'] == 'pcic-bccaqv2':
                 keylist = get_key_values(datasets[d].ncroot, searchkeys=['@location'])
                 exp = f"historical{d.split('_historical')[-1]}"
-                run = keylist['@location'][0].split(exp)[-1].split('_195')[0].replace('_','')
+                run = keylist['@location'][0].split(exp)[-1].split('_195')[0].replace('_', '')
                 outpath = p.Path(str(dataset.parent).replace('dataset_json_configs', 'tmp')).joinpath(
                     f"{ncml_modify['filename_template'].format(freq=ncml_modify['frequency'], model=d, run=run)}.ncml")
             elif ncml_modify['ncml_type'] == 'climatedata.ca':
                 agg, freq = d.split('_')
-                outpath = p.Path(str(dataset.parent).replace('dataset_json_configs', 'tmp')).joinpath(agg,f"{dataset.name.split('_config')[0]}_{freq}.ncml".replace("__","_"))
+                outpath = p.Path(str(dataset.parent).replace('dataset_json_configs',
+                                                             'tmp')).joinpath(
+                    agg,f"{dataset.name.split('_config')[0]}_{freq}.ncml".replace("__","_").replace('_.', '.'))
+            elif ncml_modify['ncml_type'] == 'climatedata.ca_CanDCS-U6':
+                agg, freq = d.split('_')
+                outpath = p.Path(str(dataset.parent).replace('dataset_json_configs',
+                                                             'tmp')).joinpath(
+                    f"{agg}_{dataset.name.split('_config')[0]}.ncml".replace("__","_").replace('_.', '.'))
             else:
                 if "separate_model_directory" in ncml_modify.keys():
-                    if ncml_modify["separate_model_directory"]=="True":
+                    if ncml_modify["separate_model_directory"] == "True":
                         mod = d.split('_hist')[0]
                         outpath = p.Path(str(dataset.parent).replace('dataset_json_configs', 'tmp')).joinpath(mod,
-                            f"{d}.ncml")
+                                                                                                              f"{d}.ncml")
 
 
                 else:
                     outpath = p.Path(str(dataset.parent).replace('dataset_json_configs', 'tmp')).joinpath(
-                    f"{d}.ncml")
-
+                        f"{d}.ncml")
 
             if overwrite_to_tmp:
                 if not outpath.parent.exists():
@@ -54,7 +60,6 @@ def main():
 
 
 def ncml_create_datasets(ncml_template=None, config=None):
-
     if config['ncml_type'] == 'cmip5-multirun-single-model':
         ncmls = {}
         for exp in config['experiments']:
@@ -127,23 +132,22 @@ def ncml_create_datasets(ncml_template=None, config=None):
                     netcdf2['aggregation']['scan'] = ncml_add_scan(scan)
                     netcdf2['aggregation']['remove'] = []
                     netcdf2['aggregation']['remove'].append({"@name": "time_bnds", "@type": "variable"})
-                    #netcdf2['aggregation']['remove'] = ncml_remove_items(config['remove_coords'])
+                    # netcdf2['aggregation']['remove'] = ncml_remove_items(config['remove_coords'])
                     netcdf['aggregation']['netcdf'].append(netcdf2)
-
-
 
                     del netcdf2
 
                 agg['netcdf'].append(netcdf)
             ncml1 = xncml.Dataset(ncml_template)
             ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
-#            ncml1.ncroot['netcdf']['remove'].append(ncml_remove_items(config['remove_dims']))
+            #            ncml1.ncroot['netcdf']['remove'].append(ncml_remove_items(config['remove_dims']))
             ncml1.ncroot['netcdf']['attribute'] = ncml_add_attributes(config['attribute'])
             ncml1.ncroot['netcdf']['aggregation'] = agg
             ncmls[config['filename_template'].format(exp=exp)] = ncml1
             del ncml1
 
         return ncmls
+
     elif config['ncml_type'] == 'cmip5-1run-batch-model':
         ncmls = {}
         for exp in config['experiments']:
@@ -158,7 +162,6 @@ def ncml_create_datasets(ncml_template=None, config=None):
                 for model in [x for x in p.Path(center).iterdir() if x.is_dir()]:
 
                     print(model)
-
 
                     path1 = p.Path(model).joinpath('historical', freq, realm)
                     if path1.exists():
@@ -348,7 +351,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
                         netcdf2['aggregation']['scan'].append(ncml_add_scan(scan))
                         netcdf2['aggregation']['remove'] = []
                         netcdf2['aggregation']['remove'].append({"@name": "ts", "@type": "variable"})
-                        netcdf2['aggregation']['remove'].append({"@name":"time_vectors","@type":"variable"})
+                        netcdf2['aggregation']['remove'].append({"@name": "time_vectors", "@type": "variable"})
 
                         agg['netcdf'].append(netcdf2)
                         del netcdf2
@@ -374,7 +377,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
             for rcm in [x for x in sim.iterdir() if x.is_dir()]:
                 for gcm in [x for x in rcm.iterdir() if x.is_dir()]:
                     for rcp in [x for x in gcm.iterdir() if x.is_dir() and 'rcp' in x.name]:
-                        var_flag = [len(list(rcm.rglob(f"*{v}_*.nc"))) >0 for v in config['variables']]
+                        var_flag = [len(list(rcm.rglob(f"*{v}_*.nc"))) > 0 for v in config['variables']]
                         agg_dict = {"@type": "Union"}
                         agg = ncml_add_aggregation(agg_dict)
                         agg['netcdf'] = []
@@ -394,7 +397,8 @@ def ncml_create_datasets(ncml_template=None, config=None):
                                 netcdf2['aggregation'] = ncml_add_aggregation(
                                     {'@dimName': 'time', '@type': 'joinExisting', '@recheckEvery': '1 day'})
                                 netcdf2['aggregation']['scan'] = []
-                                scan = {'@location': rcp.as_posix().replace(pavics_root, 'pavics-data'), '@subdirs': 'true',
+                                scan = {'@location': rcp.as_posix().replace(pavics_root, 'pavics-data'),
+                                        '@subdirs': 'true',
                                         '@suffix': f'{v}_*.nc'}
                                 netcdf2['aggregation']['scan'].append(ncml_add_scan(scan))
 
@@ -412,6 +416,52 @@ def ncml_create_datasets(ncml_template=None, config=None):
                             del ncml1
         return ncmls
 
+    elif config['ncml_type'] == "ouranos-ESPO-G6":
+
+        ncmls = {}
+        location = config['location'].replace('pavics-data', pavics_root)
+        for sim in [x for x in p.Path(location).iterdir() if x.is_dir()]:
+            for gcm in [x for x in sim.iterdir() if x.is_dir()]:
+                for scen in [x for x in gcm.iterdir() if x.is_dir() and 'ssp' in x.name]:
+                    var_flag = [len(list(gcm.rglob(f"*{v}_*.nc"))) > 0 for v in config['variables']]
+                    agg_dict = {"@type": "Union"}
+                    agg = ncml_add_aggregation(agg_dict)
+                    agg['netcdf'] = []
+                    outname = None
+                    if all(var_flag):
+
+                        netcdf = ncml_netcdf_container()
+                        # ensure all variables are present
+                        for v in config['variables']:
+                            if outname is None:
+                                outname = '_'.join(list(scen.rglob(f"*{v}_*.nc"))[0].stem.split('_')[1:-1])
+                                allfiles = sorted(list(scen.rglob(f"*{v}_*.nc")))
+                                years = f"{allfiles[0].stem.split('_')[-1].split('-')[0]}-{allfiles[-1].stem.split('_')[-1].split('-')[-1]}"
+                                outname = '_'.join([outname, years])
+
+                            netcdf2 = ncml_netcdf_container()
+                            netcdf2['aggregation'] = ncml_add_aggregation(
+                                {'@dimName': 'time', '@type': 'joinExisting', '@recheckEvery': '1 day'})
+                            netcdf2['aggregation']['scan'] = []
+                            scan = {'@location': scen.as_posix().replace(pavics_root, 'pavics-data'),
+                                    '@subdirs': 'true',
+                                    '@suffix': f'{v}_*.nc'}
+                            netcdf2['aggregation']['scan'].append(ncml_add_scan(scan))
+
+                            agg['netcdf'].append(netcdf2)
+                            del netcdf2
+
+                        ncml1 = xncml.Dataset(ncml_template)
+                        ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
+                        attrs = config['attribute']
+                        attrs['source_institution'] = dict(value=sim.name, type="String")
+                        ncml1.ncroot['netcdf']['attribute'] = ncml_add_attributes(attrs)
+                        ncml1.ncroot['netcdf']['aggregation'] = agg
+
+                        ncmls[outname] = ncml1
+                        del ncml1
+        return ncmls
+
     elif config['ncml_type'] == "climatedata.ca":
 
         ncmls = {}
@@ -421,14 +471,14 @@ def ncml_create_datasets(ncml_template=None, config=None):
                 if freq1 == 'YS':
                     freq1 = [freq1]
                 elif freq1 == 'MS':
-                    freq1 = [f"{str(x).zfill(2)}{calendar.month_name[x]}" for x in range(1,13)]
+                    freq1 = [f"{str(x).zfill(2)}{calendar.month_name[x]}" for x in range(1, 13)]
                 elif freq1 == 'QS-DEC':
-                    freq1 = ['winterDJF', 'springMAM', 'summerJJA','fallSON']
+                    freq1 = ['winterDJF', 'springMAM', 'summerJJA', 'fallSON']
                 else:
                     raise Exception(f"unexpected frequency : {freq1}")
 
                 for freq in freq1:
-                    #runs = sorted(glob.glob(path.join(inrep1, "*" + m + "_hist*r*i1p1*195*2*" + f + "*.nc")))
+                    # runs = sorted(glob.glob(path.join(inrep1, "*" + m + "_hist*r*i1p1*195*2*" + f + "*.nc")))
                     agg_dict = {"@type": "Union"}
                     agg = ncml_add_aggregation(agg_dict)
                     # add runs
@@ -439,20 +489,22 @@ def ncml_create_datasets(ncml_template=None, config=None):
                             realm = config['realm']
                             rcp = exp.split('+')[-1]
 
-                            runs = sorted(list(location.joinpath(v).rglob(config['regexp_template'].format(agg=aggkey, rcp=exp, v=v.name, frequency=freq))))
-                            if len(runs)>0:
+                            runs = sorted(list(location.joinpath(v).rglob(
+                                config['regexp_template'].format(agg=aggkey, rcp=exp, v=v.name, frequency=freq))))
+                            if len(runs) > 0:
                                 netcdf2 = ncml_netcdf_container()
                                 netcdf2['aggregation'] = ncml_add_aggregation(
-                                    {'@dimName': 'time', '@type': 'joinExisting', '@timeUnitsChange':"true", '@recheckEvery': '1 day'})
+                                    {'@dimName': 'time', '@type': 'joinExisting', '@timeUnitsChange': "true",
+                                     '@recheckEvery': '1 day'})
                                 netcdf2['aggregation']['netcdf'] = []
                                 for run in runs:
 
                                     netcdf3 = ncml_netcdf_container()
-                                    #r1 = runs.name.split(exp)[-1].split('_')[1]
-                                    netcdf3['@location'] = str(run).replace(pavics_root,'pavics-data')
+                                    # r1 = runs.name.split(exp)[-1].split('_')[1]
+                                    netcdf3['@location'] = str(run).replace(pavics_root, 'pavics-data')
                                     var_names = []
                                     try:
-                                        dtmp = xr.open_dataset(run, engine = "h5netcdf")
+                                        dtmp = xr.open_dataset(run, engine="h5netcdf")
                                     except:
                                         dtmp = xr.open_dataset(run)
 
@@ -478,17 +530,82 @@ def ncml_create_datasets(ncml_template=None, config=None):
                     attrs = config['attribute']
                     ncml1.ncroot['netcdf']['attribute'] = ncml_add_attributes(attrs)
                     ncml1.ncroot['netcdf']['aggregation'] = agg
-                    ncmls[f"{agg1}_{freq.replace('YS','annual')}"] = ncml1
+                    ncmls[f"{agg1}_{freq.replace('YS', 'annual')}"] = ncml1
                     del ncml1
         return ncmls
 
+    elif config['ncml_type'] == "climatedata.ca_CanDCS-U6":
+
+        ncmls = {}
+        location = p.Path(config['location'].replace('pavics-data', pavics_root))
+        for aggkey, agg1 in config['aggregation'].items():
+            for freq, frequency1 in config['frequency'].items():
+                # runs = sorted(glob.glob(path.join(inrep1, "*" + m + "_hist*r*i1p1*195*2*" + f + "*.nc")))
+                agg_dict = {"@type": "Union"}
+                agg = ncml_add_aggregation(agg_dict)
+                # add runs
+                agg['netcdf'] = []
+                for v in sorted([x for x in location.iterdir() if x.is_dir()]):
+                    print(v)
+                    for exp in config['experiments']:
+                        realm = config['realm']
+                        rcp = exp.split('+')[-1]
+
+                        runs = sorted(list(location.joinpath(v, freq).rglob(
+                            config['regexp_template'].format(agg=agg1, rcp=exp, v=v.name, frequency=freq))))
+                        if agg1 == '':
+                            runs = [r for r in runs if '30ymean' not in r.name]
+                        else:
+                            runs = [r for r in runs if '30ymean' in r.name]
+                        if len(runs) > 0:
+                            netcdf2 = ncml_netcdf_container()
+                            netcdf2['aggregation'] = ncml_add_aggregation(
+                                {'@dimName': 'time', '@type': 'joinExisting', '@timeUnitsChange': "true",
+                                 '@recheckEvery': '1 day'})
+                            netcdf2['aggregation']['netcdf'] = []
+                            for run in runs:
+
+                                netcdf3 = ncml_netcdf_container()
+                                # r1 = runs.name.split(exp)[-1].split('_')[1]
+                                netcdf3['@location'] = str(run).replace(pavics_root, 'pavics-data')
+                                var_names = []
+                                try:
+                                    dtmp = xr.open_dataset(run, engine="h5netcdf")
+                                except:
+                                    dtmp = xr.open_dataset(run)
+
+                                for vv in dtmp.data_vars:
+                                    if exp not in vv and exp != 'allrcps' and exp != 'nrcan':
+                                        d1 = OrderedDict()
+
+                                        d1["@name"] = f"{exp}_{vv}"
+                                        d1["@orgName"] = vv
+                                        var_names.append(d1)
+                                        del d1
+                                del dtmp
+
+                                if var_names:
+                                    netcdf3['variable'] = var_names
+                                netcdf2['aggregation']['netcdf'].append(netcdf3)
+                                del netcdf3
+                            agg['netcdf'].append(netcdf2)
+                            del netcdf2
+
+                ncml1 = xncml.Dataset(ncml_template)
+                ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
+                attrs = config['attribute']
+                ncml1.ncroot['netcdf']['attribute'] = ncml_add_attributes(attrs)
+                ncml1.ncroot['netcdf']['aggregation'] = agg
+                ncmls[f"{frequency1}_{agg1}"] = ncml1
+                del ncml1
+        return ncmls
     elif config['ncml_type'] == "pcic-CanDCS-U6":
         ncmls = {}
         location = config['location'].replace('pavics-data', pavics_root)
         for mod in [x for x in p.Path(location).iterdir() if x.is_dir()]:
 
             for scen in config['experiments']:
-                scen_reg = scen.replace('+',r'\+')
+                scen_reg = scen.replace('+', r'\+')
                 runs = [x.stem.split(f"{scen}_")[-1].split('_')[0] for x in list(mod.rglob(f"*{scen}*.nc"))]
                 runs = sorted(list(set(runs)))
                 for run in runs:
@@ -555,14 +672,14 @@ def ncml_create_datasets(ncml_template=None, config=None):
                 freq = config['frequency']
                 realm = config['realm']
                 rcp = exp.split('+')[-1]
-                #runs = sorted(glob.glob(path.join(inrep1, "*" + m + "_hist*r*i1p1*195*2*" + f + "*.nc")))
+                # runs = sorted(glob.glob(path.join(inrep1, "*" + m + "_hist*r*i1p1*195*2*" + f + "*.nc")))
 
                 for v in config['variables']:
                     runs = sorted(list(location.glob(f"{v}*_{mod}_*{exp}*.nc")))
                     runs = runs[0]
                     r1 = runs.name.split(exp)[-1].split('_')[1]
                     netcdf2 = ncml_netcdf_container()
-                    netcdf2['@location'] = str(runs).replace(pavics_root,'pavics-data')
+                    netcdf2['@location'] = str(runs).replace(pavics_root, 'pavics-data')
                     agg['netcdf'].append(netcdf2)
                     del netcdf2
 
@@ -593,7 +710,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
                 freq = config['frequency']
                 realm = config['realm']
                 rcps = exp.split('+')
-                #runs = sorted(glob.glob(path.join(inrep1, "*" + m + "_hist*r*i1p1*195*2*" + f + "*.nc")))
+                # runs = sorted(glob.glob(path.join(inrep1, "*" + m + "_hist*r*i1p1*195*2*" + f + "*.nc")))
 
                 for v in config['variables']:
                     netcdf2 = ncml_netcdf_container()
@@ -602,14 +719,14 @@ def ncml_create_datasets(ncml_template=None, config=None):
                     netcdf2['aggregation']['scan'] = []
                     for r in rcps:
                         reg_replace = r'.*\.'
-                        reg1 = mod.name.replace('tasmin',v).replace('historical', r).replace('1950.','*.') #"pr.*\.nc$"
+                        reg1 = mod.name.replace('tasmin', v).replace('historical', r).replace('1950.',
+                                                                                              '*.')  # "pr.*\.nc$"
                         infiles = location.rglob(reg1)
 
-
-                        scan = {'@location': location.as_posix().replace(pavics_root, 'pavics-data'), '@regExp': f"{reg1.replace('*.',reg_replace)}$", '@subdirs': 'True',
+                        scan = {'@location': location.as_posix().replace(pavics_root, 'pavics-data'),
+                                '@regExp': f"{reg1.replace('*.', reg_replace)}$", '@subdirs': 'True',
                                 '@suffix': '.nc'}
                         netcdf2['aggregation']['scan'].append(ncml_add_scan(scan))
-
 
                     agg['netcdf'].append(netcdf2)
                     del netcdf2
@@ -617,12 +734,13 @@ def ncml_create_datasets(ncml_template=None, config=None):
                 ncml1 = xncml.Dataset(ncml_template)
                 ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
                 attrs = config['attribute']
-                attrs['driving_experiment'] = dict(value=exp.replace('+',','), type='String')
+                attrs['driving_experiment'] = dict(value=exp.replace('+', ','), type='String')
                 ncml1.ncroot['netcdf']['attribute'] = ncml_add_attributes(attrs)
                 ncml1.ncroot['netcdf']['aggregation'] = agg
                 ncmls[f"day_{mod.name.split('i1p1_')[-1].split('_1950')[0]}_{exp}_nex-gddp"] = ncml1
                 del ncml1
         return ncmls
+
 
 def ncml_add_scan(dict=None):
     d1 = OrderedDict()
@@ -662,7 +780,10 @@ def ncml_add_attributes(dict=None):
         d1 = OrderedDict()
         d1['@name'] = d
         d1['@type'] = dict[d]['type']
-        d1['@value'] = dict[d]['value']
+        if 'value' in dict[d].keys():
+            d1['@value'] = dict[d]['value']
+        elif 'orgName' in dict[d].keys():
+            d1['@orgName'] = dict[d]['orgName']
         attrs.append(d1)
         del d1
     return attrs
@@ -681,7 +802,7 @@ def ncml_remove_items(dict=None):
 
 def recursive_items(dictionary, pattern):
     for key, value in dictionary.items():
-        if key == pattern or value==pattern:
+        if key == pattern or value == pattern:
             yield (key, value)
             if type(value) in [collections.OrderedDict, dict]:
                 yield from recursive_items(value, pattern=pattern)
@@ -694,7 +815,8 @@ def recursive_items(dictionary, pattern):
             elif type(value) is list:
                 for l in value:
                     yield from recursive_items(l, pattern=pattern)
-    #yield (key, value)
+    # yield (key, value)
+
 
 def get_key_values(ncml, searchkeys=None):
     key_vals = {}

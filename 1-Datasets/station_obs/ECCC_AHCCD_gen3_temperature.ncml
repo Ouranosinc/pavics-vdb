@@ -1,4 +1,5 @@
 <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/adjusted_homogenized_station_data/ahccd_gen3_temperature.nc" recheckEvery="1 day">
+    <attribute name="title" type="String" value="Third Generation of Homogenized Daily Temperature for Canada Update to December 2021" />
     <attribute name="abstract" type="String" value="Adjusted and Homogenized Canadian Climate Data (AHCCD) are climate station datasets from Environment Climate Change Canada that incorporate adjustments (derived from statistical procedures) to the original historical station data to account for discontinuities from non-climatic factors, such as instrument changes or station relocation. AHCCD was developed for use in climate research, including climate change studies. Long-term data records are often impacted by changes (e.g. site exposure, location, instrumentation, observer, and observing procedures) that are not related to climate. These non-climatic changes were detected and removed using statistical procedures. When necessary, data were corrected for some measurement techniques that are known to possibly lead to underestimations or overestimations. In addition, data from nearby stations were sometimes combined to create longer time series." />
     <attribute name="dataset_description" type="String" value="https://crd-data-donnees-rdc.ec.gc.ca/CDAS/products/AHCCD_daily/Temperature_Documentation_Gen3.doc"></attribute>
     <attribute name="type" type="String" value="station_obs" />
@@ -9,6 +10,9 @@
       <attribute name="long_name" value="Data is from multiple co-located stations"/>
     </variable>
     <remove name="no" type="variable"></remove>
+    <remove name="tas_flag" type="variable"></remove>
+    <remove name="tasmin_flag" type="variable"></remove>
+    <remove name="tasmax_flag" type="variable"></remove>
 
 </netcdf>
 

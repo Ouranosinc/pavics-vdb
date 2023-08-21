@@ -1,0 +1,131 @@
+{
+  "remove": {
+    "driving_experiment_id": "attribute",
+    "driving_realization": "attribute",
+    "driving_initialization_method": "attribute",
+    "driving_physics_version": "attribute",
+    "description" : "attribute",
+    "GCM__experiment": "attribute",
+    "GCM__experiment_id": "attribute",
+    "GCM__branch_method": "attribute",
+    "GCM__data_specs_version": "attribute",
+    "GCM__forcing_index": "attribute",
+    "GCM__further_url_info": "attribute",
+    "GCM__grid": "attribute",
+    "GCM__grid_label": "attribute",
+    "GCM__initialization_index": "attribute",
+    "GCM__institution": "attribute",
+    "GCM__institution_id": "attribute",
+    "GCM__model_id": "attribute",
+    "GCM__nominal_resolution": "attribute",
+    "GCM__physics_index": "attribute",
+    "GCM__realization_index": "attribute",
+    "GCM__source_id": "attribute",
+    "GCM__source_type": "attribute",
+    "long_name": "attribute",
+    "standard_name": "attribute",
+    "units": "attribute",
+    "ccdp_name": "attribute",
+    "table_id": "attribute",
+    "variable_id": "attribute",
+    "method": "attribute",
+    "method_id": "attribute",
+    "is_dayofyear": "attribute",
+    "calendar": "attribute",
+    "cell_methods": "attribute"
+  },
+  "attribute": {
+    "target_contact": {"orgName" : "target__contact", "type": "String"},
+    "target_dataset": {"orgName" : "target__dataset", "type": "String"},
+    "target_dataset_id": {"orgName" : "target__dataset_id", "type": "String"},
+    "target_institution": {"orgName" : "target__institution", "type": "String"},
+    "target_institution_id": {"orgName" : "target__institution_id", "type": "String"},
+    "target_references": {"orgName" : "target__references", "type": "String"},
+    "target_version": {"orgName" : "target__version", "type": "String"},
+    "abstract": {
+      "value": "This dataset provides access to CMIP6 climate indicator ensemble statisics data that drives mapping and time-series visualizations on ClimateData.ca. Climatedata.ca is a climate data portal produced collaboratively by the country’s leading climate organizations and supported, in part, by the Government of Canada. The goal of this portal is to support decision makers across a broad spectrum of sectors and locations by providing the most up to date climate data in easy to use formats and visualizations.",
+      "type": "String"
+    },
+    "climateindex_package_id": {
+      "value": "https://github.com/Ouranosinc/xclim",
+      "type": "String"
+    },
+    "institution": {
+      "value": "Canadian Centre for Climate Services",
+      "type": "String"
+    },
+    "institution_id": {
+      "value": "CCCS",
+      "type": "String"
+    },
+    "contact": {
+      "value": "Canadian Centre for Climate Services",
+      "type": "String"
+    },
+    "driving_experiment": {"value":  "historical, ssp126, ssp245, ssp585", "type":  "String"},
+    "driving_model_id": {"value":  "multi-model statistics", "type":  "String"},
+    "driving_institute_id": {"value":  "multi-model statistics", "type":  "String"},
+    "title": {"value": "Climatedata.ca : CMIP6 : Yearly ensemble percentiles for CanDCS-U6 derived climate indicators","type": "String"},
+    "type": {
+      "value": "GCM",
+      "type": "String"
+    },
+    "processing": {
+      "value": "bias_adjusted",
+      "type": "String"
+    },
+    "dataset_description": {
+      "value": "https://climatedata.ca/",
+      "type": "String"
+    },
+    "frequency": {"value": "yr","type": "String"},
+    "dataset_id": {"value": "climatedata_ca_BCCAQv2", "type":"String"},
+    "project_id": {
+      "value": "CMIP6",
+      "type": "String"
+    },
+    "bias_adjustment_institute_id": {
+      "orgName":"institute_id",
+      "type": "String"
+    },
+    "bias_adjustment_method": {
+      "orgName":"downscaling_method",
+      "type": "String"
+    },
+    "bias_adjustment_method_id": {
+      "orgName":"downscaling_method_id",
+      "type": "String"
+    },
+    "bias_adjustment_package_id": {
+      "orgName":"downscaling_package_id",
+      "type": "String"
+    },
+    "bias_adjustment_reference": {
+      "orgName": "references",
+      "type": "String"
+    },
+    "license_type": {
+      "value": "permissive",
+      "type": "String"
+    },
+    "license": {
+      "value": "https://open.canada.ca/en/open-government-licence-canada",
+      "type": "String"
+    },
+    "terms_of_use": {
+      "value": "Please see further terms of use associated with CanDCS-U6 input dataset used in climate indicator calculations at https://pacificclimate.org/data/statistically-downscaled-climate-scenarios.",
+      "type": "String"
+    }
+
+  },
+  "location": "/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/",
+  "ncml_type": "climatedata.ca_CanDCS-U6",
+  "experiments": [
+    "ssp126", "ssp245", "ssp585"
+  ],
+  "aggregation": {"":""},
+  "frequency": {"YS": "annual", "MS": "monthly","QS-DEC": "seasonal"},
+  "realm": "atmos",
+  "regexp_template": "{v}_*BCCAQ2v2+ANUSPLIN300_historical+{rcp}*{agg}_percentiles.nc",
+  "filename_template": "{aggregation}{frequency}-CanDCS-U6_climindices-ensemble_percentiles"
+}
