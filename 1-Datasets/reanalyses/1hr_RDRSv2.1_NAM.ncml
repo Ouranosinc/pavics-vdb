@@ -3,8 +3,8 @@
     <remove name="licence_type" type="attribute" />
     <attribute name="title" type="String" value="Regional Deterministic Reforecast System - RDRS v2.1 : hourly" />
     <attribute name="type" type="String" value="reconstruction" />
-    <attribute name="institute" type="String" value="Environment and Climate Change Canada" />
-    <attribute name="institute_id" type="String" value="ECCC" />
+    <attribute name="institution_name" type="String" value="Environment and Climate Change Canada" />
+    <attribute name="institution" type="String" value="ECCC" />
     <attribute name="dataset_id" type="String" value="RDRSv2.1" />
     <attribute name="abstract" type="String" value="Environment and Climate Change Canada has initiated the production of a 1980–2018, 10 km, North American precipitation and surface reanalysis. ERA-Interim is used to initialize the Global Deterministic Reforecast System (GDRS) at a 39 km resolution. Its output is then dynamically downscaled to 10 km by the Regional Deterministic Reforecast System (RDRS). Coupled with the RDRS, the Canadian Land Data Assimilation System (CaLDAS) and Precipitation Analysis (CaPA) are used to produce surface and precipitation analyses. All systems used are close to operational model versions and configurations." />
     <attribute name="dataset_description" type="String" value="https://doi.org/10.5194/hess-25-4917-2021"></attribute>

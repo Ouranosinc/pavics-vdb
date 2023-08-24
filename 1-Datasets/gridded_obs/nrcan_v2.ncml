@@ -10,8 +10,8 @@
     <attribute name="dataset_description" type="String" value="https://cfs.nrcan.gc.ca/projects/3/1"></attribute>
     <attribute name="type" type="String" value="gridded-obs" />
     <attribute name="processing_level" type="String" value="raw" />
-    <attribute name="institute" type="String" value="Natural Resources Canada : Canadian Forest Service" />
-    <attribute name="institute_id" type="String" value="NRCAN" />
+    <attribute name="institution_name" type="String" value="Natural Resources Canada : Canadian Forest Service" />
+    <attribute name="institution" type="String" value="NRCAN" />
     <attribute name="dataset_id" type="String" value="NRCAN_anusplin_daily_v2" />
     <attribute name="version" type="String" value="2.0" />
     <attribute name="frequency" type="String" value="day" />

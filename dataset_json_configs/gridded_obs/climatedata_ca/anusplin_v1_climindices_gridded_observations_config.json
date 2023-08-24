@@ -12,11 +12,11 @@
       "value": "https://github.com/Ouranosinc/xclim",
       "type": "String"
     },
-    "institute": {
+    "institution_name": {
       "value": "Canadian Centre for Climate Services",
       "type": "String"
     },
-    "institute_id": {
+    "institution": {
       "value": "CCCS",
       "type": "String"
     },

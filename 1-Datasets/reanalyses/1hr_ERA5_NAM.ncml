@@ -1,8 +1,8 @@
 <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
     <attribute name="title" type="String" value="ERA5 : hourly" />
     <attribute name="type" type="String" value="reconstruction" />
-    <attribute name="institute" type="String" value="European Centre for Medium-Range Weather Forecasts" />
-    <attribute name="institute_id" type="String" value="ECMWF" />
+    <attribute name="institution_name" type="String" value="European Centre for Medium-Range Weather Forecasts" />
+    <attribute name="institution" type="String" value="ECMWF" />
     <attribute name="dataset_id" type="String" value="ERA5" />
     <attribute name="abstract" type="String" value="ERA5 provides hourly estimates of a large number of atmospheric, land and oceanic climate variables. The data cover the Earth on a 30km grid and resolve the atmosphere using 137 levels from the surface up to a height of 80km. ERA5 includes information about uncertainties for all variables at reduced spatial and temporal resolutions. Quality-assured monthly updates of ERA5 (1979 to present) are published within 3 months of real time. Preliminary daily updates of the dataset are available to users within 5 days of real time. ERA5 combines vast amounts of historical observations into global estimates using advanced modelling and data assimilation systems. ERA5 replaces the ERA-Interim reanalysis which stopped being produced on 31 August 2019. You can read about the key characteristics of ERA5 and important changes relative to ERA-Interim." />
     <attribute name="dataset_description" type="String" value="https://www.ecmwf.int/en/forecasts/datasets/reanalysis-datasets/era5"></attribute>
