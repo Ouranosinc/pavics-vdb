@@ -17,6 +17,9 @@ home = os.environ['HOME']
 # Create ~/pavics directory then mount the notos data directory
 # sshfs -o follow_symlinks dhuard@notos.ouranos.ca:/home/dhuard/ /home/david/pavics
 
+# To test the resulting ncml with xncml
+# sshfs -o follow_symlinks dhuard@notos.ouranos.ca:/pvcs2/DATA /pavics-data
+
 pavics_root = f"{home}/pavics/datasets"
 
 CONFIG_DIR = p.Path(__file__).parent.parent / "dataset_json_configs"
