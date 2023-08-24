@@ -14,21 +14,21 @@
       "value": "The ClimEx CRCM5 Large Ensemble of high-resolution data for North-Eastern North America. This dataset consists of Canadian Regional Climate Model v.5 dynamically downscaled runs driven from 50 members of the CanESM2 GCM. The large ensemble with several thousand model years provides the potential to catch rare extreme events and improve the process understanding of extreme events with return periods of 100+ years.",
       "type": "String"
     },
-    "institution": {
+    "institution_name": {
       "value": "Ouranos Consortium on Regional Climatology and Adaptation to Climate Change",
       "type": "String"
     },
-    "institute_id": {
+    "institution": {
       "value": "Ouranos",
       "type": "String"
     },
     "driving_experiment": {"value":  "historical, rcp85", "type":  "String"},
     "title": {"value": "The ClimEx CRCM5 Large Ensemble","type": "String"},
     "type": {
-      "value": "RCM",
+      "value": "simulation",
       "type": "String"
     },
-    "processing": {
+    "processing_level": {
       "value": "raw",
       "type": "String"
     },

@@ -1,6 +1,6 @@
 <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
     <attribute name="title" type="String" value="ERA5 : hourly" />
-    <attribute name="type" type="String" value="reanalysis" />
+    <attribute name="type" type="String" value="reconstruction" />
     <attribute name="institute" type="String" value="European Centre for Medium-Range Weather Forecasts" />
     <attribute name="institute_id" type="String" value="ECMWF" />
     <attribute name="dataset_id" type="String" value="ERA5" />

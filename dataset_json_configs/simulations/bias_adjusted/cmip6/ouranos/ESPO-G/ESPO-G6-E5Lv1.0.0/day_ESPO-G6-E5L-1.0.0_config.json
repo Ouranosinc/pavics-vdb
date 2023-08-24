@@ -2,13 +2,16 @@
   "remove": {
     "redistribution": "attribute"
   },
-
+"mip_era": {
+    "value": "CMIP6",
+    "type": "String"
+  },
   "attribute": {
-    "institution": {
+    "institution_name": {
       "value": "Ouranos Consortium on Regional Climatology and Adaptation to Climate Change",
       "type": "String"
     },
-    "institution_id": {
+    "institution": {
       "value": "Ouranos",
       "type": "String"
     },
@@ -16,11 +19,11 @@
       "type": "String"},
     "dataset_id": {"value": "ESPO-G6-E5L v1.0.0", "type":"String"},
     "type": {
-      "value": "GCM",
+      "value": "simulation",
       "type": "String"
     },
-    "processing": {
-      "value": "bias_adjusted",
+    "processing_level": {
+      "value": "biasadjusted",
       "type": "String"
     },
     "dataset_description": {
@@ -35,6 +38,7 @@
       "value": "The need to adapt to climate change is present in a growing number of fields, leading to an increase in the demand for climate scenarios for often interrelated sectors of activity. In order to meet this growing demand and to ensure the availability of climate scenarios responding to numerous vulnerability, impact and adaptation (VIA) studies, Ouranos is working to create a set of operational multipurpose climate scenarios called \"Ensemble de Scénarios Polyvalents d'Ouranos” (ESPO) covering North America at a resolution of 0.1 degree (~9km). This operational product actually consists of two related datasets 1) ESPO-R (described here) produced from bias-adjusted regional climate simulations, and 2) ESPO-G produced following the same methodology, but from global simulations available via the CMIP program.",
       "type": "String"
     },
+    "bias_adjust_institution": {"value": "Ouranos", "type": "String"},
     "bias_adjust_method": {
       "value": "1D-Detrended Quantile Mapping (https://xclim.readthedocs.io/en/stable/sdba.html#sdba-user-api)",
       "type": "String"

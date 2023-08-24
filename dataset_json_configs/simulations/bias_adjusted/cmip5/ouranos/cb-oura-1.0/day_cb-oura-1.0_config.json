@@ -4,11 +4,11 @@
     "driving_model": "attribute"
   },
   "attribute": {
-     "institution": {
+     "institution_name": {
       "value": "Ouranos Consortium on Regional Climatology and Adaptation to Climate Change",
       "type": "String"
     },
-    "institute_id": {
+    "institution": {
       "value": "Ouranos",
       "type": "String"
     },
@@ -16,11 +16,15 @@
       "type": "String"},
     "dataset_id": {"value": "cb-oura-1.0", "type":"String"},
     "type": {
-      "value": "GCM",
+      "value": "simulation",
       "type": "String"
     },
-    "processing": {
-      "value": "bias_adjusted",
+    "mip_era": {
+      "value": "CMIP5",
+      "type": "String"
+    },
+    "processing_level": {
+      "value": "biasadjusted",
       "type": "String"
     },
     "dataset_description": {

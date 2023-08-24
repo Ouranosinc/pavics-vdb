@@ -4,11 +4,11 @@
   },
 
   "attribute": {
-    "institution": {
+    "institution_name": {
       "value": "Ouranos Consortium on Regional Climatology and Adaptation to Climate Change",
       "type": "String"
     },
-    "institution_id": {
+    "institution": {
       "value": "Ouranos",
       "type": "String"
     },
@@ -16,7 +16,7 @@
       "type": "String"},
     "dataset_id": {"value": "ESPO-R5 v1.0.0", "type":"String"},
     "type": {
-      "value": "RCM",
+      "value": "simulation",
       "type": "String"
     },
     "processing": {

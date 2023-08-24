@@ -2,7 +2,7 @@
     <remove name="institution" type="attribute" />
     <remove name="licence_type" type="attribute" />
     <attribute name="title" type="String" value="Regional Deterministic Reforecast System - RDRS v2.1 : hourly" />
-    <attribute name="type" type="String" value="reanalysis" />
+    <attribute name="type" type="String" value="reconstruction" />
     <attribute name="institute" type="String" value="Environment and Climate Change Canada" />
     <attribute name="institute_id" type="String" value="ECCC" />
     <attribute name="dataset_id" type="String" value="RDRSv2.1" />

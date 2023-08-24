@@ -50,11 +50,11 @@
       "value": "https://github.com/Ouranosinc/xclim",
       "type": "String"
     },
-    "institution": {
+    "institution_name": {
       "value": "Canadian Centre for Climate Services",
       "type": "String"
     },
-    "institute_id": {
+    "institution": {
       "value": "CCCS",
       "type": "String"
     },
@@ -63,11 +63,11 @@
     "driving_institute_id": {"value":  "multi-model statistics", "type":  "String"},
     "title": {"value": "Climatedata.ca : CMIP6 : Climatic normal (30 year average) ensemble percentiles for CanDCS-U6 derived climate indicators","type": "String"},
     "type": {
-      "value": "GCM",
+      "value": "simulation",
       "type": "String"
     },
-    "processing": {
-      "value": "bias_adjusted",
+    "processing_level": {
+      "value": "derived",
       "type": "String"
     },
     "frequency": {"value": "10yr","type": "String"},
@@ -80,23 +80,23 @@
       "value": "CMIP6",
       "type": "String"
     },
-    "bias_adjustment_institute_id": {
+    "bias_adjust_institution": {
       "orgName":"institute_id",
       "type": "String"
     },
-    "bias_adjustment_method": {
+    "bias_adjust_method": {
       "orgName":"downscaling_method",
       "type": "String"
     },
-    "bias_adjustment_method_id": {
+    "bias_adjust_method_id": {
       "orgName":"downscaling_method_id",
       "type": "String"
     },
-    "bias_adjustment_package_id": {
+    "bias_adjust_package_id": {
       "orgName":"downscaling_package_id",
       "type": "String"
     },
-    "bias_adjustment_reference": {
+    "bias_adjust_reference": {
       "orgName": "references",
       "type": "String"
     },

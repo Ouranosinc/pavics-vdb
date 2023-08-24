@@ -5,7 +5,8 @@
     <attribute name="title" type="String" value="NRCAN ANUSPLIN daily gridded dataset : version 1" />
     <attribute name="abstract" type="String" value="Gridded daily observational dataset produced by Natural Resources Canada (NRCan), available at 300 arc second spatial resolution (1/12° grids, ~10 km) over Canada. The bulk of the daily minimum and maximum temperature, and precipitation amounts for the period 1950-2012 were produced circa 2011. The dataset was updated in 2013 to correct for issues in the Churchill River area. Gridding was accomplished with the Australian National University Spline (ANUSPLIN) implementation of the trivariate thin plate splines interpolation method with latitude, longitude and elevation as predictors. " />
     <attribute name="dataset_description" type="String" value="https://cfs.nrcan.gc.ca/projects/3/1"></attribute>
-    <attribute name="type" type="String" value="gridded_obs" />
+    <attribute name="type" type="String" value="gridded-obs" />
+    <attribute name="processing_level" type="String" value="raw" />
     <attribute name="institute" type="String" value="Natural Resources Canada : Canadian Forest Service" />
     <attribute name="institute_id" type="String" value="NRCAN" />
     <attribute name="dataset_id" type="String" value="NRCAN_anusplin_daily_v1" />

@@ -14,12 +14,16 @@
       "value": "https://github.com/Ouranosinc/xclim",
       "type": "String"
     },
-    "institution": {
+    "institution_name": {
       "value": "Canadian Centre for Climate Services",
       "type": "String"
     },
-    "institute_id": {
+    "institution": {
       "value": "CCCS",
+      "type": "String"
+    },
+    "mip_era": {
+      "value": "CMIP5",
       "type": "String"
     },
     "driving_experiment": {"value":  "historical, rcp26, rcp45, rcp85", "type":  "String"},
@@ -27,11 +31,11 @@
     "driving_institute_id": {"value":  "multi-model statistics", "type":  "String"},
     "title": {"value": "Climatedata.ca : CMIP5 : Yearly ensemble percentiles for CanDCS-U5 (BCCAQv2) derived climate indicators","type": "String"},
     "type": {
-      "value": "GCM",
+      "value": "simulation",
       "type": "String"
     },
-    "processing": {
-      "value": "bias_adjusted",
+    "processing_level": {
+      "value": "derived",
       "type": "String"
     },
     "dataset_description": {

@@ -13,8 +13,8 @@
 	<attribute name="institute_id" type="String" value="Ouranos"></attribute>
 	<attribute name="driving_experiment" type="String" value="historical, rcp85"></attribute>
 	<attribute name="title" type="String" value="The ClimEx CRCM5 Large Ensemble"></attribute>
-	<attribute name="type" type="String" value="RCM"></attribute>
-	<attribute name="processing" type="String" value="raw"></attribute>
+	<attribute name="type" type="String" value="simulation"></attribute>
+	<attribute name="processing_level" type="String" value="raw"></attribute>
 	<attribute name="dataset_description" type="String" value="http://www.climex-project.org/sites/default/files/ClimEx_CRCM5-LE_documentation_v2.1.pdf"></attribute>
 	<attribute name="project_id" type="String" value="CLIMEX"></attribute>
 	<attribute name="terms of use" type="String" value="http://www.climex-project.org/sites/default/files/CRCM5ClimExRunsOuranos_TermsOfUse_Credits_eng_v6.pdf"></attribute>
