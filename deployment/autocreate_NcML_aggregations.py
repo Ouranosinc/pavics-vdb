@@ -15,6 +15,8 @@ import xncml
 home = os.environ['HOME']
 
 # Create ~/pavics directory then mount the notos data directory
+# Why not mount at /pavics-data ? So we don't have to mess with the location ?
+
 # sshfs -o follow_symlinks dhuard@notos.ouranos.ca:/home/dhuard/ /home/david/pavics
 
 # To test the resulting ncml with xncml
