@@ -154,10 +154,11 @@ class TestDataset:
             if len(ncmls) != 1:
                 raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
 
-            dsNcML = subset.subset_bbox(
-                xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=30, lon=60, lat=60),decode_timedelta=False),
-                lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
-            )
+            dsNcML = xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=50, lon=60, lat=60),decode_timedelta=False)
+            if 'realization' in dsNcML.dims:
+                dsNcML = xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(realization=1, time=50, lon=60, lat=60),
+                                         decode_timedelta=False)
+            dsNcML = subset.subset_bbox(dsNcML, lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat'])
 
             compare_ncml_rawdata(dataset, dsNcML, compare_raw)
 
@@ -481,8 +482,18 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, check_times=True, files_
 
             if 'climex' in l1[1]:
                 compare_values(dsNcML.sel(realization=bytes(file1.parent.name.split('-rcp')[0],  'utf-8')), ds, compare_vals)
+
             else:
                 if 'cccs_portal' in l1[1]:
+                    if 'realization' in dsNcML.dims:
+
+                        dstest = dsNcML.sel(realization=[f"{str(r.values).split(':r')[0]}:" in path.Path(l[1]).name for r in
+                                                         dsNcML.realization.astype(str)]).squeeze()
+                    else:
+                        dstest = dsNcML
+
+                    if 'realization' in dstest.dims:
+                        raise ValueError('test')
                     rcp = [rcp for rcp in ['rcp26','rcp45','rcp85','ssp126','ssp245','ssp585'] if rcp in local_path]
                     if len(rcp)>1:
                         raise ValueError(f'expected single rcp value found {rcp}')
@@ -493,7 +504,9 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, check_times=True, files_
                             ds = ds.rename({v:f"{rcp}_{v}"})
                     del rcp
 
-                compare_values(dsNcML, ds, compare_vals)
+                    compare_values(dstest, ds, compare_vals)
+                else:
+                    compare_values(dsNcML, ds, compare_vals)
 
 
 
@@ -551,9 +564,9 @@ def main():
     #test(self=test, compare_raw=False)
     #test = TestDataset.test_NEXGDDP
     #test = TestDataset.test_CLIMEX
-    #test = TestDataset.test_ClimateData
+    test = TestDataset.test_ClimateData
     #test = TestDataset.test_ESPO_R
-    test = TestDataset.test_ESPO_G
+    #test = TestDataset.test_ESPO_G
     #test = TestDataset.test_CanDCS_U6
     test(self=test, compare_raw=True)
 

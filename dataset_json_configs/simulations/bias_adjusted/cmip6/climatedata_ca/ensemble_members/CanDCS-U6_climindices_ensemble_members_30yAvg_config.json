@@ -136,9 +136,9 @@
   "experiments": [
     "ssp126", "ssp245", "ssp585"
   ],
-  "aggregation": {"":""},
+  "aggregation": {"30ymean_":"30ymean"},
   "frequency": {"YS": "annual", "MS": "monthly","QS-DEC": "seasonal"},
   "realm": "atmos",
-  "regexp_template": "{v}_*BCCAQ2v2+ANUSPLIN300_{mod}_historical+{rcp}*.nc",
+  "regexp_template": "{v}_*BCCAQ2v2+ANUSPLIN300_{mod}_historical+{rcp}*{agg}*.nc",
   "filename_template": "{aggregation}{frequency}-CanDCS-U6_climindices-ensemble_members"
 }
