@@ -13,7 +13,7 @@ pavics_root = f"{home}/pavics/datasets"
 
 def main():
     overwrite_to_tmp = True
-    dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('CanDCS-U6_climindices_ensemble_members*_config.json')
+    dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('CanDCS-U6_climindices_ensemble_members*30*_config.json')
     for dataset in dataset_configs:
         with open(dataset, 'r') as f:
             ncml_modify = json.load(f)
@@ -613,7 +613,9 @@ def ncml_create_datasets(ncml_template=None, config=None):
                 varlist = []
                 for exp in config['experiments']:
                     varlist.extend([f"{exp}_{v.name}" for v in vars])
-
+                if agg1 == "30ymean":
+                    varlist.extend([f"{v}_delta_1971_2000" for v in varlist])
+                    varlist.extend([f"{v}_delta_1991_2020" for v in varlist])
                 agg_dict = {"@dimName": "realization", "@type": "joinNew", "variableAgg": varlist} #
                 agg = ncml_add_aggregation(agg_dict)
                 # add runs

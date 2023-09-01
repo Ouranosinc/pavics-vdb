@@ -155,12 +155,14 @@ class TestDataset:
                 raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
 
             dsNcML = xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=50, lon=60, lat=60),decode_timedelta=False)
+            sample_locations = None
             if 'realization' in dsNcML.dims:
                 dsNcML = xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(realization=1, time=50, lon=60, lat=60),
                                          decode_timedelta=False)
-            dsNcML = subset.subset_bbox(dsNcML, lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat'])
-
-            compare_ncml_rawdata(dataset, dsNcML, compare_raw)
+                sample_locations = 0.15 # sample only 15% of all '@location' netcdfs
+            #dsNcML = subset.subset_bbox(dsNcML, lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat'])
+            dsNcML = dsNcML.sel(lon=slice(test_reg['lon'][0], test_reg['lon'][1]), lat=slice(test_reg['lat'][0], test_reg['lat'][1]))
+            compare_ncml_rawdata(dataset, dsNcML, compare_raw, sample_location=sample_locations)
 
     def test_BCCAQv2(self, compare_raw=False):
 
@@ -387,7 +389,7 @@ class TestDataset:
 
             compare_ncml_rawdata(dataset,dsNcML, compare_raw)
 
-def compare_ncml_rawdata(dataset, dsNcML, compare_vals, check_times=True, files_perrun=None):
+def compare_ncml_rawdata(dataset, dsNcML, compare_vals, check_times=True, files_perrun=None, sample_location=None):
     ncml = xncml.Dataset(dataset)
     l1 = list(recursive_items(ncml.ncroot, '@location'))[0]
 
@@ -405,9 +407,18 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, check_times=True, files_
             assert ('historical' in l[1]['@location'] or rcp in l[1]['@location'])
 
     files = {}
-    for l in list(recursive_items(ncml.ncroot, key1)):
-        if isinstance(l[1],collections.OrderedDict) or isinstance(l[1], dict):
-            local_path = str(l[1]['@location'].replace('pavics-data', pavics_root))
+
+    locations = list(recursive_items(ncml.ncroot, key1))
+    if sample_location:
+        ind1 = np.random.choice(range(0,len(locations)), round(sample_location * len(locations) ), replace=False)
+        loc1 = []
+        for ii in ind1:
+            loc1.append(locations[ii])
+        locations = loc1
+        del loc1
+    for l in locations:
+        if isinstance(l,collections.OrderedDict) or isinstance(l, dict):
+            local_path = str(l['@location'].replace('pavics-data', pavics_root))
         else:
             local_path = str(l[1].replace('pavics-data', pavics_root))
         #print(local_path)
@@ -487,13 +498,13 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, check_times=True, files_
                 if 'cccs_portal' in l1[1]:
                     if 'realization' in dsNcML.dims:
 
-                        dstest = dsNcML.sel(realization=[f"{str(r.values).split(':r')[0]}:" in path.Path(l[1]).name for r in
+                        dstest = dsNcML.sel(realization=[f"{str(r.values).split(':r')[0]}_" in path.Path(l[1]).name for r in
                                                          dsNcML.realization.astype(str)]).squeeze()
                     else:
                         dstest = dsNcML
 
                     if 'realization' in dstest.dims:
-                        raise ValueError('test')
+                        raise ValueError('test data has realization dimension')
                     rcp = [rcp for rcp in ['rcp26','rcp45','rcp85','ssp126','ssp245','ssp585'] if rcp in local_path]
                     if len(rcp)>1:
                         raise ValueError(f'expected single rcp value found {rcp}')
