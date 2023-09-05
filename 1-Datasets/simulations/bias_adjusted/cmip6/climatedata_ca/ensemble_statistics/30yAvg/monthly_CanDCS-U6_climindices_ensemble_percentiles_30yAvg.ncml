@@ -200,51 +200,6 @@
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/MS/ssp126/ensemble_percentiles/r10mm_mon_BCCAQ2v2+ANUSPLIN300_historical+ssp126_1950-2100_30ymean_percentiles.nc">
-					<variable name="ssp126_r10mm_p10" orgName="r10mm_p10"></variable>
-					<variable name="ssp126_r10mm_p50" orgName="r10mm_p50"></variable>
-					<variable name="ssp126_r10mm_p90" orgName="r10mm_p90"></variable>
-					<variable name="ssp126_r10mm_delta_1971_2000_p10" orgName="r10mm_delta_1971_2000_p10"></variable>
-					<variable name="ssp126_r10mm_delta_1971_2000_p50" orgName="r10mm_delta_1971_2000_p50"></variable>
-					<variable name="ssp126_r10mm_delta_1971_2000_p90" orgName="r10mm_delta_1971_2000_p90"></variable>
-					<variable name="ssp126_r10mm_delta_1991_2020_p10" orgName="r10mm_delta_1991_2020_p10"></variable>
-					<variable name="ssp126_r10mm_delta_1991_2020_p50" orgName="r10mm_delta_1991_2020_p50"></variable>
-					<variable name="ssp126_r10mm_delta_1991_2020_p90" orgName="r10mm_delta_1991_2020_p90"></variable>
-				</netcdf>
-			</aggregation>
-		</netcdf>
-		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/MS/ssp245/ensemble_percentiles/r10mm_mon_BCCAQ2v2+ANUSPLIN300_historical+ssp245_1950-2100_30ymean_percentiles.nc">
-					<variable name="ssp245_r10mm_p10" orgName="r10mm_p10"></variable>
-					<variable name="ssp245_r10mm_p50" orgName="r10mm_p50"></variable>
-					<variable name="ssp245_r10mm_p90" orgName="r10mm_p90"></variable>
-					<variable name="ssp245_r10mm_delta_1971_2000_p10" orgName="r10mm_delta_1971_2000_p10"></variable>
-					<variable name="ssp245_r10mm_delta_1971_2000_p50" orgName="r10mm_delta_1971_2000_p50"></variable>
-					<variable name="ssp245_r10mm_delta_1971_2000_p90" orgName="r10mm_delta_1971_2000_p90"></variable>
-					<variable name="ssp245_r10mm_delta_1991_2020_p10" orgName="r10mm_delta_1991_2020_p10"></variable>
-					<variable name="ssp245_r10mm_delta_1991_2020_p50" orgName="r10mm_delta_1991_2020_p50"></variable>
-					<variable name="ssp245_r10mm_delta_1991_2020_p90" orgName="r10mm_delta_1991_2020_p90"></variable>
-				</netcdf>
-			</aggregation>
-		</netcdf>
-		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/MS/ssp585/ensemble_percentiles/r10mm_mon_BCCAQ2v2+ANUSPLIN300_historical+ssp585_1950-2100_30ymean_percentiles.nc">
-					<variable name="ssp585_r10mm_p10" orgName="r10mm_p10"></variable>
-					<variable name="ssp585_r10mm_p50" orgName="r10mm_p50"></variable>
-					<variable name="ssp585_r10mm_p90" orgName="r10mm_p90"></variable>
-					<variable name="ssp585_r10mm_delta_1971_2000_p10" orgName="r10mm_delta_1971_2000_p10"></variable>
-					<variable name="ssp585_r10mm_delta_1971_2000_p50" orgName="r10mm_delta_1971_2000_p50"></variable>
-					<variable name="ssp585_r10mm_delta_1971_2000_p90" orgName="r10mm_delta_1971_2000_p90"></variable>
-					<variable name="ssp585_r10mm_delta_1991_2020_p10" orgName="r10mm_delta_1991_2020_p10"></variable>
-					<variable name="ssp585_r10mm_delta_1991_2020_p50" orgName="r10mm_delta_1991_2020_p50"></variable>
-					<variable name="ssp585_r10mm_delta_1991_2020_p90" orgName="r10mm_delta_1991_2020_p90"></variable>
-				</netcdf>
-			</aggregation>
-		</netcdf>
-		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/MS/ssp126/ensemble_percentiles/r1mm_mon_BCCAQ2v2+ANUSPLIN300_historical+ssp126_1950-2100_30ymean_percentiles.nc">
 					<variable name="ssp126_r1mm_delta_1971_2000_p10" orgName="r1mm_delta_1971_2000_p10"></variable>
 					<variable name="ssp126_r1mm_delta_1971_2000_p50" orgName="r1mm_delta_1971_2000_p50"></variable>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+	<remove name="redistribution" type="attribute"></remove>
+	<attribute name="institution" type="String" value="Ouranos Consortium on Regional Climatology and Adaptation to Climate Change"></attribute>
+	<attribute name="institution_id" type="String" value="Ouranos"></attribute>
+	<attribute name="title" type="String" value="ESPO-G6-R2 v1.0.0 : Ouranos Multipurpose Climate Scenarios - Global Models CMIP6 - RDRS v2.1"></attribute>
+	<attribute name="dataset_id" type="String" value="ESPO-G6-R2 v1.0.0"></attribute>
+	<attribute name="type" type="String" value="GCM"></attribute>
+	<attribute name="processing" type="String" value="bias_adjusted"></attribute>
+	<attribute name="dataset_description" type="String" value="https://doi.org/10.5281/zenodo.7877330"></attribute>
+	<attribute name="doi" type="String" value="https://doi.org/10.5281/zenodo.7877330"></attribute>
+	<attribute name="abstract" type="String" value="The need to adapt to climate change is present in a growing number of fields, leading to an increase in the demand for climate scenarios for often interrelated sectors of activity. In order to meet this growing demand and to ensure the availability of climate scenarios responding to numerous vulnerability, impact and adaptation (VIA) studies, Ouranos is working to create a set of operational multipurpose climate scenarios called &quot;Ensemble de Scénarios Polyvalents d'Ouranos” (ESPO) covering North America at a resolution of 0.1 degree (~9km). This operational product actually consists of two related datasets 1) ESPO-R (described here) produced from bias-adjusted regional climate simulations, and 2) ESPO-G produced following the same methodology, but from global simulations available via the CMIP program."></attribute>
+	<attribute name="bias_adjust_method" type="String" value="1D-Detrended Quantile Mapping (https://xclim.readthedocs.io/en/stable/sdba.html#sdba-user-api)"></attribute>
+	<attribute name="bias_adjust_method_citation" type="String" value="https://doi.org/10.1175/JCLI-D-14-00754.1"></attribute>
+	<attribute name="bias_adjust_reference" type="String" value="Regional Deterministic Reforecast System (RDRS) v2.1 (1989-2018)"></attribute>
+	<attribute name="bias_adjust_reference_citation" type="String" value="https://doi.org/10.5194/hess-25-4917-2021"></attribute>
+	<attribute name="license_type" type="String" value="permissive"></attribute>
+	<attribute name="license" type="String" value="Creative Commons Attribution 4.0 International Public License: https://creativecommons.org/licenses/by/4.0/legalcode"></attribute>
+	<attribute name="terms_of_use" type="String" value="In addition to the provided licence, the data used for the realization of climate scenarios are subject to the conditions of the source data. For more details, please refer to: https://pcmdi.llnl.gov/CMIP6/TermsOfUse/TermsOfUse6-2.html"></attribute>
+	<attribute name="attribution" type="String" value="Use of this dataset should be acknowledged as 'Data produced and provided by the Ouranos Consortium on Regional Climatology and Adaptation to Climate Change'. Furthermore, the modeling groups from which the bias-adjusted climate scenarios were constructed must also be acknowledged, please refer to: : The Coupled Model Intercomparison Project https://wcrp-cmip.org/cmip-phase-6-cmip6/"></attribute>
+	<attribute name="modeling_realm" type="String" value="atmos"></attribute>
+	<attribute name="source_institution" type="String" value="IPSL"></attribute>
+	<aggregation type="Union">
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/IPSL/IPSL-CM6A-LR/ssp585" subdirs="true" suffix="tasmin_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/IPSL/IPSL-CM6A-LR/ssp585" subdirs="true" suffix="tasmax_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/IPSL/IPSL-CM6A-LR/ssp585" subdirs="true" suffix="pr_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+	</aggregation>
+</netcdf>
