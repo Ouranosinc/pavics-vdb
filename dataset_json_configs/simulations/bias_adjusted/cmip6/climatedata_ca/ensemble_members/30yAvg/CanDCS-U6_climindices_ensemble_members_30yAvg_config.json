@@ -1,5 +1,18 @@
 {
   "remove": {
+    "driving_branch_method": "attribute",
+    "driving_data_specs_version": "attribute",
+    "driving_forcing_index": "attribute",
+    "driving_further_url_info": "attribute",
+    "driving_grid": "attribute",
+    "driving_grid_label": "attribute",
+    "driving_initialization_index": "attribute",
+    "driving_institution" : "attribute",
+    "driving_nominal_resolution": "attribute",
+    "driving_physics_index": "attribute",
+    "driving_realization_index": "attribute",
+    "driving_source_id": "attribute",
+    "driving_source_type": "attribute",
     "driving_experiment_id": "attribute",
     "driving_realization": "attribute",
     "driving_initialization_method": "attribute",
@@ -123,9 +136,9 @@
   "experiments": [
     "ssp126", "ssp245", "ssp585"
   ],
-  "aggregation": {"":""},
+  "aggregation": {"30ymean_":"30ymean"},
   "frequency": {"YS": "annual", "MS": "monthly","QS-DEC": "seasonal"},
   "realm": "atmos",
-  "regexp_template": "{v}_*BCCAQ2v2+ANUSPLIN300_*_historical+{rcp}*.nc",
+  "regexp_template": "{v}_*BCCAQ2v2+ANUSPLIN300_{mod}_historical+{rcp}*{agg}*.nc",
   "filename_template": "{aggregation}{frequency}-CanDCS-U6_climindices-ensemble_members"
 }

@@ -1,4 +1,3 @@
-import copy
 import json
 import os
 import pathlib as p
@@ -7,8 +6,6 @@ import collections
 import xncml
 import calendar
 import xarray as xr
-import re
-import fnmatch
 
 home = os.environ['HOME']
 pavics_root = f"{home}/pavics/datasets"
@@ -16,7 +13,7 @@ pavics_root = f"{home}/pavics/datasets"
 
 def main():
     overwrite_to_tmp = True
-    dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('*day_ESPO-G6-*-1.0.0_config.json')
+    dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('CanDCS-U6_climindices_ensemble_members*30*_config.json')
     for dataset in dataset_configs:
         with open(dataset, 'r') as f:
             ncml_modify = json.load(f)
@@ -37,6 +34,11 @@ def main():
                                                              'tmp')).joinpath(
                     agg,f"{dataset.name.split('_config')[0]}_{freq}.ncml".replace("__","_").replace('_.', '.'))
             elif ncml_modify['ncml_type'] == 'climatedata.ca_CanDCS-U6':
+                agg, freq = d.split('_')
+                outpath = p.Path(str(dataset.parent).replace('dataset_json_configs',
+                                                             'tmp')).joinpath(
+                    f"{agg}_{dataset.name.split('_config')[0]}.ncml".replace("__","_").replace('_.', '.'))
+            elif ncml_modify['ncml_type'] == 'climatedata.ca_CanDCS-U6_members':
                 agg, freq = d.split('_')
                 outpath = p.Path(str(dataset.parent).replace('dataset_json_configs',
                                                              'tmp')).joinpath(
@@ -599,6 +601,112 @@ def ncml_create_datasets(ncml_template=None, config=None):
                 ncmls[f"{frequency1}_{agg1}"] = ncml1
                 del ncml1
         return ncmls
+
+    elif config['ncml_type'] == "climatedata.ca_CanDCS-U6_members":
+
+        ncmls = {}
+        location = p.Path(config['location'].replace('pavics-data', pavics_root))
+        for aggkey, agg1 in config['aggregation'].items():
+            for freq, frequency1 in config['frequency'].items():
+                # runs = sorted(glob.glob(path.join(inrep1, "*" + m + "_hist*r*i1p1*195*2*" + f + "*.nc")))
+                vars = sorted([x for x in location.iterdir() if x.is_dir()])
+                varlist = []
+                for exp in config['experiments']:
+                    varlist.extend([f"{exp}_{v.name}" for v in vars])
+                if agg1 == "30ymean":
+                    varlist.extend([f"{v}_delta_1971_2000" for v in varlist])
+                    varlist.extend([f"{v}_delta_1991_2020" for v in varlist])
+                agg_dict = {"@dimName": "realization", "@type": "joinNew", "variableAgg": varlist} #
+                agg = ncml_add_aggregation(agg_dict)
+                # add runs
+                agg['netcdf'] = []
+                models = {'ACCESS-CM2': 'r1i1p1f1',
+                         'ACCESS-ESM1-5': 'r1i1p1f1',
+                         'BCC-CSM2-MR': 'r1i1p1f1',
+                         'CMCC-ESM2': 'r1i1p1f1',
+                         'CNRM-CM6-1': 'r1i1p1f2',
+                         'CNRM-ESM2-1': 'r1i1p1f2',
+                         'CanESM5': 'r1i1p2f1',
+                         'EC-Earth3': 'r4i1p1f1',
+                         'EC-Earth3-Veg': 'r1i1p1f1',
+                         'FGOALS-g3': 'r1i1p1f1',
+                         'GFDL-ESM4': 'r1i1p1f1',
+                         'HadGEM3-GC31-LL': 'r1i1p1f3',
+                         'INM-CM4-8': 'r1i1p1f1',
+                         'INM-CM5-0': 'r1i1p1f1',
+                         'IPSL-CM6A-LR': 'r1i1p1f1',
+                         'KACE-1-0-G': 'r2i1p1f1',
+                         'KIOST-ESM': 'r1i1p1f1',
+                         'MIROC-ES2L': 'r1i1p1f2',
+                         'MIROC6': 'r1i1p1f1',
+                         'MPI-ESM1-2-HR': 'r1i1p1f1',
+                         'MPI-ESM1-2-LR': 'r1i1p1f1',
+                         'MRI-ESM2-0': 'r1i1p1f1',
+                         'NorESM2-LM': 'r1i1p1f1',
+                         'NorESM2-MM': 'r1i1p1f1',
+                         'TaiESM1': 'r1i1p1f1',
+                         'UKESM1-0-LL': 'r1i1p1f2'}
+
+                for mod, rr in models.items():
+
+                    netcdf2 = ncml_netcdf_container({"@coordValue":f"{mod}:{rr}"})
+                    netcdf2['aggregation'] = ncml_add_aggregation({"@type": "Union"})
+                    netcdf2['aggregation']['netcdf'] = []
+                    for exp in config['experiments']:
+                        print(mod, exp, rr)
+                        for v in vars:
+
+                            runs = sorted(list(location.joinpath(v, freq).rglob(
+                                config['regexp_template'].format(agg=agg1, rcp=exp, mod=mod, v=v.name, frequency=freq))))
+                            if agg1 == '':
+                                runs = sorted([r for r in runs if '30ymean' not in r.name and 'simulations' in r.as_posix()])
+                            else:
+                                runs = sorted([r for r in runs if '30ymean' in r.name and 'simulations_30yAvg' in r.as_posix()])
+                            if len(runs) > 0:
+                                runs = [r for r in runs if f'{exp}_r10i' not in r.name]
+                                run = runs[0] # take only first run
+                                #coord1 = f"{mod}-{run.name.split('historical+ssp')[-1].split('_')[1]}"
+                                #print(mod, exp, coord1)
+                                #netcdf2['@coordValue'] = coord1
+                                netcdf3 = ncml_netcdf_container()
+                                # r1 = runs.name.split(exp)[-1].split('_')[1]
+                                netcdf3['@location'] = str(run).replace(pavics_root, 'pavics-data')
+                                var_names = []
+                                try:
+                                    dtmp = xr.open_dataset(run, engine="h5netcdf")
+                                except:
+                                    dtmp = xr.open_dataset(run)
+
+                                for vv in dtmp.data_vars:
+                                    if exp not in vv and exp != 'allrcps' and exp != 'nrcan':
+                                        d1 = OrderedDict()
+
+                                        d1["@name"] = f"{exp}_{vv}"
+                                        d1["@orgName"] = vv
+                                        var_names.append(d1)
+                                        del d1
+                                del dtmp
+
+                                if var_names:
+                                    netcdf3['variable'] = var_names
+                                netcdf2['aggregation']['netcdf'].append(netcdf3)
+                                del netcdf3
+                            else:
+                                print (f"no runs found for {freq}, {agg1}, {exp}, {mod}, {v.name} ... continuing")
+                    agg['netcdf'].append(netcdf2)
+                    del netcdf2
+
+
+
+                ncml1 = xncml.Dataset(ncml_template)
+                ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
+                attrs = config['attribute']
+                ncml1.ncroot['netcdf']['attribute'] = ncml_add_attributes(attrs)
+                ncml1.ncroot['netcdf']['aggregation'] = agg
+                ncmls[f"{frequency1}_{agg1}"] = ncml1
+                del ncml1
+        return ncmls
+
     elif config['ncml_type'] == "pcic-CanDCS-U6":
         ncmls = {}
         location = config['location'].replace('pavics-data', pavics_root)
