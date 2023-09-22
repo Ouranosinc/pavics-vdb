@@ -90,6 +90,7 @@
 		<variableAgg name="ssp126_last_spring_frost"></variableAgg>
 		<variableAgg name="ssp126_nr_cdd"></variableAgg>
 		<variableAgg name="ssp126_prcptot"></variableAgg>
+		<variableAgg name="ssp126_r10mm"></variableAgg>
 		<variableAgg name="ssp126_r1mm"></variableAgg>
 		<variableAgg name="ssp126_r20mm"></variableAgg>
 		<variableAgg name="ssp126_rx1day"></variableAgg>
@@ -122,6 +123,7 @@
 		<variableAgg name="ssp245_last_spring_frost"></variableAgg>
 		<variableAgg name="ssp245_nr_cdd"></variableAgg>
 		<variableAgg name="ssp245_prcptot"></variableAgg>
+		<variableAgg name="ssp245_r10mm"></variableAgg>
 		<variableAgg name="ssp245_r1mm"></variableAgg>
 		<variableAgg name="ssp245_r20mm"></variableAgg>
 		<variableAgg name="ssp245_rx1day"></variableAgg>
@@ -154,6 +156,7 @@
 		<variableAgg name="ssp585_last_spring_frost"></variableAgg>
 		<variableAgg name="ssp585_nr_cdd"></variableAgg>
 		<variableAgg name="ssp585_prcptot"></variableAgg>
+		<variableAgg name="ssp585_r10mm"></variableAgg>
 		<variableAgg name="ssp585_r1mm"></variableAgg>
 		<variableAgg name="ssp585_r20mm"></variableAgg>
 		<variableAgg name="ssp585_rx1day"></variableAgg>
@@ -178,6 +181,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp126/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_ACCESS-CM2_historical+ssp126_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp126_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp126/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_ACCESS-CM2_historical+ssp126_1950-2100.nc">
+					<variable name="ssp126_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp126/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_ACCESS-CM2_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -199,6 +205,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp245/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_ACCESS-CM2_historical+ssp245_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp245_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp245/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_ACCESS-CM2_historical+ssp245_1950-2100.nc">
+					<variable name="ssp245_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp245/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_ACCESS-CM2_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -219,6 +228,9 @@
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp585/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_ACCESS-CM2_historical+ssp585_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp585_prcptot" orgName="prcptot"></variable>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp585/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_ACCESS-CM2_historical+ssp585_1950-2100.nc">
+					<variable name="ssp585_r10mm" orgName="r10mm"></variable>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp585/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_ACCESS-CM2_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_r1mm" orgName="r1mm"></variable>
@@ -245,6 +257,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp126/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_ACCESS-ESM1-5_historical+ssp126_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp126_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp126/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_ACCESS-ESM1-5_historical+ssp126_1950-2100.nc">
+					<variable name="ssp126_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp126/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_ACCESS-ESM1-5_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -266,6 +281,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp245/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_ACCESS-ESM1-5_historical+ssp245_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp245_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp245/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_ACCESS-ESM1-5_historical+ssp245_1950-2100.nc">
+					<variable name="ssp245_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp245/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_ACCESS-ESM1-5_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -286,6 +304,9 @@
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp585/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_ACCESS-ESM1-5_historical+ssp585_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp585_prcptot" orgName="prcptot"></variable>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp585/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_ACCESS-ESM1-5_historical+ssp585_1950-2100.nc">
+					<variable name="ssp585_r10mm" orgName="r10mm"></variable>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp585/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_ACCESS-ESM1-5_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_r1mm" orgName="r1mm"></variable>
@@ -312,6 +333,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp126/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_BCC-CSM2-MR_historical+ssp126_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp126_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp126/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_BCC-CSM2-MR_historical+ssp126_1950-2100.nc">
+					<variable name="ssp126_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp126/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_BCC-CSM2-MR_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -333,6 +357,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp245/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_BCC-CSM2-MR_historical+ssp245_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp245_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp245/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_BCC-CSM2-MR_historical+ssp245_1950-2100.nc">
+					<variable name="ssp245_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp245/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_BCC-CSM2-MR_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -353,6 +380,9 @@
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp585/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_BCC-CSM2-MR_historical+ssp585_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp585_prcptot" orgName="prcptot"></variable>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp585/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_BCC-CSM2-MR_historical+ssp585_1950-2100.nc">
+					<variable name="ssp585_r10mm" orgName="r10mm"></variable>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp585/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_BCC-CSM2-MR_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_r1mm" orgName="r1mm"></variable>
@@ -379,6 +409,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp126/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_CMCC-ESM2_historical+ssp126_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp126_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp126/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_CMCC-ESM2_historical+ssp126_1950-2100.nc">
+					<variable name="ssp126_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp126/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_CMCC-ESM2_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -400,6 +433,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp245/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_CMCC-ESM2_historical+ssp245_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp245_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp245/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_CMCC-ESM2_historical+ssp245_1950-2100.nc">
+					<variable name="ssp245_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp245/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_CMCC-ESM2_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -420,6 +456,9 @@
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp585/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_CMCC-ESM2_historical+ssp585_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp585_prcptot" orgName="prcptot"></variable>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp585/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_CMCC-ESM2_historical+ssp585_1950-2100.nc">
+					<variable name="ssp585_r10mm" orgName="r10mm"></variable>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp585/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_CMCC-ESM2_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_r1mm" orgName="r1mm"></variable>
@@ -446,6 +485,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp126/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_CNRM-CM6-1_historical+ssp126_r1i1p1f2_1950-2100.nc">
 					<variable name="ssp126_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp126/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_CNRM-CM6-1_historical+ssp126_1950-2100.nc">
+					<variable name="ssp126_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp126/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_CNRM-CM6-1_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -467,6 +509,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp245/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_CNRM-CM6-1_historical+ssp245_r1i1p1f2_1950-2100.nc">
 					<variable name="ssp245_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp245/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_CNRM-CM6-1_historical+ssp245_1950-2100.nc">
+					<variable name="ssp245_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp245/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_CNRM-CM6-1_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -487,6 +532,9 @@
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp585/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_CNRM-CM6-1_historical+ssp585_r1i1p1f2_1950-2100.nc">
 					<variable name="ssp585_prcptot" orgName="prcptot"></variable>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp585/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_CNRM-CM6-1_historical+ssp585_1950-2100.nc">
+					<variable name="ssp585_r10mm" orgName="r10mm"></variable>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp585/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_CNRM-CM6-1_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_r1mm" orgName="r1mm"></variable>
@@ -513,6 +561,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp126/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_CNRM-ESM2-1_historical+ssp126_r1i1p1f2_1950-2100.nc">
 					<variable name="ssp126_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp126/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_CNRM-ESM2-1_historical+ssp126_1950-2100.nc">
+					<variable name="ssp126_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp126/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_CNRM-ESM2-1_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -534,6 +585,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp245/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_CNRM-ESM2-1_historical+ssp245_r1i1p1f2_1950-2100.nc">
 					<variable name="ssp245_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp245/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_CNRM-ESM2-1_historical+ssp245_1950-2100.nc">
+					<variable name="ssp245_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp245/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_CNRM-ESM2-1_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -554,6 +608,9 @@
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp585/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_CNRM-ESM2-1_historical+ssp585_r1i1p1f2_1950-2100.nc">
 					<variable name="ssp585_prcptot" orgName="prcptot"></variable>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp585/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_CNRM-ESM2-1_historical+ssp585_1950-2100.nc">
+					<variable name="ssp585_r10mm" orgName="r10mm"></variable>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp585/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_CNRM-ESM2-1_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_r1mm" orgName="r1mm"></variable>
@@ -580,6 +637,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp126/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_CanESM5_historical+ssp126_r1i1p2f1_1950-2100.nc">
 					<variable name="ssp126_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp126/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_CanESM5_historical+ssp126_1950-2100.nc">
+					<variable name="ssp126_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp126/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_CanESM5_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -601,6 +661,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp245/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_CanESM5_historical+ssp245_r1i1p2f1_1950-2100.nc">
 					<variable name="ssp245_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp245/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_CanESM5_historical+ssp245_1950-2100.nc">
+					<variable name="ssp245_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp245/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_CanESM5_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -621,6 +684,9 @@
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp585/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_CanESM5_historical+ssp585_r1i1p2f1_1950-2100.nc">
 					<variable name="ssp585_prcptot" orgName="prcptot"></variable>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp585/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_CanESM5_historical+ssp585_1950-2100.nc">
+					<variable name="ssp585_r10mm" orgName="r10mm"></variable>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp585/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_CanESM5_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_r1mm" orgName="r1mm"></variable>
@@ -647,6 +713,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp126/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_EC-Earth3_historical+ssp126_r4i1p1f1_1950-2100.nc">
 					<variable name="ssp126_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp126/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_EC-Earth3_historical+ssp126_1950-2100.nc">
+					<variable name="ssp126_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp126/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_EC-Earth3_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -668,6 +737,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp245/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_EC-Earth3_historical+ssp245_r4i1p1f1_1950-2100.nc">
 					<variable name="ssp245_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp245/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_EC-Earth3_historical+ssp245_1950-2100.nc">
+					<variable name="ssp245_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp245/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_EC-Earth3_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -688,6 +760,9 @@
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp585/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_EC-Earth3_historical+ssp585_r4i1p1f1_1950-2100.nc">
 					<variable name="ssp585_prcptot" orgName="prcptot"></variable>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp585/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_EC-Earth3_historical+ssp585_1950-2100.nc">
+					<variable name="ssp585_r10mm" orgName="r10mm"></variable>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp585/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_EC-Earth3_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_r1mm" orgName="r1mm"></variable>
@@ -714,6 +789,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp126/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_EC-Earth3-Veg_historical+ssp126_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp126_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp126/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_EC-Earth3-Veg_historical+ssp126_1950-2100.nc">
+					<variable name="ssp126_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp126/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_EC-Earth3-Veg_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -735,6 +813,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp245/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_EC-Earth3-Veg_historical+ssp245_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp245_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp245/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_EC-Earth3-Veg_historical+ssp245_1950-2100.nc">
+					<variable name="ssp245_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp245/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_EC-Earth3-Veg_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -755,6 +836,9 @@
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp585/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_EC-Earth3-Veg_historical+ssp585_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp585_prcptot" orgName="prcptot"></variable>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp585/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_EC-Earth3-Veg_historical+ssp585_1950-2100.nc">
+					<variable name="ssp585_r10mm" orgName="r10mm"></variable>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp585/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_EC-Earth3-Veg_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_r1mm" orgName="r1mm"></variable>
@@ -781,6 +865,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp126/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_FGOALS-g3_historical+ssp126_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp126_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp126/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_FGOALS-g3_historical+ssp126_1950-2100.nc">
+					<variable name="ssp126_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp126/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_FGOALS-g3_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -802,6 +889,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp245/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_FGOALS-g3_historical+ssp245_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp245_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp245/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_FGOALS-g3_historical+ssp245_1950-2100.nc">
+					<variable name="ssp245_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp245/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_FGOALS-g3_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -822,6 +912,9 @@
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp585/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_FGOALS-g3_historical+ssp585_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp585_prcptot" orgName="prcptot"></variable>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp585/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_FGOALS-g3_historical+ssp585_1950-2100.nc">
+					<variable name="ssp585_r10mm" orgName="r10mm"></variable>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp585/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_FGOALS-g3_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_r1mm" orgName="r1mm"></variable>
@@ -848,6 +941,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp126/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_GFDL-ESM4_historical+ssp126_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp126_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp126/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_GFDL-ESM4_historical+ssp126_1950-2100.nc">
+					<variable name="ssp126_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp126/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_GFDL-ESM4_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -869,6 +965,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp245/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_GFDL-ESM4_historical+ssp245_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp245_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp245/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_GFDL-ESM4_historical+ssp245_1950-2100.nc">
+					<variable name="ssp245_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp245/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_GFDL-ESM4_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -889,6 +988,9 @@
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp585/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_GFDL-ESM4_historical+ssp585_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp585_prcptot" orgName="prcptot"></variable>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp585/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_GFDL-ESM4_historical+ssp585_1950-2100.nc">
+					<variable name="ssp585_r10mm" orgName="r10mm"></variable>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp585/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_GFDL-ESM4_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_r1mm" orgName="r1mm"></variable>
@@ -915,6 +1017,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp126/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_HadGEM3-GC31-LL_historical+ssp126_r1i1p1f3_1950-2100.nc">
 					<variable name="ssp126_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp126/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_HadGEM3-GC31-LL_historical+ssp126_1950-2100.nc">
+					<variable name="ssp126_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp126/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_HadGEM3-GC31-LL_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -936,6 +1041,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp245/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_HadGEM3-GC31-LL_historical+ssp245_r1i1p1f3_1950-2100.nc">
 					<variable name="ssp245_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp245/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_HadGEM3-GC31-LL_historical+ssp245_1950-2100.nc">
+					<variable name="ssp245_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp245/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_HadGEM3-GC31-LL_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -956,6 +1064,9 @@
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp585/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_HadGEM3-GC31-LL_historical+ssp585_r1i1p1f3_1950-2100.nc">
 					<variable name="ssp585_prcptot" orgName="prcptot"></variable>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp585/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_HadGEM3-GC31-LL_historical+ssp585_1950-2100.nc">
+					<variable name="ssp585_r10mm" orgName="r10mm"></variable>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp585/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_HadGEM3-GC31-LL_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_r1mm" orgName="r1mm"></variable>
@@ -982,6 +1093,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp126/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_INM-CM4-8_historical+ssp126_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp126_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp126/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_INM-CM4-8_historical+ssp126_1950-2100.nc">
+					<variable name="ssp126_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp126/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_INM-CM4-8_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -1003,6 +1117,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp245/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_INM-CM4-8_historical+ssp245_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp245_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp245/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_INM-CM4-8_historical+ssp245_1950-2100.nc">
+					<variable name="ssp245_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp245/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_INM-CM4-8_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -1023,6 +1140,9 @@
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp585/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_INM-CM4-8_historical+ssp585_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp585_prcptot" orgName="prcptot"></variable>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp585/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_INM-CM4-8_historical+ssp585_1950-2100.nc">
+					<variable name="ssp585_r10mm" orgName="r10mm"></variable>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp585/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_INM-CM4-8_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_r1mm" orgName="r1mm"></variable>
@@ -1049,6 +1169,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp126/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_INM-CM5-0_historical+ssp126_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp126_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp126/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_INM-CM5-0_historical+ssp126_1950-2100.nc">
+					<variable name="ssp126_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp126/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_INM-CM5-0_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -1070,6 +1193,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp245/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_INM-CM5-0_historical+ssp245_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp245_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp245/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_INM-CM5-0_historical+ssp245_1950-2100.nc">
+					<variable name="ssp245_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp245/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_INM-CM5-0_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -1090,6 +1216,9 @@
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp585/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_INM-CM5-0_historical+ssp585_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp585_prcptot" orgName="prcptot"></variable>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp585/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_INM-CM5-0_historical+ssp585_1950-2100.nc">
+					<variable name="ssp585_r10mm" orgName="r10mm"></variable>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp585/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_INM-CM5-0_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_r1mm" orgName="r1mm"></variable>
@@ -1116,6 +1245,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp126/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_IPSL-CM6A-LR_historical+ssp126_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp126_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp126/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_IPSL-CM6A-LR_historical+ssp126_1950-2100.nc">
+					<variable name="ssp126_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp126/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_IPSL-CM6A-LR_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -1137,6 +1269,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp245/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_IPSL-CM6A-LR_historical+ssp245_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp245_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp245/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_IPSL-CM6A-LR_historical+ssp245_1950-2100.nc">
+					<variable name="ssp245_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp245/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_IPSL-CM6A-LR_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -1157,6 +1292,9 @@
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp585/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_IPSL-CM6A-LR_historical+ssp585_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp585_prcptot" orgName="prcptot"></variable>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp585/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_IPSL-CM6A-LR_historical+ssp585_1950-2100.nc">
+					<variable name="ssp585_r10mm" orgName="r10mm"></variable>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp585/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_IPSL-CM6A-LR_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_r1mm" orgName="r1mm"></variable>
@@ -1183,6 +1321,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp126/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_KACE-1-0-G_historical+ssp126_r2i1p1f1_1950-2100.nc">
 					<variable name="ssp126_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp126/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_KACE-1-0-G_historical+ssp126_1950-2100.nc">
+					<variable name="ssp126_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp126/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_KACE-1-0-G_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -1204,6 +1345,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp245/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_KACE-1-0-G_historical+ssp245_r2i1p1f1_1950-2100.nc">
 					<variable name="ssp245_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp245/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_KACE-1-0-G_historical+ssp245_1950-2100.nc">
+					<variable name="ssp245_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp245/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_KACE-1-0-G_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -1224,6 +1368,9 @@
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp585/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_KACE-1-0-G_historical+ssp585_r2i1p1f1_1950-2100.nc">
 					<variable name="ssp585_prcptot" orgName="prcptot"></variable>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp585/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_KACE-1-0-G_historical+ssp585_1950-2100.nc">
+					<variable name="ssp585_r10mm" orgName="r10mm"></variable>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp585/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_KACE-1-0-G_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_r1mm" orgName="r1mm"></variable>
@@ -1250,6 +1397,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp126/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_KIOST-ESM_historical+ssp126_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp126_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp126/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_KIOST-ESM_historical+ssp126_1950-2100.nc">
+					<variable name="ssp126_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp126/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_KIOST-ESM_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -1271,6 +1421,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp245/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_KIOST-ESM_historical+ssp245_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp245_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp245/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_KIOST-ESM_historical+ssp245_1950-2100.nc">
+					<variable name="ssp245_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp245/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_KIOST-ESM_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -1291,6 +1444,9 @@
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp585/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_KIOST-ESM_historical+ssp585_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp585_prcptot" orgName="prcptot"></variable>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp585/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_KIOST-ESM_historical+ssp585_1950-2100.nc">
+					<variable name="ssp585_r10mm" orgName="r10mm"></variable>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp585/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_KIOST-ESM_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_r1mm" orgName="r1mm"></variable>
@@ -1317,6 +1473,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp126/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_MIROC-ES2L_historical+ssp126_r1i1p1f2_1950-2100.nc">
 					<variable name="ssp126_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp126/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_MIROC-ES2L_historical+ssp126_1950-2100.nc">
+					<variable name="ssp126_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp126/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_MIROC-ES2L_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -1338,6 +1497,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp245/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_MIROC-ES2L_historical+ssp245_r1i1p1f2_1950-2100.nc">
 					<variable name="ssp245_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp245/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_MIROC-ES2L_historical+ssp245_1950-2100.nc">
+					<variable name="ssp245_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp245/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_MIROC-ES2L_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -1358,6 +1520,9 @@
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp585/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_MIROC-ES2L_historical+ssp585_r1i1p1f2_1950-2100.nc">
 					<variable name="ssp585_prcptot" orgName="prcptot"></variable>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp585/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_MIROC-ES2L_historical+ssp585_1950-2100.nc">
+					<variable name="ssp585_r10mm" orgName="r10mm"></variable>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp585/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_MIROC-ES2L_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_r1mm" orgName="r1mm"></variable>
@@ -1384,6 +1549,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp126/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_MIROC6_historical+ssp126_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp126_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp126/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_MIROC6_historical+ssp126_1950-2100.nc">
+					<variable name="ssp126_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp126/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_MIROC6_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -1405,6 +1573,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp245/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_MIROC6_historical+ssp245_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp245_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp245/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_MIROC6_historical+ssp245_1950-2100.nc">
+					<variable name="ssp245_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp245/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_MIROC6_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -1425,6 +1596,9 @@
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp585/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_MIROC6_historical+ssp585_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp585_prcptot" orgName="prcptot"></variable>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp585/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_MIROC6_historical+ssp585_1950-2100.nc">
+					<variable name="ssp585_r10mm" orgName="r10mm"></variable>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp585/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_MIROC6_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_r1mm" orgName="r1mm"></variable>
@@ -1451,6 +1625,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp126/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_MPI-ESM1-2-HR_historical+ssp126_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp126_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp126/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_MPI-ESM1-2-HR_historical+ssp126_1950-2100.nc">
+					<variable name="ssp126_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp126/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_MPI-ESM1-2-HR_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -1472,6 +1649,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp245/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_MPI-ESM1-2-HR_historical+ssp245_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp245_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp245/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_MPI-ESM1-2-HR_historical+ssp245_1950-2100.nc">
+					<variable name="ssp245_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp245/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_MPI-ESM1-2-HR_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -1492,6 +1672,9 @@
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp585/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_MPI-ESM1-2-HR_historical+ssp585_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp585_prcptot" orgName="prcptot"></variable>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp585/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_MPI-ESM1-2-HR_historical+ssp585_1950-2100.nc">
+					<variable name="ssp585_r10mm" orgName="r10mm"></variable>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp585/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_MPI-ESM1-2-HR_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_r1mm" orgName="r1mm"></variable>
@@ -1518,6 +1701,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp126/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_MPI-ESM1-2-LR_historical+ssp126_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp126_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp126/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_MPI-ESM1-2-LR_historical+ssp126_1950-2100.nc">
+					<variable name="ssp126_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp126/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_MPI-ESM1-2-LR_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -1539,6 +1725,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp245/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_MPI-ESM1-2-LR_historical+ssp245_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp245_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp245/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_MPI-ESM1-2-LR_historical+ssp245_1950-2100.nc">
+					<variable name="ssp245_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp245/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_MPI-ESM1-2-LR_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -1559,6 +1748,9 @@
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp585/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_MPI-ESM1-2-LR_historical+ssp585_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp585_prcptot" orgName="prcptot"></variable>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp585/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_MPI-ESM1-2-LR_historical+ssp585_1950-2100.nc">
+					<variable name="ssp585_r10mm" orgName="r10mm"></variable>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp585/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_MPI-ESM1-2-LR_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_r1mm" orgName="r1mm"></variable>
@@ -1585,6 +1777,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp126/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_MRI-ESM2-0_historical+ssp126_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp126_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp126/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_MRI-ESM2-0_historical+ssp126_1950-2100.nc">
+					<variable name="ssp126_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp126/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_MRI-ESM2-0_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -1606,6 +1801,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp245/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_MRI-ESM2-0_historical+ssp245_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp245_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp245/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_MRI-ESM2-0_historical+ssp245_1950-2100.nc">
+					<variable name="ssp245_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp245/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_MRI-ESM2-0_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -1626,6 +1824,9 @@
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp585/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_MRI-ESM2-0_historical+ssp585_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp585_prcptot" orgName="prcptot"></variable>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp585/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_MRI-ESM2-0_historical+ssp585_1950-2100.nc">
+					<variable name="ssp585_r10mm" orgName="r10mm"></variable>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp585/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_MRI-ESM2-0_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_r1mm" orgName="r1mm"></variable>
@@ -1652,6 +1853,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp126/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_NorESM2-LM_historical+ssp126_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp126_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp126/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_NorESM2-LM_historical+ssp126_1950-2100.nc">
+					<variable name="ssp126_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp126/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_NorESM2-LM_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -1673,6 +1877,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp245/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_NorESM2-LM_historical+ssp245_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp245_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp245/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_NorESM2-LM_historical+ssp245_1950-2100.nc">
+					<variable name="ssp245_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp245/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_NorESM2-LM_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -1693,6 +1900,9 @@
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp585/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_NorESM2-LM_historical+ssp585_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp585_prcptot" orgName="prcptot"></variable>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp585/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_NorESM2-LM_historical+ssp585_1950-2100.nc">
+					<variable name="ssp585_r10mm" orgName="r10mm"></variable>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp585/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_NorESM2-LM_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_r1mm" orgName="r1mm"></variable>
@@ -1719,6 +1929,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp126/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_NorESM2-MM_historical+ssp126_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp126_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp126/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_NorESM2-MM_historical+ssp126_1950-2100.nc">
+					<variable name="ssp126_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp126/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_NorESM2-MM_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -1740,6 +1953,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp245/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_NorESM2-MM_historical+ssp245_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp245_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp245/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_NorESM2-MM_historical+ssp245_1950-2100.nc">
+					<variable name="ssp245_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp245/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_NorESM2-MM_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -1760,6 +1976,9 @@
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp585/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_NorESM2-MM_historical+ssp585_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp585_prcptot" orgName="prcptot"></variable>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp585/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_NorESM2-MM_historical+ssp585_1950-2100.nc">
+					<variable name="ssp585_r10mm" orgName="r10mm"></variable>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp585/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_NorESM2-MM_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_r1mm" orgName="r1mm"></variable>
@@ -1786,6 +2005,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp126/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_TaiESM1_historical+ssp126_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp126_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp126/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_TaiESM1_historical+ssp126_1950-2100.nc">
+					<variable name="ssp126_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp126/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_TaiESM1_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -1807,6 +2029,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp245/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_TaiESM1_historical+ssp245_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp245_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp245/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_TaiESM1_historical+ssp245_1950-2100.nc">
+					<variable name="ssp245_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp245/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_TaiESM1_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -1827,6 +2052,9 @@
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp585/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_TaiESM1_historical+ssp585_r1i1p1f1_1950-2100.nc">
 					<variable name="ssp585_prcptot" orgName="prcptot"></variable>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp585/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_TaiESM1_historical+ssp585_1950-2100.nc">
+					<variable name="ssp585_r10mm" orgName="r10mm"></variable>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp585/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_TaiESM1_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_r1mm" orgName="r1mm"></variable>
@@ -1853,6 +2081,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp126/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_UKESM1-0-LL_historical+ssp126_r1i1p1f2_1950-2100.nc">
 					<variable name="ssp126_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp126/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_UKESM1-0-LL_historical+ssp126_1950-2100.nc">
+					<variable name="ssp126_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp126/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_UKESM1-0-LL_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -1874,6 +2105,9 @@
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp245/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_UKESM1-0-LL_historical+ssp245_r1i1p1f2_1950-2100.nc">
 					<variable name="ssp245_prcptot" orgName="prcptot"></variable>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp245/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_UKESM1-0-LL_historical+ssp245_1950-2100.nc">
+					<variable name="ssp245_r10mm" orgName="r10mm"></variable>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp245/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_UKESM1-0-LL_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_r1mm" orgName="r1mm"></variable>
 				</netcdf>
@@ -1894,6 +2128,9 @@
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/prcptot/QS-DEC/ssp585/simulations/prcptot_sea_BCCAQ2v2+ANUSPLIN300_UKESM1-0-LL_historical+ssp585_r1i1p1f2_1950-2100.nc">
 					<variable name="ssp585_prcptot" orgName="prcptot"></variable>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r10mm/QS-DEC/ssp585/simulations/r10mm_sea_BCCAQ2v2+ANUSPLIN300_UKESM1-0-LL_historical+ssp585_1950-2100.nc">
+					<variable name="ssp585_r10mm" orgName="r10mm"></variable>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/r1mm/QS-DEC/ssp585/simulations/r1mm_sea_BCCAQ2v2+ANUSPLIN300_UKESM1-0-LL_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_r1mm" orgName="r1mm"></variable>
