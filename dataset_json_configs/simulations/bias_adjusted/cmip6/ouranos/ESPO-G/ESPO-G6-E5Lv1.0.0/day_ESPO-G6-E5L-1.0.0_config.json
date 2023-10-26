@@ -12,7 +12,7 @@
       "value": "Ouranos",
       "type": "String"
     },
-    "title": {"value": "ESPO-G6-E5L v1.0.0 : Ouranos Multipurpose Climate Scenarios - Global Models CMIP6 - ERA5-Land",
+    "title": {"value": "ESPO-G6-E5L v1.0.0 : Ouranos Ensemble of Bias-adjusted Simulations - Global Models CMIP6 - ERA5-Land",
       "type": "String"},
     "dataset_id": {"value": "ESPO-G6-E5L v1.0.0", "type":"String"},
     "type": {
@@ -32,7 +32,7 @@
       "type": "String"
     },
     "abstract": {
-      "value": "The need to adapt to climate change is present in a growing number of fields, leading to an increase in the demand for climate scenarios for often interrelated sectors of activity. In order to meet this growing demand and to ensure the availability of climate scenarios responding to numerous vulnerability, impact and adaptation (VIA) studies, Ouranos is working to create a set of operational multipurpose climate scenarios called \"Ensemble de Scénarios Polyvalents d'Ouranos” (ESPO) covering North America at a resolution of 0.1 degree (~9km). This operational product actually consists of two related datasets 1) ESPO-R (described here) produced from bias-adjusted regional climate simulations, and 2) ESPO-G produced following the same methodology, but from global simulations available via the CMIP program.",
+      "value": "The need to adapt to climate change is present in a growing number of fields, leading to an increase in the demand for climate scenarios for often interrelated sectors of activity. In order to meet this growing demand and to ensure the availability of climate scenarios responding to numerous vulnerability, impact and adaptation (VIA) studies, Ouranos is working to create a set of operational bias-adjusted climate simulations called \"Ensemble de Simulations Post-traitées d’Ouranos” (ESPO) covering North America.",
       "type": "String"
     },
     "bias_adjust_method": {
@@ -44,7 +44,7 @@
       "type": "String"
     },
     "bias_adjust_reference": {
-      "value": "ERA5-Land 1991-2020",
+      "value": "ERA5-Land (1991-2020)",
       "type": "String"
     },
     "bias_adjust_reference_citation": {
