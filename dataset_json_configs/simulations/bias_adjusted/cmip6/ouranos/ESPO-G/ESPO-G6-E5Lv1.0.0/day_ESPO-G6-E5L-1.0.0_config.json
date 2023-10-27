@@ -32,7 +32,7 @@
       "type": "String"
     },
     "abstract": {
-      "value": "The need to adapt to climate change is present in a growing number of fields, leading to an increase in the demand for climate scenarios for often interrelated sectors of activity. In order to meet this growing demand and to ensure the availability of climate scenarios responding to numerous vulnerability, impact and adaptation (VIA) studies, Ouranos is working to create a set of operational bias-adjusted climate simulations called \"Ensemble de Simulations Post-traitées d’Ouranos” (ESPO) covering North America.",
+      "value": "The need to adapt to climate change is present in a growing number of fields, leading to an increase in the demand for climate scenarios for often interrelated sectors of activity. In order to meet this growing demand and to ensure the availability of climate scenarios responding to numerous vulnerability, impact and adaptation (VIA) studies, Ouranos is working to create a set of operational bias-adjusted climate simulations called \"Ensemble de simulations post-traitées d’Ouranos” (ESPO) covering North America.",
       "type": "String"
     },
     "bias_adjust_method": {
