@@ -226,8 +226,6 @@ class TestDataset:
 
             compare_ncml_rawdata(dataset,dsNcML, compare_raw)
 
-
-
     def test_NEXGDDP(self, compare_raw=False):
 
         datasets = sorted(list(path.Path('../tmp/simulations/bias_adjusted/cmip5/nasa/nex-gddp-1.0').rglob('*.ncml')))
@@ -258,6 +256,36 @@ class TestDataset:
             )
 
             compare_ncml_rawdata(dataset,dsNcML, compare_raw)
+
+    def test_CRCM5_CMIP6(self, compare_raw=False):
+        datasets = sorted(list(path.Path('../tmp/simulations/CMIP6/CORDEX/NAM-12').rglob('*.ncml')))
+
+        thredds_test_dir = f'{thredds_root}/simulations/CMIP6/CORDEX/NAM-12'
+        thredds_path_server = f'{thredds_cat_root}/simulations/CMIP6/CORDEX/NAM-12/catalog.html'
+        thredds_test_dir = path.Path(thredds_test_dir)
+
+        for ii, dataset in enumerate(datasets):
+            if thredds_test_dir.exists():
+                shutil.rmtree(thredds_test_dir)
+            thredds_test_dir.mkdir(parents=True, exist_ok=True)
+            print('trying', dataset.name)
+            # copy to thredds:
+            shutil.copy(dataset, thredds_test_dir)
+            ncmls_all = [ncml for ncml in threddsclient.crawl(thredds_path_server, depth=5)]
+            ncmls = []
+            for n in ncmls_all:
+                if dataset.name in n.name:
+                    ncmls.append(n)
+
+            if len(ncmls) != 1:
+                raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
+
+            dsNcML = subset.subset_bbox(
+                xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=250), decode_timedelta=False),
+                lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
+            )
+
+            compare_ncml_rawdata(dataset, dsNcML, compare_raw, check_times=False, files_perrun=25)
 
     def test_CLIMEX(self, compare_raw=False):
 
@@ -399,7 +427,7 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, check_times=True, files_
         key1 = 'scan'
 
 
-    if 'climex' not in l1[1] and 'cccs_portal' not in l1[1] and 'ESPO' not in l1[1] and "CanDCS-U6" not in l1[1]:
+    if 'climex' not in l1[1] and 'cccs_portal' not in l1[1] and 'ESPO' not in l1[1] and "CanDCS-U6" not in l1[1] and "CORDEX" not in l1[1] :
         for l in list(recursive_items(ncml.ncroot, key1)):
             mod = dataset.name.split('day_')[-1].split('_historical+')[0]
             rcp = dataset.name.split('_historical+')[-1][0:5]
@@ -417,6 +445,8 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, check_times=True, files_
         locations = loc1
         del loc1
     for l in locations:
+        if key1 == "scan":
+            l = l[1]
         if isinstance(l,collections.OrderedDict) or isinstance(l, dict):
             local_path = str(l['@location'].replace('pavics-data', pavics_root))
         else:
@@ -434,16 +464,16 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, check_times=True, files_
             else:
                 str1 = ''
 
-                if '@suffix' in l[1].keys():
-                    str1 = f"*{l[1]['@suffix']}"
+                if '@suffix' in l.keys():
+                    str1 = f"*{l['@suffix']}".replace('**','*')
 
-                if '@regExp' in l[1].keys():
-                    regexp = l[1]['@regExp'].replace(r'\.nc$', '.nc').replace('.*', '*')
+                if '@regExp' in l.keys():
+                    regexp = l['@regExp'].replace(r'\.nc$', '.nc').replace('.*', '*')
                     str1 = f"{regexp.replace(str1,'')}{str1}".replace('**','*').replace('\\','') # regexp can occasionally already have suffix replace double
 
-                if  '@subdirs' in l[1].keys():
+                if '@subdirs' in l.keys():
                     # use rglob
-                    if l[1]['@subdirs'].lower() == 'true':
+                    if l['@subdirs'].lower() == 'true':
                         test_files = list(sorted(path.Path(local_path).rglob(str1)))
                     else:
                         test_files = list(sorted(path.Path(local_path).glob(str1)))
@@ -466,7 +496,8 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, check_times=True, files_
                 #     test_files.remove(t)
 
                 run = path.Path(local_path).parent.name
-                if files_perrun is None:
+                datasets = []
+                if files_perrun is None or len(test_files) <= files_perrun:
                     ds = subset.subset_bbox(xr.open_mfdataset(test_files,
                                            engine="h5netcdf",
                                            decode_timedelta=False,
@@ -482,42 +513,44 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, check_times=True, files_
                         ds = ds.drop_vars(['time_vectors','ts'])
                     if 'time_bnds' in ds.data_vars:
                         ds = ds.drop_vars(['time_bnds'])
+                    datasets.append(ds)
                     #compare_values(dsNcML, ds, compare_vals)
                 else:
                     for file1 in random.sample(test_files, files_perrun):
                         print(file1)
-                        ds = subset.subset_bbox(xr.open_dataset(file1, chunks=dict(time=-1)), decode_timedelta=False,
+                        ds = subset.subset_bbox(xr.open_dataset(file1, chunks=dict(time=-1), engine='h5netcdf', decode_timedelta=False),
                                                 lon_bnds=test_reg['lon'],
                                                 lat_bnds=test_reg['lat'],
                                                 )
+                        datasets.append(ds)
+            for ds in datasets:
+                if 'climex' in l1:
+                    compare_values(dsNcML.sel(realization=bytes(file1.parent.name.split('-rcp')[0],  'utf-8')), ds, compare_vals)
 
-            if 'climex' in l1[1]:
-                compare_values(dsNcML.sel(realization=bytes(file1.parent.name.split('-rcp')[0],  'utf-8')), ds, compare_vals)
-
-            else:
-                if 'cccs_portal' in l1[1]:
-                    if 'realization' in dsNcML.dims:
-
-                        dstest = dsNcML.sel(realization=[f"{str(r.values).split(':r')[0]}_" in path.Path(l[1]).name for r in
-                                                         dsNcML.realization.astype(str)]).squeeze()
-                    else:
-                        dstest = dsNcML
-
-                    if 'realization' in dstest.dims:
-                        raise ValueError('test data has realization dimension')
-                    rcp = [rcp for rcp in ['rcp26','rcp45','rcp85','ssp126','ssp245','ssp585'] if rcp in local_path]
-                    if len(rcp)>1:
-                        raise ValueError(f'expected single rcp value found {rcp}')
-                    rcp = rcp[0]
-                    print(local_path, rcp)
-                    for v in ds.data_vars:
-                        if v not in dsNcML.data_vars and f"{rcp}_{v}" in dsNcML.data_vars:
-                            ds = ds.rename({v:f"{rcp}_{v}"})
-                    del rcp
-
-                    compare_values(dstest, ds, compare_vals)
                 else:
-                    compare_values(dsNcML, ds, compare_vals)
+                    if 'cccs_portal' in l1[1]:
+                        if 'realization' in dsNcML.dims:
+
+                            dstest = dsNcML.sel(realization=[f"{str(r.values).split(':r')[0]}_" in path.Path(l[1]).name for r in
+                                                             dsNcML.realization.astype(str)]).squeeze()
+                        else:
+                            dstest = dsNcML
+
+                        if 'realization' in dstest.dims:
+                            raise ValueError('test data has realization dimension')
+                        rcp = [rcp for rcp in ['rcp26','rcp45','rcp85','ssp126','ssp245','ssp585'] if rcp in local_path]
+                        if len(rcp)>1:
+                            raise ValueError(f'expected single rcp value found {rcp}')
+                        rcp = rcp[0]
+                        print(local_path, rcp)
+                        for v in ds.data_vars:
+                            if v not in dsNcML.data_vars and f"{rcp}_{v}" in dsNcML.data_vars:
+                                ds = ds.rename({v:f"{rcp}_{v}"})
+                        del rcp
+
+                        compare_values(dstest, ds, compare_vals)
+                    else:
+                        compare_values(dsNcML, ds, compare_vals)
 
 
 
@@ -530,26 +563,22 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, check_times=True, files_
     shutil.move(dataset,movfile)
 
 def compare_values(dsNcML, ds, compare_vals):
+
     try:
         test = dsNcML.sel(time=ds.time).squeeze()
-        for coord in ds.coords :
-            if coord != 'height' and coord != 'horizon':
-                np.testing.assert_array_equal(ds[coord].values, test[coord].values)
-        time1 = np.random.choice(ds.time, 15)
-
     except:
-        # Climex raw precip is at 0h vs 12h in ncml (aggregation aligns time of all vars)
-        sel_str = slice(max(ds.time[0], dsNcML.time[0]).dt.strftime('%Y-%m-%d').values, min(ds.time[-1], dsNcML.time[-1]).dt.strftime('%Y-%m-%d').values)
-        test = dsNcML.sel(time=sel_str).squeeze()
-        ds = ds.sel(time=sel_str)
-        offset = np.unique(test.time.values - ds.time.values)
-        ds['time'] = ds.time + offset
-        test = dsNcML.sel(time=ds.time).squeeze()
-        time1 = np.random.choice(ds.time, 15)
 
-        for coord in ds.coords:
-            if coord != 'time' and coord != 'height' and coord != 'season':
-                np.testing.assert_array_equal(ds[coord].values, test[coord].values)
+        time1 = xr.DataArray(list(ds.resample(time=xr.infer_freq(dsNcML.time)).groups.keys()), dims=['time'])
+        ds = ds.assign_coords(time=time1)
+        time2 = xr.DataArray(list(dsNcML.resample(time=xr.infer_freq(dsNcML.time)).groups.keys()), dims=['time'])
+        dsNcML = dsNcML.assign_coords(time=time2)
+        test = dsNcML.sel(time=ds.time).squeeze()
+        del time1, time2
+
+    for coord in ds.coords :
+        if coord not in ['height', 'horizon', 'time_bnds' ] :
+            np.testing.assert_array_equal(ds[coord].values, test[coord].values)
+    time1 = np.random.choice(ds.time, 15)
 
     if compare_vals:
         with ProgressBar():
@@ -575,10 +604,11 @@ def main():
     #test(self=test, compare_raw=False)
     #test = TestDataset.test_NEXGDDP
     #test = TestDataset.test_CLIMEX
-    test = TestDataset.test_ClimateData
+    #test = TestDataset.test_ClimateData
     #test = TestDataset.test_ESPO_R
     #test = TestDataset.test_ESPO_G
     #test = TestDataset.test_CanDCS_U6
+    test = TestDataset.test_CRCM5_CMIP6
     test(self=test, compare_raw=True)
 
 if 'main' in __name__:
