@@ -1,0 +1,25 @@
+{
+  "remove": {
+  },
+  "attribute": {
+    "license_type": {
+      "value": "permissive",
+      "type": "String"
+    },
+    "modeling_realm": {
+      "value": "atmos",
+      "type": "String"
+    }
+  },
+  "location": "/pavics-data/disk2/ouranos/CORDEX-tmp/CORDEX/CMIP6/DD/NAM-12/OURANOS",
+  "ncml_type": "CRCM5-CMIP6",
+  "experiments": [
+    "historical",
+    "ssp370",
+    "ssp245",
+    "ssp126"
+  ],
+  "frequency": "1hr",
+  "realm": "atmos",
+  "filename_template": ""
+}
