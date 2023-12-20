@@ -1,7 +1,6 @@
 {
   "remove": {
-    "redistribution": "attribute",
-    "driving_model": "attribute"
+    "redistribution": "attribute"
   },
   "attribute": {
      "institution": {

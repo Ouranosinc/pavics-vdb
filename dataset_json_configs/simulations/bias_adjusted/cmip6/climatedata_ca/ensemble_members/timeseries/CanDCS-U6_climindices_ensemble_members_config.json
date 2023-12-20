@@ -45,16 +45,44 @@
     "method_id": "attribute",
     "is_dayofyear": "attribute",
     "calendar": "attribute",
-    "cell_methods": "attribute"
+    "cell_methods": "attribute",
+    "target__contact": "attribute",
+    "target__dataset": "attribute",
+    "target__dataset_id": "attribute",
+    "target__institution": "attribute",
+    "target__institution_id": "attribute",
+    "target__references": "attribute",
+    "target__version": "attribute"
   },
   "attribute": {
-    "target_contact": {"orgName" : "target__contact", "type": "String"},
-    "target_dataset": {"orgName" : "target__dataset", "type": "String"},
-    "target_dataset_id": {"orgName" : "target__dataset_id", "type": "String"},
-    "target_institution": {"orgName" : "target__institution", "type": "String"},
-    "target_institution_id": {"orgName" : "target__institution_id", "type": "String"},
-    "target_references": {"orgName" : "target__references", "type": "String"},
-    "target_version": {"orgName" : "target__version", "type": "String"},
+    "target_contact": {
+      "value": "Pia Papadopol (pia.papadopol@nrcan-rncan.gc.ca)",
+      "type": "String"
+    },
+    "target_dataset": {
+      "value" : "ANUSPLIN interpolated Canada daily 300 arc second climate grids",
+      "type": "String"},
+    "target_dataset_id": {
+      "value": "ANUSPLIN300",
+      "type": "String"
+    },
+    "target_institution": {
+      "value": "Canadian Forest Service, Natural Resources Canada",
+      "type": "String"
+    },
+    "target_institution_id": {
+      "value": "CFS-NRCan",
+      "type": "String"
+    },
+    "target_references": {
+      "value": "McKenney D.W., Hutchinson, M.F., Papadopol, P., Lawrence, K., Pedlar, J., Campbell, K., Milewska, E., Hopkinson, R., Price, D., and Owen, T., 2011. Customized spatial climate models for North America. Bulletin of the American Meteorological Society, 92(12): 1611-1622.",
+      "type": "String"
+    },
+    "target_version" : {
+      "value": "target__version: obtained: 2 April 2012, 14 June 2012, and 30 January 2013",
+      "type": "String"
+    },
+
     "abstract": {
       "value": "This dataset provides access to CMIP6 climate indicator ensemble statisics data that drives mapping and time-series visualizations on ClimateData.ca. Climatedata.ca is a climate data portal produced collaboratively by the country’s leading climate organizations and supported, in part, by the Government of Canada. The goal of this portal is to support decision makers across a broad spectrum of sectors and locations by providing the most up to date climate data in easy to use formats and visualizations.",
       "type": "String"
