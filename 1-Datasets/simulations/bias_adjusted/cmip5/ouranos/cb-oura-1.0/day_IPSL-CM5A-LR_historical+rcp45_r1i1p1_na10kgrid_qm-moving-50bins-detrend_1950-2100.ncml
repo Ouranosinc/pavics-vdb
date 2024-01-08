@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 	<remove name="redistribution" type="attribute"></remove>
-	<remove name="driving_model" type="attribute"></remove>
 	<attribute name="institution" type="String" value="Ouranos Consortium on Regional Climatology and Adaptation to Climate Change"></attribute>
 	<attribute name="institute_id" type="String" value="Ouranos"></attribute>
 	<attribute name="title" type="String" value="Ouranos standard ensemble of bias-adjusted climate scenarios version 1.0 (cb-oura-1.0)"></attribute>
