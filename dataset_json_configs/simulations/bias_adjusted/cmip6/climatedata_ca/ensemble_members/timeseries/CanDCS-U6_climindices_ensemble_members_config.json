@@ -126,23 +126,23 @@
       "type": "String"
     },
     "bias_adjustment_institute_id": {
-      "orgName":"institute_id",
+      "value":"PCIC",
       "type": "String"
     },
     "bias_adjustment_method": {
-      "orgName":"downscaling_method",
+      "value":"Quantile Delta Mapping",
       "type": "String"
     },
     "bias_adjustment_method_id": {
-      "orgName":"downscaling_method_id",
+      "value":"BCCAQv2",
       "type": "String"
     },
     "bias_adjustment_package_id": {
-      "orgName":"downscaling_package_id",
+      "value":"github.com/pacificclimate/ClimDown",
       "type": "String"
     },
     "bias_adjustment_reference": {
-      "orgName": "references",
+      "value": "Alex J. Cannon, Stephen R. Sobie, and Trevor Q. Murdock, 2015: Bias Correction of GCM Precipitation by Quantile Mapping: How Well Do Methods Preserve Changes in Quantiles and Extremes?. J. Climate, 28, 6938â€“6959.",
       "type": "String"
     },
     "license_type": {
