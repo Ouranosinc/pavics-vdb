@@ -363,7 +363,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
                 attrs = config['attribute']
                 for aa in model_dict[center.name]:
                     attrs[aa] = dict(value=model_dict[center.name][aa], type="String")
-                attrs['driving_model'] = dict(value=center.name, type="String")
+                attrs['driving_model_id'] = dict(value=center.name, type="String")
                 ncml1.ncroot['netcdf']['attribute'] = ncml_add_attributes(attrs)
                 ncml1.ncroot['netcdf']['aggregation'] = agg
 
