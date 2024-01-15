@@ -45,7 +45,14 @@
     "method_id": "attribute",
     "is_dayofyear": "attribute",
     "calendar": "attribute",
-    "cell_methods": "attribute"
+    "cell_methods": "attribute",
+    "target__contact": "attribute",
+    "target__dataset": "attribute",
+    "target__dataset_id": "attribute",
+    "target__institution": "attribute",
+    "target__institution_id": "attribute",
+    "target__references": "attribute",
+    "target__version": "attribute"
   },
   "attribute": {
     "target_contact": {
