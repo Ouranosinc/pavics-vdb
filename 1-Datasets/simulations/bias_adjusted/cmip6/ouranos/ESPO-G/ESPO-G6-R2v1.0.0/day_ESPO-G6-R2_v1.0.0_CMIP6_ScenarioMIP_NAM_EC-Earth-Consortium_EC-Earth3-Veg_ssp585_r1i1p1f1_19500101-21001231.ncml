@@ -19,21 +19,21 @@
 	<attribute name="terms_of_use" type="String" value="In addition to the provided licence, the data used for the realization of climate scenarios are subject to the conditions of the source data. For more details, please refer to: https://pcmdi.llnl.gov/CMIP6/TermsOfUse/TermsOfUse6-2.html"></attribute>
 	<attribute name="attribution" type="String" value="Use of this dataset should be acknowledged as 'Data produced and provided by the Ouranos Consortium on Regional Climatology and Adaptation to Climate Change'. Furthermore, the modeling groups from which the bias-adjusted climate scenarios were constructed must also be acknowledged, please refer to: : The Coupled Model Intercomparison Project https://wcrp-cmip.org/cmip-phase-6-cmip6/"></attribute>
 	<attribute name="modeling_realm" type="String" value="atmos"></attribute>
-	<attribute name="source_institution" type="String" value="AS-RCEC"></attribute>
+	<attribute name="source_institution" type="String" value="EC-Earth-Consortium"></attribute>
 	<aggregation type="Union">
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/AS-RCEC/TaiESM1/ssp585" subdirs="true" suffix="tasmin_*.nc"></scan>
+				<scan location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/EC-Earth-Consortium/EC-Earth3-Veg/ssp585" subdirs="true" suffix="tasmin_*.nc"></scan>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/AS-RCEC/TaiESM1/ssp585" subdirs="true" suffix="tasmax_*.nc"></scan>
+				<scan location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/EC-Earth-Consortium/EC-Earth3-Veg/ssp585" subdirs="true" suffix="tasmax_*.nc"></scan>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/AS-RCEC/TaiESM1/ssp585" subdirs="true" suffix="pr_*.nc"></scan>
+				<scan location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/EC-Earth-Consortium/EC-Earth3-Veg/ssp585" subdirs="true" suffix="pr_*.nc"></scan>
 			</aggregation>
 		</netcdf>
 	</aggregation>
