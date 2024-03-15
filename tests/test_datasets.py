@@ -285,7 +285,7 @@ class TestDataset:
                 lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
             )
 
-            compare_ncml_rawdata(dataset, dsNcML, compare_raw, check_times=False, files_perrun=25)
+            compare_ncml_rawdata(dataset, dsNcML, compare_raw, sample_time=False, files_perrun=5)
 
     def test_CLIMEX(self, compare_raw=False):
 
@@ -417,7 +417,7 @@ class TestDataset:
 
             compare_ncml_rawdata(dataset,dsNcML, compare_raw)
 
-def compare_ncml_rawdata(dataset, dsNcML, compare_vals, check_times=True, files_perrun=None, sample_location=None):
+def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_perrun=None, sample_location=None):
     ncml = xncml.Dataset(dataset)
     l1 = list(recursive_items(ncml.ncroot, '@location'))[0]
 
@@ -479,7 +479,8 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, check_times=True, files_
                         test_files = list(sorted(path.Path(local_path).glob(str1)))
                 else:
                     test_files = list(sorted(path.Path(local_path).glob(str1)))
-
+                # //home/logan/pavics/datasets/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/CNRM-ESM2-1/historical/r1i1p1f2/CRCM5/v1-r1/1hr/hurs/v20240201/hurs_NAM-12_CNRM-ESM2-1_historical_r1i1p1f2_OURANOS_CRCM5_v1-r1_1hr_197701010000-197712312300.nc
+                test_files
                 # remove =[]
                 # if check_times:
                 #     for t in test_files:
@@ -525,7 +526,7 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, check_times=True, files_
                         datasets.append(ds)
             for ds in datasets:
                 if 'climex' in l1:
-                    compare_values(dsNcML.sel(realization=bytes(file1.parent.name.split('-rcp')[0],  'utf-8')), ds, compare_vals)
+                    compare_values(dsNcML.sel(realization=bytes(file1.parent.name.split('-rcp')[0],  'utf-8')), ds, compare_vals, sample_time=sample_time)
 
                 else:
                     if 'cccs_portal' in l1[1]:
@@ -548,9 +549,9 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, check_times=True, files_
                                 ds = ds.rename({v:f"{rcp}_{v}"})
                         del rcp
 
-                        compare_values(dstest, ds, compare_vals)
+                        compare_values(dstest, ds, compare_vals, sample_time=sample_time)
                     else:
-                        compare_values(dsNcML, ds, compare_vals)
+                        compare_values(dsNcML, ds, compare_vals, sample_time=sample_time)
 
 
 
@@ -562,7 +563,7 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, check_times=True, files_
         movfile.parent.mkdir(parents=True)
     shutil.move(dataset,movfile)
 
-def compare_values(dsNcML, ds, compare_vals):
+def compare_values(dsNcML, ds, compare_vals, sample_time=True):
 
     try:
         test = dsNcML.sel(time=ds.time).squeeze()
@@ -578,21 +579,24 @@ def compare_values(dsNcML, ds, compare_vals):
     for coord in ds.coords :
         if coord not in ['height', 'horizon', 'time_bnds' ] :
             np.testing.assert_array_equal(ds[coord].values, test[coord].values)
-    time1 = np.random.choice(ds.time, 15)
-
+    if sample_time:
+        time1 = np.random.choice(ds.time, 15)
+    else:
+        time1 = ds.time
     if compare_vals:
         with ProgressBar():
             for v in ds.data_vars:
                 if v not in ['time_bnds','lat','lon'] and ds[v].dtype != 'S1':
                     print(v)
                     if 'time' in ds[v].dims:
+                        test1 = ds[v].sel(time=time1).load()
                         test2 = test[v].sel(time=time1).load()
                         if v in ['pr','prsn'] and dsNcML[v].units == 'kg m-2 s-1':
-                            np.testing.assert_array_almost_equal(ds[v].sel(time=time1).values * 3600 * 24,
+                            np.testing.assert_array_almost_equal(test1 * 3600 * 24,
 
                                                                  test2 * 3600 * 24, decimal=2)
                         else:
-                            np.testing.assert_array_almost_equal(ds[v].sel(time=time1).values, test2, decimal=3)
+                            np.testing.assert_array_almost_equal(test1, test2, decimal=3)
                     else:
                         np.testing.assert_array_almost_equal(ds[v].values, test[v].values)
 
