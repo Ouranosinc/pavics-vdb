@@ -285,7 +285,7 @@ class TestDataset:
                 lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
             )
 
-            compare_ncml_rawdata(dataset, dsNcML, compare_raw, sample_time=False, files_perrun=5)
+            compare_ncml_rawdata(dataset, dsNcML, compare_raw, sample_time=False, files_perrun=10)
 
     def test_CLIMEX(self, compare_raw=False):
 
@@ -523,6 +523,15 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
                                                 lon_bnds=test_reg['lon'],
                                                 lat_bnds=test_reg['lat'],
                                                 )
+                        datasets.append(ds)
+                    # include first and last file
+                    for ii in [0,-1]:
+                        print(test_files[ii])
+                        ds = subset.subset_bbox(
+                            xr.open_dataset(test_files[ii], chunks=dict(time=-1), engine='h5netcdf', decode_timedelta=False),
+                            lon_bnds=test_reg['lon'],
+                            lat_bnds=test_reg['lat'],
+                            )
                         datasets.append(ds)
             for ds in datasets:
                 if 'climex' in l1:
