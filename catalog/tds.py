@@ -1,4 +1,6 @@
 """Utility function to parse metadata from a THREDDS Data Server catalog."""
+from functools import lru_cache
+
 import requests
 import logging
 
@@ -6,8 +8,15 @@ import logging
 LOGGER = logging.getLogger(__name__)
 
 
-def walk(cat, depth=1):
-    """Return a generator walking a THREDDS data catalog for datasets.
+import requests
+from loguru import logger
+from siphon.catalog import TDSCatalog
+from xml.etree.ElementTree import ParseError, Element
+from typing import Iterable
+
+
+def _walk_catalog(cat, depth: int = 1, limit: int = None):
+    """Generator walking a THREDDS data catalog for datasets.
 
     Parameters
     ----------
@@ -16,8 +25,14 @@ def walk(cat, depth=1):
     depth : int
       Maximum recursive depth. Setting 0 will return only datasets within the top-level catalog. If None,
       depth is set to 1000.
+    limit : int
+      Maximum number of datasets per catalog to walk through. Default is to go through all datasets.
     """
-    yield from cat.datasets.items()
+    for i, (name, ds) in enumerate(cat.datasets.items()):
+        if limit and i == limit:
+            break
+        yield cat, name, ds
+
     if depth is None:
         depth = 1000
 
@@ -25,36 +40,40 @@ def walk(cat, depth=1):
         for name, ref in cat.catalog_refs.items():
             try:
                 child = ref.follow()
-                yield from walk(child, depth=depth - 1)
 
+
+                yield from _walk_catalog(child, depth=depth - 1, limit=limit)
             except requests.HTTPError as exc:
                 LOGGER.exception(exc)
 
+ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+            except requests.HTTPError as exc:
+                logger.exception(exc)
 
 
-def attrs_from_ds(ds):
-    """Extract attributes from TDS Dataset."""
-    url = ds.access_urls["NCML"]
-    attrs = attrs_from_ncml(url)
-    attrs["__services__"] = ds.access_urls
-    return attrs
-
-
-def attrs_from_ncml(url):
-    """Extract attributes from NcML file.
+def walk(url: str, max_iterations: int = 1E6, limit: int = None) -> Iterable:
+    """Return generator walking through a THREDDS Data Server catalog.
 
     Parameters
     ----------
     url : str
-      Link to NcML service of THREDDS server for a dataset.
+      Thredds catalog url.
+    max_iterations : int
+      Maximum number of values returned by iterator.
+    limit : int
+      Maximum number of datasets per catalog.
 
     Returns
     -------
-    dict
-      Global attribute values keyed by facet names, with variable attributes in `__variable__` nested dict, and
-      additional specialized attributes in `__group__` nested dict.
+    name, xml
     """
+
+
+
     import lxml.etree
+    
+    logger.info(f"Walking {url}")
+    
     parser = lxml.etree.XMLParser(encoding='UTF-8')
 
     ns = {"ncml": "http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"}
@@ -67,34 +86,43 @@ def attrs_from_ncml(url):
     # Extract global attributes
     out = _attrib_to_dict(nc.xpath("ncml:attribute", namespaces=ns))
 
-    # Extract group attributes
-    gr = {}
-    for group in nc.xpath("ncml:group", namespaces=ns):
-        gr[group.attrib["name"]] = _attrib_to_dict(group.xpath("ncml:attribute", namespaces=ns))
+    try:
+        catalog = TDSCatalog(url)
 
-    # Extract variable attributes
-    va = {}
-    for variable in nc.xpath("ncml:variable", namespaces=ns):
-        if '_CoordinateAxisType' in variable.xpath("ncml:attribute/@name", namespaces=ns):
-            continue
-        va[variable.attrib["name"]] = _attrib_to_dict(variable.xpath("ncml:attribute", namespaces=ns))
+    except ParseError as err:
+        raise ConnectionError(f"Could not open {url}\n") from err
 
-    out["__group__"] = gr
-    out["__variable__"] = va
-
-    return out
+    for i, (cat, name, ds) in enumerate(_walk_catalog(catalog, depth=None, limit=limit)):
+        if i >= max_iterations:
+            return
+        ncml_url = ds.access_urls["NCML"]
+        xml = get_ncml(ncml_url, catalog=cat.catalog_url, dataset=ds.url_path)
+        yield name, xml
 
 
-def _attrib_to_dict(elems):
-    """Convert element attributes to dictionary.
+@lru_cache(512)
+def get_ncml(url: str, catalog: str, dataset: str) -> bytes:
+    """Read NcML response from server.
 
-    Ignore attributes with names starting with _
+    Parameters
+    ----------
+    url : str
+      Link to NcML service of dataset hosted on a THREDDS server.
+    catalog : str
+      Link to catalog storing the dataset.
+    dataset : str
+      Relative link to the dataset.
+
+    Returns
+    -------
+    bytes
+      NcML content
     """
-    hidden_prefix = "_"
-    out = {}
-    for e in elems:
-        a = e.attrib
-        if a["name"].startswith(hidden_prefix):
-            continue
-        out[a["name"]] = a["value"]
-    return out
+    import requests
+
+    # Setting `params` reproduces the NcML response we get when we click on the NcML service on THREDDS.
+    # For some reason, this is required to obtain the "THREDDSMetadata" group and the available services.
+    # Note that the OPENDAP link would have been available from the top "location" attribute.
+    r = requests.get(url, params={"catalog": catalog, "dataset": dataset})
+    logger.info(r.url)
+    return r.content

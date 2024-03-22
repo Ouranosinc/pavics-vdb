@@ -14,11 +14,11 @@ cat.df
 https://intake-esm.readthedocs.io/en/latest/user-guide/multi-variable-assets.html
 
 """
-from collections import defaultdict
-from siphon.catalog import TDSCatalog
-from xml.etree.ElementTree import ParseError
-from dataclasses import dataclass, fields, asdict, astuple
-import tds
+from typing import List, Iterator
+from pydantic import ValidationError
+from loguru import logger
+import xncml
+
 
 ESMCAT_VERSION = "0.1.0"
 
@@ -32,19 +32,21 @@ class Intake:
         """
         Parameters
         ----------
-        cv : CV subclass
-          CV subclass defining the controlled vocabulary for the catalog to be created.
+        cv : `datamodels.base.Common` subclass
+          Data model for the catalog entries.
         """
         self.cv = cv
 
-    def to_intake_spec(self):
+    def to_intake_spec(self, name=None, description=""):
         """Return Intake specification file content."""
 
-        attributes = [{"column_name": key} for key in self.cv.global_attributes() + self.cv.variable_attributes()]
+        # Define column names
+
+        attributes = [{"column_name": key} for key in self.header()]
         spec = {"esmcat_version": ESMCAT_VERSION,
                 "id": self.cv.__name__.lower(),
-                "description": self.cv.__doc__.splitlines()[0],
-                "catalog_file": self.catalog_fn,
+                "description": description,
+                "catalog_file": f"{name}.csv.gz",
                 "attributes": attributes,
                 "assets": {
                     "column_name": self.asset_attribute,
@@ -58,78 +60,124 @@ class Intake:
         """Return class ID."""
         return self.cv.__name__.lower()
 
-    @property
-    def catalog_fn(self):
-        """Return catalog file name."""
-        return f"{self.cid}.csv.gz"
+    def header(self) -> List:
+        """Return attribute names."""
+        columns = get_field_names(self.cv, "attributes")
+        columns += [f"var_{k}" for k in get_field_names(self.cv, "variables")]
+        return columns
 
-    def header(self):
-        """Return attribute table header names."""
-        return self.cv.global_attributes() + self.cv.variable_attributes() + [self.asset_attribute]
+    def to_row(self, attrs) -> List:
+        """Return attribute values in a flat row."""
 
-    def validate(self, **kwargs):
-        """Return an instance of the CV class, which is responsible for validating the metadata."""
-        return self.cv(**kwargs)
+        # Global attributes
+        g_fields = get_field_names(self.cv, "attributes")
+        out = [attrs["attributes"][k] for k in g_fields]
 
-    def aslist(self, entry, asset):
-        """Return tuple of values."""
-        d = asdict(entry)
-        d[self.asset_attribute] = asset
-        return [d[k] for k in self.header()]
+        # Variable attributes
+        variables = attrs["variables"].values()
+        v_fields = get_field_names(self.cv, "variables")
+        for k in v_fields:
+            out.append([v[k] for v in variables])
 
-    def parse(self, url):
-        """Return a table including a header and rows of attribute values based on CV.
+        return out
+
+    def get_attrs(self, xml: bytes) -> dict:
+        """Extract metadata attributes defined by CV from NcML file.
+
+        Parameters
+        ----------
+        xml : bytes
+          NcML content.
         """
-        try:
-            cat = TDSCatalog(url)
-        except ParseError as err:
-            raise ConnectionError(f"Could not open {url}\n") from err
+        from tempfile import NamedTemporaryFile
+        # Create Element Node
+        f = NamedTemporaryFile()
+        f.write(xml)
+        attrs = xncml.Dataset(f.name).to_cf_dict()
 
-        table = [self.header()]
-        for name, ds in tds.walk(cat, depth=None):
-            attrs = tds.attrs_from_ds(ds)
+        # Parse and validate datamodel
+        dm = self.cv(**attrs)
 
-            # Global attributes
-            g_val = {k: attrs.get(k, "NA") for k in self.cv.global_attributes()}
+        return dm.dict()
 
-            # Variable attributes (lists)
-            v_val = defaultdict(list)
-            for key in self.cv.variable_attributes():
-                k = key.split("variable_")[1]
-                for vk, vd in attrs["__variable__"].items():
-                    if k in vd:
-                        v_val[key].append(vd[k])
-                    elif k == "name":
-                        v_val[key].append(vk)
-                    else:
-                        v_val[key].append("NA")
+    def catalog(self, iterator: Iterator) -> List:
+        """Create catalog entries by walking through iterator.
 
-            # Spec validation
-            entry = self.validate(**g_val, **v_val)
+        Parameters
+        ----------
+        iterator : iterable
+          Sequence of (name: str, xml: bytes)
+        """
+        out = []
 
-            # Asset path
-            asset = attrs["__services__"]["OPENDAP"]
+        for name, item in iterator:
 
-            row = self.aslist(entry, asset=asset)
-            table.append(row)
+            try:
+                attrs = self.get_attrs(item)
+                out.append(self.to_row(attrs))
 
-        return table
+            except ValidationError as exc:
+                logger.warning(f"Metadata error in {name}:\n {exc}")
 
-    def to_catalog(self, table, path='.'):
-        """Write catalog table to disk."""
+        if len(out) == 0:
+            logger.warning("Empty table.")
+
+        return out
+
+    def save(self, catalog, path='.', name=None) -> str:
+        """Write catalog table to disk.
+
+        An Intake-esm catalog has two pieces, an ESM-Collection json file that provides metadata about the catalog,
+        and a catalog csv file that lists the catalog content.
+
+        Parameters
+        ----------
+        catalog : list
+          Metadata table.
+        path : str
+          Directory where catalog files should be written.
+        name : str
+          Catalog name (no extension). Defaults to the data model name.
+
+        Returns
+        -------
+        str
+          Filename of catalog json description.
+        """
         import csv
         import json
         import gzip
         from pathlib import Path
 
         path = Path(path)
+        name = name or self.cid
 
-        # Write spec
-        with open(path / f"{self.cid}.json", "w") as f:
-            json.dump(self.to_intake_spec(), f)
+        # Write ESM-Collection json file
+        fn = path / f"{name}.json"
+        with open(fn, "w") as f:
+            json.dump(self.to_intake_spec(name), f)
 
-        # Write table in csv.gz format
-        with gzip.open(filename=path / self.catalog_fn, mode="wt") as f:
+        # Write catalog data in csv.gz format
+        with gzip.open(filename=path / f"{name}.csv.gz", mode="wt") as f:
             w = csv.writer(f)
-            for row in table:
+            w.writerow(self.header())
+            for row in catalog:
                 w.writerow(row)
+
+        return fn
+
+def get_field_names(cls, attr: str) -> list:
+    """List of attribute names for given attribute (assuming it's another BaseModel)."""
+    model = cls.__fields__[attr]
+    if model.sub_fields:
+        _check_fields_identical(model.sub_fields)
+        model = model.sub_fields[0]
+    return list(model.type_.__fields__.keys())
+
+
+def _check_fields_identical(fields):
+    attrs = []
+    for field in fields:
+        attrs.append(tuple(field.type_.__fields__.keys()))
+    if len(set(attrs)) > 1:
+        raise AttributeError("Fields are not identical across submodels.")
