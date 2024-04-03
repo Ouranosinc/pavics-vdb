@@ -258,10 +258,10 @@ class TestDataset:
             compare_ncml_rawdata(dataset,dsNcML, compare_raw)
 
     def test_CRCM5_CMIP6(self, compare_raw=False):
-        datasets = sorted(list(path.Path('../tmp/simulations/CMIP6/CORDEX/NAM-12').rglob('*.ncml')))
+        datasets = sorted(list(path.Path('../tmp/simulations/RCM-CMIP6/CORDEX/NAM-12').rglob('*.ncml')))
 
-        thredds_test_dir = f'{thredds_root}/simulations/CMIP6/CORDEX/NAM-12'
-        thredds_path_server = f'{thredds_cat_root}/simulations/CMIP6/CORDEX/NAM-12/catalog.html'
+        thredds_test_dir = f'{thredds_root}/simulations/RCM-CMIP6/CORDEX/NAM-12'
+        thredds_path_server = f'{thredds_cat_root}/simulations/RCM-CMIP6/CORDEX/NAM-12/catalog.html'
         thredds_test_dir = path.Path(thredds_test_dir)
 
         for ii, dataset in enumerate(datasets):
