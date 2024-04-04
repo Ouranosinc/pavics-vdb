@@ -61,7 +61,7 @@
 	<attribute name="driving_experiment" type="String" value="historical, ssp126, ssp245, ssp585"></attribute>
 	<attribute name="driving_model_id" type="String" value="multi-model individual runs"></attribute>
 	<attribute name="driving_institute_id" type="String" value="multi-model individual runs"></attribute>
-	<attribute name="title" type="String" value="Climatedata.ca : CMIP6 : Yearly ensemble members for CanDCS-U6 derived climate indicators"></attribute>
+	<attribute name="title" type="String" value="Climatedata.ca : CMIP6 : Climatic normal (30 year average) ensemble members for CanDCS-U6 derived climate indicators"></attribute>
 	<attribute name="type" type="String" value="GCM"></attribute>
 	<attribute name="processing" type="String" value="bias_adjusted"></attribute>
 	<attribute name="dataset_description" type="String" value="https://climatedata.ca/"></attribute>
