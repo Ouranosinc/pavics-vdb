@@ -1,0 +1,40 @@
+{
+  "remove": {
+  },
+  "attribute": {
+    "abstract": {
+      "value": "Ouranos produces operational regional climate simulations over the Cordex North American domain, at 0.11° resolution. The current ensemble uses the fifth version of the CRCM, developed at UQAM's ESCER center in collaboration with ECCC. Pilot data for the simulations come from the CMIP6 ensemble, except for those in hindcast mode, which use ERA5.",
+      "type": "String"
+    },
+    "institution": {
+      "value": "Ouranos Consortium on Regional Climatology and Adaptation to Climate Change",
+      "type": "String"
+    },
+    "institution_id": {
+      "value": "Ouranos",
+      "type": "String"
+    },
+    "title": {"value": "CRCM5-CMIP6 : Canadian Regional Climate Model v.5 - CMIP6 : daily",
+      "type": "String"},
+    "dataset_id": {"value": "CRCM5-CMIP6", "type":"String"},
+    "license_type": {
+      "value": "permissive",
+      "type": "String"
+    },
+    "modeling_realm": {
+      "value": "atmos",
+      "type": "String"
+    }
+  },
+  "location": "/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS",
+  "ncml_type": "CRCM5-CMIP6",
+  "experiments": [
+    "historical",
+    "ssp370",
+    "ssp245",
+    "ssp126"
+  ],
+  "frequency": "day",
+  "realm": "atmos",
+  "filename_template": ""
+}
