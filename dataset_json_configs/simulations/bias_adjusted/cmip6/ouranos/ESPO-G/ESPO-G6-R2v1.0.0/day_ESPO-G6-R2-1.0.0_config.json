@@ -24,11 +24,11 @@
       "type": "String"
     },
     "dataset_description": {
-      "value": "https://doi.org/10.5281/zenodo.7877330",
+      "value": "https://doi.org/10.1038/s41597-023-02855-z",
       "type": "String"
     },
     "doi": {
-      "value": "https://doi.org/10.5281/zenodo.7877330",
+      "value": "https://doi.org/10.1038/s41597-023-02855-z",
       "type": "String"
     },
     "abstract": {
@@ -40,7 +40,7 @@
       "type": "String"
     },
     "bias_adjust_method_citation": {
-      "value": "https://doi.org/10.1175/JCLI-D-14-00754.1",
+      "value": "https://doi.org/10.1038/s41597-023-02855-z",
       "type": "String"
     },
     "bias_adjust_reference": {
