@@ -56,7 +56,7 @@
     "target_references": {"orgName" : "target__references", "type": "String"},
     "target_version": {"orgName" : "target__version", "type": "String"},
     "abstract": {
-      "value": "This dataset provides access to CMIP6 climate indicator ensemble statisics data that drives mapping and time-series visualizations on ClimateData.ca. Climatedata.ca is a climate data portal produced collaboratively by the country’s leading climate organizations and supported, in part, by the Government of Canada. The goal of this portal is to support decision makers across a broad spectrum of sectors and locations by providing the most up to date climate data in easy to use formats and visualizations.",
+      "value": "This dataset provides access to individual ensemble member CMIP6 climate indicator data that drives mapping and time-series visualizations on ClimateData.ca. Climatedata.ca is a climate data portal produced collaboratively by the country’s leading climate organizations and supported, in part, by the Government of Canada. The goal of this portal is to support decision makers across a broad spectrum of sectors and locations by providing the most up to date climate data in easy to use formats and visualizations.",
       "type": "String"
     },
     "climateindex_package_id": {

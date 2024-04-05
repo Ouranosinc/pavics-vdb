@@ -53,7 +53,7 @@
 	<attribute name="target_institution_id" type="String" orgName="target__institution_id"></attribute>
 	<attribute name="target_references" type="String" orgName="target__references"></attribute>
 	<attribute name="target_version" type="String" orgName="target__version"></attribute>
-	<attribute name="abstract" type="String" value="This dataset provides access to CMIP6 climate indicator ensemble statisics data that drives mapping and time-series visualizations on ClimateData.ca. Climatedata.ca is a climate data portal produced collaboratively by the country’s leading climate organizations and supported, in part, by the Government of Canada. The goal of this portal is to support decision makers across a broad spectrum of sectors and locations by providing the most up to date climate data in easy to use formats and visualizations."></attribute>
+	<attribute name="abstract" type="String" value="This dataset provides access to individual ensemble member CMIP6 climate indicator data that drives mapping and time-series visualizations on ClimateData.ca. Climatedata.ca is a climate data portal produced collaboratively by the country’s leading climate organizations and supported, in part, by the Government of Canada. The goal of this portal is to support decision makers across a broad spectrum of sectors and locations by providing the most up to date climate data in easy to use formats and visualizations."></attribute>
 	<attribute name="climateindex_package_id" type="String" value="https://github.com/Ouranosinc/xclim"></attribute>
 	<attribute name="institution" type="String" value="Canadian Centre for Climate Services"></attribute>
 	<attribute name="institution_id" type="String" value="CCCS"></attribute>
