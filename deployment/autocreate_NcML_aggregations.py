@@ -13,7 +13,7 @@ pavics_root = f"{home}/pavics/datasets"
 
 def main():
     overwrite_to_tmp = True
-    dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('*CRCM5-CMIP6*_config.json')
+    dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('*ESPO-G6-R2*_config.json')
     for dataset in dataset_configs:
         with open(dataset, 'r') as f:
             ncml_modify = json.load(f)
@@ -476,6 +476,16 @@ def ncml_create_datasets(ncml_template=None, config=None):
                     agg_dict = {"@type": "Union"}
                     agg = ncml_add_aggregation(agg_dict)
                     agg['netcdf'] = []
+                    if 'invariant_location' in config.keys():
+                        for nc in sorted(list(p.Path(config['invariant_location'].replace('pavics-data', pavics_root)).rglob('*.nc'))):
+
+                            netcdf3 = ncml_netcdf_container()
+
+                            netcdf3['@location'] = str(nc).replace(pavics_root, '/pavics-data')
+                            agg['netcdf'].append(netcdf3)
+                            del netcdf3
+
+
                     outname = None
                     if all(var_flag):
 
