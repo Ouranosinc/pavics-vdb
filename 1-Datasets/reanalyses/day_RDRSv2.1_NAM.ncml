@@ -13,6 +13,11 @@
     <attribute name="citation" type="String" value="Gasset, N., Fortin, V., Dimitrijevic, M., Carrera, M., Bilodeau, B., Muncaster, R., Gaborit, É., Roy, G., Pentcheva, N., Bulat, M., Wang, X., Pavlovic, R., Lespinas, F., Khedhaouiria, D., and Mai, J. (2021): A 10km North American precipitation and land-surface reanalysis based on the GEM atmospheric model, Hydrol. Earth Syst. Sci., 25, 4917–4945" />
     <aggregation type="union">
         <netcdf>
+            <aggregation type="union" recheckEvery="1 day">
+                <scan location="/pavics-data/eccc/RDRS_v21/NAM/fx" regExp=".*\.nc$" subdirs="true"/>
+            </aggregation>
+        </netcdf>
+        <netcdf>
             <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
                 <scan location="/pavics-data/eccc/RDRS_v21/NAM/day/tas" regExp="tas_.*\.nc$" subdirs="false"/>
             </aggregation>
