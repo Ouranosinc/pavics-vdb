@@ -21,6 +21,9 @@
 	<attribute name="modeling_realm" type="String" value="atmos"></attribute>
 	<attribute name="source_institution" type="String" value="IPSL"></attribute>
 	<aggregation type="Union">
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/RDRS_v21/NAM/fx/lakeFrac/lakeFrac_fx_NAM_GovCan_RDRS.nc"></netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/RDRS_v21/NAM/fx/sftlf/sftlf_fx_NAM_GovCan_RDRS.nc"></netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/RDRS_v21/NAM/fx/sftof/sftof_fx_NAM_GovCan_RDRS.nc"></netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
 				<scan location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/IPSL/IPSL-CM6A-LR/ssp245" subdirs="true" suffix="tasmin_*.nc"></scan>
