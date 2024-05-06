@@ -32,7 +32,8 @@
     "historical",
     "ssp370",
     "ssp245",
-    "ssp126"
+    "ssp126",
+    "evaluation"
   ],
   "frequency": "3hr",
   "realm": "atmos",
