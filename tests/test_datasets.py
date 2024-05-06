@@ -510,10 +510,10 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
                                            start_date=str(dsNcML.time.dt.year.min().values),
                                            end_date=str(dsNcML.time.dt.year.max().values))
 
-                    if 'time_vectors' in ds.data_vars:
-                        ds = ds.drop_vars(['time_vectors','ts'])
-                    if 'time_bnds' in ds.data_vars:
-                        ds = ds.drop_vars(['time_bnds'])
+                    for vv in ['time_vectors', 'ts', 'time_bnds']:
+                        if vv in ds.data_vars:
+                            ds = ds.drop_vars(vv)
+
                     datasets.append(ds)
                     #compare_values(dsNcML, ds, compare_vals)
                 else:
