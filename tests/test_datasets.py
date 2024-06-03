@@ -503,6 +503,7 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
                                            engine="h5netcdf",
                                            decode_timedelta=False,
                                            combine='by_coords',
+                                           coords='minimal',
                                            data_vars='minimal',
                                            chunks=dict(time=10, lon=50, lat=50)),
                                            lon_bnds=test_reg['lon'],
@@ -587,7 +588,11 @@ def compare_values(dsNcML, ds, compare_vals, sample_time=True):
 
     for coord in ds.coords :
         if coord not in ['height', 'horizon', 'time_bnds' ] :
-            np.testing.assert_array_equal(ds[coord].values, test[coord].values)
+            print(coord)
+            if coord.startswith('vertices'):
+                np.testing.assert_array_equal(ds[coord].transpose(*test[coord].dims).values, test[coord].values)
+            else:
+                np.testing.assert_array_equal(ds[coord].values, test[coord].values)
     if sample_time:
         time1 = np.random.choice(ds.time, 15)
     else:
