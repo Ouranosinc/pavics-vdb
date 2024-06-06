@@ -153,6 +153,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
     elif config['ncml_type'] == 'CRCM5-CMIP6':
 
         first_var = {"1hr":"tas", "3hr":"clwvi", "day":"tas"}
+        first_var1 = {"1hr": "pr", "3hr": "snw", "day": "pr"}
         config
         freq = config["frequency"]
         infolder = p.Path(config['location'].replace('/pavics-data', pavics_root))
@@ -164,17 +165,25 @@ def ncml_create_datasets(ncml_template=None, config=None):
                     for mod in [ l for l in run.glob('*') if l.is_dir()]:
                         for ver in [l for l in mod.glob('*') if l.is_dir()]:
                             ncfiles = sorted(list(ver.rglob(f'*{freq}*.nc')))
-                            time_per = f"{ncfiles[0].stem.split('_')[-1].split('-')[0]}-{ncfiles[-1].stem.split('_')[-1].split('-')[-1]}"
-                            outname = f"{'_'.join(ncfiles[0].stem.split('_')[1:-1])}_{time_per}"
+                            outname_files =[n for n in ncfiles if n.name.startswith(first_var[freq])]
+                            if len(outname_files) == 0:
+                                outname_files = [n for n in ncfiles if n.name.startswith(first_var1[freq])]
+                            time_per = f"{outname_files[0].stem.split('_')[-1].split('-')[0]}-{outname_files[-1].stem.split('_')[-1].split('-')[-1]}"
+                            outname = f"{'_'.join(outname_files[0].stem.split('_')[1:-1])}_{time_per}"
 
                             all_vars = sorted(list(set([f.name.split('_')[0] for f  in ncfiles])))
-                            vars = [first_var[freq]] if first_var[freq] in all_vars else []
+                            vars = []
+                            if first_var[freq] in all_vars:
+                                vars = [first_var[freq]]
+                            elif first_var1[freq] in all_vars:
+                                vars = [first_var1[freq]]
                             vars.extend([v for v in all_vars if v not in vars])
                             del ncfiles
                             agg_dict = {"@type": "Union"}
                             agg = ncml_add_aggregation(agg_dict)
                             agg['netcdf'] = []
                             for vv in vars:
+                                print(vv)
 
                                 scanloc = os.path.commonpath(sorted(list(ver.rglob(f'{vv}_*{freq}*.nc'))))
                                 netcdf2 = ncml_netcdf_container()
