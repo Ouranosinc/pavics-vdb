@@ -506,7 +506,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
                             netcdf2['aggregation'] = ncml_add_aggregation(
                                 {'@dimName': 'time', '@type': 'joinExisting', '@recheckEvery': '1 day'})
                             netcdf2['aggregation']['scan'] = []
-                            scan = {'@location': scanloc.replace(pavics_root, 'pavics-data'),
+                            scan = {'@location': scanloc.replace(pavics_root, '/pavics-data'),
                                     '@subdirs': 'true',
                                     '@suffix': f'{v}_*.nc'}
                             netcdf2['aggregation']['scan'].append(ncml_add_scan(scan))
