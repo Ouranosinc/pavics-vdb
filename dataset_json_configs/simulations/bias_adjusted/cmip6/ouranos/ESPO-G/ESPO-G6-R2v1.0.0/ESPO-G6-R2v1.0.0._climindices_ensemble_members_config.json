@@ -1,0 +1,84 @@
+{
+  "remove": {
+    "redistribution": "attribute"
+  },
+  "attribute": {
+    "institution": {
+      "value": "Ouranos Consortium on Regional Climatology and Adaptation to Climate Change",
+      "type": "String"
+    },
+    "institution_id": {
+      "value": "Ouranos",
+      "type": "String"
+    },
+    "title": {"value": "ESPO-G6-R2 v1.0.0 : Derived Climate Indicators - Ouranos Ensemble of Bias-adjusted Simulations - Global models CMIP6 - RDRS v2.1",
+      "type": "String"},
+    "dataset_id": {"value": "ESPO-G6-R2 v1.0.0", "type":"String"},
+    "type": {
+      "value": "GCM",
+      "type": "String"
+    },
+    "processing": {
+      "value": "indicators",
+      "type": "String"
+    },
+    "dataset_description": {
+      "value": "https://doi.org/10.1038/s41597-023-02855-z",
+      "type": "String"
+    },
+    "doi": {
+      "value": "https://doi.org/10.1038/s41597-023-02855-z",
+      "type": "String"
+    },
+    "abstract": {
+      "value": "This dataset provides access to individual ensemble member ESPO-G6-R2 v1.0.0 (CMIP6) climate indicator data that form the basis of summarizes information on Ouranos' Climate Portraits website.",
+      "type": "String"
+    },
+    "bias_adjust_method": {
+      "value": "1D-Detrended Quantile Mapping (https://xclim.readthedocs.io/en/stable/sdba.html#sdba-user-api)",
+      "type": "String"
+    },
+    "bias_adjust_method_citation": {
+      "value": "https://doi.org/10.1038/s41597-023-02855-z",
+      "type": "String"
+    },
+    "bias_adjust_reference": {
+      "value": "Regional Deterministic Reforecast System (RDRS) v2.1 (1989-2018)",
+      "type": "String"
+    },
+    "bias_adjust_reference_citation": {
+      "value": "https://doi.org/10.5194/hess-25-4917-2021",
+      "type": "String"
+    },
+    "license_type": {
+      "value": "permissive",
+      "type": "String"
+    },
+    "license":{
+      "value":"Creative Commons Attribution 4.0 International Public License: https://creativecommons.org/licenses/by/4.0/legalcode",
+      "type": "String"
+    },
+    "terms_of_use": {
+      "value": "In addition to the provided licence, the data used for the realization of climate scenarios are subject to the conditions of the source data. For more details, please refer to: https://pcmdi.llnl.gov/CMIP6/TermsOfUse/TermsOfUse6-2.html",
+      "type": "String"
+    },
+    "attribution": {
+      "value": "Use of this dataset should be acknowledged as 'Data produced and provided by the Ouranos Consortium on Regional Climatology and Adaptation to Climate Change'. Furthermore, the modeling groups from which the bias-adjusted climate scenarios were constructed must also be acknowledged, please refer to: : The Coupled Model Intercomparison Project https://wcrp-cmip.org/cmip-phase-6-cmip6/",
+      "type": "String"
+    },
+    "modeling_realm": {
+      "value": "atmos",
+      "type": "String"
+    }
+  },
+
+  "location": "/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0",
+  "ncml_type": "ESPO-G_members",
+  "experiments": [
+    "ssp245", "ssp370", "ssp585"
+  ],
+  "aggregation": {"":""},
+  "frequency": {"AS-JAN": "annual", "AS-JUL":"annual-july-june","2QS-OCT": "6month","QS-DEC": "seasonal"},
+  "realm": "atmos"
+
+}
