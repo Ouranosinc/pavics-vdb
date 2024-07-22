@@ -13,7 +13,7 @@ pavics_root = f"{home}/pavics/datasets"
 
 def main():
     overwrite_to_tmp = True
-    dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('day_ESPO-G6-*_config.json')
+    dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('ESPO-G6*_climindices_ensemble_memb*.json')
     for dataset in dataset_configs:
         with open(dataset, 'r') as f:
             ncml_modify = json.load(f)
@@ -534,6 +534,14 @@ def ncml_create_datasets(ncml_template=None, config=None):
                             del netcdf3
 
         return ncmls
+
+    elif config['ncml_type'] == "ESPO-G_members":
+
+        ncmls = {}
+        location = p.Path(config['location'].replace('pavics-data', pavics_root))
+        for freq, frequency1 in config['frequency'].items():
+            # runs = sorted(glob.glob(path.join(inrep1, "*" + m + "_hist*r*i1p1*195*2*" + f + "*.nc")))
+            vars = sorted([x for x in location.iterdir() if x.is_dir()])
 
     elif config['ncml_type'] == "climatedata.ca":
 
