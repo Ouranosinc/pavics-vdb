@@ -78,7 +78,6 @@
     "ssp245", "ssp370", "ssp585"
   ],
   "aggregation": {"":""},
-  "frequency": {"AS-JAN": "annual", "AS-JUL":"annual-july-june","2QS-OCT": "6month","QS-DEC": "seasonal"},
+  "frequency": {"AS-JAN": "annual", "AS-JUL":"annual-julyjune","2QS-OCT": "6month","QS-DEC": "seasonal"},
   "realm": "atmos"
-
 }
