@@ -76,7 +76,9 @@
   "invariant_location": "pavics-data/eccc/RDRS_v21/NAM/fx/",
   "ncml_type": "ESPO-G_members",
   "experiments": [
-    "ssp245", "ssp370", "ssp585"
+    "ssp245",
+    "ssp370",
+    "ssp585"
   ],
   "aggregation": {"":""},
   "frequency": {"AS-JAN": "annual", "AS-JUL":"annual-julyjune","2QS-OCT": "6month","QS-DEC": "seasonal"},
