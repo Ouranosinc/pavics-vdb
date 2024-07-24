@@ -30,6 +30,7 @@
   "ncml_type": "CRCM5-CMIP6",
   "experiments": [
     "historical",
+    "ssp585",
     "ssp370",
     "ssp245",
     "ssp126",

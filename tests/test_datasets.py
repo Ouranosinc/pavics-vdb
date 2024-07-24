@@ -8,7 +8,8 @@ import numpy as np
 import threddsclient
 import xarray as xr
 import xncml
-from xclim import subset, ensembles
+from clisops.core import subset
+from xclim import ensembles
 import netCDF4
 import warnings
 import random
