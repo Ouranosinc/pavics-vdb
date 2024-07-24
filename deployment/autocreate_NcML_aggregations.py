@@ -13,12 +13,13 @@ pavics_root = f"{home}/pavics/datasets"
 
 def main():
     overwrite_to_tmp = True
-    dataset_configs = p.Path(f"{home}/github/github_pavics-vdb/dataset_json_configs").rglob('ESPO-G6*_climindices_ensemble_memb*.json')
+    rootdir = p.Path(__file__).parent.parent
+    dataset_configs = rootdir.joinpath("dataset_json_configs").rglob('*CRCM5-CMIP6*_config.json')
     for dataset in dataset_configs:
         with open(dataset, 'r') as f:
             ncml_modify = json.load(f)
         ncml_modify
-        ncml_template = f'{home}/github/github_pavics-vdb/tests/test_data/NcML_templates/NcML_template_emptyNetcdf.ncml'
+        ncml_template = rootdir.joinpath('tests/test_data/NcML_templates/NcML_template_emptyNetcdf.ncml')
 
         datasets = ncml_create_datasets(ncml_template=ncml_template, config=ncml_modify)
         for d in datasets.keys():
