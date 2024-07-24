@@ -582,7 +582,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
                         tcr_flag.append(0)
 
                     if not mod.joinpath(experiment).exists():
-                        break
+                        continue
                     ncfiles = [n for n in mod.rglob(f"*_{freq}_*_{experiment}_*.nc")]
                     varlist = [n.parent.name for n in ncfiles]
                     if agg_dict is None:
