@@ -73,6 +73,7 @@
   },
 
   "location": "/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0",
+  "invariant_location": "pavics-data/eccc/RDRS_v21/NAM/fx/",
   "ncml_type": "ESPO-G_members",
   "experiments": [
     "ssp245", "ssp370", "ssp585"

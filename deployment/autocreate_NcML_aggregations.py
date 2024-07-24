@@ -14,7 +14,7 @@ pavics_root = f"{home}/pavics/datasets"
 def main():
     overwrite_to_tmp = True
     rootdir = p.Path(__file__).parent.parent
-    dataset_configs = rootdir.joinpath("dataset_json_configs").rglob('*CRCM5-CMIP6*_config.json')
+    dataset_configs = rootdir.joinpath("dataset_json_configs").rglob('ESPO-G6-R2v1.0.0._climindices_ensemble_members_config.json')
     for dataset in dataset_configs:
         with open(dataset, 'r') as f:
             ncml_modify = json.load(f)
@@ -571,51 +571,73 @@ def ncml_create_datasets(ncml_template=None, config=None):
                 print(freq, experiment)
                 agg_dict = None
                 tcr_flag = []
+                all_mods = []
+
                 for ss in sources:
-                    for mod in sorted([x for x in ss.iterdir() if x.is_dir()]):
-                        if mod.name in tcr_likely_models:
-                            tcr_flag.append(1)
-                        else:
-                            tcr_flag.append(0)
+                    all_mods.extend(sorted([x for x in ss.iterdir() if x.is_dir()]))
+                for mod in sorted(all_mods):
+                    if mod.name in tcr_likely_models:
+                        tcr_flag.append(1)
+                    else:
+                        tcr_flag.append(0)
 
-                        if not mod.joinpath(experiment).exists():
-                            break
-                        ncfiles = [n for n in mod.rglob(f"*_{freq}_*_{experiment}_*.nc")]
-                        varlist = [n.parent.name for n in ncfiles]
-                        if agg_dict is None:
-                            agg_dict = {"@dimName": "realization", "@type": "joinNew", "variableAgg": varlist}  #
-                            agg = ncml_add_aggregation(agg_dict)
-                            # add runs
-                            agg['netcdf'] = []
-                        rr = [r.name for r in list(mod.joinpath(experiment).glob('r*i*p*f*'))]
-                        if len(rr) > 1:
-                            raise ValueError(f"expect one realization found {rr}")
-                        rr = rr[0]
-                        netcdf2 = ncml_netcdf_container({"@coordValue": f"{mod.name}:{rr}"})
-                        netcdf2['aggregation'] = ncml_add_aggregation({"@type": "Union"})
-                        netcdf2['aggregation']['netcdf'] = []
+                    if not mod.joinpath(experiment).exists():
+                        break
+                    ncfiles = [n for n in mod.rglob(f"*_{freq}_*_{experiment}_*.nc")]
+                    varlist = [n.parent.name for n in ncfiles]
+                    if agg_dict is None:
+                        agg_dict = {"@dimName": "realization", "@type": "joinNew", "variableAgg": varlist}  #
+                        agg = ncml_add_aggregation(agg_dict)
+                        # add runs
+                        agg['netcdf'] = []
+                    rr = [r.name for r in list(mod.joinpath(experiment).glob('r*i*p*f*'))]
+                    if len(rr) > 1:
+                        raise ValueError(f"expect one realization found {rr}")
+                    rr = rr[0]
+                    netcdf2 = ncml_netcdf_container({"@coordValue": f"{mod.name}:{rr}"})
+                    netcdf2['aggregation'] = ncml_add_aggregation({"@type": "Union"})
+                    netcdf2['aggregation']['netcdf'] = []
 
-                        for nc  in ncfiles:
-                            netcdf3 = ncml_netcdf_container()
-                            # r1 = runs.name.split(exp)[-1].split('_')[1]
-                            netcdf3['@location'] = str(nc).replace(pavics_root, 'pavics-data')
-                            netcdf2['aggregation']['netcdf'].append(netcdf3)
-                        agg['netcdf'].append(netcdf2)
-                        del netcdf2
+                    for nc  in ncfiles:
+                        netcdf3 = ncml_netcdf_container()
+                        # r1 = runs.name.split(exp)[-1].split('_')[1]
+                        netcdf3['@location'] = str(nc).replace(pavics_root, 'pavics-data')
+                        netcdf2['aggregation']['netcdf'].append(netcdf3)
+                    agg['netcdf'].append(netcdf2)
+                    del netcdf2
 
-                d1 = OrderedDict()
 
-                d1["@name"] = f"tcr_likey"
-                d1["@shape"] = f"realization"
-                d1["@type"] = 'int'
-                d1["@values"] = tcr_flag
+
+
+                # d1 = OrderedDict()
+                #
+                # d1["@name"] = f"tcr_likey"
+                # d1["@shape"] = f"realization"
+                # d1["@type"] = 'int'
+                #d1["@values"] = tcr_flag
 
                 ncml1 = xncml.Dataset(ncml_template)
                 ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
                 attrs = config['attribute']
                 ncml1.ncroot['netcdf']['attribute'] = ncml_add_attributes(attrs)
-                ncml1.ncroot['netcdf']['aggregation'] = agg
-                ncml1.ncroot['netcdf']['variable'] = d1
+                #ncml1.ncroot['netcdf']['aggregation'] = agg
+                ncml1.ncroot['netcdf']['aggregation'] = ncml_add_aggregation({"@type": "Union"})
+                ncml1.ncroot['netcdf']['aggregation']['netcdf'] = []
+                netcdf3 = ncml_netcdf_container()
+                netcdf3['aggregation'] = agg
+                ncml1.ncroot['netcdf']['aggregation']['netcdf'].append(netcdf3)
+                del netcdf3
+                if 'invariant_location' in config.keys():
+                    for nc in sorted(
+                            list(p.Path(config['invariant_location'].replace('pavics-data', pavics_root)).rglob(
+                                    '*.nc'))):
+                        netcdf3 = ncml_netcdf_container()
+
+                        netcdf3['@location'] = str(nc).replace(pavics_root, '/pavics-data')
+                        ncml1.ncroot['netcdf']['aggregation']['netcdf'].append(netcdf3)
+                        del netcdf3
+
+                #ncml1.ncroot['netcdf']['n'] = d1
                 ncmls[f"{frequency1}_{experiment}"] = ncml1
         return ncmls
     elif config['ncml_type'] == "climatedata.ca":
