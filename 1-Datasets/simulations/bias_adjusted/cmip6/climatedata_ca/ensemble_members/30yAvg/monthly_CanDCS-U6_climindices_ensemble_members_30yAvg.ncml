@@ -60,7 +60,7 @@
 	<attribute name="target_institution_id" type="String" value="CFS-NRCan"></attribute>
 	<attribute name="target_references" type="String" value="McKenney D.W., Hutchinson, M.F., Papadopol, P., Lawrence, K., Pedlar, J., Campbell, K., Milewska, E., Hopkinson, R., Price, D., and Owen, T., 2011. Customized spatial climate models for North America. Bulletin of the American Meteorological Society, 92(12): 1611-1622."></attribute>
 	<attribute name="target_version" type="String" value="target__version: obtained: 2 April 2012, 14 June 2012, and 30 January 2013"></attribute>
-	<attribute name="abstract" type="String" value="This dataset provides access to CMIP6 climate indicator ensemble statisics data that drives mapping and time-series visualizations on ClimateData.ca. Climatedata.ca is a climate data portal produced collaboratively by the country’s leading climate organizations and supported, in part, by the Government of Canada. The goal of this portal is to support decision makers across a broad spectrum of sectors and locations by providing the most up to date climate data in easy to use formats and visualizations."></attribute>
+	<attribute name="abstract" type="String" value="This dataset provides access to individual ensemble member CMIP6 climate indicator data that drives mapping and time-series visualizations on ClimateData.ca. Climatedata.ca is a climate data portal produced collaboratively by the country’s leading climate organizations and supported, in part, by the Government of Canada. The goal of this portal is to support decision makers across a broad spectrum of sectors and locations by providing the most up to date climate data in easy to use formats and visualizations."></attribute>
 	<attribute name="climateindex_package_id" type="String" value="https://github.com/Ouranosinc/xclim"></attribute>
 	<attribute name="institution" type="String" value="Canadian Centre for Climate Services"></attribute>
 	<attribute name="institution_id" type="String" value="CCCS"></attribute>
@@ -68,7 +68,7 @@
 	<attribute name="driving_experiment" type="String" value="historical, ssp126, ssp245, ssp585"></attribute>
 	<attribute name="driving_model_id" type="String" value="multi-model individual runs"></attribute>
 	<attribute name="driving_institute_id" type="String" value="multi-model individual runs"></attribute>
-	<attribute name="title" type="String" value="Climatedata.ca : CMIP6 : Yearly ensemble members for CanDCS-U6 derived climate indicators"></attribute>
+	<attribute name="title" type="String" value="Climatedata.ca : CMIP6 : Climatic normal (30 year average) ensemble members for CanDCS-U6 derived climate indicators"></attribute>
 	<attribute name="type" type="String" value="GCM"></attribute>
 	<attribute name="processing" type="String" value="bias_adjusted"></attribute>
 	<attribute name="dataset_description" type="String" value="https://climatedata.ca/"></attribute>
