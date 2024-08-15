@@ -7,11 +7,11 @@
 	<attribute name="dataset_id" type="String" value="ESPO-G6-R2 v1.0.0"></attribute>
 	<attribute name="type" type="String" value="GCM"></attribute>
 	<attribute name="processing" type="String" value="bias_adjusted"></attribute>
-	<attribute name="dataset_description" type="String" value="https://doi.org/10.5281/zenodo.7877330"></attribute>
-	<attribute name="doi" type="String" value="https://doi.org/10.5281/zenodo.7877330"></attribute>
+	<attribute name="dataset_description" type="String" value="https://doi.org/10.1038/s41597-023-02855-z"></attribute>
+	<attribute name="doi" type="String" value="https://doi.org/10.1038/s41597-023-02855-z"></attribute>
 	<attribute name="abstract" type="String" value='The need to adapt to climate change is present in a growing number of fields, leading to an increase in the demand for climate scenarios for often interrelated sectors of activity. In order to meet this growing demand and to ensure the availability of climate scenarios responding to numerous vulnerability, impact and adaptation (VIA) studies, Ouranos is working to create a set of operational bias-adjusted climate simulations called "Ensemble de simulations post-traitées d’Ouranos” (ESPO) covering North America.'></attribute>
 	<attribute name="bias_adjust_method" type="String" value="1D-Detrended Quantile Mapping (https://xclim.readthedocs.io/en/stable/sdba.html#sdba-user-api)"></attribute>
-	<attribute name="bias_adjust_method_citation" type="String" value="https://doi.org/10.1175/JCLI-D-14-00754.1"></attribute>
+	<attribute name="bias_adjust_method_citation" type="String" value="https://doi.org/10.1038/s41597-023-02855-z"></attribute>
 	<attribute name="bias_adjust_reference" type="String" value="Regional Deterministic Reforecast System (RDRS) v2.1 (1989-2018)"></attribute>
 	<attribute name="bias_adjust_reference_citation" type="String" value="https://doi.org/10.5194/hess-25-4917-2021"></attribute>
 	<attribute name="license_type" type="String" value="permissive"></attribute>
@@ -23,18 +23,21 @@
 	<aggregation type="Union">
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/CSIRO-ARCCSS/ACCESS-CM2/ssp245" subdirs="true" suffix="tasmin_*.nc"></scan>
+				<scan location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/CSIRO-ARCCSS/ACCESS-CM2/ssp245/r1i1p1f1/day/tasmin" subdirs="true" suffix="tasmin_*.nc"></scan>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/CSIRO-ARCCSS/ACCESS-CM2/ssp245" subdirs="true" suffix="tasmax_*.nc"></scan>
+				<scan location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/CSIRO-ARCCSS/ACCESS-CM2/ssp245/r1i1p1f1/day/tasmax" subdirs="true" suffix="tasmax_*.nc"></scan>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/CSIRO-ARCCSS/ACCESS-CM2/ssp245" subdirs="true" suffix="pr_*.nc"></scan>
+				<scan location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/CSIRO-ARCCSS/ACCESS-CM2/ssp245/r1i1p1f1/day/pr" subdirs="true" suffix="pr_*.nc"></scan>
 			</aggregation>
 		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/RDRS_v21/NAM/fx/lakeFrac/lakeFrac_fx_NAM_GovCan_RDRS.nc"></netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/RDRS_v21/NAM/fx/sftlf/sftlf_fx_NAM_GovCan_RDRS.nc"></netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/RDRS_v21/NAM/fx/sftof/sftof_fx_NAM_GovCan_RDRS.nc"></netcdf>
 	</aggregation>
 </netcdf>
