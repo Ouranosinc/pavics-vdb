@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 	<remove name="redistribution" type="attribute"></remove>
-	<remove name="driving_model" type="attribute"></remove>
 	<attribute name="institution" type="String" value="Ouranos Consortium on Regional Climatology and Adaptation to Climate Change"></attribute>
 	<attribute name="institute_id" type="String" value="Ouranos"></attribute>
 	<attribute name="title" type="String" value="Ouranos standard ensemble of bias-adjusted climate scenarios version 1.0 (cb-oura-1.0)"></attribute>
@@ -10,7 +9,6 @@
 	<attribute name="processing" type="String" value="bias_adjusted"></attribute>
 	<attribute name="dataset_description" type="String" value="https://www.ouranos.ca/publication-scientifique/FicheLoganGauvin2016_EN.pdf"></attribute>
 	<attribute name="abstract" type="String" value="In order to satisfy growing demand and ensure the availability of climate scenarios that meet the needs of vulnerability, impact and adaptation (VIA) studies, a standard ensemble of bias-adjusted climate scenarios has been produced. Resulting climate scenarios are constructed using outputs of 11 individual global climate models and two future greenhouse gas emissions scenarios (RCP 4.5 and RCP 8.5) to cover the range of plausible of future changes and post-processed to refine the spatial scales and correct biases. The selection of a subset of simulations from the entire CMIP5 ensemble was carried out using a cluster analysis. The selection criteria include projected monthly changes in maximum and minimum temperatures as well as in total precipitations for two future horizons (2041 to 2070 and 2071 to 2100)"></attribute>
-	<attribute name="driving_model_id" type="String" orgName="driving_model"></attribute>
 	<attribute name="bias_adjustment_method" type="String" value="1D-Quantile Mapping"></attribute>
 	<attribute name="bias_adjustment_reference" type="String" value="http://doi.org/10.1002/2015JD023890"></attribute>
 	<attribute name="project_id" type="String" value="CMIP5"></attribute>
@@ -24,7 +22,7 @@
 	<attribute name="target_dataset_references" type="String" value="CANADA : https://doi.org/10.1175/2011BAMS3132.1; USA : https://doi.org/10.1175/JCLI-D-12-00508.1"></attribute>
 	<attribute name="driving_institution" type="String" value="Max-Planck-Institut für Meteorologie (Max Planck Institute for Meteorology)"></attribute>
 	<attribute name="driving_institute_id" type="String" value="MPI-M"></attribute>
-	<attribute name="driving_model" type="String" value="MPI-ESM-LR"></attribute>
+	<attribute name="driving_model_id" type="String" value="MPI-ESM-LR"></attribute>
 	<aggregation type="Union">
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
