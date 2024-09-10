@@ -9,7 +9,7 @@
   },
   "attribute": {
 
-    "title": {"value": "PCIC/ECCC Canadian Downscaled Climate Scenarios – Multiivariate CMIP6","type": "String"},
+    "title": {"value": "PCIC/ECCC Canadian Downscaled Climate Scenarios – Multivariate CMIP6","type": "String"},
     "dataset_id": {"value": "CanDCS-M6", "type":"String"},
     "type": {
       "value": "GCM",
