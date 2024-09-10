@@ -396,12 +396,12 @@ class TestDataset:
 
             compare_ncml_rawdata(dataset, dsNcML, compare_raw, sample_location=sample_location)
 
-    def test_CanDCS_U6(self, compare_raw=False):
+    def test_CanDCS_U6(self, inpath='../tmp/simulations/bias_adjusted/cmip6/pcic/CanDCS-U6', compare_raw=False):
 
-        datasets = sorted(list(path.Path('../tmp/simulations/bias_adjusted/cmip6/pcic/CanDCS-U6').rglob('*.ncml')))
+        datasets = sorted(list(path.Path(inpath).rglob('*.ncml')))
 
-        thredds_test_dir = f'{thredds_root}/simulations/bias_adjusted/cmip6/pcic/CanDCS-U6'
-        thredds_path_server = f'{thredds_cat_root}/simulations/bias_adjusted/cmip6/pcic/CanDCS-U6/catalog.html'
+        thredds_test_dir = f'{thredds_root}/simulations/bias_adjusted/cmip6/pcic/{path.Path(inpath).name}'
+        thredds_path_server = f'{thredds_cat_root}/simulations/bias_adjusted/cmip6/pcic/{path.Path(inpath).name}/catalog.html'
         thredds_test_dir = path.Path(thredds_test_dir)
 
         for ii, dataset in enumerate(datasets):
@@ -437,7 +437,7 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
     else:
         key1 = 'scan'
 
-    if 'climex' not in l1[1] and 'cccs_portal' not in l1[1] and 'ESPO' not in l1[1] and "CanDCS-U6" not in l1[
+    if 'climex' not in l1[1] and 'cccs_portal' not in l1[1] and 'ESPO' not in l1[1] and "CanDCS" not in l1[
         1] and "CORDEX" not in l1[1]:
         for l in list(recursive_items(ncml.ncroot, key1)):
             mod = dataset.name.split('day_')[-1].split('_historical+')[0]
@@ -653,10 +653,11 @@ def main():
     # test = TestDataset.test_CLIMEX
     # test = TestDataset.test_ClimateData
     # test = TestDataset.test_ESPO_R
-    test = TestDataset.test_ESPO_G
-    # test = TestDataset.test_CanDCS_U6
+    # test = TestDataset.test_ESPO_G
+    test = TestDataset.test_CanDCS_U6
+    inpath =  '../tmp/simulations/bias_adjusted/cmip6/pcic/CanDCS-M6'
     # test = TestDataset.test_CRCM5_CMIP6
-    test(self=test, compare_raw=True)
+    test(self=test, inpath=inpath, compare_raw=True)
 
 
 if 'main' in __name__:

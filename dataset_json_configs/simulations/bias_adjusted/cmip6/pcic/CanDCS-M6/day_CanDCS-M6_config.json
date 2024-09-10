@@ -1,0 +1,73 @@
+{
+  "remove": {
+    "product": "attribute",
+    "downscaling_method": "attribute",
+    "downscaling_method_id": "attribute",
+    "downscaling_package_id": "attribute",
+    "references": "attribute"
+
+  },
+  "attribute": {
+
+    "title": {"value": "PCIC/ECCC Canadian Downscaled Climate Scenarios – Multiivariate CMIP6","type": "String"},
+    "dataset_id": {"value": "CanDCS-M6", "type":"String"},
+    "type": {
+      "value": "GCM",
+      "type": "String"
+    },
+    "processing": {
+      "value": "bias_adjusted",
+      "type": "String"
+    },
+    "dataset_description": {
+      "value":"https://www.pacificclimate.org/data/statistically-downscaled-climate-scenarios",
+      "type": "String"
+    },
+    "abstract": {
+      "value": "Statistically downscaled data (N-Dimensional Multivariate Bias Correction - MBCn) derived from 26 CMIP6 global climate models and 3 Shared Socioeconomic Pathways (SSPs).",
+      "type": "String"
+    },
+    "bias_adjustment_method": {
+      "value":"N-Dimensional Multivariate Bias Correction",
+      "type": "String"
+    },
+    "bias_adjustment_method_id": {
+      "value":"MBCn",
+      "type": "String"
+    },
+    "bias_adjustment_reference": {
+      "value": "doi:10.1007/s00382-017-3580-6",
+      "type": "String"
+    },
+    "license_type": {
+      "value": "permissive",
+      "type": "String"
+    },
+    "license": {
+      "value": "https://open.canada.ca/en/open-government-licence-canada",
+      "type": "String"
+    },
+    "terms_of_use": {
+      "value": "Further terms of use at https://pacificclimate.org/data/statistically-downscaled-climate-scenarios.",
+      "type": "String"
+    },
+    "attribution": {
+      "value": "Citation information for this dataset can be found at https://pacificclimate.org/data/statistically-downscaled-climate-scenarios. ",
+      "type": "String"
+    }
+  },
+  "location": "/pavics-data/disk2/pcic/CanDCS-M6/",
+  "ncml_type": "pcic-CanDCS-U6",
+  "experiments": [
+    "historical+ssp126",
+    "historical+ssp245",
+    "historical+ssp585"
+  ],
+  "variables": [
+    "tasmin",
+    "tasmax",
+    "pr"
+  ],
+  "frequency": "day",
+  "realm": "atmos"
+}
