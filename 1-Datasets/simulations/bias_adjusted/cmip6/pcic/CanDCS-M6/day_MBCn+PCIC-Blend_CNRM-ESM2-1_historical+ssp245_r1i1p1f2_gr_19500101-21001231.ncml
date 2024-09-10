@@ -5,7 +5,7 @@
 	<remove name="downscaling_method_id" type="attribute"></remove>
 	<remove name="downscaling_package_id" type="attribute"></remove>
 	<remove name="references" type="attribute"></remove>
-	<attribute name="title" type="String" value="PCIC/ECCC Canadian Downscaled Climate Scenarios – Multiivariate CMIP6"></attribute>
+	<attribute name="title" type="String" value="PCIC/ECCC : Canadian Downscaled Climate Scenarios – Multivariate CMIP6"></attribute>
 	<attribute name="dataset_id" type="String" value="CanDCS-M6"></attribute>
 	<attribute name="type" type="String" value="GCM"></attribute>
 	<attribute name="processing" type="String" value="bias_adjusted"></attribute>
