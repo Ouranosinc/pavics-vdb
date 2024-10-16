@@ -9,11 +9,7 @@
     "institution": {
       "value": "Ouranos Consortium on Regional Climatology and Adaptation to Climate Change",
       "type": "String"
-    },
-    "institution_id": {
-      "value": "Ouranos",
-      "type": "String"
-    },
+    },<
     "title": {"value": "CRCM5-CMIP6 : Canadian Regional Climate Model v.5 - CMIP6 : hourly",
       "type": "String"},
     "dataset_id": {"value": "CRCM5-CMIP6", "type":"String"},
