@@ -20,6 +20,14 @@
     "modeling_realm": {
       "value": "atmos",
       "type": "String"
+    },
+    "type":{
+      "value": "simulation",
+      "type": "String"
+    },
+    "processing_level": {
+      "value": "raw",
+      "type": "String"
     }
   },
   "location": "/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS",
