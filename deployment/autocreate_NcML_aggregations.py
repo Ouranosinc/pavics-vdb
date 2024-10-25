@@ -204,7 +204,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
 
                                 agg['netcdf'].append(netcdf2)
                                 del netcdf2
-                            ncml1 = xncml.Dataset(ncml_template)
+                            ncml1 = xncml.Dataset()
                             ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
                             attrs = config['attribute']
                             #attrs['source_institution'] = dict(value=sim.name, type="String")

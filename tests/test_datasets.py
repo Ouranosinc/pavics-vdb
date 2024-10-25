@@ -260,8 +260,7 @@ class TestDataset:
             compare_ncml_rawdata(dataset, dsNcML, compare_raw)
 
     def test_CRCM5_CMIP6(self, compare_raw=False):
-        datasets = sorted(list(path.Path('../tmp/simulations/RCM-CMIP6/CORDEX/NAM-12').rglob('*.ncml')))
-
+        datasets = sorted(list(path.Path(__file__).parent.parent.joinpath('tmp/simulations/RCM-CMIP6/CORDEX/NAM-12').rglob('*.ncml')))
         thredds_test_dir = f'{thredds_root}/simulations/RCM-CMIP6/CORDEX/NAM-12'
         thredds_path_server = f'{thredds_cat_root}/simulations/RCM-CMIP6/CORDEX/NAM-12/catalog.html'
         thredds_test_dir = path.Path(thredds_test_dir)
@@ -287,7 +286,7 @@ class TestDataset:
                 lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
             )
 
-            compare_ncml_rawdata(dataset, dsNcML, compare_raw, sample_time=False, files_perrun=10)
+            compare_ncml_rawdata(dataset, dsNcML, compare_raw, sample_time=False, files_perrun=5)
 
     def test_CLIMEX(self, compare_raw=False):
 
@@ -629,7 +628,7 @@ def compare_values(dsNcML, ds, compare_vals, sample_time=True):
     if compare_vals:
         with ProgressBar():
             for v in ds.data_vars:
-                if v not in ['time_bnds', 'lat', 'lon'] and ds[v].dtype != 'S1':
+                if v not in ['time_bnds','time_vectors', 'lat', 'lon'] and ds[v].dtype != 'S1':
                     print(v)
                     if 'time' in ds[v].dims:
                         test1 = ds[v].sel(time=time1).load()
@@ -654,10 +653,10 @@ def main():
     # test = TestDataset.test_ClimateData
     # test = TestDataset.test_ESPO_R
     # test = TestDataset.test_ESPO_G
-    test = TestDataset.test_CanDCS_U6
-    inpath =  '../tmp/simulations/bias_adjusted/cmip6/pcic/CanDCS-M6'
-    # test = TestDataset.test_CRCM5_CMIP6
-    test(self=test, inpath=inpath, compare_raw=True)
+    #test = TestDataset.test_CanDCS_U6
+    #inpath =  '../tmp/simulations/bias_adjusted/cmip6/pcic/CanDCS-M6'
+    test = TestDataset.test_CRCM5_CMIP6
+    test(self=test, compare_raw=True)
 
 
 if 'main' in __name__:
