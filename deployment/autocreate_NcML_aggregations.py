@@ -14,7 +14,7 @@ pavics_root = f"{home}/pavics/datasets"
 def main():
     overwrite_to_tmp = True
     rootdir = p.Path(__file__).parent.parent
-    dataset_configs = rootdir.joinpath("dataset_json_configs").rglob('*CRCM5-CMIP6*.json')
+    dataset_configs = rootdir.joinpath("dataset_json_configs").rglob('*ESPO-G6-R2v1.0.0._climindices_ensemble_members*.json')
     for dataset in dataset_configs:
         with open(dataset, 'r') as f:
             ncml_modify = json.load(f)
@@ -583,7 +583,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
 
                     if not mod.joinpath(experiment).exists():
                         continue
-                    ncfiles = [n for n in mod.rglob(f"*_{freq}_*_{experiment}_*.nc")]
+                    ncfiles = sorted([n for n in mod.rglob(f"*_{freq}_*_{experiment}_*.nc")  if 'growing_degree_days_gt_4' not in n.name])
                     varlist = [n.parent.name for n in ncfiles]
                     if agg_dict is None:
                         agg_dict = {"@dimName": "realization", "@type": "joinNew", "variableAgg": varlist}  #
@@ -616,7 +616,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
                 # d1["@type"] = 'int'
                 #d1["@values"] = tcr_flag
 
-                ncml1 = xncml.Dataset(ncml_template)
+                ncml1 = xncml.Dataset()
                 ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
                 attrs = config['attribute']
                 ncml1.ncroot['netcdf']['attribute'] = ncml_add_attributes(attrs)

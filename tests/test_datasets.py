@@ -353,7 +353,7 @@ class TestDataset:
 
     def test_ESPO_G(self, compare_raw=False):
 
-        datasets = sorted(list(path.Path('../tmp/simulations/bias_adjusted/cmip6/ouranos/ESPO-G/').rglob('*.ncml')))
+        datasets = sorted(list(path.Path(__file__).parent.parent.joinpath('tmp/simulations/bias_adjusted/cmip6/ouranos/ESPO-G/').rglob('*.ncml')))
 
         thredds_test_dir = f'{thredds_root}/simulations/bias_adjusted/cmip6/ouranos/ESPO-G/'
         thredds_path_server = f'{thredds_cat_root}/simulations/bias_adjusted/cmip6/ouranos/ESPO-G/catalog.html'
@@ -384,7 +384,7 @@ class TestDataset:
                 chunks['realization'] = 1
                 dsNcML = xr.open_dataset(ncmls[0].opendap_url(), chunks=chunks,
                                          decode_timedelta=False)
-                sample_location = 0.25
+                sample_location = 0.5
 
             for ll in ['lat', 'lon']:
                 with ProgressBar():
@@ -652,10 +652,11 @@ def main():
     # test = TestDataset.test_CLIMEX
     # test = TestDataset.test_ClimateData
     # test = TestDataset.test_ESPO_R
-    # test = TestDataset.test_ESPO_G
+    test = TestDataset.test_ESPO_G
+   
     #test = TestDataset.test_CanDCS_U6
     #inpath =  '../tmp/simulations/bias_adjusted/cmip6/pcic/CanDCS-M6'
-    test = TestDataset.test_CRCM5_CMIP6
+    #test = TestDataset.test_CRCM5_CMIP6
     test(self=test, compare_raw=True)
 
 
