@@ -25,11 +25,18 @@
 				<variableAgg name="degree_days_below_0"></variableAgg>
 				<variableAgg name="degree_days_below_15"></variableAgg>
 				<variableAgg name="degree_days_below_18"></variableAgg>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="TaiESM1:r1i1p1f1">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="ACCESS-CM2:r1i1p1f1">
 					<aggregation type="Union">
-						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/AS-RCEC/TaiESM1/ssp245/r1i1p1f1/yr/degree_days_below_0/degree_days_below_0_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_AS-RCEC_TaiESM1_ssp245_r1i1p1f1_NAM_indicators_195007-210007.nc"></netcdf>
-						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/AS-RCEC/TaiESM1/ssp245/r1i1p1f1/yr/degree_days_below_15/degree_days_below_15_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_AS-RCEC_TaiESM1_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
-						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/AS-RCEC/TaiESM1/ssp245/r1i1p1f1/yr/degree_days_below_18/degree_days_below_18_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_AS-RCEC_TaiESM1_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
+						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/CSIRO-ARCCSS/ACCESS-CM2/ssp245/r1i1p1f1/yr/degree_days_below_0/degree_days_below_0_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_CSIRO-ARCCSS_ACCESS-CM2_ssp245_r1i1p1f1_NAM_indicators_195007-210007.nc"></netcdf>
+						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/CSIRO-ARCCSS/ACCESS-CM2/ssp245/r1i1p1f1/yr/degree_days_below_15/degree_days_below_15_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_CSIRO-ARCCSS_ACCESS-CM2_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
+						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/CSIRO-ARCCSS/ACCESS-CM2/ssp245/r1i1p1f1/yr/degree_days_below_18/degree_days_below_18_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_CSIRO-ARCCSS_ACCESS-CM2_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="ACCESS-ESM1-5:r1i1p1f1">
+					<aggregation type="Union">
+						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/CSIRO/ACCESS-ESM1-5/ssp245/r1i1p1f1/yr/degree_days_below_0/degree_days_below_0_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_CSIRO_ACCESS-ESM1-5_ssp245_r1i1p1f1_NAM_indicators_195007-210007.nc"></netcdf>
+						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/CSIRO/ACCESS-ESM1-5/ssp245/r1i1p1f1/yr/degree_days_below_15/degree_days_below_15_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_CSIRO_ACCESS-ESM1-5_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
+						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/CSIRO/ACCESS-ESM1-5/ssp245/r1i1p1f1/yr/degree_days_below_18/degree_days_below_18_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_CSIRO_ACCESS-ESM1-5_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="BCC-CSM2-MR:r1i1p1f1">
@@ -37,20 +44,6 @@
 						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/BCC/BCC-CSM2-MR/ssp245/r1i1p1f1/yr/degree_days_below_0/degree_days_below_0_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_BCC_BCC-CSM2-MR_ssp245_r1i1p1f1_NAM_indicators_195007-210007.nc"></netcdf>
 						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/BCC/BCC-CSM2-MR/ssp245/r1i1p1f1/yr/degree_days_below_15/degree_days_below_15_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_BCC_BCC-CSM2-MR_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
 						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/BCC/BCC-CSM2-MR/ssp245/r1i1p1f1/yr/degree_days_below_18/degree_days_below_18_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_BCC_BCC-CSM2-MR_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
-					</aggregation>
-				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="FGOALS-g3:r1i1p1f1">
-					<aggregation type="Union">
-						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/CAS/FGOALS-g3/ssp245/r1i1p1f1/yr/degree_days_below_0/degree_days_below_0_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_CAS_FGOALS-g3_ssp245_r1i1p1f1_NAM_indicators_195007-210007.nc"></netcdf>
-						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/CAS/FGOALS-g3/ssp245/r1i1p1f1/yr/degree_days_below_15/degree_days_below_15_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_CAS_FGOALS-g3_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
-						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/CAS/FGOALS-g3/ssp245/r1i1p1f1/yr/degree_days_below_18/degree_days_below_18_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_CAS_FGOALS-g3_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
-					</aggregation>
-				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="CanESM5:r1i1p1f1">
-					<aggregation type="Union">
-						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/CCCma/CanESM5/ssp245/r1i1p1f1/yr/degree_days_below_0/degree_days_below_0_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_CCCma_CanESM5_ssp245_r1i1p1f1_NAM_indicators_195007-210007.nc"></netcdf>
-						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/CCCma/CanESM5/ssp245/r1i1p1f1/yr/degree_days_below_15/degree_days_below_15_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_CCCma_CanESM5_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
-						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/CCCma/CanESM5/ssp245/r1i1p1f1/yr/degree_days_below_18/degree_days_below_18_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_CCCma_CanESM5_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="CMCC-ESM2:r1i1p1f1">
@@ -74,32 +67,11 @@
 						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/CNRM-CERFACS/CNRM-ESM2-1/ssp245/r1i1p1f2/yr/degree_days_below_18/degree_days_below_18_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_CNRM-CERFACS_CNRM-ESM2-1_ssp245_r1i1p1f2_NAM_indicators_1950-2100.nc"></netcdf>
 					</aggregation>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="ACCESS-ESM1-5:r1i1p1f1">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="CanESM5:r1i1p1f1">
 					<aggregation type="Union">
-						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/CSIRO/ACCESS-ESM1-5/ssp245/r1i1p1f1/yr/degree_days_below_0/degree_days_below_0_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_CSIRO_ACCESS-ESM1-5_ssp245_r1i1p1f1_NAM_indicators_195007-210007.nc"></netcdf>
-						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/CSIRO/ACCESS-ESM1-5/ssp245/r1i1p1f1/yr/degree_days_below_15/degree_days_below_15_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_CSIRO_ACCESS-ESM1-5_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
-						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/CSIRO/ACCESS-ESM1-5/ssp245/r1i1p1f1/yr/degree_days_below_18/degree_days_below_18_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_CSIRO_ACCESS-ESM1-5_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
-					</aggregation>
-				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="ACCESS-CM2:r1i1p1f1">
-					<aggregation type="Union">
-						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/CSIRO-ARCCSS/ACCESS-CM2/ssp245/r1i1p1f1/yr/degree_days_below_0/degree_days_below_0_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_CSIRO-ARCCSS_ACCESS-CM2_ssp245_r1i1p1f1_NAM_indicators_195007-210007.nc"></netcdf>
-						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/CSIRO-ARCCSS/ACCESS-CM2/ssp245/r1i1p1f1/yr/degree_days_below_15/degree_days_below_15_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_CSIRO-ARCCSS_ACCESS-CM2_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
-						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/CSIRO-ARCCSS/ACCESS-CM2/ssp245/r1i1p1f1/yr/degree_days_below_18/degree_days_below_18_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_CSIRO-ARCCSS_ACCESS-CM2_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
-					</aggregation>
-				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="MPI-ESM1-2-HR:r1i1p1f1">
-					<aggregation type="Union">
-						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/DKRZ/MPI-ESM1-2-HR/ssp245/r1i1p1f1/yr/degree_days_below_0/degree_days_below_0_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_DKRZ_MPI-ESM1-2-HR_ssp245_r1i1p1f1_NAM_indicators_195007-210007.nc"></netcdf>
-						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/DKRZ/MPI-ESM1-2-HR/ssp245/r1i1p1f1/yr/degree_days_below_15/degree_days_below_15_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_DKRZ_MPI-ESM1-2-HR_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
-						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/DKRZ/MPI-ESM1-2-HR/ssp245/r1i1p1f1/yr/degree_days_below_18/degree_days_below_18_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_DKRZ_MPI-ESM1-2-HR_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
-					</aggregation>
-				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="EC-Earth3:r1i1p1f1">
-					<aggregation type="Union">
-						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/EC-Earth-Consortium/EC-Earth3/ssp245/r1i1p1f1/yr/degree_days_below_0/degree_days_below_0_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_EC-Earth-Consortium_EC-Earth3_ssp245_r1i1p1f1_NAM_indicators_195007-210007.nc"></netcdf>
-						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/EC-Earth-Consortium/EC-Earth3/ssp245/r1i1p1f1/yr/degree_days_below_15/degree_days_below_15_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_EC-Earth-Consortium_EC-Earth3_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
-						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/EC-Earth-Consortium/EC-Earth3/ssp245/r1i1p1f1/yr/degree_days_below_18/degree_days_below_18_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_EC-Earth-Consortium_EC-Earth3_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
+						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/CCCma/CanESM5/ssp245/r1i1p1f1/yr/degree_days_below_0/degree_days_below_0_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_CCCma_CanESM5_ssp245_r1i1p1f1_NAM_indicators_195007-210007.nc"></netcdf>
+						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/CCCma/CanESM5/ssp245/r1i1p1f1/yr/degree_days_below_15/degree_days_below_15_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_CCCma_CanESM5_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
+						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/CCCma/CanESM5/ssp245/r1i1p1f1/yr/degree_days_below_18/degree_days_below_18_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_CCCma_CanESM5_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="EC-Earth3-CC:r1i1p1f1">
@@ -114,6 +86,27 @@
 						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/EC-Earth-Consortium/EC-Earth3-Veg/ssp245/r1i1p1f1/yr/degree_days_below_0/degree_days_below_0_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_EC-Earth-Consortium_EC-Earth3-Veg_ssp245_r1i1p1f1_NAM_indicators_195007-210007.nc"></netcdf>
 						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/EC-Earth-Consortium/EC-Earth3-Veg/ssp245/r1i1p1f1/yr/degree_days_below_15/degree_days_below_15_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_EC-Earth-Consortium_EC-Earth3-Veg_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
 						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/EC-Earth-Consortium/EC-Earth3-Veg/ssp245/r1i1p1f1/yr/degree_days_below_18/degree_days_below_18_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_EC-Earth-Consortium_EC-Earth3-Veg_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="EC-Earth3:r1i1p1f1">
+					<aggregation type="Union">
+						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/EC-Earth-Consortium/EC-Earth3/ssp245/r1i1p1f1/yr/degree_days_below_0/degree_days_below_0_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_EC-Earth-Consortium_EC-Earth3_ssp245_r1i1p1f1_NAM_indicators_195007-210007.nc"></netcdf>
+						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/EC-Earth-Consortium/EC-Earth3/ssp245/r1i1p1f1/yr/degree_days_below_15/degree_days_below_15_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_EC-Earth-Consortium_EC-Earth3_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
+						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/EC-Earth-Consortium/EC-Earth3/ssp245/r1i1p1f1/yr/degree_days_below_18/degree_days_below_18_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_EC-Earth-Consortium_EC-Earth3_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="FGOALS-g3:r1i1p1f1">
+					<aggregation type="Union">
+						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/CAS/FGOALS-g3/ssp245/r1i1p1f1/yr/degree_days_below_0/degree_days_below_0_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_CAS_FGOALS-g3_ssp245_r1i1p1f1_NAM_indicators_195007-210007.nc"></netcdf>
+						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/CAS/FGOALS-g3/ssp245/r1i1p1f1/yr/degree_days_below_15/degree_days_below_15_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_CAS_FGOALS-g3_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
+						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/CAS/FGOALS-g3/ssp245/r1i1p1f1/yr/degree_days_below_18/degree_days_below_18_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_CAS_FGOALS-g3_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="GFDL-ESM4:r1i1p1f1">
+					<aggregation type="Union">
+						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/NOAA-GFDL/GFDL-ESM4/ssp245/r1i1p1f1/yr/degree_days_below_0/degree_days_below_0_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_NOAA-GFDL_GFDL-ESM4_ssp245_r1i1p1f1_NAM_indicators_195007-210007.nc"></netcdf>
+						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/NOAA-GFDL/GFDL-ESM4/ssp245/r1i1p1f1/yr/degree_days_below_15/degree_days_below_15_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_NOAA-GFDL_GFDL-ESM4_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
+						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/NOAA-GFDL/GFDL-ESM4/ssp245/r1i1p1f1/yr/degree_days_below_18/degree_days_below_18_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_NOAA-GFDL_GFDL-ESM4_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="INM-CM4-8:r1i1p1f1">
@@ -137,6 +130,13 @@
 						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/IPSL/IPSL-CM6A-LR/ssp245/r1i1p1f1/yr/degree_days_below_18/degree_days_below_18_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_IPSL_IPSL-CM6A-LR_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
 					</aggregation>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="KACE-1-0-G:r1i1p1f1">
+					<aggregation type="Union">
+						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/NIMS-KMA/KACE-1-0-G/ssp245/r1i1p1f1/yr/degree_days_below_0/degree_days_below_0_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_NIMS-KMA_KACE-1-0-G_ssp245_r1i1p1f1_NAM_indicators_195007-210007.nc"></netcdf>
+						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/NIMS-KMA/KACE-1-0-G/ssp245/r1i1p1f1/yr/degree_days_below_15/degree_days_below_15_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_NIMS-KMA_KACE-1-0-G_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
+						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/NIMS-KMA/KACE-1-0-G/ssp245/r1i1p1f1/yr/degree_days_below_18/degree_days_below_18_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_NIMS-KMA_KACE-1-0-G_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
+					</aggregation>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="MIROC-ES2L:r1i1p1f2">
 					<aggregation type="Union">
 						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/MIROC/MIROC-ES2L/ssp245/r1i1p1f2/yr/degree_days_below_0/degree_days_below_0_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_MIROC_MIROC-ES2L_ssp245_r1i1p1f2_NAM_indicators_195007-210007.nc"></netcdf>
@@ -151,11 +151,11 @@
 						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/MIROC/MIROC6/ssp245/r1i1p1f1/yr/degree_days_below_18/degree_days_below_18_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_MIROC_MIROC6_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
 					</aggregation>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="UKESM1-0-LL:r1i1p1f2">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="MPI-ESM1-2-HR:r1i1p1f1">
 					<aggregation type="Union">
-						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/MOHC/UKESM1-0-LL/ssp245/r1i1p1f2/yr/degree_days_below_0/degree_days_below_0_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_MOHC_UKESM1-0-LL_ssp245_r1i1p1f2_NAM_indicators_195007-210007.nc"></netcdf>
-						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/MOHC/UKESM1-0-LL/ssp245/r1i1p1f2/yr/degree_days_below_15/degree_days_below_15_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_MOHC_UKESM1-0-LL_ssp245_r1i1p1f2_NAM_indicators_1950-2100.nc"></netcdf>
-						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/MOHC/UKESM1-0-LL/ssp245/r1i1p1f2/yr/degree_days_below_18/degree_days_below_18_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_MOHC_UKESM1-0-LL_ssp245_r1i1p1f2_NAM_indicators_1950-2100.nc"></netcdf>
+						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/DKRZ/MPI-ESM1-2-HR/ssp245/r1i1p1f1/yr/degree_days_below_0/degree_days_below_0_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_DKRZ_MPI-ESM1-2-HR_ssp245_r1i1p1f1_NAM_indicators_195007-210007.nc"></netcdf>
+						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/DKRZ/MPI-ESM1-2-HR/ssp245/r1i1p1f1/yr/degree_days_below_15/degree_days_below_15_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_DKRZ_MPI-ESM1-2-HR_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
+						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/DKRZ/MPI-ESM1-2-HR/ssp245/r1i1p1f1/yr/degree_days_below_18/degree_days_below_18_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_DKRZ_MPI-ESM1-2-HR_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="MPI-ESM1-2-LR:r1i1p1f1">
@@ -172,6 +172,13 @@
 						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/MRI/MRI-ESM2-0/ssp245/r1i1p1f1/yr/degree_days_below_18/degree_days_below_18_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_MRI_MRI-ESM2-0_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
 					</aggregation>
 				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="NESM3:r1i1p1f1">
+					<aggregation type="Union">
+						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/NUIST/NESM3/ssp245/r1i1p1f1/yr/degree_days_below_0/degree_days_below_0_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_NUIST_NESM3_ssp245_r1i1p1f1_NAM_indicators_195007-210007.nc"></netcdf>
+						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/NUIST/NESM3/ssp245/r1i1p1f1/yr/degree_days_below_15/degree_days_below_15_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_NUIST_NESM3_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
+						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/NUIST/NESM3/ssp245/r1i1p1f1/yr/degree_days_below_18/degree_days_below_18_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_NUIST_NESM3_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
+					</aggregation>
+				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="NorESM2-LM:r1i1p1f1">
 					<aggregation type="Union">
 						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/NCC/NorESM2-LM/ssp245/r1i1p1f1/yr/degree_days_below_0/degree_days_below_0_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_NCC_NorESM2-LM_ssp245_r1i1p1f1_NAM_indicators_195007-210007.nc"></netcdf>
@@ -186,25 +193,18 @@
 						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/NCC/NorESM2-MM/ssp245/r1i1p1f1/yr/degree_days_below_18/degree_days_below_18_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_NCC_NorESM2-MM_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
 					</aggregation>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="KACE-1-0-G:r1i1p1f1">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="TaiESM1:r1i1p1f1">
 					<aggregation type="Union">
-						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/NIMS-KMA/KACE-1-0-G/ssp245/r1i1p1f1/yr/degree_days_below_0/degree_days_below_0_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_NIMS-KMA_KACE-1-0-G_ssp245_r1i1p1f1_NAM_indicators_195007-210007.nc"></netcdf>
-						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/NIMS-KMA/KACE-1-0-G/ssp245/r1i1p1f1/yr/degree_days_below_15/degree_days_below_15_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_NIMS-KMA_KACE-1-0-G_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
-						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/NIMS-KMA/KACE-1-0-G/ssp245/r1i1p1f1/yr/degree_days_below_18/degree_days_below_18_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_NIMS-KMA_KACE-1-0-G_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
+						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/AS-RCEC/TaiESM1/ssp245/r1i1p1f1/yr/degree_days_below_0/degree_days_below_0_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_AS-RCEC_TaiESM1_ssp245_r1i1p1f1_NAM_indicators_195007-210007.nc"></netcdf>
+						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/AS-RCEC/TaiESM1/ssp245/r1i1p1f1/yr/degree_days_below_15/degree_days_below_15_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_AS-RCEC_TaiESM1_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
+						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/AS-RCEC/TaiESM1/ssp245/r1i1p1f1/yr/degree_days_below_18/degree_days_below_18_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_AS-RCEC_TaiESM1_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
 					</aggregation>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="GFDL-ESM4:r1i1p1f1">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="UKESM1-0-LL:r1i1p1f2">
 					<aggregation type="Union">
-						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/NOAA-GFDL/GFDL-ESM4/ssp245/r1i1p1f1/yr/degree_days_below_0/degree_days_below_0_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_NOAA-GFDL_GFDL-ESM4_ssp245_r1i1p1f1_NAM_indicators_195007-210007.nc"></netcdf>
-						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/NOAA-GFDL/GFDL-ESM4/ssp245/r1i1p1f1/yr/degree_days_below_15/degree_days_below_15_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_NOAA-GFDL_GFDL-ESM4_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
-						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/NOAA-GFDL/GFDL-ESM4/ssp245/r1i1p1f1/yr/degree_days_below_18/degree_days_below_18_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_NOAA-GFDL_GFDL-ESM4_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
-					</aggregation>
-				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="NESM3:r1i1p1f1">
-					<aggregation type="Union">
-						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/NUIST/NESM3/ssp245/r1i1p1f1/yr/degree_days_below_0/degree_days_below_0_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_NUIST_NESM3_ssp245_r1i1p1f1_NAM_indicators_195007-210007.nc"></netcdf>
-						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/NUIST/NESM3/ssp245/r1i1p1f1/yr/degree_days_below_15/degree_days_below_15_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_NUIST_NESM3_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
-						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/NUIST/NESM3/ssp245/r1i1p1f1/yr/degree_days_below_18/degree_days_below_18_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_NUIST_NESM3_ssp245_r1i1p1f1_NAM_indicators_1950-2100.nc"></netcdf>
+						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/MOHC/UKESM1-0-LL/ssp245/r1i1p1f2/yr/degree_days_below_0/degree_days_below_0_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_MOHC_UKESM1-0-LL_ssp245_r1i1p1f2_NAM_indicators_195007-210007.nc"></netcdf>
+						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/MOHC/UKESM1-0-LL/ssp245/r1i1p1f2/yr/degree_days_below_15/degree_days_below_15_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_MOHC_UKESM1-0-LL_ssp245_r1i1p1f2_NAM_indicators_1950-2100.nc"></netcdf>
+						<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ouranos/ESPO-G/ESPO-G6-R2v1.0.0/MOHC/UKESM1-0-LL/ssp245/r1i1p1f2/yr/degree_days_below_18/degree_days_below_18_YS-JUL_ESPO-G6-R2_v10_CMIP6_ScenarioMIP_MOHC_UKESM1-0-LL_ssp245_r1i1p1f2_NAM_indicators_1950-2100.nc"></netcdf>
 					</aggregation>
 				</netcdf>
 			</aggregation>
