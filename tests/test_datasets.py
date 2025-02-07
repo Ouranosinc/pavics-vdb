@@ -384,7 +384,7 @@ class TestDataset:
                 chunks['realization'] = 1
                 dsNcML = xr.open_dataset(ncmls[0].opendap_url(), chunks=chunks,
                                          decode_timedelta=False)
-                sample_location = 0.5
+                sample_location = 0.25
 
             for ll in ['lat', 'lon']:
                 with ProgressBar():
@@ -457,6 +457,7 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
         locations = loc1
         del loc1
     for l in locations:
+        print(l)
         if key1 == "scan":
             l = l[1]
         if isinstance(l, collections.OrderedDict) or isinstance(l, dict):
@@ -616,7 +617,7 @@ def compare_values(dsNcML, ds, compare_vals, sample_time=True):
 
     for coord in ds.coords:
         if coord not in ['height', 'horizon', 'time_bnds']:
-            print(coord)
+            #print(coord)
             if coord.startswith('vertices'):
                 np.testing.assert_array_equal(ds[coord].transpose(*test[coord].dims).values, test[coord].values)
             else:
