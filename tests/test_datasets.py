@@ -384,7 +384,7 @@ class TestDataset:
                 chunks['realization'] = 1
                 dsNcML = xr.open_dataset(ncmls[0].opendap_url(), chunks=chunks,
                                          decode_timedelta=False)
-                sample_location = 0.25
+                sample_location = 1.0
 
             for ll in ['lat', 'lon']:
                 with ProgressBar():
@@ -449,7 +449,7 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
     locations = list(recursive_items(ncml.ncroot, key1))
     if sample_location:
         # remove 'mask' vars:
-        locations = [f for f in locations if all([i not in f[1] for i in ['lakeFrac', 'sftlf', 'sftof']])]
+        locations = [f for f in locations if all([i not in f[1] for i in ['lakeFrac', 'sftlf', 'sftof', '_tcr']])]
         ind1 = np.random.choice(range(0, len(locations)), round(sample_location * len(locations)), replace=False)
         loc1 = []
         for ii in ind1:

@@ -647,8 +647,10 @@ def ncml_create_datasets(ncml_template=None, config=None):
                         netcdf3['@location'] = str(nc).replace(pavics_root, '/pavics-data')
                         ncml1.ncroot['netcdf']['aggregation']['netcdf'].append(netcdf3)
                         del netcdf3
-
-                
+                nc = f'/pavics-data/ouranos/ESPO-G/ESPO-G6_TransientClimateResponse/ESPO-G6_{experiment}_tcr.nc'
+                netcdf3 = ncml_netcdf_container()
+                netcdf3['@location'] = nc
+                ncml1.ncroot['netcdf']['aggregation']['netcdf'].append(netcdf3)
                 ncmls[f"{frequency1}_{experiment}"] = ncml1
         return ncmls
     elif config['ncml_type'] == "climatedata.ca":
