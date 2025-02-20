@@ -353,7 +353,7 @@ class TestDataset:
 
     def test_ESPO_G(self, compare_raw=False):
 
-        datasets = sorted(list(path.Path('../tmp/simulations/bias_adjusted/cmip6/ouranos/ESPO-G/').rglob('*.ncml')))
+        datasets = sorted(list(path.Path(__file__).parent.parent.joinpath('tmp/simulations/bias_adjusted/cmip6/ouranos/ESPO-G/').rglob('*.ncml')))
 
         thredds_test_dir = f'{thredds_root}/simulations/bias_adjusted/cmip6/ouranos/ESPO-G/'
         thredds_path_server = f'{thredds_cat_root}/simulations/bias_adjusted/cmip6/ouranos/ESPO-G/catalog.html'
@@ -384,7 +384,7 @@ class TestDataset:
                 chunks['realization'] = 1
                 dsNcML = xr.open_dataset(ncmls[0].opendap_url(), chunks=chunks,
                                          decode_timedelta=False)
-                sample_location = 0.25
+                sample_location = 1.0
 
             for ll in ['lat', 'lon']:
                 with ProgressBar():
@@ -449,7 +449,7 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
     locations = list(recursive_items(ncml.ncroot, key1))
     if sample_location:
         # remove 'mask' vars:
-        locations = [f for f in locations if all([i not in f[1] for i in ['lakeFrac', 'sftlf', 'sftof']])]
+        locations = [f for f in locations if all([i not in f[1] for i in ['lakeFrac', 'sftlf', 'sftof', '_tcr']])]
         ind1 = np.random.choice(range(0, len(locations)), round(sample_location * len(locations)), replace=False)
         loc1 = []
         for ii in ind1:
@@ -457,6 +457,7 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
         locations = loc1
         del loc1
     for l in locations:
+        print(l)
         if key1 == "scan":
             l = l[1]
         if isinstance(l, collections.OrderedDict) or isinstance(l, dict):
@@ -616,7 +617,7 @@ def compare_values(dsNcML, ds, compare_vals, sample_time=True):
 
     for coord in ds.coords:
         if coord not in ['height', 'horizon', 'time_bnds']:
-            print(coord)
+            #print(coord)
             if coord.startswith('vertices'):
                 np.testing.assert_array_equal(ds[coord].transpose(*test[coord].dims).values, test[coord].values)
             else:
@@ -652,10 +653,11 @@ def main():
     # test = TestDataset.test_CLIMEX
     # test = TestDataset.test_ClimateData
     # test = TestDataset.test_ESPO_R
-    # test = TestDataset.test_ESPO_G
+    test = TestDataset.test_ESPO_G
+   
     #test = TestDataset.test_CanDCS_U6
     #inpath =  '../tmp/simulations/bias_adjusted/cmip6/pcic/CanDCS-M6'
-    test = TestDataset.test_CRCM5_CMIP6
+    #test = TestDataset.test_CRCM5_CMIP6
     test(self=test, compare_raw=True)
 
 

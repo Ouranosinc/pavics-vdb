@@ -14,7 +14,7 @@ pavics_root = f"{home}/pavics/datasets"
 def main():
     overwrite_to_tmp = True
     rootdir = p.Path(__file__).parent.parent
-    dataset_configs = rootdir.joinpath("dataset_json_configs").rglob('*CanDCS-M6*.json')
+    dataset_configs = rootdir.joinpath("dataset_json_configs").rglob('*ESPO-G6-R2v1.0.0._climindices_ensemble_members*.json')
     for dataset in dataset_configs:
         with open(dataset, 'r') as f:
             ncml_modify = json.load(f)
@@ -543,23 +543,34 @@ def ncml_create_datasets(ncml_template=None, config=None):
         return ncmls
 
     elif config['ncml_type'] == "ESPO-G_members":
-        tcr_likely_models = [
-            "BCC-CSM2-MR",
-            "FGOALS-g3",
-            "CMCC-ESM2",
-            "CNRM-ESM2-1",
-            "ACCESS-CM2",
-            "ACCESS-ESM1-5",
-            "MPI-ESM1-2-HR",
-            "INM-CM5-0",
-            "MIROC6",
-            "MPI-ESM1-2-LR",
-            "MRI-ESM2-0",
-            "NorESM2-LM",
-            "KACE-1-0-G",
-            "GFDL-ESM4",
-            "MIROC-ES2L"
-        ]
+        
+        model_tcr = {'ACCESS-CM2:r1i1p1f1': 1.96,
+                    'ACCESS-ESM1-5:r1i1p1f1': 1.97,
+                    'BCC-CSM2-MR:r1i1p1f1': 1.55,
+                    'CMCC-ESM2:r1i1p1f1': 1.92,
+                    'CNRM-CM6-1:r1i1p1f2': 2.22,
+                    'CNRM-ESM2-1:r1i1p1f2': 1.83,
+                    'CanESM5:r1i1p1f1': 2.71,
+                    'EC-Earth3-CC:r1i1p1f1': 2.63,
+                    'EC-Earth3-Veg:r1i1p1f1': 2.66,
+                    'EC-Earth3:r1i1p1f1': 2.3,
+                    'FGOALS-g3:r1i1p1f1': 1.5,
+                    'GFDL-ESM4:r1i1p1f1': 1.63,
+                    'INM-CM4-8:r1i1p1f1': 1.3,
+                    'INM-CM5-0:r1i1p1f1': 1.41,
+                    'IPSL-CM6A-LR:r1i1p1f1': 2.35,
+                    'KACE-1-0-G:r1i1p1f1': 2.04,
+                    'MIROC-ES2L:r1i1p1f2': 1.49,
+                    'MIROC6:r1i1p1f1': 1.55,
+                    'MPI-ESM1-2-HR:r1i1p1f1': 1.64,
+                    'MPI-ESM1-2-LR:r1i1p1f1': 1.82,
+                    'MRI-ESM2-0:r1i1p1f1': 1.67,
+                    'NESM3:r1i1p1f1': 2.72,
+                    'NorESM2-LM:r1i1p1f1': 1.49,
+                    'NorESM2-MM:r1i1p1f1': 1.22,
+                    'TaiESM1:r1i1p1f1': 1.3,
+                    'UKESM1-0-LL:r1i1p1f2': 2.77}
+        
         ncmls = {}
         location = p.Path(config['location'].replace('pavics-data', pavics_root))
             # runs = sorted(glob.glob(path.join(inrep1, "*" + m + "_hist*r*i1p1*195*2*" + f + "*.nc")))
@@ -575,15 +586,16 @@ def ncml_create_datasets(ncml_template=None, config=None):
 
                 for ss in sources:
                     all_mods.extend(sorted([x for x in ss.iterdir() if x.is_dir()]))
-                for mod in sorted(all_mods):
-                    if mod.name in tcr_likely_models:
-                        tcr_flag.append(1)
-                    else:
-                        tcr_flag.append(0)
-
+                all_mods_sorted = []
+                for tt in sorted(model_tcr.keys()):
+                    print(tt)
+                    all_mods_sorted.extend([x for x in all_mods if x.name == tt.split(':')[0]])
+                all_mods = all_mods_sorted
+                del all_mods_sorted
+                for mod in all_mods:
                     if not mod.joinpath(experiment).exists():
                         continue
-                    ncfiles = [n for n in mod.rglob(f"*_{freq}_*_{experiment}_*.nc")]
+                    ncfiles = sorted([n for n in mod.rglob(f"*_{freq}_*_{experiment}_*.nc")  if 'growing_degree_days_gt_4' not in n.name])
                     varlist = [n.parent.name for n in ncfiles]
                     if agg_dict is None:
                         agg_dict = {"@dimName": "realization", "@type": "joinNew", "variableAgg": varlist}  #
@@ -626,7 +638,6 @@ def ncml_create_datasets(ncml_template=None, config=None):
                 netcdf3 = ncml_netcdf_container()
                 netcdf3['aggregation'] = agg
                 ncml1.ncroot['netcdf']['aggregation']['netcdf'].append(netcdf3)
-                del netcdf3
                 if 'invariant_location' in config.keys():
                     for nc in sorted(
                             list(p.Path(config['invariant_location'].replace('pavics-data', pavics_root)).rglob(
@@ -636,8 +647,10 @@ def ncml_create_datasets(ncml_template=None, config=None):
                         netcdf3['@location'] = str(nc).replace(pavics_root, '/pavics-data')
                         ncml1.ncroot['netcdf']['aggregation']['netcdf'].append(netcdf3)
                         del netcdf3
-
-                #ncml1.ncroot['netcdf']['n'] = d1
+                nc = f'/pavics-data/ouranos/ESPO-G/ESPO-G6_TransientClimateResponse/ESPO-G6_{experiment}_tcr.nc'
+                netcdf3 = ncml_netcdf_container()
+                netcdf3['@location'] = nc
+                ncml1.ncroot['netcdf']['aggregation']['netcdf'].append(netcdf3)
                 ncmls[f"{frequency1}_{experiment}"] = ncml1
         return ncmls
     elif config['ncml_type'] == "climatedata.ca":
