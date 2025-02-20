@@ -61,6 +61,7 @@
   "experiments": [
     "historical+ssp126",
     "historical+ssp245",
+    "historical+ssp370",
     "historical+ssp585"
   ],
   "variables": [
