@@ -14,7 +14,7 @@ pavics_root = f"{home}/pavics/datasets"
 def main():
     overwrite_to_tmp = True
     rootdir = p.Path(__file__).parent.parent
-    dataset_configs = rootdir.joinpath("dataset_json_configs").rglob('*CRCM5-CMIP6*.json')
+    dataset_configs = rootdir.joinpath("dataset_json_configs").rglob('*CanDCS-M6*.json')
     for dataset in dataset_configs:
         with open(dataset, 'r') as f:
             ncml_modify = json.load(f)
@@ -103,7 +103,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
                         del netcdf2
                 agg['netcdf'].append(netcdf)
             agg
-            ncml1 = xncml.Dataset(ncml_template)
+            ncml1 = xncml.Dataset()
             ncml1.ncroot['netcdf']['aggregation'] = agg
             ncmls[exp] = ncml1
 
@@ -147,7 +147,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
                     del netcdf2
 
                 agg['netcdf'].append(netcdf)
-            ncml1 = xncml.Dataset(ncml_template)
+            ncml1 = xncml.Dataset()
             ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
             #            ncml1.ncroot['netcdf']['remove'].append(ncml_remove_items(config['remove_dims']))
             ncml1.ncroot['netcdf']['attribute'] = ncml_add_attributes(config['attribute'])
@@ -271,7 +271,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
                                 if run_flag:
                                     agg
 
-                                    ncml1 = xncml.Dataset(ncml_template)
+                                    ncml1 = xncml.Dataset()
                                     ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
                                     ncml1.ncroot['netcdf']['attribute'] = ncml_add_attributes(config['attribute'])
                                     ncml1.ncroot['netcdf']['aggregation'] = agg
@@ -334,7 +334,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
                                     agg['netcdf'].append(netcdf)
                         # if at least one run has all variables add to list
                         if any_run:
-                            ncml1 = xncml.Dataset(ncml_template)
+                            ncml1 = xncml.Dataset()
                             ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
                             ncml1.ncroot['netcdf']['attribute'] = ncml_add_attributes(config['attribute'])
                             ncml1.ncroot['netcdf']['aggregation'] = agg
@@ -424,7 +424,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
                         agg['netcdf'].append(netcdf2)
                         del netcdf2
 
-                ncml1 = xncml.Dataset(ncml_template)
+                ncml1 = xncml.Dataset()
                 ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
                 attrs = config['attribute']
                 for aa in model_dict[center.name]:
@@ -473,7 +473,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
                                 agg['netcdf'].append(netcdf2)
                                 del netcdf2
 
-                            ncml1 = xncml.Dataset(ncml_template)
+                            ncml1 = xncml.Dataset()
                             ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
                             attrs = config['attribute']
                             attrs['source_institution'] = dict(value=sim.name, type="String")
@@ -521,7 +521,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
                             agg['netcdf'].append(netcdf2)
                             del netcdf2
 
-                        ncml1 = xncml.Dataset(ncml_template)
+                        ncml1 = xncml.Dataset()
                         ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
                         attrs = config['attribute']
                         attrs['source_institution'] = dict(value=sim.name, type="String")
@@ -616,7 +616,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
                 # d1["@type"] = 'int'
                 #d1["@values"] = tcr_flag
 
-                ncml1 = xncml.Dataset(ncml_template)
+                ncml1 = xncml.Dataset()
                 ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
                 attrs = config['attribute']
                 ncml1.ncroot['netcdf']['attribute'] = ncml_add_attributes(attrs)
@@ -703,7 +703,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
                                 agg['netcdf'].append(netcdf2)
                                 del netcdf2
 
-                    ncml1 = xncml.Dataset(ncml_template)
+                    ncml1 = xncml.Dataset()
                     ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
                     attrs = config['attribute']
                     ncml1.ncroot['netcdf']['attribute'] = ncml_add_attributes(attrs)
@@ -874,7 +874,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
 
 
 
-                ncml1 = xncml.Dataset(ncml_template)
+                ncml1 = xncml.Dataset()
                 ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
                 attrs = config['attribute']
                 ncml1.ncroot['netcdf']['attribute'] = ncml_add_attributes(attrs)
@@ -926,7 +926,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
                             agg['netcdf'].append(netcdf2)
                             del netcdf2
 
-                        ncml1 = xncml.Dataset(ncml_template)
+                        ncml1 = xncml.Dataset()
                         ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
                         attrs = config['attribute']
 
@@ -967,7 +967,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
                     agg['netcdf'].append(netcdf2)
                     del netcdf2
 
-                ncml1 = xncml.Dataset(ncml_template)
+                ncml1 = xncml.Dataset()
                 ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
                 attrs = config['attribute'].copy()
                 if mod == "NorESM1-ME":
@@ -1015,7 +1015,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
                     agg['netcdf'].append(netcdf2)
                     del netcdf2
 
-                ncml1 = xncml.Dataset(ncml_template)
+                ncml1 = xncml.Dataset()
                 ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
                 attrs = config['attribute']
                 attrs['driving_experiment'] = dict(value=exp.replace('+', ','), type='String')
