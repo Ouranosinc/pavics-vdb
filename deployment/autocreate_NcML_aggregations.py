@@ -14,7 +14,7 @@ pavics_root = f"{home}/pavics/datasets"
 def main():
     overwrite_to_tmp = True
     rootdir = p.Path(__file__).parent.parent
-    dataset_configs = rootdir.joinpath("dataset_json_configs").rglob('*ESPO-G6-R2v1.0.0._climindices_ensemble_members*.json')
+    dataset_configs = rootdir.joinpath("dataset_json_configs").rglob('CanDCS-M6_climindices_ensemble_members_config.json')
     for dataset in dataset_configs:
         with open(dataset, 'r') as f:
             ncml_modify = json.load(f)
@@ -835,9 +835,13 @@ def ncml_create_datasets(ncml_template=None, config=None):
                          'NorESM2-MM': 'r1i1p1f1',
                          'TaiESM1': 'r1i1p1f1',
                          'UKESM1-0-LL': 'r1i1p1f2'}
+                
+                skipmods = ['KIOST-ESM','HadGEM3-GC31-LL']
 
                 for mod, rr in models.items():
-
+                    if 'CanDCS-M6' in config['location']:
+                        if mod in skipmods:
+                            continue
                     netcdf2 = ncml_netcdf_container({"@coordValue":f"{mod}:{rr}"})
                     netcdf2['aggregation'] = ncml_add_aggregation({"@type": "Union"})
                     netcdf2['aggregation']['netcdf'] = []
@@ -847,6 +851,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
 
                             runs = sorted(list(location.joinpath(v, freq).rglob(
                                 config['regexp_template'].format(agg=agg1, rcp=exp, mod=mod, v=v.name, frequency=freq))))
+                            runs = [r for r in runs if 'spatialAvg' not in r.name]
                             if agg1 == '':
                                 runs = sorted([r for r in runs if '30ymean' not in r.name and 'simulations' in r.as_posix()])
                             else:
