@@ -120,7 +120,7 @@
       "type": "String"
     },
     "frequency": {"value": "yr","type": "String"},
-    "dataset_id": {"value": "climatedata_ca_BCCAQv2", "type":"String"},
+    "dataset_id": {"value": "climatedata_ca_CanDCS-M6", "type":"String"},
     "project_id": {
       "value": "CMIP6",
       "type": "String"
@@ -130,7 +130,7 @@
       "type": "String"
     },
     "bias_adjustment_method": {
-      "value":"Quantile Delta Mapping",
+      "value":"MBCn",
       "type": "String"
     },
     "bias_adjustment_method_id": {
@@ -171,6 +171,6 @@
   "aggregation": {"":""},
   "frequency": {"YS": "annual", "MS": "monthly","QS-DEC": "seasonal"},
   "realm": "atmos",
-  "regexp_template": "{v}_*BCCAQ2v2+ANUSPLIN300_{mod}_historical+{rcp}*.nc",
+  "regexp_template": "{v}_*MBCn+PCIC-Blend_{mod}_historical+{rcp}*.nc",
   "filename_template": "{aggregation}{frequency}-CanDCS-M6_climindices-ensemble_members"
 }

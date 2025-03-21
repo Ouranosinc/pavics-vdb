@@ -119,7 +119,7 @@
       "type": "String"
     },
     "frequency": {"value": "yr","type": "String"},
-    "dataset_id": {"value": "climatedata_ca_BCCAQv2", "type":"String"},
+    "dataset_id": {"value": "climatedata_ca_CanDCS-M6", "type":"String"},
     "project_id": {
       "value": "CMIP6",
       "type": "String"
@@ -133,7 +133,7 @@
       "type": "String"
     },
     "bias_adjustment_method_id": {
-      "value":"BCCAQv2",
+      "value":"MBCn",
       "type": "String"
     },
     "bias_adjustment_package_id": {
@@ -141,7 +141,7 @@
       "type": "String"
     },
     "bias_adjustment_reference": {
-      "value": "Alex J. Cannon, Stephen R. Sobie, and Trevor Q. Murdock, 2015: Bias Correction of GCM Precipitation by Quantile Mapping: How Well Do Methods Preserve Changes in Quantiles and Extremes?. J. Climate, 28, 6938â€“6959.",
+      "value": "https://doi.org/10.1007/s00382-017-3580-6",
       "type": "String"
     },
     "license_type": {
@@ -170,6 +170,6 @@
   "aggregation": {"30ymean_":"30ymean"},
   "frequency": {"YS": "annual", "MS": "monthly","QS-DEC": "seasonal"},
   "realm": "atmos",
-  "regexp_template": "{v}_*BCCAQ2v2+ANUSPLIN300_{mod}_historical+{rcp}*{agg}*.nc",
+  "regexp_template": "{v}_*MBCn+PCIC-Blend_{mod}_historical+{rcp}*{agg}*.nc",
   "filename_template": "{aggregation}{frequency}-CanDCS-M6_climindices-ensemble_members"
 }

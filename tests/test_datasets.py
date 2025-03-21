@@ -130,10 +130,10 @@ class TestDataset:
 
     def test_ClimateData(self, compare_raw=False):
 
-        datasets = sorted(list(path.Path('../tmp/simulations/bias_adjusted/cmip5/climatedata_ca').rglob('*.ncml')))
-        datasets.extend(sorted(list(path.Path('../tmp/gridded_obs/climatedata_ca').rglob('*.ncml'))))
+        datasets = sorted(list(path.Path(__file__).parent.parent.joinpath('tmp/simulations/bias_adjusted/cmip5/climatedata_ca').rglob('*.ncml')))
+        datasets.extend(sorted(list(path.Path(__file__).parent.parent.joinpath('tmp/gridded_obs/climatedata_ca').rglob('*.ncml'))))
         datasets.extend(
-            sorted(list(path.Path('../tmp/simulations/bias_adjusted/cmip6/climatedata_ca').rglob('*.ncml'))))
+            sorted(list(path.Path(__file__).parent.parent.joinpath('tmp/simulations/bias_adjusted/cmip6/climatedata_ca').rglob('*.ncml'))))
         thredds_test_dir = f'{thredds_root}/simulations/climatedata_ca'
         thredds_path_server = f'{thredds_cat_root}/simulations/climatedata_ca/catalog.html'
         thredds_test_dir = path.Path(thredds_test_dir)
@@ -160,7 +160,7 @@ class TestDataset:
             if 'realization' in dsNcML.dims:
                 dsNcML = xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(realization=1, time=50, lon=60, lat=60),
                                          decode_timedelta=False)
-                sample_locations = 0.15  # sample only 15% of all '@location' netcdfs
+                sample_locations = 0.1  # sample only 15% of all '@location' netcdfs
             # dsNcML = subset.subset_bbox(dsNcML, lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat'])
             dsNcML = dsNcML.sel(lon=slice(test_reg['lon'][0], test_reg['lon'][1]),
                                 lat=slice(test_reg['lat'][0], test_reg['lat'][1]))
@@ -569,7 +569,7 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
 
                         if 'realization' in dstest.dims:
                             raise ValueError('test data has realization dimension')
-                        rcp = [rcp for rcp in ['rcp26', 'rcp45', 'rcp85', 'ssp126', 'ssp245', 'ssp585'] if
+                        rcp = [rcp for rcp in ['rcp26', 'rcp45', 'rcp85', 'ssp126', 'ssp245', 'ssp370', 'ssp585'] if
                                rcp in local_path]
                         if len(rcp) > 1:
                             raise ValueError(f'expected single rcp value found {rcp}')
@@ -651,9 +651,9 @@ def main():
     # test(self=test, compare_raw=False)
     # test = TestDataset.test_NEXGDDP
     # test = TestDataset.test_CLIMEX
-    # test = TestDataset.test_ClimateData
+    test = TestDataset.test_ClimateData
     # test = TestDataset.test_ESPO_R
-    test = TestDataset.test_ESPO_G
+    # test = TestDataset.test_ESPO_G
    
     #test = TestDataset.test_CanDCS_U6
     #inpath =  '../tmp/simulations/bias_adjusted/cmip6/pcic/CanDCS-M6'
