@@ -79,7 +79,9 @@
     "tasmax",
     "tas",
     "pr",
-    "prsn"
+    "prsn",
+    "prw",
+    "clwvi"
   ],
   "frequency": "day",
   "realm": "atmos",
