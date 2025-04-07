@@ -30,35 +30,49 @@
 		<variableAgg name="tas"></variableAgg>
 		<variableAgg name="pr"></variableAgg>
 		<variableAgg name="prsn"></variableAgg>
+		<variableAgg name="prw"></variableAgg>
+		<variableAgg name="clwvi"></variableAgg>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="historical-r1-r10i1p1">
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r10i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r10i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r10i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r10i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r10i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r10i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r10i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r10i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r10i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r10i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r10i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r10i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -68,31 +82,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r1i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r1i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r1i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r1i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r1i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r1i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r1i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r1i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r1i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r1i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r1i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r1i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -102,31 +128,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r2i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r2i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r2i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r2i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r2i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r2i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r2i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r2i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r2i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r2i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r2i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r2i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -136,31 +174,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r3i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r3i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r3i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r3i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r3i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r3i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r3i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r3i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r3i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r3i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r3i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r3i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -170,31 +220,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r4i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r4i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r4i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r4i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r4i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r4i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r4i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r4i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r4i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r4i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r4i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r4i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -204,31 +266,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r5i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r5i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r5i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r5i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r5i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r5i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r5i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r5i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r5i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r5i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r5i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r5i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -238,31 +312,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r6i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r6i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r6i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r6i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r6i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r6i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r6i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r6i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r6i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r6i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r6i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r6i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -272,31 +358,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r7i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r7i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r7i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r7i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r7i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r7i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r7i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r7i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r7i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r7i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r7i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r7i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -306,31 +404,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r8i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r8i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r8i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r8i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r8i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r8i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r8i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r8i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r8i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r8i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r8i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r8i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -340,31 +450,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r9i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r9i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r9i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r9i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r9i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r9i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r9i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r9i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r9i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r9i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r9i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r1-r9i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -374,31 +496,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r10i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r10i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r10i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r10i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r10i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r10i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r10i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r10i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r10i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r10i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r10i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r10i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -408,31 +542,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r1i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r1i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r1i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r1i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r1i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r1i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r1i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r1i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r1i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r1i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r1i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r1i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -442,31 +588,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r2i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r2i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r2i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r2i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r2i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r2i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r2i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r2i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r2i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r2i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r2i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r2i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -476,31 +634,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r3i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r3i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r3i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r3i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r3i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r3i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r3i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r3i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r3i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r3i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r3i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r3i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -510,31 +680,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r4i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r4i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r4i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r4i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r4i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r4i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r4i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r4i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r4i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r4i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r4i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r4i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -544,31 +726,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r5i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r5i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r5i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r5i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r5i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r5i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r5i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r5i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r5i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r5i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r5i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r5i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -578,31 +772,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r6i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r6i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r6i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r6i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r6i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r6i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r6i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r6i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r6i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r6i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r6i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r6i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -612,31 +818,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r7i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r7i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r7i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r7i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r7i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r7i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r7i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r7i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r7i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r7i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r7i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r7i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -646,31 +864,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r8i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r8i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r8i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r8i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r8i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r8i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r8i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r8i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r8i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r8i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r8i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r8i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -680,31 +910,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r9i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r9i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r9i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r9i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r9i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r9i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r9i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r9i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r9i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r9i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r9i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r2-r9i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -714,31 +956,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r10i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r10i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r10i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r10i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r10i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r10i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r10i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r10i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r10i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r10i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r10i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r10i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -748,31 +1002,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r1i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r1i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r1i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r1i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r1i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r1i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r1i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r1i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r1i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r1i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r1i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r1i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -782,31 +1048,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r2i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r2i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r2i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r2i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r2i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r2i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r2i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r2i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r2i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r2i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r2i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r2i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -816,31 +1094,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r3i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r3i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r3i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r3i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r3i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r3i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r3i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r3i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r3i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r3i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r3i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r3i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -850,31 +1140,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r4i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r4i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r4i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r4i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r4i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r4i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r4i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r4i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r4i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r4i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r4i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r4i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -884,31 +1186,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r5i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r5i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r5i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r5i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r5i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r5i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r5i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r5i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r5i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r5i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r5i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r5i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -918,31 +1232,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r6i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r6i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r6i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r6i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r6i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r6i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r6i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r6i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r6i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r6i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r6i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r6i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -952,31 +1278,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r7i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r7i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r7i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r7i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r7i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r7i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r7i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r7i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r7i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r7i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r7i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r7i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -986,31 +1324,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r8i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r8i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r8i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r8i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r8i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r8i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r8i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r8i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r8i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r8i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r8i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r8i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -1020,31 +1370,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r9i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r9i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r9i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r9i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r9i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r9i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r9i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r9i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r9i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r9i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r9i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r3-r9i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -1054,31 +1416,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r10i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r10i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r10i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r10i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r10i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r10i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r10i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r10i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r10i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r10i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r10i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r10i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -1088,31 +1462,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r1i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r1i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r1i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r1i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r1i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r1i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r1i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r1i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r1i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r1i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r1i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r1i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -1122,31 +1508,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r2i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r2i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r2i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r2i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r2i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r2i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r2i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r2i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r2i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r2i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r2i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r2i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -1156,31 +1554,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r3i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r3i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r3i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r3i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r3i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r3i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r3i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r3i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r3i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r3i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r3i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r3i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -1190,31 +1600,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r4i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r4i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r4i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r4i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r4i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r4i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r4i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r4i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r4i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r4i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r4i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r4i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -1224,31 +1646,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r5i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r5i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r5i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r5i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r5i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r5i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r5i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r5i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r5i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r5i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r5i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r5i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -1258,31 +1692,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r6i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r6i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r6i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r6i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r6i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r6i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r6i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r6i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r6i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r6i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r6i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r6i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -1292,31 +1738,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r7i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r7i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r7i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r7i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r7i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r7i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r7i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r7i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r7i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r7i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r7i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r7i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -1326,31 +1784,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r8i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r8i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r8i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r8i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r8i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r8i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r8i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r8i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r8i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r8i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r8i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r8i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -1360,31 +1830,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r9i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r9i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r9i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r9i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r9i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r9i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r9i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r9i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r9i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r9i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r9i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r4-r9i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -1394,31 +1876,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r10i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r10i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r10i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r10i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r10i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r10i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r10i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r10i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r10i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r10i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r10i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r10i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -1428,31 +1922,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r1i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r1i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r1i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r1i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r1i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r1i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r1i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r1i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r1i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r1i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r1i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r1i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -1462,31 +1968,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r2i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r2i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r2i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r2i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r2i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r2i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r2i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r2i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r2i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r2i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r2i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r2i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -1496,31 +2014,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r3i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r3i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r3i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r3i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r3i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r3i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r3i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r3i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r3i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r3i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r3i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r3i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -1530,31 +2060,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r4i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r4i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r4i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r4i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r4i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r4i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r4i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r4i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r4i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r4i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r4i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r4i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -1564,31 +2106,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r5i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r5i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r5i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r5i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r5i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r5i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r5i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r5i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r5i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r5i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r5i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r5i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -1598,31 +2152,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r6i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r6i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r6i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r6i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r6i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r6i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r6i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r6i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r6i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r6i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r6i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r6i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -1632,31 +2198,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r7i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r7i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r7i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r7i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r7i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r7i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r7i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r7i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r7i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r7i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r7i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r7i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -1666,31 +2244,43 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r8i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r8i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r8i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r8i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r8i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r8i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r8i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r8i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r8i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r8i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r8i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r8i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
@@ -1700,44 +2290,47 @@
 			<aggregation type="union">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r9i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r9i1p1-rcp85" regExp="day_tasmin_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r9i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r9i1p1-rcp85" regExp="day_tasmax_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r9i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r9i1p1-rcp85" regExp="day_tas_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r9i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r9i1p1-rcp85" regExp="day_pr_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r9i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="true" suffix=".nc"></scan>
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r9i1p1-rcp85" regExp="day_prsn_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r9i1p1-rcp85" regExp="day_prw_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
+						<remove name="time_bnds" type="variable"></remove>
+					</aggregation>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+						<scan location="/pavics-data/ouranos/climex/QC11d3_CCCma-CanESM2_rcp85/day/historical-r5-r9i1p1-rcp85" regExp="day_clwvi_historical.*\.nc$" subdirs="True" suffix=".nc"></scan>
 						<remove name="time_bnds" type="variable"></remove>
 					</aggregation>
 				</netcdf>
 			</aggregation>
 		</netcdf>
 	</aggregation>
-
-	<variable name="remove_var" orgName="rotated_pole" />
-	<remove name="remove_var" type="variable" />
-	<variable name="rotated_pole" shape="" type="char">
-		<attribute name="grid_mapping_name" type="String" value="rotated_latitude_longitude" />
-		<attribute name="grid_north_pole_latitude" type="float" value="42.5" />
-		<attribute name="grid_north_pole_longitude" type="float" value="83.0" />
-		<attribute name="north_pole_grid_longitude" type="float" value="0.0" />
-  	</variable>
 </netcdf>
