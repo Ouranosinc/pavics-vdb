@@ -290,7 +290,7 @@ class TestDataset:
 
     def test_CLIMEX(self, compare_raw=False):
 
-        datasets = sorted(list(path.Path('../tmp/simulations/climex').rglob('*.ncml')))
+        datasets = sorted(list(path.Path(__file__).parent.parent.joinpath('tmp/simulations/climex').rglob('*.ncml')))
 
         thredds_test_dir = f'{thredds_root}/simulations/climex'
         thredds_path_server = f'{thredds_cat_root}/simulations/climex/catalog.html'
@@ -317,7 +317,7 @@ class TestDataset:
                 lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
             )
 
-            compare_ncml_rawdata(dataset, dsNcML, compare_raw, check_times=False, files_perrun=3)
+            compare_ncml_rawdata(dataset, dsNcML, compare_raw, files_perrun=3, sample_location = 0.2)
 
     def test_ESPO_R(self, compare_raw=False):
 
@@ -551,9 +551,11 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
                             lon_bnds=test_reg['lon'],
                             lat_bnds=test_reg['lat'],
                         )
+                        if "climex" in test_files[ii].as_posix() and "_2099_" in test_files[ii].as_posix():
+                            ds = ds.sel(time=slice('2099-01-01', '2099-12-30'))
                         datasets.append(ds)
             for ds in datasets:
-                if 'climex' in l1:
+                if 'climex' in l1[-1]:
                     compare_values(dsNcML.sel(realization=bytes(file1.parent.name.split('-rcp')[0], 'utf-8')), ds,
                                    compare_vals, sample_time=sample_time)
 
@@ -607,7 +609,7 @@ def compare_values(dsNcML, ds, compare_vals, sample_time=True):
     try:
         test = dsNcML.sel(time=ds.time).squeeze()
     except:
-
+        
         time1 = xr.DataArray(list(ds.resample(time=xr.infer_freq(dsNcML.time)).groups.keys()), dims=['time'])
         ds = ds.assign_coords(time=time1)
         time2 = xr.DataArray(list(dsNcML.resample(time=xr.infer_freq(dsNcML.time)).groups.keys()), dims=['time'])
@@ -650,8 +652,8 @@ def main():
     # test = TestDataset.test_BCCAQv2
     # test(self=test, compare_raw=False)
     # test = TestDataset.test_NEXGDDP
-    # test = TestDataset.test_CLIMEX
-    test = TestDataset.test_ClimateData
+    test = TestDataset.test_CLIMEX
+    # test = TestDataset.test_ClimateData
     # test = TestDataset.test_ESPO_R
     # test = TestDataset.test_ESPO_G
    
