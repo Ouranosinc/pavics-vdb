@@ -41,6 +41,11 @@
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r2i1p1f1/CRCM5/v1-r1/1hr/psl/v20250310" subdirs="true" suffix="*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
 				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r2i1p1f1/CRCM5/v1-r1/1hr/rlds/v20241009" subdirs="true" suffix="*.nc"></scan>
 			</aggregation>
 		</netcdf>
