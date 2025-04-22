@@ -652,8 +652,8 @@ def main():
     # test = TestDataset.test_BCCAQv2
     # test(self=test, compare_raw=False)
     # test = TestDataset.test_NEXGDDP
-    test = TestDataset.test_CLIMEX
-    # test = TestDataset.test_ClimateData
+    # test = TestDataset.test_CLIMEX
+    test = TestDataset.test_ClimateData
     # test = TestDataset.test_ESPO_R
     # test = TestDataset.test_ESPO_G
    

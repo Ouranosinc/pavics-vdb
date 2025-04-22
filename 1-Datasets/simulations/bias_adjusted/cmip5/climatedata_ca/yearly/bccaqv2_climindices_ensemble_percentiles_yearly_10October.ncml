@@ -27,37 +27,17 @@
 	<aggregation type="Union">
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/tx_mean/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_tx_mean_MS_10October.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/SDII/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_SDII_MS_10October.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/tx_max/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_tx_max_MS_10October.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/cdd/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_cdd_MS_10October.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/tx_min/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_tx_min_MS_10October.nc"></netcdf>
-			</aggregation>
-		</netcdf>
-		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/tn_mean/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_tn_mean_MS_10October.nc"></netcdf>
-			</aggregation>
-		</netcdf>
-		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/tn_max/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_tn_max_MS_10October.nc"></netcdf>
-			</aggregation>
-		</netcdf>
-		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/tn_min/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_tn_min_MS_10October.nc"></netcdf>
-			</aggregation>
-		</netcdf>
-		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/tg_mean/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_tg_mean_MS_10October.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/cddcold_18/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_cddcold_18_MS_10October.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
@@ -67,52 +47,7 @@
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/ice_days/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_ice_days_MS_10October.nc"></netcdf>
-			</aggregation>
-		</netcdf>
-		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/prcptot/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_prcptot_MS_10October.nc"></netcdf>
-			</aggregation>
-		</netcdf>
-		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/rx1day/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_rx1day_MS_10October.nc"></netcdf>
-			</aggregation>
-		</netcdf>
-		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/SDII/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_SDII_MS_10October.nc"></netcdf>
-			</aggregation>
-		</netcdf>
-		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/r1mm/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_r1mm_MS_10October.nc"></netcdf>
-			</aggregation>
-		</netcdf>
-		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/r10mm/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_r10mm_MS_10October.nc"></netcdf>
-			</aggregation>
-		</netcdf>
-		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/r20mm/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_r20mm_MS_10October.nc"></netcdf>
-			</aggregation>
-		</netcdf>
-		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/txgt_25/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_txgt_25_MS_10October.nc"></netcdf>
-			</aggregation>
-		</netcdf>
-		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/txgt_30/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_txgt_30_MS_10October.nc"></netcdf>
-			</aggregation>
-		</netcdf>
-		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/gddgrow_5/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_gddgrow_5_MS_10October.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/gddgrow_0/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_gddgrow_0_MS_10October.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
@@ -122,12 +57,92 @@
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/gddgrow_5/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_gddgrow_5_MS_10October.nc"></netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/hddheat_17/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_hddheat_17_MS_10October.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/cddcold_18/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_cddcold_18_MS_10October.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/hddheat_18/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_hddheat_18_MS_10October.nc"></netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/ice_days/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_ice_days_MS_10October.nc"></netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/nr_cdd/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_nr_cdd_MS_10October.nc"></netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/prcptot/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_prcptot_MS_10October.nc"></netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/r10mm/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_r10mm_MS_10October.nc"></netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/r1mm/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_r1mm_MS_10October.nc"></netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/r20mm/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_r20mm_MS_10October.nc"></netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/rx1day/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_rx1day_MS_10October.nc"></netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/rx5day/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_rx5day_MS_10October.nc"></netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/tg_mean/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_tg_mean_MS_10October.nc"></netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/tn_max/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_tn_max_MS_10October.nc"></netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/tn_mean/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_tn_mean_MS_10October.nc"></netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/tn_min/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_tn_min_MS_10October.nc"></netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/tnlt_-15/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_tnlt_-15_MS_10October.nc"></netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/tnlt_-25/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_tnlt_-25_MS_10October.nc"></netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/tr_18/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_tr_18_MS_10October.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
@@ -142,12 +157,27 @@
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/txgt_32/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_txgt_32_MS_10October.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/tr_24/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_tr_24_MS_10October.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/txgt_29/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_txgt_29_MS_10October.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/tx_max/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_tx_max_MS_10October.nc"></netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/tx_mean/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_tx_mean_MS_10October.nc"></netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/tx_min/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_tx_min_MS_10October.nc"></netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/txgt_25/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_txgt_25_MS_10October.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
@@ -157,47 +187,17 @@
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/tr_24/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_tr_24_MS_10October.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/txgt_29/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_txgt_29_MS_10October.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/tr_18/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_tr_18_MS_10October.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/txgt_30/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1951-2100_txgt_30_MS_10October.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/tnlt_-25/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_tnlt_-25_MS_10October.nc"></netcdf>
-			</aggregation>
-		</netcdf>
-		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/tnlt_-15/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_tnlt_-15_MS_10October.nc"></netcdf>
-			</aggregation>
-		</netcdf>
-		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/gddgrow_0/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_gddgrow_0_MS_10October.nc"></netcdf>
-			</aggregation>
-		</netcdf>
-		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/cdd/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_cdd_MS_10October.nc"></netcdf>
-			</aggregation>
-		</netcdf>
-		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/nr_cdd/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_nr_cdd_MS_10October.nc"></netcdf>
-			</aggregation>
-		</netcdf>
-		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/rx5day/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_rx5day_MS_10October.nc"></netcdf>
-			</aggregation>
-		</netcdf>
-		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/hddheat_18/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_hddheat_18_MS_10October.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2/txgt_32/allrcps_ensemble_stats/MS/BCCAQv2+ANUSPLIN300_ensemble-percentiles_historical+allrcps_1950-2100_txgt_32_MS_10October.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 	</aggregation>
