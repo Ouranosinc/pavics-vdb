@@ -14,7 +14,7 @@ pavics_root = f"{home}/pavics/datasets"
 def main():
     overwrite_to_tmp = True
     rootdir = p.Path(__file__).parent.parent
-    dataset_configs = rootdir.joinpath("dataset_json_configs").rglob('*CRCM5-CMIP6*.json')
+    dataset_configs = rootdir.joinpath("dataset_json_configs").rglob('*bccaqv2_climindices_ensemble_percentiles*.json')
     for dataset in dataset_configs:
         with open(dataset, 'r') as f:
             ncml_modify = json.load(f)
@@ -674,6 +674,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
                     agg = ncml_add_aggregation(agg_dict)
                     # add runs
                     agg['netcdf'] = []
+                    remove_vars = {}
                     for v in [x for x in location.iterdir() if x.is_dir()]:
                         print(v)
                         for exp in config['experiments']:
@@ -706,6 +707,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
                                             d1["@name"] = f"{exp}_{vv}"
                                             d1["@orgName"] = vv
                                             var_names.append(d1)
+                                            remove_vars[vv] = 'variable'
                                             del d1
                                     del dtmp
 
@@ -717,7 +719,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
                                 del netcdf2
 
                     ncml1 = xncml.Dataset()
-                    ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
+                    ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'] | remove_vars)
                     attrs = config['attribute']
                     ncml1.ncroot['netcdf']['attribute'] = ncml_add_attributes(attrs)
                     ncml1.ncroot['netcdf']['aggregation'] = agg
@@ -736,6 +738,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
                 agg = ncml_add_aggregation(agg_dict)
                 # add runs
                 agg['netcdf'] = []
+                remove_vars = {}
                 for v in sorted([x for x in location.iterdir() if x.is_dir()]):
                     print(v)
                     for exp in config['experiments']:
@@ -772,6 +775,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
                                         d1["@name"] = f"{exp}_{vv}"
                                         d1["@orgName"] = vv
                                         var_names.append(d1)
+                                        remove_vars[vv] = 'variable'
                                         del d1
                                 del dtmp
 
@@ -783,7 +787,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
                             del netcdf2
 
                 ncml1 = xncml.Dataset()
-                ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
+                ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'] | remove_vars)
                 attrs = config['attribute']
                 ncml1.ncroot['netcdf']['attribute'] = ncml_add_attributes(attrs)
                 ncml1.ncroot['netcdf']['aggregation'] = agg
