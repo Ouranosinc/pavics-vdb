@@ -82,5 +82,20 @@
                 <scan location="/pavics-data/eccc/RDRS_v21/NAM/day/hurs" regExp="hurs_.*\.nc$" subdirs="false"/>
             </aggregation>
         </netcdf>
+        <netcdf>
+            <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+                <scan location="/pavics-data/eccc/RDRS_v21/NAM/day/rsds" regExp="rsds_.*\.nc$" subdirs="false"/>
+            </aggregation>
+        </netcdf>
+        <netcdf>
+            <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+                <scan location="/pavics-data/eccc/RDRS_v21/NAM/day/rlds" regExp="rlds_.*\.nc$" subdirs="false"/>
+            </aggregation>
+        </netcdf>
+        <netcdf>
+            <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+                <scan location="/pavics-data/eccc/RDRS_v21/NAM/day/sfcWind" regExp="sfcWind_.*\.nc$" subdirs="false"/>
+            </aggregation>
+        </netcdf>
     </aggregation>
 </netcdf>
