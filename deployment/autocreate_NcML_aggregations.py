@@ -14,7 +14,7 @@ pavics_root = f"{home}/pavics/datasets"
 def main():
     overwrite_to_tmp = True
     rootdir = p.Path(__file__).parent.parent
-    dataset_configs = rootdir.joinpath("dataset_json_configs").rglob('*bccaqv2_climindices_ensemble_percentiles*.json')
+    dataset_configs = rootdir.joinpath("dataset_json_configs").rglob('*day_CanDCS-M6_config*.json')
     for dataset in dataset_configs:
         with open(dataset, 'r') as f:
             ncml_modify = json.load(f)

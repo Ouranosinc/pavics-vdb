@@ -34,5 +34,10 @@
 				<scan location="/pavics-data/disk2/pcic/CanDCS-M6/BCC-CSM2-MR_10" subdirs="true" regExp=".*pr_.*historical\+ssp245.*r1i1p1f1.*" suffix=".nc"></scan>
 			</aggregation>
 		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/disk2/pcic/CanDCS-M6/BCC-CSM2-MR_10" subdirs="true" regExp=".*prsn_.*historical\+ssp245.*r1i1p1f1.*" suffix=".nc"></scan>
+			</aggregation>
+		</netcdf>
 	</aggregation>
 </netcdf>
