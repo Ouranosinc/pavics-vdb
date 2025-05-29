@@ -67,7 +67,8 @@
   "variables": [
     "tasmin",
     "tasmax",
-    "pr"
+    "pr",
+    "prsn"
   ],
   "frequency": "day",
   "realm": "atmos"
