@@ -1,0 +1,69 @@
+{
+  "attribute": {
+    "institution": {
+      "value": "Ouranos Consortium on Regional Climatology and Adaptation to Climate Change",
+      "type": "String"
+    },
+    "institution_id": {
+      "value": "Ouranos",
+      "type": "String"
+    },
+    "title": {"value": "PINS v1 : Portraits d'indices de la neige au sol",
+      "type": "String"},
+    "dataset_id": {"value": "PINS v1", "type":"String"},
+    "type": {
+      "value": "RCM",
+      "type": "String"
+    },
+    "processing": {
+      "value": "bias_adjusted",
+      "type": "String"
+    },
+    "abstract": {
+      "value": "In the context of climate change, stakeholders and decision makers are in demand of easily accessible bias-adjusted projections of snow cover and their resulting indices to develop adaptation plans. To meet this need, we produced an ensemble of regional climate projections statistically bias adjusted of snow water equivalent (SWE) over the province of Québec.",
+      "type": "String"
+    },
+    "bias_adjust_method": {
+      "value": "1D-Empirical Quantile Mapping with smoothed decay",
+      "type": "String"
+    },
+    "bias_adjust_reference": {
+      "value": "ERA5-Land (1991-2020)",
+      "type": "String"
+    },
+    "bias_adjust_reference_citation": {
+      "value": "https://doi.org/10.24381/cds.e2161bac",
+      "type": "String"
+    },
+    "license_type": {
+      "value": "permissive",
+      "type": "String"
+    },
+    "license":{
+      "value":"Creative Commons Attribution 4.0 International Public License: https://creativecommons.org/licenses/by/4.0/legalcode",
+      "type": "String"
+    },
+    "terms_of_use": {
+      "value": "In addition to the provided licence, the data used for the realization of climate scenarios are subject to the conditions of the source data. For more details, please refer to: https://pcmdi.llnl.gov/CMIP6/TermsOfUse/TermsOfUse6-2.html",
+      "type": "String"
+    },
+    "attribution": {
+      "value": "Use of this dataset should be acknowledged as 'Data produced and provided by the Ouranos Consortium on Regional Climatology and Adaptation to Climate Change'. Furthermore, the modeling groups from which the bias-adjusted climate scenarios were constructed must also be acknowledged, please refer to: The Coupled Model Intercomparison Project https://wcrp-cmip.org/cmip-phase-6-cmip6/",
+      "type": "String"
+    },
+    "modeling_realm": {
+      "value": "land",
+      "type": "String"
+    }
+  },
+  "location": "/pavics-data/ouranos/PINS/PINS_v1",
+  "ncml_type": "ouranos-PINS",
+  "experiments": [
+    "rcp45",
+    "rcp85"
+  ],
+  "variables": ["snw"],
+  "frequency": "day",
+  "realm": "land",
+  "filename_template": ""
+}

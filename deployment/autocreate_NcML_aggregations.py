@@ -484,6 +484,52 @@ def ncml_create_datasets(ncml_template=None, config=None):
                             del ncml1
         return ncmls
 
+    elif config['ncml_type'] == "ouranos-PINS":
+
+        ncmls = {}
+        location = config['location'].replace('pavics-data', pavics_root)
+        for inst in [x for x in p.Path(location).iterdir() if x.is_dir()]:
+            for rcm in [x for x in inst.iterdir() if x.is_dir()]:
+                for gcm in [x for x in rcm.iterdir() if x.is_dir()]:
+                    for rcp in [x for x in gcm.iterdir() if x.is_dir() and 'rcp' in x.name]:
+                        var_flag = [len(list(rcm.rglob(f"*{v}_*.nc"))) > 0 for v in config['variables']]
+                        agg_dict = {"@type": "Union"}
+                        agg = ncml_add_aggregation(agg_dict)
+                        agg['netcdf'] = []
+                        outname = None
+                        if all(var_flag):
+
+                            netcdf = ncml_netcdf_container()
+                            # ensure all variables are present
+                            for v in config['variables']:
+                                if outname is None:
+                                    outname = '_'.join(list(rcp.rglob(f"*{v}_*.nc"))[0].stem.split('_')[1:-1])
+                                    allfiles = sorted(list(rcp.rglob(f"*{v}_*.nc")))
+                                    years = f"{allfiles[0].stem.split('_')[-1].split('-')[0]}-{allfiles[-1].stem.split('_')[-1].split('-')[-1]}"
+                                    outname = '_'.join([outname, years])
+
+                                netcdf2 = ncml_netcdf_container()
+                                netcdf2['aggregation'] = ncml_add_aggregation(
+                                    {'@dimName': 'time', '@type': 'joinExisting', '@recheckEvery': '1 day'})
+                                netcdf2['aggregation']['scan'] = []
+                                scan = {'@location': rcp.as_posix().replace(pavics_root, 'pavics-data'),
+                                        '@subdirs': 'true',
+                                        '@suffix': f'{v}_*.nc'}
+                                netcdf2['aggregation']['scan'].append(ncml_add_scan(scan))
+
+                                agg['netcdf'].append(netcdf2)
+                                del netcdf2
+
+                            ncml1 = xncml.Dataset()
+                            attrs = config['attribute']
+                            attrs['source_institution'] = dict(value=inst.name, type="String")
+                            ncml1.ncroot['netcdf']['attribute'] = ncml_add_attributes(attrs)
+                            ncml1.ncroot['netcdf']['aggregation'] = agg
+
+                            ncmls[outname] = ncml1
+                            del ncml1
+        return ncmls
+
     elif config['ncml_type'] == "ouranos-ESPO-G6":
 
         ncmls = {}
