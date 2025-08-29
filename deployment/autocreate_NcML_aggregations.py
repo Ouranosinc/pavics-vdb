@@ -159,8 +159,8 @@ def ncml_create_datasets(ncml_template=None, config=None):
 
     elif config['ncml_type'] == 'CRCM5-CMIP6':
 
-        first_var = {"1hr":"tas", "3hr":"clwvi", "day":"tas"}
-        first_var1 = {"1hr": "pr", "3hr": "snw", "day": "pr"}
+        first_var = {"1hr":"tas", "3hr":"clwvi", "day":"tas", "mon": "tas"}
+        first_var1 = {"1hr": "pr", "3hr": "snw", "day": "pr", "mon": "pr"}
         config
         freq = config["frequency"]
         infolder = p.Path(config['location'].replace('/pavics-data', pavics_root))
