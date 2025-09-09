@@ -37,5 +37,25 @@
                 <scan location="/pavics-data/ecmwf/ERA5-Land/NAM/day/prsn" regExp="prsn_.*\.nc$" subdirs="false"/>
             </aggregation>
         </netcdf>
+        <netcdf>
+            <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+                <scan location="/pavics-data/ecmwf/ERA5-Land/NAM/day/rlds" regExp="rlds_.*\.nc$" subdirs="false"/>
+            </aggregation>
+        </netcdf>
+        <netcdf>
+            <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+                <scan location="/pavics-data/ecmwf/ERA5-Land/NAM/day/rls" regExp="rls_.*\.nc$" subdirs="false"/>
+            </aggregation>
+        </netcdf>
+        <netcdf>
+            <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+                <scan location="/pavics-data/ecmwf/ERA5-Land/NAM/day/rsds" regExp="rsds_.*\.nc$" subdirs="false"/>
+            </aggregation>
+        </netcdf>
+        <netcdf>
+            <aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+                <scan location="/pavics-data/ecmwf/ERA5-Land/NAM/day/rss" regExp="rss_.*\.nc$" subdirs="false"/>
+            </aggregation>
+        </netcdf>
     </aggregation>
 </netcdf>
