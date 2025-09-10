@@ -14,7 +14,7 @@ pavics_root = f"{home}/pavics/datasets"
 def main():
     overwrite_to_tmp = True
     rootdir = p.Path(__file__).parent.parent
-    dataset_configs = rootdir.joinpath("dataset_json_configs").rglob('*day_CanDCS-M6_config*.json')
+    dataset_configs = rootdir.joinpath("dataset_json_configs").rglob('*CRCM5-CMIP6*.json')
     for dataset in dataset_configs:
         with open(dataset, 'r') as f:
             ncml_modify = json.load(f)
@@ -27,39 +27,39 @@ def main():
                 keylist = get_key_values(datasets[d].ncroot, searchkeys=['@location'])
                 exp = f"historical{d.split('_historical')[-1]}"
                 run = keylist['@location'][0].split(exp)[-1].split('_195')[0].replace('_', '')
-                outpath = p.Path(str(dataset.parent).replace('dataset_json_configs', 'tmp')).joinpath(
+                outpath = p.Path(str(dataset.parent).replace('dataset_json_configs', '1-Datasets')).joinpath(
                     f"{ncml_modify['filename_template'].format(freq=ncml_modify['frequency'], model=d, run=run)}.ncml")
             elif ncml_modify['ncml_type'] == 'climatedata.ca':
                 agg, freq = d.split('_')
                 outpath = p.Path(str(dataset.parent).replace('dataset_json_configs',
-                                                             'tmp')).joinpath(
+                                                             '1-Datasets')).joinpath(
                     agg,f"{dataset.name.split('_config')[0]}_{freq}.ncml".replace("__","_").replace('_.', '.'))
             elif ncml_modify['ncml_type'] == 'climatedata.ca_CanDCS-U6':
                 agg, freq = d.split('_')
                 outpath = p.Path(str(dataset.parent).replace('dataset_json_configs',
-                                                             'tmp')).joinpath(
+                                                             '1-Datasets')).joinpath(
                     f"{agg}_{dataset.name.split('_config')[0]}.ncml".replace("__","_").replace('_.', '.'))
             elif ncml_modify['ncml_type'] == 'climatedata.ca_CanDCS-U6_members':
                 agg, freq = d.split('_')
                 outpath = p.Path(str(dataset.parent).replace('dataset_json_configs',
-                                                             'tmp')).joinpath(
+                                                             '1-Datasets')).joinpath(
                     f"{agg}_{dataset.name.split('_config')[0]}.ncml".replace("__","_").replace('_.', '.'))
             elif ncml_modify['ncml_type'] == "ESPO-G_members":
                 freq, experiment = d.split('_')
                 outpath = p.Path(str(dataset.parent).replace('dataset_json_configs',
-                                                             'tmp')).joinpath(
+                                                             '1-Datasets')).joinpath(
                     f"{freq}_{experiment}_{dataset.name.split('_config')[0]}.ncml".replace("__", "_").replace('_.', '.'))
 
             else:
                 if "separate_model_directory" in ncml_modify.keys():
                     if ncml_modify["separate_model_directory"] == "True":
                         mod = d.split('_hist')[0]
-                        outpath = p.Path(str(dataset.parent).replace('dataset_json_configs', 'tmp')).joinpath(mod,
+                        outpath = p.Path(str(dataset.parent).replace('dataset_json_configs', '1-Datasets')).joinpath(mod,
                                                                                                               f"{d}.ncml")
 
 
                 else:
-                    outpath = p.Path(str(dataset.parent).replace('dataset_json_configs', 'tmp')).joinpath(
+                    outpath = p.Path(str(dataset.parent).replace('dataset_json_configs', '1-Datasets')).joinpath(
                         f"{d}.ncml")
 
             if overwrite_to_tmp:
@@ -159,8 +159,8 @@ def ncml_create_datasets(ncml_template=None, config=None):
 
     elif config['ncml_type'] == 'CRCM5-CMIP6':
 
-        first_var = {"1hr":"tas", "3hr":"clwvi", "day":"tas"}
-        first_var1 = {"1hr": "pr", "3hr": "snw", "day": "pr"}
+        first_var = {"1hr":"tas", "3hr":"clwvi", "day":"tas", "mon": "tas"}
+        first_var1 = {"1hr": "pr", "3hr": "snw", "day": "pr", "mon": "pr"}
         config
         freq = config["frequency"]
         infolder = p.Path(config['location'].replace('/pavics-data', pavics_root))

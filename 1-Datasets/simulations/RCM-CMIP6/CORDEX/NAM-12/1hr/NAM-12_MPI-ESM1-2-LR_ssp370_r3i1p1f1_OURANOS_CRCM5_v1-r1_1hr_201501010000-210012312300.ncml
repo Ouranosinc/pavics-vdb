@@ -11,57 +11,57 @@
 	<aggregation type="Union">
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/NorESM2-MM/historical/r1i1p1f1/CRCM5/v1-r1/1hr/tas/v20250708" subdirs="true" suffix="*.nc"></scan>
+				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/ssp370/r3i1p1f1/CRCM5/v1-r1/1hr/tas/v20250701" subdirs="true" suffix="*.nc"></scan>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/NorESM2-MM/historical/r1i1p1f1/CRCM5/v1-r1/1hr/hurs/v20250708" subdirs="true" suffix="*.nc"></scan>
+				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/ssp370/r3i1p1f1/CRCM5/v1-r1/1hr/hurs/v20250701" subdirs="true" suffix="*.nc"></scan>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/NorESM2-MM/historical/r1i1p1f1/CRCM5/v1-r1/1hr/huss/v20250708" subdirs="true" suffix="*.nc"></scan>
+				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/ssp370/r3i1p1f1/CRCM5/v1-r1/1hr/huss/v20250701" subdirs="true" suffix="*.nc"></scan>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/NorESM2-MM/historical/r1i1p1f1/CRCM5/v1-r1/1hr/pr/v20250708" subdirs="true" suffix="*.nc"></scan>
+				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/ssp370/r3i1p1f1/CRCM5/v1-r1/1hr/pr/v20250701" subdirs="true" suffix="*.nc"></scan>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/NorESM2-MM/historical/r1i1p1f1/CRCM5/v1-r1/1hr/prfr/v20250708" subdirs="true" suffix="*.nc"></scan>
+				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/ssp370/r3i1p1f1/CRCM5/v1-r1/1hr/prfr/v20250701" subdirs="true" suffix="*.nc"></scan>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/NorESM2-MM/historical/r1i1p1f1/CRCM5/v1-r1/1hr/ps/v20250708" subdirs="true" suffix="*.nc"></scan>
+				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/ssp370/r3i1p1f1/CRCM5/v1-r1/1hr/ps/v20250701" subdirs="true" suffix="*.nc"></scan>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/NorESM2-MM/historical/r1i1p1f1/CRCM5/v1-r1/1hr/psl/v20250708" subdirs="true" suffix="*.nc"></scan>
+				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/ssp370/r3i1p1f1/CRCM5/v1-r1/1hr/psl/v20250701" subdirs="true" suffix="*.nc"></scan>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/NorESM2-MM/historical/r1i1p1f1/CRCM5/v1-r1/1hr/rlds/v20250708" subdirs="true" suffix="*.nc"></scan>
+				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/ssp370/r3i1p1f1/CRCM5/v1-r1/1hr/rlds/v20250701" subdirs="true" suffix="*.nc"></scan>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/NorESM2-MM/historical/r1i1p1f1/CRCM5/v1-r1/1hr/rsds/v20250708" subdirs="true" suffix="*.nc"></scan>
+				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/ssp370/r3i1p1f1/CRCM5/v1-r1/1hr/rsds/v20250701" subdirs="true" suffix="*.nc"></scan>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/NorESM2-MM/historical/r1i1p1f1/CRCM5/v1-r1/1hr/uas/v20250708" subdirs="true" suffix="*.nc"></scan>
+				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/ssp370/r3i1p1f1/CRCM5/v1-r1/1hr/uas/v20250701" subdirs="true" suffix="*.nc"></scan>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/NorESM2-MM/historical/r1i1p1f1/CRCM5/v1-r1/1hr/vas/v20250708" subdirs="true" suffix="*.nc"></scan>
+				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/ssp370/r3i1p1f1/CRCM5/v1-r1/1hr/vas/v20250701" subdirs="true" suffix="*.nc"></scan>
 			</aggregation>
 		</netcdf>
 	</aggregation>

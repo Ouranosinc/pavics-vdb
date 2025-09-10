@@ -9,11 +9,12 @@ import threddsclient
 import xarray as xr
 import xncml
 from clisops.core import subset
-from xclim.core.calendar import convert_calendar
+#from xclim.core.calendar import convert_calendar
 import netCDF4
 import warnings
 import random
 from lxml import etree
+from git import Repo
 
 home = os.environ['HOME']
 pavics_root = os.path.join(home, 'boreas')  # mapped drive to top level `Birdhouse` folder on thredds
@@ -260,7 +261,8 @@ class TestDataset:
             compare_ncml_rawdata(dataset, dsNcML, compare_raw)
 
     def test_CRCM5_CMIP6(self, compare_raw=False):
-        datasets = sorted(list(path.Path(__file__).parent.parent.joinpath('tmp/simulations/RCM-CMIP6/CORDEX/NAM-12').rglob('*.ncml')))
+        #datasets = sorted(list(path.Path(__file__).parent.parent.joinpath('tmp/simulations/RCM-CMIP6/CORDEX/NAM-12').rglob('*.ncml')))
+        datasets = [path.Path(f) for f in get_changed_files_gitpython(path.Path(__file__).parent.parent) if '/simulations/RCM-CMIP6/CORDEX/NAM-12' in f and path.Path(f).suffix == '.ncml']
         thredds_test_dir = f'{thredds_root}/simulations/RCM-CMIP6/CORDEX/NAM-12'
         thredds_path_server = f'{thredds_cat_root}/simulations/RCM-CMIP6/CORDEX/NAM-12/catalog.html'
         thredds_test_dir = path.Path(thredds_test_dir)
@@ -426,6 +428,25 @@ class TestDataset:
 
             compare_ncml_rawdata(dataset, dsNcML, compare_raw)
 
+def get_changed_files_gitpython(repo_path=".", staged=False):
+    """
+    Lists changed files in a Git repository using GitPython.
+    If staged is True, lists staged changes; otherwise, lists unstaged changes.
+    """
+    try:
+        repo = Repo(repo_path)
+        if staged:
+            # Files staged for commit
+            changed_files = [item.a_path for item in repo.index.diff("HEAD")]
+        else:
+            # Unstaged changes in the working directory
+            changed_files = [item.a_path for item in repo.index.diff(None)]
+            # Add untracked files
+            changed_files.extend(repo.untracked_files)
+        return changed_files
+    except Exception as e:
+        print(f"Error using GitPython: {e}")
+        return []
 
 def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_perrun=None, sample_location=None):
     ncml = xncml.Dataset(dataset)
@@ -598,14 +619,14 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
                             compare_values(dsNcML, ds, compare_vals, sample_time=sample_time)
 
     print(dataset, 'ok')
-    movfile = path.Path(str(dataset).replace('tmp', '1-Datasets'))
-    if not movfile.parent.exists():
-        movfile.parent.mkdir(parents=True)
-    shutil.move(dataset, movfile)
+    # movfile = path.Path(str(dataset).replace('tmp', '1-Datasets'))
+    # if not movfile.parent.exists():
+    #     movfile.parent.mkdir(parents=True)
+    # shutil.move(dataset, movfile)
 
 
 def compare_values(dsNcML, ds, compare_vals, sample_time=True):
-    ds = convert_calendar(ds, target=dsNcML.time.dt.calendar, align_on='date')
+    ds = ds.convert_calendar(calendar=dsNcML.time.dt.calendar, align_on='date')
     try:
         test = dsNcML.sel(time=ds.time).squeeze()
     except:
@@ -653,13 +674,13 @@ def main():
     # test(self=test, compare_raw=False)
     # test = TestDataset.test_NEXGDDP
     # test = TestDataset.test_CLIMEX
-    test = TestDataset.test_ClimateData
+    # test = TestDataset.test_ClimateData
     # test = TestDataset.test_ESPO_R
     # test = TestDataset.test_ESPO_G
    
     #test = TestDataset.test_CanDCS_U6
     #inpath =  '../tmp/simulations/bias_adjusted/cmip6/pcic/CanDCS-M6'
-    #test = TestDataset.test_CRCM5_CMIP6
+    test = TestDataset.test_CRCM5_CMIP6
     test(self=test, compare_raw=True)
 
 
