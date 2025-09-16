@@ -262,7 +262,7 @@ class TestDataset:
 
     def test_CRCM5_CMIP6(self, compare_raw=False):
         #datasets = sorted(list(path.Path(__file__).parent.parent.joinpath('tmp/simulations/RCM-CMIP6/CORDEX/NAM-12').rglob('*.ncml')))
-        datasets = [path.Path(f) for f in get_changed_files_gitpython(path.Path(__file__).parent.parent) if '/simulations/RCM-CMIP6/CORDEX/NAM-12' in f and path.Path(f).suffix == '.ncml']
+        datasets = [f for f in get_changed_files_gitpython(path.Path(__file__).parent.parent) if '/simulations/RCM-CMIP6/CORDEX/NAM-12' in f.as_posix() and f.suffix == '.ncml']
         thredds_test_dir = f'{thredds_root}/simulations/RCM-CMIP6/CORDEX/NAM-12'
         thredds_path_server = f'{thredds_cat_root}/simulations/RCM-CMIP6/CORDEX/NAM-12/catalog.html'
         thredds_test_dir = path.Path(thredds_test_dir)
@@ -443,7 +443,7 @@ def get_changed_files_gitpython(repo_path=".", staged=False):
             changed_files = [item.a_path for item in repo.index.diff(None)]
             # Add untracked files
             changed_files.extend(repo.untracked_files)
-        return changed_files
+        return [repo_path.joinpath(c) for c in changed_files]
     except Exception as e:
         print(f"Error using GitPython: {e}")
         return []
