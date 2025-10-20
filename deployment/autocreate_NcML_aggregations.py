@@ -14,7 +14,7 @@ pavics_root = f"{home}/pavics/datasets"
 def main():
     overwrite_to_tmp = True
     rootdir = p.Path(__file__).parent.parent
-    dataset_configs = rootdir.joinpath("dataset_json_configs").rglob('*CRCM5-CMIP6*.json')
+    dataset_configs = rootdir.joinpath("dataset_json_configs").rglob('*CanDCS-M6_*_ensemble_percentiles_*.json')
     for dataset in dataset_configs:
         with open(dataset, 'r') as f:
             ncml_modify = json.load(f)
@@ -728,7 +728,9 @@ def ncml_create_datasets(ncml_template=None, config=None):
         return ncmls
 
     elif config['ncml_type'] == "climatedata.ca_CanDCS-U6":
-
+        skip_inds = []
+        if 'skip_indicator' in config.keys():
+            skip_inds = config['skip_indicator'] 
         ncmls = {}
         location = p.Path(config['location'].replace('pavics-data', pavics_root))
         for aggkey, agg1 in config['aggregation'].items():
@@ -741,6 +743,9 @@ def ncml_create_datasets(ncml_template=None, config=None):
                 remove_vars = {}
                 for v in sorted([x for x in location.iterdir() if x.is_dir()]):
                     print(v)
+                    if v.name in skip_inds:
+                        print(f"skipping {v.name}")
+                        continue    
                     for exp in config['experiments']:
                         realm = config['realm']
                         rcp = exp.split('+')[-1]
@@ -764,9 +769,9 @@ def ncml_create_datasets(ncml_template=None, config=None):
                                 netcdf3['@location'] = str(run).replace(pavics_root, 'pavics-data')
                                 var_names = []
                                 try:
-                                    dtmp = xr.open_dataset(run, engine="h5netcdf")
+                                    dtmp = xr.open_dataset(run, engine="h5netcdf", decode_timedelta=False)
                                 except:
-                                    dtmp = xr.open_dataset(run)
+                                    dtmp = xr.open_dataset(run,  decode_timedelta=False)
 
                                 for vv in dtmp.data_vars:
                                     if exp not in vv and exp != 'allrcps' and exp != 'nrcan':
