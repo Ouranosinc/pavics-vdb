@@ -1,0 +1,176 @@
+{
+  "remove": {
+    "driving_branch_method": "attribute",
+    "driving_data_specs_version": "attribute",
+    "driving_forcing_index": "attribute",
+    "driving_further_url_info": "attribute",
+    "driving_grid": "attribute",
+    "driving_grid_label": "attribute",
+    "driving_initialization_index": "attribute",
+    "driving_institution" : "attribute",
+    "driving_nominal_resolution": "attribute",
+    "driving_physics_index": "attribute",
+    "driving_realization_index": "attribute",
+    "driving_source_id": "attribute",
+    "driving_source_type": "attribute",
+    "driving_experiment_id": "attribute",
+    "driving_realization": "attribute",
+    "driving_initialization_method": "attribute",
+    "driving_physics_version": "attribute",
+    "description" : "attribute",
+    "GCM__experiment": "attribute",
+    "GCM__experiment_id": "attribute",
+    "GCM__branch_method": "attribute",
+    "GCM__data_specs_version": "attribute",
+    "GCM__forcing_index": "attribute",
+    "GCM__further_url_info": "attribute",
+    "GCM__grid": "attribute",
+    "GCM__grid_label": "attribute",
+    "GCM__initialization_index": "attribute",
+    "GCM__institution": "attribute",
+    "GCM__institution_id": "attribute",
+    "GCM__model_id": "attribute",
+    "GCM__nominal_resolution": "attribute",
+    "GCM__physics_index": "attribute",
+    "GCM__realization_index": "attribute",
+    "GCM__source_id": "attribute",
+    "GCM__source_type": "attribute",
+    "long_name": "attribute",
+    "standard_name": "attribute",
+    "units": "attribute",
+    "ccdp_name": "attribute",
+    "table_id": "attribute",
+    "variable_id": "attribute",
+    "method": "attribute",
+    "method_id": "attribute",
+    "is_dayofyear": "attribute",
+    "calendar": "attribute",
+    "cell_methods": "attribute",
+    "target__contact": "attribute",
+    "target__dataset": "attribute",
+    "target__dataset_id": "attribute",
+    "target__institution": "attribute",
+    "target__institution_id": "attribute",
+    "target__references": "attribute",
+    "target__version": "attribute"
+  },
+  "attribute": {
+    "target_contact": {
+      "value": "Pia Papadopol (pia.papadopol@nrcan-rncan.gc.ca)",
+      "type": "String"
+    },
+    "target_dataset": {
+      "value" : "ANUSPLIN interpolated Canada daily 300 arc second climate grids",
+      "type": "String"},
+    "target_dataset_id": {
+      "value": "ANUSPLIN300",
+      "type": "String"
+    },
+    "target_institution": {
+      "value": "Canadian Forest Service, Natural Resources Canada",
+      "type": "String"
+    },
+    "target_institution_id": {
+      "value": "CFS-NRCan",
+      "type": "String"
+    },
+    "target_references": {
+      "value": "McKenney D.W., Hutchinson, M.F., Papadopol, P., Lawrence, K., Pedlar, J., Campbell, K., Milewska, E., Hopkinson, R., Price, D., and Owen, T., 2011. Customized spatial climate models for North America. Bulletin of the American Meteorological Society, 92(12): 1611-1622.",
+      "type": "String"
+    },
+    "target_version" : {
+      "value": "target__version: obtained: 2 April 2012, 14 June 2012, and 30 January 2013",
+      "type": "String"
+    },
+
+    "abstract": {
+      "value": "This dataset provides access to CMIP6 climate indicator ensemble statistics data that drives mapping and time-series visualizations on ClimateData.ca. Climatedata.ca is a climate data portal produced collaboratively by the country’s leading climate organizations and supported, in part, by the Government of Canada. The goal of this portal is to support decision makers across a broad spectrum of sectors and locations by providing the most up to date climate data in easy to use formats and visualizations.",
+      "type": "String"
+    },
+    "climateindex_package_id": {
+      "value": "https://github.com/Ouranosinc/xclim",
+      "type": "String"
+    },
+    "institution": {
+      "value": "Canadian Centre for Climate Services",
+      "type": "String"
+    },
+    "institution_id": {
+      "value": "CCCS",
+      "type": "String"
+    },
+    "contact": {
+      "value": "Canadian Centre for Climate Services",
+      "type": "String"
+    },
+    "driving_experiment": {"value":  "historical, ssp126, ssp245, ssp370, ssp585", "type":  "String"},
+    "driving_model_id": {"value":  "multi-model individual runs", "type":  "String"},
+    "driving_institute_id": {"value":  "multi-model individual runs", "type":  "String"},
+    "title": {"value": "Climatedata.ca : CMIP6 : Yearly ensemble members for CanDCS-M6 derived climate indicators","type": "String"},
+    "type": {
+      "value": "GCM",
+      "type": "String"
+    },
+    "processing": {
+      "value": "bias_adjusted",
+      "type": "String"
+    },
+    "dataset_description": {
+      "value": "https://climatedata.ca/",
+      "type": "String"
+    },
+    "frequency": {"value": "yr","type": "String"},
+    "dataset_id": {"value": "climatedata_ca_CanDCS-M6", "type":"String"},
+    "project_id": {
+      "value": "CMIP6",
+      "type": "String"
+    },
+    "bias_adjustment_institute_id": {
+      "value":"PCIC",
+      "type": "String"
+    },
+    "bias_adjustment_method": {
+      "value":"MBCn",
+      "type": "String"
+    },
+    "bias_adjustment_method_id": {
+      "value":"MBCn",
+      "type": "String"
+    },
+    "bias_adjustment_package_id": {
+      "value":"github.com/pacificclimate/ClimDown",
+      "type": "String"
+    },
+    "bias_adjustment_reference": {
+      "value": "https://doi.org/10.1007/s00382-017-3580-6",
+      "type": "String"
+    },
+    "license_type": {
+      "value": "permissive",
+      "type": "String"
+    },
+    "license": {
+      "value": "https://open.canada.ca/en/open-government-licence-canada",
+      "type": "String"
+    },
+    "terms_of_use": {
+      "value": "Please see further terms of use associated with CanDCS-M6 input dataset used in climate indicator calculations at https://pacificclimate.org/data/statistically-downscaled-climate-scenarios.",
+      "type": "String"
+    },
+    "doi":{
+      "value": "https://doi.org/10.1002/gdj3.257",
+      "type": "String"
+    }
+
+  },
+  "location": "/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/",
+  "ncml_type": "climatedata.ca_CanDCS-U6",
+  "experiments": [
+    "ssp126", "ssp245", "ssp585"
+  ],
+  "aggregation": {"":""},
+  "frequency": {"YS": "annual", "MS": "monthly","QS-DEC": "seasonal"},
+  "realm": "atmos",
+  "regexp_template": "{v}_*MBCn+PCIC-Blend_historical+{rcp}*{agg}_percentiles.nc",
+  "filename_template": "{aggregation}{frequency}-CanDCS-M6_climindices-ensemble_percentiles"
+}
