@@ -172,5 +172,6 @@
   "frequency": {"YS": "annual", "MS": "monthly","QS-DEC": "seasonal"},
   "realm": "atmos",
   "regexp_template": "{v}_*MBCn+PCIC-Blend_historical+{rcp}*{agg}_percentiles.nc",
-  "filename_template": "{aggregation}{frequency}-CanDCS-U6_climindices-ensemble_percentiles"
+  "filename_template": "{aggregation}{frequency}-CanDCS-U6_climindices-ensemble_percentiles",
+  "skip_indicator": ["prsntot", "prcptot", "rx1day", "rx5day", "r1mm", "r10mm", "r20mm"]
 }
