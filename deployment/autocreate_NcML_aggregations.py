@@ -752,6 +752,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
 
                         runs = sorted(list(location.joinpath(v, freq).rglob(
                             config['regexp_template'].format(agg=agg1, rcp=exp, v=v.name, frequency=freq))))
+                        runs = [r for r in runs if 'spatialAvg' not in r.name]
                         if agg1 == '':
                             runs = [r for r in runs if '30ymean' not in r.name]
                         else:
