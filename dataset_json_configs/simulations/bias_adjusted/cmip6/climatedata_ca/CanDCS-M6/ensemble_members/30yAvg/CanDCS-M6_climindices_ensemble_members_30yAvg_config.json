@@ -168,8 +168,9 @@
     "ssp126", "ssp245","ssp370", "ssp585"
   ],
   "aggregation": {"30ymean_":"30ymean"},
-  "frequency": {"YS": "annual", "MS": "monthly","QS-DEC": "seasonal"},
+  "frequency": {"YS": "annual","YS-JUL": "annual-julyjune", "MS": "monthly","QS-DEC": "seasonal"},
   "realm": "atmos",
   "regexp_template": "{v}_*MBCn+PCIC-Blend_{mod}_historical+{rcp}*{agg}*.nc",
-  "filename_template": "{aggregation}{frequency}-CanDCS-M6_climindices-ensemble_members"
+  "filename_template": "{aggregation}{frequency}-CanDCS-M6_climindices-ensemble_members",
+  "skip_indicator": ["prsntot", "prcptot", "rx1day", "rx5day", "r1mm", "r10mm", "r20mm"]
 }

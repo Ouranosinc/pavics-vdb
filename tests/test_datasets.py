@@ -32,7 +32,8 @@ else:
     # correponding url to `thredds_root`
     thredds_cat_root = 'https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/birdhouse/testdata/test_ncmls'
     # thredds_cat_root = 'https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/birdhouse/testdata/NcML_tests/'
-
+repo_path = path.Path(__file__).parent.parent
+repo = Repo(str(repo_path))
 
 class Validator:
 
@@ -131,10 +132,7 @@ class TestDataset:
 
     def test_ClimateData(self, compare_raw=False):
 
-        datasets = sorted(list(path.Path(__file__).parent.parent.joinpath('tmp/simulations/bias_adjusted/cmip5/climatedata_ca').rglob('*.ncml')))
-        datasets.extend(sorted(list(path.Path(__file__).parent.parent.joinpath('tmp/gridded_obs/climatedata_ca').rglob('*.ncml'))))
-        datasets.extend(
-            sorted(list(path.Path(__file__).parent.parent.joinpath('tmp/simulations/bias_adjusted/cmip6/climatedata_ca').rglob('*.ncml'))))
+        datasets = [f for f in get_changed_files_gitpython(repo_path) if 'climatedata_ca' in f.as_posix() and f.suffix == '.ncml']
         thredds_test_dir = f'{thredds_root}/simulations/climatedata_ca'
         thredds_path_server = f'{thredds_cat_root}/simulations/climatedata_ca/catalog.html'
         thredds_test_dir = path.Path(thredds_test_dir)
@@ -158,14 +156,16 @@ class TestDataset:
             dsNcML = xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=50, lon=60, lat=60),
                                      decode_timedelta=False)
             sample_locations = None
+            sample_loc_max = None
             if 'realization' in dsNcML.dims:
-                dsNcML = xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(realization=1, time=50, lon=60, lat=60),
+                dsNcML = xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(realization=1, time=-1, lon=30, lat=30),
                                          decode_timedelta=False)
-                sample_locations = 0.1  # sample only 15% of all '@location' netcdfs
+                sample_locations = 0.1
+                sample_loc_max = 40
             # dsNcML = subset.subset_bbox(dsNcML, lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat'])
             dsNcML = dsNcML.sel(lon=slice(test_reg['lon'][0], test_reg['lon'][1]),
                                 lat=slice(test_reg['lat'][0], test_reg['lat'][1]))
-            compare_ncml_rawdata(dataset, dsNcML, compare_raw, sample_location=sample_locations)
+            compare_ncml_rawdata(dataset, dsNcML, compare_raw, sample_location=sample_locations, sample_loc_max=sample_loc_max)
 
     def test_BCCAQv2(self, compare_raw=False):
 
@@ -262,7 +262,7 @@ class TestDataset:
 
     def test_CRCM5_CMIP6(self, compare_raw=False):
         #datasets = sorted(list(path.Path(__file__).parent.parent.joinpath('tmp/simulations/RCM-CMIP6/CORDEX/NAM-12').rglob('*.ncml')))
-        datasets = [f for f in get_changed_files_gitpython(path.Path(__file__).parent.parent) if '/simulations/RCM-CMIP6/CORDEX/NAM-12' in f.as_posix() and f.suffix == '.ncml']
+        datasets = [f for f in get_changed_files_gitpython(repo_path) if '/simulations/RCM-CMIP6/CORDEX/NAM-12' in f.as_posix() and f.suffix == '.ncml']
         thredds_test_dir = f'{thredds_root}/simulations/RCM-CMIP6/CORDEX/NAM-12'
         thredds_path_server = f'{thredds_cat_root}/simulations/RCM-CMIP6/CORDEX/NAM-12/catalog.html'
         thredds_test_dir = path.Path(thredds_test_dir)
@@ -448,7 +448,7 @@ def get_changed_files_gitpython(repo_path=".", staged=False):
         print(f"Error using GitPython: {e}")
         return []
 
-def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_perrun=None, sample_location=None):
+def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_perrun=None, sample_location=None, sample_loc_max=None):
     ncml = xncml.Dataset(dataset)
     l1 = list(recursive_items(ncml.ncroot, '@location'))[0]
 
@@ -471,11 +471,15 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
     if sample_location:
         # remove 'mask' vars:
         locations = [f for f in locations if all([i not in f[1] for i in ['lakeFrac', 'sftlf', 'sftof', '_tcr']])]
-        ind1 = np.random.choice(range(0, len(locations)), round(sample_location * len(locations)), replace=False)
+        nsamp = round(sample_location * len(locations))
+        if sample_loc_max is not None:
+            nsamp = min(nsamp, sample_loc_max)
+        ind1 = np.random.choice(range(0, len(locations)), nsamp, replace=False)
         loc1 = []
         for ii in ind1:
             loc1.append(locations[ii])
         locations = loc1
+        print(len(locations), ' locations sampled for comparison')
         del loc1
     for l in locations:
         print(l)
@@ -490,7 +494,7 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
             if path.Path(local_path).is_file():
                 ds = subset.subset_bbox(xr.open_dataset(path.Path(local_path), decode_timedelta=False,
                                                         engine="h5netcdf",
-                                                        chunks=dict(time=30, lon=30, lat=30)),
+                                                        chunks=dict()),
                                         lon_bnds=test_reg['lon'],
                                         lat_bnds=test_reg['lat'],
                                         start_date=str(dsNcML.time.dt.year.min().values),
@@ -619,6 +623,12 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
                             compare_values(dsNcML, ds, compare_vals, sample_time=sample_time)
 
     print(dataset, 'ok')
+    # Stage only this file
+    try:
+        relpath = dataset.relative_to(repo.working_tree_dir)
+        repo.index.add([str(relpath)])
+    except Exception as exc:
+        return False, f"Staging failed: {type(exc).__name__}: {exc}"
     # movfile = path.Path(str(dataset).replace('tmp', '1-Datasets'))
     # if not movfile.parent.exists():
     #     movfile.parent.mkdir(parents=True)
@@ -674,13 +684,13 @@ def main():
     # test(self=test, compare_raw=False)
     # test = TestDataset.test_NEXGDDP
     # test = TestDataset.test_CLIMEX
-    # test = TestDataset.test_ClimateData
+    test = TestDataset.test_ClimateData
     # test = TestDataset.test_ESPO_R
     # test = TestDataset.test_ESPO_G
    
     #test = TestDataset.test_CanDCS_U6
     #inpath =  '../tmp/simulations/bias_adjusted/cmip6/pcic/CanDCS-M6'
-    test = TestDataset.test_CRCM5_CMIP6
+    # test = TestDataset.test_CRCM5_CMIP6
     test(self=test, compare_raw=True)
 
 

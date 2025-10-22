@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+	<remove name="driving_branch_method" type="attribute"></remove>
+	<remove name="driving_data_specs_version" type="attribute"></remove>
+	<remove name="driving_forcing_index" type="attribute"></remove>
+	<remove name="driving_further_url_info" type="attribute"></remove>
+	<remove name="driving_grid" type="attribute"></remove>
+	<remove name="driving_grid_label" type="attribute"></remove>
+	<remove name="driving_initialization_index" type="attribute"></remove>
+	<remove name="driving_institution" type="attribute"></remove>
+	<remove name="driving_nominal_resolution" type="attribute"></remove>
+	<remove name="driving_physics_index" type="attribute"></remove>
+	<remove name="driving_realization_index" type="attribute"></remove>
+	<remove name="driving_source_id" type="attribute"></remove>
+	<remove name="driving_source_type" type="attribute"></remove>
+	<remove name="driving_experiment_id" type="attribute"></remove>
+	<remove name="driving_realization" type="attribute"></remove>
+	<remove name="driving_initialization_method" type="attribute"></remove>
+	<remove name="driving_physics_version" type="attribute"></remove>
+	<remove name="description" type="attribute"></remove>
+	<remove name="GCM__experiment" type="attribute"></remove>
+	<remove name="GCM__experiment_id" type="attribute"></remove>
+	<remove name="GCM__branch_method" type="attribute"></remove>
+	<remove name="GCM__data_specs_version" type="attribute"></remove>
+	<remove name="GCM__forcing_index" type="attribute"></remove>
+	<remove name="GCM__further_url_info" type="attribute"></remove>
+	<remove name="GCM__grid" type="attribute"></remove>
+	<remove name="GCM__grid_label" type="attribute"></remove>
+	<remove name="GCM__initialization_index" type="attribute"></remove>
+	<remove name="GCM__institution" type="attribute"></remove>
+	<remove name="GCM__institution_id" type="attribute"></remove>
+	<remove name="GCM__model_id" type="attribute"></remove>
+	<remove name="GCM__nominal_resolution" type="attribute"></remove>
+	<remove name="GCM__physics_index" type="attribute"></remove>
+	<remove name="GCM__realization_index" type="attribute"></remove>
+	<remove name="GCM__source_id" type="attribute"></remove>
+	<remove name="GCM__source_type" type="attribute"></remove>
+	<remove name="long_name" type="attribute"></remove>
+	<remove name="standard_name" type="attribute"></remove>
+	<remove name="units" type="attribute"></remove>
+	<remove name="ccdp_name" type="attribute"></remove>
+	<remove name="table_id" type="attribute"></remove>
+	<remove name="variable_id" type="attribute"></remove>
+	<remove name="method" type="attribute"></remove>
+	<remove name="method_id" type="attribute"></remove>
+	<remove name="is_dayofyear" type="attribute"></remove>
+	<remove name="calendar" type="attribute"></remove>
+	<remove name="cell_methods" type="attribute"></remove>
+	<remove name="target__contact" type="attribute"></remove>
+	<remove name="target__dataset" type="attribute"></remove>
+	<remove name="target__dataset_id" type="attribute"></remove>
+	<remove name="target__institution" type="attribute"></remove>
+	<remove name="target__institution_id" type="attribute"></remove>
+	<remove name="target__references" type="attribute"></remove>
+	<remove name="target__version" type="attribute"></remove>
+	<remove name="first_snowfall_p10" type="variable"></remove>
+	<remove name="first_snowfall_p50" type="variable"></remove>
+	<remove name="first_snowfall_p90" type="variable"></remove>
+	<remove name="first_snowfall_delta_1971_2000_p10" type="variable"></remove>
+	<remove name="first_snowfall_delta_1971_2000_p50" type="variable"></remove>
+	<remove name="first_snowfall_delta_1971_2000_p90" type="variable"></remove>
+	<remove name="first_snowfall_delta_1991_2020_p10" type="variable"></remove>
+	<remove name="first_snowfall_delta_1991_2020_p50" type="variable"></remove>
+	<remove name="first_snowfall_delta_1991_2020_p90" type="variable"></remove>
+	<remove name="last_snowfall_p10" type="variable"></remove>
+	<remove name="last_snowfall_p50" type="variable"></remove>
+	<remove name="last_snowfall_p90" type="variable"></remove>
+	<remove name="last_snowfall_delta_1971_2000_p10" type="variable"></remove>
+	<remove name="last_snowfall_delta_1971_2000_p50" type="variable"></remove>
+	<remove name="last_snowfall_delta_1971_2000_p90" type="variable"></remove>
+	<remove name="last_snowfall_delta_1991_2020_p10" type="variable"></remove>
+	<remove name="last_snowfall_delta_1991_2020_p50" type="variable"></remove>
+	<remove name="last_snowfall_delta_1991_2020_p90" type="variable"></remove>
+	<remove name="snowfall_season_length_p10" type="variable"></remove>
+	<remove name="snowfall_season_length_p50" type="variable"></remove>
+	<remove name="snowfall_season_length_p90" type="variable"></remove>
+	<remove name="snowfall_season_length_delta_1971_2000_p10" type="variable"></remove>
+	<remove name="snowfall_season_length_delta_1971_2000_p50" type="variable"></remove>
+	<remove name="snowfall_season_length_delta_1971_2000_p90" type="variable"></remove>
+	<remove name="snowfall_season_length_delta_1991_2020_p10" type="variable"></remove>
+	<remove name="snowfall_season_length_delta_1991_2020_p50" type="variable"></remove>
+	<remove name="snowfall_season_length_delta_1991_2020_p90" type="variable"></remove>
+	<attribute name="target_contact" type="String" value="Pia Papadopol (pia.papadopol@nrcan-rncan.gc.ca)"></attribute>
+	<attribute name="target_dataset" type="String" value="ANUSPLIN interpolated Canada daily 300 arc second climate grids"></attribute>
+	<attribute name="target_dataset_id" type="String" value="ANUSPLIN300"></attribute>
+	<attribute name="target_institution" type="String" value="Canadian Forest Service, Natural Resources Canada"></attribute>
+	<attribute name="target_institution_id" type="String" value="CFS-NRCan"></attribute>
+	<attribute name="target_references" type="String" value="McKenney D.W., Hutchinson, M.F., Papadopol, P., Lawrence, K., Pedlar, J., Campbell, K., Milewska, E., Hopkinson, R., Price, D., and Owen, T., 2011. Customized spatial climate models for North America. Bulletin of the American Meteorological Society, 92(12): 1611-1622."></attribute>
+	<attribute name="target_version" type="String" value="target__version: obtained: 2 April 2012, 14 June 2012, and 30 January 2013"></attribute>
+	<attribute name="abstract" type="String" value="This dataset provides access to CMIP6 climate indicator ensemble statistics data that drives mapping and time-series visualizations on ClimateData.ca. Climatedata.ca is a climate data portal produced collaboratively by the country’s leading climate organizations and supported, in part, by the Government of Canada. The goal of this portal is to support decision makers across a broad spectrum of sectors and locations by providing the most up to date climate data in easy to use formats and visualizations."></attribute>
+	<attribute name="climateindex_package_id" type="String" value="https://github.com/Ouranosinc/xclim"></attribute>
+	<attribute name="institution" type="String" value="Canadian Centre for Climate Services"></attribute>
+	<attribute name="institution_id" type="String" value="CCCS"></attribute>
+	<attribute name="contact" type="String" value="Canadian Centre for Climate Services"></attribute>
+	<attribute name="driving_experiment" type="String" value="historical, ssp126, ssp245, ssp370, ssp585"></attribute>
+	<attribute name="driving_model_id" type="String" value="multi-model individual runs"></attribute>
+	<attribute name="driving_institute_id" type="String" value="multi-model individual runs"></attribute>
+	<attribute name="title" type="String" value="Climatedata.ca : CMIP6 : Yearly ensemble members for CanDCS-M6 derived climate indicators"></attribute>
+	<attribute name="type" type="String" value="GCM"></attribute>
+	<attribute name="processing" type="String" value="bias_adjusted"></attribute>
+	<attribute name="dataset_description" type="String" value="https://climatedata.ca/"></attribute>
+	<attribute name="frequency" type="String" value="yr"></attribute>
+	<attribute name="dataset_id" type="String" value="climatedata_ca_CanDCS-M6"></attribute>
+	<attribute name="project_id" type="String" value="CMIP6"></attribute>
+	<attribute name="bias_adjustment_institute_id" type="String" value="PCIC"></attribute>
+	<attribute name="bias_adjustment_method" type="String" value="MBCn"></attribute>
+	<attribute name="bias_adjustment_method_id" type="String" value="MBCn"></attribute>
+	<attribute name="bias_adjustment_package_id" type="String" value="github.com/pacificclimate/ClimDown"></attribute>
+	<attribute name="bias_adjustment_reference" type="String" value="https://doi.org/10.1007/s00382-017-3580-6"></attribute>
+	<attribute name="license_type" type="String" value="permissive"></attribute>
+	<attribute name="license" type="String" value="https://open.canada.ca/en/open-government-licence-canada"></attribute>
+	<attribute name="terms_of_use" type="String" value="Please see further terms of use associated with CanDCS-M6 input dataset used in climate indicator calculations at https://pacificclimate.org/data/statistically-downscaled-climate-scenarios."></attribute>
+	<attribute name="doi" type="String" value="https://doi.org/10.1002/gdj3.257"></attribute>
+	<aggregation type="Union">
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/ensemble_percentiles/first_snowfall_ann-juljun_MBCn+PCIC-Blend_historical+ssp126_1951-2100_30ymean_percentiles.nc">
+					<variable name="ssp126_first_snowfall_p10" orgName="first_snowfall_p10"></variable>
+					<variable name="ssp126_first_snowfall_p50" orgName="first_snowfall_p50"></variable>
+					<variable name="ssp126_first_snowfall_p90" orgName="first_snowfall_p90"></variable>
+					<variable name="ssp126_first_snowfall_delta_1971_2000_p10" orgName="first_snowfall_delta_1971_2000_p10"></variable>
+					<variable name="ssp126_first_snowfall_delta_1971_2000_p50" orgName="first_snowfall_delta_1971_2000_p50"></variable>
+					<variable name="ssp126_first_snowfall_delta_1971_2000_p90" orgName="first_snowfall_delta_1971_2000_p90"></variable>
+					<variable name="ssp126_first_snowfall_delta_1991_2020_p10" orgName="first_snowfall_delta_1991_2020_p10"></variable>
+					<variable name="ssp126_first_snowfall_delta_1991_2020_p50" orgName="first_snowfall_delta_1991_2020_p50"></variable>
+					<variable name="ssp126_first_snowfall_delta_1991_2020_p90" orgName="first_snowfall_delta_1991_2020_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/ensemble_percentiles/first_snowfall_ann-juljun_MBCn+PCIC-Blend_historical+ssp245_1951-2100_30ymean_percentiles.nc">
+					<variable name="ssp245_first_snowfall_p10" orgName="first_snowfall_p10"></variable>
+					<variable name="ssp245_first_snowfall_p50" orgName="first_snowfall_p50"></variable>
+					<variable name="ssp245_first_snowfall_p90" orgName="first_snowfall_p90"></variable>
+					<variable name="ssp245_first_snowfall_delta_1971_2000_p10" orgName="first_snowfall_delta_1971_2000_p10"></variable>
+					<variable name="ssp245_first_snowfall_delta_1971_2000_p50" orgName="first_snowfall_delta_1971_2000_p50"></variable>
+					<variable name="ssp245_first_snowfall_delta_1971_2000_p90" orgName="first_snowfall_delta_1971_2000_p90"></variable>
+					<variable name="ssp245_first_snowfall_delta_1991_2020_p10" orgName="first_snowfall_delta_1991_2020_p10"></variable>
+					<variable name="ssp245_first_snowfall_delta_1991_2020_p50" orgName="first_snowfall_delta_1991_2020_p50"></variable>
+					<variable name="ssp245_first_snowfall_delta_1991_2020_p90" orgName="first_snowfall_delta_1991_2020_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/ensemble_percentiles/first_snowfall_ann-juljun_MBCn+PCIC-Blend_historical+ssp585_1951-2100_30ymean_percentiles.nc">
+					<variable name="ssp585_first_snowfall_p10" orgName="first_snowfall_p10"></variable>
+					<variable name="ssp585_first_snowfall_p50" orgName="first_snowfall_p50"></variable>
+					<variable name="ssp585_first_snowfall_p90" orgName="first_snowfall_p90"></variable>
+					<variable name="ssp585_first_snowfall_delta_1971_2000_p10" orgName="first_snowfall_delta_1971_2000_p10"></variable>
+					<variable name="ssp585_first_snowfall_delta_1971_2000_p50" orgName="first_snowfall_delta_1971_2000_p50"></variable>
+					<variable name="ssp585_first_snowfall_delta_1971_2000_p90" orgName="first_snowfall_delta_1971_2000_p90"></variable>
+					<variable name="ssp585_first_snowfall_delta_1991_2020_p10" orgName="first_snowfall_delta_1991_2020_p10"></variable>
+					<variable name="ssp585_first_snowfall_delta_1991_2020_p50" orgName="first_snowfall_delta_1991_2020_p50"></variable>
+					<variable name="ssp585_first_snowfall_delta_1991_2020_p90" orgName="first_snowfall_delta_1991_2020_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/ensemble_percentiles/last_snowfall_ann-juljun_MBCn+PCIC-Blend_historical+ssp126_1951-2100_30ymean_percentiles.nc">
+					<variable name="ssp126_last_snowfall_p10" orgName="last_snowfall_p10"></variable>
+					<variable name="ssp126_last_snowfall_p50" orgName="last_snowfall_p50"></variable>
+					<variable name="ssp126_last_snowfall_p90" orgName="last_snowfall_p90"></variable>
+					<variable name="ssp126_last_snowfall_delta_1971_2000_p10" orgName="last_snowfall_delta_1971_2000_p10"></variable>
+					<variable name="ssp126_last_snowfall_delta_1971_2000_p50" orgName="last_snowfall_delta_1971_2000_p50"></variable>
+					<variable name="ssp126_last_snowfall_delta_1971_2000_p90" orgName="last_snowfall_delta_1971_2000_p90"></variable>
+					<variable name="ssp126_last_snowfall_delta_1991_2020_p10" orgName="last_snowfall_delta_1991_2020_p10"></variable>
+					<variable name="ssp126_last_snowfall_delta_1991_2020_p50" orgName="last_snowfall_delta_1991_2020_p50"></variable>
+					<variable name="ssp126_last_snowfall_delta_1991_2020_p90" orgName="last_snowfall_delta_1991_2020_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/ensemble_percentiles/last_snowfall_ann-juljun_MBCn+PCIC-Blend_historical+ssp245_1951-2100_30ymean_percentiles.nc">
+					<variable name="ssp245_last_snowfall_p10" orgName="last_snowfall_p10"></variable>
+					<variable name="ssp245_last_snowfall_p50" orgName="last_snowfall_p50"></variable>
+					<variable name="ssp245_last_snowfall_p90" orgName="last_snowfall_p90"></variable>
+					<variable name="ssp245_last_snowfall_delta_1971_2000_p10" orgName="last_snowfall_delta_1971_2000_p10"></variable>
+					<variable name="ssp245_last_snowfall_delta_1971_2000_p50" orgName="last_snowfall_delta_1971_2000_p50"></variable>
+					<variable name="ssp245_last_snowfall_delta_1971_2000_p90" orgName="last_snowfall_delta_1971_2000_p90"></variable>
+					<variable name="ssp245_last_snowfall_delta_1991_2020_p10" orgName="last_snowfall_delta_1991_2020_p10"></variable>
+					<variable name="ssp245_last_snowfall_delta_1991_2020_p50" orgName="last_snowfall_delta_1991_2020_p50"></variable>
+					<variable name="ssp245_last_snowfall_delta_1991_2020_p90" orgName="last_snowfall_delta_1991_2020_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/ensemble_percentiles/last_snowfall_ann-juljun_MBCn+PCIC-Blend_historical+ssp585_1951-2100_30ymean_percentiles.nc">
+					<variable name="ssp585_last_snowfall_p10" orgName="last_snowfall_p10"></variable>
+					<variable name="ssp585_last_snowfall_p50" orgName="last_snowfall_p50"></variable>
+					<variable name="ssp585_last_snowfall_p90" orgName="last_snowfall_p90"></variable>
+					<variable name="ssp585_last_snowfall_delta_1971_2000_p10" orgName="last_snowfall_delta_1971_2000_p10"></variable>
+					<variable name="ssp585_last_snowfall_delta_1971_2000_p50" orgName="last_snowfall_delta_1971_2000_p50"></variable>
+					<variable name="ssp585_last_snowfall_delta_1971_2000_p90" orgName="last_snowfall_delta_1971_2000_p90"></variable>
+					<variable name="ssp585_last_snowfall_delta_1991_2020_p10" orgName="last_snowfall_delta_1991_2020_p10"></variable>
+					<variable name="ssp585_last_snowfall_delta_1991_2020_p50" orgName="last_snowfall_delta_1991_2020_p50"></variable>
+					<variable name="ssp585_last_snowfall_delta_1991_2020_p90" orgName="last_snowfall_delta_1991_2020_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/ensemble_percentiles/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_historical+ssp126_1951-2100_30ymean_percentiles.nc">
+					<variable name="ssp126_snowfall_season_length_p10" orgName="snowfall_season_length_p10"></variable>
+					<variable name="ssp126_snowfall_season_length_p50" orgName="snowfall_season_length_p50"></variable>
+					<variable name="ssp126_snowfall_season_length_p90" orgName="snowfall_season_length_p90"></variable>
+					<variable name="ssp126_snowfall_season_length_delta_1971_2000_p10" orgName="snowfall_season_length_delta_1971_2000_p10"></variable>
+					<variable name="ssp126_snowfall_season_length_delta_1971_2000_p50" orgName="snowfall_season_length_delta_1971_2000_p50"></variable>
+					<variable name="ssp126_snowfall_season_length_delta_1971_2000_p90" orgName="snowfall_season_length_delta_1971_2000_p90"></variable>
+					<variable name="ssp126_snowfall_season_length_delta_1991_2020_p10" orgName="snowfall_season_length_delta_1991_2020_p10"></variable>
+					<variable name="ssp126_snowfall_season_length_delta_1991_2020_p50" orgName="snowfall_season_length_delta_1991_2020_p50"></variable>
+					<variable name="ssp126_snowfall_season_length_delta_1991_2020_p90" orgName="snowfall_season_length_delta_1991_2020_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/ensemble_percentiles/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_historical+ssp245_1951-2100_30ymean_percentiles.nc">
+					<variable name="ssp245_snowfall_season_length_p10" orgName="snowfall_season_length_p10"></variable>
+					<variable name="ssp245_snowfall_season_length_p50" orgName="snowfall_season_length_p50"></variable>
+					<variable name="ssp245_snowfall_season_length_p90" orgName="snowfall_season_length_p90"></variable>
+					<variable name="ssp245_snowfall_season_length_delta_1971_2000_p10" orgName="snowfall_season_length_delta_1971_2000_p10"></variable>
+					<variable name="ssp245_snowfall_season_length_delta_1971_2000_p50" orgName="snowfall_season_length_delta_1971_2000_p50"></variable>
+					<variable name="ssp245_snowfall_season_length_delta_1971_2000_p90" orgName="snowfall_season_length_delta_1971_2000_p90"></variable>
+					<variable name="ssp245_snowfall_season_length_delta_1991_2020_p10" orgName="snowfall_season_length_delta_1991_2020_p10"></variable>
+					<variable name="ssp245_snowfall_season_length_delta_1991_2020_p50" orgName="snowfall_season_length_delta_1991_2020_p50"></variable>
+					<variable name="ssp245_snowfall_season_length_delta_1991_2020_p90" orgName="snowfall_season_length_delta_1991_2020_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/ensemble_percentiles/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_historical+ssp585_1951-2100_30ymean_percentiles.nc">
+					<variable name="ssp585_snowfall_season_length_p10" orgName="snowfall_season_length_p10"></variable>
+					<variable name="ssp585_snowfall_season_length_p50" orgName="snowfall_season_length_p50"></variable>
+					<variable name="ssp585_snowfall_season_length_p90" orgName="snowfall_season_length_p90"></variable>
+					<variable name="ssp585_snowfall_season_length_delta_1971_2000_p10" orgName="snowfall_season_length_delta_1971_2000_p10"></variable>
+					<variable name="ssp585_snowfall_season_length_delta_1971_2000_p50" orgName="snowfall_season_length_delta_1971_2000_p50"></variable>
+					<variable name="ssp585_snowfall_season_length_delta_1971_2000_p90" orgName="snowfall_season_length_delta_1971_2000_p90"></variable>
+					<variable name="ssp585_snowfall_season_length_delta_1991_2020_p10" orgName="snowfall_season_length_delta_1991_2020_p10"></variable>
+					<variable name="ssp585_snowfall_season_length_delta_1991_2020_p50" orgName="snowfall_season_length_delta_1991_2020_p50"></variable>
+					<variable name="ssp585_snowfall_season_length_delta_1991_2020_p90" orgName="snowfall_season_length_delta_1991_2020_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+	</aggregation>
+</netcdf>

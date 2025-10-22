@@ -84,7 +84,7 @@
     },
 
     "abstract": {
-      "value": "This dataset provides access to individual ensemble member CMIP6 climate indicator data that drives mapping and time-series visualizations on ClimateData.ca. Climatedata.ca is a climate data portal produced collaboratively by the country’s leading climate organizations and supported, in part, by the Government of Canada. The goal of this portal is to support decision makers across a broad spectrum of sectors and locations by providing the most up to date climate data in easy to use formats and visualizations.",
+      "value": "This dataset provides access to CMIP6 climate indicator ensemble statistics data that drives mapping and time-series visualizations on ClimateData.ca. Climatedata.ca is a climate data portal produced collaboratively by the country’s leading climate organizations and supported, in part, by the Government of Canada. The goal of this portal is to support decision makers across a broad spectrum of sectors and locations by providing the most up to date climate data in easy to use formats and visualizations.",
       "type": "String"
     },
     "climateindex_package_id": {
@@ -164,14 +164,14 @@
 
   },
   "location": "/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/",
-  "ncml_type": "climatedata.ca_CanDCS-U6_members",
+  "ncml_type": "climatedata.ca_CanDCS-U6",
   "experiments": [
-    "ssp126", "ssp245", "ssp370", "ssp585"
+    "ssp126", "ssp245", "ssp585"
   ],
   "aggregation": {"":""},
   "frequency": {"YS": "annual","YS-JUL": "annual-julyjune", "MS": "monthly","QS-DEC": "seasonal"},
   "realm": "atmos",
-  "regexp_template": "{v}_*MBCn+PCIC-Blend_{mod}_historical+{rcp}*.nc",
-  "filename_template": "{aggregation}{frequency}-CanDCS-M6_climindices-ensemble_members",
+  "regexp_template": "{v}_*MBCn+PCIC-Blend_historical+{rcp}*{agg}_percentiles.nc",
+  "filename_template": "{aggregation}{frequency}-CanDCS-M6_climindices-ensemble_percentiles",
   "skip_indicator": ["prsntot", "prcptot", "rx1day", "rx5day", "r1mm", "r10mm", "r20mm"]
 }
