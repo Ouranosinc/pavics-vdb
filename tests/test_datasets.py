@@ -32,7 +32,8 @@ else:
     # correponding url to `thredds_root`
     thredds_cat_root = 'https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/birdhouse/testdata/test_ncmls'
     # thredds_cat_root = 'https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/birdhouse/testdata/NcML_tests/'
-
+repo_path = path.Path(__file__).parent.parent
+repo = Repo(str(repo_path))
 
 class Validator:
 
@@ -131,10 +132,7 @@ class TestDataset:
 
     def test_ClimateData(self, compare_raw=False):
 
-        datasets = sorted(list(path.Path(__file__).parent.parent.joinpath('tmp/simulations/bias_adjusted/cmip5/climatedata_ca').rglob('*.ncml')))
-        datasets.extend(sorted(list(path.Path(__file__).parent.parent.joinpath('tmp/gridded_obs/climatedata_ca').rglob('*.ncml'))))
-        datasets.extend(
-            sorted(list(path.Path(__file__).parent.parent.joinpath('tmp/simulations/bias_adjusted/cmip6/climatedata_ca').rglob('*.ncml'))))
+        datasets = [f for f in get_changed_files_gitpython(repo_path) if 'climatedata_ca' in f.as_posix() and f.suffix == '.ncml']
         thredds_test_dir = f'{thredds_root}/simulations/climatedata_ca'
         thredds_path_server = f'{thredds_cat_root}/simulations/climatedata_ca/catalog.html'
         thredds_test_dir = path.Path(thredds_test_dir)
@@ -262,7 +260,7 @@ class TestDataset:
 
     def test_CRCM5_CMIP6(self, compare_raw=False):
         #datasets = sorted(list(path.Path(__file__).parent.parent.joinpath('tmp/simulations/RCM-CMIP6/CORDEX/NAM-12').rglob('*.ncml')))
-        datasets = [f for f in get_changed_files_gitpython(path.Path(__file__).parent.parent) if '/simulations/RCM-CMIP6/CORDEX/NAM-12' in f.as_posix() and f.suffix == '.ncml']
+        datasets = [f for f in get_changed_files_gitpython(repo_path) if '/simulations/RCM-CMIP6/CORDEX/NAM-12' in f.as_posix() and f.suffix == '.ncml']
         thredds_test_dir = f'{thredds_root}/simulations/RCM-CMIP6/CORDEX/NAM-12'
         thredds_path_server = f'{thredds_cat_root}/simulations/RCM-CMIP6/CORDEX/NAM-12/catalog.html'
         thredds_test_dir = path.Path(thredds_test_dir)
@@ -619,6 +617,12 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
                             compare_values(dsNcML, ds, compare_vals, sample_time=sample_time)
 
     print(dataset, 'ok')
+    # Stage only this file
+    try:
+        relpath = dataset.relative_to(repo.working_tree_dir)
+        repo.index.add([str(relpath)])
+    except Exception as exc:
+        return False, f"Staging failed: {type(exc).__name__}: {exc}"
     # movfile = path.Path(str(dataset).replace('tmp', '1-Datasets'))
     # if not movfile.parent.exists():
     #     movfile.parent.mkdir(parents=True)
@@ -674,13 +678,13 @@ def main():
     # test(self=test, compare_raw=False)
     # test = TestDataset.test_NEXGDDP
     # test = TestDataset.test_CLIMEX
-    # test = TestDataset.test_ClimateData
+    test = TestDataset.test_ClimateData
     # test = TestDataset.test_ESPO_R
     # test = TestDataset.test_ESPO_G
    
     #test = TestDataset.test_CanDCS_U6
     #inpath =  '../tmp/simulations/bias_adjusted/cmip6/pcic/CanDCS-M6'
-    test = TestDataset.test_CRCM5_CMIP6
+    # test = TestDataset.test_CRCM5_CMIP6
     test(self=test, compare_raw=True)
 
 
