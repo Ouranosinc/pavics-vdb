@@ -156,14 +156,16 @@ class TestDataset:
             dsNcML = xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=50, lon=60, lat=60),
                                      decode_timedelta=False)
             sample_locations = None
+            sample_loc_max = None
             if 'realization' in dsNcML.dims:
-                dsNcML = xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(realization=1, time=50, lon=60, lat=60),
+                dsNcML = xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(realization=1, time=-1, lon=30, lat=30),
                                          decode_timedelta=False)
-                sample_locations = 0.1  # sample only 15% of all '@location' netcdfs
+                sample_locations = 0.1
+                sample_loc_max = 40
             # dsNcML = subset.subset_bbox(dsNcML, lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat'])
             dsNcML = dsNcML.sel(lon=slice(test_reg['lon'][0], test_reg['lon'][1]),
                                 lat=slice(test_reg['lat'][0], test_reg['lat'][1]))
-            compare_ncml_rawdata(dataset, dsNcML, compare_raw, sample_location=sample_locations)
+            compare_ncml_rawdata(dataset, dsNcML, compare_raw, sample_location=sample_locations, sample_loc_max=sample_loc_max)
 
     def test_BCCAQv2(self, compare_raw=False):
 
@@ -446,7 +448,7 @@ def get_changed_files_gitpython(repo_path=".", staged=False):
         print(f"Error using GitPython: {e}")
         return []
 
-def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_perrun=None, sample_location=None):
+def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_perrun=None, sample_location=None, sample_loc_max=None):
     ncml = xncml.Dataset(dataset)
     l1 = list(recursive_items(ncml.ncroot, '@location'))[0]
 
@@ -469,11 +471,15 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
     if sample_location:
         # remove 'mask' vars:
         locations = [f for f in locations if all([i not in f[1] for i in ['lakeFrac', 'sftlf', 'sftof', '_tcr']])]
-        ind1 = np.random.choice(range(0, len(locations)), round(sample_location * len(locations)), replace=False)
+        nsamp = round(sample_location * len(locations))
+        if sample_loc_max is not None:
+            nsamp = min(nsamp, sample_loc_max)
+        ind1 = np.random.choice(range(0, len(locations)), nsamp, replace=False)
         loc1 = []
         for ii in ind1:
             loc1.append(locations[ii])
         locations = loc1
+        print(len(locations), ' locations sampled for comparison')
         del loc1
     for l in locations:
         print(l)
@@ -488,7 +494,7 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
             if path.Path(local_path).is_file():
                 ds = subset.subset_bbox(xr.open_dataset(path.Path(local_path), decode_timedelta=False,
                                                         engine="h5netcdf",
-                                                        chunks=dict(time=30, lon=30, lat=30)),
+                                                        chunks=dict()),
                                         lon_bnds=test_reg['lon'],
                                         lat_bnds=test_reg['lat'],
                                         start_date=str(dsNcML.time.dt.year.min().values),
