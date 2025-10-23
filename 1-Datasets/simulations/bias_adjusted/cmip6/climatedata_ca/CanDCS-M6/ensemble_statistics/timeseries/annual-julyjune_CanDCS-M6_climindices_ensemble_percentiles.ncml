@@ -114,6 +114,15 @@
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/ensemble_percentiles/first_snowfall_ann-juljun_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_first_snowfall_p10" orgName="first_snowfall_p10"></variable>
+					<variable name="ssp370_first_snowfall_p50" orgName="first_snowfall_p50"></variable>
+					<variable name="ssp370_first_snowfall_p90" orgName="first_snowfall_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/ensemble_percentiles/first_snowfall_ann-juljun_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
 					<variable name="ssp585_first_snowfall_p10" orgName="first_snowfall_p10"></variable>
 					<variable name="ssp585_first_snowfall_p50" orgName="first_snowfall_p50"></variable>
@@ -141,6 +150,15 @@
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/ensemble_percentiles/last_snowfall_ann-juljun_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_last_snowfall_p10" orgName="last_snowfall_p10"></variable>
+					<variable name="ssp370_last_snowfall_p50" orgName="last_snowfall_p50"></variable>
+					<variable name="ssp370_last_snowfall_p90" orgName="last_snowfall_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
 				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/ensemble_percentiles/last_snowfall_ann-juljun_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
 					<variable name="ssp585_last_snowfall_p10" orgName="last_snowfall_p10"></variable>
 					<variable name="ssp585_last_snowfall_p50" orgName="last_snowfall_p50"></variable>
@@ -163,6 +181,15 @@
 					<variable name="ssp245_snowfall_season_length_p10" orgName="snowfall_season_length_p10"></variable>
 					<variable name="ssp245_snowfall_season_length_p50" orgName="snowfall_season_length_p50"></variable>
 					<variable name="ssp245_snowfall_season_length_p90" orgName="snowfall_season_length_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/ensemble_percentiles/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_snowfall_season_length_p10" orgName="snowfall_season_length_p10"></variable>
+					<variable name="ssp370_snowfall_season_length_p50" orgName="snowfall_season_length_p50"></variable>
+					<variable name="ssp370_snowfall_season_length_p90" orgName="snowfall_season_length_p90"></variable>
 				</netcdf>
 			</aggregation>
 		</netcdf>
