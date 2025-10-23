@@ -166,7 +166,7 @@
   "location": "/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/",
   "ncml_type": "climatedata.ca_CanDCS-U6",
   "experiments": [
-    "ssp126", "ssp245", "ssp585"
+    "ssp126", "ssp245", "ssp370", "ssp585"
   ],
   "aggregation": {"30ymean_":"30ymean"},
   "frequency": {"YS": "annual","YS-JUL": "annual-julyjune", "MS": "monthly","QS-DEC": "seasonal"},
