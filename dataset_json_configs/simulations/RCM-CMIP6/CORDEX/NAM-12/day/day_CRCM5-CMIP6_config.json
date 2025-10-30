@@ -1,5 +1,6 @@
 {
   "remove": {
+    "license": "attribute"
   },
   "attribute": {
     "abstract": {
@@ -13,6 +14,12 @@
     "title": {"value": "CRCM5-CMIP6 : Canadian Regional Climate Model v.5 - CMIP6 : daily",
       "type": "String"},
     "dataset_id": {"value": "CRCM5-CMIP6", "type":"String"},
+    "license": {"value": "Creative Commons Attribution 4.0 International Public License: https://creativecommons.org/licenses/by/4.0/legalcode",
+      "type": "String"},
+    "attribution": {
+      "value": "https://cordex.org/data-access/cordex-cmip6-data/cordex-cmip6-terms-of-use",
+      "type": "String"
+    },
     "license_type": {
       "value": "permissive",
       "type": "String"
