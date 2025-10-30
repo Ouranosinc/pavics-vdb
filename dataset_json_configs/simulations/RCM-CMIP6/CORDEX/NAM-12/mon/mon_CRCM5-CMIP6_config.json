@@ -1,6 +1,5 @@
 {
   "remove": {
-    "license": "attribute"
   },
   "attribute": {
     "abstract": {
