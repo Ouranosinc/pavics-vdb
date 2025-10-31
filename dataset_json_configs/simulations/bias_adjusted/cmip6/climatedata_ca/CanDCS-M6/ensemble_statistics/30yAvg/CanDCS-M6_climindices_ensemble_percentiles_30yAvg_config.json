@@ -106,7 +106,7 @@
     "driving_experiment": {"value":  "historical, ssp126, ssp245, ssp370, ssp585", "type":  "String"},
     "driving_model_id": {"value":  "multi-model individual runs", "type":  "String"},
     "driving_institute_id": {"value":  "multi-model individual runs", "type":  "String"},
-    "title": {"value": "Climatedata.ca : CMIP6 : Yearly ensemble members for CanDCS-M6 derived climate indicators","type": "String"},
+    "title": {"value": "Climatedata.ca : CMIP6 : Climatic normal (30 year average) ensemble percentiles for CanDCS-M6 derived climate indicators","type": "String"},
     "type": {
       "value": "GCM",
       "type": "String"
