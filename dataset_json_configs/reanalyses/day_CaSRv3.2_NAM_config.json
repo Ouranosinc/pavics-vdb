@@ -1,4 +1,5 @@
 {
+  "remove":{},
   "attribute": {
     "institute": {
       "value": "Environment and Climate Change Canada",
@@ -23,8 +24,8 @@
       "type": "String"
     }
   },
-  "location": "/pavics-data/disk2/cccs_portal/indices/Final/ANUSPLIN_v1/",
+  "location": "/pavics-data/eccc/CaSR_v32/NAM/",
   "ncml_type": "CaSR",
-  "aggregation": {"":""},
-  "realm": "atmos"
+  "frequency": "day",
+  "filename_template": ""
 }
