@@ -259,6 +259,34 @@ class TestDataset:
             )
 
             compare_ncml_rawdata(dataset, dsNcML, compare_raw)
+    def test_CaSR(self, compare_raw=False):
+        datasets = [f for f in get_changed_files_gitpython(repo_path) if '/reanalyses' in f.as_posix() and f.suffix == '.ncml']
+        thredds_test_dir = f'{thredds_root}/reanalyses'
+        thredds_path_server = f'{thredds_cat_root}/reanalyses/catalog.html'
+        thredds_test_dir = path.Path(thredds_test_dir)
+        
+        for ii, dataset in enumerate(datasets):
+            if thredds_test_dir.exists():
+                shutil.rmtree(thredds_test_dir)
+            thredds_test_dir.mkdir(parents=True, exist_ok=True)
+            print('trying', dataset.name)
+            # copy to thredds:
+            shutil.copy(dataset, thredds_test_dir)
+            ncmls_all = [ncml for ncml in threddsclient.crawl(thredds_path_server, depth=5)]
+            ncmls = []
+            for n in ncmls_all:
+                if dataset.name in n.name:
+                    ncmls.append(n)
+
+            if len(ncmls) != 1:
+                raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
+
+            dsNcML = subset.subset_bbox(
+                xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=250), decode_timedelta=False),
+                lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
+            )
+
+            compare_ncml_rawdata(dataset, dsNcML, compare_raw, sample_time=False, files_perrun=5)
 
     def test_CRCM5_CMIP6(self, compare_raw=False):
         #datasets = sorted(list(path.Path(__file__).parent.parent.joinpath('tmp/simulations/RCM-CMIP6/CORDEX/NAM-12').rglob('*.ncml')))
@@ -457,7 +485,7 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
     else:
         key1 = 'scan'
 
-    if 'climex' not in l1[1] and 'cccs_portal' not in l1[1] and 'ESPO' not in l1[1] and "CanDCS" not in l1[
+    if 'CaSR' not in l1[1] and 'climex' not in l1[1] and 'cccs_portal' not in l1[1] and 'ESPO' not in l1[1] and "CanDCS" not in l1[
         1] and "CORDEX" not in l1[1]:
         for l in list(recursive_items(ncml.ncroot, key1)):
             mod = dataset.name.split('day_')[-1].split('_historical+')[0]
@@ -690,7 +718,8 @@ def main():
    
     #test = TestDataset.test_CanDCS_U6
     #inpath =  '../tmp/simulations/bias_adjusted/cmip6/pcic/CanDCS-M6'
-    test = TestDataset.test_CRCM5_CMIP6
+    #test = TestDataset.test_CRCM5_CMIP6
+    test = TestDataset.test_CaSR
     test(self=test, compare_raw=True)
 
 
