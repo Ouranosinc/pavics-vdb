@@ -27,8 +27,8 @@ if home == '/home/biner':
     thredds_root = os.path.join(pavics_root, 'testdata/biner/NcML_tests/')
     thredds_cat_root = 'https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/birdhouse/testdata/biner/NcML_tests/'
 else:
-    pavics_root = os.path.join(home, 'pavics/datasets')
-    thredds_root = os.path.join(home, 'pavics/datasets/testdata/test_ncmls/')
+    pavics_root = f"{home}/remote_mnt/pavics_transfer/datasets"
+    thredds_root = f"{home}/remote_mnt/pavics_transfer/datasets/testdata/test_ncmls"
     # correponding url to `thredds_root`
     thredds_cat_root = 'https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/birdhouse/testdata/test_ncmls'
     # thredds_cat_root = 'https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/birdhouse/testdata/NcML_tests/'
