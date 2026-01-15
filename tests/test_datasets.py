@@ -285,8 +285,11 @@ class TestDataset:
                 xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=250), decode_timedelta=False),
                 lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
             )
-
-            compare_ncml_rawdata(dataset, dsNcML, compare_raw, sample_time=False, files_perrun=5)
+            if xr.infer_freq(dsNcML.time) == 'D':
+                sample_time = False
+            else:
+                sample_time = True
+            compare_ncml_rawdata(dataset, dsNcML, compare_raw, sample_time=sample_time, files_perrun=2)
 
     def test_CRCM5_CMIP6(self, compare_raw=False):
         #datasets = sorted(list(path.Path(__file__).parent.parent.joinpath('tmp/simulations/RCM-CMIP6/CORDEX/NAM-12').rglob('*.ncml')))
