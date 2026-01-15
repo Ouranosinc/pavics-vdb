@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+	<attribute name="institute" type="String" value="Environment and Climate Change Canada"></attribute>
+	<attribute name="institute_id" type="String" value="ECCC"></attribute>
+	<attribute name="title" type="String" value="Canadian Surface Reanalysis (CaSR v3.2) : daily"></attribute>
+	<attribute name="type" type="String" value="reanalysis"></attribute>
+	<attribute name="dataset_description" type="String" value="https://hpfx.collab.science.gc.ca/~scar700/rcas-casr/"></attribute>
+	<attribute name="dataset_id" type="String" value="CaSRv3.2"></attribute>
+	<attribute name="license_type" type="String" value="permissive"></attribute>
+	<aggregation type="Union">
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/20mWind" subdirs="true" suffix="20mWind_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/20mWinddir" subdirs="true" suffix="20mWinddir_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/cfia" subdirs="true" suffix="cfia_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/hur" subdirs="true" suffix="hur_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/hurmax" subdirs="true" suffix="hurmax_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/hurmin" subdirs="true" suffix="hurmin_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/hurs" subdirs="true" suffix="hurs_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/hursmax" subdirs="true" suffix="hursmax_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/hursmin" subdirs="true" suffix="hursmin_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/hus" subdirs="true" suffix="hus_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/huss" subdirs="true" suffix="huss_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/pr" subdirs="true" suffix="pr_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/prfr" subdirs="true" suffix="prfr_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/prmod" subdirs="true" suffix="prmod_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/prra" subdirs="true" suffix="prra_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/prrp" subdirs="true" suffix="prrp_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/prsn" subdirs="true" suffix="prsn_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/ps" subdirs="true" suffix="ps_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/psl" subdirs="true" suffix="psl_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/rlds" subdirs="true" suffix="rlds_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/rsds" subdirs="true" suffix="rsds_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/sfcWind" subdirs="true" suffix="sfcWind_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/sfcWindmax" subdirs="true" suffix="sfcWindmax_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/tas" subdirs="true" suffix="tas_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/tasmax" subdirs="true" suffix="tasmax_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/tasmin" subdirs="true" suffix="tasmin_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/tdp" subdirs="true" suffix="tdp_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpmax" subdirs="true" suffix="tdpmax_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpmin" subdirs="true" suffix="tdpmin_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/tdps" subdirs="true" suffix="tdps_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpsmax" subdirs="true" suffix="tdpsmax_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpsmin" subdirs="true" suffix="tdpsmin_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/ua" subdirs="true" suffix="ua_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/uas" subdirs="true" suffix="uas_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/va" subdirs="true" suffix="va_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/vas" subdirs="true" suffix="vas_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/winddir" subdirs="true" suffix="winddir_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/zcrd09975" subdirs="true" suffix="zcrd09975_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/zcrd10000" subdirs="true" suffix="zcrd10000_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/snd" subdirs="true" suffix="snd_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/snw" subdirs="true" suffix="snw_*.nc"></scan>
+			</aggregation>
+		</netcdf>
+	</aggregation>
+</netcdf>
