@@ -8,7 +8,7 @@ import calendar
 import xarray as xr
 
 home = os.environ['HOME']
-pavics_root = f"{home}/pavics/datasets"
+pavics_root = f"{home}/remote_mnt/pavics_transfer/datasets"
 
 
 def main():
