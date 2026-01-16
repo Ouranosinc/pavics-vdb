@@ -14,7 +14,7 @@ pavics_root = f"{home}/remote_mnt/pavics_transfer/datasets"
 def main():
     overwrite_to_tmp = True
     rootdir = p.Path(__file__).parent.parent
-    dataset_configs = rootdir.joinpath("dataset_json_configs").rglob('*CRCM5-CMIP6*.json')
+    dataset_configs = rootdir.joinpath("dataset_json_configs").rglob('*CaSRv3.2*.json')
     for dataset in dataset_configs:
         with open(dataset, 'r') as f:
             ncml_modify = json.load(f)
@@ -154,6 +154,48 @@ def ncml_create_datasets(ncml_template=None, config=None):
             ncml1.ncroot['netcdf']['aggregation'] = agg
             ncmls[config['filename_template'].format(exp=exp)] = ncml1
             del ncml1
+
+        return ncmls
+
+    elif config['ncml_type'] == "CaSR":
+        freq = config["frequency"]
+        infolder = p.Path(config['location'].replace('/pavics-data', pavics_root)).joinpath(freq)
+        ncmls = {}
+        agg_dict = {"@type": "Union"}
+        agg = ncml_add_aggregation(agg_dict)
+        agg['netcdf'] = []
+        outname = None
+        for vv in [v for v in infolder.iterdir()]:
+        
+            if outname is None:
+                ncfiles = sorted(list(vv.rglob(f'*{freq}*.nc')))
+                outname_files =[n for n in ncfiles if n.name.startswith(vv.name)]
+                if len(outname_files) == 0:
+                    raise ValueError(f"No files found for variable {vv.name} in {infolder.joinpath(vv)}")
+                time_per = f"{outname_files[0].stem.split('_')[-1].split('-')[0]}-{outname_files[-1].stem.split('_')[-1].split('-')[-1]}"
+                outname = f"{'_'.join(outname_files[0].stem.split('_')[1:-1])}_{time_per}"
+            
+            
+            scanloc = os.path.commonpath(sorted(list(vv.rglob(f'*{vv.name}_{freq}_*.nc'))))
+            netcdf2 = ncml_netcdf_container()
+            netcdf2['aggregation'] = ncml_add_aggregation(
+                {'@dimName': 'time', '@type': 'joinExisting', '@recheckEvery': '1 day'})
+            netcdf2['aggregation']['scan'] = []
+            scan = {'@location': scanloc.replace(pavics_root, '/pavics-data'),
+                    '@subdirs': 'true',
+                    '@suffix': f'{vv.name}_*.nc'}
+            netcdf2['aggregation']['scan'].append(ncml_add_scan(scan))
+
+            agg['netcdf'].append(netcdf2)
+            del netcdf2
+        ncml1 = xncml.Dataset()
+        ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
+        attrs = config['attribute']
+        #attrs['source_institution'] = dict(value=sim.name, type="String")
+        ncml1.ncroot['netcdf']['attribute'] = ncml_add_attributes(attrs)
+        ncml1.ncroot['netcdf']['aggregation'] = agg
+
+        ncmls[outname] = ncml1
 
         return ncmls
 
