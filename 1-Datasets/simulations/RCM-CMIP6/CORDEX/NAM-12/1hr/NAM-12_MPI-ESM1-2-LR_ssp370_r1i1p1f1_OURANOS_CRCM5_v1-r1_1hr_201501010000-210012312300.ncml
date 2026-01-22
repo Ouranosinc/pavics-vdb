@@ -4,6 +4,8 @@
 	<attribute name="institution" type="String" value="Ouranos Consortium on Regional Climatology and Adaptation to Climate Change"></attribute>
 	<attribute name="title" type="String" value="CRCM5-CMIP6 : Canadian Regional Climate Model v.5 - CMIP6 : hourly"></attribute>
 	<attribute name="dataset_id" type="String" value="CRCM5-CMIP6"></attribute>
+	<attribute name="license" type="String" value="Creative Commons Attribution 4.0 International Public License: https://creativecommons.org/licenses/by/4.0/legalcode"></attribute>
+	<attribute name="attribution" type="String" value="https://cordex.org/data-access/cordex-cmip6-data/cordex-cmip6-terms-of-use"></attribute>
 	<attribute name="license_type" type="String" value="permissive"></attribute>
 	<attribute name="modeling_realm" type="String" value="atmos"></attribute>
 	<attribute name="type" type="String" value="simulation"></attribute>
@@ -21,7 +23,7 @@
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/ssp370/r1i1p1f1/CRCM5/v1-r1/1hr/hurs/v20231208" subdirs="true" suffix="*.nc"></scan>
+				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/ssp370/r1i1p1f1/CRCM5/v1-r1/1hr/hurs/v20250910" subdirs="true" suffix="*.nc"></scan>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">

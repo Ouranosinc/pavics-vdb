@@ -1,0 +1,1610 @@
+<?xml version="1.0" encoding="utf-8"?>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+	<remove name="driving_branch_method" type="attribute"></remove>
+	<remove name="driving_data_specs_version" type="attribute"></remove>
+	<remove name="driving_forcing_index" type="attribute"></remove>
+	<remove name="driving_further_url_info" type="attribute"></remove>
+	<remove name="driving_grid" type="attribute"></remove>
+	<remove name="driving_grid_label" type="attribute"></remove>
+	<remove name="driving_initialization_index" type="attribute"></remove>
+	<remove name="driving_institution" type="attribute"></remove>
+	<remove name="driving_nominal_resolution" type="attribute"></remove>
+	<remove name="driving_physics_index" type="attribute"></remove>
+	<remove name="driving_realization_index" type="attribute"></remove>
+	<remove name="driving_source_id" type="attribute"></remove>
+	<remove name="driving_source_type" type="attribute"></remove>
+	<remove name="driving_experiment_id" type="attribute"></remove>
+	<remove name="driving_realization" type="attribute"></remove>
+	<remove name="driving_initialization_method" type="attribute"></remove>
+	<remove name="driving_physics_version" type="attribute"></remove>
+	<remove name="description" type="attribute"></remove>
+	<remove name="GCM__experiment" type="attribute"></remove>
+	<remove name="GCM__experiment_id" type="attribute"></remove>
+	<remove name="GCM__branch_method" type="attribute"></remove>
+	<remove name="GCM__data_specs_version" type="attribute"></remove>
+	<remove name="GCM__forcing_index" type="attribute"></remove>
+	<remove name="GCM__further_url_info" type="attribute"></remove>
+	<remove name="GCM__grid" type="attribute"></remove>
+	<remove name="GCM__grid_label" type="attribute"></remove>
+	<remove name="GCM__initialization_index" type="attribute"></remove>
+	<remove name="GCM__institution" type="attribute"></remove>
+	<remove name="GCM__institution_id" type="attribute"></remove>
+	<remove name="GCM__model_id" type="attribute"></remove>
+	<remove name="GCM__nominal_resolution" type="attribute"></remove>
+	<remove name="GCM__physics_index" type="attribute"></remove>
+	<remove name="GCM__realization_index" type="attribute"></remove>
+	<remove name="GCM__source_id" type="attribute"></remove>
+	<remove name="GCM__source_type" type="attribute"></remove>
+	<remove name="long_name" type="attribute"></remove>
+	<remove name="standard_name" type="attribute"></remove>
+	<remove name="units" type="attribute"></remove>
+	<remove name="ccdp_name" type="attribute"></remove>
+	<remove name="table_id" type="attribute"></remove>
+	<remove name="variable_id" type="attribute"></remove>
+	<remove name="method" type="attribute"></remove>
+	<remove name="method_id" type="attribute"></remove>
+	<remove name="is_dayofyear" type="attribute"></remove>
+	<remove name="calendar" type="attribute"></remove>
+	<remove name="cell_methods" type="attribute"></remove>
+	<remove name="target__contact" type="attribute"></remove>
+	<remove name="target__dataset" type="attribute"></remove>
+	<remove name="target__dataset_id" type="attribute"></remove>
+	<remove name="target__institution" type="attribute"></remove>
+	<remove name="target__institution_id" type="attribute"></remove>
+	<remove name="target__references" type="attribute"></remove>
+	<remove name="target__version" type="attribute"></remove>
+	<remove name="cdd_p10" type="variable"></remove>
+	<remove name="cdd_p50" type="variable"></remove>
+	<remove name="cdd_p90" type="variable"></remove>
+	<remove name="cddcold_18_p10" type="variable"></remove>
+	<remove name="cddcold_18_p50" type="variable"></remove>
+	<remove name="cddcold_18_p90" type="variable"></remove>
+	<remove name="dlyfrzthw_tx0_tn-1_p10" type="variable"></remove>
+	<remove name="dlyfrzthw_tx0_tn-1_p50" type="variable"></remove>
+	<remove name="dlyfrzthw_tx0_tn-1_p90" type="variable"></remove>
+	<remove name="first_fall_frost_p10" type="variable"></remove>
+	<remove name="first_fall_frost_p50" type="variable"></remove>
+	<remove name="first_fall_frost_p90" type="variable"></remove>
+	<remove name="frost_days_p10" type="variable"></remove>
+	<remove name="frost_days_p50" type="variable"></remove>
+	<remove name="frost_days_p90" type="variable"></remove>
+	<remove name="frost_free_season_p10" type="variable"></remove>
+	<remove name="frost_free_season_p50" type="variable"></remove>
+	<remove name="frost_free_season_p90" type="variable"></remove>
+	<remove name="gddgrow_0_p10" type="variable"></remove>
+	<remove name="gddgrow_0_p50" type="variable"></remove>
+	<remove name="gddgrow_0_p90" type="variable"></remove>
+	<remove name="gddgrow_5_p10" type="variable"></remove>
+	<remove name="gddgrow_5_p50" type="variable"></remove>
+	<remove name="gddgrow_5_p90" type="variable"></remove>
+	<remove name="hddheat_18_p10" type="variable"></remove>
+	<remove name="hddheat_18_p50" type="variable"></remove>
+	<remove name="hddheat_18_p90" type="variable"></remove>
+	<remove name="ice_days_p10" type="variable"></remove>
+	<remove name="ice_days_p50" type="variable"></remove>
+	<remove name="ice_days_p90" type="variable"></remove>
+	<remove name="last_spring_frost_p10" type="variable"></remove>
+	<remove name="last_spring_frost_p50" type="variable"></remove>
+	<remove name="last_spring_frost_p90" type="variable"></remove>
+	<remove name="nr_cdd_p10" type="variable"></remove>
+	<remove name="nr_cdd_p50" type="variable"></remove>
+	<remove name="nr_cdd_p90" type="variable"></remove>
+	<remove name="pr10mm_p10" type="variable"></remove>
+	<remove name="pr10mm_p50" type="variable"></remove>
+	<remove name="pr10mm_p90" type="variable"></remove>
+	<remove name="pr1mm_p10" type="variable"></remove>
+	<remove name="pr1mm_p50" type="variable"></remove>
+	<remove name="pr1mm_p90" type="variable"></remove>
+	<remove name="pr20mm_p10" type="variable"></remove>
+	<remove name="pr20mm_p50" type="variable"></remove>
+	<remove name="pr20mm_p90" type="variable"></remove>
+	<remove name="prtot_p10" type="variable"></remove>
+	<remove name="prtot_p50" type="variable"></remove>
+	<remove name="prtot_p90" type="variable"></remove>
+	<remove name="prx1day_p10" type="variable"></remove>
+	<remove name="prx1day_p50" type="variable"></remove>
+	<remove name="prx1day_p90" type="variable"></remove>
+	<remove name="prx5day_p10" type="variable"></remove>
+	<remove name="prx5day_p50" type="variable"></remove>
+	<remove name="prx5day_p90" type="variable"></remove>
+	<remove name="ratot_p10" type="variable"></remove>
+	<remove name="ratot_p50" type="variable"></remove>
+	<remove name="ratot_p90" type="variable"></remove>
+	<remove name="rax1day_p10" type="variable"></remove>
+	<remove name="rax1day_p50" type="variable"></remove>
+	<remove name="rax1day_p90" type="variable"></remove>
+	<remove name="sn10mm_p10" type="variable"></remove>
+	<remove name="sn10mm_p50" type="variable"></remove>
+	<remove name="sn10mm_p90" type="variable"></remove>
+	<remove name="sn2mm_p10" type="variable"></remove>
+	<remove name="sn2mm_p50" type="variable"></remove>
+	<remove name="sn2mm_p90" type="variable"></remove>
+	<remove name="sntot_p10" type="variable"></remove>
+	<remove name="sntot_p50" type="variable"></remove>
+	<remove name="sntot_p90" type="variable"></remove>
+	<remove name="snx1day_p10" type="variable"></remove>
+	<remove name="snx1day_p50" type="variable"></remove>
+	<remove name="snx1day_p90" type="variable"></remove>
+	<remove name="tg_mean_p10" type="variable"></remove>
+	<remove name="tg_mean_p50" type="variable"></remove>
+	<remove name="tg_mean_p90" type="variable"></remove>
+	<remove name="tn_mean_p10" type="variable"></remove>
+	<remove name="tn_mean_p50" type="variable"></remove>
+	<remove name="tn_mean_p90" type="variable"></remove>
+	<remove name="tn_min_p10" type="variable"></remove>
+	<remove name="tn_min_p50" type="variable"></remove>
+	<remove name="tn_min_p90" type="variable"></remove>
+	<remove name="tnlt_m15_p10" type="variable"></remove>
+	<remove name="tnlt_m15_p50" type="variable"></remove>
+	<remove name="tnlt_m15_p90" type="variable"></remove>
+	<remove name="tnlt_m25_p10" type="variable"></remove>
+	<remove name="tnlt_m25_p50" type="variable"></remove>
+	<remove name="tnlt_m25_p90" type="variable"></remove>
+	<remove name="tr_18_p10" type="variable"></remove>
+	<remove name="tr_18_p50" type="variable"></remove>
+	<remove name="tr_18_p90" type="variable"></remove>
+	<remove name="tr_20_p10" type="variable"></remove>
+	<remove name="tr_20_p50" type="variable"></remove>
+	<remove name="tr_20_p90" type="variable"></remove>
+	<remove name="tr_22_p10" type="variable"></remove>
+	<remove name="tr_22_p50" type="variable"></remove>
+	<remove name="tr_22_p90" type="variable"></remove>
+	<remove name="tx_max_p10" type="variable"></remove>
+	<remove name="tx_max_p50" type="variable"></remove>
+	<remove name="tx_max_p90" type="variable"></remove>
+	<remove name="tx_mean_p10" type="variable"></remove>
+	<remove name="tx_mean_p50" type="variable"></remove>
+	<remove name="tx_mean_p90" type="variable"></remove>
+	<remove name="txgt_25_p10" type="variable"></remove>
+	<remove name="txgt_25_p50" type="variable"></remove>
+	<remove name="txgt_25_p90" type="variable"></remove>
+	<remove name="txgt_27_p10" type="variable"></remove>
+	<remove name="txgt_27_p50" type="variable"></remove>
+	<remove name="txgt_27_p90" type="variable"></remove>
+	<remove name="txgt_29_p10" type="variable"></remove>
+	<remove name="txgt_29_p50" type="variable"></remove>
+	<remove name="txgt_29_p90" type="variable"></remove>
+	<remove name="txgt_30_p10" type="variable"></remove>
+	<remove name="txgt_30_p50" type="variable"></remove>
+	<remove name="txgt_30_p90" type="variable"></remove>
+	<remove name="txgt_32_p10" type="variable"></remove>
+	<remove name="txgt_32_p50" type="variable"></remove>
+	<remove name="txgt_32_p90" type="variable"></remove>
+	<attribute name="target_contact" type="String" value="Pia Papadopol (pia.papadopol@nrcan-rncan.gc.ca)"></attribute>
+	<attribute name="target_dataset" type="String" value="ANUSPLIN interpolated Canada daily 300 arc second climate grids"></attribute>
+	<attribute name="target_dataset_id" type="String" value="ANUSPLIN300"></attribute>
+	<attribute name="target_institution" type="String" value="Canadian Forest Service, Natural Resources Canada"></attribute>
+	<attribute name="target_institution_id" type="String" value="CFS-NRCan"></attribute>
+	<attribute name="target_references" type="String" value="McKenney D.W., Hutchinson, M.F., Papadopol, P., Lawrence, K., Pedlar, J., Campbell, K., Milewska, E., Hopkinson, R., Price, D., and Owen, T., 2011. Customized spatial climate models for North America. Bulletin of the American Meteorological Society, 92(12): 1611-1622."></attribute>
+	<attribute name="target_version" type="String" value="target__version: obtained: 2 April 2012, 14 June 2012, and 30 January 2013"></attribute>
+	<attribute name="abstract" type="String" value="This dataset provides access to CMIP6 climate indicator ensemble statistics data that drives mapping and time-series visualizations on ClimateData.ca. Climatedata.ca is a climate data portal produced collaboratively by the country’s leading climate organizations and supported, in part, by the Government of Canada. The goal of this portal is to support decision makers across a broad spectrum of sectors and locations by providing the most up to date climate data in easy to use formats and visualizations."></attribute>
+	<attribute name="climateindex_package_id" type="String" value="https://github.com/Ouranosinc/xclim"></attribute>
+	<attribute name="institution" type="String" value="Canadian Centre for Climate Services"></attribute>
+	<attribute name="institution_id" type="String" value="CCCS"></attribute>
+	<attribute name="contact" type="String" value="Canadian Centre for Climate Services"></attribute>
+	<attribute name="driving_experiment" type="String" value="historical, ssp126, ssp245, ssp370, ssp585"></attribute>
+	<attribute name="driving_model_id" type="String" value="multi-model individual runs"></attribute>
+	<attribute name="driving_institute_id" type="String" value="multi-model individual runs"></attribute>
+	<attribute name="title" type="String" value="Climatedata.ca : CMIP6 : Yearly ensemble percentiles for CanDCS-M6 derived climate indicators"></attribute>
+	<attribute name="type" type="String" value="GCM"></attribute>
+	<attribute name="processing" type="String" value="bias_adjusted"></attribute>
+	<attribute name="dataset_description" type="String" value="https://climatedata.ca/"></attribute>
+	<attribute name="frequency" type="String" value="yr"></attribute>
+	<attribute name="dataset_id" type="String" value="climatedata_ca_CanDCS-M6"></attribute>
+	<attribute name="project_id" type="String" value="CMIP6"></attribute>
+	<attribute name="bias_adjustment_institute_id" type="String" value="PCIC"></attribute>
+	<attribute name="bias_adjustment_method" type="String" value="MBCn"></attribute>
+	<attribute name="bias_adjustment_method_id" type="String" value="MBCn"></attribute>
+	<attribute name="bias_adjustment_package_id" type="String" value="github.com/pacificclimate/ClimDown"></attribute>
+	<attribute name="bias_adjustment_reference" type="String" value="https://doi.org/10.1007/s00382-017-3580-6"></attribute>
+	<attribute name="license_type" type="String" value="permissive"></attribute>
+	<attribute name="license" type="String" value="https://open.canada.ca/en/open-government-licence-canada"></attribute>
+	<attribute name="terms_of_use" type="String" value="Please see further terms of use associated with CanDCS-M6 input dataset used in climate indicator calculations at https://pacificclimate.org/data/statistically-downscaled-climate-scenarios."></attribute>
+	<attribute name="doi" type="String" value="https://doi.org/10.1002/gdj3.257"></attribute>
+	<aggregation type="Union">
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/cdd/YS/ssp126/ensemble_percentiles/cdd_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_cdd_p10" orgName="cdd_p10"></variable>
+					<variable name="ssp126_cdd_p50" orgName="cdd_p50"></variable>
+					<variable name="ssp126_cdd_p90" orgName="cdd_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/cdd/YS/ssp245/ensemble_percentiles/cdd_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_cdd_p10" orgName="cdd_p10"></variable>
+					<variable name="ssp245_cdd_p50" orgName="cdd_p50"></variable>
+					<variable name="ssp245_cdd_p90" orgName="cdd_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/cdd/YS/ssp370/ensemble_percentiles/cdd_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_cdd_p10" orgName="cdd_p10"></variable>
+					<variable name="ssp370_cdd_p50" orgName="cdd_p50"></variable>
+					<variable name="ssp370_cdd_p90" orgName="cdd_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/cdd/YS/ssp585/ensemble_percentiles/cdd_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_cdd_p10" orgName="cdd_p10"></variable>
+					<variable name="ssp585_cdd_p50" orgName="cdd_p50"></variable>
+					<variable name="ssp585_cdd_p90" orgName="cdd_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/cddcold_18/YS/ssp126/ensemble_percentiles/cddcold_18_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_cddcold_18_p10" orgName="cddcold_18_p10"></variable>
+					<variable name="ssp126_cddcold_18_p50" orgName="cddcold_18_p50"></variable>
+					<variable name="ssp126_cddcold_18_p90" orgName="cddcold_18_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/cddcold_18/YS/ssp245/ensemble_percentiles/cddcold_18_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_cddcold_18_p10" orgName="cddcold_18_p10"></variable>
+					<variable name="ssp245_cddcold_18_p50" orgName="cddcold_18_p50"></variable>
+					<variable name="ssp245_cddcold_18_p90" orgName="cddcold_18_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/cddcold_18/YS/ssp370/ensemble_percentiles/cddcold_18_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_cddcold_18_p10" orgName="cddcold_18_p10"></variable>
+					<variable name="ssp370_cddcold_18_p50" orgName="cddcold_18_p50"></variable>
+					<variable name="ssp370_cddcold_18_p90" orgName="cddcold_18_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/cddcold_18/YS/ssp585/ensemble_percentiles/cddcold_18_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_cddcold_18_p10" orgName="cddcold_18_p10"></variable>
+					<variable name="ssp585_cddcold_18_p50" orgName="cddcold_18_p50"></variable>
+					<variable name="ssp585_cddcold_18_p90" orgName="cddcold_18_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/dlyfrzthw_tx0_tn-1/YS/ssp126/ensemble_percentiles/dlyfrzthw_tx0_tn-1_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_dlyfrzthw_tx0_tn-1_p10" orgName="dlyfrzthw_tx0_tn-1_p10"></variable>
+					<variable name="ssp126_dlyfrzthw_tx0_tn-1_p50" orgName="dlyfrzthw_tx0_tn-1_p50"></variable>
+					<variable name="ssp126_dlyfrzthw_tx0_tn-1_p90" orgName="dlyfrzthw_tx0_tn-1_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/dlyfrzthw_tx0_tn-1/YS/ssp245/ensemble_percentiles/dlyfrzthw_tx0_tn-1_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_dlyfrzthw_tx0_tn-1_p10" orgName="dlyfrzthw_tx0_tn-1_p10"></variable>
+					<variable name="ssp245_dlyfrzthw_tx0_tn-1_p50" orgName="dlyfrzthw_tx0_tn-1_p50"></variable>
+					<variable name="ssp245_dlyfrzthw_tx0_tn-1_p90" orgName="dlyfrzthw_tx0_tn-1_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/dlyfrzthw_tx0_tn-1/YS/ssp370/ensemble_percentiles/dlyfrzthw_tx0_tn-1_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_dlyfrzthw_tx0_tn-1_p10" orgName="dlyfrzthw_tx0_tn-1_p10"></variable>
+					<variable name="ssp370_dlyfrzthw_tx0_tn-1_p50" orgName="dlyfrzthw_tx0_tn-1_p50"></variable>
+					<variable name="ssp370_dlyfrzthw_tx0_tn-1_p90" orgName="dlyfrzthw_tx0_tn-1_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/dlyfrzthw_tx0_tn-1/YS/ssp585/ensemble_percentiles/dlyfrzthw_tx0_tn-1_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_dlyfrzthw_tx0_tn-1_p10" orgName="dlyfrzthw_tx0_tn-1_p10"></variable>
+					<variable name="ssp585_dlyfrzthw_tx0_tn-1_p50" orgName="dlyfrzthw_tx0_tn-1_p50"></variable>
+					<variable name="ssp585_dlyfrzthw_tx0_tn-1_p90" orgName="dlyfrzthw_tx0_tn-1_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_fall_frost/YS/ssp126/ensemble_percentiles/first_fall_frost_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_first_fall_frost_p10" orgName="first_fall_frost_p10"></variable>
+					<variable name="ssp126_first_fall_frost_p50" orgName="first_fall_frost_p50"></variable>
+					<variable name="ssp126_first_fall_frost_p90" orgName="first_fall_frost_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_fall_frost/YS/ssp245/ensemble_percentiles/first_fall_frost_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_first_fall_frost_p10" orgName="first_fall_frost_p10"></variable>
+					<variable name="ssp245_first_fall_frost_p50" orgName="first_fall_frost_p50"></variable>
+					<variable name="ssp245_first_fall_frost_p90" orgName="first_fall_frost_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_fall_frost/YS/ssp370/ensemble_percentiles/first_fall_frost_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_first_fall_frost_p10" orgName="first_fall_frost_p10"></variable>
+					<variable name="ssp370_first_fall_frost_p50" orgName="first_fall_frost_p50"></variable>
+					<variable name="ssp370_first_fall_frost_p90" orgName="first_fall_frost_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_fall_frost/YS/ssp585/ensemble_percentiles/first_fall_frost_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_first_fall_frost_p10" orgName="first_fall_frost_p10"></variable>
+					<variable name="ssp585_first_fall_frost_p50" orgName="first_fall_frost_p50"></variable>
+					<variable name="ssp585_first_fall_frost_p90" orgName="first_fall_frost_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/frost_days/YS/ssp126/ensemble_percentiles/frost_days_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_frost_days_p10" orgName="frost_days_p10"></variable>
+					<variable name="ssp126_frost_days_p50" orgName="frost_days_p50"></variable>
+					<variable name="ssp126_frost_days_p90" orgName="frost_days_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/frost_days/YS/ssp245/ensemble_percentiles/frost_days_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_frost_days_p10" orgName="frost_days_p10"></variable>
+					<variable name="ssp245_frost_days_p50" orgName="frost_days_p50"></variable>
+					<variable name="ssp245_frost_days_p90" orgName="frost_days_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/frost_days/YS/ssp370/ensemble_percentiles/frost_days_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_frost_days_p10" orgName="frost_days_p10"></variable>
+					<variable name="ssp370_frost_days_p50" orgName="frost_days_p50"></variable>
+					<variable name="ssp370_frost_days_p90" orgName="frost_days_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/frost_days/YS/ssp585/ensemble_percentiles/frost_days_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_frost_days_p10" orgName="frost_days_p10"></variable>
+					<variable name="ssp585_frost_days_p50" orgName="frost_days_p50"></variable>
+					<variable name="ssp585_frost_days_p90" orgName="frost_days_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/frost_free_season/YS/ssp126/ensemble_percentiles/frost_free_season_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_frost_free_season_p10" orgName="frost_free_season_p10"></variable>
+					<variable name="ssp126_frost_free_season_p50" orgName="frost_free_season_p50"></variable>
+					<variable name="ssp126_frost_free_season_p90" orgName="frost_free_season_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/frost_free_season/YS/ssp245/ensemble_percentiles/frost_free_season_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_frost_free_season_p10" orgName="frost_free_season_p10"></variable>
+					<variable name="ssp245_frost_free_season_p50" orgName="frost_free_season_p50"></variable>
+					<variable name="ssp245_frost_free_season_p90" orgName="frost_free_season_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/frost_free_season/YS/ssp370/ensemble_percentiles/frost_free_season_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_frost_free_season_p10" orgName="frost_free_season_p10"></variable>
+					<variable name="ssp370_frost_free_season_p50" orgName="frost_free_season_p50"></variable>
+					<variable name="ssp370_frost_free_season_p90" orgName="frost_free_season_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/frost_free_season/YS/ssp585/ensemble_percentiles/frost_free_season_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_frost_free_season_p10" orgName="frost_free_season_p10"></variable>
+					<variable name="ssp585_frost_free_season_p50" orgName="frost_free_season_p50"></variable>
+					<variable name="ssp585_frost_free_season_p90" orgName="frost_free_season_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/gddgrow_0/YS/ssp126/ensemble_percentiles/gddgrow_0_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_gddgrow_0_p10" orgName="gddgrow_0_p10"></variable>
+					<variable name="ssp126_gddgrow_0_p50" orgName="gddgrow_0_p50"></variable>
+					<variable name="ssp126_gddgrow_0_p90" orgName="gddgrow_0_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/gddgrow_0/YS/ssp245/ensemble_percentiles/gddgrow_0_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_gddgrow_0_p10" orgName="gddgrow_0_p10"></variable>
+					<variable name="ssp245_gddgrow_0_p50" orgName="gddgrow_0_p50"></variable>
+					<variable name="ssp245_gddgrow_0_p90" orgName="gddgrow_0_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/gddgrow_0/YS/ssp370/ensemble_percentiles/gddgrow_0_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_gddgrow_0_p10" orgName="gddgrow_0_p10"></variable>
+					<variable name="ssp370_gddgrow_0_p50" orgName="gddgrow_0_p50"></variable>
+					<variable name="ssp370_gddgrow_0_p90" orgName="gddgrow_0_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/gddgrow_0/YS/ssp585/ensemble_percentiles/gddgrow_0_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_gddgrow_0_p10" orgName="gddgrow_0_p10"></variable>
+					<variable name="ssp585_gddgrow_0_p50" orgName="gddgrow_0_p50"></variable>
+					<variable name="ssp585_gddgrow_0_p90" orgName="gddgrow_0_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/gddgrow_5/YS/ssp126/ensemble_percentiles/gddgrow_5_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_gddgrow_5_p10" orgName="gddgrow_5_p10"></variable>
+					<variable name="ssp126_gddgrow_5_p50" orgName="gddgrow_5_p50"></variable>
+					<variable name="ssp126_gddgrow_5_p90" orgName="gddgrow_5_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/gddgrow_5/YS/ssp245/ensemble_percentiles/gddgrow_5_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_gddgrow_5_p10" orgName="gddgrow_5_p10"></variable>
+					<variable name="ssp245_gddgrow_5_p50" orgName="gddgrow_5_p50"></variable>
+					<variable name="ssp245_gddgrow_5_p90" orgName="gddgrow_5_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/gddgrow_5/YS/ssp370/ensemble_percentiles/gddgrow_5_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_gddgrow_5_p10" orgName="gddgrow_5_p10"></variable>
+					<variable name="ssp370_gddgrow_5_p50" orgName="gddgrow_5_p50"></variable>
+					<variable name="ssp370_gddgrow_5_p90" orgName="gddgrow_5_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/gddgrow_5/YS/ssp585/ensemble_percentiles/gddgrow_5_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_gddgrow_5_p10" orgName="gddgrow_5_p10"></variable>
+					<variable name="ssp585_gddgrow_5_p50" orgName="gddgrow_5_p50"></variable>
+					<variable name="ssp585_gddgrow_5_p90" orgName="gddgrow_5_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/hddheat_18/YS/ssp126/ensemble_percentiles/hddheat_18_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_hddheat_18_p10" orgName="hddheat_18_p10"></variable>
+					<variable name="ssp126_hddheat_18_p50" orgName="hddheat_18_p50"></variable>
+					<variable name="ssp126_hddheat_18_p90" orgName="hddheat_18_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/hddheat_18/YS/ssp245/ensemble_percentiles/hddheat_18_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_hddheat_18_p10" orgName="hddheat_18_p10"></variable>
+					<variable name="ssp245_hddheat_18_p50" orgName="hddheat_18_p50"></variable>
+					<variable name="ssp245_hddheat_18_p90" orgName="hddheat_18_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/hddheat_18/YS/ssp370/ensemble_percentiles/hddheat_18_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_hddheat_18_p10" orgName="hddheat_18_p10"></variable>
+					<variable name="ssp370_hddheat_18_p50" orgName="hddheat_18_p50"></variable>
+					<variable name="ssp370_hddheat_18_p90" orgName="hddheat_18_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/hddheat_18/YS/ssp585/ensemble_percentiles/hddheat_18_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_hddheat_18_p10" orgName="hddheat_18_p10"></variable>
+					<variable name="ssp585_hddheat_18_p50" orgName="hddheat_18_p50"></variable>
+					<variable name="ssp585_hddheat_18_p90" orgName="hddheat_18_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/ice_days/YS/ssp126/ensemble_percentiles/ice_days_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_ice_days_p10" orgName="ice_days_p10"></variable>
+					<variable name="ssp126_ice_days_p50" orgName="ice_days_p50"></variable>
+					<variable name="ssp126_ice_days_p90" orgName="ice_days_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/ice_days/YS/ssp245/ensemble_percentiles/ice_days_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_ice_days_p10" orgName="ice_days_p10"></variable>
+					<variable name="ssp245_ice_days_p50" orgName="ice_days_p50"></variable>
+					<variable name="ssp245_ice_days_p90" orgName="ice_days_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/ice_days/YS/ssp370/ensemble_percentiles/ice_days_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_ice_days_p10" orgName="ice_days_p10"></variable>
+					<variable name="ssp370_ice_days_p50" orgName="ice_days_p50"></variable>
+					<variable name="ssp370_ice_days_p90" orgName="ice_days_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/ice_days/YS/ssp585/ensemble_percentiles/ice_days_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_ice_days_p10" orgName="ice_days_p10"></variable>
+					<variable name="ssp585_ice_days_p50" orgName="ice_days_p50"></variable>
+					<variable name="ssp585_ice_days_p90" orgName="ice_days_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_spring_frost/YS/ssp126/ensemble_percentiles/last_spring_frost_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_last_spring_frost_p10" orgName="last_spring_frost_p10"></variable>
+					<variable name="ssp126_last_spring_frost_p50" orgName="last_spring_frost_p50"></variable>
+					<variable name="ssp126_last_spring_frost_p90" orgName="last_spring_frost_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_spring_frost/YS/ssp245/ensemble_percentiles/last_spring_frost_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_last_spring_frost_p10" orgName="last_spring_frost_p10"></variable>
+					<variable name="ssp245_last_spring_frost_p50" orgName="last_spring_frost_p50"></variable>
+					<variable name="ssp245_last_spring_frost_p90" orgName="last_spring_frost_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_spring_frost/YS/ssp370/ensemble_percentiles/last_spring_frost_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_last_spring_frost_p10" orgName="last_spring_frost_p10"></variable>
+					<variable name="ssp370_last_spring_frost_p50" orgName="last_spring_frost_p50"></variable>
+					<variable name="ssp370_last_spring_frost_p90" orgName="last_spring_frost_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_spring_frost/YS/ssp585/ensemble_percentiles/last_spring_frost_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_last_spring_frost_p10" orgName="last_spring_frost_p10"></variable>
+					<variable name="ssp585_last_spring_frost_p50" orgName="last_spring_frost_p50"></variable>
+					<variable name="ssp585_last_spring_frost_p90" orgName="last_spring_frost_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/nr_cdd/YS/ssp126/ensemble_percentiles/nr_cdd_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_nr_cdd_p10" orgName="nr_cdd_p10"></variable>
+					<variable name="ssp126_nr_cdd_p50" orgName="nr_cdd_p50"></variable>
+					<variable name="ssp126_nr_cdd_p90" orgName="nr_cdd_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/nr_cdd/YS/ssp245/ensemble_percentiles/nr_cdd_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_nr_cdd_p10" orgName="nr_cdd_p10"></variable>
+					<variable name="ssp245_nr_cdd_p50" orgName="nr_cdd_p50"></variable>
+					<variable name="ssp245_nr_cdd_p90" orgName="nr_cdd_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/nr_cdd/YS/ssp370/ensemble_percentiles/nr_cdd_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_nr_cdd_p10" orgName="nr_cdd_p10"></variable>
+					<variable name="ssp370_nr_cdd_p50" orgName="nr_cdd_p50"></variable>
+					<variable name="ssp370_nr_cdd_p90" orgName="nr_cdd_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/nr_cdd/YS/ssp585/ensemble_percentiles/nr_cdd_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_nr_cdd_p10" orgName="nr_cdd_p10"></variable>
+					<variable name="ssp585_nr_cdd_p50" orgName="nr_cdd_p50"></variable>
+					<variable name="ssp585_nr_cdd_p90" orgName="nr_cdd_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/pr10mm/YS/ssp126/ensemble_percentiles/pr10mm_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_pr10mm_p10" orgName="pr10mm_p10"></variable>
+					<variable name="ssp126_pr10mm_p50" orgName="pr10mm_p50"></variable>
+					<variable name="ssp126_pr10mm_p90" orgName="pr10mm_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/pr10mm/YS/ssp245/ensemble_percentiles/pr10mm_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_pr10mm_p10" orgName="pr10mm_p10"></variable>
+					<variable name="ssp245_pr10mm_p50" orgName="pr10mm_p50"></variable>
+					<variable name="ssp245_pr10mm_p90" orgName="pr10mm_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/pr10mm/YS/ssp370/ensemble_percentiles/pr10mm_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_pr10mm_p10" orgName="pr10mm_p10"></variable>
+					<variable name="ssp370_pr10mm_p50" orgName="pr10mm_p50"></variable>
+					<variable name="ssp370_pr10mm_p90" orgName="pr10mm_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/pr10mm/YS/ssp585/ensemble_percentiles/pr10mm_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_pr10mm_p10" orgName="pr10mm_p10"></variable>
+					<variable name="ssp585_pr10mm_p50" orgName="pr10mm_p50"></variable>
+					<variable name="ssp585_pr10mm_p90" orgName="pr10mm_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/pr1mm/YS/ssp126/ensemble_percentiles/pr1mm_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_pr1mm_p10" orgName="pr1mm_p10"></variable>
+					<variable name="ssp126_pr1mm_p50" orgName="pr1mm_p50"></variable>
+					<variable name="ssp126_pr1mm_p90" orgName="pr1mm_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/pr1mm/YS/ssp245/ensemble_percentiles/pr1mm_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_pr1mm_p10" orgName="pr1mm_p10"></variable>
+					<variable name="ssp245_pr1mm_p50" orgName="pr1mm_p50"></variable>
+					<variable name="ssp245_pr1mm_p90" orgName="pr1mm_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/pr1mm/YS/ssp370/ensemble_percentiles/pr1mm_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_pr1mm_p10" orgName="pr1mm_p10"></variable>
+					<variable name="ssp370_pr1mm_p50" orgName="pr1mm_p50"></variable>
+					<variable name="ssp370_pr1mm_p90" orgName="pr1mm_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/pr1mm/YS/ssp585/ensemble_percentiles/pr1mm_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_pr1mm_p10" orgName="pr1mm_p10"></variable>
+					<variable name="ssp585_pr1mm_p50" orgName="pr1mm_p50"></variable>
+					<variable name="ssp585_pr1mm_p90" orgName="pr1mm_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/pr20mm/YS/ssp126/ensemble_percentiles/pr20mm_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_pr20mm_p10" orgName="pr20mm_p10"></variable>
+					<variable name="ssp126_pr20mm_p50" orgName="pr20mm_p50"></variable>
+					<variable name="ssp126_pr20mm_p90" orgName="pr20mm_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/pr20mm/YS/ssp245/ensemble_percentiles/pr20mm_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_pr20mm_p10" orgName="pr20mm_p10"></variable>
+					<variable name="ssp245_pr20mm_p50" orgName="pr20mm_p50"></variable>
+					<variable name="ssp245_pr20mm_p90" orgName="pr20mm_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/pr20mm/YS/ssp370/ensemble_percentiles/pr20mm_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_pr20mm_p10" orgName="pr20mm_p10"></variable>
+					<variable name="ssp370_pr20mm_p50" orgName="pr20mm_p50"></variable>
+					<variable name="ssp370_pr20mm_p90" orgName="pr20mm_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/pr20mm/YS/ssp585/ensemble_percentiles/pr20mm_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_pr20mm_p10" orgName="pr20mm_p10"></variable>
+					<variable name="ssp585_pr20mm_p50" orgName="pr20mm_p50"></variable>
+					<variable name="ssp585_pr20mm_p90" orgName="pr20mm_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/prtot/YS/ssp126/ensemble_percentiles/prtot_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_prtot_p10" orgName="prtot_p10"></variable>
+					<variable name="ssp126_prtot_p50" orgName="prtot_p50"></variable>
+					<variable name="ssp126_prtot_p90" orgName="prtot_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/prtot/YS/ssp245/ensemble_percentiles/prtot_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_prtot_p10" orgName="prtot_p10"></variable>
+					<variable name="ssp245_prtot_p50" orgName="prtot_p50"></variable>
+					<variable name="ssp245_prtot_p90" orgName="prtot_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/prtot/YS/ssp370/ensemble_percentiles/prtot_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_prtot_p10" orgName="prtot_p10"></variable>
+					<variable name="ssp370_prtot_p50" orgName="prtot_p50"></variable>
+					<variable name="ssp370_prtot_p90" orgName="prtot_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/prtot/YS/ssp585/ensemble_percentiles/prtot_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_prtot_p10" orgName="prtot_p10"></variable>
+					<variable name="ssp585_prtot_p50" orgName="prtot_p50"></variable>
+					<variable name="ssp585_prtot_p90" orgName="prtot_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/prx1day/YS/ssp126/ensemble_percentiles/prx1day_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_prx1day_p10" orgName="prx1day_p10"></variable>
+					<variable name="ssp126_prx1day_p50" orgName="prx1day_p50"></variable>
+					<variable name="ssp126_prx1day_p90" orgName="prx1day_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/prx1day/YS/ssp245/ensemble_percentiles/prx1day_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_prx1day_p10" orgName="prx1day_p10"></variable>
+					<variable name="ssp245_prx1day_p50" orgName="prx1day_p50"></variable>
+					<variable name="ssp245_prx1day_p90" orgName="prx1day_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/prx1day/YS/ssp370/ensemble_percentiles/prx1day_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_prx1day_p10" orgName="prx1day_p10"></variable>
+					<variable name="ssp370_prx1day_p50" orgName="prx1day_p50"></variable>
+					<variable name="ssp370_prx1day_p90" orgName="prx1day_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/prx1day/YS/ssp585/ensemble_percentiles/prx1day_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_prx1day_p10" orgName="prx1day_p10"></variable>
+					<variable name="ssp585_prx1day_p50" orgName="prx1day_p50"></variable>
+					<variable name="ssp585_prx1day_p90" orgName="prx1day_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/prx5day/YS/ssp126/ensemble_percentiles/prx5day_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_prx5day_p10" orgName="prx5day_p10"></variable>
+					<variable name="ssp126_prx5day_p50" orgName="prx5day_p50"></variable>
+					<variable name="ssp126_prx5day_p90" orgName="prx5day_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/prx5day/YS/ssp245/ensemble_percentiles/prx5day_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_prx5day_p10" orgName="prx5day_p10"></variable>
+					<variable name="ssp245_prx5day_p50" orgName="prx5day_p50"></variable>
+					<variable name="ssp245_prx5day_p90" orgName="prx5day_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/prx5day/YS/ssp370/ensemble_percentiles/prx5day_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_prx5day_p10" orgName="prx5day_p10"></variable>
+					<variable name="ssp370_prx5day_p50" orgName="prx5day_p50"></variable>
+					<variable name="ssp370_prx5day_p90" orgName="prx5day_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/prx5day/YS/ssp585/ensemble_percentiles/prx5day_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_prx5day_p10" orgName="prx5day_p10"></variable>
+					<variable name="ssp585_prx5day_p50" orgName="prx5day_p50"></variable>
+					<variable name="ssp585_prx5day_p90" orgName="prx5day_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/ratot/YS/ssp126/ensemble_percentiles/ratot_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_ratot_p10" orgName="ratot_p10"></variable>
+					<variable name="ssp126_ratot_p50" orgName="ratot_p50"></variable>
+					<variable name="ssp126_ratot_p90" orgName="ratot_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/ratot/YS/ssp245/ensemble_percentiles/ratot_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_ratot_p10" orgName="ratot_p10"></variable>
+					<variable name="ssp245_ratot_p50" orgName="ratot_p50"></variable>
+					<variable name="ssp245_ratot_p90" orgName="ratot_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/ratot/YS/ssp370/ensemble_percentiles/ratot_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_ratot_p10" orgName="ratot_p10"></variable>
+					<variable name="ssp370_ratot_p50" orgName="ratot_p50"></variable>
+					<variable name="ssp370_ratot_p90" orgName="ratot_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/ratot/YS/ssp585/ensemble_percentiles/ratot_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_ratot_p10" orgName="ratot_p10"></variable>
+					<variable name="ssp585_ratot_p50" orgName="ratot_p50"></variable>
+					<variable name="ssp585_ratot_p90" orgName="ratot_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/rax1day/YS/ssp126/ensemble_percentiles/rax1day_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_rax1day_p10" orgName="rax1day_p10"></variable>
+					<variable name="ssp126_rax1day_p50" orgName="rax1day_p50"></variable>
+					<variable name="ssp126_rax1day_p90" orgName="rax1day_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/rax1day/YS/ssp245/ensemble_percentiles/rax1day_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_rax1day_p10" orgName="rax1day_p10"></variable>
+					<variable name="ssp245_rax1day_p50" orgName="rax1day_p50"></variable>
+					<variable name="ssp245_rax1day_p90" orgName="rax1day_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/rax1day/YS/ssp370/ensemble_percentiles/rax1day_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_rax1day_p10" orgName="rax1day_p10"></variable>
+					<variable name="ssp370_rax1day_p50" orgName="rax1day_p50"></variable>
+					<variable name="ssp370_rax1day_p90" orgName="rax1day_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/rax1day/YS/ssp585/ensemble_percentiles/rax1day_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_rax1day_p10" orgName="rax1day_p10"></variable>
+					<variable name="ssp585_rax1day_p50" orgName="rax1day_p50"></variable>
+					<variable name="ssp585_rax1day_p90" orgName="rax1day_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/sn10mm/YS/ssp126/ensemble_percentiles/sn10mm_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_sn10mm_p10" orgName="sn10mm_p10"></variable>
+					<variable name="ssp126_sn10mm_p50" orgName="sn10mm_p50"></variable>
+					<variable name="ssp126_sn10mm_p90" orgName="sn10mm_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/sn10mm/YS/ssp245/ensemble_percentiles/sn10mm_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_sn10mm_p10" orgName="sn10mm_p10"></variable>
+					<variable name="ssp245_sn10mm_p50" orgName="sn10mm_p50"></variable>
+					<variable name="ssp245_sn10mm_p90" orgName="sn10mm_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/sn10mm/YS/ssp370/ensemble_percentiles/sn10mm_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_sn10mm_p10" orgName="sn10mm_p10"></variable>
+					<variable name="ssp370_sn10mm_p50" orgName="sn10mm_p50"></variable>
+					<variable name="ssp370_sn10mm_p90" orgName="sn10mm_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/sn10mm/YS/ssp585/ensemble_percentiles/sn10mm_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_sn10mm_p10" orgName="sn10mm_p10"></variable>
+					<variable name="ssp585_sn10mm_p50" orgName="sn10mm_p50"></variable>
+					<variable name="ssp585_sn10mm_p90" orgName="sn10mm_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/sn2mm/YS/ssp126/ensemble_percentiles/sn2mm_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_sn2mm_p10" orgName="sn2mm_p10"></variable>
+					<variable name="ssp126_sn2mm_p50" orgName="sn2mm_p50"></variable>
+					<variable name="ssp126_sn2mm_p90" orgName="sn2mm_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/sn2mm/YS/ssp245/ensemble_percentiles/sn2mm_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_sn2mm_p10" orgName="sn2mm_p10"></variable>
+					<variable name="ssp245_sn2mm_p50" orgName="sn2mm_p50"></variable>
+					<variable name="ssp245_sn2mm_p90" orgName="sn2mm_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/sn2mm/YS/ssp370/ensemble_percentiles/sn2mm_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_sn2mm_p10" orgName="sn2mm_p10"></variable>
+					<variable name="ssp370_sn2mm_p50" orgName="sn2mm_p50"></variable>
+					<variable name="ssp370_sn2mm_p90" orgName="sn2mm_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/sn2mm/YS/ssp585/ensemble_percentiles/sn2mm_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_sn2mm_p10" orgName="sn2mm_p10"></variable>
+					<variable name="ssp585_sn2mm_p50" orgName="sn2mm_p50"></variable>
+					<variable name="ssp585_sn2mm_p90" orgName="sn2mm_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/sntot/YS/ssp126/ensemble_percentiles/sntot_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_sntot_p10" orgName="sntot_p10"></variable>
+					<variable name="ssp126_sntot_p50" orgName="sntot_p50"></variable>
+					<variable name="ssp126_sntot_p90" orgName="sntot_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/sntot/YS/ssp245/ensemble_percentiles/sntot_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_sntot_p10" orgName="sntot_p10"></variable>
+					<variable name="ssp245_sntot_p50" orgName="sntot_p50"></variable>
+					<variable name="ssp245_sntot_p90" orgName="sntot_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/sntot/YS/ssp370/ensemble_percentiles/sntot_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_sntot_p10" orgName="sntot_p10"></variable>
+					<variable name="ssp370_sntot_p50" orgName="sntot_p50"></variable>
+					<variable name="ssp370_sntot_p90" orgName="sntot_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/sntot/YS/ssp585/ensemble_percentiles/sntot_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_sntot_p10" orgName="sntot_p10"></variable>
+					<variable name="ssp585_sntot_p50" orgName="sntot_p50"></variable>
+					<variable name="ssp585_sntot_p90" orgName="sntot_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snx1day/YS/ssp126/ensemble_percentiles/snx1day_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_snx1day_p10" orgName="snx1day_p10"></variable>
+					<variable name="ssp126_snx1day_p50" orgName="snx1day_p50"></variable>
+					<variable name="ssp126_snx1day_p90" orgName="snx1day_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snx1day/YS/ssp245/ensemble_percentiles/snx1day_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_snx1day_p10" orgName="snx1day_p10"></variable>
+					<variable name="ssp245_snx1day_p50" orgName="snx1day_p50"></variable>
+					<variable name="ssp245_snx1day_p90" orgName="snx1day_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snx1day/YS/ssp370/ensemble_percentiles/snx1day_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_snx1day_p10" orgName="snx1day_p10"></variable>
+					<variable name="ssp370_snx1day_p50" orgName="snx1day_p50"></variable>
+					<variable name="ssp370_snx1day_p90" orgName="snx1day_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snx1day/YS/ssp585/ensemble_percentiles/snx1day_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_snx1day_p10" orgName="snx1day_p10"></variable>
+					<variable name="ssp585_snx1day_p50" orgName="snx1day_p50"></variable>
+					<variable name="ssp585_snx1day_p90" orgName="snx1day_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tg_mean/YS/ssp126/ensemble_percentiles/tg_mean_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_tg_mean_p10" orgName="tg_mean_p10"></variable>
+					<variable name="ssp126_tg_mean_p50" orgName="tg_mean_p50"></variable>
+					<variable name="ssp126_tg_mean_p90" orgName="tg_mean_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tg_mean/YS/ssp245/ensemble_percentiles/tg_mean_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_tg_mean_p10" orgName="tg_mean_p10"></variable>
+					<variable name="ssp245_tg_mean_p50" orgName="tg_mean_p50"></variable>
+					<variable name="ssp245_tg_mean_p90" orgName="tg_mean_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tg_mean/YS/ssp370/ensemble_percentiles/tg_mean_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_tg_mean_p10" orgName="tg_mean_p10"></variable>
+					<variable name="ssp370_tg_mean_p50" orgName="tg_mean_p50"></variable>
+					<variable name="ssp370_tg_mean_p90" orgName="tg_mean_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tg_mean/YS/ssp585/ensemble_percentiles/tg_mean_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_tg_mean_p10" orgName="tg_mean_p10"></variable>
+					<variable name="ssp585_tg_mean_p50" orgName="tg_mean_p50"></variable>
+					<variable name="ssp585_tg_mean_p90" orgName="tg_mean_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tn_mean/YS/ssp126/ensemble_percentiles/tn_mean_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_tn_mean_p10" orgName="tn_mean_p10"></variable>
+					<variable name="ssp126_tn_mean_p50" orgName="tn_mean_p50"></variable>
+					<variable name="ssp126_tn_mean_p90" orgName="tn_mean_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tn_mean/YS/ssp245/ensemble_percentiles/tn_mean_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_tn_mean_p10" orgName="tn_mean_p10"></variable>
+					<variable name="ssp245_tn_mean_p50" orgName="tn_mean_p50"></variable>
+					<variable name="ssp245_tn_mean_p90" orgName="tn_mean_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tn_mean/YS/ssp370/ensemble_percentiles/tn_mean_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_tn_mean_p10" orgName="tn_mean_p10"></variable>
+					<variable name="ssp370_tn_mean_p50" orgName="tn_mean_p50"></variable>
+					<variable name="ssp370_tn_mean_p90" orgName="tn_mean_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tn_mean/YS/ssp585/ensemble_percentiles/tn_mean_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_tn_mean_p10" orgName="tn_mean_p10"></variable>
+					<variable name="ssp585_tn_mean_p50" orgName="tn_mean_p50"></variable>
+					<variable name="ssp585_tn_mean_p90" orgName="tn_mean_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tn_min/YS/ssp126/ensemble_percentiles/tn_min_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_tn_min_p10" orgName="tn_min_p10"></variable>
+					<variable name="ssp126_tn_min_p50" orgName="tn_min_p50"></variable>
+					<variable name="ssp126_tn_min_p90" orgName="tn_min_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tn_min/YS/ssp245/ensemble_percentiles/tn_min_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_tn_min_p10" orgName="tn_min_p10"></variable>
+					<variable name="ssp245_tn_min_p50" orgName="tn_min_p50"></variable>
+					<variable name="ssp245_tn_min_p90" orgName="tn_min_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tn_min/YS/ssp370/ensemble_percentiles/tn_min_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_tn_min_p10" orgName="tn_min_p10"></variable>
+					<variable name="ssp370_tn_min_p50" orgName="tn_min_p50"></variable>
+					<variable name="ssp370_tn_min_p90" orgName="tn_min_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tn_min/YS/ssp585/ensemble_percentiles/tn_min_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_tn_min_p10" orgName="tn_min_p10"></variable>
+					<variable name="ssp585_tn_min_p50" orgName="tn_min_p50"></variable>
+					<variable name="ssp585_tn_min_p90" orgName="tn_min_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tnlt_m15/YS/ssp126/ensemble_percentiles/tnlt_m15_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_tnlt_m15_p10" orgName="tnlt_m15_p10"></variable>
+					<variable name="ssp126_tnlt_m15_p50" orgName="tnlt_m15_p50"></variable>
+					<variable name="ssp126_tnlt_m15_p90" orgName="tnlt_m15_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tnlt_m15/YS/ssp245/ensemble_percentiles/tnlt_m15_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_tnlt_m15_p10" orgName="tnlt_m15_p10"></variable>
+					<variable name="ssp245_tnlt_m15_p50" orgName="tnlt_m15_p50"></variable>
+					<variable name="ssp245_tnlt_m15_p90" orgName="tnlt_m15_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tnlt_m15/YS/ssp370/ensemble_percentiles/tnlt_m15_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_tnlt_m15_p10" orgName="tnlt_m15_p10"></variable>
+					<variable name="ssp370_tnlt_m15_p50" orgName="tnlt_m15_p50"></variable>
+					<variable name="ssp370_tnlt_m15_p90" orgName="tnlt_m15_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tnlt_m15/YS/ssp585/ensemble_percentiles/tnlt_m15_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_tnlt_m15_p10" orgName="tnlt_m15_p10"></variable>
+					<variable name="ssp585_tnlt_m15_p50" orgName="tnlt_m15_p50"></variable>
+					<variable name="ssp585_tnlt_m15_p90" orgName="tnlt_m15_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tnlt_m25/YS/ssp126/ensemble_percentiles/tnlt_m25_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_tnlt_m25_p10" orgName="tnlt_m25_p10"></variable>
+					<variable name="ssp126_tnlt_m25_p50" orgName="tnlt_m25_p50"></variable>
+					<variable name="ssp126_tnlt_m25_p90" orgName="tnlt_m25_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tnlt_m25/YS/ssp245/ensemble_percentiles/tnlt_m25_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_tnlt_m25_p10" orgName="tnlt_m25_p10"></variable>
+					<variable name="ssp245_tnlt_m25_p50" orgName="tnlt_m25_p50"></variable>
+					<variable name="ssp245_tnlt_m25_p90" orgName="tnlt_m25_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tnlt_m25/YS/ssp370/ensemble_percentiles/tnlt_m25_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_tnlt_m25_p10" orgName="tnlt_m25_p10"></variable>
+					<variable name="ssp370_tnlt_m25_p50" orgName="tnlt_m25_p50"></variable>
+					<variable name="ssp370_tnlt_m25_p90" orgName="tnlt_m25_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tnlt_m25/YS/ssp585/ensemble_percentiles/tnlt_m25_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_tnlt_m25_p10" orgName="tnlt_m25_p10"></variable>
+					<variable name="ssp585_tnlt_m25_p50" orgName="tnlt_m25_p50"></variable>
+					<variable name="ssp585_tnlt_m25_p90" orgName="tnlt_m25_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tr_18/YS/ssp126/ensemble_percentiles/tr_18_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_tr_18_p10" orgName="tr_18_p10"></variable>
+					<variable name="ssp126_tr_18_p50" orgName="tr_18_p50"></variable>
+					<variable name="ssp126_tr_18_p90" orgName="tr_18_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tr_18/YS/ssp245/ensemble_percentiles/tr_18_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_tr_18_p10" orgName="tr_18_p10"></variable>
+					<variable name="ssp245_tr_18_p50" orgName="tr_18_p50"></variable>
+					<variable name="ssp245_tr_18_p90" orgName="tr_18_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tr_18/YS/ssp370/ensemble_percentiles/tr_18_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_tr_18_p10" orgName="tr_18_p10"></variable>
+					<variable name="ssp370_tr_18_p50" orgName="tr_18_p50"></variable>
+					<variable name="ssp370_tr_18_p90" orgName="tr_18_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tr_18/YS/ssp585/ensemble_percentiles/tr_18_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_tr_18_p10" orgName="tr_18_p10"></variable>
+					<variable name="ssp585_tr_18_p50" orgName="tr_18_p50"></variable>
+					<variable name="ssp585_tr_18_p90" orgName="tr_18_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tr_20/YS/ssp126/ensemble_percentiles/tr_20_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_tr_20_p10" orgName="tr_20_p10"></variable>
+					<variable name="ssp126_tr_20_p50" orgName="tr_20_p50"></variable>
+					<variable name="ssp126_tr_20_p90" orgName="tr_20_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tr_20/YS/ssp245/ensemble_percentiles/tr_20_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_tr_20_p10" orgName="tr_20_p10"></variable>
+					<variable name="ssp245_tr_20_p50" orgName="tr_20_p50"></variable>
+					<variable name="ssp245_tr_20_p90" orgName="tr_20_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tr_20/YS/ssp370/ensemble_percentiles/tr_20_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_tr_20_p10" orgName="tr_20_p10"></variable>
+					<variable name="ssp370_tr_20_p50" orgName="tr_20_p50"></variable>
+					<variable name="ssp370_tr_20_p90" orgName="tr_20_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tr_20/YS/ssp585/ensemble_percentiles/tr_20_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_tr_20_p10" orgName="tr_20_p10"></variable>
+					<variable name="ssp585_tr_20_p50" orgName="tr_20_p50"></variable>
+					<variable name="ssp585_tr_20_p90" orgName="tr_20_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tr_22/YS/ssp126/ensemble_percentiles/tr_22_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_tr_22_p10" orgName="tr_22_p10"></variable>
+					<variable name="ssp126_tr_22_p50" orgName="tr_22_p50"></variable>
+					<variable name="ssp126_tr_22_p90" orgName="tr_22_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tr_22/YS/ssp245/ensemble_percentiles/tr_22_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_tr_22_p10" orgName="tr_22_p10"></variable>
+					<variable name="ssp245_tr_22_p50" orgName="tr_22_p50"></variable>
+					<variable name="ssp245_tr_22_p90" orgName="tr_22_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tr_22/YS/ssp370/ensemble_percentiles/tr_22_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_tr_22_p10" orgName="tr_22_p10"></variable>
+					<variable name="ssp370_tr_22_p50" orgName="tr_22_p50"></variable>
+					<variable name="ssp370_tr_22_p90" orgName="tr_22_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tr_22/YS/ssp585/ensemble_percentiles/tr_22_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_tr_22_p10" orgName="tr_22_p10"></variable>
+					<variable name="ssp585_tr_22_p50" orgName="tr_22_p50"></variable>
+					<variable name="ssp585_tr_22_p90" orgName="tr_22_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tx_max/YS/ssp126/ensemble_percentiles/tx_max_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_tx_max_p10" orgName="tx_max_p10"></variable>
+					<variable name="ssp126_tx_max_p50" orgName="tx_max_p50"></variable>
+					<variable name="ssp126_tx_max_p90" orgName="tx_max_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tx_max/YS/ssp245/ensemble_percentiles/tx_max_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_tx_max_p10" orgName="tx_max_p10"></variable>
+					<variable name="ssp245_tx_max_p50" orgName="tx_max_p50"></variable>
+					<variable name="ssp245_tx_max_p90" orgName="tx_max_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tx_max/YS/ssp370/ensemble_percentiles/tx_max_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_tx_max_p10" orgName="tx_max_p10"></variable>
+					<variable name="ssp370_tx_max_p50" orgName="tx_max_p50"></variable>
+					<variable name="ssp370_tx_max_p90" orgName="tx_max_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tx_max/YS/ssp585/ensemble_percentiles/tx_max_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_tx_max_p10" orgName="tx_max_p10"></variable>
+					<variable name="ssp585_tx_max_p50" orgName="tx_max_p50"></variable>
+					<variable name="ssp585_tx_max_p90" orgName="tx_max_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tx_mean/YS/ssp126/ensemble_percentiles/tx_mean_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_tx_mean_p10" orgName="tx_mean_p10"></variable>
+					<variable name="ssp126_tx_mean_p50" orgName="tx_mean_p50"></variable>
+					<variable name="ssp126_tx_mean_p90" orgName="tx_mean_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tx_mean/YS/ssp245/ensemble_percentiles/tx_mean_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_tx_mean_p10" orgName="tx_mean_p10"></variable>
+					<variable name="ssp245_tx_mean_p50" orgName="tx_mean_p50"></variable>
+					<variable name="ssp245_tx_mean_p90" orgName="tx_mean_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tx_mean/YS/ssp370/ensemble_percentiles/tx_mean_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_tx_mean_p10" orgName="tx_mean_p10"></variable>
+					<variable name="ssp370_tx_mean_p50" orgName="tx_mean_p50"></variable>
+					<variable name="ssp370_tx_mean_p90" orgName="tx_mean_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/tx_mean/YS/ssp585/ensemble_percentiles/tx_mean_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_tx_mean_p10" orgName="tx_mean_p10"></variable>
+					<variable name="ssp585_tx_mean_p50" orgName="tx_mean_p50"></variable>
+					<variable name="ssp585_tx_mean_p90" orgName="tx_mean_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/txgt_25/YS/ssp126/ensemble_percentiles/txgt_25_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_txgt_25_p10" orgName="txgt_25_p10"></variable>
+					<variable name="ssp126_txgt_25_p50" orgName="txgt_25_p50"></variable>
+					<variable name="ssp126_txgt_25_p90" orgName="txgt_25_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/txgt_25/YS/ssp245/ensemble_percentiles/txgt_25_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_txgt_25_p10" orgName="txgt_25_p10"></variable>
+					<variable name="ssp245_txgt_25_p50" orgName="txgt_25_p50"></variable>
+					<variable name="ssp245_txgt_25_p90" orgName="txgt_25_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/txgt_25/YS/ssp370/ensemble_percentiles/txgt_25_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_txgt_25_p10" orgName="txgt_25_p10"></variable>
+					<variable name="ssp370_txgt_25_p50" orgName="txgt_25_p50"></variable>
+					<variable name="ssp370_txgt_25_p90" orgName="txgt_25_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/txgt_25/YS/ssp585/ensemble_percentiles/txgt_25_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_txgt_25_p10" orgName="txgt_25_p10"></variable>
+					<variable name="ssp585_txgt_25_p50" orgName="txgt_25_p50"></variable>
+					<variable name="ssp585_txgt_25_p90" orgName="txgt_25_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/txgt_27/YS/ssp126/ensemble_percentiles/txgt_27_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_txgt_27_p10" orgName="txgt_27_p10"></variable>
+					<variable name="ssp126_txgt_27_p50" orgName="txgt_27_p50"></variable>
+					<variable name="ssp126_txgt_27_p90" orgName="txgt_27_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/txgt_27/YS/ssp245/ensemble_percentiles/txgt_27_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_txgt_27_p10" orgName="txgt_27_p10"></variable>
+					<variable name="ssp245_txgt_27_p50" orgName="txgt_27_p50"></variable>
+					<variable name="ssp245_txgt_27_p90" orgName="txgt_27_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/txgt_27/YS/ssp370/ensemble_percentiles/txgt_27_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_txgt_27_p10" orgName="txgt_27_p10"></variable>
+					<variable name="ssp370_txgt_27_p50" orgName="txgt_27_p50"></variable>
+					<variable name="ssp370_txgt_27_p90" orgName="txgt_27_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/txgt_27/YS/ssp585/ensemble_percentiles/txgt_27_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_txgt_27_p10" orgName="txgt_27_p10"></variable>
+					<variable name="ssp585_txgt_27_p50" orgName="txgt_27_p50"></variable>
+					<variable name="ssp585_txgt_27_p90" orgName="txgt_27_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/txgt_29/YS/ssp126/ensemble_percentiles/txgt_29_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_txgt_29_p10" orgName="txgt_29_p10"></variable>
+					<variable name="ssp126_txgt_29_p50" orgName="txgt_29_p50"></variable>
+					<variable name="ssp126_txgt_29_p90" orgName="txgt_29_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/txgt_29/YS/ssp245/ensemble_percentiles/txgt_29_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_txgt_29_p10" orgName="txgt_29_p10"></variable>
+					<variable name="ssp245_txgt_29_p50" orgName="txgt_29_p50"></variable>
+					<variable name="ssp245_txgt_29_p90" orgName="txgt_29_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/txgt_29/YS/ssp370/ensemble_percentiles/txgt_29_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_txgt_29_p10" orgName="txgt_29_p10"></variable>
+					<variable name="ssp370_txgt_29_p50" orgName="txgt_29_p50"></variable>
+					<variable name="ssp370_txgt_29_p90" orgName="txgt_29_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/txgt_29/YS/ssp585/ensemble_percentiles/txgt_29_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_txgt_29_p10" orgName="txgt_29_p10"></variable>
+					<variable name="ssp585_txgt_29_p50" orgName="txgt_29_p50"></variable>
+					<variable name="ssp585_txgt_29_p90" orgName="txgt_29_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/txgt_30/YS/ssp126/ensemble_percentiles/txgt_30_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_txgt_30_p10" orgName="txgt_30_p10"></variable>
+					<variable name="ssp126_txgt_30_p50" orgName="txgt_30_p50"></variable>
+					<variable name="ssp126_txgt_30_p90" orgName="txgt_30_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/txgt_30/YS/ssp245/ensemble_percentiles/txgt_30_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_txgt_30_p10" orgName="txgt_30_p10"></variable>
+					<variable name="ssp245_txgt_30_p50" orgName="txgt_30_p50"></variable>
+					<variable name="ssp245_txgt_30_p90" orgName="txgt_30_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/txgt_30/YS/ssp370/ensemble_percentiles/txgt_30_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_txgt_30_p10" orgName="txgt_30_p10"></variable>
+					<variable name="ssp370_txgt_30_p50" orgName="txgt_30_p50"></variable>
+					<variable name="ssp370_txgt_30_p90" orgName="txgt_30_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/txgt_30/YS/ssp585/ensemble_percentiles/txgt_30_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_txgt_30_p10" orgName="txgt_30_p10"></variable>
+					<variable name="ssp585_txgt_30_p50" orgName="txgt_30_p50"></variable>
+					<variable name="ssp585_txgt_30_p90" orgName="txgt_30_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/txgt_32/YS/ssp126/ensemble_percentiles/txgt_32_ann_MBCn+PCIC-Blend_historical+ssp126_1950-2100_percentiles.nc">
+					<variable name="ssp126_txgt_32_p10" orgName="txgt_32_p10"></variable>
+					<variable name="ssp126_txgt_32_p50" orgName="txgt_32_p50"></variable>
+					<variable name="ssp126_txgt_32_p90" orgName="txgt_32_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/txgt_32/YS/ssp245/ensemble_percentiles/txgt_32_ann_MBCn+PCIC-Blend_historical+ssp245_1950-2100_percentiles.nc">
+					<variable name="ssp245_txgt_32_p10" orgName="txgt_32_p10"></variable>
+					<variable name="ssp245_txgt_32_p50" orgName="txgt_32_p50"></variable>
+					<variable name="ssp245_txgt_32_p90" orgName="txgt_32_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/txgt_32/YS/ssp370/ensemble_percentiles/txgt_32_ann_MBCn+PCIC-Blend_historical+ssp370_1950-2100_percentiles.nc">
+					<variable name="ssp370_txgt_32_p10" orgName="txgt_32_p10"></variable>
+					<variable name="ssp370_txgt_32_p50" orgName="txgt_32_p50"></variable>
+					<variable name="ssp370_txgt_32_p90" orgName="txgt_32_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/txgt_32/YS/ssp585/ensemble_percentiles/txgt_32_ann_MBCn+PCIC-Blend_historical+ssp585_1950-2100_percentiles.nc">
+					<variable name="ssp585_txgt_32_p10" orgName="txgt_32_p10"></variable>
+					<variable name="ssp585_txgt_32_p50" orgName="txgt_32_p50"></variable>
+					<variable name="ssp585_txgt_32_p90" orgName="txgt_32_p90"></variable>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+	</aggregation>
+</netcdf>

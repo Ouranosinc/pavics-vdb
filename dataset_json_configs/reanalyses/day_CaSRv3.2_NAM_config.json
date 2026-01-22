@@ -1,0 +1,31 @@
+{
+  "remove":{},
+  "attribute": {
+    "institute": {
+      "value": "Environment and Climate Change Canada",
+      "type": "String"
+    },
+    "institute_id": {
+      "value": "ECCC",
+      "type": "String"
+    },
+    "title": {"value": "Canadian Surface Reanalysis (CaSR v3.2) : daily","type": "String"},
+    "type": {
+      "value": "reanalysis" ,
+      "type": "String"
+    },
+    "dataset_description": {
+      "value": "https://hpfx.collab.science.gc.ca/~scar700/rcas-casr/",
+      "type": "String"
+    },
+    "dataset_id": {"value": "CaSRv3.2", "type":"String"},
+    "license_type": {
+      "value": "permissive",
+      "type": "String"
+    }
+  },
+  "location": "/pavics-data/eccc/CaSR_v32/NAM/",
+  "ncml_type": "CaSR",
+  "frequency": "day",
+  "filename_template": ""
+}

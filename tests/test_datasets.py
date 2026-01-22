@@ -9,11 +9,12 @@ import threddsclient
 import xarray as xr
 import xncml
 from clisops.core import subset
-from xclim.core.calendar import convert_calendar
+#from xclim.core.calendar import convert_calendar
 import netCDF4
 import warnings
 import random
 from lxml import etree
+from git import Repo
 
 home = os.environ['HOME']
 pavics_root = os.path.join(home, 'boreas')  # mapped drive to top level `Birdhouse` folder on thredds
@@ -26,12 +27,13 @@ if home == '/home/biner':
     thredds_root = os.path.join(pavics_root, 'testdata/biner/NcML_tests/')
     thredds_cat_root = 'https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/birdhouse/testdata/biner/NcML_tests/'
 else:
-    pavics_root = os.path.join(home, 'pavics/datasets')
-    thredds_root = os.path.join(home, 'pavics/datasets/testdata/test_ncmls/')
+    pavics_root = f"{home}/remote_mnt/pavics_transfer/datasets"
+    thredds_root = f"{home}/remote_mnt/pavics_transfer/datasets/testdata/test_ncmls"
     # correponding url to `thredds_root`
     thredds_cat_root = 'https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/birdhouse/testdata/test_ncmls'
     # thredds_cat_root = 'https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/catalog/birdhouse/testdata/NcML_tests/'
-
+repo_path = path.Path(__file__).parent.parent
+repo = Repo(str(repo_path))
 
 class Validator:
 
@@ -130,10 +132,7 @@ class TestDataset:
 
     def test_ClimateData(self, compare_raw=False):
 
-        datasets = sorted(list(path.Path(__file__).parent.parent.joinpath('tmp/simulations/bias_adjusted/cmip5/climatedata_ca').rglob('*.ncml')))
-        datasets.extend(sorted(list(path.Path(__file__).parent.parent.joinpath('tmp/gridded_obs/climatedata_ca').rglob('*.ncml'))))
-        datasets.extend(
-            sorted(list(path.Path(__file__).parent.parent.joinpath('tmp/simulations/bias_adjusted/cmip6/climatedata_ca').rglob('*.ncml'))))
+        datasets = [f for f in get_changed_files_gitpython(repo_path) if 'climatedata_ca' in f.as_posix() and f.suffix == '.ncml']
         thredds_test_dir = f'{thredds_root}/simulations/climatedata_ca'
         thredds_path_server = f'{thredds_cat_root}/simulations/climatedata_ca/catalog.html'
         thredds_test_dir = path.Path(thredds_test_dir)
@@ -157,14 +156,16 @@ class TestDataset:
             dsNcML = xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=50, lon=60, lat=60),
                                      decode_timedelta=False)
             sample_locations = None
+            sample_loc_max = None
             if 'realization' in dsNcML.dims:
-                dsNcML = xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(realization=1, time=50, lon=60, lat=60),
+                dsNcML = xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(realization=1, time=-1, lon=30, lat=30),
                                          decode_timedelta=False)
-                sample_locations = 0.1  # sample only 15% of all '@location' netcdfs
+                sample_locations = 0.1
+                sample_loc_max = 40
             # dsNcML = subset.subset_bbox(dsNcML, lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat'])
             dsNcML = dsNcML.sel(lon=slice(test_reg['lon'][0], test_reg['lon'][1]),
                                 lat=slice(test_reg['lat'][0], test_reg['lat'][1]))
-            compare_ncml_rawdata(dataset, dsNcML, compare_raw, sample_location=sample_locations)
+            compare_ncml_rawdata(dataset, dsNcML, compare_raw, sample_location=sample_locations, sample_loc_max=sample_loc_max)
 
     def test_BCCAQv2(self, compare_raw=False):
 
@@ -258,9 +259,41 @@ class TestDataset:
             )
 
             compare_ncml_rawdata(dataset, dsNcML, compare_raw)
+    def test_CaSR(self, compare_raw=False):
+        datasets = [f for f in get_changed_files_gitpython(repo_path) if '/reanalyses' in f.as_posix() and f.suffix == '.ncml']
+        thredds_test_dir = f'{thredds_root}/reanalyses'
+        thredds_path_server = f'{thredds_cat_root}/reanalyses/catalog.html'
+        thredds_test_dir = path.Path(thredds_test_dir)
+        
+        for ii, dataset in enumerate(datasets):
+            if thredds_test_dir.exists():
+                shutil.rmtree(thredds_test_dir)
+            thredds_test_dir.mkdir(parents=True, exist_ok=True)
+            print('trying', dataset.name)
+            # copy to thredds:
+            shutil.copy(dataset, thredds_test_dir)
+            ncmls_all = [ncml for ncml in threddsclient.crawl(thredds_path_server, depth=5)]
+            ncmls = []
+            for n in ncmls_all:
+                if dataset.name in n.name:
+                    ncmls.append(n)
+
+            if len(ncmls) != 1:
+                raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
+
+            dsNcML = subset.subset_bbox(
+                xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=250), decode_timedelta=False),
+                lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
+            )
+            if xr.infer_freq(dsNcML.time) == 'D':
+                sample_time = False
+            else:
+                sample_time = True
+            compare_ncml_rawdata(dataset, dsNcML, compare_raw, sample_time=sample_time, files_perrun=2)
 
     def test_CRCM5_CMIP6(self, compare_raw=False):
-        datasets = sorted(list(path.Path(__file__).parent.parent.joinpath('tmp/simulations/RCM-CMIP6/CORDEX/NAM-12').rglob('*.ncml')))
+        #datasets = sorted(list(path.Path(__file__).parent.parent.joinpath('tmp/simulations/RCM-CMIP6/CORDEX/NAM-12').rglob('*.ncml')))
+        datasets = [f for f in get_changed_files_gitpython(repo_path) if '/simulations/RCM-CMIP6/CORDEX/NAM-12' in f.as_posix() and f.suffix == '.ncml']
         thredds_test_dir = f'{thredds_root}/simulations/RCM-CMIP6/CORDEX/NAM-12'
         thredds_path_server = f'{thredds_cat_root}/simulations/RCM-CMIP6/CORDEX/NAM-12/catalog.html'
         thredds_test_dir = path.Path(thredds_test_dir)
@@ -426,8 +459,27 @@ class TestDataset:
 
             compare_ncml_rawdata(dataset, dsNcML, compare_raw)
 
+def get_changed_files_gitpython(repo_path=".", staged=False):
+    """
+    Lists changed files in a Git repository using GitPython.
+    If staged is True, lists staged changes; otherwise, lists unstaged changes.
+    """
+    try:
+        repo = Repo(repo_path)
+        if staged:
+            # Files staged for commit
+            changed_files = [item.a_path for item in repo.index.diff("HEAD")]
+        else:
+            # Unstaged changes in the working directory
+            changed_files = [item.a_path for item in repo.index.diff(None)]
+            # Add untracked files
+            changed_files.extend(repo.untracked_files)
+        return [repo_path.joinpath(c) for c in changed_files]
+    except Exception as e:
+        print(f"Error using GitPython: {e}")
+        return []
 
-def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_perrun=None, sample_location=None):
+def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_perrun=None, sample_location=None, sample_loc_max=None):
     ncml = xncml.Dataset(dataset)
     l1 = list(recursive_items(ncml.ncroot, '@location'))[0]
 
@@ -436,7 +488,7 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
     else:
         key1 = 'scan'
 
-    if 'climex' not in l1[1] and 'cccs_portal' not in l1[1] and 'ESPO' not in l1[1] and "CanDCS" not in l1[
+    if 'CaSR' not in l1[1] and 'climex' not in l1[1] and 'cccs_portal' not in l1[1] and 'ESPO' not in l1[1] and "CanDCS" not in l1[
         1] and "CORDEX" not in l1[1]:
         for l in list(recursive_items(ncml.ncroot, key1)):
             mod = dataset.name.split('day_')[-1].split('_historical+')[0]
@@ -450,11 +502,15 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
     if sample_location:
         # remove 'mask' vars:
         locations = [f for f in locations if all([i not in f[1] for i in ['lakeFrac', 'sftlf', 'sftof', '_tcr']])]
-        ind1 = np.random.choice(range(0, len(locations)), round(sample_location * len(locations)), replace=False)
+        nsamp = round(sample_location * len(locations))
+        if sample_loc_max is not None:
+            nsamp = min(nsamp, sample_loc_max)
+        ind1 = np.random.choice(range(0, len(locations)), nsamp, replace=False)
         loc1 = []
         for ii in ind1:
             loc1.append(locations[ii])
         locations = loc1
+        print(len(locations), ' locations sampled for comparison')
         del loc1
     for l in locations:
         print(l)
@@ -469,7 +525,7 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
             if path.Path(local_path).is_file():
                 ds = subset.subset_bbox(xr.open_dataset(path.Path(local_path), decode_timedelta=False,
                                                         engine="h5netcdf",
-                                                        chunks=dict(time=30, lon=30, lat=30)),
+                                                        chunks=dict()),
                                         lon_bnds=test_reg['lon'],
                                         lat_bnds=test_reg['lat'],
                                         start_date=str(dsNcML.time.dt.year.min().values),
@@ -598,14 +654,20 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
                             compare_values(dsNcML, ds, compare_vals, sample_time=sample_time)
 
     print(dataset, 'ok')
-    movfile = path.Path(str(dataset).replace('tmp', '1-Datasets'))
-    if not movfile.parent.exists():
-        movfile.parent.mkdir(parents=True)
-    shutil.move(dataset, movfile)
+    # Stage only this file
+    try:
+        relpath = dataset.relative_to(repo.working_tree_dir)
+        repo.index.add([str(relpath)])
+    except Exception as exc:
+        return False, f"Staging failed: {type(exc).__name__}: {exc}"
+    # movfile = path.Path(str(dataset).replace('tmp', '1-Datasets'))
+    # if not movfile.parent.exists():
+    #     movfile.parent.mkdir(parents=True)
+    # shutil.move(dataset, movfile)
 
 
 def compare_values(dsNcML, ds, compare_vals, sample_time=True):
-    ds = convert_calendar(ds, target=dsNcML.time.dt.calendar, align_on='date')
+    ds = ds.convert_calendar(calendar=dsNcML.time.dt.calendar, align_on='date')
     try:
         test = dsNcML.sel(time=ds.time).squeeze()
     except:
@@ -653,13 +715,14 @@ def main():
     # test(self=test, compare_raw=False)
     # test = TestDataset.test_NEXGDDP
     # test = TestDataset.test_CLIMEX
-    test = TestDataset.test_ClimateData
+    #test = TestDataset.test_ClimateData
     # test = TestDataset.test_ESPO_R
     # test = TestDataset.test_ESPO_G
    
     #test = TestDataset.test_CanDCS_U6
     #inpath =  '../tmp/simulations/bias_adjusted/cmip6/pcic/CanDCS-M6'
     #test = TestDataset.test_CRCM5_CMIP6
+    test = TestDataset.test_CaSR
     test(self=test, compare_raw=True)
 
 

@@ -27,39 +27,39 @@ def main():
                 keylist = get_key_values(datasets[d].ncroot, searchkeys=['@location'])
                 exp = f"historical{d.split('_historical')[-1]}"
                 run = keylist['@location'][0].split(exp)[-1].split('_195')[0].replace('_', '')
-                outpath = p.Path(str(dataset.parent).replace('dataset_json_configs', 'tmp')).joinpath(
+                outpath = p.Path(str(dataset.parent).replace('dataset_json_configs', '1-Datasets')).joinpath(
                     f"{ncml_modify['filename_template'].format(freq=ncml_modify['frequency'], model=d, run=run)}.ncml")
             elif ncml_modify['ncml_type'] == 'climatedata.ca':
                 agg, freq = d.split('_')
                 outpath = p.Path(str(dataset.parent).replace('dataset_json_configs',
-                                                             'tmp')).joinpath(
+                                                             '1-Datasets')).joinpath(
                     agg,f"{dataset.name.split('_config')[0]}_{freq}.ncml".replace("__","_").replace('_.', '.'))
             elif ncml_modify['ncml_type'] == 'climatedata.ca_CanDCS-U6':
                 agg, freq = d.split('_')
                 outpath = p.Path(str(dataset.parent).replace('dataset_json_configs',
-                                                             'tmp')).joinpath(
+                                                             '1-Datasets')).joinpath(
                     f"{agg}_{dataset.name.split('_config')[0]}.ncml".replace("__","_").replace('_.', '.'))
             elif ncml_modify['ncml_type'] == 'climatedata.ca_CanDCS-U6_members':
                 agg, freq = d.split('_')
                 outpath = p.Path(str(dataset.parent).replace('dataset_json_configs',
-                                                             'tmp')).joinpath(
+                                                             '1-Datasets')).joinpath(
                     f"{agg}_{dataset.name.split('_config')[0]}.ncml".replace("__","_").replace('_.', '.'))
             elif ncml_modify['ncml_type'] == "ESPO-G_members":
                 freq, experiment = d.split('_')
                 outpath = p.Path(str(dataset.parent).replace('dataset_json_configs',
-                                                             'tmp')).joinpath(
+                                                             '1-Datasets')).joinpath(
                     f"{freq}_{experiment}_{dataset.name.split('_config')[0]}.ncml".replace("__", "_").replace('_.', '.'))
 
             else:
                 if "separate_model_directory" in ncml_modify.keys():
                     if ncml_modify["separate_model_directory"] == "True":
                         mod = d.split('_hist')[0]
-                        outpath = p.Path(str(dataset.parent).replace('dataset_json_configs', 'tmp')).joinpath(mod,
+                        outpath = p.Path(str(dataset.parent).replace('dataset_json_configs', '1-Datasets')).joinpath(mod,
                                                                                                               f"{d}.ncml")
 
 
                 else:
-                    outpath = p.Path(str(dataset.parent).replace('dataset_json_configs', 'tmp')).joinpath(
+                    outpath = p.Path(str(dataset.parent).replace('dataset_json_configs', '1-Datasets')).joinpath(
                         f"{d}.ncml")
 
             if overwrite_to_tmp:
@@ -157,10 +157,52 @@ def ncml_create_datasets(ncml_template=None, config=None):
 
         return ncmls
 
+    elif config['ncml_type'] == "CaSR":
+        freq = config["frequency"]
+        infolder = p.Path(config['location'].replace('/pavics-data', pavics_root)).joinpath(freq)
+        ncmls = {}
+        agg_dict = {"@type": "Union"}
+        agg = ncml_add_aggregation(agg_dict)
+        agg['netcdf'] = []
+        outname = None
+        for vv in [v for v in infolder.iterdir()]:
+        
+            if outname is None:
+                ncfiles = sorted(list(vv.rglob(f'*{freq}*.nc')))
+                outname_files =[n for n in ncfiles if n.name.startswith(vv.name)]
+                if len(outname_files) == 0:
+                    raise ValueError(f"No files found for variable {vv.name} in {infolder.joinpath(vv)}")
+                time_per = f"{outname_files[0].stem.split('_')[-1].split('-')[0]}-{outname_files[-1].stem.split('_')[-1].split('-')[-1]}"
+                outname = f"{'_'.join(outname_files[0].stem.split('_')[1:-1])}_{time_per}"
+            
+            
+            scanloc = os.path.commonpath(sorted(list(vv.rglob(f'*{vv.name}_{freq}_*.nc'))))
+            netcdf2 = ncml_netcdf_container()
+            netcdf2['aggregation'] = ncml_add_aggregation(
+                {'@dimName': 'time', '@type': 'joinExisting', '@recheckEvery': '1 day'})
+            netcdf2['aggregation']['scan'] = []
+            scan = {'@location': scanloc.replace(pavics_root, '/pavics-data'),
+                    '@subdirs': 'true',
+                    '@suffix': f'{vv.name}_*.nc'}
+            netcdf2['aggregation']['scan'].append(ncml_add_scan(scan))
+
+            agg['netcdf'].append(netcdf2)
+            del netcdf2
+        ncml1 = xncml.Dataset()
+        ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
+        attrs = config['attribute']
+        #attrs['source_institution'] = dict(value=sim.name, type="String")
+        ncml1.ncroot['netcdf']['attribute'] = ncml_add_attributes(attrs)
+        ncml1.ncroot['netcdf']['aggregation'] = agg
+
+        ncmls[outname] = ncml1
+
+        return ncmls
+
     elif config['ncml_type'] == 'CRCM5-CMIP6':
 
-        first_var = {"1hr":"tas", "3hr":"clwvi", "day":"tas"}
-        first_var1 = {"1hr": "pr", "3hr": "snw", "day": "pr"}
+        first_var = {"1hr":"tas", "3hr":"clwvi", "day":"tas", "mon": "tas"}
+        first_var1 = {"1hr": "pr", "3hr": "snw", "day": "pr", "mon": "pr"}
         config
         freq = config["frequency"]
         infolder = p.Path(config['location'].replace('/pavics-data', pavics_root))
@@ -787,7 +829,9 @@ def ncml_create_datasets(ncml_template=None, config=None):
         return ncmls
 
     elif config['ncml_type'] == "climatedata.ca_CanDCS-U6":
-
+        skip_inds = []
+        if 'skip_indicator' in config.keys():
+            skip_inds = config['skip_indicator'] 
         ncmls = {}
         location = p.Path(config['location'].replace('pavics-data', pavics_root))
         for aggkey, agg1 in config['aggregation'].items():
@@ -800,12 +844,16 @@ def ncml_create_datasets(ncml_template=None, config=None):
                 remove_vars = {}
                 for v in sorted([x for x in location.iterdir() if x.is_dir()]):
                     print(v)
+                    if v.name in skip_inds:
+                        print(f"skipping {v.name}")
+                        continue    
                     for exp in config['experiments']:
                         realm = config['realm']
                         rcp = exp.split('+')[-1]
 
                         runs = sorted(list(location.joinpath(v, freq).rglob(
                             config['regexp_template'].format(agg=agg1, rcp=exp, v=v.name, frequency=freq))))
+                        runs = [r for r in runs if 'spatialAvg' not in r.name]
                         if agg1 == '':
                             runs = [r for r in runs if '30ymean' not in r.name]
                         else:
@@ -823,9 +871,9 @@ def ncml_create_datasets(ncml_template=None, config=None):
                                 netcdf3['@location'] = str(run).replace(pavics_root, 'pavics-data')
                                 var_names = []
                                 try:
-                                    dtmp = xr.open_dataset(run, engine="h5netcdf")
+                                    dtmp = xr.open_dataset(run, engine="h5netcdf", decode_timedelta=False)
                                 except:
-                                    dtmp = xr.open_dataset(run)
+                                    dtmp = xr.open_dataset(run,  decode_timedelta=False)
 
                                 for vv in dtmp.data_vars:
                                     if exp not in vv and exp != 'allrcps' and exp != 'nrcan':
@@ -855,13 +903,15 @@ def ncml_create_datasets(ncml_template=None, config=None):
         return ncmls
 
     elif config['ncml_type'] == "climatedata.ca_CanDCS-U6_members":
-
+        skip_inds = []
+        if 'skip_indicator' in config.keys():
+            skip_inds = config['skip_indicator'] 
         ncmls = {}
         location = p.Path(config['location'].replace('pavics-data', pavics_root))
         for aggkey, agg1 in config['aggregation'].items():
             for freq, frequency1 in config['frequency'].items():
                 # runs = sorted(glob.glob(path.join(inrep1, "*" + m + "_hist*r*i1p1*195*2*" + f + "*.nc")))
-                vars = sorted([x for x in location.iterdir() if x.is_dir()])
+                vars = sorted([x for x in location.iterdir() if x.is_dir() and x.name not in skip_inds])
                 varlist = []
                 for exp in config['experiments']:
                     varlist.extend([f"{exp}_{v.name}" for v in vars])
@@ -911,7 +961,8 @@ def ncml_create_datasets(ncml_template=None, config=None):
                     for exp in config['experiments']:
                         print(mod, exp, rr)
                         for v in vars:
-
+                            if v.name in skip_inds:
+                                print(f"skipping {v.name}")
                             runs = sorted(list(location.joinpath(v, freq).rglob(
                                 config['regexp_template'].format(agg=agg1, rcp=exp, mod=mod, v=v.name, frequency=freq))))
                             runs = [r for r in runs if 'spatialAvg' not in r.name]
@@ -930,9 +981,9 @@ def ncml_create_datasets(ncml_template=None, config=None):
                                 netcdf3['@location'] = str(run).replace(pavics_root, 'pavics-data')
                                 var_names = []
                                 try:
-                                    dtmp = xr.open_dataset(run, engine="h5netcdf")
+                                    dtmp = xr.open_dataset(run, decode_timedelta=False, engine="h5netcdf")
                                 except:
-                                    dtmp = xr.open_dataset(run)
+                                    dtmp = xr.open_dataset(run, decode_timedelta=False,)
 
                                 for vv in dtmp.data_vars:
                                     if exp not in vv and exp != 'allrcps' and exp != 'nrcan':
