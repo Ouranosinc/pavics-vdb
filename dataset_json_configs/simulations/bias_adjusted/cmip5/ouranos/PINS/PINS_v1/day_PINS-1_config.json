@@ -63,7 +63,7 @@
     "rcp85"
   ],
   "variables": ["snw"],
-  "frequency": "day",
+  "frequency": ["day"],
   "realm": "land",
   "filename_template": ""
 }
