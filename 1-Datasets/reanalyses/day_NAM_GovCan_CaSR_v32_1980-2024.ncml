@@ -8,209 +8,2397 @@
 	<attribute name="dataset_id" type="String" value="CaSRv3.2"></attribute>
 	<attribute name="license_type" type="String" value="permissive"></attribute>
 	<aggregation type="Union">
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/fx/orog/orog_fx_NAM_GovCan_CaSR_v32_fx.nc"></netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/fx/sftgif/sftgif_fx_NAM_GovCan_CaSR_v32_fx.nc">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/fx/sftlf/sftlf_fx_NAM_GovCan_CaSR_v32_fx.nc">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/fx/sftlkf/sftlkf_fx_NAM_GovCan_CaSR_v32_fx.nc">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/fx/sftof/sftof_fx_NAM_GovCan_CaSR_v32_fx.nc">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
+		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/20mWind" subdirs="true" suffix="20mWind_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/20mWind/20mWind_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/20mWind/20mWind_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/20mWind/20mWind_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/20mWind/20mWind_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/20mWind/20mWind_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/20mWind/20mWind_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/20mWind/20mWind_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/20mWind/20mWind_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/20mWind/20mWind_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/20mWind/20mWind_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/20mWind/20mWind_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/20mWind/20mWind_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/20mWinddir" subdirs="true" suffix="20mWinddir_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/20mWinddir/20mWinddir_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/20mWinddir/20mWinddir_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/20mWinddir/20mWinddir_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/20mWinddir/20mWinddir_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/20mWinddir/20mWinddir_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/20mWinddir/20mWinddir_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/20mWinddir/20mWinddir_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/20mWinddir/20mWinddir_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/20mWinddir/20mWinddir_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/20mWinddir/20mWinddir_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/20mWinddir/20mWinddir_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/20mWinddir/20mWinddir_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/cfia" subdirs="true" suffix="cfia_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/cfia/cfia_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/cfia/cfia_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/cfia/cfia_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/cfia/cfia_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/cfia/cfia_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/cfia/cfia_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/cfia/cfia_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/cfia/cfia_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/cfia/cfia_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/cfia/cfia_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/cfia/cfia_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/cfia/cfia_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/hur" subdirs="true" suffix="hur_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hur/hur_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hur/hur_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hur/hur_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hur/hur_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hur/hur_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hur/hur_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hur/hur_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hur/hur_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hur/hur_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hur/hur_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hur/hur_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hur/hur_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/hurmax" subdirs="true" suffix="hurmax_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurmax/hurmax_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurmax/hurmax_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurmax/hurmax_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurmax/hurmax_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurmax/hurmax_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurmax/hurmax_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurmax/hurmax_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurmax/hurmax_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurmax/hurmax_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurmax/hurmax_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurmax/hurmax_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurmax/hurmax_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/hurmin" subdirs="true" suffix="hurmin_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurmin/hurmin_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurmin/hurmin_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurmin/hurmin_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurmin/hurmin_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurmin/hurmin_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurmin/hurmin_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurmin/hurmin_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurmin/hurmin_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurmin/hurmin_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurmin/hurmin_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurmin/hurmin_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurmin/hurmin_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/hurs" subdirs="true" suffix="hurs_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurs/hurs_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurs/hurs_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurs/hurs_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurs/hurs_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurs/hurs_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurs/hurs_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurs/hurs_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurs/hurs_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurs/hurs_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurs/hurs_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurs/hurs_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hurs/hurs_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/hursmax" subdirs="true" suffix="hursmax_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hursmax/hursmax_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hursmax/hursmax_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hursmax/hursmax_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hursmax/hursmax_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hursmax/hursmax_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hursmax/hursmax_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hursmax/hursmax_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hursmax/hursmax_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hursmax/hursmax_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hursmax/hursmax_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hursmax/hursmax_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hursmax/hursmax_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/hursmin" subdirs="true" suffix="hursmin_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hursmin/hursmin_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hursmin/hursmin_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hursmin/hursmin_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hursmin/hursmin_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hursmin/hursmin_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hursmin/hursmin_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hursmin/hursmin_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hursmin/hursmin_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hursmin/hursmin_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hursmin/hursmin_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hursmin/hursmin_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hursmin/hursmin_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/hus" subdirs="true" suffix="hus_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hus/hus_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hus/hus_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hus/hus_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hus/hus_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hus/hus_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hus/hus_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hus/hus_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hus/hus_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hus/hus_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hus/hus_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hus/hus_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/hus/hus_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/huss" subdirs="true" suffix="huss_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/huss/huss_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/huss/huss_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/huss/huss_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/huss/huss_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/huss/huss_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/huss/huss_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/huss/huss_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/huss/huss_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/huss/huss_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/huss/huss_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/huss/huss_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/huss/huss_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/pr" subdirs="true" suffix="pr_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/pr/pr_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/pr/pr_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/pr/pr_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/pr/pr_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/pr/pr_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/pr/pr_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/pr/pr_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/pr/pr_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/pr/pr_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/pr/pr_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/pr/pr_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/pr/pr_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/prfr" subdirs="true" suffix="prfr_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prfr/prfr_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prfr/prfr_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prfr/prfr_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prfr/prfr_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prfr/prfr_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prfr/prfr_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prfr/prfr_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prfr/prfr_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prfr/prfr_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prfr/prfr_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prfr/prfr_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prfr/prfr_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/prmod" subdirs="true" suffix="prmod_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prmod/prmod_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prmod/prmod_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prmod/prmod_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prmod/prmod_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prmod/prmod_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prmod/prmod_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prmod/prmod_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prmod/prmod_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prmod/prmod_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prmod/prmod_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prmod/prmod_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prmod/prmod_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/prra" subdirs="true" suffix="prra_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prra/prra_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prra/prra_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prra/prra_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prra/prra_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prra/prra_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prra/prra_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prra/prra_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prra/prra_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prra/prra_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prra/prra_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prra/prra_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prra/prra_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/prrp" subdirs="true" suffix="prrp_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prrp/prrp_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prrp/prrp_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prrp/prrp_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prrp/prrp_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prrp/prrp_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prrp/prrp_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prrp/prrp_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prrp/prrp_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prrp/prrp_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prrp/prrp_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prrp/prrp_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prrp/prrp_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/prsn" subdirs="true" suffix="prsn_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prsn/prsn_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prsn/prsn_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prsn/prsn_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prsn/prsn_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prsn/prsn_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prsn/prsn_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prsn/prsn_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prsn/prsn_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prsn/prsn_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prsn/prsn_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prsn/prsn_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/prsn/prsn_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/ps" subdirs="true" suffix="ps_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ps/ps_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ps/ps_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ps/ps_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ps/ps_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ps/ps_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ps/ps_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ps/ps_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ps/ps_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ps/ps_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ps/ps_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ps/ps_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ps/ps_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/psl" subdirs="true" suffix="psl_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/psl/psl_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/psl/psl_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/psl/psl_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/psl/psl_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/psl/psl_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/psl/psl_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/psl/psl_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/psl/psl_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/psl/psl_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/psl/psl_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/psl/psl_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/psl/psl_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/rlds" subdirs="true" suffix="rlds_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/rlds/rlds_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/rlds/rlds_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/rlds/rlds_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/rlds/rlds_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/rlds/rlds_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/rlds/rlds_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/rlds/rlds_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/rlds/rlds_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/rlds/rlds_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/rlds/rlds_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/rlds/rlds_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/rlds/rlds_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/rsds" subdirs="true" suffix="rsds_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/rsds/rsds_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/rsds/rsds_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/rsds/rsds_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/rsds/rsds_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/rsds/rsds_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/rsds/rsds_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/rsds/rsds_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/rsds/rsds_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/rsds/rsds_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/rsds/rsds_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/rsds/rsds_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/rsds/rsds_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/sfcWind" subdirs="true" suffix="sfcWind_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/sfcWind/sfcWind_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/sfcWind/sfcWind_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/sfcWind/sfcWind_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/sfcWind/sfcWind_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/sfcWind/sfcWind_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/sfcWind/sfcWind_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/sfcWind/sfcWind_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/sfcWind/sfcWind_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/sfcWind/sfcWind_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/sfcWind/sfcWind_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/sfcWind/sfcWind_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/sfcWind/sfcWind_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/sfcWindmax" subdirs="true" suffix="sfcWindmax_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/sfcWindmax/sfcWindmax_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/sfcWindmax/sfcWindmax_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/sfcWindmax/sfcWindmax_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/sfcWindmax/sfcWindmax_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/sfcWindmax/sfcWindmax_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/sfcWindmax/sfcWindmax_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/sfcWindmax/sfcWindmax_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/sfcWindmax/sfcWindmax_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/sfcWindmax/sfcWindmax_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/sfcWindmax/sfcWindmax_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/sfcWindmax/sfcWindmax_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/sfcWindmax/sfcWindmax_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/tas" subdirs="true" suffix="tas_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tas/tas_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tas/tas_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tas/tas_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tas/tas_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tas/tas_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tas/tas_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tas/tas_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tas/tas_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tas/tas_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tas/tas_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tas/tas_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tas/tas_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/tasmax" subdirs="true" suffix="tasmax_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tasmax/tasmax_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tasmax/tasmax_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tasmax/tasmax_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tasmax/tasmax_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tasmax/tasmax_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tasmax/tasmax_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tasmax/tasmax_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tasmax/tasmax_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tasmax/tasmax_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tasmax/tasmax_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tasmax/tasmax_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tasmax/tasmax_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/tasmin" subdirs="true" suffix="tasmin_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tasmin/tasmin_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tasmin/tasmin_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tasmin/tasmin_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tasmin/tasmin_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tasmin/tasmin_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tasmin/tasmin_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tasmin/tasmin_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tasmin/tasmin_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tasmin/tasmin_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tasmin/tasmin_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tasmin/tasmin_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tasmin/tasmin_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/tdp" subdirs="true" suffix="tdp_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdp/tdp_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdp/tdp_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdp/tdp_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdp/tdp_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdp/tdp_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdp/tdp_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdp/tdp_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdp/tdp_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdp/tdp_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdp/tdp_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdp/tdp_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdp/tdp_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpmax" subdirs="true" suffix="tdpmax_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpmax/tdpmax_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpmax/tdpmax_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpmax/tdpmax_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpmax/tdpmax_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpmax/tdpmax_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpmax/tdpmax_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpmax/tdpmax_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpmax/tdpmax_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpmax/tdpmax_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpmax/tdpmax_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpmax/tdpmax_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpmax/tdpmax_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpmin" subdirs="true" suffix="tdpmin_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpmin/tdpmin_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpmin/tdpmin_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpmin/tdpmin_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpmin/tdpmin_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpmin/tdpmin_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpmin/tdpmin_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpmin/tdpmin_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpmin/tdpmin_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpmin/tdpmin_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpmin/tdpmin_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpmin/tdpmin_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpmin/tdpmin_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/tdps" subdirs="true" suffix="tdps_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdps/tdps_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdps/tdps_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdps/tdps_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdps/tdps_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdps/tdps_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdps/tdps_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdps/tdps_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdps/tdps_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdps/tdps_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdps/tdps_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdps/tdps_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdps/tdps_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpsmax" subdirs="true" suffix="tdpsmax_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpsmax/tdpsmax_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpsmax/tdpsmax_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpsmax/tdpsmax_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpsmax/tdpsmax_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpsmax/tdpsmax_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpsmax/tdpsmax_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpsmax/tdpsmax_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpsmax/tdpsmax_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpsmax/tdpsmax_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpsmax/tdpsmax_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpsmax/tdpsmax_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpsmax/tdpsmax_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpsmin" subdirs="true" suffix="tdpsmin_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpsmin/tdpsmin_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpsmin/tdpsmin_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpsmin/tdpsmin_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpsmin/tdpsmin_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpsmin/tdpsmin_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpsmin/tdpsmin_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpsmin/tdpsmin_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpsmin/tdpsmin_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpsmin/tdpsmin_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpsmin/tdpsmin_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpsmin/tdpsmin_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tdpsmin/tdpsmin_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/ua" subdirs="true" suffix="ua_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ua/ua_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ua/ua_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ua/ua_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ua/ua_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ua/ua_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ua/ua_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ua/ua_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ua/ua_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ua/ua_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ua/ua_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ua/ua_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ua/ua_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/uas" subdirs="true" suffix="uas_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/uas/uas_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/uas/uas_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/uas/uas_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/uas/uas_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/uas/uas_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/uas/uas_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/uas/uas_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/uas/uas_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/uas/uas_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/uas/uas_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/uas/uas_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/uas/uas_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/va" subdirs="true" suffix="va_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/va/va_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/va/va_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/va/va_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/va/va_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/va/va_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/va/va_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/va/va_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/va/va_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/va/va_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/va/va_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/va/va_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/va/va_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/vas" subdirs="true" suffix="vas_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/vas/vas_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/vas/vas_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/vas/vas_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/vas/vas_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/vas/vas_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/vas/vas_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/vas/vas_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/vas/vas_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/vas/vas_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/vas/vas_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/vas/vas_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/vas/vas_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/winddir" subdirs="true" suffix="winddir_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/winddir/winddir_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/winddir/winddir_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/winddir/winddir_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/winddir/winddir_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/winddir/winddir_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/winddir/winddir_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/winddir/winddir_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/winddir/winddir_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/winddir/winddir_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/winddir/winddir_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/winddir/winddir_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/winddir/winddir_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/zcrd09975" subdirs="true" suffix="zcrd09975_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/zcrd09975/zcrd09975_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/zcrd09975/zcrd09975_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/zcrd09975/zcrd09975_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/zcrd09975/zcrd09975_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/zcrd09975/zcrd09975_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/zcrd09975/zcrd09975_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/zcrd09975/zcrd09975_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/zcrd09975/zcrd09975_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/zcrd09975/zcrd09975_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/zcrd09975/zcrd09975_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/zcrd09975/zcrd09975_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/zcrd09975/zcrd09975_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/zcrd10000" subdirs="true" suffix="zcrd10000_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/zcrd10000/zcrd10000_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/zcrd10000/zcrd10000_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/zcrd10000/zcrd10000_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/zcrd10000/zcrd10000_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/zcrd10000/zcrd10000_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/zcrd10000/zcrd10000_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/zcrd10000/zcrd10000_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/zcrd10000/zcrd10000_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/zcrd10000/zcrd10000_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/zcrd10000/zcrd10000_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/zcrd10000/zcrd10000_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/zcrd10000/zcrd10000_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/snd" subdirs="true" suffix="snd_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/snd/snd_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/snd/snd_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/snd/snd_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/snd/snd_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/snd/snd_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/snd/snd_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/snd/snd_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/snd/snd_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/snd/snd_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/snd/snd_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/snd/snd_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/snd/snd_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/eccc/CaSR_v32/NAM/day/snw" subdirs="true" suffix="snw_*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/snw/snw_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/snw/snw_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/snw/snw_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/snw/snw_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/snw/snw_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/snw/snw_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/snw/snw_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/snw/snw_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/snw/snw_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/snw/snw_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/snw/snw_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/snw/snw_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ta/ta_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ta/ta_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ta/ta_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ta/ta_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ta/ta_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ta/ta_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ta/ta_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ta/ta_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ta/ta_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ta/ta_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ta/ta_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/ta/ta_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tamax/tamax_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tamax/tamax_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tamax/tamax_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tamax/tamax_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tamax/tamax_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tamax/tamax_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tamax/tamax_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tamax/tamax_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tamax/tamax_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tamax/tamax_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tamax/tamax_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tamax/tamax_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<remove name="lon" type="variable"></remove>
+			<remove name="lat" type="variable"></remove>
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tamin/tamin_day_NAM_GovCan_CaSR_v32_1980-1983.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tamin/tamin_day_NAM_GovCan_CaSR_v32_1984-1987.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tamin/tamin_day_NAM_GovCan_CaSR_v32_1988-1991.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tamin/tamin_day_NAM_GovCan_CaSR_v32_1992-1995.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tamin/tamin_day_NAM_GovCan_CaSR_v32_1996-1999.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tamin/tamin_day_NAM_GovCan_CaSR_v32_2000-2003.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tamin/tamin_day_NAM_GovCan_CaSR_v32_2004-2007.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tamin/tamin_day_NAM_GovCan_CaSR_v32_2008-2011.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tamin/tamin_day_NAM_GovCan_CaSR_v32_2012-2015.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tamin/tamin_day_NAM_GovCan_CaSR_v32_2016-2019.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tamin/tamin_day_NAM_GovCan_CaSR_v32_2020-2023.nc" ncoords="1461">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/day/tamin/tamin_day_NAM_GovCan_CaSR_v32_2024.nc" ncoords="366">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 	</aggregation>
