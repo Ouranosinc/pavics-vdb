@@ -735,7 +735,7 @@ def main():
     #test = TestDataset.test_CanDCS_U6
     #inpath =  '../tmp/simulations/bias_adjusted/cmip6/pcic/CanDCS-M6'
     #test = TestDataset.test_CRCM5_CMIP6
-    test = TestDataset.test_CaSR
+    test = TestDataset.test_location_explicit # CaSR, PINS
     test(self=test, compare_raw=True)
 
 
