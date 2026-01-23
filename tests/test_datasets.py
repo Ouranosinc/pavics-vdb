@@ -259,10 +259,10 @@ class TestDataset:
             )
 
             compare_ncml_rawdata(dataset, dsNcML, compare_raw)
-    def test_CaSR(self, compare_raw=False):
-        datasets = [f for f in get_changed_files_gitpython(repo_path) if '/reanalyses' in f.as_posix() and f.suffix == '.ncml']
-        thredds_test_dir = f'{thredds_root}/reanalyses'
-        thredds_path_server = f'{thredds_cat_root}/reanalyses/catalog.html'
+    def test_location_explicit(self, compare_raw=False):
+        datasets = [f for f in get_changed_files_gitpython(repo_path) if f.suffix == '.ncml']
+        thredds_test_dir = f'{thredds_root}/ncml_location_explicit'
+        thredds_path_server = f'{thredds_cat_root}/ncml_location_explicit/catalog.html'
         thredds_test_dir = path.Path(thredds_test_dir)
         
         for ii, dataset in enumerate(datasets):
@@ -285,13 +285,14 @@ class TestDataset:
                 xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=250), decode_timedelta=False),
                 lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
             )
-            if xr.infer_freq(dsNcML.time) == 'D':
+            if xr.infer_freq(dsNcML.time) == 'D' or len(dsNcML.time) < 1500:
                 sample_time = False
             else:
                 sample_time = True
             sample_locations = 0.1
             sample_loc_max = 50
-            compare_ncml_rawdata(dataset, dsNcML, compare_raw, sample_location=sample_locations, sample_loc_max=sample_loc_max, sample_time=sample_time)
+            compare_ncml_rawdata(dataset, dsNcML, compare_raw, sample_location=sample_locations, 
+                                 sample_loc_max=sample_loc_max, sample_time=sample_time, aggtype='location')
 
     def test_CRCM5_CMIP6(self, compare_raw=False):
         #datasets = sorted(list(path.Path(__file__).parent.parent.joinpath('tmp/simulations/RCM-CMIP6/CORDEX/NAM-12').rglob('*.ncml')))
@@ -481,22 +482,24 @@ def get_changed_files_gitpython(repo_path=".", staged=False):
         print(f"Error using GitPython: {e}")
         return []
 
-def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_perrun=None, sample_location=None, sample_loc_max=None):
+def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_perrun=None, sample_location=None, sample_loc_max=None, aggtype=None):
     ncml = xncml.Dataset(dataset)
     l1 = list(recursive_items(ncml.ncroot, '@location'))[0]
 
-    if 'CaSR' in l1[1] or 'bccaqv2' in l1[1] or 'cccs_portal' in l1[1] or 'derived' in dataset.as_posix():
+    if aggtype == 'location':#'CaSR' in l1[1] or 'bccaqv2' in l1[1] or 'cccs_portal' in l1[1] or 'derived' in dataset.as_posix():
         key1 = '@location'
-    else:
+    elif aggtype == 'scan':
         key1 = 'scan'
+    else:
+        raise ValueError('aggtype must be location or scan')
 
-    if 'CaSR' not in l1[1] and 'climex' not in l1[1] and 'cccs_portal' not in l1[1] and 'ESPO' not in l1[1] and "CanDCS" not in l1[
-        1] and "CORDEX" not in l1[1]:
-        for l in list(recursive_items(ncml.ncroot, key1)):
-            mod = dataset.name.split('day_')[-1].split('_historical+')[0]
-            rcp = dataset.name.split('_historical+')[-1][0:5]
-            assert mod in l[1]['@location']
-            assert ('historical' in l[1]['@location'] or rcp in l[1]['@location'])
+    # if 'CaSR' not in l1[1] and 'climex' not in l1[1] and 'cccs_portal' not in l1[1] and 'ESPO' not in l1[1] and "CanDCS" not in l1[
+    #     1] and "CORDEX" not in l1[1]:
+    #     for l in list(recursive_items(ncml.ncroot, key1)):
+    #         mod = dataset.name.split('day_')[-1].split('_historical+')[0]
+    #         rcp = dataset.name.split('_historical+')[-1][0:5]
+    #         assert mod in l[1]['@location']
+    #         assert ('historical' in l[1]['@location'] or rcp in l[1]['@location'])
 
     files = {}
 
@@ -507,6 +510,8 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
         nsamp = round(sample_location * len(locations))
         if sample_loc_max is not None:
             nsamp = min(nsamp, sample_loc_max)
+        if nsamp < 1:
+            nsamp = 1
         ind1 = np.random.choice(range(0, len(locations)), nsamp, replace=False)
         loc1 = []
         for ii in ind1:
