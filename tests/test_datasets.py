@@ -289,7 +289,9 @@ class TestDataset:
                 sample_time = False
             else:
                 sample_time = True
-            compare_ncml_rawdata(dataset, dsNcML, compare_raw, sample_time=sample_time, files_perrun=2)
+            sample_locations = 0.1
+            sample_loc_max = 50
+            compare_ncml_rawdata(dataset, dsNcML, compare_raw, sample_location=sample_locations, sample_loc_max=sample_loc_max, sample_time=sample_time)
 
     def test_CRCM5_CMIP6(self, compare_raw=False):
         #datasets = sorted(list(path.Path(__file__).parent.parent.joinpath('tmp/simulations/RCM-CMIP6/CORDEX/NAM-12').rglob('*.ncml')))
@@ -483,7 +485,7 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
     ncml = xncml.Dataset(dataset)
     l1 = list(recursive_items(ncml.ncroot, '@location'))[0]
 
-    if 'bccaqv2' in l1[1] or 'cccs_portal' in l1[1] or 'derived' in dataset.as_posix():
+    if 'CaSR' in l1[1] or 'bccaqv2' in l1[1] or 'cccs_portal' in l1[1] or 'derived' in dataset.as_posix():
         key1 = '@location'
     else:
         key1 = 'scan'
@@ -501,7 +503,7 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
     locations = list(recursive_items(ncml.ncroot, key1))
     if sample_location:
         # remove 'mask' vars:
-        locations = [f for f in locations if all([i not in f[1] for i in ['lakeFrac', 'sftlf', 'sftof', '_tcr']])]
+        #locations = [f for f in locations if all([i not in f[1] for i in ['lakeFrac', 'sftlf', 'sftof', '_tcr']])]
         nsamp = round(sample_location * len(locations))
         if sample_loc_max is not None:
             nsamp = min(nsamp, sample_loc_max)
@@ -527,7 +529,9 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
                                                         engine="h5netcdf",
                                                         chunks=dict()),
                                         lon_bnds=test_reg['lon'],
-                                        lat_bnds=test_reg['lat'],
+                                        lat_bnds=test_reg['lat'])
+                if 'time' in ds.dims:
+                    ds = subset.subset_time(ds,
                                         start_date=str(dsNcML.time.dt.year.min().values),
                                         end_date=str(dsNcML.time.dt.year.max().values))
 
@@ -667,29 +671,33 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
 
 
 def compare_values(dsNcML, ds, compare_vals, sample_time=True):
-    ds = ds.convert_calendar(calendar=dsNcML.time.dt.calendar, align_on='date')
-    try:
-        test = dsNcML.sel(time=ds.time).squeeze()
-    except:
-        
-        time1 = xr.DataArray(list(ds.resample(time=xr.infer_freq(dsNcML.time)).groups.keys()), dims=['time'])
-        ds = ds.assign_coords(time=time1)
-        time2 = xr.DataArray(list(dsNcML.resample(time=xr.infer_freq(dsNcML.time)).groups.keys()), dims=['time'])
-        dsNcML = dsNcML.assign_coords(time=time2)
-        test = dsNcML.sel(time=ds.time).squeeze()
-        del time1, time2
+    if 'time' in ds.dims:
+        ds = ds.convert_calendar(calendar=dsNcML.time.dt.calendar, align_on='date')
+        try:
+            test = dsNcML.sel(time=ds.time).squeeze()
+        except:
+            
+            time1 = xr.DataArray(list(ds.resample(time=xr.infer_freq(dsNcML.time)).groups.keys()), dims=['time'])
+            ds = ds.assign_coords(time=time1)
+            time2 = xr.DataArray(list(dsNcML.resample(time=xr.infer_freq(dsNcML.time)).groups.keys()), dims=['time'])
+            dsNcML = dsNcML.assign_coords(time=time2)
+            test = dsNcML.sel(time=ds.time).squeeze()
+            del time1, time2
+        if sample_time:
+            time1 = np.random.choice(ds.time, 15)
+        else:
+            time1 = ds.time
+    else:
+        test = dsNcML
 
-    for coord in ds.coords:
-        if coord not in ['height', 'horizon', 'time_bnds']:
+    for coord in ds.coords :
+        if coord not in ['height', 'horizon', 'time_bnds'] and coord in dsNcML.coords:
             #print(coord)
             if coord.startswith('vertices'):
                 np.testing.assert_array_equal(ds[coord].transpose(*test[coord].dims).values, test[coord].values)
             else:
                 np.testing.assert_array_equal(ds[coord].values, test[coord].values)
-    if sample_time:
-        time1 = np.random.choice(ds.time, 15)
-    else:
-        time1 = ds.time
+    
     if compare_vals:
         with ProgressBar():
             for v in ds.data_vars:

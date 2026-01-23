@@ -164,6 +164,17 @@ def ncml_create_datasets(ncml_template=None, config=None):
         agg_dict = {"@type": "Union"}
         agg = ncml_add_aggregation(agg_dict)
         agg['netcdf'] = []
+        if 'invariant_location' in config.keys():
+            for ii, nc in enumerate(sorted(list(p.Path(config['invariant_location'].replace('pavics-data', pavics_root)).rglob('*.nc')))):
+
+                netcdf3 = ncml_netcdf_container()
+
+                netcdf3['@location'] = str(nc).replace(pavics_root, '/pavics-data')
+                if ii != 0 and 'remove_per_agg' in config.keys():
+                    netcdf3['remove'] = ncml_remove_items(config['remove_per_agg'])
+                agg['netcdf'].append(netcdf3)
+                del netcdf3
+
         outname = None
         for vv in [v for v in infolder.iterdir()]:
         
@@ -177,17 +188,34 @@ def ncml_create_datasets(ncml_template=None, config=None):
             
             
             scanloc = os.path.commonpath(sorted(list(vv.rglob(f'*{vv.name}_{freq}_*.nc'))))
+            
+                
+            
             netcdf2 = ncml_netcdf_container()
+            if 'remove_per_agg' in config.keys():
+                netcdf2['remove'] = ncml_remove_items(config['remove_per_agg'])
             netcdf2['aggregation'] = ncml_add_aggregation(
                 {'@dimName': 'time', '@type': 'joinExisting', '@recheckEvery': '1 day'})
-            netcdf2['aggregation']['scan'] = []
-            scan = {'@location': scanloc.replace(pavics_root, '/pavics-data'),
-                    '@subdirs': 'true',
-                    '@suffix': f'{vv.name}_*.nc'}
-            netcdf2['aggregation']['scan'].append(ncml_add_scan(scan))
+            #netcdf2['aggregation']['scan'] = []
+            netcdf2['aggregation']['netcdf'] = []
+            # scan = {'@location': scanloc.replace(pavics_root, '/pavics-data'),
+            #         '@subdirs': 'true',
+            #         '@suffix': f'{vv.name}_*.nc'}
+            for ii, nc in enumerate(sorted(list(p.Path(scanloc.replace('pavics-data', pavics_root)).rglob('*.nc')))):
+                print(nc)
+                netcdf3 = ncml_netcdf_container()
 
+                netcdf3['@location'] = str(nc).replace(pavics_root, '/pavics-data')
+                netcdf3['@ncoords'] = str(len(xr.open_dataset(nc).time))
+                if 'remove_per_agg' in config.keys():
+                    netcdf3['remove'] = ncml_remove_items(config['remove_per_agg'])
+                netcdf2['aggregation']['netcdf'].append(netcdf3)
+            #netcdf2['aggregation']['scan'].append(ncml_add_scan(scan))
+            
             agg['netcdf'].append(netcdf2)
+            
             del netcdf2
+        
         ncml1 = xncml.Dataset()
         ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
         attrs = config['attribute']
