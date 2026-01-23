@@ -1,5 +1,9 @@
 {
   "attribute": {
+    "doi": {
+      "value": "https://doi.org/10.5194/tc-20-333-2026",
+      "type": "String"
+    },
     "institution": {
       "value": "Ouranos Consortium on Regional Climatology and Adaptation to Climate Change",
       "type": "String"
