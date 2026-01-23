@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+	<attribute name="doi" type="String" value="https://doi.org/10.5194/tc-20-333-2026"></attribute>
+	<attribute name="institution" type="String" value="Ouranos Consortium on Regional Climatology and Adaptation to Climate Change"></attribute>
+	<attribute name="institution_id" type="String" value="Ouranos"></attribute>
+	<attribute name="title" type="String" value="PINS v1 : Portraits d'indices de la neige au sol"></attribute>
+	<attribute name="dataset_id" type="String" value="PINS v1"></attribute>
+	<attribute name="type" type="String" value="RCM"></attribute>
+	<attribute name="processing" type="String" value="bias_adjusted"></attribute>
+	<attribute name="abstract" type="String" value="In the context of climate change, stakeholders and decision makers are in demand of easily accessible bias-adjusted projections of snow cover and their resulting indices to develop adaptation plans. To meet this need, we produced an ensemble of regional climate projections statistically bias adjusted of snow water equivalent (SWE) over the province of Québec."></attribute>
+	<attribute name="bias_adjust_method" type="String" value="1D-Empirical Quantile Mapping with smoothed decay"></attribute>
+	<attribute name="bias_adjust_reference" type="String" value="ERA5-Land (1991-2020)"></attribute>
+	<attribute name="bias_adjust_reference_citation" type="String" value="https://doi.org/10.24381/cds.e2161bac"></attribute>
+	<attribute name="license_type" type="String" value="permissive"></attribute>
+	<attribute name="license" type="String" value="Creative Commons Attribution 4.0 International Public License: https://creativecommons.org/licenses/by/4.0/legalcode"></attribute>
+	<attribute name="terms_of_use" type="String" value="In addition to the provided licence, the data used for the realization of climate scenarios are subject to the conditions of the source data. For more details, please refer to: https://pcmdi.llnl.gov/CMIP6/TermsOfUse/TermsOfUse6-2.html"></attribute>
+	<attribute name="attribution" type="String" value="Use of this dataset should be acknowledged as 'Data produced and provided by the Ouranos Consortium on Regional Climatology and Adaptation to Climate Change'. Furthermore, the modeling groups from which the bias-adjusted climate scenarios were constructed must also be acknowledged, please refer to: The Coupled Model Intercomparison Project https://wcrp-cmip.org/cmip-phase-6-cmip6/"></attribute>
+	<attribute name="modeling_realm" type="String" value="land"></attribute>
+	<attribute name="source_institution" type="String" value="NCAR"></attribute>
+	<aggregation type="Union">
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="//pavics-data/ouranos/PINS/PINS_v1/NCAR/RegCM4/MPI-M-MPI-ESM-LR/rcp85/r1i1p1/day/snw/snw_day_PINS_v1_QC-12_NCAR_RegCM4_MPI-M-MPI-ESM-LR_r1i1p1_rcp85_1991-2100.nc" ncoords="40149"></netcdf>
+			</aggregation>
+		</netcdf>
+	</aggregation>
+</netcdf>
