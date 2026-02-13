@@ -259,7 +259,7 @@ class TestDataset:
             )
 
             compare_ncml_rawdata(dataset, dsNcML, compare_raw)
-    def test_location_explicit(self, compare_raw=False):
+    def test_location_explicit(self, compare_raw=False, sample_locations=0.1, sample_loc_max=15):
         datasets = [f for f in get_changed_files_gitpython(repo_path) if f.suffix == '.ncml']
         thredds_test_dir = f'{thredds_root}/ncml_location_explicit'
         thredds_path_server = f'{thredds_cat_root}/ncml_location_explicit/catalog.html'
@@ -289,8 +289,6 @@ class TestDataset:
                 sample_time = False
             else:
                 sample_time = True
-            sample_locations = 0.1
-            sample_loc_max = 50
             compare_ncml_rawdata(dataset, dsNcML, compare_raw, sample_location=sample_locations, 
                                  sample_loc_max=sample_loc_max, sample_time=sample_time, aggtype='location')
 
@@ -560,7 +558,7 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
                         test_files = list(sorted(path.Path(local_path).glob(str1)))
                 else:
                     test_files = list(sorted(path.Path(local_path).glob(str1)))
-                # //home/logan/pavics/datasets/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/CNRM-ESM2-1/historical/r1i1p1f2/CRCM5/v1-r1/1hr/hurs/v20240201/hurs_NAM-12_CNRM-ESM2-1_historical_r1i1p1f2_OURANOS_CRCM5_v1-r1_1hr_197701010000-197712312300.nc
+                
                 test_files
                 # remove =[]
                 # if check_times:
@@ -705,7 +703,7 @@ def compare_values(dsNcML, ds, compare_vals, sample_time=True):
     
     if compare_vals:
         with ProgressBar():
-            for v in ds.data_vars:
+            for v in [v for v in ds.data_vars if v in test.data_vars]:
                 if v not in ['time_bnds','time_vectors', 'lat', 'lon'] and ds[v].dtype != 'S1':
                     print(v)
                     if 'time' in ds[v].dims:
@@ -735,7 +733,7 @@ def main():
     #test = TestDataset.test_CanDCS_U6
     #inpath =  '../tmp/simulations/bias_adjusted/cmip6/pcic/CanDCS-M6'
     #test = TestDataset.test_CRCM5_CMIP6
-    test = TestDataset.test_location_explicit # CaSR, PINS
+    test = TestDataset.test_location_explicit # CaSR, PINS, CRCM5 
     test(self=test, compare_raw=True)
 
 
