@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+	<remove name="type" type="variable"></remove>
+	<remove name="plev" type="variable"></remove>
 	<attribute name="abstract" type="String" value="Ouranos produces operational regional climate simulations over the Cordex North American domain, at 0.11° resolution. The current ensemble uses the fifth version of the CRCM, developed at UQAM's ESCER center in collaboration with ECCC. Pilot data for the simulations come from the CMIP6 ensemble, except for those in hindcast mode, which use ERA5."></attribute>
 	<attribute name="institution" type="String" value="Ouranos Consortium on Regional Climatology and Adaptation to Climate Change"></attribute>
 	<attribute name="title" type="String" value="CRCM5-CMIP6 : Canadian Regional Climate Model v.5 - CMIP6 :  monthly"></attribute>
@@ -11,109 +13,772 @@
 	<attribute name="type" type="String" value="simulation"></attribute>
 	<attribute name="processing_level" type="String" value="raw"></attribute>
 	<aggregation type="Union">
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/fx/areacella/v20250829/areacella_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_fx.nc"></netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/fx/orog/v20250829/orog_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_fx.nc"></netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/fx/sftlf/v20250829/sftlf_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_fx.nc"></netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/fx/sftof/v20250829/sftof_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_fx.nc"></netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/fx/sftlaf/v20250829/sftlaf_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_fx.nc"></netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/fx/sftgif/v20250829/sftgif_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_fx.nc"></netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/fx/classFrac/v20250829/classFrac_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_fx.nc"></netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/fx/cropFrac/v20250829/cropFrac_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_fx.nc"></netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/fx/grassFrac/v20250829/grassFrac_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_fx.nc"></netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/fx/treeFracPrimDec/v20250829/treeFracPrimDec_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_fx.nc"></netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/fx/treeFracPrimEver/v20250829/treeFracPrimEver_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_fx.nc"></netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/fx/wetlandFrac/v20250829/wetlandFrac_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_fx.nc"></netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/tas/v20250829" subdirs="true" suffix="*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/tas/v20250829/tas_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195001-195012.nc" ncoords="12">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/tas/v20250829/tas_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195101-196012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/tas/v20250829/tas_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_196101-197012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/tas/v20250829/tas_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_197101-198012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/tas/v20250829/tas_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_198101-199012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/tas/v20250829/tas_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_199101-200012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/tas/v20250829/tas_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_200101-201012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/tas/v20250829/tas_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_201101-201412.nc" ncoords="48">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/clwvi/v20250829" subdirs="true" suffix="*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/clwvi/v20250829/clwvi_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195001-195012.nc" ncoords="12">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/clwvi/v20250829/clwvi_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195101-196012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/clwvi/v20250829/clwvi_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_196101-197012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/clwvi/v20250829/clwvi_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_197101-198012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/clwvi/v20250829/clwvi_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_198101-199012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/clwvi/v20250829/clwvi_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_199101-200012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/clwvi/v20250829/clwvi_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_200101-201012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/clwvi/v20250829/clwvi_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_201101-201412.nc" ncoords="48">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/hfls/v20250829" subdirs="true" suffix="*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/hfls/v20250829/hfls_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195001-195012.nc" ncoords="12">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/hfls/v20250829/hfls_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195101-196012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/hfls/v20250829/hfls_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_196101-197012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/hfls/v20250829/hfls_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_197101-198012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/hfls/v20250829/hfls_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_198101-199012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/hfls/v20250829/hfls_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_199101-200012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/hfls/v20250829/hfls_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_200101-201012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/hfls/v20250829/hfls_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_201101-201412.nc" ncoords="48">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/hurs/v20250829" subdirs="true" suffix="*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/hurs/v20250829/hurs_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195001-195012.nc" ncoords="12">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/hurs/v20250829/hurs_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195101-196012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/hurs/v20250829/hurs_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_196101-197012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/hurs/v20250829/hurs_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_197101-198012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/hurs/v20250829/hurs_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_198101-199012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/hurs/v20250829/hurs_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_199101-200012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/hurs/v20250829/hurs_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_200101-201012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/hurs/v20250829/hurs_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_201101-201412.nc" ncoords="48">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/huss/v20250829" subdirs="true" suffix="*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/huss/v20250829/huss_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195001-195012.nc" ncoords="12">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/huss/v20250829/huss_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195101-196012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/huss/v20250829/huss_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_196101-197012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/huss/v20250829/huss_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_197101-198012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/huss/v20250829/huss_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_198101-199012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/huss/v20250829/huss_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_199101-200012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/huss/v20250829/huss_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_200101-201012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/huss/v20250829/huss_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_201101-201412.nc" ncoords="48">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/mrro/v20250829" subdirs="true" suffix="*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/mrro/v20250829/mrro_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195001-195012.nc" ncoords="12">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/mrro/v20250829/mrro_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195101-196012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/mrro/v20250829/mrro_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_196101-197012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/mrro/v20250829/mrro_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_197101-198012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/mrro/v20250829/mrro_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_198101-199012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/mrro/v20250829/mrro_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_199101-200012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/mrro/v20250829/mrro_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_200101-201012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/mrro/v20250829/mrro_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_201101-201412.nc" ncoords="48">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/mrros/v20250829" subdirs="true" suffix="*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/mrros/v20250829/mrros_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195001-195012.nc" ncoords="12">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/mrros/v20250829/mrros_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195101-196012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/mrros/v20250829/mrros_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_196101-197012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/mrros/v20250829/mrros_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_197101-198012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/mrros/v20250829/mrros_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_198101-199012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/mrros/v20250829/mrros_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_199101-200012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/mrros/v20250829/mrros_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_200101-201012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/mrros/v20250829/mrros_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_201101-201412.nc" ncoords="48">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/pr/v20250829" subdirs="true" suffix="*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/pr/v20250829/pr_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195001-195012.nc" ncoords="12">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/pr/v20250829/pr_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195101-196012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/pr/v20250829/pr_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_196101-197012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/pr/v20250829/pr_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_197101-198012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/pr/v20250829/pr_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_198101-199012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/pr/v20250829/pr_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_199101-200012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/pr/v20250829/pr_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_200101-201012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/pr/v20250829/pr_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_201101-201412.nc" ncoords="48">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prfr/v20250829" subdirs="true" suffix="*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prfr/v20250829/prfr_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195001-195012.nc" ncoords="12">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prfr/v20250829/prfr_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195101-196012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prfr/v20250829/prfr_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_196101-197012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prfr/v20250829/prfr_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_197101-198012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prfr/v20250829/prfr_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_198101-199012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prfr/v20250829/prfr_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_199101-200012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prfr/v20250829/prfr_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_200101-201012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prfr/v20250829/prfr_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_201101-201412.nc" ncoords="48">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prra/v20250829" subdirs="true" suffix="*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prra/v20250829/prra_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195001-195012.nc" ncoords="12">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prra/v20250829/prra_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195101-196012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prra/v20250829/prra_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_196101-197012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prra/v20250829/prra_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_197101-198012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prra/v20250829/prra_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_198101-199012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prra/v20250829/prra_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_199101-200012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prra/v20250829/prra_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_200101-201012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prra/v20250829/prra_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_201101-201412.nc" ncoords="48">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prsn/v20250829" subdirs="true" suffix="*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prsn/v20250829/prsn_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195001-195012.nc" ncoords="12">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prsn/v20250829/prsn_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195101-196012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prsn/v20250829/prsn_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_196101-197012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prsn/v20250829/prsn_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_197101-198012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prsn/v20250829/prsn_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_198101-199012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prsn/v20250829/prsn_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_199101-200012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prsn/v20250829/prsn_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_200101-201012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prsn/v20250829/prsn_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_201101-201412.nc" ncoords="48">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prw/v20250829" subdirs="true" suffix="*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prw/v20250829/prw_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195001-195012.nc" ncoords="12">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prw/v20250829/prw_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195101-196012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prw/v20250829/prw_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_196101-197012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prw/v20250829/prw_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_197101-198012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prw/v20250829/prw_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_198101-199012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prw/v20250829/prw_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_199101-200012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prw/v20250829/prw_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_200101-201012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/prw/v20250829/prw_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_201101-201412.nc" ncoords="48">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/ps/v20250829" subdirs="true" suffix="*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/ps/v20250829/ps_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195001-195012.nc" ncoords="12">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/ps/v20250829/ps_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195101-196012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/ps/v20250829/ps_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_196101-197012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/ps/v20250829/ps_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_197101-198012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/ps/v20250829/ps_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_198101-199012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/ps/v20250829/ps_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_199101-200012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/ps/v20250829/ps_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_200101-201012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/ps/v20250829/ps_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_201101-201412.nc" ncoords="48">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/psl/v20250829" subdirs="true" suffix="*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/psl/v20250829/psl_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195001-195012.nc" ncoords="12">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/psl/v20250829/psl_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195101-196012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/psl/v20250829/psl_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_196101-197012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/psl/v20250829/psl_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_197101-198012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/psl/v20250829/psl_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_198101-199012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/psl/v20250829/psl_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_199101-200012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/psl/v20250829/psl_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_200101-201012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/psl/v20250829/psl_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_201101-201412.nc" ncoords="48">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/rlds/v20250829" subdirs="true" suffix="*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/rlds/v20250829/rlds_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195001-195012.nc" ncoords="12">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/rlds/v20250829/rlds_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195101-196012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/rlds/v20250829/rlds_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_196101-197012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/rlds/v20250829/rlds_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_197101-198012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/rlds/v20250829/rlds_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_198101-199012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/rlds/v20250829/rlds_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_199101-200012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/rlds/v20250829/rlds_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_200101-201012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/rlds/v20250829/rlds_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_201101-201412.nc" ncoords="48">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/rsds/v20250829" subdirs="true" suffix="*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/rsds/v20250829/rsds_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195001-195012.nc" ncoords="12">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/rsds/v20250829/rsds_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195101-196012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/rsds/v20250829/rsds_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_196101-197012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/rsds/v20250829/rsds_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_197101-198012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/rsds/v20250829/rsds_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_198101-199012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/rsds/v20250829/rsds_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_199101-200012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/rsds/v20250829/rsds_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_200101-201012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/rsds/v20250829/rsds_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_201101-201412.nc" ncoords="48">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/snw/v20250829" subdirs="true" suffix="*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/snw/v20250829/snw_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195001-195012.nc" ncoords="12">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/snw/v20250829/snw_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195101-196012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/snw/v20250829/snw_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_196101-197012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/snw/v20250829/snw_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_197101-198012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/snw/v20250829/snw_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_198101-199012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/snw/v20250829/snw_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_199101-200012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/snw/v20250829/snw_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_200101-201012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/snw/v20250829/snw_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_201101-201412.nc" ncoords="48">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/tasmax/v20250829" subdirs="true" suffix="*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/tasmax/v20250829/tasmax_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195001-195012.nc" ncoords="12">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/tasmax/v20250829/tasmax_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195101-196012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/tasmax/v20250829/tasmax_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_196101-197012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/tasmax/v20250829/tasmax_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_197101-198012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/tasmax/v20250829/tasmax_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_198101-199012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/tasmax/v20250829/tasmax_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_199101-200012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/tasmax/v20250829/tasmax_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_200101-201012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/tasmax/v20250829/tasmax_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_201101-201412.nc" ncoords="48">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/tasmin/v20250829" subdirs="true" suffix="*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/tasmin/v20250829/tasmin_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195001-195012.nc" ncoords="12">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/tasmin/v20250829/tasmin_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195101-196012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/tasmin/v20250829/tasmin_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_196101-197012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/tasmin/v20250829/tasmin_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_197101-198012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/tasmin/v20250829/tasmin_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_198101-199012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/tasmin/v20250829/tasmin_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_199101-200012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/tasmin/v20250829/tasmin_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_200101-201012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/tasmin/v20250829/tasmin_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_201101-201412.nc" ncoords="48">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/uas/v20250829" subdirs="true" suffix="*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/uas/v20250829/uas_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195001-195012.nc" ncoords="12">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/uas/v20250829/uas_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195101-196012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/uas/v20250829/uas_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_196101-197012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/uas/v20250829/uas_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_197101-198012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/uas/v20250829/uas_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_198101-199012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/uas/v20250829/uas_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_199101-200012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/uas/v20250829/uas_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_200101-201012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/uas/v20250829/uas_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_201101-201412.nc" ncoords="48">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/vas/v20250829" subdirs="true" suffix="*.nc"></scan>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/vas/v20250829/vas_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195001-195012.nc" ncoords="12">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/vas/v20250829/vas_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_195101-196012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/vas/v20250829/vas_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_196101-197012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/vas/v20250829/vas_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_197101-198012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/vas/v20250829/vas_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_198101-199012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/vas/v20250829/vas_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_199101-200012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/vas/v20250829/vas_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_200101-201012.nc" ncoords="120">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/historical/r5i1p1f1/CRCM5/v1-r1/mon/vas/v20250829/vas_NAM-12_MPI-ESM1-2-LR_historical_r5i1p1f1_OURANOS_CRCM5_v1-r1_mon_201101-201412.nc" ncoords="48">
+					<remove name="lon" type="variable"></remove>
+					<remove name="lat" type="variable"></remove>
+				</netcdf>
 			</aggregation>
 		</netcdf>
 	</aggregation>
