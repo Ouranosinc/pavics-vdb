@@ -22,5 +22,6 @@
                 <scan location="/pavics-data/ecmwf/ERA5/NAM/1hr/pr" regExp="pr_.*\.nc$" subdirs="false"/>
             </aggregation>
         </netcdf>
+        <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ecmwf/ERA5/NAM/fx/sftlf/sftlf_fx_NAM_ECMWF_ERA5_fx.nc"></netcdf>
     </aggregation>
 </netcdf>
