@@ -57,5 +57,6 @@
                 <scan location="/pavics-data/ecmwf/ERA5-Land/NAM/day/rss" regExp="rss_.*\.nc$" subdirs="false"/>
             </aggregation>
         </netcdf>
+        <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/ecmwf/ERA5-Land/NAM/fx/z/z_fx_NAM_ECMWF_ERA5-Land_fx.nc"></netcdf>
     </aggregation>
 </netcdf>
