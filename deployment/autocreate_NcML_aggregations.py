@@ -14,7 +14,7 @@ pavics_root = f"{home}/remote_mnt/pavics_transfer/datasets"
 def main():
     overwrite_to_tmp = True
     rootdir = p.Path(__file__).parent.parent
-    dataset_configs = rootdir.joinpath("dataset_json_configs").rglob('*CRCM5-CMIP6_config*.json')
+    dataset_configs = rootdir.joinpath("dataset_json_configs").rglob('*CaSRv3.2*_config*.json')
     for dataset in dataset_configs:
         with open(dataset, 'r') as f:
             ncml_modify = json.load(f)
@@ -176,7 +176,8 @@ def ncml_create_datasets(ncml_template=None, config=None):
                 del netcdf3
 
         outname = None
-        for vv in [v for v in infolder.iterdir()]:
+        skip_vars = ["prsn","prra","prfr","prrp"]
+        for vv in [v for v in infolder.iterdir() if v.name not in skip_vars and v.is_dir()]:
         
             if outname is None:
                 ncfiles = sorted(list(vv.rglob(f'*{freq}*.nc')))
