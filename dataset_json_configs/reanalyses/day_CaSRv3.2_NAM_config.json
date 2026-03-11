@@ -2,6 +2,10 @@
   "remove":{},
   "remove_per_agg":{"lon":"variable","lat":"variable"},
   "attribute": {
+      "frequency": {
+      "value": "day",
+      "type": "String"
+    },
     "institute": {
       "value": "Environment and Climate Change Canada",
       "type": "String"
