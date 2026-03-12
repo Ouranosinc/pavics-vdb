@@ -1,6 +1,7 @@
 <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
     <remove name="institution" type="attribute" />
     <remove name="licence_type" type="attribute" />
+    <attribute name="frequency" type="String" value="day"></attribute>
     <attribute name="title" type="String" value="Regional Deterministic Reforecast System - RDRS v2.1 : daily" />
     <attribute name="type" type="String" value="reanalysis" />
     <attribute name="institute" type="String" value="Environment and Climate Change Canada" />
