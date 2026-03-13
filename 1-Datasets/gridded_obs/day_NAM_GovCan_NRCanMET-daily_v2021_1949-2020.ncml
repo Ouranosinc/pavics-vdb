@@ -4,25 +4,25 @@
     <attribute name="abstract" type="String" value="Gridded daily observational dataset produced by Natural Resources Canada (NRCan), available at 300 arc second spatial resolution (1/12° grids, ~10 km) over North America." />
     <attribute name="dataset_description" type="String" value="https://cfs.nrcan.gc.ca/projects/3/1"></attribute>
     <attribute name="type" type="String" value="gridded_obs" />
-    <attribute name="dataset_id" type="String" value="NRCanMET-daily_v2021" />
+    <attribute name="dataset_id" type="String" value="NRCanMET-daily_v2022" />
     <attribute name="attribution" type="String" value="The authors provide this data under the Environment and Climate Change Canada Data Server End Use License and demand that any references to or derivative works based on this dataset be cited using the provided citation information"/>
 
     <aggregation type="union">
         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
             <aggregation dimName="time" type="joinExisting" timeUnitsChange = "true">
-            <scan location="/pavics-data/nrcan/NRCanMET-daily_v2021/NAM/day/tasmin" suffix=".nc" subdirs="false"/>
+            <scan location="/pavics-data/nrcan/NRCanMET-daily_v2022/NAM/day/tasmin" suffix=".nc" subdirs="false"/>
             </aggregation>
         </netcdf>
 
         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
             <aggregation dimName="time" type="joinExisting" timeUnitsChange = "true">
-            <scan location="/pavics-data/nrcan/NRCanMET-daily_v2021/NAM/day/tasmax" suffix=".nc" subdirs="false"/>
+            <scan location="/pavics-data/nrcan/NRCanMET-daily_v2022/NAM/day/tasmax" suffix=".nc" subdirs="false"/>
             </aggregation>
         </netcdf>
 
         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
             <aggregation dimName="time" type="joinExisting" timeUnitsChange = "true">
-            <scan location="/pavics-data/nrcan/NRCanMET-daily_v2021/NAM/day/pr" suffix=".nc" subdirs="false"/>
+            <scan location="/pavics-data/nrcan/NRCanMET-daily_v2022/NAM/day/pr" suffix=".nc" subdirs="false"/>
             </aggregation>
         </netcdf>
         </aggregation>
