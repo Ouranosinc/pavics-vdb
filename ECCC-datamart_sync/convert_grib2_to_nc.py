@@ -230,7 +230,7 @@ def reformat_nc(job):
         for v in ncfiles:
 
             dstmp = xr.open_mfdataset(sorted(ncfiles[v]), combine='nested',
-                                      chunks='auto', concat_dim='valid_time', coords='minimal')
+                                      chunks='auto', concat_dim='valid_time', coords='different', compat='no_conflicts')
             for drop_var in ['surface', 'heightAboveGround']:
                 dstmp = dstmp.drop_vars(drop_var, errors='ignore') 
 
@@ -251,7 +251,7 @@ def reformat_nc(job):
                                  )
             ds_all.append(dstmp)
 
-        ds = xr.merge(ds_all, compat='no_conflicts')
+        ds = xr.merge(ds_all, compat='no_conflicts', join='outer')
         ds.attrs = ds_all[0].attrs
         ds = ds.drop_vars('step')
         first_step = ds.isel(time=0)['pr'].fillna(0)
