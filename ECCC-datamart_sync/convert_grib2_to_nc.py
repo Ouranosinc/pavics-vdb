@@ -6,6 +6,7 @@ import shutil
 import tempfile
 import time
 import urllib
+import requests
 from pathlib import Path
 import pandas as pd
 import xarray as xr
@@ -35,7 +36,7 @@ jobs = dict(GEPS=dict(inpath=Path(os.environ.get(
                                        default=CONVERT_GRIB2_TO_NC_THREDDSPATH_DEFAULT)),
                       variables=dict(TMP_TGL_2m=dict(t2m='tas'), APCP_SFC_0=dict(paramId_0='pr')),
                       filename_pattern='CMC_geps-raw_{vv}_latlon0p5x0p5_{date}{HH}_P{hhh}_allmbrs.grib2',
-                      urlroot='http://dd.weather.gc.ca/ensemble/geps/grib2/raw/',
+                      urlroot='http://dd.weather.gc.ca/{date}/WXO-DD/ensemble/geps/grib2/raw/',
                       time_expected=96,
                       pattern=['latlon0p5x0p5_', '_P'],
                       )
@@ -200,18 +201,16 @@ def download_ddmart(job, urlroot, file_pattern, variables, outpath):
 
                     for hhh in tt:
                         filename = outpath.joinpath(file_pattern.format(vv=vv, date=date, HH=HH, hhh=str(hhh).zfill(3)))
-                        url = f'{urlroot}{HH}/{str(hhh).zfill(3)}/'
+                        url = f'{urlroot.format(date=date)}{HH}/{str(hhh).zfill(3)}/'
                         if not filename.exists():
 
                             try:
-                                # urllib.request.urlretrieve(f"{url}{filename.name}", filename.as_posix())
-                                request = urllib.request.urlopen(f"{url}{filename.name}", timeout=5)
+                                response = requests.get(f"{url}{filename.name}", timeout=5)
+                                response.raise_for_status()
                                 with open(filename.as_posix(), 'wb') as f:
 
-                                    f.write(request.read())
+                                    f.write(response.content)
                                 newfiles += 1
-
-
                             except:
                                 time.sleep(0.1)
                                 continue
@@ -231,14 +230,18 @@ def reformat_nc(job):
         for v in ncfiles:
 
             dstmp = xr.open_mfdataset(sorted(ncfiles[v]), combine='nested',
-                                      chunks='auto', concat_dim='valid_time')
+                                      chunks='auto', concat_dim='valid_time', coords='different', compat='no_conflicts')
             for drop_var in ['surface', 'heightAboveGround']:
-                try:
-                    dstmp = dstmp.drop_vars(drop_var)
-                except:
-                    continue
+                dstmp = dstmp.drop_vars(drop_var, errors='ignore') 
 
-            dstmp = dstmp.rename(var_dict[v])
+            for kk, vv in var_dict[v].items():
+                if kk in dstmp.data_vars:
+                    dstmp = dstmp.rename({kk: vv})
+                elif list(set(dstmp.data_vars)) == ['unknown'] and v == 'APCP_SFC_0':
+                    dstmp = dstmp.rename({'unknown': 'pr'})
+                else: 
+                    raise ValueError(f"variable {kk} not found in {ncfiles[v]} and can't be renamed to {vv}")
+            #dstmp = dstmp.rename(var_dict[v])
             dstmp = dstmp.rename({'time': 'reftime',
                                   'valid_time': 'time',
                                   'longitude': 'lon',
@@ -248,7 +251,7 @@ def reformat_nc(job):
                                  )
             ds_all.append(dstmp)
 
-        ds = xr.merge(ds_all)
+        ds = xr.merge(ds_all, compat='no_conflicts', join='outer')
         ds.attrs = ds_all[0].attrs
         ds = ds.drop_vars('step')
         first_step = ds.isel(time=0)['pr'].fillna(0)
