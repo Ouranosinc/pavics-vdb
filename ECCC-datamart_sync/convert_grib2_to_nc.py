@@ -230,14 +230,18 @@ def reformat_nc(job):
         for v in ncfiles:
 
             dstmp = xr.open_mfdataset(sorted(ncfiles[v]), combine='nested',
-                                      chunks='auto', concat_dim='valid_time')
+                                      chunks='auto', concat_dim='valid_time', coords='minimal')
             for drop_var in ['surface', 'heightAboveGround']:
-                try:
-                    dstmp = dstmp.drop_vars(drop_var)
-                except:
-                    continue
+                dstmp = dstmp.drop_vars(drop_var, errors='ignore') 
 
-            dstmp = dstmp.rename(var_dict[v])
+            for kk, vv in var_dict[v].items():
+                if kk in dstmp.data_vars:
+                    dstmp = dstmp.rename({kk: vv})
+                elif list(set(dstmp.data_vars)) == ['unknown'] and v == 'APCP_SFC_0':
+                    dstmp = dstmp.rename({'unknown': 'pr'})
+                else: 
+                    raise ValueError(f"variable {kk} not found in {ncfiles[v]} and can't be renamed to {vv}")
+            #dstmp = dstmp.rename(var_dict[v])
             dstmp = dstmp.rename({'time': 'reftime',
                                   'valid_time': 'time',
                                   'longitude': 'lon',
@@ -245,7 +249,7 @@ def reformat_nc(job):
                                   'number': 'member',
                                   }
                                  )
-            ds_all.append(dstmp)
+            ds_all.append(dstmp, compat='no_conflicts')
 
         ds = xr.merge(ds_all)
         ds.attrs = ds_all[0].attrs
