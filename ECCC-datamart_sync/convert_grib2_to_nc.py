@@ -249,9 +249,9 @@ def reformat_nc(job):
                                   'number': 'member',
                                   }
                                  )
-            ds_all.append(dstmp, compat='no_conflicts')
+            ds_all.append(dstmp)
 
-        ds = xr.merge(ds_all)
+        ds = xr.merge(ds_all, compat='no_conflicts')
         ds.attrs = ds_all[0].attrs
         ds = ds.drop_vars('step')
         first_step = ds.isel(time=0)['pr'].fillna(0)
