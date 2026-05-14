@@ -34,6 +34,10 @@
     "processing_level": {
       "value": "raw",
       "type": "String"
+    },
+    "frequency": {
+      "value": "day",
+      "type": "String"
     }
   },
   "location": "/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS",
