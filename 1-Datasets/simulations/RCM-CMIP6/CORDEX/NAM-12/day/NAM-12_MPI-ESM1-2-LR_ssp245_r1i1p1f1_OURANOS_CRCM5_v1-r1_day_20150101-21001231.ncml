@@ -12,6 +12,7 @@
 	<attribute name="modeling_realm" type="String" value="atmos"></attribute>
 	<attribute name="type" type="String" value="simulation"></attribute>
 	<attribute name="processing_level" type="String" value="raw"></attribute>
+	<attribute name="frequency" type="String" value="day"></attribute>
 	<aggregation type="Union">
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/ssp245/r1i1p1f1/CRCM5/v1-r1/fx/areacella/v20240507/areacella_NAM-12_MPI-ESM1-2-LR_ssp245_r1i1p1f1_OURANOS_CRCM5_v1-r1_fx.nc"></netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/ouranos/CORDEX/CMIP6/DD/NAM-12/OURANOS/MPI-ESM1-2-LR/ssp245/r1i1p1f1/CRCM5/v1-r1/fx/orog/v20240507/orog_NAM-12_MPI-ESM1-2-LR_ssp245_r1i1p1f1_OURANOS_CRCM5_v1-r1_fx.nc"></netcdf>
