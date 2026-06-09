@@ -5,6 +5,7 @@
     <attribute name="type" type="String" value="gridded_obs" />
     <attribute name="dataset_id" type="String" value="PCICBlend_v1" />
     <attribute name="license" type="String" value="Custom licence : see dataset description url" />
+    <attribute name="license_type" type="String" value="permissive" />
     <aggregation type="union">
         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/pcic/PCIC_Blended_Observations_v1/pr_day_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/pcic/PCIC_Blended_Observations_v1/tasmin_day_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
