@@ -638,9 +638,11 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
                                rcp in local_path]
                         if len(rcp) > 1:
                             raise ValueError(f'expected single rcp value found {rcp}')
-                        rcp = rcp[0]
+                        if len(rcp) == 1:
+                            rcp = rcp[0]
                         print(local_path, rcp)
                         for v in ds.data_vars:
+                            print(v)
                             if v not in dsNcML.data_vars and f"{rcp}_{v}" in dsNcML.data_vars:
                                 ds = ds.rename({v: f"{rcp}_{v}"})
                         del rcp
