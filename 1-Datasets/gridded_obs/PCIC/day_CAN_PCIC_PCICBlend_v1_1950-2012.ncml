@@ -1,0 +1,14 @@
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <attribute name="title" type="String" value="PCIC_Blended_Observations_v1" />
+    <attribute name="abstract" type="String" value="Gridded daily observational dataset produced by the Pacific Climate Impacts Consortium" />
+    <attribute name="dataset_description" type="String" value="https://www.uvic.ca/pcic/data-analysis-tools/data-portal/daily-gridded-meteorology/index.php"/>
+    <attribute name="type" type="String" value="gridded_obs" />
+    <attribute name="dataset_id" type="String" value="PCICBlend_v1" />
+    <aggregation type="union">
+        <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/pcic/PCIC_Blended_Observations_v1/pr_day_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+        <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/pcic/PCIC_Blended_Observations_v1/tasmin_day_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+        <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/pcic/PCIC_Blended_Observations_v1/tasmax_day_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+        <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/pcic/PCIC_Blended_Observations_v1/prsn_day_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+    </aggregation>
+</netcdf>
+
