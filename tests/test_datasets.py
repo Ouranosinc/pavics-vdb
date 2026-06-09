@@ -165,7 +165,7 @@ class TestDataset:
             # dsNcML = subset.subset_bbox(dsNcML, lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat'])
             dsNcML = dsNcML.sel(lon=slice(test_reg['lon'][0], test_reg['lon'][1]),
                                 lat=slice(test_reg['lat'][0], test_reg['lat'][1]))
-            compare_ncml_rawdata(dataset, dsNcML, compare_raw, sample_location=sample_locations, sample_loc_max=sample_loc_max)
+            compare_ncml_rawdata(dataset, dsNcML, compare_raw, sample_location=sample_locations, sample_loc_max=sample_loc_max, aggtype='location')
 
     def test_BCCAQv2(self, compare_raw=False):
 
@@ -728,14 +728,14 @@ def main():
     # test(self=test, compare_raw=False)
     # test = TestDataset.test_NEXGDDP
     # test = TestDataset.test_CLIMEX
-    #test = TestDataset.test_ClimateData
+    test = TestDataset.test_ClimateData
     # test = TestDataset.test_ESPO_R
     # test = TestDataset.test_ESPO_G
    
     #test = TestDataset.test_CanDCS_U6
     #inpath =  '../tmp/simulations/bias_adjusted/cmip6/pcic/CanDCS-M6'
     #test = TestDataset.test_CRCM5_CMIP6
-    test = TestDataset.test_location_explicit # CaSR, PINS, CRCM5 
+    #test = TestDataset.test_location_explicit # CaSR, PINS, CRCM5 
     test(self=test, compare_raw=True)
 
 
