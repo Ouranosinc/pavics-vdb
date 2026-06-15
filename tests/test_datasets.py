@@ -431,8 +431,7 @@ class TestDataset:
 
     def test_CanDCS_U6(self, inpath='../tmp/simulations/bias_adjusted/cmip6/pcic/CanDCS-U6', compare_raw=False):
 
-        datasets = sorted(list(path.Path(inpath).rglob('*.ncml')))
-
+        datasets = [f for f in get_changed_files_gitpython(repo_path) if f.suffix == '.ncml']
         thredds_test_dir = f'{thredds_root}/simulations/bias_adjusted/cmip6/pcic/{path.Path(inpath).name}'
         thredds_path_server = f'{thredds_cat_root}/simulations/bias_adjusted/cmip6/pcic/{path.Path(inpath).name}/catalog.html'
         thredds_test_dir = path.Path(thredds_test_dir)
@@ -458,7 +457,7 @@ class TestDataset:
                 lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
             )
 
-            compare_ncml_rawdata(dataset, dsNcML, compare_raw)
+            compare_ncml_rawdata(dataset, dsNcML, compare_raw, aggtype='scan')
 
 def get_changed_files_gitpython(repo_path=".", staged=False):
     """
@@ -728,15 +727,16 @@ def main():
     # test(self=test, compare_raw=False)
     # test = TestDataset.test_NEXGDDP
     # test = TestDataset.test_CLIMEX
-    test = TestDataset.test_ClimateData
+    # test = TestDataset.test_ClimateData
     # test = TestDataset.test_ESPO_R
     # test = TestDataset.test_ESPO_G
    
     #test = TestDataset.test_CanDCS_U6
     #inpath =  '../tmp/simulations/bias_adjusted/cmip6/pcic/CanDCS-M6'
     #test = TestDataset.test_CRCM5_CMIP6
-    #test = TestDataset.test_location_explicit # CaSR, PINS, CRCM5 
-    test(self=test, compare_raw=True)
+    # test = TestDataset.test_location_explicit # CaSR, PINS, CRCM5 
+    test = TestDataset.test_CanDCS_U6
+    test(self=test, compare_raw=False)
 
 
 if 'main' in __name__:

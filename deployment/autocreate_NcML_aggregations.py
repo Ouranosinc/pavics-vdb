@@ -14,7 +14,7 @@ pavics_root = f"{home}/remote_mnt/pavics_transfer/datasets"
 def main():
     overwrite_to_tmp = True
     rootdir = p.Path(__file__).parent.parent
-    dataset_configs = rootdir.joinpath("dataset_json_configs").rglob('*PCICBlend_climindices*_config*.json')
+    dataset_configs = rootdir.joinpath("dataset_json_configs").rglob('*day_CanDCS-U6*_config*.json')
     for dataset in dataset_configs:
         with open(dataset, 'r') as f:
             ncml_modify = json.load(f)
@@ -1103,7 +1103,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
                                 allfiles = sorted(list(mod.rglob(search_str)))
                                 if len(allfiles) > 38:
                                     raise ValueError("too many files found")
-                                years = f"{allfiles[0].stem.split('_')[-1].split('-')[0]}-{allfiles[-1].stem.split('_')[-1].split('-')[-1]}"
+                                years = f"{allfiles[0].stem.split('_')[-1].split('-')[0][0:4]}-{allfiles[-1].stem.split('_')[-1].split('-')[-1][0:4]}"
                                 outname = '_'.join([outname, years])
 
                             netcdf2 = ncml_netcdf_container()
