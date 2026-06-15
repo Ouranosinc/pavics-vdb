@@ -255,960 +255,960 @@
 		<variableAgg name="ssp585_txgt_32"></variableAgg>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="ACCESS-CM2:r1i1p1f1">
 			<aggregation type="Union">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_ACCESS-CM2_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_ACCESS-CM2_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_ACCESS-CM2_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_ACCESS-CM2_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_ACCESS-CM2_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_ACCESS-CM2_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_ACCESS-CM2_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_ACCESS-CM2_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_ACCESS-CM2_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_ACCESS-CM2_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_ACCESS-CM2_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_ACCESS-CM2_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_ACCESS-CM2_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_ACCESS-CM2_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_ACCESS-CM2_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_ACCESS-CM2_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_ACCESS-CM2_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_ACCESS-CM2_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_ACCESS-CM2_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_ACCESS-CM2_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_ACCESS-CM2_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_ACCESS-CM2_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_ACCESS-CM2_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_ACCESS-CM2_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="ACCESS-ESM1-5:r1i1p1f1">
 			<aggregation type="Union">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_ACCESS-ESM1-5_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_ACCESS-ESM1-5_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_ACCESS-ESM1-5_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_ACCESS-ESM1-5_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_ACCESS-ESM1-5_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_ACCESS-ESM1-5_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_ACCESS-ESM1-5_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_ACCESS-ESM1-5_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_ACCESS-ESM1-5_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_ACCESS-ESM1-5_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_ACCESS-ESM1-5_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_ACCESS-ESM1-5_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_ACCESS-ESM1-5_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_ACCESS-ESM1-5_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_ACCESS-ESM1-5_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_ACCESS-ESM1-5_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_ACCESS-ESM1-5_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_ACCESS-ESM1-5_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_ACCESS-ESM1-5_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_ACCESS-ESM1-5_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_ACCESS-ESM1-5_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_ACCESS-ESM1-5_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_ACCESS-ESM1-5_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_ACCESS-ESM1-5_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="BCC-CSM2-MR:r1i1p1f1">
 			<aggregation type="Union">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_BCC-CSM2-MR_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_BCC-CSM2-MR_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_BCC-CSM2-MR_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_BCC-CSM2-MR_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_BCC-CSM2-MR_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_BCC-CSM2-MR_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_BCC-CSM2-MR_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_BCC-CSM2-MR_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_BCC-CSM2-MR_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_BCC-CSM2-MR_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_BCC-CSM2-MR_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_BCC-CSM2-MR_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_BCC-CSM2-MR_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_BCC-CSM2-MR_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_BCC-CSM2-MR_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_BCC-CSM2-MR_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_BCC-CSM2-MR_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_BCC-CSM2-MR_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_BCC-CSM2-MR_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_BCC-CSM2-MR_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_BCC-CSM2-MR_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_BCC-CSM2-MR_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_BCC-CSM2-MR_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_BCC-CSM2-MR_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="CMCC-ESM2:r1i1p1f1">
 			<aggregation type="Union">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_CMCC-ESM2_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_CMCC-ESM2_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_CMCC-ESM2_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_CMCC-ESM2_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_CMCC-ESM2_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_CMCC-ESM2_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_CMCC-ESM2_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_CMCC-ESM2_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_CMCC-ESM2_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_CMCC-ESM2_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_CMCC-ESM2_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_CMCC-ESM2_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_CMCC-ESM2_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_CMCC-ESM2_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_CMCC-ESM2_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_CMCC-ESM2_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_CMCC-ESM2_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_CMCC-ESM2_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_CMCC-ESM2_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_CMCC-ESM2_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_CMCC-ESM2_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_CMCC-ESM2_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_CMCC-ESM2_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_CMCC-ESM2_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="CNRM-CM6-1:r1i1p1f2">
 			<aggregation type="Union">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_CNRM-CM6-1_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_CNRM-CM6-1_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_CNRM-CM6-1_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_CNRM-CM6-1_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_CNRM-CM6-1_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_CNRM-CM6-1_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_CNRM-CM6-1_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_CNRM-CM6-1_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_CNRM-CM6-1_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_CNRM-CM6-1_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_CNRM-CM6-1_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_CNRM-CM6-1_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_CNRM-CM6-1_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_CNRM-CM6-1_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_CNRM-CM6-1_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_CNRM-CM6-1_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_CNRM-CM6-1_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_CNRM-CM6-1_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_CNRM-CM6-1_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_CNRM-CM6-1_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_CNRM-CM6-1_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_CNRM-CM6-1_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_CNRM-CM6-1_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_CNRM-CM6-1_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="CNRM-ESM2-1:r1i1p1f2">
 			<aggregation type="Union">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_CNRM-ESM2-1_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_CNRM-ESM2-1_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_CNRM-ESM2-1_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_CNRM-ESM2-1_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_CNRM-ESM2-1_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_CNRM-ESM2-1_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_CNRM-ESM2-1_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_CNRM-ESM2-1_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_CNRM-ESM2-1_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_CNRM-ESM2-1_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_CNRM-ESM2-1_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_CNRM-ESM2-1_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_CNRM-ESM2-1_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_CNRM-ESM2-1_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_CNRM-ESM2-1_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_CNRM-ESM2-1_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_CNRM-ESM2-1_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_CNRM-ESM2-1_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_CNRM-ESM2-1_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_CNRM-ESM2-1_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_CNRM-ESM2-1_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_CNRM-ESM2-1_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_CNRM-ESM2-1_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_CNRM-ESM2-1_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="CanESM5:r1i1p2f1">
 			<aggregation type="Union">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_CanESM5_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_CanESM5_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_CanESM5_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_CanESM5_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_CanESM5_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_CanESM5_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_CanESM5_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_CanESM5_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_CanESM5_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_CanESM5_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_CanESM5_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_CanESM5_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_CanESM5_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_CanESM5_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_CanESM5_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_CanESM5_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_CanESM5_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_CanESM5_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_CanESM5_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_CanESM5_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_CanESM5_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_CanESM5_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_CanESM5_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_CanESM5_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="EC-Earth3:r4i1p1f1">
 			<aggregation type="Union">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_EC-Earth3_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_EC-Earth3_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_EC-Earth3_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_EC-Earth3_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_EC-Earth3_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_EC-Earth3_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_EC-Earth3_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_EC-Earth3_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_EC-Earth3_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_EC-Earth3_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_EC-Earth3_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_EC-Earth3_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_EC-Earth3_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_EC-Earth3_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_EC-Earth3_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_EC-Earth3_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_EC-Earth3_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_EC-Earth3_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_EC-Earth3_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_EC-Earth3_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_EC-Earth3_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_EC-Earth3_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_EC-Earth3_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_EC-Earth3_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="EC-Earth3-Veg:r1i1p1f1">
 			<aggregation type="Union">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_EC-Earth3-Veg_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_EC-Earth3-Veg_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_EC-Earth3-Veg_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_EC-Earth3-Veg_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_EC-Earth3-Veg_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_EC-Earth3-Veg_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_EC-Earth3-Veg_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_EC-Earth3-Veg_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_EC-Earth3-Veg_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_EC-Earth3-Veg_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_EC-Earth3-Veg_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_EC-Earth3-Veg_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_EC-Earth3-Veg_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_EC-Earth3-Veg_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_EC-Earth3-Veg_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_EC-Earth3-Veg_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_EC-Earth3-Veg_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_EC-Earth3-Veg_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_EC-Earth3-Veg_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_EC-Earth3-Veg_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_EC-Earth3-Veg_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_EC-Earth3-Veg_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_EC-Earth3-Veg_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_EC-Earth3-Veg_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="FGOALS-g3:r1i1p1f1">
 			<aggregation type="Union">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_FGOALS-g3_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_FGOALS-g3_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_FGOALS-g3_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_FGOALS-g3_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_FGOALS-g3_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_FGOALS-g3_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_FGOALS-g3_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_FGOALS-g3_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_FGOALS-g3_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_FGOALS-g3_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_FGOALS-g3_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_FGOALS-g3_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_FGOALS-g3_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_FGOALS-g3_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_FGOALS-g3_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_FGOALS-g3_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_FGOALS-g3_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_FGOALS-g3_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_FGOALS-g3_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_FGOALS-g3_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_FGOALS-g3_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_FGOALS-g3_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_FGOALS-g3_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_FGOALS-g3_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="GFDL-ESM4:r1i1p1f1">
 			<aggregation type="Union">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_GFDL-ESM4_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_GFDL-ESM4_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_GFDL-ESM4_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_GFDL-ESM4_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_GFDL-ESM4_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_GFDL-ESM4_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_GFDL-ESM4_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_GFDL-ESM4_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_GFDL-ESM4_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_GFDL-ESM4_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_GFDL-ESM4_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_GFDL-ESM4_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_GFDL-ESM4_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_GFDL-ESM4_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_GFDL-ESM4_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_GFDL-ESM4_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_GFDL-ESM4_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_GFDL-ESM4_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_GFDL-ESM4_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_GFDL-ESM4_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_GFDL-ESM4_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_GFDL-ESM4_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_GFDL-ESM4_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_GFDL-ESM4_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="INM-CM4-8:r1i1p1f1">
 			<aggregation type="Union">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_INM-CM4-8_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_INM-CM4-8_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_INM-CM4-8_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_INM-CM4-8_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_INM-CM4-8_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_INM-CM4-8_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_INM-CM4-8_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_INM-CM4-8_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_INM-CM4-8_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_INM-CM4-8_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_INM-CM4-8_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_INM-CM4-8_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_INM-CM4-8_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_INM-CM4-8_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_INM-CM4-8_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_INM-CM4-8_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_INM-CM4-8_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_INM-CM4-8_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_INM-CM4-8_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_INM-CM4-8_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_INM-CM4-8_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_INM-CM4-8_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_INM-CM4-8_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_INM-CM4-8_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="INM-CM5-0:r1i1p1f1">
 			<aggregation type="Union">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_INM-CM5-0_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_INM-CM5-0_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_INM-CM5-0_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_INM-CM5-0_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_INM-CM5-0_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_INM-CM5-0_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_INM-CM5-0_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_INM-CM5-0_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_INM-CM5-0_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_INM-CM5-0_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_INM-CM5-0_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_INM-CM5-0_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_INM-CM5-0_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_INM-CM5-0_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_INM-CM5-0_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_INM-CM5-0_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_INM-CM5-0_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_INM-CM5-0_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_INM-CM5-0_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_INM-CM5-0_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_INM-CM5-0_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_INM-CM5-0_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_INM-CM5-0_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_INM-CM5-0_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="IPSL-CM6A-LR:r1i1p1f1">
 			<aggregation type="Union">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_IPSL-CM6A-LR_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_IPSL-CM6A-LR_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_IPSL-CM6A-LR_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_IPSL-CM6A-LR_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_IPSL-CM6A-LR_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_IPSL-CM6A-LR_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_IPSL-CM6A-LR_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_IPSL-CM6A-LR_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_IPSL-CM6A-LR_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_IPSL-CM6A-LR_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_IPSL-CM6A-LR_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_IPSL-CM6A-LR_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_IPSL-CM6A-LR_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_IPSL-CM6A-LR_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_IPSL-CM6A-LR_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_IPSL-CM6A-LR_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_IPSL-CM6A-LR_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_IPSL-CM6A-LR_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_IPSL-CM6A-LR_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_IPSL-CM6A-LR_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_IPSL-CM6A-LR_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_IPSL-CM6A-LR_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_IPSL-CM6A-LR_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_IPSL-CM6A-LR_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="KACE-1-0-G:r2i1p1f1">
 			<aggregation type="Union">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_KACE-1-0-G_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_KACE-1-0-G_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_KACE-1-0-G_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_KACE-1-0-G_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_KACE-1-0-G_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_KACE-1-0-G_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_KACE-1-0-G_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_KACE-1-0-G_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_KACE-1-0-G_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_KACE-1-0-G_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_KACE-1-0-G_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_KACE-1-0-G_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_KACE-1-0-G_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_KACE-1-0-G_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_KACE-1-0-G_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_KACE-1-0-G_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_KACE-1-0-G_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_KACE-1-0-G_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_KACE-1-0-G_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_KACE-1-0-G_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_KACE-1-0-G_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_KACE-1-0-G_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_KACE-1-0-G_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_KACE-1-0-G_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="MIROC-ES2L:r1i1p1f2">
 			<aggregation type="Union">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MIROC-ES2L_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MIROC-ES2L_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MIROC-ES2L_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MIROC-ES2L_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MIROC-ES2L_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MIROC-ES2L_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MIROC-ES2L_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MIROC-ES2L_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MIROC-ES2L_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MIROC-ES2L_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MIROC-ES2L_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MIROC-ES2L_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MIROC-ES2L_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MIROC-ES2L_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MIROC-ES2L_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MIROC-ES2L_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MIROC-ES2L_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MIROC-ES2L_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MIROC-ES2L_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MIROC-ES2L_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MIROC-ES2L_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MIROC-ES2L_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MIROC-ES2L_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MIROC-ES2L_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="MIROC6:r1i1p1f1">
 			<aggregation type="Union">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MIROC6_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MIROC6_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MIROC6_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MIROC6_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MIROC6_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MIROC6_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MIROC6_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MIROC6_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MIROC6_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MIROC6_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MIROC6_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MIROC6_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MIROC6_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MIROC6_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MIROC6_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MIROC6_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MIROC6_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MIROC6_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MIROC6_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MIROC6_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MIROC6_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MIROC6_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MIROC6_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MIROC6_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="MPI-ESM1-2-HR:r1i1p1f1">
 			<aggregation type="Union">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-HR_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-HR_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-HR_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-HR_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-HR_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-HR_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-HR_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-HR_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-HR_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-HR_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-HR_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-HR_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-HR_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-HR_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-HR_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-HR_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-HR_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-HR_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-HR_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-HR_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-HR_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-HR_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-HR_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-HR_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="MPI-ESM1-2-LR:r1i1p1f1">
 			<aggregation type="Union">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-LR_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-LR_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-LR_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-LR_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-LR_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-LR_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-LR_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-LR_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-LR_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-LR_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-LR_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-LR_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-LR_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-LR_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-LR_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-LR_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-LR_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-LR_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-LR_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-LR_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-LR_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-LR_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-LR_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MPI-ESM1-2-LR_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="MRI-ESM2-0:r1i1p1f1">
 			<aggregation type="Union">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MRI-ESM2-0_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MRI-ESM2-0_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MRI-ESM2-0_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MRI-ESM2-0_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MRI-ESM2-0_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MRI-ESM2-0_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MRI-ESM2-0_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MRI-ESM2-0_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MRI-ESM2-0_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MRI-ESM2-0_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MRI-ESM2-0_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MRI-ESM2-0_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MRI-ESM2-0_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MRI-ESM2-0_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MRI-ESM2-0_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MRI-ESM2-0_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MRI-ESM2-0_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MRI-ESM2-0_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MRI-ESM2-0_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_MRI-ESM2-0_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MRI-ESM2-0_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_MRI-ESM2-0_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MRI-ESM2-0_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_MRI-ESM2-0_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="NorESM2-LM:r1i1p1f1">
 			<aggregation type="Union">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_NorESM2-LM_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_NorESM2-LM_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_NorESM2-LM_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_NorESM2-LM_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_NorESM2-LM_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_NorESM2-LM_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_NorESM2-LM_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_NorESM2-LM_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_NorESM2-LM_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_NorESM2-LM_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_NorESM2-LM_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_NorESM2-LM_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_NorESM2-LM_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_NorESM2-LM_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_NorESM2-LM_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_NorESM2-LM_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_NorESM2-LM_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_NorESM2-LM_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_NorESM2-LM_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_NorESM2-LM_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_NorESM2-LM_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_NorESM2-LM_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_NorESM2-LM_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_NorESM2-LM_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="NorESM2-MM:r1i1p1f1">
 			<aggregation type="Union">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_NorESM2-MM_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_NorESM2-MM_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_NorESM2-MM_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_NorESM2-MM_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_NorESM2-MM_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_NorESM2-MM_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_NorESM2-MM_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_NorESM2-MM_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_NorESM2-MM_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_NorESM2-MM_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_NorESM2-MM_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_NorESM2-MM_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_NorESM2-MM_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_NorESM2-MM_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_NorESM2-MM_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_NorESM2-MM_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_NorESM2-MM_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_NorESM2-MM_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_NorESM2-MM_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_NorESM2-MM_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_NorESM2-MM_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_NorESM2-MM_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_NorESM2-MM_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_NorESM2-MM_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="TaiESM1:r1i1p1f1">
 			<aggregation type="Union">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_TaiESM1_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_TaiESM1_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_TaiESM1_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_TaiESM1_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_TaiESM1_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_TaiESM1_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_TaiESM1_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_TaiESM1_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_TaiESM1_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_TaiESM1_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_TaiESM1_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_TaiESM1_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_TaiESM1_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_TaiESM1_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_TaiESM1_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_TaiESM1_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_TaiESM1_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_TaiESM1_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_TaiESM1_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_TaiESM1_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_TaiESM1_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_TaiESM1_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_TaiESM1_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_TaiESM1_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" coordValue="UKESM1-0-LL:r1i1p1f2">
 			<aggregation type="Union">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_UKESM1-0-LL_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp126/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_UKESM1-0-LL_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_UKESM1-0-LL_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp126/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_UKESM1-0-LL_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_UKESM1-0-LL_historical+ssp126_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp126/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_UKESM1-0-LL_historical+ssp126_1950-2100.nc">
 					<variable name="ssp126_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_UKESM1-0-LL_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp245/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_UKESM1-0-LL_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_UKESM1-0-LL_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp245/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_UKESM1-0-LL_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_UKESM1-0-LL_historical+ssp245_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp245/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_UKESM1-0-LL_historical+ssp245_1950-2100.nc">
 					<variable name="ssp245_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_UKESM1-0-LL_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp370/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_UKESM1-0-LL_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_UKESM1-0-LL_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp370/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_UKESM1-0-LL_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_UKESM1-0-LL_historical+ssp370_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp370/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_UKESM1-0-LL_historical+ssp370_1950-2100.nc">
 					<variable name="ssp370_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_UKESM1-0-LL_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/first_snowfall/YS-JUL/ssp585/simulations/first_snowfall_ann-juljun_MBCn+PCIC-Blend_UKESM1-0-LL_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_first_snowfall" orgName="first_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_UKESM1-0-LL_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/last_snowfall/YS-JUL/ssp585/simulations/last_snowfall_ann-juljun_MBCn+PCIC-Blend_UKESM1-0-LL_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_last_snowfall" orgName="last_snowfall"></variable>
 				</netcdf>
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_UKESM1-0-LL_historical+ssp585_1950-2100.nc">
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/CanDCS-M6/snowfall_season_length/YS-JUL/ssp585/simulations/snowfall_season_length_ann-juljun_MBCn+PCIC-Blend_UKESM1-0-LL_historical+ssp585_1950-2100.nc">
 					<variable name="ssp585_snowfall_season_length" orgName="snowfall_season_length"></variable>
 				</netcdf>
 			</aggregation>
