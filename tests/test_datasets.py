@@ -734,9 +734,9 @@ def main():
     #test = TestDataset.test_CanDCS_U6
     #inpath =  '../tmp/simulations/bias_adjusted/cmip6/pcic/CanDCS-M6'
     #test = TestDataset.test_CRCM5_CMIP6
-    # test = TestDataset.test_location_explicit # CaSR, PINS, CRCM5 
-    test = TestDataset.test_CanDCS_U6
-    test(self=test, compare_raw=False)
+    test = TestDataset.test_location_explicit # CaSR, PINS, CRCM5 
+    #test = TestDataset.test_CanDCS_U6
+    test(self=test, compare_raw=True)
 
 
 if 'main' in __name__:
