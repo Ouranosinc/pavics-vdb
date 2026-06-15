@@ -17,227 +17,227 @@
 	<aggregation type="Union">
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/cdd/YS/indicators/cdd_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/cdd/YS/indicators/cdd_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/cddcold_18/YS/indicators/cddcold_18_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/cddcold_18/YS/indicators/cddcold_18_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/dlyfrzthw_tx0_tn-1/YS/indicators/dlyfrzthw_tx0_tn-1_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/dlyfrzthw_tx0_tn-1/YS/indicators/dlyfrzthw_tx0_tn-1_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/first_fall_frost/YS/indicators/first_fall_frost_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/first_fall_frost/YS/indicators/first_fall_frost_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/frost_days/YS/indicators/frost_days_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/frost_days/YS/indicators/frost_days_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/frost_free_season/YS/indicators/frost_free_season_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/frost_free_season/YS/indicators/frost_free_season_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/gddgrow_0/YS/indicators/gddgrow_0_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/gddgrow_0/YS/indicators/gddgrow_0_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/gddgrow_5/YS/indicators/gddgrow_5_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/gddgrow_5/YS/indicators/gddgrow_5_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/hddheat_18/YS/indicators/hddheat_18_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/hddheat_18/YS/indicators/hddheat_18_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/ice_days/YS/indicators/ice_days_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/ice_days/YS/indicators/ice_days_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/last_spring_frost/YS/indicators/last_spring_frost_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/last_spring_frost/YS/indicators/last_spring_frost_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/nr_cdd/YS/indicators/nr_cdd_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/nr_cdd/YS/indicators/nr_cdd_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/pr10mm/YS/indicators/pr10mm_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/pr10mm/YS/indicators/pr10mm_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/pr1mm/YS/indicators/pr1mm_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/pr1mm/YS/indicators/pr1mm_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/pr20mm/YS/indicators/pr20mm_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/pr20mm/YS/indicators/pr20mm_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/prcptot/YS/indicators/prcptot_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/prcptot/YS/indicators/prcptot_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/prtot/YS/indicators/prtot_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/prtot/YS/indicators/prtot_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/prx1day/YS/indicators/prx1day_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/prx1day/YS/indicators/prx1day_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/prx5day/YS/indicators/prx5day_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/prx5day/YS/indicators/prx5day_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/r10mm/YS/indicators/r10mm_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/r10mm/YS/indicators/r10mm_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/r1mm/YS/indicators/r1mm_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/r1mm/YS/indicators/r1mm_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/r20mm/YS/indicators/r20mm_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/r20mm/YS/indicators/r20mm_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/ratot/YS/indicators/ratot_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/ratot/YS/indicators/ratot_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/rax1day/YS/indicators/rax1day_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/rax1day/YS/indicators/rax1day_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/rx1day/YS/indicators/rx1day_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/rx1day/YS/indicators/rx1day_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/rx5day/YS/indicators/rx5day_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/rx5day/YS/indicators/rx5day_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/sn10mm/YS/indicators/sn10mm_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/sn10mm/YS/indicators/sn10mm_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/sn2mm/YS/indicators/sn2mm_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/sn2mm/YS/indicators/sn2mm_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/sntot/YS/indicators/sntot_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/sntot/YS/indicators/sntot_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/snx1day/YS/indicators/snx1day_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/snx1day/YS/indicators/snx1day_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/tg_mean/YS/indicators/tg_mean_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/tg_mean/YS/indicators/tg_mean_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/tn_mean/YS/indicators/tn_mean_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/tn_mean/YS/indicators/tn_mean_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/tn_min/YS/indicators/tn_min_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/tn_min/YS/indicators/tn_min_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/tnlt_m15/YS/indicators/tnlt_m15_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/tnlt_m15/YS/indicators/tnlt_m15_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/tnlt_m25/YS/indicators/tnlt_m25_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/tnlt_m25/YS/indicators/tnlt_m25_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/tr_18/YS/indicators/tr_18_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/tr_18/YS/indicators/tr_18_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/tr_20/YS/indicators/tr_20_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/tr_20/YS/indicators/tr_20_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/tr_22/YS/indicators/tr_22_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/tr_22/YS/indicators/tr_22_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/tx_max/YS/indicators/tx_max_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/tx_max/YS/indicators/tx_max_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/tx_mean/YS/indicators/tx_mean_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/tx_mean/YS/indicators/tx_mean_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/txgt_25/YS/indicators/txgt_25_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/txgt_25/YS/indicators/txgt_25_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/txgt_27/YS/indicators/txgt_27_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/txgt_27/YS/indicators/txgt_27_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/txgt_29/YS/indicators/txgt_29_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/txgt_29/YS/indicators/txgt_29_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/txgt_30/YS/indicators/txgt_30_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/txgt_30/YS/indicators/txgt_30_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="1 day">
-				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk2/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/txgt_32/YS/indicators/txgt_32_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
+				<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/cccs_portal/indices/Final/PCIC_Blended_Observations_v1/txgt_32/YS/indicators/txgt_32_ann_PCIC_Blended_Observations_v1_1950-2012.nc"></netcdf>
 			</aggregation>
 		</netcdf>
 	</aggregation>
