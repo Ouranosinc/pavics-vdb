@@ -56,7 +56,7 @@
       "type": "String"
     }
   },
-  "location": "/pavics-data/pcic/CanDCS-U6/CMIP6_BCCAQv2",
+  "location": "/pavics-data/disk3/pcic/CanDCS-U6/CMIP6_BCCAQv2",
   "ncml_type": "pcic-CanDCS-U6",
   "experiments": [
     "historical+ssp126",

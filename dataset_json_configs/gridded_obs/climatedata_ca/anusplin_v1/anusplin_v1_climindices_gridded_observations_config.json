@@ -45,7 +45,7 @@
       "type": "String"
     }
   },
-  "location": "/pavics-data/disk2/cccs_portal/indices/Final/ANUSPLIN_v1/",
+  "location": "/pavics-data/disk3/cccs_portal/indices/Final/ANUSPLIN_v1/",
   "ncml_type": "climatedata.ca",
   "experiments": [
     "nrcan"

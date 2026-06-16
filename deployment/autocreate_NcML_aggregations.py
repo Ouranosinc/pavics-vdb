@@ -14,7 +14,7 @@ pavics_root = f"{home}/remote_mnt/pavics_transfer/datasets"
 def main():
     overwrite_to_tmp = True
     rootdir = p.Path(__file__).parent.parent
-    dataset_configs = rootdir.joinpath("dataset_json_configs").rglob('*PCICBlend_climindices*_config*.json')
+    dataset_configs = rootdir.joinpath("dataset_json_configs").rglob('*anusplin_v1_climindices*_config*.json')
     for dataset in dataset_configs:
         with open(dataset, 'r') as f:
             ncml_modify = json.load(f)
@@ -846,6 +846,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
 
                             runs = sorted(list(location.joinpath(v).rglob(
                                 config['regexp_template'].format(agg=aggkey, rcp=exp, v=v.name, frequency=freq))))
+                            runs = [r for r in runs if 'spatialAvg' not in r.as_posix()]
                             if len(runs) > 0:
                                 netcdf2 = ncml_netcdf_container()
                                 netcdf2['aggregation'] = ncml_add_aggregation(
@@ -859,9 +860,9 @@ def ncml_create_datasets(ncml_template=None, config=None):
                                     netcdf3['@location'] = str(run).replace(pavics_root, 'pavics-data')
                                     var_names = []
                                     try:
-                                        dtmp = xr.open_dataset(run, engine="h5netcdf")
+                                        dtmp = xr.open_dataset(run, engine="h5netcdf", decode_timedelta=False)
                                     except:
-                                        dtmp = xr.open_dataset(run)
+                                        dtmp = xr.open_dataset(run, decode_timedelta=False)
 
                                     for vv in dtmp.data_vars:
                                         if exp not in vv and exp != 'allrcps' and exp != 'nrcan':
@@ -1103,7 +1104,7 @@ def ncml_create_datasets(ncml_template=None, config=None):
                                 allfiles = sorted(list(mod.rglob(search_str)))
                                 if len(allfiles) > 38:
                                     raise ValueError("too many files found")
-                                years = f"{allfiles[0].stem.split('_')[-1].split('-')[0]}-{allfiles[-1].stem.split('_')[-1].split('-')[-1]}"
+                                years = f"{allfiles[0].stem.split('_')[-1].split('-')[0][0:4]}-{allfiles[-1].stem.split('_')[-1].split('-')[-1][0:4]}"
                                 outname = '_'.join([outname, years])
 
                             netcdf2 = ncml_netcdf_container()

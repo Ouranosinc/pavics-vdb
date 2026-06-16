@@ -158,7 +158,7 @@
     }
 
   },
-  "location": "/pavics-data/disk2/cccs_portal/indices/Final/BCCAQv2_CMIP6/",
+  "location": "/pavics-data/disk3/cccs_portal/indices/Final/BCCAQv2_CMIP6/",
   "ncml_type": "climatedata.ca_CanDCS-U6_members",
   "experiments": [
     "ssp126", "ssp245", "ssp585"
