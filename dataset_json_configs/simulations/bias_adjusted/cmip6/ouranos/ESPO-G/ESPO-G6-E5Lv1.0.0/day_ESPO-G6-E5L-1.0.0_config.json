@@ -76,7 +76,8 @@
   "ncml_type": "ouranos-ESPO-G6",
   "experiments": [
     "historical+ssp245",
-    "historical+ssp370"
+    "historical+ssp370",
+    "historical+ssp585"
   ],
   "variables": [
     "tasmin",
