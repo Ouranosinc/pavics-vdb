@@ -281,10 +281,20 @@ class TestDataset:
             if len(ncmls) != 1:
                 raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
 
-            dsNcML = subset.subset_bbox(
-                xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time='auto', rlon=50, rlat=50, lat=50, lon=50, station=100), decode_timedelta=False),
-                lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
-            )
+            try:
+                dsNcML = subset.subset_bbox(
+                    xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time='auto', rlon=50, rlat=50, lat=50, lon=50, station=100), decode_timedelta=False),
+                    lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
+                )
+            except ValueError as e:
+
+                dsNcML = xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time='auto', rlon=50, rlat=50, lat=50, lon=50, station=100), decode_timedelta=False)
+                if 'station' in dsNcML.dims and 'no valid data points' in str(e):
+                    ii = np.random.choice(range(0,len(dsNcML.station)), 50)
+                    dsNcML = dsNcML.isel(station=ii)
+                else:
+                    raise e
+
             if xr.infer_freq(dsNcML.time) == 'D' and len(dsNcML.time) < 1500:
                 sample_time = False
             else:
