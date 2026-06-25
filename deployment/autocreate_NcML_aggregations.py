@@ -459,15 +459,9 @@ def ncml_create_datasets(ncml_template=None, config=None):
             scan = {'@location': vv.as_posix().replace(pavics_root, '/pavics-data'), '@subdirs': 'false',
                                 '@suffix': '.nc'}
             netcdf2['aggregation']['scan'].append(ncml_add_scan(scan))
-           
-
-            
-                        
-
             ncml1 = xncml.Dataset()
             ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
             attrs = config['attribute']
-
             ncml1.ncroot['netcdf']['attribute'] = ncml_add_attributes(attrs)
             ncml1.ncroot['netcdf']['aggregation'] = netcdf2['aggregation']
             ncml_name = config['filename_template'].format(varname=vv.name)
