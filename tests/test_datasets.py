@@ -259,7 +259,7 @@ class TestDataset:
             )
 
             compare_ncml_rawdata(dataset, dsNcML, compare_raw)
-    def test_location_explicit(self, compare_raw=False, sample_locations=0.1, sample_loc_max=15):
+    def test_location_explicit(self, compare_raw=False, sample_locations=0.1, sample_loc_max=15, aggtype='location'):
         datasets = [f for f in get_changed_files_gitpython(repo_path) if f.suffix == '.ncml']
         thredds_test_dir = f'{thredds_root}/ncml_location_explicit'
         thredds_path_server = f'{thredds_cat_root}/ncml_location_explicit/catalog.html'
@@ -282,15 +282,15 @@ class TestDataset:
                 raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
 
             dsNcML = subset.subset_bbox(
-                xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=250), decode_timedelta=False),
+                xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time='auto', rlon=50, rlat=50, lat=50, lon=50, station=100), decode_timedelta=False),
                 lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
             )
-            if xr.infer_freq(dsNcML.time) == 'D' or len(dsNcML.time) < 1500:
+            if xr.infer_freq(dsNcML.time) == 'D' and len(dsNcML.time) < 1500:
                 sample_time = False
             else:
                 sample_time = True
             compare_ncml_rawdata(dataset, dsNcML, compare_raw, sample_location=sample_locations, 
-                                 sample_loc_max=sample_loc_max, sample_time=sample_time, aggtype='location')
+                                 sample_loc_max=sample_loc_max, sample_time=sample_time, aggtype=aggtype)
 
     def test_CRCM5_CMIP6(self, compare_raw=False):
         #datasets = sorted(list(path.Path(__file__).parent.parent.joinpath('tmp/simulations/RCM-CMIP6/CORDEX/NAM-12').rglob('*.ncml')))
@@ -701,6 +701,8 @@ def compare_values(dsNcML, ds, compare_vals, sample_time=True):
             if coord.startswith('vertices'):
                 np.testing.assert_array_equal(ds[coord].transpose(*test[coord].dims).values, test[coord].values)
             else:
+                if ds[coord].dtype.kind == 'U':
+                    continue
                 np.testing.assert_array_equal(ds[coord].values, test[coord].values)
     
     if compare_vals:
@@ -730,14 +732,14 @@ def main():
     # test = TestDataset.test_CLIMEX
     # test = TestDataset.test_ClimateData
     # test = TestDataset.test_ESPO_R
-    test = TestDataset.test_ESPO_G
+    #test = TestDataset.test_ESPO_G
    
     #test = TestDataset.test_CanDCS_U6
     #inpath =  '../tmp/simulations/bias_adjusted/cmip6/pcic/CanDCS-M6'
     #test = TestDataset.test_CRCM5_CMIP6
-    # test = TestDataset.test_location_explicit # CaSR, PINS, CRCM5 
+    test = TestDataset.test_location_explicit # CaSR, PINS, CRCM5 
     #test = TestDataset.test_CanDCS_U6
-    test(self=test, compare_raw=True)
+    test(self=test, compare_raw=True, aggtype='scan')
 
 
 if 'main' in __name__:

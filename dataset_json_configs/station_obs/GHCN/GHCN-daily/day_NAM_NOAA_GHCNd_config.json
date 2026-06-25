@@ -1,0 +1,27 @@
+{ 
+  "remove":{},
+  "attribute": {
+    "abstract": {
+      "value": "Global Historical Climatology Network - Daily (GHCNd) is a dataset that contains daily climate records from thousands of land surface stations across the globe.",
+      "type": "String"
+    },
+    "title": {"value": "Global Historical Climatology Network - Daily (GHCNd)", "type": "String"},
+    "type": {
+      "value": "station_obs",
+      "type": "String"
+    },
+    "dataset_description": {
+      "value": "https://www.ncei.noaa.gov/products/land-based-station/global-historical-climatology-network-daily",
+      "type": "String"
+    },
+    "dataset_id": {"value": "GHCNd", "type":"String"},
+    "license_type": {
+      "value": "open",
+      "type": "String"
+    }
+  },
+  "location": "/pavics-data/NOAA/GHCNd/NAM/",
+  "ncml_type": "GHCN",
+  "frequency": "day",
+  "filename_template": "{varname}_day_NAM_GHCNd"
+}
