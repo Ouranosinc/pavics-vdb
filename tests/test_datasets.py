@@ -18,7 +18,10 @@ from git import Repo
 
 home = os.environ['HOME']
 pavics_root = os.path.join(home, 'boreas')  # mapped drive to top level `Birdhouse` folder on thredds
-test_reg = dict(lon=[-80, -70], lat=[45, 50])
+test_reg = {}
+test_reg['main'] = dict(lon=[-80, -70], lat=[45, 50])
+test_reg['ghcn'] = dict(lon=[-80, -70], lat=[25, 50])
+test_reg['none'] = dict(lon=[-150, -50], lat=[20, 88])
 # local path root to test data
 local_root = './test_data/'
 # thredds path root for data transfer and thredds catalog url
@@ -125,7 +128,7 @@ class TestDataset:
             # print('loading NcML via opendap')
             dsNcML = subset.subset_bbox(
                 xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=256, lon=32, lat=32)), decode_timedelta=False,
-                lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
+                lon_bnds=test_reg['main']['lon'], lat_bnds=test_reg['main']['lat']
             )
 
             ncml = xncml.Dataset(dataset)
@@ -162,9 +165,9 @@ class TestDataset:
                                          decode_timedelta=False)
                 sample_locations = 0.1
                 sample_loc_max = 40
-            # dsNcML = subset.subset_bbox(dsNcML, lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat'])
-            dsNcML = dsNcML.sel(lon=slice(test_reg['lon'][0], test_reg['lon'][1]),
-                                lat=slice(test_reg['lat'][0], test_reg['lat'][1]))
+            # dsNcML = subset.subset_bbox(dsNcML, lon_bnds=test_reg['main']['lon'], lat_bnds=test_reg['main']['lat'])
+            dsNcML = dsNcML.sel(lon=slice(test_reg['main']['lon'][0], test_reg['main']['lon'][1]),
+                                lat=slice(test_reg['main']['lat'][0], test_reg['main']['lat'][1]))
             compare_ncml_rawdata(dataset, dsNcML, compare_raw, sample_location=sample_locations, sample_loc_max=sample_loc_max, aggtype='location')
 
     def test_BCCAQv2(self, compare_raw=False):
@@ -193,7 +196,7 @@ class TestDataset:
 
             dsNcML = subset.subset_bbox(
                 xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=365, lon=50, lat=56), decode_timedelta=False),
-                lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
+                lon_bnds=test_reg['main']['lon'], lat_bnds=test_reg['main']['lat']
             )
 
             compare_ncml_rawdata(dataset, dsNcML, compare_raw)
@@ -224,7 +227,7 @@ class TestDataset:
 
             dsNcML = subset.subset_bbox(
                 xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=365, lon=50, lat=56), decode_timedelta=False),
-                lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
+                lon_bnds=test_reg['main']['lon'], lat_bnds=test_reg['main']['lat']
             )
 
             compare_ncml_rawdata(dataset, dsNcML, compare_raw)
@@ -255,7 +258,7 @@ class TestDataset:
 
             dsNcML = subset.subset_bbox(
                 xr.open_dataset(ncmls[0].opendap_url(), chunks='auto', decode_timedelta=False),
-                lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
+                lon_bnds=test_reg['main']['lon'], lat_bnds=test_reg['main']['lat']
             )
 
             compare_ncml_rawdata(dataset, dsNcML, compare_raw)
@@ -280,27 +283,27 @@ class TestDataset:
 
             if len(ncmls) != 1:
                 raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
-
+            large_reg = False
             try:
                 dsNcML = subset.subset_bbox(
                     xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time='auto', rlon=50, rlat=50, lat=50, lon=50, station=100), decode_timedelta=False),
-                    lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
+                    lon_bnds=test_reg['main']['lon'], lat_bnds=test_reg['main']['lat']
                 )
             except ValueError as e:
-
                 dsNcML = xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time='auto', rlon=50, rlat=50, lat=50, lon=50, station=100), decode_timedelta=False)
-                if 'station' in dsNcML.dims and 'no valid data points' in str(e):
-                    ii = np.random.choice(range(0,len(dsNcML.station)), 50)
-                    dsNcML = dsNcML.isel(station=ii)
-                else:
-                    raise e
+                try:
+                    dsNcML = subset.subset_bbox(dsNcML,  lon_bnds=test_reg['ghcn']['lon'], lat_bnds=test_reg['ghcn']['lat'])
+                    large_reg = True
+                except ValueError as ee:
+                    large_reg = None
+                    dsNcML = subset.subset_bbox(dsNcML,  lon_bnds=test_reg['none']['lon'], lat_bnds=test_reg['none']['lat'])
 
-            if xr.infer_freq(dsNcML.time) == 'D' and len(dsNcML.time) < 1500:
+            if len(dsNcML.time) < 1500:
                 sample_time = False
             else:
                 sample_time = True
             compare_ncml_rawdata(dataset, dsNcML, compare_raw, sample_location=sample_locations, 
-                                 sample_loc_max=sample_loc_max, sample_time=sample_time, aggtype=aggtype)
+                                 sample_loc_max=sample_loc_max, sample_time=sample_time, aggtype=aggtype, large_reg=large_reg)
 
     def test_CRCM5_CMIP6(self, compare_raw=False):
         #datasets = sorted(list(path.Path(__file__).parent.parent.joinpath('tmp/simulations/RCM-CMIP6/CORDEX/NAM-12').rglob('*.ncml')))
@@ -327,7 +330,7 @@ class TestDataset:
 
             dsNcML = subset.subset_bbox(
                 xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=250), decode_timedelta=False),
-                lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
+                lon_bnds=test_reg['main']['lon'], lat_bnds=test_reg['main']['lat']
             )
 
             compare_ncml_rawdata(dataset, dsNcML, compare_raw, sample_time=False, files_perrun=5)
@@ -358,7 +361,7 @@ class TestDataset:
 
             dsNcML = subset.subset_bbox(
                 xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=30, realization=1), decode_timedelta=False),
-                lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
+                lon_bnds=test_reg['main']['lon'], lat_bnds=test_reg['main']['lat']
             )
 
             compare_ncml_rawdata(dataset, dsNcML, compare_raw, files_perrun=3, sample_location = 0.2)
@@ -390,7 +393,7 @@ class TestDataset:
 
             dsNcML = subset.subset_bbox(
                 xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=1460, lon=50, lat=50), decode_timedelta=False),
-                lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
+                lon_bnds=test_reg['main']['lon'], lat_bnds=test_reg['main']['lat']
             )
 
             compare_ncml_rawdata(dataset, dsNcML, compare_raw)
@@ -435,7 +438,7 @@ class TestDataset:
                 with ProgressBar():
                     dsNcML[ll] = dsNcML[ll].load()
             dsNcML = subset.subset_bbox(dsNcML,
-                                        lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
+                                        lon_bnds=test_reg['main']['lon'], lat_bnds=test_reg['main']['lat']
                                         )
 
             compare_ncml_rawdata(dataset, dsNcML, compare_raw, sample_location=sample_location, aggtype='scan')
@@ -465,7 +468,7 @@ class TestDataset:
 
             dsNcML = subset.subset_bbox(
                 xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time=1460, lon=50, lat=50), decode_timedelta=False),
-                lon_bnds=test_reg['lon'], lat_bnds=test_reg['lat']
+                lon_bnds=test_reg['main']['lon'], lat_bnds=test_reg['main']['lat']
             )
 
             compare_ncml_rawdata(dataset, dsNcML, compare_raw, aggtype='scan')
@@ -490,7 +493,7 @@ def get_changed_files_gitpython(repo_path=".", staged=False):
         print(f"Error using GitPython: {e}")
         return []
 
-def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_perrun=None, sample_location=None, sample_loc_max=None, aggtype=None):
+def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_perrun=None, sample_location=None, sample_loc_max=None, aggtype=None, large_reg=False):
     ncml = xncml.Dataset(dataset)
     l1 = list(recursive_items(ncml.ncroot, '@location'))[0]
 
@@ -510,6 +513,15 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
     #         assert ('historical' in l[1]['@location'] or rcp in l[1]['@location'])
 
     files = {}
+    if large_reg is None:
+        lon_bnds = test_reg['none']['lon']
+        lat_bnds = test_reg['none']['lat']
+    elif large_reg is True:
+        lon_bnds = test_reg['ghcn']['lon']
+        lat_bnds = test_reg['ghcn']['lat']
+    else:
+        lon_bnds = test_reg['main']['lon']
+        lat_bnds = test_reg['main']['lat']
 
     locations = list(recursive_items(ncml.ncroot, key1))
     if sample_location:
@@ -541,8 +553,8 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
                 ds = subset.subset_bbox(xr.open_dataset(path.Path(local_path), decode_timedelta=False,
                                                         engine="h5netcdf",
                                                         chunks=dict()),
-                                        lon_bnds=test_reg['lon'],
-                                        lat_bnds=test_reg['lat'])
+                                        lon_bnds=test_reg['main']['lon'],
+                                        lat_bnds=test_reg['main']['lat'])
                 if 'time' in ds.dims:
                     ds = subset.subset_time(ds,
                                         start_date=str(dsNcML.time.dt.year.min().values),
@@ -595,8 +607,8 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
                                                               coords='minimal',
                                                               data_vars='minimal',
                                                               chunks=dict(time=None, lon=50, lat=50)),
-                                            lon_bnds=test_reg['lon'],
-                                            lat_bnds=test_reg['lat'],
+                                            lon_bnds=lon_bnds,
+                                            lat_bnds=lat_bnds,
                                             start_date=str(dsNcML.time.dt.year.min().values),
                                             end_date=str(dsNcML.time.dt.year.max().values))
 
@@ -611,8 +623,8 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
                         print(file1)
                         ds = subset.subset_bbox(
                             xr.open_dataset(file1, chunks=dict(time=-1), engine='h5netcdf', decode_timedelta=False),
-                            lon_bnds=test_reg['lon'],
-                            lat_bnds=test_reg['lat'],
+                            lon_bnds=lon_bnds,
+                            lat_bnds=lat_bnds,
                             )
                         datasets.append(ds)
                     # include first and last file
@@ -621,8 +633,8 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
                         ds = subset.subset_bbox(
                             xr.open_dataset(test_files[ii], chunks=dict(time=-1), engine='h5netcdf',
                                             decode_timedelta=False),
-                            lon_bnds=test_reg['lon'],
-                            lat_bnds=test_reg['lat'],
+                            lon_bnds=lon_bnds,
+                            lat_bnds=lat_bnds,
                         )
                         if "climex" in test_files[ii].as_posix() and "_2099_" in test_files[ii].as_posix():
                             ds = ds.sel(time=slice('2099-01-01', '2099-12-30'))
@@ -713,6 +725,7 @@ def compare_values(dsNcML, ds, compare_vals, sample_time=True):
             else:
                 if ds[coord].dtype.kind == 'U':
                     continue
+                print(coord)
                 np.testing.assert_array_equal(ds[coord].values, test[coord].values)
     
     if compare_vals:
