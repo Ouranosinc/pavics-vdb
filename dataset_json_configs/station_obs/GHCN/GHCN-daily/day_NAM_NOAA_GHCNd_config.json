@@ -15,6 +15,8 @@
       "type": "String"
     },
     "dataset_id": {"value": "GHCNd", "type":"String"},
+    "frequency": {"value": "day", "type":"String"},
+    "institution_id": {"value": "NOAA", "type":"String"},
     "license_type": {
       "value": "open",
       "type": "String"

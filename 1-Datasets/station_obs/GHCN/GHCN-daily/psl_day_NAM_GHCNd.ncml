@@ -5,6 +5,8 @@
 	<attribute name="type" type="String" value="station_obs"></attribute>
 	<attribute name="dataset_description" type="String" value="https://www.ncei.noaa.gov/products/land-based-station/global-historical-climatology-network-daily"></attribute>
 	<attribute name="dataset_id" type="String" value="GHCNd"></attribute>
+	<attribute name="frequency" type="String" value="day"></attribute>
+	<attribute name="institution_id" type="String" value="NOAA"></attribute>
 	<attribute name="license_type" type="String" value="open"></attribute>
 	<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
 		<scan location="/pavics-data/NOAA/GHCNd/NAM/day/psl" subdirs="false" suffix=".nc"></scan>
