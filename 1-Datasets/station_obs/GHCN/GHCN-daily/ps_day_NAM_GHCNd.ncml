@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+	<attribute name="abstract" type="String" value="Global Historical Climatology Network - Daily (GHCNd) is a dataset that contains daily climate records from thousands of land surface stations across the globe."></attribute>
+	<attribute name="title" type="String" value="Global Historical Climatology Network - Daily (GHCNd)"></attribute>
+	<attribute name="type" type="String" value="station_obs"></attribute>
+	<attribute name="dataset_description" type="String" value="https://www.ncei.noaa.gov/products/land-based-station/global-historical-climatology-network-daily"></attribute>
+	<attribute name="dataset_id" type="String" value="GHCNd"></attribute>
+	<attribute name="license_type" type="String" value="open"></attribute>
+	<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+		<scan location="/pavics-data/NOAA/GHCNd/NAM/day/ps" subdirs="false" suffix=".nc"></scan>
+	</aggregation>
+</netcdf>
