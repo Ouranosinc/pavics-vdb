@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+	<attribute name="frequency" type="String" value="day"></attribute>
+	<attribute name="institute" type="String" value="Ouranos"></attribute>
+	<attribute name="institute_id" type="String" value="Ouranos"></attribute>
+	<attribute name="abstract" type="String" value="Ouranos Reconstruction – RDPS-CaPA adjusted - version 1.0 (ORRC-a v1.0)  is a bias-adjusted daily product and is available for daily mean precipitation and daily mean, minimum, and maximum near-surface air temperature. ORRC-a v1.0 adjusts raw ORRC data relative to CaSR v3.2 using the 2020–2024 overlap period and  is recommended for applications requiring closer consistency with the historical conditions represented by CaSR v3.2. The original ORRC product may be more appropriate for applications that do not require comparison with a historical CaSR baseline."></attribute>
+	<attribute name="title" type="String" value="Ouranos Reconstruction – RDPS-CaPA adjusted (ORRC-a v1.0) : daily "></attribute>
+	<attribute name="type" type="String" value="reanalysis"></attribute>
+	<attribute name="dataset_description" type="String" value="https://zenodo.org/records/21381480"></attribute>
+	<attribute name="dataset_id" type="String" value="ORRC-a_v1.0"></attribute>
+	<attribute name="license_type" type="String" value="permissive"></attribute>
+	<aggregation type="Union">
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/ouranos/ORRC/ORRC-a_v10/NAM/day/pr" subdirs="false" suffix=".nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/ouranos/ORRC/ORRC-a_v10/NAM/day/tas" subdirs="false" suffix=".nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/ouranos/ORRC/ORRC-a_v10/NAM/day/tasmax" subdirs="false" suffix=".nc"></scan>
+			</aggregation>
+		</netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
+				<scan location="/pavics-data/ouranos/ORRC/ORRC-a_v10/NAM/day/tasmin" subdirs="false" suffix=".nc"></scan>
+			</aggregation>
+		</netcdf>
+	</aggregation>
+</netcdf>
