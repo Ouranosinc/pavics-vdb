@@ -1,0 +1,40 @@
+{
+  "remove":{},
+  "remove_per_agg":{"lon":"variable","lat":"variable"},
+  "attribute": {
+    "frequency": {
+      "value": "day",
+      "type": "String"
+    },
+    "institute": {
+      "value": "Ouranos",
+      "type": "String"
+    },
+    "institute_id": {
+      "value": "Ouranos",
+      "type": "String"
+    },
+    "abstract": {
+      "value": "Ouranos Reconstruction – RDPS-CaPA adjusted - version 1.0 (ORRC-a v1.0)  is a bias-adjusted daily product and is available for daily mean precipitation and daily mean, minimum, and maximum near-surface air temperature. ORRC-a v1.0 adjusts raw ORRC data relative to CaSR v3.2 using the 2020–2024 overlap period and  is recommended for applications requiring closer consistency with the historical conditions represented by CaSR v3.2. The original ORRC product may be more appropriate for applications that do not require comparison with a historical CaSR baseline.",
+      "type": "String"
+    },
+    "title": {"value": "Ouranos Reconstruction – RDPS-CaPA adjusted (ORRC-a v1.0) : daily ","type": "String"},
+    "type": {
+      "value": "reanalysis" ,
+      "type": "String"
+    },
+    "dataset_description": {
+      "value": "https://zenodo.org/records/21381480",
+      "type": "String"
+    },
+    "dataset_id": {"value": "ORRC-a_v1.0", "type":"String"},
+    "license_type": {
+      "value": "permissive",
+      "type": "String"
+    }
+  },
+  "location": "/pavics-data/ouranos/ORRC/ORRC-a_v10/NAM/",
+  "ncml_type": "ORRC",
+  "frequency": "day",
+  "filename_template": ""
+}
