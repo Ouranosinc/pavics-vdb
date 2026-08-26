@@ -606,7 +606,9 @@ def compare_ncml_rawdata(dataset, dsNcML, compare_vals, sample_time=True, files_
                                                               combine='by_coords',
                                                               coords='minimal',
                                                               data_vars='minimal',
-                                                              chunks=dict(time=None, lon=50, lat=50)),
+                                                              chunks = {}
+                                                              #chunks=dict(time=None, lon=50, lat=50, rlon=50, rlat=50, station=100)
+                                                            ),
                                             lon_bnds=lon_bnds,
                                             lat_bnds=lat_bnds,
                                             start_date=str(dsNcML.time.dt.year.min().values),
@@ -762,7 +764,9 @@ def main():
     #test = TestDataset.test_CRCM5_CMIP6
     test = TestDataset.test_location_explicit # CaSR, PINS, CRCM5 
     #test = TestDataset.test_CanDCS_U6
-    test(self=test, compare_raw=True, aggtype='scan')
+    test(self=test, compare_raw=True, aggtype='scan', sample_locations=1.0, sample_loc_max=10)
+
+    
 
 
 if 'main' in __name__:

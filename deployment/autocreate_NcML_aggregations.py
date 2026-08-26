@@ -14,7 +14,7 @@ pavics_root = f"{home}/remote_mnt/pavics_transfer/datasets"
 def main():
     overwrite_to_tmp = True
     rootdir = p.Path(__file__).parent.parent
-    dataset_configs = rootdir.joinpath("dataset_json_configs").rglob('*GHCN*_config*.json')
+    dataset_configs = rootdir.joinpath("dataset_json_configs").rglob('*ORRC*_config*.json')
     for dataset in dataset_configs:
         with open(dataset, 'r') as f:
             ncml_modify = json.load(f)
@@ -447,6 +447,43 @@ def ncml_create_datasets(ncml_template=None, config=None):
 
         return ncmls
 
+    elif config['ncml_type'] == 'ORRC':
+        ncmls = {}
+        freq = config["frequency"]
+        infolder = p.Path(config['location'].replace('/pavics-data', pavics_root)).joinpath(freq)
+        agg_dict = {"@type": "Union"}
+        agg = ncml_add_aggregation(agg_dict)
+        agg['netcdf'] = []
+        ncfiles = sorted(list(infolder.rglob(f'*{freq}*.nc')))
+        outname_files =[n for n in ncfiles if n.name.startswith("tas")]
+        if len(outname_files) == 0:
+            outname_files = [n for n in ncfiles if n.name.startswith("pr")]
+        assert len(outname_files) > 0, f"No files found in {infolder} for frequency {freq}"
+        #time_per = f"{outname_files[0].stem.split('_')[-1].split('-')[0]}-present"
+        outname = f"{'_'.join(outname_files[0].stem.split('_')[1:-1])}"
+        for vv in [v for v in infolder.iterdir() if v.is_dir()]:
+            print(vv)
+            netcdf2 = ncml_netcdf_container()
+            netcdf2['aggregation'] = ncml_add_aggregation({'@dimName': 'time', '@type': 'joinExisting', '@recheckEvery': '1 day'})
+            netcdf2['aggregation']['scan'] = []
+            scan = {'@location': vv.as_posix().replace(pavics_root, '/pavics-data'), '@subdirs': 'false',
+                                '@suffix': '.nc'}
+            netcdf2['aggregation']['scan'].append(ncml_add_scan(scan))
+            agg['netcdf'].append(netcdf2)
+            del netcdf2
+        
+        ncml1 = xncml.Dataset()
+        ncml1.ncroot['netcdf']['remove'] = ncml_remove_items(config['remove'])
+        attrs = config['attribute']
+        #attrs['source_institution'] = dict(value=sim.name, type="String")
+        ncml1.ncroot['netcdf']['attribute'] = ncml_add_attributes(attrs)
+        ncml1.ncroot['netcdf']['aggregation'] = agg
+
+        ncmls[outname] = ncml1
+
+        del ncml1
+        return ncmls
+    
     elif config['ncml_type'] == "GHCN":
         freq = config["frequency"]
         infolder = p.Path(config['location'].replace('/pavics-data', pavics_root)).joinpath(freq)
