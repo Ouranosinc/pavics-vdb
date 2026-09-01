@@ -284,9 +284,15 @@ class TestDataset:
             if len(ncmls) != 1:
                 raise Exception(f'Expected a single ncml dataset : found {len(ncmls)}')
             large_reg = False
+            dstmp = xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time='auto', rlon=50, rlat=50, lat=50, lon=50, station=100), decode_timedelta=False)
+            vtmp = [v for v in dstmp.data_vars if 'time' in dstmp[v].dims]
+            dstmp = dstmp[vtmp[0]]
+            chunks = {d:int(c) for d, c in zip(dstmp.dims, dstmp.attrs.get('_ChunkSizes', [None]*len(dstmp.dims)))}
+            if chunks.get('time', None) is None:
+                chunks = dict(time='auto', rlon=50, rlat=50, lat=50, lon=50, station=100)
             try:
                 dsNcML = subset.subset_bbox(
-                    xr.open_dataset(ncmls[0].opendap_url(), chunks=dict(time='auto', rlon=50, rlat=50, lat=50, lon=50, station=100), decode_timedelta=False),
+                    xr.open_dataset(ncmls[0].opendap_url(), chunks=chunks, decode_timedelta=False),
                     lon_bnds=test_reg['main']['lon'], lat_bnds=test_reg['main']['lat']
                 )
             except ValueError as e:
@@ -764,7 +770,7 @@ def main():
     #test = TestDataset.test_CRCM5_CMIP6
     test = TestDataset.test_location_explicit # CaSR, PINS, CRCM5 
     #test = TestDataset.test_CanDCS_U6
-    test(self=test, compare_raw=True, aggtype='scan', sample_locations=1.0, sample_loc_max=10)
+    test(self=test, compare_raw=True, aggtype='scan', sample_locations=0.2, sample_loc_max=10)
 
     
 
