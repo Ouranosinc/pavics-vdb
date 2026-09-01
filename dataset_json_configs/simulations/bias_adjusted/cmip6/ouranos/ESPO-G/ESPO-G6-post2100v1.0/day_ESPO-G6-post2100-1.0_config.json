@@ -28,7 +28,7 @@
       "type": "String"
     },
     "doi": {
-      "value": "https://doi.org/10.1038/s41597-023-02855-z",
+      "value": "https://doi.org/10.5281/zenodo.22132713",
       "type": "String"
     },
     "abstract": {
