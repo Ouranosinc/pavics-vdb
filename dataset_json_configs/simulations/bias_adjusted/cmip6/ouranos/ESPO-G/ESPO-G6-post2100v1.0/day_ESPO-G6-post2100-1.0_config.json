@@ -23,10 +23,6 @@
       "value": "bias_adjusted",
       "type": "String"
     },
-    "dataset_description": {
-      "value": "https://doi.org/10.1038/s41597-023-02855-z",
-      "type": "String"
-    },
     "doi": {
       "value": "https://doi.org/10.5281/zenodo.22132713",
       "type": "String"
@@ -40,7 +36,7 @@
       "type": "String"
     },
     "bias_adjust_method_citation": {
-      "value": "https://doi.org/10.1038/s41597-023-02855-z",
+      "value": "https://doi.org/10.5281/zenodo.22132713",
       "type": "String"
     },
     "bias_adjust_reference": {
