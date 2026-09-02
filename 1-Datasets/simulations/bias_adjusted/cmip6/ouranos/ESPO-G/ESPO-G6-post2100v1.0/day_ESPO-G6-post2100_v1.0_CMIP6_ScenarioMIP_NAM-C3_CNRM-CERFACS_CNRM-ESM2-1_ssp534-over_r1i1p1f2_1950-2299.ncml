@@ -18,32 +18,32 @@
 	<attribute name="terms_of_use" type="String" value="In addition to the provided licence, the data used for the realization of climate scenarios are subject to the conditions of the source data. For more details, please refer to: https://pcmdi.llnl.gov/CMIP6/TermsOfUse/TermsOfUse6-2.html"></attribute>
 	<attribute name="attribution" type="String" value="Use of this dataset should be acknowledged as 'Data produced and provided by the Ouranos Consortium on Regional Climatology and Adaptation to Climate Change'. Furthermore, the modeling groups from which the bias-adjusted climate scenarios were constructed must also be acknowledged, please refer to: : The Coupled Model Intercomparison Project https://wcrp-cmip.org/cmip-phase-6-cmip6/"></attribute>
 	<attribute name="modeling_realm" type="String" value="atmos"></attribute>
-	<attribute name="source_institution" type="String" value="CCCma"></attribute>
+	<attribute name="source_institution" type="String" value="CNRM-CERFACS"></attribute>
 	<aggregation type="Union">
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk3/ouranos/ESPO-G/ESPO-G6-post2100_v1.0/CCCma/CanESM5/ssp534-over/r1i1p1f1/day/tasmin" subdirs="true" suffix="tasmin_*.nc"></scan>
+				<scan location="/pavics-data/disk3/ouranos/ESPO-G/ESPO-G6-post2100_v1.0/CNRM-CERFACS/CNRM-ESM2-1/ssp534-over/r1i1p1f2/day/tasmin" subdirs="true" suffix="tasmin_*.nc"></scan>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk3/ouranos/ESPO-G/ESPO-G6-post2100_v1.0/CCCma/CanESM5/ssp534-over/r1i1p1f1/day/tasmax" subdirs="true" suffix="tasmax_*.nc"></scan>
+				<scan location="/pavics-data/disk3/ouranos/ESPO-G/ESPO-G6-post2100_v1.0/CNRM-CERFACS/CNRM-ESM2-1/ssp534-over/r1i1p1f2/day/tasmax" subdirs="true" suffix="tasmax_*.nc"></scan>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk3/ouranos/ESPO-G/ESPO-G6-post2100_v1.0/CCCma/CanESM5/ssp534-over/r1i1p1f1/day/pr" subdirs="true" suffix="pr_*.nc"></scan>
+				<scan location="/pavics-data/disk3/ouranos/ESPO-G/ESPO-G6-post2100_v1.0/CNRM-CERFACS/CNRM-ESM2-1/ssp534-over/r1i1p1f2/day/pr" subdirs="true" suffix="pr_*.nc"></scan>
 			</aggregation>
 		</netcdf>
 		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/disk3/ouranos/ESPO-G/ESPO-G6-post2100_v1.0/CCCma/CanESM5/ssp534-over/r1i1p1f1/day/dtr" subdirs="true" suffix="dtr_*.nc"></scan>
+				<scan location="/pavics-data/disk3/ouranos/ESPO-G/ESPO-G6-post2100_v1.0/CNRM-CERFACS/CNRM-ESM2-1/ssp534-over/r1i1p1f2/day/dtr" subdirs="true" suffix="dtr_*.nc"></scan>
 			</aggregation>
 		</netcdf>
-		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/fx/orog/orog_fx_NAM_GovCan_CaSR_v32_fx.nc"></netcdf>
-		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/fx/sftgif/sftgif_fx_NAM_GovCan_CaSR_v32_fx.nc"></netcdf>
-		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/fx/sftlf/sftlf_fx_NAM_GovCan_CaSR_v32_fx.nc"></netcdf>
-		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/fx/sftlkf/sftlkf_fx_NAM_GovCan_CaSR_v32_fx.nc"></netcdf>
-		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/eccc/CaSR_v32/NAM/fx/sftof/sftof_fx_NAM_GovCan_CaSR_v32_fx.nc"></netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/ouranos/ESPO-G/ESPO-G6-post2100-CaSR_v32_invariant/fx/orog/orog_fx_NAM_GovCan_CaSR_v32_fx.nc"></netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/ouranos/ESPO-G/ESPO-G6-post2100-CaSR_v32_invariant/fx/sftgif/sftgif_fx_NAM_GovCan_CaSR_v32_fx.nc"></netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/ouranos/ESPO-G/ESPO-G6-post2100-CaSR_v32_invariant/fx/sftlf/sftlf_fx_NAM_GovCan_CaSR_v32_fx.nc"></netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/ouranos/ESPO-G/ESPO-G6-post2100-CaSR_v32_invariant/fx/sftlkf/sftlkf_fx_NAM_GovCan_CaSR_v32_fx.nc"></netcdf>
+		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/pavics-data/disk3/ouranos/ESPO-G/ESPO-G6-post2100-CaSR_v32_invariant/fx/sftof/sftof_fx_NAM_GovCan_CaSR_v32_fx.nc"></netcdf>
 	</aggregation>
 </netcdf>
