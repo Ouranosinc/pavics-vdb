@@ -105,10 +105,5 @@
 				<scan location="/pavics-data/ouranos/ORRC/ORRC_v10/NAM/day/vas" subdirs="false" suffix=".nc"></scan>
 			</aggregation>
 		</netcdf>
-		<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-			<aggregation dimName="time" type="joinExisting" recheckEvery="1 day">
-				<scan location="/pavics-data/ouranos/ORRC/ORRC_v10/NAM/day/winddir" subdirs="false" suffix=".nc"></scan>
-			</aggregation>
-		</netcdf>
 	</aggregation>
 </netcdf>
