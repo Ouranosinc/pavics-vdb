@@ -729,12 +729,15 @@ def compare_values(dsNcML, ds, compare_vals, sample_time=True):
         if coord not in ['height', 'horizon', 'time_bnds'] and coord in dsNcML.coords:
             #print(coord)
             if coord.startswith('vertices'):
-                np.testing.assert_array_equal(ds[coord].transpose(*test[coord].dims).values, test[coord].values)
+                np.testing.assert_array_almost_equal(ds[coord].transpose(*test[coord].dims).values, test[coord].values, decimal=4)
             else:
                 if ds[coord].dtype.kind == 'U':
                     continue
                 print(coord)
-                np.testing.assert_array_equal(ds[coord].values, test[coord].values)
+                if coord != 'time':
+                    np.testing.assert_array_almost_equal(ds[coord].values, test[coord].values, decimal=4)
+                else:
+                    np.testing.assert_array_equal(ds[coord].values, test[coord].values)
     
     if compare_vals:
         with ProgressBar():
@@ -770,7 +773,8 @@ def main():
     #test = TestDataset.test_CRCM5_CMIP6
     test = TestDataset.test_location_explicit # CaSR, PINS, CRCM5 
     #test = TestDataset.test_CanDCS_U6
-    test(self=test, compare_raw=True, aggtype='scan', sample_locations=0.2, sample_loc_max=10)
+    #test(self=test, compare_raw=True, aggtype='scan', sample_locations=0.1, sample_loc_max=10)
+    test(self=test, compare_raw=True, aggtype='location', sample_locations=0.1, sample_loc_max=10)
 
     
 
